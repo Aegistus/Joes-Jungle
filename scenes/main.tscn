@@ -1,0 +1,74 @@
+[gd_scene load_steps=13 format=3 uid="uid://br201tqu48j8s"]
+
+[ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="1_wyvri"]
+[ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://assets/third_person_controller_assets-main/textures/grids/Purple/texture_09.png" id="2_ppmh3"]
+[ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://assets/third_person_controller_assets-main/textures/grids/Green/texture_09.png" id="3_ipk4l"]
+[ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://assets/third_person_controller_assets-main/textures/grids/Orange/texture_09.png" id="4_t2rb2"]
+[ext_resource type="PackedScene" uid="uid://bs0wmr63q1ofr" path="res://scenes/player.tscn" id="5_n4bl5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_mqxia"]
+sky_material = SubResource("ProceduralSkyMaterial_27m1f")
+
+[sub_resource type="Environment" id="Environment_112m7"]
+background_mode = 2
+sky = SubResource("Sky_mqxia")
+tonemap_mode = 2
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.726229, 0.752314, 0.793301, 1)
+fog_density = 0.002
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gvvsr"]
+albedo_texture = ExtResource("1_wyvri")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4g1w"]
+albedo_texture = ExtResource("2_ppmh3")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46he0"]
+albedo_texture = ExtResource("3_ipk4l")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co3kn"]
+albedo_texture = ExtResource("4_t2rb2")
+
+[node name="world" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_112m7")
+
+[node name="map" type="Node3D" parent="."]
+
+[node name="floor" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+material_override = SubResource("StandardMaterial3D_gvvsr")
+use_collision = true
+size = Vector3(1000, 1, 1000)
+
+[node name="box" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.693829, 0, -0.72014, 0, 1, 0, 0.72014, 0, 0.693829, -1.5, 0.4, -2.1)
+material_override = SubResource("StandardMaterial3D_e4g1w")
+use_collision = true
+
+[node name="box2" type="CSGBox3D" parent="map"]
+transform = Transform3D(1.00883, 0, -0.72014, 0, 0.919, 0, 1.04708, 0, 0.693829, 6.47779, 1.24798, -6.95496)
+material_override = SubResource("StandardMaterial3D_46he0")
+use_collision = true
+size = Vector3(1.5, 3, 3)
+
+[node name="box3" type="CSGBox3D" parent="map"]
+transform = Transform3D(1.64571, 0, -1.70812, 0, 2.37193, 0, 1.70812, 0, 1.64571, 3.13258, 1.16952, 3.67777)
+material_override = SubResource("StandardMaterial3D_co3kn")
+use_collision = true
+
+[node name="Player" parent="." instance=ExtResource("5_n4bl5")]

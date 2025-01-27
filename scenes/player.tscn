@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs0wmr63q1ofr"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_51t2t"]
+[ext_resource type="PackedScene" uid="uid://bdq6ajic6fjrf" path="res://assets/third_person_controller_assets-main/models/mixamo_base.glb" id="1_rw4qm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eakgp"]
+radius = 0.3
+
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("directional_reference", "player_model")]
+script = ExtResource("1_51t2t")
+directional_reference = NodePath("camera_mount/Camera3D/directional_reference")
+player_model = NodePath("player_model")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_eakgp")
+
+[node name="player_model" type="Node3D" parent="."]
+
+[node name="mixamo_base" parent="player_model" instance=ExtResource("1_rw4qm")]
+transform = Transform3D(-1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, -1, 0, 0, 0)
+
+[node name="camera_mount" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Camera3D" type="Camera3D" parent="camera_mount"]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 4, 5, 4)
+
+[node name="directional_reference" type="Node3D" parent="camera_mount/Camera3D"]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 4, 7, 4)
+top_level = true
