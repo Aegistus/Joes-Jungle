@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=18 format=4 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Script" path="res://scripts/camera_mount.gd" id="2_mupqo"]
+[ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_5cvyg"]
+[ext_resource type="Script" path="res://scripts/idle_state.gd" id="4_s0a0d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eakgp"]
 radius = 0.3
@@ -3445,26 +3447,26 @@ _data = {
 "walking": SubResource("Animation_18874")
 }
 
-[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("directional_reference", "player_model", "animation_player")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("directional_reference", "player_model", "animation_player")]
 script = ExtResource("1_51t2t")
 turn_rate = 10.0
-directional_reference = NodePath("camera_mount/Camera3D/Directional_Reference")
-player_model = NodePath("player_model")
-animation_player = NodePath("player_model/mixamo_base/AnimationPlayer")
+directional_reference = NodePath("CameraMount/Camera3D/Directional_Reference")
+player_model = NodePath("PlayerModel")
+animation_player = NodePath("PlayerModel/mixamo_base/AnimationPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_eakgp")
 
-[node name="player_model" type="Node3D" parent="."]
+[node name="PlayerModel" type="Node3D" parent="."]
 
-[node name="mixamo_base" type="Node3D" parent="player_model"]
+[node name="mixamo_base" type="Node3D" parent="PlayerModel"]
 transform = Transform3D(-1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, -1, 0, 0, 0)
 
-[node name="Armature" type="Node3D" parent="player_model/mixamo_base"]
+[node name="Armature" type="Node3D" parent="PlayerModel/mixamo_base"]
 transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 0, 0, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="player_model/mixamo_base/Armature"]
+[node name="Skeleton3D" type="Skeleton3D" parent="PlayerModel/mixamo_base/Armature"]
 bones/0/name = "mixamorig_Hips"
 bones/0/parent = -1
 bones/0/rest = Transform3D(0.995185, 0.0944064, 0.0263392, -0.025964, -0.00520062, 0.999649, 0.0945103, -0.99552, -0.00272441, 0.488853, 1.55639, -101.607)
@@ -3921,29 +3923,37 @@ bones/64/position = Vector3(1.38052e-06, 9.27814, 1.58684e-07)
 bones/64/rotation = Quaternion(-1.67117e-08, -0.0118691, -4.98073e-10, 0.99993)
 bones/64/scale = Vector3(1, 1, 1)
 
-[node name="Beta_Joints" type="MeshInstance3D" parent="player_model/mixamo_base/Armature/Skeleton3D"]
+[node name="Beta_Joints" type="MeshInstance3D" parent="PlayerModel/mixamo_base/Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_cc8ym")
 skin = SubResource("Skin_5tbm2")
 
-[node name="Beta_Surface" type="MeshInstance3D" parent="player_model/mixamo_base/Armature/Skeleton3D"]
+[node name="Beta_Surface" type="MeshInstance3D" parent="PlayerModel/mixamo_base/Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_qf0kh")
 skin = SubResource("Skin_5tbm2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="player_model/mixamo_base"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerModel/mixamo_base"]
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_2jh2f")
 }
 
-[node name="camera_mount" type="Node3D" parent="." node_paths=PackedStringArray("player", "directional_reference")]
+[node name="CameraMount" type="Node3D" parent="." node_paths=PackedStringArray("player", "directional_reference")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
 script = ExtResource("2_mupqo")
 player = NodePath("..")
 directional_reference = NodePath("Camera3D/Directional_Reference")
 
-[node name="Camera3D" type="Camera3D" parent="camera_mount"]
+[node name="Camera3D" type="Camera3D" parent="CameraMount"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 5)
 
-[node name="Directional_Reference" type="Node3D" parent="camera_mount/Camera3D"]
+[node name="Directional_Reference" type="Node3D" parent="CameraMount/Camera3D"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.53553, 5, 3.53553)
 top_level = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
+script = ExtResource("3_5cvyg")
+default_state = NodePath("Idle State")
+
+[node name="Idle State" type="Node" parent="StateMachine"]
+script = ExtResource("4_s0a0d")
+animation_name = "idle"
