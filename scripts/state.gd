@@ -5,10 +5,12 @@ extends Node
 @export var animation_name: String
 @export var movement_speed: float
 
+var target: Node
+
 signal on_state_changed()
 
 func enter():
-	(owner as Player).animation_player.play(animation_name)
+	(target as Player).animation_player.play(animation_name)
 	print("Entering: " + name)
 
 func exit():

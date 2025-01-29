@@ -2,10 +2,13 @@ class_name StateMachine
 extends Node
 
 @export var default_state: State
+@export var target: Node
 
 var current_state: State
 
 func _ready():
+	for child in get_children():
+		child.target = target
 	current_state = default_state
 	current_state.enter()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=34 format=3 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="PackedScene" uid="uid://d2vxq0xqxukxg" path="res://assets/player_model.glb" id="2_jbw75"]
@@ -5847,6 +5847,7 @@ tracks/54/keys = PackedFloat32Array(0, 1, -7.86146e-05, 0.999768, 0.0208602, -0.
 [sub_resource type="Animation" id="Animation_33yv4"]
 resource_name = "pistol walk arc"
 length = 0.833333
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -7813,11 +7814,39 @@ _data = {
 "pistol walk backward arc_001": SubResource("Animation_5obfl")
 }
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("directional_reference", "player_model")]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x71xa"]
+animation = &"Pistol Anim Pack/pistol idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q6io6"]
+animation = &"Pistol Anim Pack/pistol walk arc"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mao3p"]
+animation = &"Pistol Anim Pack/pistol strafe"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xcm7p"]
+animation = &"Pistol Anim Pack/pistol strafe_001"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n67w0"]
+animation = &"Pistol Anim Pack/pistol walk backward"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_vfhyd"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_x71xa")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_q6io6")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_mao3p")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_xcm7p")
+blend_point_3/pos = Vector2(1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_n67w0")
+blend_point_4/pos = Vector2(0, -1)
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("directional_reference", "player_model", "animation_player")]
 script = ExtResource("1_51t2t")
 turn_rate = 10.0
 directional_reference = NodePath("CameraMount/Camera3D/Directional_Reference")
 player_model = NodePath("PlayerModel")
+animation_player = NodePath("PlayerModel/Character/AnimationPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -7826,11 +7855,17 @@ shape = SubResource("CapsuleShape3D_eakgp")
 [node name="PlayerModel" type="Node3D" parent="."]
 
 [node name="Character" parent="PlayerModel" instance=ExtResource("2_jbw75")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerModel/Character"]
 libraries = {
 "Pistol Anim Pack": SubResource("AnimationLibrary_6s1o2")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="PlayerModel/Character"]
+tree_root = SubResource("AnimationNodeBlendSpace2D_vfhyd")
+anim_player = NodePath("../AnimationPlayer")
+parameters/blend_position = Vector2(-0.0032931, 0.00775194)
 
 [node name="CameraMount" type="Node3D" parent="." node_paths=PackedStringArray("player", "directional_reference")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
@@ -7845,10 +7880,11 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.53553, 5, 3.53553)
 top_level = true
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state")]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state", "target")]
 script = ExtResource("3_5cvyg")
 default_state = NodePath("Idle State")
+target = NodePath("..")
 
 [node name="Idle State" type="Node" parent="StateMachine"]
 script = ExtResource("4_s0a0d")
-animation_name = "idle"
+animation_name = "Pistol Anim Pack/pistol idle"

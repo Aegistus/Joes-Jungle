@@ -3,5 +3,5 @@ extends State
 
 var player_owner: Player
 
-func _init():
+func _ready():
 	player_owner = owner as Player
