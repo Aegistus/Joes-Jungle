@@ -10,7 +10,6 @@ var target: Node
 signal on_state_changed()
 
 func enter():
-	(target as Player).animation_player.play(animation_name)
 	print("Entering: " + name)
 
 func exit():

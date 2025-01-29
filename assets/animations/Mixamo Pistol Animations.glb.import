@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://lt4ecyvde050"
-path="res://.godot/imported/pistol animations.glb-d52ce9999a085a4679be47094e3cfade.scn"
+uid="uid://do1l7hy75ag4r"
+path="res://.godot/imported/Mixamo Pistol Animations.glb-67896b322bc4f7dba7afbfe251edcff1.scn"
 
 [deps]
 
-source_file="res://assets/animations/pistol animations.glb"
-dest_files=["res://.godot/imported/pistol animations.glb-d52ce9999a085a4679be47094e3cfade.scn"]
+source_file="res://assets/animations/Mixamo Pistol Animations.glb"
+dest_files=["res://.godot/imported/Mixamo Pistol Animations.glb-67896b322bc4f7dba7afbfe251edcff1.scn"]
 
 [params]
 

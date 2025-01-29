@@ -27,9 +27,9 @@ func _physics_process(delta):
 	var direction = (directional_reference.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	# Rotate player model to look in movement direction
-	if direction != Vector3.ZERO:
-		var look_dir = atan2(-velocity.x, -velocity.z)
-		player_model.rotation.y = lerp_angle(player_model.rotation.y, look_dir, delta * turn_rate)
+	#if direction != Vector3.ZERO:
+		#var look_dir = atan2(-velocity.x, -velocity.z)
+		#player_model.rotation.y = lerp_angle(player_model.rotation.y, look_dir, delta * turn_rate)
 	
 	if direction != Vector3.ZERO:
 		animation_player.play("walking")

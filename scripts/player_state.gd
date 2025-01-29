@@ -1,7 +1,4 @@
 class_name PlayerState
 extends State
 
-var player_owner: Player
-
-func _ready():
-	player_owner = owner as Player
+@export var controlled_player: Player
