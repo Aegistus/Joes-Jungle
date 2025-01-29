@@ -23,7 +23,7 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	var direction = (directional_reference.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (directional_reference.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	# Rotate player model to look in movement direction
 	if direction != Vector3.ZERO:
