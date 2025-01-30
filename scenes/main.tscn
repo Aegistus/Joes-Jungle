@@ -53,22 +53,27 @@ environment = SubResource("Environment_112m7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
 material_override = SubResource("StandardMaterial3D_gvvsr")
 use_collision = true
+collision_layer = 2
+collision_mask = 3
 size = Vector3(1000, 1, 1000)
 
 [node name="box" type="CSGBox3D" parent="map"]
 transform = Transform3D(0.693829, 0, -0.72014, 0, 1, 0, 0.72014, 0, 0.693829, -1.5, 0.4, -2.1)
 material_override = SubResource("StandardMaterial3D_e4g1w")
 use_collision = true
+collision_mask = 3
 
 [node name="box2" type="CSGBox3D" parent="map"]
 transform = Transform3D(1.00883, 0, -0.72014, 0, 0.919, 0, 1.04708, 0, 0.693829, 6.47779, 1.24798, -6.95496)
 material_override = SubResource("StandardMaterial3D_46he0")
 use_collision = true
+collision_mask = 3
 size = Vector3(1.5, 3, 3)
 
 [node name="box3" type="CSGBox3D" parent="map"]
 transform = Transform3D(1.64571, 0, -1.70812, 0, 2.37193, 0, 1.70812, 0, 1.64571, 3.13258, 1.16952, 3.67777)
 material_override = SubResource("StandardMaterial3D_co3kn")
 use_collision = true
+collision_mask = 3
 
 [node name="Player" parent="." instance=ExtResource("5_n4bl5")]

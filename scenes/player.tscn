@@ -47,6 +47,7 @@ nodes/WalkSpeed/position = Vector2(-300, 60)
 node_connections = [&"output", 0, &"WalkSpeed"]
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("directional_reference", "player_model", "animation_player")]
+collision_mask = 3
 script = ExtResource("1_51t2t")
 turn_rate = 10.0
 directional_reference = NodePath("CameraMount/Camera3D/Directional_Reference")
