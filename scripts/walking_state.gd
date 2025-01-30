@@ -10,7 +10,6 @@ extends PlayerState
 @export_group("Transition States")
 @export var idle_state: State
 
-
 func process_state_physics(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")

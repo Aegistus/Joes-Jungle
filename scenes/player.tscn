@@ -111,13 +111,15 @@ script = ExtResource("3_5cvyg")
 default_state = NodePath("RestingState")
 target = NodePath("..")
 
-[node name="AimingState" type="Node" parent="AimStateMachine" node_paths=PackedStringArray("resting_state", "controlled_player")]
+[node name="AimingState" type="Node" parent="AimStateMachine" node_paths=PackedStringArray("camera", "player_model", "resting_state", "controlled_player")]
 script = ExtResource("8_iqcv1")
+camera = NodePath("../../CameraMount/Camera3D")
+player_model = NodePath("../../PlayerModel")
 resting_state = NodePath("../RestingState")
 controlled_player = NodePath("../..")
 
 [node name="RestingState" type="Node" parent="AimStateMachine" node_paths=PackedStringArray("player_model", "aiming_state", "controlled_player")]
 script = ExtResource("9_d0et7")
-player_model = NodePath("../../PlayerModel/player_model")
+player_model = NodePath("../../PlayerModel")
 aiming_state = NodePath("../AimingState")
 controlled_player = NodePath("../..")
