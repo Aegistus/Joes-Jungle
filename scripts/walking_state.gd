@@ -23,8 +23,8 @@ func process_state_physics(delta):
 	if aim_state_machine.current_state == rest_state:
 		animation_tree.set("parameters/WalkSpeed/blend_position", Vector2(0, 1))
 	else:
-		var relative_dir = (player_model.basis * Vector3(direction.x, 0, direction.z)).normalized()
-		animation_tree.set("parameters/WalkSpeed/blend_position", Vector2(-relative_dir.z, -relative_dir.x))
+		var relative_dir = (player_model.basis * Vector3(direction.z, 0, direction.x)).normalized()
+		animation_tree.set("parameters/WalkSpeed/blend_position", Vector2(relative_dir.z, -relative_dir.x))
 
 func check_transitions():
 	var input = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
