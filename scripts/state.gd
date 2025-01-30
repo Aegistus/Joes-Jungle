@@ -2,9 +2,6 @@ class_name State
 extends Node
 ## Base class for state machine states.
 
-@export var animation_name: String
-@export var movement_speed: float
-
 var target: Node
 
 signal on_state_changed()

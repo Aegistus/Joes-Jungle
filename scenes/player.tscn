@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=16 format=3 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="PackedScene" uid="uid://d2vxq0xqxukxg" path="res://assets/player_model.glb" id="2_jbw75"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_5cvyg"]
 [ext_resource type="AnimationLibrary" uid="uid://wubbon5nyek1" path="res://assets/animations/Pistol Anim Pack.res" id="3_q8g1f"]
 [ext_resource type="Script" path="res://scripts/idle_state.gd" id="4_s0a0d"]
+[ext_resource type="Script" path="res://scripts/walking_state.gd" id="7_vgdlh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eakgp"]
 radius = 0.3
@@ -83,13 +84,20 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.53553, 5, 3.53553)
 top_level = true
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state", "target")]
+[node name="MovementStateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state", "target")]
 script = ExtResource("3_5cvyg")
-default_state = NodePath("Idle State")
+default_state = NodePath("IdleState")
 target = NodePath("..")
 
-[node name="Idle State" type="Node" parent="StateMachine" node_paths=PackedStringArray("animation_tree", "controlled_player")]
+[node name="IdleState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_tree", "walking_state", "controlled_player")]
 script = ExtResource("4_s0a0d")
 animation_tree = NodePath("../../PlayerModel/player_model/AnimationTree")
+walking_state = NodePath("../WalkingState")
 controlled_player = NodePath("../..")
-animation_name = "Pistol Anim Pack/pistol idle"
+
+[node name="WalkingState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_tree", "directional_reference", "idle_state", "controlled_player")]
+script = ExtResource("7_vgdlh")
+animation_tree = NodePath("../../PlayerModel/player_model/AnimationTree")
+directional_reference = NodePath("../../CameraMount/Camera3D/Directional_Reference")
+idle_state = NodePath("../IdleState")
+controlled_player = NodePath("../..")
