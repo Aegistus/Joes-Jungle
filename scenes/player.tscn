@@ -96,11 +96,12 @@ animation_tree = NodePath("../../PlayerModel/player_model/AnimationTree")
 walking_state = NodePath("../WalkingState")
 controlled_player = NodePath("../..")
 
-[node name="WalkingState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_tree", "animation_player", "directional_reference", "aim_state_machine", "rest_state", "idle_state", "controlled_player")]
+[node name="WalkingState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_tree", "animation_player", "directional_reference", "player_model", "aim_state_machine", "rest_state", "idle_state", "controlled_player")]
 script = ExtResource("7_vgdlh")
 animation_tree = NodePath("../../PlayerModel/player_model/AnimationTree")
 animation_player = NodePath("../../PlayerModel/player_model/AnimationPlayer")
 directional_reference = NodePath("../../CameraMount/Camera3D/Directional_Reference")
+player_model = NodePath("../../PlayerModel")
 aim_state_machine = NodePath("../../AimStateMachine")
 rest_state = NodePath("../../AimStateMachine/RestingState")
 idle_state = NodePath("../IdleState")

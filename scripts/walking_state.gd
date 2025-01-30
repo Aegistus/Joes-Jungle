@@ -5,6 +5,7 @@ extends PlayerState
 @export var animation_tree: AnimationTree
 @export var animation_player: AnimationPlayer
 @export var directional_reference: Node3D
+@export var player_model: Node3D
 @export var aim_state_machine: StateMachine
 @export var rest_state: State
 @export_group("Transition States")
@@ -22,7 +23,8 @@ func process_state_physics(delta):
 	if aim_state_machine.current_state == rest_state:
 		animation_tree.set("parameters/WalkSpeed/blend_position", Vector2(0, 1))
 	else:
-		animation_tree.set("parameters/WalkSpeed/blend_position", Vector2(input_dir.x, input_dir.y))
+		var relative_dir = (player_model.basis * Vector3(direction.x, 0, direction.z)).normalized()
+		animation_tree.set("parameters/WalkSpeed/blend_position", Vector2(-relative_dir.z, -relative_dir.x))
 
 func check_transitions():
 	var input = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
