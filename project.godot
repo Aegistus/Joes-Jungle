@@ -23,6 +23,14 @@ config/icon="res://icon.svg"
 
 window/size/always_on_top=true
 
+[editor]
+
+movie_writer/movie_file="C:/Users/joeba/OneDrive/Documents/Game Dev/Godot/Projects/godot-top-down-test/movies/movie_01.avi"
+
+[global_group]
+
+player=""
+
 [input]
 
 move_forward={

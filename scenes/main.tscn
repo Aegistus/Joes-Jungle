@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=15 format=3 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="1_wyvri"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://assets/third_person_controller_assets-main/textures/grids/Purple/texture_09.png" id="2_ppmh3"]
 [ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://assets/third_person_controller_assets-main/textures/grids/Green/texture_09.png" id="3_ipk4l"]
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://assets/third_person_controller_assets-main/textures/grids/Orange/texture_09.png" id="4_t2rb2"]
 [ext_resource type="PackedScene" uid="uid://bs0wmr63q1ofr" path="res://scenes/player.tscn" id="5_n4bl5"]
+[ext_resource type="PackedScene" uid="uid://cqkrsucbenoss" path="res://scenes/zombie.tscn" id="6_ptkpn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,6 +23,10 @@ glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.726229, 0.752314, 0.793301, 1)
 fog_density = 0.002
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_7od6u"]
+vertices = PackedVector3Array(-1.25, 0.4, -3.5, 4, 0.4, -6.5, 4, 0.4, -7.25, -2, 0.4, -3.5, 6.75, 0.4, -9.5, 6.75, 0.4, -499.5, -499.5, 0.4, -2, -2.75, 0.4, -2, -2.75, 0.4, -2.75, -499.5, 0.4, -499.5, 7.25, 0.4, -9.5, 9, 0.4, -7.25, 499.5, 0.4, -7.25, 499.5, 0.4, -499.5, 5.25, 2.9, -7, 6, 2.9, -5.75, 7.75, 2.9, -7, 6.75, 2.9, -8.25, 5.75, 0.4, -7, 6, 0.4, -6.25, 7.25, 0.4, -7, 6.75, 0.4, -7.75, 6.75, 0.4, -4.5, 6, 0.4, -4.5, 4.75, 0.4, 2.5, 5.5, 0.4, 3.75, 499.5, 0.4, 3.75, -1.25, 0.4, -0.75, 0.75, 0.4, 3.25, 2.5, 0.4, 1.5, -0.25, 0.4, -1.5, 3.75, 0.4, 1.5, -0.25, 0.4, -2.75, -2, 0.4, -0.75, 0.75, 0.4, 4, 3, 0.4, 499.5, 3, 0.4, 6, -499.5, 0.4, 499.5, 2, 2.65, 3.5, 3, 2.65, 4.75, 4.25, 2.65, 3.75, 3.25, 2.65, 2.5, 2.5, 0.4, 3.5, 3, 0.4, 4.25, 3.75, 0.4, 3.75, 3.25, 0.4, 3, 5, 0.4, 4.75, 499.5, 0.4, 499.5)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Array(2, 3, 4), PackedInt32Array(4, 3, 5), PackedInt32Array(8, 7, 6), PackedInt32Array(3, 8, 5), PackedInt32Array(5, 8, 6), PackedInt32Array(5, 6, 9), PackedInt32Array(10, 4, 5), PackedInt32Array(10, 5, 11), PackedInt32Array(11, 5, 12), PackedInt32Array(12, 5, 13), PackedInt32Array(14, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(21, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(24, 23, 22), PackedInt32Array(24, 22, 25), PackedInt32Array(25, 22, 11), PackedInt32Array(25, 11, 12), PackedInt32Array(25, 12, 26), PackedInt32Array(30, 29, 27), PackedInt32Array(27, 29, 28), PackedInt32Array(31, 32, 24), PackedInt32Array(24, 32, 23), PackedInt32Array(23, 32, 1), PackedInt32Array(29, 30, 31), PackedInt32Array(31, 30, 32), PackedInt32Array(32, 0, 1), PackedInt32Array(27, 28, 33), PackedInt32Array(33, 28, 34), PackedInt32Array(34, 36, 35), PackedInt32Array(33, 34, 7), PackedInt32Array(7, 34, 6), PackedInt32Array(6, 34, 35), PackedInt32Array(6, 35, 37), PackedInt32Array(41, 40, 38), PackedInt32Array(38, 40, 39), PackedInt32Array(45, 44, 42), PackedInt32Array(42, 44, 43), PackedInt32Array(46, 25, 26), PackedInt32Array(36, 46, 35), PackedInt32Array(35, 46, 47), PackedInt32Array(47, 46, 26)]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gvvsr"]
 albedo_texture = ExtResource("1_wyvri")
@@ -47,9 +52,12 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_112m7")
 
-[node name="map" type="Node3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_7od6u")
 
-[node name="floor" type="CSGBox3D" parent="map"]
+[node name="map" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="floor" type="CSGBox3D" parent="NavigationRegion3D/map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
 material_override = SubResource("StandardMaterial3D_gvvsr")
 use_collision = true
@@ -57,23 +65,110 @@ collision_layer = 2
 collision_mask = 3
 size = Vector3(1000, 1, 1000)
 
-[node name="box" type="CSGBox3D" parent="map"]
+[node name="box" type="CSGBox3D" parent="NavigationRegion3D/map"]
 transform = Transform3D(0.693829, 0, -0.72014, 0, 1, 0, 0.72014, 0, 0.693829, -1.5, 0.4, -2.1)
 material_override = SubResource("StandardMaterial3D_e4g1w")
 use_collision = true
 collision_mask = 3
 
-[node name="box2" type="CSGBox3D" parent="map"]
+[node name="box2" type="CSGBox3D" parent="NavigationRegion3D/map"]
 transform = Transform3D(1.00883, 0, -0.72014, 0, 0.919, 0, 1.04708, 0, 0.693829, 6.47779, 1.24798, -6.95496)
 material_override = SubResource("StandardMaterial3D_46he0")
 use_collision = true
 collision_mask = 3
 size = Vector3(1.5, 3, 3)
 
-[node name="box3" type="CSGBox3D" parent="map"]
+[node name="box3" type="CSGBox3D" parent="NavigationRegion3D/map"]
 transform = Transform3D(1.64571, 0, -1.70812, 0, 2.37193, 0, 1.70812, 0, 1.64571, 3.13258, 1.16952, 3.67777)
 material_override = SubResource("StandardMaterial3D_co3kn")
 use_collision = true
 collision_mask = 3
 
 [node name="Player" parent="." instance=ExtResource("5_n4bl5")]
+
+[node name="Zombie" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.173, -0.0999991, -7.28688)
+
+[node name="Zombie2" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6613, -0.0999991, -4.63285)
+
+[node name="Zombie3" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7372, -0.0999991, -5.08114)
+
+[node name="Zombie4" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7404, -0.0999991, -2.96044)
+
+[node name="Zombie5" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1899, -0.0999991, -7.8243)
+
+[node name="Zombie6" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4182, -0.0999986, -4.47882)
+
+[node name="Zombie7" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.94384, -0.0999981, -17.9983)
+
+[node name="Zombie8" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7068, -0.0999981, -16.1003)
+
+[node name="Zombie9" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.72629, -0.0999981, -13.1602)
+
+[node name="Zombie10" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8312, -0.0999981, -13.8296)
+
+[node name="Zombie11" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5909, -0.0999981, -18.4554)
+
+[node name="Zombie12" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3016, -0.0999981, -10.3122)
+
+[node name="Zombie13" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8488, -0.0999976, -17.536)
+
+[node name="Zombie14" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.40793, -0.0999976, -11.4883)
+
+[node name="Zombie15" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29209, -0.0999976, -9.12787)
+
+[node name="Zombie16" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2033, -0.0999976, -6.9093)
+
+[node name="Zombie17" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.18424, -0.0999976, -10.7211)
+
+[node name="Zombie18" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9984, -0.0999976, -11.9741)
+
+[node name="Zombie19" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74585, -0.0999976, -13.0545)
+
+[node name="Zombie20" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9496, -0.0999976, -5.38108)
+
+[node name="Zombie21" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9885, -0.0999976, -9.106)
+
+[node name="Zombie22" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6504, -0.0999976, -11.9038)
+
+[node name="Zombie23" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8758, -0.0999976, -15.1756)
+
+[node name="Zombie24" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5178, -0.0999976, -14.5152)
+
+[node name="Zombie25" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9527, -0.0999976, -18.6807)
+
+[node name="Zombie26" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0291, -0.0999976, -9.6059)
+
+[node name="Zombie27" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41893, -0.0999976, -10.584)
+
+[node name="Zombie28" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.145, -0.0999986, -2.93603)
+
+[node name="Zombie29" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79313, -0.0999976, -7.70539)
