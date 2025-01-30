@@ -1,36 +1,35 @@
-class_name WalkingState
+class_name JoggingState
 extends PlayerState
 
-@export var movement_speed: float = 100
-@export var animation_tree: AnimationTree
+@export var run_speed: float = 100
 @export var animation_player: AnimationPlayer
+@export var animation_tree: AnimationTree
 @export var directional_reference: Node3D
 @export var player_model: Node3D
 @export var aim_state_machine: StateMachine
-@export var rest_state: State
+
 @export_category("Transition States")
 @export var idle_state: State
-@export var jogging_state: State
+@export var walking_state: State
 
 func enter():
 	super()
-	animation_tree.active = true
+	animation_tree.active = false
 
 func process_state_physics(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction = (directional_reference.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction != Vector3.ZERO:
-		target.velocity.x = direction.x * movement_speed * delta
-		target.velocity.z = direction.z * movement_speed * delta
+		target.velocity.x = direction.x * run_speed * delta
+		target.velocity.z = direction.z * run_speed * delta
 	target.	move_and_slide()
 	# Set animations
-	var relative_dir = (player_model.basis * Vector3(direction.z, 0, direction.x)).normalized()
-	animation_tree.set("parameters/WalkSpeed/blend_position", Vector2(relative_dir.z, -relative_dir.x))
+	animation_player.play("Pistol Anim Pack/Relaxed Run")
 
 func check_transitions():
-	if aim_state_machine.current_state is RelaxedState:
-		return jogging_state
+	if aim_state_machine.current_state is AimingState:
+		return walking_state
 	var input = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	if input.length() == 0:
 		return idle_state

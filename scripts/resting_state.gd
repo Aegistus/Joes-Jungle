@@ -1,9 +1,9 @@
-class_name RestingState
+class_name RelaxedState
 extends PlayerState
 
 @export var player_model: Node3D
 @export var turn_rate: float = 10
-@export_group("Transition States")
+@export_category("Transition States")
 @export var aiming_state: State
 
 func process_state_physics(delta):

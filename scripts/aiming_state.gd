@@ -3,7 +3,7 @@ extends PlayerState
 
 @export var camera: Camera3D
 @export var player_model: Node3D
-@export var resting_state: State
+@export var relaxed_state: State
 
 var ray_origin = Vector3()
 var ray_end = Vector3()
@@ -23,4 +23,4 @@ func process_state_physics(delta):
 
 func check_transitions():
 	if Input.is_action_just_pressed("aim_weapon"):
-		return resting_state
+		return relaxed_state

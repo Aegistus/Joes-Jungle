@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=19 format=3 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="PackedScene" uid="uid://d2vxq0xqxukxg" path="res://assets/player_model.glb" id="2_jbw75"]
@@ -7,6 +7,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://wubbon5nyek1" path="res://assets/animations/Pistol Anim Pack.res" id="3_q8g1f"]
 [ext_resource type="Script" path="res://scripts/idle_state.gd" id="4_s0a0d"]
 [ext_resource type="Script" path="res://scripts/walking_state.gd" id="7_vgdlh"]
+[ext_resource type="Script" path="res://scripts/running_state.gd" id="8_h5fvr"]
 [ext_resource type="Script" path="res://scripts/aiming_state.gd" id="8_iqcv1"]
 [ext_resource type="Script" path="res://scripts/resting_state.gd" id="9_d0et7"]
 
@@ -41,7 +42,6 @@ blend_point_4/node = SubResource("AnimationNodeAnimation_iabis")
 blend_point_4/pos = Vector2(0, -1)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ascxi"]
-graph_offset = Vector2(-853.695, 5.91316)
 nodes/WalkSpeed/node = SubResource("AnimationNodeBlendSpace2D_smib0")
 nodes/WalkSpeed/position = Vector2(-240, 140)
 node_connections = [&"output", 0, &"WalkSpeed"]
@@ -52,7 +52,7 @@ script = ExtResource("1_51t2t")
 turn_rate = 10.0
 directional_reference = NodePath("CameraMount/Camera3D/Directional_Reference")
 player_model = NodePath("PlayerModel")
-animation_player = NodePath("PlayerModel/player_model/AnimationPlayer")
+animation_player = NodePath("PlayerModel/Model/AnimationPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -60,15 +60,15 @@ shape = SubResource("CapsuleShape3D_eakgp")
 
 [node name="PlayerModel" type="Node3D" parent="."]
 
-[node name="player_model" parent="PlayerModel" instance=ExtResource("2_jbw75")]
+[node name="Model" parent="PlayerModel" instance=ExtResource("2_jbw75")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerModel/player_model"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerModel/Model"]
 libraries = {
 "Pistol Anim Pack": ExtResource("3_q8g1f")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="PlayerModel/player_model"]
+[node name="AnimationTree" type="AnimationTree" parent="PlayerModel/Model"]
 tree_root = SubResource("AnimationNodeBlendTree_ascxi")
 anim_player = NodePath("../AnimationPlayer")
 parameters/WalkSpeed/blend_position = Vector2(-0.00186217, 0.00775194)
@@ -91,36 +91,53 @@ script = ExtResource("3_5cvyg")
 default_state = NodePath("IdleState")
 target = NodePath("..")
 
-[node name="IdleState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_tree", "walking_state", "controlled_player")]
+[node name="IdleState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_player", "animation_tree", "aim_state_machine", "walking_state", "jogging_state", "controlled_player")]
 script = ExtResource("4_s0a0d")
-animation_tree = NodePath("../../PlayerModel/player_model/AnimationTree")
+animation_player = NodePath("../../PlayerModel/Model/AnimationPlayer")
+animation_tree = NodePath("../../PlayerModel/Model/AnimationTree")
+aim_state_machine = NodePath("../../AimStateMachine")
 walking_state = NodePath("../WalkingState")
+jogging_state = NodePath("../JoggingState")
 controlled_player = NodePath("../..")
 
-[node name="WalkingState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_tree", "animation_player", "directional_reference", "player_model", "aim_state_machine", "rest_state", "idle_state", "controlled_player")]
+[node name="WalkingState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_tree", "animation_player", "directional_reference", "player_model", "aim_state_machine", "rest_state", "idle_state", "jogging_state", "controlled_player")]
 script = ExtResource("7_vgdlh")
-animation_tree = NodePath("../../PlayerModel/player_model/AnimationTree")
-animation_player = NodePath("../../PlayerModel/player_model/AnimationPlayer")
+movement_speed = 75.0
+animation_tree = NodePath("../../PlayerModel/Model/AnimationTree")
+animation_player = NodePath("../../PlayerModel/Model/AnimationPlayer")
 directional_reference = NodePath("../../CameraMount/Camera3D/Directional_Reference")
 player_model = NodePath("../../PlayerModel")
 aim_state_machine = NodePath("../../AimStateMachine")
-rest_state = NodePath("../../AimStateMachine/RestingState")
+rest_state = NodePath("../../AimStateMachine/RelaxedState")
 idle_state = NodePath("../IdleState")
+jogging_state = NodePath("../JoggingState")
+controlled_player = NodePath("../..")
+
+[node name="JoggingState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_player", "animation_tree", "directional_reference", "player_model", "aim_state_machine", "idle_state", "walking_state", "controlled_player")]
+script = ExtResource("8_h5fvr")
+run_speed = 125.0
+animation_player = NodePath("../../PlayerModel/Model/AnimationPlayer")
+animation_tree = NodePath("../../PlayerModel/Model/AnimationTree")
+directional_reference = NodePath("../../CameraMount/Camera3D/Directional_Reference")
+player_model = NodePath("../../PlayerModel")
+aim_state_machine = NodePath("../../AimStateMachine")
+idle_state = NodePath("../IdleState")
+walking_state = NodePath("../WalkingState")
 controlled_player = NodePath("../..")
 
 [node name="AimStateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state", "target")]
 script = ExtResource("3_5cvyg")
-default_state = NodePath("RestingState")
+default_state = NodePath("RelaxedState")
 target = NodePath("..")
 
-[node name="AimingState" type="Node" parent="AimStateMachine" node_paths=PackedStringArray("camera", "player_model", "resting_state", "controlled_player")]
+[node name="AimingState" type="Node" parent="AimStateMachine" node_paths=PackedStringArray("camera", "player_model", "relaxed_state", "controlled_player")]
 script = ExtResource("8_iqcv1")
 camera = NodePath("../../CameraMount/Camera3D")
 player_model = NodePath("../../PlayerModel")
-resting_state = NodePath("../RestingState")
+relaxed_state = NodePath("../RelaxedState")
 controlled_player = NodePath("../..")
 
-[node name="RestingState" type="Node" parent="AimStateMachine" node_paths=PackedStringArray("player_model", "aiming_state", "controlled_player")]
+[node name="RelaxedState" type="Node" parent="AimStateMachine" node_paths=PackedStringArray("player_model", "aiming_state", "controlled_player")]
 script = ExtResource("9_d0et7")
 player_model = NodePath("../../PlayerModel")
 aiming_state = NodePath("../AimingState")
