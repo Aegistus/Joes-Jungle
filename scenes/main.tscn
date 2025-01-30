@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://assets/third_person_controller_assets-main/textures/grids/Green/texture_09.png" id="3_ipk4l"]
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://assets/third_person_controller_assets-main/textures/grids/Orange/texture_09.png" id="4_t2rb2"]
 [ext_resource type="PackedScene" uid="uid://bs0wmr63q1ofr" path="res://scenes/player.tscn" id="5_n4bl5"]
-[ext_resource type="PackedScene" uid="uid://cqkrsucbenoss" path="res://scenes/zombie.tscn" id="6_ptkpn"]
+[ext_resource type="PackedScene" uid="uid://g62ygu32m5ji" path="res://scenes/aim_reticle.tscn" id="6_nvaya"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -86,89 +86,5 @@ collision_mask = 3
 
 [node name="Player" parent="." instance=ExtResource("5_n4bl5")]
 
-[node name="Zombie" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.173, -0.0999991, -7.28688)
-
-[node name="Zombie2" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6613, -0.0999991, -4.63285)
-
-[node name="Zombie3" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7372, -0.0999991, -5.08114)
-
-[node name="Zombie4" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7404, -0.0999991, -2.96044)
-
-[node name="Zombie5" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1899, -0.0999991, -7.8243)
-
-[node name="Zombie6" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4182, -0.0999986, -4.47882)
-
-[node name="Zombie7" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.94384, -0.0999981, -17.9983)
-
-[node name="Zombie8" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7068, -0.0999981, -16.1003)
-
-[node name="Zombie9" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.72629, -0.0999981, -13.1602)
-
-[node name="Zombie10" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8312, -0.0999981, -13.8296)
-
-[node name="Zombie11" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5909, -0.0999981, -18.4554)
-
-[node name="Zombie12" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3016, -0.0999981, -10.3122)
-
-[node name="Zombie13" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8488, -0.0999976, -17.536)
-
-[node name="Zombie14" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.40793, -0.0999976, -11.4883)
-
-[node name="Zombie15" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29209, -0.0999976, -9.12787)
-
-[node name="Zombie16" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2033, -0.0999976, -6.9093)
-
-[node name="Zombie17" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.18424, -0.0999976, -10.7211)
-
-[node name="Zombie18" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9984, -0.0999976, -11.9741)
-
-[node name="Zombie19" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74585, -0.0999976, -13.0545)
-
-[node name="Zombie20" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9496, -0.0999976, -5.38108)
-
-[node name="Zombie21" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9885, -0.0999976, -9.106)
-
-[node name="Zombie22" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6504, -0.0999976, -11.9038)
-
-[node name="Zombie23" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8758, -0.0999976, -15.1756)
-
-[node name="Zombie24" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5178, -0.0999976, -14.5152)
-
-[node name="Zombie25" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9527, -0.0999976, -18.6807)
-
-[node name="Zombie26" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0291, -0.0999976, -9.6059)
-
-[node name="Zombie27" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41893, -0.0999976, -10.584)
-
-[node name="Zombie28" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.145, -0.0999986, -2.93603)
-
-[node name="Zombie29" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79313, -0.0999976, -7.70539)
+[node name="AimReticle" parent="." instance=ExtResource("6_nvaya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)

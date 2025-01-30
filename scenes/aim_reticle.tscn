@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://g62ygu32m5ji"]
+
+[ext_resource type="Script" path="res://scripts/aim_reticle.gd" id="1_q2hic"]
+[ext_resource type="Material" uid="uid://cel2sxlu2p8lc" path="res://materials/aim_reticle_material.tres" id="2_u6kt7"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_b7g3f"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_p5ygb"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_p8n0d"]
+
+[node name="AimReticle" type="Node3D"]
+script = ExtResource("1_q2hic")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.225, 0, 0, 0, 0.0740767, 0, 0, 0, 0.225, 0, 0, 0)
+mesh = SubResource("TorusMesh_b7g3f")
+surface_material_override/0 = ExtResource("2_u6kt7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.104625, 0, 0, 0, 0.644641, 0, 0, 0, 0.104625, 0, 0.694, 0)
+mesh = SubResource("CylinderMesh_p5ygb")
+skeleton = NodePath("../Base")
+surface_material_override/0 = ExtResource("2_u6kt7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0997692, 0, 0, 0, 0.0997692, 0, 0, 0, 0.0997692, 0, 1.479, 0)
+mesh = SubResource("SphereMesh_p8n0d")
+skeleton = NodePath("../Base")
+surface_material_override/0 = ExtResource("2_u6kt7")
