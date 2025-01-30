@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=18 format=3 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="PackedScene" uid="uid://d2vxq0xqxukxg" path="res://assets/player_model.glb" id="2_jbw75"]
@@ -7,6 +7,8 @@
 [ext_resource type="AnimationLibrary" uid="uid://wubbon5nyek1" path="res://assets/animations/Pistol Anim Pack.res" id="3_q8g1f"]
 [ext_resource type="Script" path="res://scripts/idle_state.gd" id="4_s0a0d"]
 [ext_resource type="Script" path="res://scripts/walking_state.gd" id="7_vgdlh"]
+[ext_resource type="Script" path="res://scripts/aiming_state.gd" id="8_iqcv1"]
+[ext_resource type="Script" path="res://scripts/resting_state.gd" id="9_d0et7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eakgp"]
 radius = 0.3
@@ -61,7 +63,6 @@ shape = SubResource("CapsuleShape3D_eakgp")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerModel/player_model"]
-active = false
 libraries = {
 "Pistol Anim Pack": ExtResource("3_q8g1f")
 }
@@ -95,9 +96,28 @@ animation_tree = NodePath("../../PlayerModel/player_model/AnimationTree")
 walking_state = NodePath("../WalkingState")
 controlled_player = NodePath("../..")
 
-[node name="WalkingState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_tree", "directional_reference", "idle_state", "controlled_player")]
+[node name="WalkingState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_tree", "animation_player", "directional_reference", "aim_state_machine", "rest_state", "idle_state", "controlled_player")]
 script = ExtResource("7_vgdlh")
 animation_tree = NodePath("../../PlayerModel/player_model/AnimationTree")
+animation_player = NodePath("../../PlayerModel/player_model/AnimationPlayer")
 directional_reference = NodePath("../../CameraMount/Camera3D/Directional_Reference")
+aim_state_machine = NodePath("../../AimStateMachine")
+rest_state = NodePath("../../AimStateMachine/RestingState")
 idle_state = NodePath("../IdleState")
+controlled_player = NodePath("../..")
+
+[node name="AimStateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state", "target")]
+script = ExtResource("3_5cvyg")
+default_state = NodePath("RestingState")
+target = NodePath("..")
+
+[node name="AimingState" type="Node" parent="AimStateMachine" node_paths=PackedStringArray("resting_state", "controlled_player")]
+script = ExtResource("8_iqcv1")
+resting_state = NodePath("../RestingState")
+controlled_player = NodePath("../..")
+
+[node name="RestingState" type="Node" parent="AimStateMachine" node_paths=PackedStringArray("player_model", "aiming_state", "controlled_player")]
+script = ExtResource("9_d0et7")
+player_model = NodePath("../../PlayerModel/player_model")
+aiming_state = NodePath("../AimingState")
 controlled_player = NodePath("../..")
