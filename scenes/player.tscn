@@ -41,9 +41,9 @@ blend_point_4/node = SubResource("AnimationNodeAnimation_iabis")
 blend_point_4/pos = Vector2(0, -1)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ascxi"]
-graph_offset = Vector2(-811.445, -92.6242)
+graph_offset = Vector2(-853.695, 5.91316)
 nodes/WalkSpeed/node = SubResource("AnimationNodeBlendSpace2D_smib0")
-nodes/WalkSpeed/position = Vector2(-300, 60)
+nodes/WalkSpeed/position = Vector2(-240, 140)
 node_connections = [&"output", 0, &"WalkSpeed"]
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("directional_reference", "player_model", "animation_player")]

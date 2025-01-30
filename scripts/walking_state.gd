@@ -21,8 +21,10 @@ func process_state_physics(delta):
 	target.	move_and_slide()
 	# Set animations
 	if aim_state_machine.current_state == rest_state:
-		animation_tree.set("parameters/WalkSpeed/blend_position", Vector2(0, 1))
+		animation_tree.active = false
+		animation_player.play("Pistol Anim Pack/Relaxed Walk Forward")
 	else:
+		animation_tree.active = true
 		var relative_dir = (player_model.basis * Vector3(direction.z, 0, direction.x)).normalized()
 		animation_tree.set("parameters/WalkSpeed/blend_position", Vector2(relative_dir.z, -relative_dir.x))
 
@@ -32,3 +34,6 @@ func check_transitions():
 		return idle_state
 	else:
 		return null
+
+func exit():
+	animation_tree.active = true
