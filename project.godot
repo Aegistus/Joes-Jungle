@@ -14,7 +14,7 @@ warnings/check_invalid_track_paths=false
 
 [application]
 
-config/name="godot-top-down-test"
+config/name="Joe's Jungle"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
