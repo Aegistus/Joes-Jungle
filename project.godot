@@ -68,3 +68,8 @@ shoot={
 [layer_names]
 
 3d_physics/layer_2="Ground"
+3d_physics/layer_3="ragdoll"
+
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
