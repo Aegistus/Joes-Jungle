@@ -1,4 +1,8 @@
-[gd_scene load_steps=23 format=4 uid="uid://bpdhjy3tvivvm"]
+[gd_scene load_steps=27 format=4 uid="uid://bpdhjy3tvivvm"]
+
+[ext_resource type="Script" path="res://scripts/pistol.gd" id="1_lvrt8"]
+[ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="2_gbh6g"]
+[ext_resource type="AudioStream" uid="uid://qn21imdsbvoc" path="res://assets/audio/Revolver Shot_01.wav" id="3_ncd2q"]
 
 [sub_resource type="Animation" id="Animation_30618"]
 length = 0.001
@@ -13,6 +17,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun model/MuzzleFlash:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gun model/MuzzleFlash2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_dtyrj"]
@@ -29,6 +57,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -0.368264), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun model/MuzzleFlash:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gun model/MuzzleFlash2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m1fgx"]
@@ -438,8 +490,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bbbak")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8vgvq"]
+random_pitch = 1.05
+random_volume_offset_db = 0.48
+streams_count = 1
+stream_0/stream = ExtResource("3_ncd2q")
+
 [node name="Pistol 92" type="Node3D"]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+script = ExtResource("1_lvrt8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -483,3 +542,15 @@ skeleton = NodePath("")
 transform = Transform3D(-4.6585e-07, 323.433, -2.95253e-07, -10.2606, -1.20865e-05, 0, 0, -9.63906e-06, 9.90704, -5.41973, 2.62088, -0.566382)
 collision_mask = 3
 collide_with_areas = true
+
+[node name="MuzzleFlash" type="Sprite3D" parent="gun model"]
+transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -7.37162, 2.47589, -0.492264)
+texture = ExtResource("2_gbh6g")
+
+[node name="MuzzleFlash2" type="Sprite3D" parent="gun model"]
+transform = Transform3D(-1, -8.9407e-08, 4.77396e-15, 0, 2.98023e-08, 1, -8.9407e-08, 1, -2.98023e-08, -7.37162, 2.47589, -0.492264)
+texture = ExtResource("2_gbh6g")
+
+[node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_8vgvq")
+bus = &"Sound Effects"

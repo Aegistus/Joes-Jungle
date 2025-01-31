@@ -11,7 +11,7 @@ extends CharacterBody3D
 @onready var pistol = $"PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/PistolHolder/Pistol 92"
 @onready var pistol_anim = pistol.get_node("AnimationPlayer") as AnimationPlayer
 @onready var raycast = pistol.get_node("gun model/RayCast3D") as RayCast3D
-@onready var gun_audio_player = $GunAudioPlayer
+@onready var pistol_92 = $"PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/PistolHolder/Pistol 92"
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -30,4 +30,4 @@ func _physics_process(delta):
 			print(collided.name)
 		if collided != null and collided.is_in_group("enemy"):
 			collided.hit(randi_range(min_damage, max_damage))
-		gun_audio_player.play()
+		pistol_92.shoot()
