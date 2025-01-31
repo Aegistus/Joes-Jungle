@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=16 format=3 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="1_wyvri"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://assets/third_person_controller_assets-main/textures/grids/Purple/texture_09.png" id="2_ppmh3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://assets/third_person_controller_assets-main/textures/grids/Orange/texture_09.png" id="4_t2rb2"]
 [ext_resource type="PackedScene" uid="uid://bs0wmr63q1ofr" path="res://scenes/player.tscn" id="5_n4bl5"]
 [ext_resource type="PackedScene" uid="uid://g62ygu32m5ji" path="res://scenes/aim_reticle.tscn" id="6_nvaya"]
+[ext_resource type="PackedScene" uid="uid://cqkrsucbenoss" path="res://scenes/zombie.tscn" id="6_ptkpn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -88,3 +89,15 @@ collision_mask = 3
 
 [node name="AimReticle" parent="." instance=ExtResource("6_nvaya")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Zombie" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.44771, -0.0999981, 0.519778)
+
+[node name="Zombie2" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.80441, -0.0999981, -4.87135)
+
+[node name="Zombie3" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.64809, -0.0999981, 3.16034)
+
+[node name="Zombie4" parent="." instance=ExtResource("6_ptkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.80141, -0.0999981, -6.99888)

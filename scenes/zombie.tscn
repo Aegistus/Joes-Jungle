@@ -1,19 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqkrsucbenoss"]
+[gd_scene load_steps=7 format=3 uid="uid://cqkrsucbenoss"]
 
 [ext_resource type="PackedScene" uid="uid://bhdkqkc5blvum" path="res://assets/zombie_model.glb" id="1_ia7bg"]
+[ext_resource type="Script" path="res://scripts/zombie.gd" id="1_rfrh3"]
 [ext_resource type="AnimationLibrary" uid="uid://v22hoxowxhme" path="res://assets/animations/Zombie Anims.res" id="2_2ujqx"]
 [ext_resource type="Script" path="res://scripts/zombie states/follow_state.gd" id="4_7fv2e"]
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="4_n34as"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_loc0m"]
 
-[node name="Zombie" type="CharacterBody3D"]
+[node name="Zombie" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource("1_rfrh3")
 
 [node name="zombie_model" parent="." instance=ExtResource("1_ia7bg")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748788, 0)
+transform = Transform3D(0.98, 0, 0, 0, 0.98, 0, 0, 0, 0.98, 0, 0.748788, 0)
 shape = SubResource("CapsuleShape3D_loc0m")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

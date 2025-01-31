@@ -30,6 +30,7 @@ movie_writer/movie_file="C:/Users/joeba/OneDrive/Documents/Game Dev/Godot/Projec
 [global_group]
 
 player=""
+enemy=""
 
 [input]
 
