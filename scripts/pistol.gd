@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var max_ammo = 10
+
 @onready var gun_audio_player = $GunAudioPlayer
 @onready var muzzle_flash = $"gun model/MuzzleFlash"
 @onready var muzzle_flash_2 = $"gun model/MuzzleFlash2"

@@ -11,6 +11,7 @@ extends PlayerState
 @export_category("Transition States")
 @export var idle_state: State
 @export var jogging_state: State
+@onready var reloading_state = $"../ReloadingState"
 
 func enter():
 	super()
@@ -29,6 +30,8 @@ func process_state_physics(delta):
 	animation_tree.set("parameters/WalkSpeed/blend_position", Vector2(relative_dir.z, -relative_dir.x))
 
 func check_transitions():
+	if Input.is_action_just_pressed("reload"):
+		return reloading_state
 	if aim_state_machine.current_state is RelaxedState:
 		return jogging_state
 	var input = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")

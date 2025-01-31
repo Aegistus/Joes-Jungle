@@ -9,6 +9,7 @@ extends PlayerState
 @export_group("Transition States")
 @export var walking_state: State
 @export var jogging_state: State
+@onready var reloading_state = $"../ReloadingState"
 
 func enter() -> void:
 	super()
@@ -31,5 +32,7 @@ func check_transitions():
 			return jogging_state
 		else:
 			return walking_state
+	elif Input.is_action_just_pressed("reload"):
+		return reloading_state
 	else:
 		return null
