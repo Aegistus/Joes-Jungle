@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpdhjy3tvivvm"]
+
+[ext_resource type="PackedScene" uid="uid://c76mmmp3ha1uv" path="res://assets/Pistol 92.fbx" id="1_lmpc3"]
+
+[sub_resource type="Animation" id="Animation_dtyrj"]
+resource_name = "shoot"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.368264), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_30618"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m1fgx"]
+_data = {
+"RESET": SubResource("Animation_30618"),
+"shoot": SubResource("Animation_dtyrj")
+}
+
+[node name="Pistol 92" instance=ExtResource("1_lmpc3")]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+
+[node name="Cube_004" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.525853, 1.33521, -0.495311)
+
+[node name="Cube_002" parent="." index="1"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.884878, -0.073051, -0.513555)
+
+[node name="Cube_001" parent="." index="2"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, -0.617934, 2.44737, -0.500642)
+
+[node name="Cube_000" parent="." index="3"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.525853, 1.33521, -0.495311)
+
+[node name="Cylinder_006" parent="." index="4"]
+transform = Transform3D(1.3411e-05, -2.01166e-05, -100, 225, 0, 8.9407e-06, 0, -225, 5.96046e-06, 0.705224, 2.35014, -0.513304)
+
+[node name="Cube_003" parent="." index="5"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 1.60641, 1.96072, -0.501835)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_m1fgx")
+}
