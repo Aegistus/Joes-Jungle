@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b58xv1joypxo5" path="res://assets/third_person_controller_assets-main/textures/grids/Orange/texture_09.png" id="4_t2rb2"]
 [ext_resource type="PackedScene" uid="uid://bs0wmr63q1ofr" path="res://scenes/player.tscn" id="5_n4bl5"]
 [ext_resource type="PackedScene" uid="uid://g62ygu32m5ji" path="res://scenes/aim_reticle.tscn" id="6_nvaya"]
-[ext_resource type="PackedScene" uid="uid://cqkrsucbenoss" path="res://scenes/zombie.tscn" id="6_ptkpn"]
+[ext_resource type="PackedScene" uid="uid://dlrj2ln8hxx6l" path="res://scenes/zombie_spawn_point.tscn" id="7_umd8c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -90,14 +90,17 @@ collision_mask = 3
 [node name="AimReticle" parent="." instance=ExtResource("6_nvaya")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 
-[node name="Zombie" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.44771, -0.0999981, 0.519778)
+[node name="Zombie Spawn Point" parent="." instance=ExtResource("7_umd8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.32618, -0.1, -1.39116)
 
-[node name="Zombie2" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.80441, -0.0999981, -4.87135)
+[node name="Zombie Spawn Point2" parent="." instance=ExtResource("7_umd8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.93991, -0.1, -5.57133)
 
-[node name="Zombie3" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.64809, -0.0999981, 3.16034)
+[node name="Zombie Spawn Point3" parent="." instance=ExtResource("7_umd8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0984278, -0.1, -7.9549)
 
-[node name="Zombie4" parent="." instance=ExtResource("6_ptkpn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.80141, -0.0999981, -6.99888)
+[node name="Zombie Spawn Point4" parent="." instance=ExtResource("7_umd8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0615, -0.1, 3.03848)
+
+[node name="Zombie Spawn Point5" parent="." instance=ExtResource("7_umd8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03334, -0.1, -6.62356)

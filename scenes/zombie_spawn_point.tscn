@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlrj2ln8hxx6l"]
+
+[ext_resource type="Script" path="res://scripts/zombie_spawn_point.gd" id="1_sw4ax"]
+
+[node name="Zombie Spawn Point" type="Node3D"]
+script = ExtResource("1_sw4ax")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="."]
+gizmo_extents = 1.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
