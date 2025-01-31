@@ -25,6 +25,14 @@ func process_state(delta):
 func process_state_physics(delta):
 	controlled_player.velocity.x = move_toward(controlled_player.velocity.x, 0, stopping_speed)
 	controlled_player.velocity.z = move_toward(controlled_player.velocity.z, 0, stopping_speed)
+	# handle shooting
+	if aim_state_machine.current_state is AimingState and Input.is_action_just_pressed("shoot"):
+		var collided = controlled_player.raycast.get_collider()
+		if collided != null:
+			print(collided.name)
+		if collided != null and collided.is_in_group("enemy"):
+			collided.hit(randi_range(controlled_player.min_damage, controlled_player.max_damage))
+		controlled_player.pistol_92.shoot()
 
 func check_transitions():
 	if Input.is_action_pressed("move_forward") or Input.is_action_pressed("move_backward") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):

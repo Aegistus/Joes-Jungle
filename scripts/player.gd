@@ -22,10 +22,3 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	if Input.is_action_just_pressed("shoot"):
-		var collided = raycast.get_collider()
-		if collided != null:
-			print(collided.name)
-		if collided != null and collided.is_in_group("enemy"):
-			collided.hit(randi_range(min_damage, max_damage))
-		pistol_92.shoot()
