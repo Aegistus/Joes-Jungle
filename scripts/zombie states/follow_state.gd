@@ -1,6 +1,8 @@
 class_name FollowState
 extends ZombieState
 
+@export var dead_state: State
+
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var nav_agent = $"../../NavigationAgent3D"
 @onready var animation_player = $"../../AnimationPlayer"
@@ -32,6 +34,12 @@ func process_state(delta):
 	zombie.look_at(Vector3(next_nav_point.x, zombie.position.y, next_nav_point.z))
 	
 	zombie.move_and_slide()
+
+func check_transitions():
+	if zombie.current_health <= 0:
+		return dead_state
+	else:
+		return null
 
 func exit():
 	animation_player.speed_scale = 1

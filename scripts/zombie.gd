@@ -1,11 +1,14 @@
+class_name Zombie
 extends CharacterBody3D
 
 @export var starting_health = 10
+@onready var ragdoll = $zombie_model/Armature/GeneralSkeleton/PhysicalBoneSimulator3D
 
 var current_health
 
 func _ready():
 	current_health = starting_health
+	ragdoll.physical_bones_stop_simulation()
 
 func hit(damage):
 	current_health -= damage
