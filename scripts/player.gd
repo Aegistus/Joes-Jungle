@@ -9,7 +9,6 @@ extends CharacterBody3D
 @export var animation_player: AnimationPlayer
 
 @onready var pistol = $"PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/PistolHolder/Pistol 92"
-@onready var pistol_anim = pistol.get_node("AnimationPlayer") as AnimationPlayer
 @onready var raycast = pistol.get_node("gun model/RayCast3D") as RayCast3D
 @onready var pistol_92 = $"PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/PistolHolder/Pistol 92"
 
@@ -24,7 +23,6 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	if Input.is_action_just_pressed("shoot"):
-		pistol_anim.play("shoot")
 		var collided = raycast.get_collider()
 		if collided != null:
 			print(collided.name)
