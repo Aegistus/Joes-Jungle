@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=23 format=3 uid="uid://br201tqu48j8s"]
 
+[ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_fari0"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="1_wyvri"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://assets/third_person_controller_assets-main/textures/grids/Purple/texture_09.png" id="2_ppmh3"]
 [ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://assets/third_person_controller_assets-main/textures/grids/Green/texture_09.png" id="3_ipk4l"]
@@ -51,6 +52,8 @@ uv1_triplanar = true
 albedo_texture = ExtResource("4_t2rb2")
 
 [node name="world" type="Node3D"]
+
+[node name="GameManager" parent="." instance=ExtResource("1_fari0")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
