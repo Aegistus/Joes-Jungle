@@ -1,8 +1,10 @@
 class_name FollowState
 extends ZombieState
 
+@export var attack_distance = 1.0
 @export var dead_state: State
 
+@onready var attack_state = $"../AttackState"
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var nav_agent = $"../../NavigationAgent3D"
 @onready var animation_player = $"../../AnimationPlayer"
@@ -38,6 +40,8 @@ func process_state(delta):
 func check_transitions():
 	if zombie.current_health <= 0:
 		return dead_state
+	elif zombie.global_position.distance_squared_to(player.global_position) < pow(attack_distance, 2.0):
+		return attack_state
 	else:
 		return null
 
