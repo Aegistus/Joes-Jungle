@@ -1,11 +1,13 @@
 class_name Player
 extends CharacterBody3D
 
+signal health_update(health, max_health)
+
 @export var min_damage = 3
 @export var max_damage = 6
 @export var turn_rate := 5.0
 @export var water_rate = 30.0
-@export var max_health = 10
+@export var max_health = 100
 @export var directional_reference: Node3D
 @export var player_model: Node3D
 @export var animation_player: AnimationPlayer
@@ -47,5 +49,7 @@ func _physics_process(delta):
 func take_damage(damage):
 	if current_health > 0:
 		current_health -= damage
+		current_health = clampf(current_health, 0, max_health)
+		health_update.emit(current_health, max_health)
 		if current_health <= 0:
 			GameManager.end_game()

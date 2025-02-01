@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=4 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="2_o32dr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_605kr"]
+bg_color = Color(2.40654e-07, 0.646853, 0.127014, 1)
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -58,3 +61,8 @@ theme_override_font_sizes/font_size = 18
 text = "00:00:00 "
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
+offset_right = 393.0
+offset_bottom = 27.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_605kr")
