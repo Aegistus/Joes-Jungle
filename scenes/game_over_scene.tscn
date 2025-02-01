@@ -1,0 +1,136 @@
+[gd_scene load_steps=12 format=3 uid="uid://c0xsejwsryc1c"]
+
+[ext_resource type="PackedScene" uid="uid://bhdkqkc5blvum" path="res://assets/zombie_model.glb" id="1_wsee1"]
+[ext_resource type="Script" path="res://scripts/twerking_zombie.gd" id="2_nokn7"]
+[ext_resource type="AnimationLibrary" uid="uid://dhmbvl65et877" path="res://assets/animations/Twerk Anim.res" id="2_q3kbg"]
+[ext_resource type="AudioStream" uid="uid://cnaxpxtwthb6f" path="res://assets/audio/Joes_Jungle.wav" id="4_788rr"]
+[ext_resource type="Script" path="res://scripts/main_menu_music.gd" id="5_ufryw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yyaic"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.5, 0.5, 0.5, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="Sky" id="Sky_a1auv"]
+sky_material = SubResource("ProceduralSkyMaterial_yyaic")
+
+[sub_resource type="Environment" id="Environment_eq101"]
+background_mode = 1
+sky = SubResource("Sky_a1auv")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdukf"]
+bg_color = Color(0.57, 0.57, 0.57, 0.478431)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cj353"]
+bg_color = Color(0.427451, 0.427451, 0.427451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wv25w"]
+bg_color = Color(0.427451, 0.427451, 0.427451, 1)
+
+[node name="GameOverScene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.330173, -0.375486, 0, -0.750966, 0.660341, -0.500003, 0.571871, 0.650354, -3.01056, -2.38419e-07, 4.27072)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_eq101")
+
+[node name="zombie_model" parent="." instance=ExtResource("1_wsee1")]
+transform = Transform3D(-1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, -1, 0, 0, 0)
+script = ExtResource("2_nokn7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="zombie_model"]
+libraries = {
+"Twerk Anim": ExtResource("2_q3kbg")
+}
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.855, 1.277, 2.198)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_788rr")
+autoplay = true
+script = ExtResource("5_ufryw")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 78.0
+offset_top = -171.0
+offset_right = 374.0
+offset_bottom = 175.0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wdukf")
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="UI/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_cj353")
+
+[node name="RestartButton" type="Button" parent="UI/CanvasLayer/VBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="UI/CanvasLayer/VBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 78.0
+offset_bottom = 128.0
+grow_horizontal = 2
+text = "Quit"
+
+[node name="Panel" type="Panel" parent="UI/CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -366.0
+offset_top = 47.0
+offset_right = -58.0
+offset_bottom = 98.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wv25w")
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Final Time: 00:00:00"
+vertical_alignment = 1

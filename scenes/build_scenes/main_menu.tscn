@@ -1,3 +1,364 @@
-[gd_scene format=3 uid="uid://bn6a8dl5ya46g"]
+[gd_scene load_steps=18 format=3 uid="uid://bn6a8dl5ya46g"]
 
-[node name="main_menu" type="Node3D"]
+[ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="1_v6ggs"]
+[ext_resource type="Material" uid="uid://odnvymp1mqhf" path="res://materials/grid_3.tres" id="2_ng336"]
+[ext_resource type="Material" uid="uid://p001di78373p" path="res://materials/grid_2.tres" id="3_i8ipt"]
+[ext_resource type="Material" uid="uid://btglo4s1fu73t" path="res://materials/grid_1.tres" id="4_etorg"]
+[ext_resource type="PackedScene" uid="uid://d2vxq0xqxukxg" path="res://assets/player_model.glb" id="5_dvejn"]
+[ext_resource type="AnimationLibrary" uid="uid://v22hoxowxhme" path="res://assets/animations/Zombie Anims.res" id="6_kvueg"]
+[ext_resource type="Script" path="res://scripts/MainMenuPlayer.gd" id="6_vqvsw"]
+[ext_resource type="PackedScene" uid="uid://bhdkqkc5blvum" path="res://assets/zombie_model.glb" id="7_sjvpo"]
+[ext_resource type="AnimationLibrary" uid="uid://draryw3phd0gf" path="res://assets/animations/Thriller Anims.res" id="8_nbejq"]
+[ext_resource type="Script" path="res://scripts/thriller_zombie.gd" id="8_xue38"]
+[ext_resource type="AudioStream" uid="uid://cnaxpxtwthb6f" path="res://assets/audio/Joes_Jungle.wav" id="11_o7yfk"]
+[ext_resource type="Script" path="res://scripts/main_menu_music.gd" id="12_r2v6h"]
+[ext_resource type="PackedScene" uid="uid://c76mmmp3ha1uv" path="res://assets/Pistol 92.fbx" id="13_r4d3j"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xxe1a"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_mqxia"]
+sky_material = SubResource("ProceduralSkyMaterial_xxe1a")
+
+[sub_resource type="Environment" id="Environment_0imun"]
+background_mode = 2
+sky = SubResource("Sky_mqxia")
+tonemap_mode = 2
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.726229, 0.752314, 0.793301, 1)
+fog_density = 0.002
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktku4"]
+albedo_texture = ExtResource("1_v6ggs")
+uv1_triplanar = true
+
+[node name="MainMenu" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0imun")
+
+[node name="map" type="Node3D" parent="."]
+
+[node name="floor" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+material_override = SubResource("StandardMaterial3D_ktku4")
+use_collision = true
+collision_layer = 2
+collision_mask = 3
+size = Vector3(1000, 1, 1000)
+
+[node name="box2" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.693829, 0, -0.72014, 0, 1, 0, 0.72014, 0, 0.693829, -19.6975, 0.4, -6.66093)
+material_override = ExtResource("2_ng336")
+use_collision = true
+collision_mask = 3
+
+[node name="box" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.693829, 0, -0.72014, 0, 1, 0, 0.72014, 0, 0.693829, -14.8785, 0.4, -18.5942)
+material_override = ExtResource("2_ng336")
+use_collision = true
+collision_mask = 3
+
+[node name="wall2" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.115012, 0, 0.996867, 0, 0.919, 0, -1.44944, 0, 0.0791035, -18.4325, 0.673605, 1.19191)
+material_override = ExtResource("3_i8ipt")
+use_collision = true
+collision_mask = 3
+size = Vector3(1.5, 1.75, 3.75)
+
+[node name="wall23" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.115012, 0, 0.996867, 0, 0.919, 0, -1.44944, 0, 0.0791035, -5.38715, 0.673605, -17.8282)
+material_override = ExtResource("3_i8ipt")
+use_collision = true
+collision_mask = 3
+size = Vector3(1.5, 1.75, 3.75)
+
+[node name="wall3" type="CSGBox3D" parent="map"]
+transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -3.99937, 0.904928, 0.00278687)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 7.5)
+
+[node name="wall4" type="CSGBox3D" parent="map"]
+transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -4.00531, 0.906236, -8.99721)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 7.5)
+
+[node name="wall5" type="CSGBox3D" parent="map"]
+transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -11.625, 0.908813, 4.00504)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 29.5)
+
+[node name="wall16" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -26.1351, 0.920183, -11.2354)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 30)
+
+[node name="wall19" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.000660297, 0.000631304, -1, -0.000145397, 1, 0.000631206, 1, 0.00014497, 0.000660387, -11.5197, 0.913078, -25.87)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 28.5)
+
+[node name="wall6" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, 2.99397, 0.902327, -11.125)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 30)
+
+[node name="wall7" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -12.0023, 0.910632, -4.49193)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 11.5)
+
+[node name="wall17" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -22.2543, 0.917538, -7.48516)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 5.5)
+
+[node name="wall18" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -22.2489, 0.916339, 0.76484)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 6)
+
+[node name="wall8" type="CSGBox3D" parent="map"]
+transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -2.5, 0.906, -13)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 5.5)
+
+[node name="wall20" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -0.0015683, 0.905345, -18.125)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 10)
+
+[node name="wall21" type="CSGBox3D" parent="map"]
+transform = Transform3D(0.000660297, 0.000631304, -1, -0.000145397, 1, 0.000631206, 1, 0.00014497, 0.000660387, -5.5047, 0.909508, -22.8714)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 10.5)
+
+[node name="wall22" type="CSGBox3D" parent="map"]
+transform = Transform3D(-1, 0.000631304, -0.000660251, 0.000631198, 1, 0.000145384, 0.000660345, 0.00014497, -1, -11.0016, 0.912288, -18.1177)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 10)
+
+[node name="wall9" type="CSGBox3D" parent="map"]
+transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -13.5079, 0.912814, -12.9909)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 11.5)
+
+[node name="wall24" type="CSGBox3D" parent="map"]
+transform = Transform3D(-1, 0.000631304, -0.000660426, 0.000631198, 1, 0.000145384, 0.00066052, 0.00014497, -1, -19.0147, 0.917776, -23.2373)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 5)
+
+[node name="wall26" type="CSGBox3D" parent="map"]
+transform = Transform3D(-1, 0.000631304, -0.000660426, 0.000631198, 1, 0.000145384, 0.00066052, 0.00014497, -1, -22.0149, 0.919706, -23.4853)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 1.5)
+
+[node name="wall27" type="CSGBox3D" parent="map"]
+transform = Transform3D(-1, 0.000631304, -0.000660426, 0.000631198, 1, 0.000145384, 0.00066052, 0.00014497, -1, -22.0129, 0.91927, -20.4853)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 1.5)
+
+[node name="wall28" type="CSGBox3D" parent="map"]
+transform = Transform3D(-1, 0.000631304, -0.000660426, 0.000631198, 1, 0.000145384, 0.00066052, 0.00014497, -1, -22.0109, 0.918834, -17.4853)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 1.5)
+
+[node name="wall29" type="CSGBox3D" parent="map"]
+transform = Transform3D(-1, 0.000631304, -0.000660426, 0.000631198, 1, 0.000145384, 0.00066052, 0.00014497, -1, -22.0089, 0.918398, -14.4853)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 1.5)
+
+[node name="wall30" type="CSGBox3D" parent="map"]
+transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -24.8836, 0.92014, -13.9834)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 2.25)
+
+[node name="wall25" type="CSGBox3D" parent="map"]
+transform = Transform3D(-1, 0.000631304, -0.000660426, 0.000631198, 1, 0.000145384, 0.00066052, 0.00014497, -1, -19.0098, 0.916686, -15.7373)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 5)
+
+[node name="wall14" type="CSGBox3D" parent="map"]
+transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -14.256, 0.912852, -9.99044)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 4)
+
+[node name="wall15" type="CSGBox3D" parent="map"]
+transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -20.381, 0.916718, -9.9864)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 3.25)
+
+[node name="wall10" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -0.000277191, 0.902603, -1.37486)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 3.25)
+
+[node name="wall11" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -0.00440437, 0.903512, -7.62485)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 3.25)
+
+[node name="wall12" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -8.00027, 0.907653, -1.36957)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 3.25)
+
+[node name="wall13" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -8.0044, 0.908561, -7.61957)
+material_override = ExtResource("4_etorg")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.499939, 2, 3.25)
+
+[node name="Trees" type="Node3D" parent="map"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.163087, 0.148056, 0.975439, 0.7624, 0.608616, -0.219846, -0.626218, 0.779529, -0.0136206, -0.231925, 0, -4.132)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI"]
+
+[node name="Panel" type="Panel" parent="UI/CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.0
+offset_top = 60.0
+offset_right = 213.0
+offset_bottom = 195.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Joe's Jungle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuPlayer" parent="." instance=ExtResource("5_dvejn")]
+transform = Transform3D(0.108919, 0, -0.994051, 0, 1, 0, 0.994051, 0, 0.108919, -2.35662, -0.1, -2.75196)
+script = ExtResource("6_vqvsw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainMenuPlayer"]
+libraries = {
+"Zombie Anims": ExtResource("6_kvueg")
+}
+
+[node name="ThrillerZombie" parent="." instance=ExtResource("7_sjvpo")]
+transform = Transform3D(0.02349, 0, 0.999724, 0, 1, 0, -0.999724, 0, 0.02349, -6.87362, -0.1, -5.28577)
+script = ExtResource("8_xue38")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ThrillerZombie"]
+libraries = {
+"Thriller Anims": ExtResource("8_nbejq")
+}
+
+[node name="ThrillerZombie2" parent="." instance=ExtResource("7_sjvpo")]
+transform = Transform3D(0.02349, 0, 0.999724, 0, 1, 0, -0.999724, 0, 0.02349, -6.87362, -0.1, -3.99567)
+script = ExtResource("8_xue38")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ThrillerZombie2"]
+libraries = {
+"Thriller Anims": ExtResource("8_nbejq")
+}
+
+[node name="ThrillerZombie3" parent="." instance=ExtResource("7_sjvpo")]
+transform = Transform3D(0.02349, 0, 0.999724, 0, 1, 0, -0.999724, 0, 0.02349, -6.87362, -0.1, -2.57426)
+script = ExtResource("8_xue38")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ThrillerZombie3"]
+libraries = {
+"Thriller Anims": ExtResource("8_nbejq")
+}
+
+[node name="ThrillerZombie4" parent="." instance=ExtResource("7_sjvpo")]
+transform = Transform3D(0.02349, 0, 0.999724, 0, 1, 0, -0.999724, 0, 0.02349, -6.87362, -0.1, -6.64869)
+script = ExtResource("8_xue38")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ThrillerZombie4"]
+libraries = {
+"Thriller Anims": ExtResource("8_nbejq")
+}
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_o7yfk")
+autoplay = true
+bus = &"Music"
+script = ExtResource("12_r2v6h")
+
+[node name="Pistol 92" parent="." instance=ExtResource("13_r4d3j")]
+transform = Transform3D(-0.0357236, 0.0349551, 0.00140211, 0, -0.00200397, 0.0499598, 0.0349832, 0.0356949, 0.00143178, -0.822991, -0.0496777, -4.23899)
+
+[connection signal="animation_finished" from="ThrillerZombie/AnimationPlayer" to="ThrillerZombie" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="ThrillerZombie2/AnimationPlayer" to="ThrillerZombie2" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="ThrillerZombie3/AnimationPlayer" to="ThrillerZombie3" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="ThrillerZombie4/AnimationPlayer" to="ThrillerZombie4" method="_on_animation_player_animation_finished"]
