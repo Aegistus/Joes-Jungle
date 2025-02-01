@@ -285,22 +285,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 
 [node name="Zombie Spawn Point" parent="." instance=ExtResource("8_7j2o3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3769, -0.1, 2.25152)
+spawn_delay = 20.0
+
+[node name="Zombie Spawn Point5" parent="." instance=ExtResource("8_7j2o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3769, -0.1, -11.4985)
+spawn_delay = 20.0
+
+[node name="Zombie Spawn Point6" parent="." instance=ExtResource("8_7j2o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8731, -0.1, -21.2485)
+spawn_delay = 20.0
+
+[node name="Zombie Spawn Point7" parent="." instance=ExtResource("8_7j2o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8731, -0.1, -11.9985)
+spawn_delay = 20.0
 
 [node name="Zombie Spawn Point2" parent="." instance=ExtResource("8_7j2o3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64014, -0.1, -25.2702)
+spawn_delay = 20.0
 
 [node name="Zombie Spawn Point3" parent="." instance=ExtResource("8_7j2o3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6099, -0.1, 1.9798)
+spawn_delay = 20.0
 
 [node name="Zombie Spawn Point4" parent="." instance=ExtResource("8_7j2o3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1099, -0.1, -24.5202)
+spawn_delay = 20.0
 
 [node name="WateringBush" parent="." instance=ExtResource("13_yxl1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.36292, -0.1, -4.6756)
 water_loss_rate = 1.0
 
 [node name="WateringBush2" parent="." instance=ExtResource("13_yxl1k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.86292, -0.1, -7.6756)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8629, -0.1, -4.9256)
+water_loss_rate = 1.0
+
+[node name="WateringBush3" parent="." instance=ExtResource("13_yxl1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3629, -0.1, -22.6756)
 water_loss_rate = 1.0
 
 [node name="PlayerUI" parent="." instance=ExtResource("14_f7yqe")]

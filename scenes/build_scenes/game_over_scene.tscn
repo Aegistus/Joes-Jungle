@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0xsejwsryc1c"]
+[gd_scene load_steps=13 format=3 uid="uid://c0xsejwsryc1c"]
 
-[ext_resource type="PackedScene" uid="uid://bhdkqkc5blvum" path="res://assets/zombie_model.glb" id="1_wsee1"]
-[ext_resource type="Script" path="res://scripts/twerking_zombie.gd" id="2_nokn7"]
-[ext_resource type="AnimationLibrary" uid="uid://dhmbvl65et877" path="res://assets/animations/Twerk Anim.res" id="2_q3kbg"]
-[ext_resource type="AudioStream" uid="uid://cnaxpxtwthb6f" path="res://assets/audio/Joes_Jungle.wav" id="4_788rr"]
-[ext_resource type="Script" path="res://scripts/main_menu_music.gd" id="5_ufryw"]
+[ext_resource type="Script" path="res://scripts/game_over_scene.gd" id="1_h1xpj"]
+[ext_resource type="PackedScene" uid="uid://bhdkqkc5blvum" path="res://assets/zombie_model.glb" id="2_bb7yy"]
+[ext_resource type="Script" path="res://scripts/twerking_zombie.gd" id="3_cnapa"]
+[ext_resource type="AnimationLibrary" uid="uid://dhmbvl65et877" path="res://assets/animations/Twerk Anim.res" id="4_fc7ub"]
+[ext_resource type="AudioStream" uid="uid://cnaxpxtwthb6f" path="res://assets/audio/Joes_Jungle.wav" id="5_f0m6c"]
+[ext_resource type="Script" path="res://scripts/main_menu_music.gd" id="6_cexc7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yyaic"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -31,6 +32,7 @@ bg_color = Color(0.427451, 0.427451, 0.427451, 1)
 bg_color = Color(0.427451, 0.427451, 0.427451, 1)
 
 [node name="GameOverScene" type="Node3D"]
+script = ExtResource("1_h1xpj")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.330173, -0.375486, 0, -0.750966, 0.660341, -0.500003, 0.571871, 0.650354, -3.01056, -2.38419e-07, 4.27072)
@@ -39,22 +41,22 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_eq101")
 
-[node name="zombie_model" parent="." instance=ExtResource("1_wsee1")]
+[node name="zombie_model" parent="." instance=ExtResource("2_bb7yy")]
 transform = Transform3D(-1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, -1, 0, 0, 0)
-script = ExtResource("2_nokn7")
+script = ExtResource("3_cnapa")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="zombie_model"]
 libraries = {
-"Twerk Anim": ExtResource("2_q3kbg")
+"Twerk Anim": ExtResource("4_fc7ub")
 }
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.855, 1.277, 2.198)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_788rr")
+stream = ExtResource("5_f0m6c")
 autoplay = true
-script = ExtResource("5_ufryw")
+script = ExtResource("6_cexc7")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -104,14 +106,14 @@ offset_bottom = 50.0
 grow_horizontal = 2
 text = "Restart"
 
-[node name="QuitButton" type="Button" parent="UI/CanvasLayer/VBoxContainer/Panel2"]
+[node name="MainMenuButton" type="Button" parent="UI/CanvasLayer/VBoxContainer/Panel2"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 78.0
 offset_bottom = 128.0
 grow_horizontal = 2
-text = "Quit"
+text = "Main Menu"
 
 [node name="Panel" type="Panel" parent="UI/CanvasLayer"]
 anchors_preset = 1
@@ -134,3 +136,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Final Time: 00:00:00"
 vertical_alignment = 1
+
+[connection signal="pressed" from="UI/CanvasLayer/VBoxContainer/Panel2/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/VBoxContainer/Panel2/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

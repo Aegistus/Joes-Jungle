@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://bn6a8dl5ya46g"]
+[gd_scene load_steps=19 format=3 uid="uid://bn6a8dl5ya46g"]
 
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_r7pwv"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="1_v6ggs"]
 [ext_resource type="Material" uid="uid://odnvymp1mqhf" path="res://materials/grid_3.tres" id="2_ng336"]
 [ext_resource type="Material" uid="uid://p001di78373p" path="res://materials/grid_2.tres" id="3_i8ipt"]
@@ -36,6 +37,7 @@ albedo_texture = ExtResource("1_v6ggs")
 uv1_triplanar = true
 
 [node name="MainMenu" type="Node3D"]
+script = ExtResource("1_r7pwv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -377,6 +379,8 @@ script = ExtResource("12_r2v6h")
 [node name="Pistol 92" parent="." instance=ExtResource("13_r4d3j")]
 transform = Transform3D(-0.0357236, 0.0349551, 0.00140211, 0, -0.00200397, 0.0499598, 0.0349832, 0.0356949, 0.00143178, -0.822991, -0.0496777, -4.23899)
 
+[connection signal="pressed" from="UI/CanvasLayer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="animation_finished" from="ThrillerZombie/AnimationPlayer" to="ThrillerZombie" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="ThrillerZombie2/AnimationPlayer" to="ThrillerZombie2" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="ThrillerZombie3/AnimationPlayer" to="ThrillerZombie3" method="_on_animation_player_animation_finished"]
