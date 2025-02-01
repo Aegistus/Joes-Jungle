@@ -304,6 +304,25 @@ text = "Joe's Jungle"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 123.0
+offset_top = -240.0
+offset_right = 374.0
+offset_bottom = -151.0
+grow_vertical = 0
+
+[node name="StartGameButton" type="Button" parent="UI/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="QuitButton" type="Button" parent="UI/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Quit
+ (like a lil baby)"
+
 [node name="MainMenuPlayer" parent="." instance=ExtResource("5_dvejn")]
 transform = Transform3D(0.108919, 0, -0.994051, 0, 1, 0, 0.994051, 0, 0.108919, -2.35662, -0.1, -2.75196)
 script = ExtResource("6_vqvsw")
