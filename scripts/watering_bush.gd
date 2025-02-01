@@ -21,3 +21,6 @@ func _process(delta):
 		if current_water <= 0:
 			current_water = 0
 			print("You lost")
+
+func water(amount):
+	current_water += amount

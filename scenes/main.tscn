@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=22 format=3 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="1_wyvri"]
 [ext_resource type="Texture2D" uid="uid://cm5m7nr7dugjd" path="res://assets/third_person_controller_assets-main/textures/grids/Purple/texture_09.png" id="2_ppmh3"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="10_wiu08"]
 [ext_resource type="PackedScene" uid="uid://ddhplb0t3aute" path="res://scenes/scenery/palm_tree_04.tscn" id="11_6ebuo"]
 [ext_resource type="PackedScene" uid="uid://cwp0spuqeu7jj" path="res://scenes/scenery/watering_bush.tscn" id="12_m25bf"]
+[ext_resource type="PackedScene" uid="uid://c4p6ldvfdioho" path="res://scenes/player_ui.tscn" id="13_alwq8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -124,3 +125,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7124, -0.1, -3.385)
 
 [node name="WateringBush" parent="." instance=ExtResource("12_m25bf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61292, -0.1, 2.0744)
+
+[node name="PlayerUI" parent="." instance=ExtResource("13_alwq8")]

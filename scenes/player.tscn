@@ -809,6 +809,9 @@ tree_root = SubResource("AnimationNodeBlendTree_ascxi")
 anim_player = NodePath("../AnimationPlayer")
 parameters/WalkSpeed/blend_position = Vector2(-0.000644743, 0.01227)
 
+[node name="InteractRaycast" type="RayCast3D" parent="PlayerModel"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, -0.46)
+
 [node name="CameraMount" type="Node3D" parent="." node_paths=PackedStringArray("player", "directional_reference")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
 script = ExtResource("2_mupqo")
