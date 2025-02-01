@@ -31,7 +31,8 @@ func _physics_process(delta):
 	if plant != null:
 		if plant.is_in_group("plant"):
 			print("plant found")
-			current_plant = plant.get_node("../../WateringBush") as WateringBush
+			current_plant = plant.get_parent() as WateringBush
+			print(current_plant.name)
 	else:
 		current_plant = null
 	
