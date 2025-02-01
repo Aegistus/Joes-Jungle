@@ -540,7 +540,7 @@ mesh = SubResource("ArrayMesh_6e8p6")
 skeleton = NodePath("")
 
 [node name="RayCast3D" type="RayCast3D" parent="gun model"]
-transform = Transform3D(-4.6585e-07, 323.433, -2.95253e-07, -10.2606, -1.20865e-05, 0, 0, -9.63906e-06, 9.90704, -5.41973, 2.62088, -0.566382)
+transform = Transform3D(-4.6585e-07, 323.433, -2.95253e-07, -10.2606, -1.20865e-05, 0, 0, -9.63906e-06, 9.90704, -1.17449, 2.62088, -0.566382)
 collision_mask = 3
 collide_with_areas = true
 

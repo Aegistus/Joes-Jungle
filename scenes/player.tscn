@@ -789,7 +789,7 @@ mesh = SubResource("ArrayMesh_flhun")
 skin = SubResource("Skin_ongte")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(-0.529142, 0.131469, 0.838287, 0.606365, 0.749668, 0.265178, -0.593574, 0.648624, -0.476399, -0.210666, 1.35442, 0.227243)
+transform = Transform3D(-0.529144, 0.13147, 0.838285, 0.606364, 0.749669, 0.265179, -0.593573, 0.648624, -0.476401, -0.210666, 1.35442, 0.227243)
 bone_name = "RightHand"
 bone_idx = 34
 
@@ -820,7 +820,7 @@ player = NodePath("..")
 directional_reference = NodePath("Camera3D/Directional_Reference")
 
 [node name="Camera3D" type="Camera3D" parent="CameraMount" groups=["camera"]]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 5)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866026, 0, -0.866026, 0.5, 0, 10, 5)
 
 [node name="Directional_Reference" type="Node3D" parent="CameraMount/Camera3D"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.53553, 5, 3.53553)

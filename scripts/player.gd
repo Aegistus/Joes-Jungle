@@ -1,8 +1,6 @@
 class_name Player
 extends CharacterBody3D
 
-signal on_plant_found
-
 @export var min_damage = 3
 @export var max_damage = 6
 @export var turn_rate := 5.0
@@ -30,10 +28,10 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 	
 	var plant = interact_raycast.get_collider()
-	if plant != null and plant != current_plant && plant.is_in_group("plant"):
-		#print("plant found")
-		on_plant_found.emit()
-		current_plant = plant.get_node("../../WateringBush") as WateringBush
+	if plant != null:
+		if plant.is_in_group("plant"):
+			print("plant found")
+			current_plant = plant.get_node("../../WateringBush") as WateringBush
 	else:
 		current_plant = null
 	

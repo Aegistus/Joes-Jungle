@@ -23,6 +23,7 @@ func _process(delta):
 			print("You lost")
 
 func water(amount):
-	current_water += amount
-	if !watering_sound.playing:
-		watering_sound.play()
+	if current_water < max_water:
+		current_water += amount
+		if !watering_sound.playing:
+			watering_sound.play()
