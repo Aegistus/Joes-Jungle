@@ -9,6 +9,7 @@ var current_ammo: int:
 		on_ammo_count_change.emit(current_ammo)
 
 @onready var gun_audio_player = $GunAudioPlayer
+@onready var dry_shot_audio_player = $DryShotAudioPlayer
 @onready var muzzle_flash = $"gun model/MuzzleFlash"
 @onready var muzzle_flash_2 = $"gun model/MuzzleFlash2"
 @onready var animation_player = $AnimationPlayer
@@ -30,6 +31,7 @@ func shoot() -> bool:
 			return true
 		else:
 			# play dead mans click
+			dry_shot_audio_player.play()
 			return false
 	else:
 		return false
