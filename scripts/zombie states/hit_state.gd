@@ -3,6 +3,7 @@ extends ZombieState
 
 @onready var animation_player = $"../../AnimationPlayer"
 @onready var follow_state = $"../FollowState"
+@onready var dead_state = $"../DeadState"
 
 var animation_done = false
 
@@ -18,6 +19,8 @@ func enter():
 	animation_player.animation_finished.connect(func(anim_name): animation_done = true)
 
 func check_transitions():
+	if zombie.current_health <= 0:
+		return dead_state
 	if animation_done:
 		return follow_state
 	else:
