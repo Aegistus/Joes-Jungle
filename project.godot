@@ -38,6 +38,8 @@ player=""
 enemy=""
 camera=""
 plant=""
+hitbox=""
+hurtbox=""
 
 [input]
 
@@ -86,6 +88,8 @@ interact={
 
 3d_physics/layer_2="Ground"
 3d_physics/layer_3="ragdoll"
+3d_physics/layer_4="hitbox"
+3d_physics/layer_5="hurtbox"
 
 [physics]
 

@@ -20,7 +20,7 @@ func _process(delta):
 		current_water -= water_loss_rate * delta
 		if current_water <= 0:
 			current_water = 0
-			print("You lost")
+			GameManager.end_game()
 
 func water(amount):
 	if current_water < max_water:
