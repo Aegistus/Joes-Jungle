@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwp0spuqeu7jj"]
+[gd_scene load_steps=11 format=3 uid="uid://cwp0spuqeu7jj"]
 
 [ext_resource type="PackedScene" uid="uid://bp8dysnl8lnrb" path="res://assets/models/SM_Env_PalmBush_03.fbx" id="1_jo5n8"]
 [ext_resource type="Script" path="res://scripts/watering_bush.gd" id="2_r8aun"]
 [ext_resource type="PackedScene" uid="uid://dsdldfkq75yyj" path="res://scenes/water_bar.tscn" id="3_pmvla"]
 [ext_resource type="Script" path="res://scripts/look_at_camera.gd" id="4_cf3ao"]
+[ext_resource type="AudioStream" uid="uid://dhinc3at78cb5" path="res://assets/audio/Water 1.wav" id="5_78vi6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ghwf4"]
 albedo_color = Color(0, 1, 0.133333, 1)
@@ -53,3 +54,6 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" groups=["plant"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02498, 0)
 shape = SubResource("CylinderShape3D_vdwn7")
+
+[node name="WateringSound" type="AudioStreamPlayer3D" parent="." index="5"]
+stream = ExtResource("5_78vi6")

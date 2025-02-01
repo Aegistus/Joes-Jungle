@@ -788,7 +788,7 @@ mesh = SubResource("ArrayMesh_flhun")
 skin = SubResource("Skin_ongte")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(-0.101822, 0.0273611, 0.994426, 0.989731, 0.103592, 0.0984909, -0.10032, 0.994243, -0.037628, -0.152832, 1.33109, 0.202266)
+transform = Transform3D(-0.101822, 0.0273644, 0.994426, 0.989731, 0.103593, 0.0984908, -0.10032, 0.994243, -0.0376316, -0.152831, 1.33109, 0.202265)
 bone_name = "RightHand"
 bone_idx = 34
 

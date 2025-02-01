@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhinc3at78cb5"
+path="res://.godot/imported/Water 1.wav-a1b70da8d7de5039a0d24e948cfcd14e.sample"
+
+[deps]
+
+source_file="res://assets/audio/Water 1.wav"
+dest_files=["res://.godot/imported/Water 1.wav-a1b70da8d7de5039a0d24e948cfcd14e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
