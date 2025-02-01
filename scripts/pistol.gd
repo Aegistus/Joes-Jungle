@@ -1,6 +1,12 @@
 extends Node3D
 
+signal on_ammo_count_change(ammo)
+
 @export var max_ammo = 10
+var current_ammo: int:
+	set(value):
+		current_ammo = value
+		on_ammo_count_change.emit(current_ammo)
 
 @onready var gun_audio_player = $GunAudioPlayer
 @onready var muzzle_flash = $"gun model/MuzzleFlash"
@@ -12,16 +18,24 @@ var can_shoot = true
 func _ready():
 	muzzle_flash.visible = false
 	muzzle_flash_2.visible = false
+	current_ammo = max_ammo
 
 func shoot() -> bool:
 	if can_shoot:
-		animation_player.play("shoot")
-		gun_audio_player.play()
-		can_shoot = false
-		return true
+		if current_ammo > 0:
+			animation_player.play("shoot")
+			gun_audio_player.play()
+			can_shoot = false
+			current_ammo -= 1
+			return true
+		else:
+			# play dead mans click
+			return false
 	else:
 		return false
 
+func reload():
+	current_ammo = max_ammo
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "shoot":

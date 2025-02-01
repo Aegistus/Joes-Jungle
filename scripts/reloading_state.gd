@@ -16,6 +16,7 @@ func enter():
 
 func check_transitions():
 	if done_reloading:
+		controlled_player.pistol_92.reload()
 		return idle_state
 	else:
 		return null
