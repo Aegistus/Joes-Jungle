@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwp0spuqeu7jj"]
+
+[ext_resource type="PackedScene" uid="uid://bp8dysnl8lnrb" path="res://assets/models/SM_Env_PalmBush_03.fbx" id="1_jo5n8"]
+[ext_resource type="Script" path="res://scripts/watering_bush.gd" id="2_r8aun"]
+[ext_resource type="PackedScene" uid="uid://dsdldfkq75yyj" path="res://scenes/water_bar.tscn" id="3_pmvla"]
+[ext_resource type="Script" path="res://scripts/look_at_camera.gd" id="4_cf3ao"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_swfeb"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c1dl"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_swfeb")
+
+[sub_resource type="QuadMesh" id="QuadMesh_unt8k"]
+
+[node name="WateringBush" instance=ExtResource("1_jo5n8")]
+script = ExtResource("2_r8aun")
+
+[node name="SM_Env_PalmBush_03" parent="." index="0"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+
+[node name="SubViewport" type="SubViewport" parent="." index="2"]
+size = Vector2i(2048, 256)
+
+[node name="WateringBush" parent="SubViewport" index="0" instance=ExtResource("3_pmvla")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasHolder" type="Node3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08987, 0)
+script = ExtResource("4_cf3ao")
+
+[node name="WorldSpaceCanvas" type="MeshInstance3D" parent="CanvasHolder" index="0"]
+transform = Transform3D(-2, 0, -4.37114e-08, 0, 0.25, 0, 1.74846e-07, 0, -0.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_2c1dl")
+mesh = SubResource("QuadMesh_unt8k")
+skeleton = NodePath("../..")

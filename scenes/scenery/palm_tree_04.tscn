@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddhplb0t3aute"]
+
+[ext_resource type="PackedScene" uid="uid://b47i6ygk6enaq" path="res://assets/models/SM_Env_PalmTree_04.fbx" id="1_odmn8"]
+
+[node name="PalmTree_04" instance=ExtResource("1_odmn8")]
+
+[node name="SM_Env_PalmTree_04" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)

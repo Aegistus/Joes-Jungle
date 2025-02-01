@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsdldfkq75yyj"]
+
+[ext_resource type="Script" path="res://scripts/water_bar.gd" id="1_s3hc2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ms56"]
+bg_color = Color(2.88785e-06, 0.646676, 0.908603, 1)
+
+[node name="WaterBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 279.0
+offset_bottom = 40.0
+script = ExtResource("1_s3hc2")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_8ms56")
+value = 23.65
+show_percentage = false

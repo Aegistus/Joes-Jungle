@@ -815,7 +815,7 @@ script = ExtResource("2_mupqo")
 player = NodePath("..")
 directional_reference = NodePath("Camera3D/Directional_Reference")
 
-[node name="Camera3D" type="Camera3D" parent="CameraMount"]
+[node name="Camera3D" type="Camera3D" parent="CameraMount" groups=["camera"]]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 5)
 
 [node name="Directional_Reference" type="Node3D" parent="CameraMount/Camera3D"]

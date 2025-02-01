@@ -11,9 +11,6 @@ extends PlayerState
 @export var jogging_state: State
 @onready var reloading_state = $"../ReloadingState"
 
-func enter() -> void:
-	super()
-
 func process_state(delta):
 	if aim_state_machine.current_state is AimingState:
 		animation_tree.active = true
