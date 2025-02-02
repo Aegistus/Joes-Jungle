@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://btknjokefyjqr"]
+[gd_scene load_steps=3 format=3 uid="uid://btknjokefyjqr"]
 
 [ext_resource type="PackedScene" uid="uid://c3ks2fm40saa4" path="res://assets/models/SM_Env_PalmTree_03.fbx" id="1_hbhsh"]
+[ext_resource type="Material" uid="uid://clj8od07w7lfo" path="res://materials/palm_tree.tres" id="2_wbj8x"]
 
 [node name="PalmTree_03" instance=ExtResource("1_hbhsh")]
 
 [node name="SM_Env_PalmTree_03" parent="." index="0"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = ExtResource("2_wbj8x")

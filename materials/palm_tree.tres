@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://clj8od07w7lfo"]
+
+[ext_resource type="Texture2D" uid="uid://djg8y25y06h5n" path="res://assets/third_person_controller_assets-main/textures/grids/Green/texture_09.png" id="1_enqfv"]
+
+[resource]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.701961)
+albedo_texture = ExtResource("1_enqfv")
+uv1_triplanar = true
+uv1_world_triplanar = true
