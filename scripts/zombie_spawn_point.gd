@@ -6,7 +6,7 @@ extends Node3D
 
 @onready var timer = $Timer
 
-const MAX_ZOMBIES = 50
+const MAX_ZOMBIES = 100
 
 var current_delay
 const ZOMBIE_SCENE = preload("res://scenes/zombie.tscn")
