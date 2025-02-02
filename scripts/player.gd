@@ -3,8 +3,6 @@ extends CharacterBody3D
 
 signal health_update(health, max_health)
 
-@export var min_damage = 3
-@export var max_damage = 6
 @export var turn_rate := 5.0
 @export var water_rate = 30.0
 @export var max_health = 100

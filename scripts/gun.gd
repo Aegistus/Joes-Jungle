@@ -5,6 +5,8 @@ enum GunType { PISTOL, RIFLE }
 
 signal on_ammo_count_change(ammo)
 
+@export var min_damage = 6
+@export var max_damage = 10
 @export var max_ammo = 10
 @export var gun_type: GunType
 var current_ammo: int:
@@ -16,7 +18,8 @@ var current_ammo: int:
 @onready var dry_shot_audio_player = $DryShotAudioPlayer
 @onready var muzzle_flash = $"gun model/MuzzleFlash"
 @onready var muzzle_flash_2 = $"gun model/MuzzleFlash2"
-@onready var animation_player = $AnimationPlayer
+@onready var animation_player = $AnimationPlayer as AnimationPlayer
+@onready var raycast = $"gun model/RayCast3D"
 
 var can_shoot = true
 
@@ -25,20 +28,26 @@ func _ready():
 	muzzle_flash_2.visible = false
 	current_ammo = max_ammo
 
-func shoot() -> bool:
+func shoot():
 	if can_shoot:
 		if current_ammo > 0:
+			animation_player.stop(true)
 			animation_player.play("shoot")
 			gun_audio_player.play()
 			can_shoot = false
 			current_ammo -= 1
-			return true
+			var collided = raycast.get_collider()
+			if collided != null and collided.is_in_group("enemy"):
+				collided.hit(randi_range(min_damage, max_damage))
 		else:
 			# play dead mans click
 			dry_shot_audio_player.play()
-			return false
-	else:
-		return false
+
+func shoot_continue():
+	pass
+
+func shoot_end():
+	pass
 
 func reload():
 	current_ammo = max_ammo

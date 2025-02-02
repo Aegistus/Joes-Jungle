@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=4 uid="uid://b8gi7noqhm3jn"]
 
+[ext_resource type="Script" path="res://scripts/machine_gun.gd" id="1_fhn77"]
 [ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="2_qdry2"]
-[ext_resource type="Script" path="res://scripts/gun.gd" id="2_s3vdu"]
 [ext_resource type="AudioStream" uid="uid://qn21imdsbvoc" path="res://assets/audio/Revolver Shot_01.wav" id="3_tafqj"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="4_nfk42"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="4_xqsjn"]
@@ -232,7 +232,7 @@ resource_name = "Main"
 
 [sub_resource type="Animation" id="Animation_lh8sp"]
 resource_name = "shoot"
-length = 0.35
+length = 0.2
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -241,7 +241,7 @@ tracks/0/path = NodePath("gun model:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.3),
+"times": PackedFloat32Array(0, 0.0333333, 0.19),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0.0239423, 0.259269, 0.0324934), Vector3(0.0239423, 0.259269, 0.0572326), Vector3(0.0239423, 0.259269, 0.0324934)]
@@ -253,7 +253,7 @@ tracks/1/path = NodePath("gun model:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.3),
+"times": PackedFloat32Array(0, 0.0333333, 0.19),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.108629, 0, 0), Vector3(0, 0, 0)]
@@ -349,7 +349,9 @@ stream_0/stream = ExtResource("3_tafqj")
 
 [node name="M4" type="Node3D"]
 transform = Transform3D(-4.36442e-08, 0.998463, 0.0554207, -2.42252e-09, 0.0554207, -0.998463, -1, -4.37114e-08, 1.91069e-15, -0.252601, 0.304844, 0.0460553)
-script = ExtResource("2_s3vdu")
+script = ExtResource("1_fhn77")
+shot_delay = 0.1
+max_ammo = 30
 gun_type = 1
 
 [node name="gun model" type="MeshInstance3D" parent="."]
@@ -413,5 +415,7 @@ bus = &"Sound Effects"
 
 [node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_xqsjn")
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
