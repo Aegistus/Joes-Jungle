@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c76mmmp3ha1uv"
-path="res://.godot/imported/Pistol 92.fbx-caa47da70e90914ed722d721b435301b.scn"
+uid="uid://bmkykvsu0f8si"
+path="res://.godot/imported/M4_8.fbx-762d010dcc988d8f7c737c39ae05a01d.scn"
 
 [deps]
 
-source_file="res://assets/Pistol 92.fbx"
-dest_files=["res://.godot/imported/Pistol 92.fbx-caa47da70e90914ed722d721b435301b.scn"]
+source_file="res://assets/models/M4_8.fbx"
+dest_files=["res://.godot/imported/M4_8.fbx-762d010dcc988d8f7c737c39ae05a01d.scn"]
 
 [params]
 
@@ -25,7 +25,7 @@ meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
-animation/import=true
+animation/import=false
 animation/fps=30
 animation/trimming=true
 animation/remove_immutable_tracks=true

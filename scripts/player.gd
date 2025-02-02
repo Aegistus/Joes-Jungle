@@ -12,11 +12,12 @@ signal health_update(health, max_health)
 @export var player_model: Node3D
 @export var animation_player: AnimationPlayer
 
-@onready var pistol = $"PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/PistolHolder/Pistol 92"
-@onready var raycast = pistol.get_node("gun model/RayCast3D") as RayCast3D
-@onready var pistol_92 = $"PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/PistolHolder/Pistol 92"
 @onready var interact_raycast = $PlayerModel/InteractRaycast
 @onready var hurtbox = $Hurtbox
+@onready var guns = [$"PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/Pistol 92", $PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/M4]
+
+var gun
+var raycast 
 
 var current_plant
 var current_health
@@ -28,6 +29,9 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	current_health = max_health
 	hurtbox.on_hurt.connect(take_damage)
+	gun = guns[0]
+	guns[1].visible = false
+	raycast = gun.get_node("gun model/RayCast3D") as RayCast3D
 
 func _physics_process(delta):
 	# Add the gravity.

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://btov126sqn2rt"
-path="res://.godot/imported/Relaxed Animations.glb-7bac9c8173f6833c09121591c0429914.scn"
+path="res://.godot/imported/Relaxed Animations.glb-411bd931a8a23884fc4ee8499f1b980a.scn"
 
 [deps]
 
-source_file="res://assets/animations/Relaxed Animations.glb"
-dest_files=["res://.godot/imported/Relaxed Animations.glb-7bac9c8173f6833c09121591c0429914.scn"]
+source_file="res://assets/animations/imports/Relaxed Animations.glb"
+dest_files=["res://.godot/imported/Relaxed Animations.glb-411bd931a8a23884fc4ee8499f1b980a.scn"]
 
 [params]
 

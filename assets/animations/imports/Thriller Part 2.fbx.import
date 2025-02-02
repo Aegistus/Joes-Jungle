@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d0bsh37uvjc8f"
-path="res://.godot/imported/Reloading.fbx-5b77ee7852af368bb3bcb33366b6f268.scn"
+uid="uid://c572g4q5xsyq"
+path="res://.godot/imported/Thriller Part 2.fbx-851c2fc7dfb3626bf953496e087ac5d7.scn"
 
 [deps]
 
-source_file="res://assets/animations/Reloading.fbx"
-dest_files=["res://.godot/imported/Reloading.fbx-5b77ee7852af368bb3bcb33366b6f268.scn"]
+source_file="res://assets/animations/imports/Thriller Part 2.fbx"
+dest_files=["res://.godot/imported/Thriller Part 2.fbx-851c2fc7dfb3626bf953496e087ac5d7.scn"]
 
 [params]
 

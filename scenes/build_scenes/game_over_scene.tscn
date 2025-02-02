@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/game_over_scene.gd" id="1_h1xpj"]
 [ext_resource type="PackedScene" uid="uid://bhdkqkc5blvum" path="res://assets/zombie_model.glb" id="2_bb7yy"]
 [ext_resource type="Script" path="res://scripts/twerking_zombie.gd" id="3_cnapa"]
-[ext_resource type="AnimationLibrary" uid="uid://dhmbvl65et877" path="res://assets/animations/Twerk Anim.res" id="4_fc7ub"]
+[ext_resource type="AnimationLibrary" uid="uid://dhmbvl65et877" path="res://assets/animations/libraries/Twerk Anim.res" id="4_fc7ub"]
 [ext_resource type="AudioStream" uid="uid://cnaxpxtwthb6f" path="res://assets/audio/Joes_Jungle.wav" id="5_f0m6c"]
 [ext_resource type="Script" path="res://scripts/main_menu_music.gd" id="6_cexc7"]
 

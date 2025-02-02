@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://do1l7hy75ag4r"
-path="res://.godot/imported/Mixamo Pistol Animations.glb-67896b322bc4f7dba7afbfe251edcff1.scn"
+uid="uid://cv6syb7di27rh"
+path="res://.godot/imported/Zombie Animations.glb-d5b765aa88876a579f67fa6f4ae069d4.scn"
 
 [deps]
 
-source_file="res://assets/animations/Mixamo Pistol Animations.glb"
-dest_files=["res://.godot/imported/Mixamo Pistol Animations.glb-67896b322bc4f7dba7afbfe251edcff1.scn"]
+source_file="res://assets/animations/imports/Zombie Animations.glb"
+dest_files=["res://.godot/imported/Zombie Animations.glb-d5b765aa88876a579f67fa6f4ae069d4.scn"]
 
 [params]
 

@@ -1,3 +1,4 @@
+class_name Gun
 extends Node3D
 
 signal on_ammo_count_change(ammo)

@@ -24,7 +24,7 @@ func process_state_physics(delta):
 	controlled_player.velocity.z = move_toward(controlled_player.velocity.z, 0, stopping_speed)
 	# handle shooting
 	if aim_state_machine.current_state is AimingState and Input.is_action_just_pressed("shoot"):
-		var success = controlled_player.pistol_92.shoot()
+		var success = controlled_player.gun.shoot()
 		if success:
 			var collided = controlled_player.raycast.get_collider()
 			if collided != null:

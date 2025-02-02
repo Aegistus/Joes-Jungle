@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=4 uid="uid://bpdhjy3tvivvm"]
 
-[ext_resource type="Script" path="res://scripts/pistol.gd" id="1_lvrt8"]
+[ext_resource type="Script" path="res://scripts/gun.gd" id="1_lvrt8"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="2_gbh6g"]
 [ext_resource type="AudioStream" uid="uid://qn21imdsbvoc" path="res://assets/audio/Revolver Shot_01.wav" id="3_ncd2q"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="4_spmkr"]

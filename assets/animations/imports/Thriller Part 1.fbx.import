@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bm32siju4yu3k"
-path="res://.godot/imported/Thriller Part 1.fbx-2dcad6efe04594cbae5f7a9061b7f46c.scn"
+path="res://.godot/imported/Thriller Part 1.fbx-d5638de4545878b885a31b2665d5d12b.scn"
 
 [deps]
 
-source_file="res://assets/animations/Thriller Part 1.fbx"
-dest_files=["res://.godot/imported/Thriller Part 1.fbx-2dcad6efe04594cbae5f7a9061b7f46c.scn"]
+source_file="res://assets/animations/imports/Thriller Part 1.fbx"
+dest_files=["res://.godot/imported/Thriller Part 1.fbx-d5638de4545878b885a31b2665d5d12b.scn"]
 
 [params]
 
