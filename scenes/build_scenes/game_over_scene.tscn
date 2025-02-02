@@ -126,7 +126,7 @@ offset_bottom = 98.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wv25w")
 
-[node name="Label" type="Label" parent="UI/CanvasLayer/Panel"]
+[node name="FinalTime" type="Label" parent="UI/CanvasLayer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

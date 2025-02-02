@@ -50,6 +50,7 @@ mesh = SubResource("QuadMesh_unt8k")
 skeleton = NodePath("../..")
 
 [node name="Area3D" type="StaticBody3D" parent="." index="4" groups=["plant"]]
+collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" groups=["plant"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02498, 0)
