@@ -3,14 +3,13 @@ extends PlayerState
 
 @onready var idle_state = $"../IdleState"
 @onready var animation_player = $"../../PlayerModel/Model/AnimationPlayer"
-@onready var animation_tree = $"../../PlayerModel/Model/AnimationTree"
 @onready var reload_audio_player = $"../../ReloadAudioPlayer"
 
 var done_reloading = false
 
 func enter():
 	animation_player.play("Pistol Anim Pack/Reloading")
-	animation_tree.active = false
+	controlled_player.current_animation_tree.active = false
 	controlled_player.velocity = Vector3.ZERO
 	done_reloading = false
 	animation_player.animation_finished.connect(func(anim_name): done_reloading = true)

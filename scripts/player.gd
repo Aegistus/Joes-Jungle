@@ -15,9 +15,14 @@ signal health_update(health, max_health)
 @onready var interact_raycast = $PlayerModel/InteractRaycast
 @onready var hurtbox = $Hurtbox
 @onready var guns = [$"PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/Pistol 92", $PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/M4]
+@onready var pistol_anim_tree = $PlayerModel/Model/PistolAnimTree
+@onready var rifle_anim_tree = $PlayerModel/Model/RifleAnimTree
 
+var current_animation_tree
+var current_relaxed_idle_anim
+var current_relaxed_jog_anim
 var gun
-var raycast 
+var raycast
 
 var current_plant
 var current_health
@@ -29,9 +34,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	current_health = max_health
 	hurtbox.on_hurt.connect(take_damage)
-	gun = guns[0]
-	guns[1].visible = false
-	raycast = gun.get_node("gun model/RayCast3D") as RayCast3D
+	equip_weapon(guns[1])
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -57,3 +60,17 @@ func take_damage(damage):
 		health_update.emit(current_health, max_health)
 		if current_health <= 0:
 			GameManager.end_game()
+
+func equip_weapon(weapon: Gun):
+	if gun != null:
+		gun.visible = false
+	gun = weapon
+	raycast = gun.get_node("gun model/RayCast3D") as RayCast3D
+	if weapon.gun_type == Gun.GunType.PISTOL:
+		current_animation_tree = pistol_anim_tree
+		current_relaxed_idle_anim = "Pistol Anim Pack/Relaxed Idle"
+		current_relaxed_jog_anim = "Pistol Anim Pack/Relaxed Run"
+	else:
+		current_animation_tree = rifle_anim_tree
+		current_relaxed_idle_anim = "Rifle Anims/rifle relaxed idle"
+		current_relaxed_jog_anim = "Rifle Anims/rifle run"

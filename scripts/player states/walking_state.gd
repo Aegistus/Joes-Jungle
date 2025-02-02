@@ -2,7 +2,6 @@ class_name WalkingState
 extends PlayerState
 
 @export var movement_speed: float = 100
-@export var animation_tree: AnimationTree
 @export var animation_player: AnimationPlayer
 @export var directional_reference: Node3D
 @export var player_model: Node3D
@@ -15,7 +14,7 @@ extends PlayerState
 
 func enter():
 	super()
-	animation_tree.active = true
+	controlled_player.current_animation_tree.active = true
 
 func process_state_physics(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -27,7 +26,7 @@ func process_state_physics(delta):
 	target.	move_and_slide()
 	# Set animations
 	var relative_dir = (player_model.basis * Vector3(direction.z, 0, direction.x)).normalized()
-	animation_tree.set("parameters/WalkSpeed/blend_position", Vector2(relative_dir.z, -relative_dir.x))
+	controlled_player.current_animation_tree.set("parameters/WalkSpeed/blend_position", Vector2(relative_dir.z, -relative_dir.x))
 	# handle shooting
 	if aim_state_machine.current_state is AimingState and Input.is_action_just_pressed("shoot"):
 		var success = controlled_player.gun.shoot()

@@ -243,6 +243,7 @@ stream_0/stream = ExtResource("3_tafqj")
 
 [node name="M4" type="Node3D"]
 script = ExtResource("2_s3vdu")
+gun_type = 1
 
 [node name="gun model" type="MeshInstance3D" parent="."]
 transform = Transform3D(-5.23594e-09, 0.119784, 0.00718993, -3.14282e-10, 0.00718993, -0.119784, -0.12, -5.24537e-09, -2.72324e-17, 0.0239423, 0.254052, 0.0196421)

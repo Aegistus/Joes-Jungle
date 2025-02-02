@@ -3,7 +3,6 @@ extends PlayerState
 
 @export var run_speed: float = 100
 @export var animation_player: AnimationPlayer
-@export var animation_tree: AnimationTree
 @export var directional_reference: Node3D
 @export var player_model: Node3D
 @export var aim_state_machine: StateMachine
@@ -15,7 +14,7 @@ extends PlayerState
 
 func enter():
 	super()
-	animation_tree.active = false
+	controlled_player.current_animation_tree.active = false
 
 func process_state_physics(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -26,7 +25,7 @@ func process_state_physics(delta):
 		target.velocity.z = direction.z * run_speed * delta
 	target.	move_and_slide()
 	# Set animations
-	animation_player.play("Pistol Anim Pack/Relaxed Run")
+	animation_player.play(controlled_player.current_relaxed_jog_anim)
 
 func check_transitions():
 	if Input.is_action_just_pressed("reload"):

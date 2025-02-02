@@ -1,9 +1,12 @@
 class_name Gun
 extends Node3D
 
+enum GunType { PISTOL, RIFLE }
+
 signal on_ammo_count_change(ammo)
 
 @export var max_ammo = 10
+@export var gun_type: GunType
 var current_ammo: int:
 	set(value):
 		current_ammo = value
