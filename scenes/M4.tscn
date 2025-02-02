@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://b8gi7noqhm3jn"]
+[gd_scene load_steps=30 format=4 uid="uid://b8gi7noqhm3jn"]
 
 [ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="2_qdry2"]
 [ext_resource type="Script" path="res://scripts/gun.gd" id="2_s3vdu"]
@@ -230,9 +230,115 @@ shadow_mesh = SubResource("ArrayMesh_0fnfu")
 [sub_resource type="Animation" id="Animation_4we81"]
 resource_name = "Main"
 
+[sub_resource type="Animation" id="Animation_lh8sp"]
+resource_name = "shoot"
+length = 0.35
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gun model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0239423, 0.259269, 0.0324934), Vector3(0.0239423, 0.259269, 0.0572326), Vector3(0.0239423, 0.259269, 0.0324934)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun model:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.108629, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gun model/MuzzleFlash2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.01, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gun model/MuzzleFlash:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.01, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_o53aw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gun model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0239423, 0.259269, 0.0324934)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun model:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gun model/MuzzleFlash2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gun model/MuzzleFlash:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyq2y"]
 _data = {
-"Main": SubResource("Animation_4we81")
+"Main": SubResource("Animation_4we81"),
+"RESET": SubResource("Animation_o53aw"),
+"shoot": SubResource("Animation_lh8sp")
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3bh0c"]
@@ -242,11 +348,12 @@ streams_count = 1
 stream_0/stream = ExtResource("3_tafqj")
 
 [node name="M4" type="Node3D"]
+transform = Transform3D(-4.36442e-08, 0.998463, 0.0554207, -2.42252e-09, 0.0554207, -0.998463, -1, -4.37114e-08, 1.91069e-15, -0.252601, 0.304844, 0.0460553)
 script = ExtResource("2_s3vdu")
 gun_type = 1
 
 [node name="gun model" type="MeshInstance3D" parent="."]
-transform = Transform3D(-5.23594e-09, 0.119784, 0.00718993, -3.14282e-10, 0.00718993, -0.119784, -0.12, -5.24537e-09, -2.72324e-17, 0.0239423, 0.254052, 0.0196421)
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.0239423, 0.259269, 0.0324934)
 material_override = SubResource("StandardMaterial3D_bbbeg")
 mesh = SubResource("ArrayMesh_ywpai")
 skeleton = NodePath("")
@@ -286,11 +393,13 @@ collision_mask = 3
 collide_with_areas = true
 
 [node name="MuzzleFlash" type="Sprite3D" parent="gun model"]
-transform = Transform3D(1.32958e-07, 0.059916, 0.998203, 0.0599161, 0.996409, -0.0598084, -0.998203, 0.0598085, -0.0035898, 0.0295915, 0.523126, -5.61432)
+transform = Transform3D(7.68341e-08, 0.029958, 0.499102, 0.0299581, 0.498205, -0.0299042, -0.499102, 0.0299043, -0.00179489, 0.0295915, 0.454229, -4.37306)
+visible = false
 texture = ExtResource("4_nfk42")
 
 [node name="MuzzleFlash2" type="Sprite3D" parent="gun model"]
-transform = Transform3D(1.33874e-07, -0.998203, 0.059916, 0.0428696, 0.059861, 0.997285, -0.99908, 0.00256844, 0.0427925, 0.0406685, 0.60256, -5.49608)
+transform = Transform3D(5.96047e-08, -0.499102, 0.0299578, 0.0214346, 0.0299303, 0.498643, -0.49954, 0.00128421, 0.0213961, 0.0406685, 0.533663, -4.25482)
+visible = false
 texture = ExtResource("4_nfk42")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -304,3 +413,5 @@ bus = &"Sound Effects"
 
 [node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_xqsjn")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
