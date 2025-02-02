@@ -25,6 +25,7 @@ GameManager="*res://scenes/game_manager.tscn"
 
 [display]
 
+window/size/mode=2
 window/size/always_on_top=true
 window/stretch/mode="canvas_items"
 

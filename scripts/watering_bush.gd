@@ -1,7 +1,7 @@
 class_name WateringBush
 extends Node3D
 
-@export var max_water = 60.0
+@export var max_water = 120.0
 @export var water_loss_rate = 1.0
 
 @onready var watering_bush = $SubViewport/WateringBush

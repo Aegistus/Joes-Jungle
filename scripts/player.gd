@@ -25,7 +25,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	current_health = max_health
 	hurtbox.on_hurt.connect(take_damage)
 
