@@ -515,7 +515,7 @@ _data = {
 radius = 2.9
 height = 13.0
 
-[node name="ShopRifle" type="Node3D"]
+[node name="ShopSMG" type="Node3D"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_yet33")
 shop_item_scene_path = "res://scenes/suppressed_mpx.tscn"
