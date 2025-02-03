@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=4 uid="uid://bpdhjy3tvivvm"]
+[gd_scene load_steps=34 format=4 uid="uid://bpdhjy3tvivvm"]
 
-[ext_resource type="Script" path="res://scripts/gun.gd" id="1_lvrt8"]
+[ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="1_lvrt8"]
+[ext_resource type="Texture2D" uid="uid://c4mkkqmwt568m" path="res://assets/textures/Pistol Black Diffuse.png" id="2_7aleb"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="2_gbh6g"]
 [ext_resource type="AudioStream" uid="uid://qn21imdsbvoc" path="res://assets/audio/Revolver Shot_01.wav" id="3_ncd2q"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="4_spmkr"]
@@ -90,6 +91,9 @@ _data = {
 "shoot": SubResource("Animation_dtyrj")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a57kn"]
+albedo_texture = ExtResource("2_7aleb")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4yw0"]
 resource_name = "Material.003"
 vertex_color_use_as_albedo = true
@@ -132,6 +136,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1hbvh")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ulvey"]
+albedo_texture = ExtResource("2_7aleb")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_5hgnl"]
 _surfaces = [{
 "aabb": AABB(-0.00944532, -0.0045, -0.01613, 0.0174, 0.009, 0.042),
@@ -165,6 +172,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5hgnl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1uhm"]
+albedo_texture = ExtResource("2_7aleb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pww31"]
 resource_name = "Material.002"
@@ -261,6 +271,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_towd5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qt7jf"]
+albedo_texture = ExtResource("2_7aleb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vn0se"]
 resource_name = "Material.008"
@@ -457,6 +470,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_j5s8m")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntnop"]
+albedo_texture = ExtResource("2_7aleb")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_bbbak"]
 _surfaces = [{
 "aabb": AABB(-0.00496776, -0.00105, -0.000908571, 0.00663772, 0.0021, 0.010464),
@@ -511,21 +527,25 @@ transform = Transform3D(0.0680474, 0.99767, 0.00484527, -0.970383, 0.0673131, -0
 
 [node name="Cube_004" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.525853, 1.33521, -0.49531)
+material_override = SubResource("StandardMaterial3D_a57kn")
 mesh = SubResource("ArrayMesh_fgiji")
 skeleton = NodePath("")
 
 [node name="Cube_002" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.884878, -0.073051, -0.513555)
+material_override = SubResource("StandardMaterial3D_ulvey")
 mesh = SubResource("ArrayMesh_vs3fk")
 skeleton = NodePath("")
 
 [node name="Cube_001" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, -0.617934, 2.44737, -0.500642)
+material_override = SubResource("StandardMaterial3D_f1uhm")
 mesh = SubResource("ArrayMesh_115dw")
 skeleton = NodePath("")
 
 [node name="Cube_000" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.525853, 1.33521, -0.49531)
+material_override = SubResource("StandardMaterial3D_qt7jf")
 mesh = SubResource("ArrayMesh_mrycp")
 skeleton = NodePath("")
 
@@ -536,6 +556,7 @@ skeleton = NodePath("")
 
 [node name="Cube_003" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 1.60641, 1.96072, -0.501835)
+material_override = SubResource("StandardMaterial3D_ntnop")
 mesh = SubResource("ArrayMesh_6e8p6")
 skeleton = NodePath("")
 

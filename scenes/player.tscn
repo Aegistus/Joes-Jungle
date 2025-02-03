@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://scripts/player states/running_state.gd" id="8_h5fvr"]
 [ext_resource type="Script" path="res://scripts/player states/aiming_state.gd" id="8_iqcv1"]
 [ext_resource type="Script" path="res://scripts/player states/resting_state.gd" id="9_d0et7"]
-[ext_resource type="Script" path="res://scripts/reloading_state.gd" id="9_q5wgv"]
+[ext_resource type="Script" path="res://scripts/player states/reloading_state.gd" id="9_q5wgv"]
 [ext_resource type="Script" path="res://scripts/player states/equipping_state.gd" id="12_odjy0"]
 [ext_resource type="AudioStream" uid="uid://ckwb5xmn5ctgy" path="res://assets/audio/Pistol_Reload.wav" id="12_v8aab"]
 [ext_resource type="PackedScene" uid="uid://cs4bpkimumjf4" path="res://scenes/hurtbox.tscn" id="13_m6j14"]

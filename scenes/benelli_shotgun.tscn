@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx7sbijp1upmd"]
+
+[ext_resource type="PackedScene" uid="uid://eslf85a0tvjh" path="res://assets/models/Bennelli_M4.fbx" id="1_id8qh"]
+[ext_resource type="Script" path="res://scripts/weapons/shotgun.gd" id="2_kl248"]
+
+[node name="Benelli_M4" instance=ExtResource("1_id8qh")]
+script = ExtResource("2_kl248")
+min_damage = 3
+max_damage = 6
+max_ammo = 8
+gun_type = 2

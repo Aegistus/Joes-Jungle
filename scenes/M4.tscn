@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=4 uid="uid://b8gi7noqhm3jn"]
 
-[ext_resource type="Script" path="res://scripts/machine_gun.gd" id="1_fhn77"]
+[ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_fhn77"]
 [ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="2_qdry2"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="4_nfk42"]
 [ext_resource type="AudioStream" uid="uid://d0l6l1t32bd1m" path="res://assets/audio/Assault Rifle Shot_06.wav" id="4_oudcc"]
