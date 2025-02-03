@@ -43,9 +43,6 @@ func shoot():
 			# play dead mans click
 			dry_shot_audio_player.play()
 
-func shoot_continue():
-	pass
-
 func shoot_end():
 	pass
 

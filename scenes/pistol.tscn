@@ -498,7 +498,7 @@ streams_count = 1
 stream_0/stream = ExtResource("3_ncd2q")
 
 [node name="Pistol 92" type="Node3D"]
-transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0.110825, 0.0540304)
 script = ExtResource("1_lvrt8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -507,7 +507,7 @@ libraries = {
 }
 
 [node name="gun model" type="Node3D" parent="."]
-transform = Transform3D(0.0682194, 0.99767, 0.000205781, -0.983916, 0.0673131, -0.165465, -0.165093, 0.0110854, 0.986216, 0, 0, 0)
+transform = Transform3D(0.0680474, 0.99767, 0.00484527, -0.970383, 0.0673131, -0.232003, -0.231788, 0.0110854, 0.972703, 0, 0, 0)
 
 [node name="Cube_004" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.525853, 1.33521, -0.49531)

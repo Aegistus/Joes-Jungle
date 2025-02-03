@@ -10,7 +10,7 @@ animation = &"Pistol Anim Pack/Walk Forward"
 animation = &"Pistol Anim Pack/Strafe Right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s7t5k"]
-animation = &"Pistol Anim Pack/Strafe Left"
+animation = &"Rifle Anims/rifle strafe left"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iabis"]
 animation = &"Pistol Anim Pack/Walk Backward"
