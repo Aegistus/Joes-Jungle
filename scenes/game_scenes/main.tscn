@@ -50,6 +50,7 @@ environment = SubResource("Environment_112m7")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_7od6u")
+metadata/_edit_lock_ = true
 
 [node name="map" type="Node3D" parent="NavigationRegion3D"]
 
@@ -66,6 +67,7 @@ size = Vector3(1000, 1, 1000)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
 
 [node name="Mansion" type="Node3D" parent="NavigationRegion3D/map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -25)
 
 [node name="wall" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.75, -5.5)
@@ -110,28 +112,35 @@ snap = 0.05
 size = Vector3(0.5, 2.5, 1)
 
 [node name="wall56" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.75, 4.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.75, 7.875)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
-size = Vector3(0.5, 2.5, 2.5)
+size = Vector3(0.5, 2.5, 2.25)
+
+[node name="wall97" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.75, 4.625)
+layers = 2
+material_override = ExtResource("5_povn2")
+snap = 0.05
+size = Vector3(0.5, 2.5, 2.25)
 
 [node name="wall58" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.75, 7.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.75, 10.5)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 2.5, 1)
 
 [node name="wall64" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0.75, 9.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0.75, 12.75)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 2.5, 3.5)
 
 [node name="wall65" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0.75, 15.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0.75, 18.25)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
@@ -242,8 +251,15 @@ material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 1, 1)
 
+[node name="wall98" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 6.25)
+layers = 2
+material_override = ExtResource("5_povn2")
+snap = 0.05
+size = Vector3(0.5, 1, 1)
+
 [node name="wall89" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 9.5)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
@@ -251,6 +267,20 @@ size = Vector3(0.5, 1, 1)
 
 [node name="wall90" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.25, 0, 5)
+layers = 2
+material_override = ExtResource("5_povn2")
+snap = 0.05
+size = Vector3(0.5, 1, 1)
+
+[node name="wall94" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.25, 0, 7.5)
+layers = 2
+material_override = ExtResource("5_povn2")
+snap = 0.05
+size = Vector3(0.5, 1, 1)
+
+[node name="wall96" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.25, 0, 10)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
@@ -285,14 +315,14 @@ snap = 0.05
 size = Vector3(0.5, 0.999, 1.45)
 
 [node name="wall81" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.32071, 0, 15.3043)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.32071, 0, 18.3043)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 0.999, 1.45)
 
 [node name="wall82" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.32071, 0, 9.62929)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.32071, 0, 12.6293)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
@@ -369,14 +399,28 @@ snap = 0.05
 size = Vector3(0.5, 2.5, 5)
 
 [node name="wall66" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 16.25, 0.75, 7)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 16.25, 0.75, 11)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
-size = Vector3(0.5, 2.5, 3)
+size = Vector3(0.5, 2.5, 1)
 
 [node name="wall67" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 16.25, 0.75, 3.75)
+layers = 2
+material_override = ExtResource("5_povn2")
+snap = 0.05
+size = Vector3(0.5, 2.5, 1.5)
+
+[node name="wall93" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 16.25, 0.75, 6.25)
+layers = 2
+material_override = ExtResource("5_povn2")
+snap = 0.05
+size = Vector3(0.5, 2.5, 1.5)
+
+[node name="wall95" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 16.25, 0.75, 8.75)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
@@ -390,14 +434,14 @@ snap = 0.05
 size = Vector3(0.5, 2.5, 7)
 
 [node name="wall57" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.5, 0.75, 8.25)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.5, 0.75, 11.25)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 2.5, 7)
 
 [node name="wall75" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.25, 0.75, 8.25)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.25, 0.75, 11.25)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
@@ -418,14 +462,14 @@ snap = 0.05
 size = Vector3(0.5, 2.5, 6.5)
 
 [node name="wall73" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.75, 0.75, 15.275)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.75, 0.75, 18.275)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 2.5, 3.45)
 
 [node name="wall74" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.75, 0.75, 10)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 13.75, 0.75, 13)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
@@ -502,42 +546,42 @@ snap = 0.05
 size = Vector3(0.5, 2.5, 1.5)
 
 [node name="wall59" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0.75, 16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0.75, 19)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 2.5, 1)
 
 [node name="wall60" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0.75, 9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0.75, 12)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 2.5, 1)
 
 [node name="wall61" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 0, 12.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 0, 15.5)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 1, 5)
 
 [node name="wall83" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 20.2931, 0, 9.65143)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 20.2931, 0, 12.6514)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 0.999, 1.45)
 
 [node name="wall84" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 20.2931, 0, 15.3264)
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 20.2931, 0, 18.3264)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 0.999, 1.45)
 
 [node name="wall80" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20.7224, 0, 12.4557)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20.7224, 0, 15.4557)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
@@ -565,28 +609,28 @@ snap = 0.05
 size = Vector3(0.5, 2.5, 5)
 
 [node name="wall62" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1.25, 0.75, 16.75)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1.25, 0.75, 19.75)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 2.5, 3.5)
 
 [node name="wall76" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 2.75, 0.75, 16.75)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 2.75, 0.75, 19.75)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 2.5, 0.5)
 
 [node name="wall77" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 14.25, 0.75, 16.75)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 14.25, 0.75, 19.75)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 2.5, 0.5)
 
 [node name="wall63" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1, 0.75, 8.25)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1, 0.75, 11.25)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
@@ -607,28 +651,28 @@ snap = 0.05
 size = Vector3(0.5, 2.5, 3.55)
 
 [node name="wall68" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.75, 0.75, 16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.75, 0.75, 19)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 2.5, 1)
 
 [node name="wall69" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.75, 0.75, 9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.75, 0.75, 12)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 2.5, 1)
 
 [node name="wall71" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 18, 0.75, 16.75)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 18, 0.75, 19.75)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
 size = Vector3(0.5, 2.5, 4)
 
 [node name="wall72" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 18.25, 0.75, 8.25)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 18.25, 0.75, 11.25)
 layers = 2
 material_override = ExtResource("5_povn2")
 snap = 0.05
@@ -750,10 +794,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9685, 0.060163, -24.8421)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9685, 0.060163, 2.7273)
 
 [node name="MeasuringTape" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.05, -0.5, -9)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -28.05, -0.5, -26.55)
 
 [node name="MeasuringTape3D" type="Marker3D" parent="MeasuringTape"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -2.19792e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 0)
 script = ExtResource("8_tjkuo")
 
 [node name="MeasuringTape3" type="Node3D" parent="."]
