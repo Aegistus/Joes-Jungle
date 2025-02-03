@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bs0wmr63q1ofr" path="res://scenes/player.tscn" id="6_11ef4"]
 [ext_resource type="Material" uid="uid://clj8od07w7lfo" path="res://materials/palm_tree.tres" id="6_mqkwy"]
 [ext_resource type="PackedScene" uid="uid://g62ygu32m5ji" path="res://scenes/aim_reticle.tscn" id="7_eo36d"]
-[ext_resource type="PackedScene" uid="uid://dlrj2ln8hxx6l" path="res://scenes/zombie_spawn_point.tscn" id="8_7j2o3"]
 [ext_resource type="PackedScene" uid="uid://ciu738dd2fsak" path="res://scenes/scenery/palm_tree_01.tscn" id="9_41nok"]
 [ext_resource type="PackedScene" uid="uid://yttdwroyehgm" path="res://scenes/scenery/palm_tree_02.tscn" id="10_8b1qe"]
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="11_2gnx2"]
@@ -17,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c4p6ldvfdioho" path="res://scenes/ui/player_ui.tscn" id="14_f7yqe"]
 [ext_resource type="PackedScene" uid="uid://ddgpevn3nkya1" path="res://scenes/shop_shotgun.tscn" id="16_gnhf5"]
 [ext_resource type="PackedScene" uid="uid://c7baeq2p0p2hk" path="res://scenes/shop_rifle.tscn" id="17_0n5rr"]
+[ext_resource type="Script" path="res://scripts/zombie_spawn_point.gd" id="17_owi3h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -519,27 +519,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25, 0, -2.75)
 [node name="AimReticle" parent="." instance=ExtResource("7_eo36d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 
-[node name="Zombie Spawn Point" parent="." instance=ExtResource("8_7j2o3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3769, -0.1, 2.25152)
-
-[node name="Zombie Spawn Point5" parent="." instance=ExtResource("8_7j2o3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3769, -0.1, -11.4985)
-
-[node name="Zombie Spawn Point6" parent="." instance=ExtResource("8_7j2o3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8731, -0.1, -21.2485)
-
-[node name="Zombie Spawn Point7" parent="." instance=ExtResource("8_7j2o3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8731, -0.1, -11.9985)
-
-[node name="Zombie Spawn Point2" parent="." instance=ExtResource("8_7j2o3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64014, -0.1, -25.2702)
-
-[node name="Zombie Spawn Point3" parent="." instance=ExtResource("8_7j2o3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6099, -0.1, 1.9798)
-
-[node name="Zombie Spawn Point4" parent="." instance=ExtResource("8_7j2o3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1099, -0.1, -24.5202)
-
 [node name="WateringBush" parent="." instance=ExtResource("13_yxl1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.36292, -0.1, -4.6756)
 
@@ -556,3 +535,29 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -5.18085, -0.0999999, -
 
 [node name="Shop_Rifle2" parent="." instance=ExtResource("17_0n5rr")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -24.5452, 0.0335293, -15.8048)
+
+[node name="ZombieSpawnPoints" type="Node3D" parent="."]
+script = ExtResource("17_owi3h")
+
+[node name="WaveTimer" type="Timer" parent="ZombieSpawnPoints"]
+
+[node name="Marker3D" type="Marker3D" parent="ZombieSpawnPoints"]
+gizmo_extents = 1.0
+
+[node name="SpawnTimer" type="Timer" parent="ZombieSpawnPoints"]
+
+[node name="SpawnPointParent" type="Node3D" parent="ZombieSpawnPoints"]
+
+[node name="SpawnPoint" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32428, 0, 1.9327)
+
+[node name="SpawnPoint2" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80991, 0.060163, -24.8421)
+
+[node name="SpawnPoint3" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9685, 0.060163, -24.8421)
+
+[node name="SpawnPoint4" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9685, 0.060163, 2.7273)
+
+[connection signal="timeout" from="ZombieSpawnPoints/WaveTimer" to="ZombieSpawnPoints" method="_on_timer_timeout"]

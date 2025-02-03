@@ -228,8 +228,7 @@ _data = {
 transform = Transform3D(1.31134e-07, 0.997253, 0.0740737, 4.37114e-08, 0.0740737, -0.997253, -1, 1.34012e-07, -3.38777e-08, 0.0996198, 0.254223, 0.0305307)
 script = ExtResource("2_kl248")
 raycasts = [NodePath("gun model/BarrelRaycast"), NodePath("gun model/BarrelRaycast2"), NodePath("gun model/BarrelRaycast3")]
-min_damage = 3
-max_damage = 6
+min_damage = 4
 max_ammo = 8
 gun_type = 2
 

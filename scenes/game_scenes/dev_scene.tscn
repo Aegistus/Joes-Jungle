@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ddhplb0t3aute" path="res://scenes/scenery/palm_tree_04.tscn" id="10_kcw2q"]
 [ext_resource type="PackedScene" uid="uid://bs0wmr63q1ofr" path="res://scenes/player.tscn" id="11_8raem"]
 [ext_resource type="PackedScene" uid="uid://g62ygu32m5ji" path="res://scenes/aim_reticle.tscn" id="12_iucx2"]
-[ext_resource type="PackedScene" uid="uid://dlrj2ln8hxx6l" path="res://scenes/zombie_spawn_point.tscn" id="13_t30w5"]
+[ext_resource type="PackedScene" uid="uid://dlrj2ln8hxx6l" path="res://scenes/zombie_spawn_points.tscn" id="13_t30w5"]
 [ext_resource type="PackedScene" uid="uid://cwp0spuqeu7jj" path="res://scenes/scenery/watering_bush.tscn" id="14_ow336"]
 [ext_resource type="PackedScene" uid="uid://c4p6ldvfdioho" path="res://scenes/ui/player_ui.tscn" id="15_4t01c"]
 [ext_resource type="Script" path="res://scripts/shop.gd" id="17_068wg"]
