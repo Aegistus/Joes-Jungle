@@ -250,13 +250,19 @@ mesh = SubResource("ArrayMesh_x73jx")
 skeleton = NodePath("")
 
 [node name="BarrelRaycast" type="RayCast3D" parent="gun model"]
-transform = Transform3D(1, 0, 0, 0, -1.74846e-06, -1, 0, 40, -4.37114e-08, 0, 0, -3.84325)
+transform = Transform3D(1, 2.27374e-13, 7.10543e-14, -1.42109e-14, -2.38419e-06, -1, 0, 40, -4.47035e-08, -5.96046e-08, -0.06172, -2.20909)
+
+[node name="BarrelRaycast5" type="RayCast3D" parent="gun model"]
+transform = Transform3D(0.997564, -2.79026, 3.04915e-09, 0, -1.74846e-06, -1, 0.0697565, 39.9026, -4.36049e-08, -5.96046e-08, -0.06172, -2.20909)
+
+[node name="BarrelRaycast4" type="RayCast3D" parent="gun model"]
+transform = Transform3D(0.997564, 2.79026, -3.04915e-09, 0, -1.74846e-06, -1, -0.0697565, 39.9026, -4.36049e-08, -5.96046e-08, -0.06172, -2.20909)
 
 [node name="BarrelRaycast2" type="RayCast3D" parent="gun model"]
-transform = Transform3D(0.990268, 5.56692, -6.08345e-09, 0, -1.74846e-06, -1, -0.139173, 39.6107, -4.3286e-08, 0, 0, -3.84325)
+transform = Transform3D(0.990268, 5.56693, -6.08338e-09, 1.40284e-09, -2.17655e-06, -1, -0.139173, 39.6107, -4.47035e-08, -5.96046e-08, -0.06172, -2.20909)
 
 [node name="BarrelRaycast3" type="RayCast3D" parent="gun model"]
-transform = Transform3D(0.990268, -5.56692, 6.08345e-09, 0, -1.74846e-06, -1, 0.139173, 39.6107, -4.3286e-08, 0, 0, -3.84325)
+transform = Transform3D(0.990268, -5.56693, 6.08352e-09, -3.25376e-09, -1.63815e-06, -1, 0.139173, 39.6107, -4.47035e-08, -5.96046e-08, -0.06172, -2.20909)
 
 [node name="MuzzleFlash" type="Sprite3D" parent="gun model"]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.0069878, -0.136525, -4.84059)
