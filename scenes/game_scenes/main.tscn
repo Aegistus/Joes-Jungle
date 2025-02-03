@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=23 format=3 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="2_6ha5v"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cwp0spuqeu7jj" path="res://scenes/scenery/watering_bush.tscn" id="13_yxl1k"]
 [ext_resource type="PackedScene" uid="uid://ddgpevn3nkya1" path="res://scenes/shop_shotgun.tscn" id="14_6fxx3"]
 [ext_resource type="PackedScene" uid="uid://c4p6ldvfdioho" path="res://scenes/ui/player_ui.tscn" id="14_f7yqe"]
+[ext_resource type="PackedScene" uid="uid://buup8044hp4ox" path="res://scenes/shop_smg.tscn" id="16_c32sb"]
 [ext_resource type="Script" path="res://scripts/zombie_spawn_point.gd" id="17_owi3h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
@@ -1291,5 +1292,8 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -13.35, -0.5, -39.3)
 
 [node name="ShopShotgun" parent="." instance=ExtResource("14_6fxx3")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -20.85, -0.5, -42.95)
+
+[node name="ShopRifle2" parent="." instance=ExtResource("16_c32sb")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -16.3, -0.5, -19.55)
 
 [connection signal="timeout" from="ZombieSpawnPoints/WaveTimer" to="ZombieSpawnPoints" method="_on_timer_timeout"]
