@@ -7,7 +7,7 @@ extends Node3D
 @onready var spawn_timer = $SpawnTimer
 @onready var spawn_point_parent = $SpawnPointParent
 
-var current_wave_spawn_count = 5
+var current_wave_spawn_count = 8
 var all_spawn_points
 var spawn_point_count
 
