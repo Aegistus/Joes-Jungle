@@ -11,7 +11,7 @@ signal health_update(health, max_health)
 
 @onready var interact_raycast = $PlayerModel/InteractRaycast
 @onready var hurtbox = $Hurtbox
-@onready var primary_weapon = $PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/MPX
+@onready var primary_weapon = $PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/M249
 @onready var secondary_weapon = $"PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/Pistol 92"
 @onready var pistol_anim_tree = $PlayerModel/Model/PistolAnimTree
 @onready var rifle_anim_tree = $PlayerModel/Model/RifleAnimTree
