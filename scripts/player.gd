@@ -29,7 +29,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	current_health = max_health
 	hurtbox.on_hurt.connect(take_damage)
 	equip_weapon(guns[1])
@@ -59,12 +59,15 @@ func take_damage(damage):
 		if current_health <= 0:
 			GameManager.end_game()
 
-func equip_weapon(weapon: Gun):
+func equip_weapon(new_gun: Gun):
+	if new_gun == gun:
+		return
 	if gun != null:
 		gun.visible = false
-	gun = weapon
+	gun = new_gun
+	gun.visible = true
 	raycast = gun.get_node("gun model/RayCast3D") as RayCast3D
-	if weapon.gun_type == Gun.GunType.PISTOL:
+	if new_gun.gun_type == Gun.GunType.PISTOL:
 		current_animation_tree = pistol_anim_tree
 		current_relaxed_idle_anim = "Pistol Anim Pack/Relaxed Idle"
 		current_relaxed_jog_anim = "Pistol Anim Pack/Relaxed Run"

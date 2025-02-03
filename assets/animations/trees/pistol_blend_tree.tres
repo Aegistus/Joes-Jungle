@@ -1,0 +1,34 @@
+[gd_resource type="AnimationNodeBlendTree" load_steps=7 format=3 uid="uid://c4e5wj28gmxw3"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ss2ly"]
+animation = &"Pistol Anim Pack/Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4undh"]
+animation = &"Pistol Anim Pack/Walk Forward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wxywc"]
+animation = &"Pistol Anim Pack/Strafe Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s7t5k"]
+animation = &"Pistol Anim Pack/Strafe Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iabis"]
+animation = &"Pistol Anim Pack/Walk Backward"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_smib0"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_ss2ly")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_4undh")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_wxywc")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_s7t5k")
+blend_point_3/pos = Vector2(-1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_iabis")
+blend_point_4/pos = Vector2(0, -1)
+
+[resource]
+graph_offset = Vector2(-605.063, -4.82909)
+nodes/WalkSpeed/node = SubResource("AnimationNodeBlendSpace2D_smib0")
+nodes/WalkSpeed/position = Vector2(-140, 100)
+node_connections = [&"output", 0, &"WalkSpeed"]

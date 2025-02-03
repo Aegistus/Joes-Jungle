@@ -11,6 +11,7 @@ extends PlayerState
 @export var idle_state: State
 @export var jogging_state: State
 @onready var reloading_state = $"../ReloadingState"
+@onready var equipping_state = $"../EquippingState"
 
 func enter():
 	super()
@@ -42,6 +43,12 @@ func check_transitions():
 	if aim_state_machine.current_state is RelaxedState:
 		controlled_player.gun.shoot_end()
 		return jogging_state
+	if Input.is_action_just_pressed("equip_primary"):
+		equipping_state.weapon_index = 0
+		return equipping_state
+	if Input.is_action_just_pressed("equip_secondary"):
+		equipping_state.weapon_index = 1
+		return equipping_state
 	var input = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	if input.length() == 0:
 		return idle_state

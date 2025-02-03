@@ -9,6 +9,7 @@ extends PlayerState
 @export var walking_state: State
 @export var jogging_state: State
 @onready var reloading_state = $"../ReloadingState"
+@onready var equipping_state = $"../EquippingState"
 
 func process_state(delta):
 	if aim_state_machine.current_state is AimingState:
@@ -38,5 +39,11 @@ func check_transitions():
 	elif Input.is_action_just_pressed("reload"):
 		controlled_player.gun.shoot_end()
 		return reloading_state
+	elif Input.is_action_just_pressed("equip_primary"):
+		equipping_state.weapon_index = 0
+		return equipping_state
+	elif Input.is_action_just_pressed("equip_secondary"):
+		equipping_state.weapon_index = 1
+		return equipping_state
 	else:
 		return null
