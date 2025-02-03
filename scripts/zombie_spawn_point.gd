@@ -1,8 +1,9 @@
 extends Node3D
 
 @export var initial_delay = 3.0
-@export var spawn_delay = 8.0
+@export var spawn_delay = 15
 @export var delay_decrease = 1
+@export var min_spawn_delay = 5
 
 @onready var timer = $Timer
 

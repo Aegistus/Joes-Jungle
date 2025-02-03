@@ -9,7 +9,6 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eeaau"]
 resource_name = "Mat.1"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("3_paqki")
 emission_enabled = true
 uv1_offset = Vector3(0, -1, 0)

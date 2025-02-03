@@ -54,6 +54,11 @@ func _physics_process(delta):
 			current_interactable.interact_during(delta)
 		if Input.is_action_just_released("interact"):
 			current_interactable.interact_end()
+	if Input.is_action_just_pressed("show_mouse"):
+		if Input.mouse_mode == Input.MOUSE_MODE_CONFINED_HIDDEN:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 
 func take_damage(damage):
 	if current_health > 0:
@@ -71,10 +76,12 @@ func equip_weapon(new_gun: Gun) -> bool:
 	gun = new_gun
 	gun.visible = true
 	if new_gun.gun_type == Gun.GunType.PISTOL:
+		rifle_anim_tree.active = false
 		current_animation_tree = pistol_anim_tree
 		current_relaxed_idle_anim = "Pistol Anim Pack/Relaxed Idle"
 		current_relaxed_jog_anim = "Pistol Anim Pack/Relaxed Run"
 	else:
+		pistol_anim_tree.active = false
 		current_animation_tree = rifle_anim_tree
 		current_relaxed_idle_anim = "Rifle Anims/rifle relaxed idle"
 		current_relaxed_jog_anim = "Rifle Anims/rifle run"
