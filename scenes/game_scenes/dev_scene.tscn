@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://d1otweixyixi3"]
+[gd_scene load_steps=27 format=4 uid="uid://d1otweixyixi3"]
 
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_veg6g"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="2_nhdfr"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dlrj2ln8hxx6l" path="res://scenes/zombie_spawn_point.tscn" id="13_t30w5"]
 [ext_resource type="PackedScene" uid="uid://cwp0spuqeu7jj" path="res://scenes/scenery/watering_bush.tscn" id="14_ow336"]
 [ext_resource type="PackedScene" uid="uid://c4p6ldvfdioho" path="res://scenes/ui/player_ui.tscn" id="15_4t01c"]
+[ext_resource type="PackedScene" uid="uid://c7baeq2p0p2hk" path="res://scenes/shop_rifle.tscn" id="16_4qorg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -349,3 +350,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8629, -0.1, -4.9256)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3629, -0.1, -22.6756)
 
 [node name="PlayerUI" parent="." instance=ExtResource("15_4t01c")]
+
+[node name="Shop_Rifle" parent="." instance=ExtResource("16_4qorg")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.654171, -0.1, -5.61401)

@@ -1,8 +1,10 @@
-[gd_scene load_steps=24 format=4 uid="uid://c7baeq2p0p2hk"]
+[gd_scene load_steps=27 format=4 uid="uid://c7baeq2p0p2hk"]
 
 [ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="1_1nmi8"]
 [ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="1_4cg74"]
 [ext_resource type="Script" path="res://scripts/shop.gd" id="1_grug5"]
+[ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="4_3swtw"]
+[ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="5_6s8e3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3l32"]
 resource_name = "Mat"
@@ -258,8 +260,16 @@ _data = {
 "spin": SubResource("Animation_u7lb7")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6nn7s"]
+radius = 2.9
+height = 13.0
+
 [node name="Shop_Rifle" type="Node3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_grug5")
+shop_item_scene_path = "res://scenes/M4.tscn"
+item_cost = 10
+tooltip_text = "Buy M4 for 200 Points"
 
 [node name="M4_8" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.80678, -0.434969)
@@ -312,3 +322,16 @@ mesh = SubResource("CylinderMesh_q5ege")
 libraries = {
 "": SubResource("AnimationLibrary_v6nlf")
 }
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85004, 0)
+shape = SubResource("CapsuleShape3D_6nn7s")
+
+[node name="ShopSuccessAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_3swtw")
+
+[node name="ShopFailureAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_6s8e3")

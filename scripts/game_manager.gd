@@ -19,3 +19,6 @@ func end_game():
 
 func add_points(amount):
 	current_points += amount
+
+func spend_points(amount):
+	current_points -= amount

@@ -1,10 +1,9 @@
-[gd_scene load_steps=32 format=4 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=31 format=4 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Script" path="res://scripts/camera_mount.gd" id="2_mupqo"]
 [ext_resource type="PackedScene" uid="uid://bpdhjy3tvivvm" path="res://scenes/pistol.tscn" id="2_scene"]
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_5cvyg"]
-[ext_resource type="PackedScene" uid="uid://b8gi7noqhm3jn" path="res://scenes/M4.tscn" id="3_lhtjf"]
 [ext_resource type="AnimationLibrary" uid="uid://wubbon5nyek1" path="res://assets/animations/libraries/Pistol Anim Pack.res" id="3_q8g1f"]
 [ext_resource type="Script" path="res://scripts/player states/idle_state.gd" id="4_s0a0d"]
 [ext_resource type="AnimationLibrary" uid="uid://bhfy6y3yys725" path="res://assets/animations/libraries/Rifle Anims.res" id="5_a1aim"]
@@ -800,10 +799,6 @@ bone_idx = 34
 
 [node name="GunHolder" type="Node3D" parent="PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D"]
 transform = Transform3D(0.999421, -0.0326995, 0.00938384, 0.0326636, 0.999458, 0.00395178, -0.00950798, -0.00364298, 0.999948, -0.00428164, 0.000796795, 0.000735223)
-
-[node name="M4" parent="PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder" instance=ExtResource("3_lhtjf")]
-transform = Transform3D(0.00512523, 0.995794, 0.0914871, -0.0525548, 0.09163, -0.994406, -0.998605, 0.000288524, 0.0528034, -0.2503, 0.284892, 0.0708231)
-visible = false
 
 [node name="Pistol 92" parent="PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder" instance=ExtResource("2_scene")]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 1.19209e-06, 0.110825, 0.0540304)

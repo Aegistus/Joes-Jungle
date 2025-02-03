@@ -1,6 +1,7 @@
 extends Control
 
 @onready var interactable_tooltip = $CanvasLayer/InteractableTooltip
+@onready var tooltip_label = $CanvasLayer/InteractableTooltip/Label
 @onready var health_bar = $CanvasLayer/HealthBar
 
 var player
@@ -13,5 +14,6 @@ func _ready():
 func _process(delta):
 	if player.current_interactable != null:
 		interactable_tooltip.visible = true
+		tooltip_label.text = player.current_interactable.tooltip_text
 	else:
 		interactable_tooltip.visible = false

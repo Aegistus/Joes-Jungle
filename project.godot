@@ -104,7 +104,7 @@ equip_secondary={
 3d_physics/layer_3="ragdoll"
 3d_physics/layer_4="hitbox"
 3d_physics/layer_5="hurtbox"
-3d_physics/layer_6="BushLayer"
+3d_physics/layer_6="interactable"
 
 [physics]
 

@@ -11,9 +11,11 @@ signal health_update(health, max_health)
 
 @onready var interact_raycast = $PlayerModel/InteractRaycast
 @onready var hurtbox = $Hurtbox
-@onready var guns = [$"PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/Pistol 92", $PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/M4]
+@onready var primary_weapon #= $PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/M4
+@onready var secondary_weapon = $"PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/Pistol 92"
 @onready var pistol_anim_tree = $PlayerModel/Model/PistolAnimTree
 @onready var rifle_anim_tree = $PlayerModel/Model/RifleAnimTree
+@onready var gun_holder = $PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder
 
 var current_animation_tree
 var current_relaxed_idle_anim
@@ -31,7 +33,9 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	current_health = max_health
 	hurtbox.on_hurt.connect(take_damage)
-	equip_weapon(guns[1])
+	#primary_weapon.visible = false
+	secondary_weapon.visible = false
+	equip_weapon(secondary_weapon)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -76,3 +80,23 @@ func equip_weapon(new_gun: Gun):
 		current_animation_tree = rifle_anim_tree
 		current_relaxed_idle_anim = "Rifle Anims/rifle relaxed idle"
 		current_relaxed_jog_anim = "Rifle Anims/rifle run"
+
+func pickup_weapon(new_gun: Gun):
+	if primary_weapon != null and secondary_weapon != null:
+		if gun == primary_weapon:
+			primary_weapon = null
+		elif gun == secondary_weapon:
+			secondary_weapon = null
+		drop_weapon(gun)
+	if primary_weapon == null:
+		primary_weapon = new_gun
+		print("New weapon is primary")
+	elif secondary_weapon == null:
+		secondary_weapon = new_gun
+		print("New weapon is secondary")
+	gun_holder.add_child(new_gun)
+	equip_weapon(new_gun)
+
+func drop_weapon(weapon_to_drop : Gun):
+	print("Dropping: " + weapon_to_drop.name)
+	weapon_to_drop.queue_free()
