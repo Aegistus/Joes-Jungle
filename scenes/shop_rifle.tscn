@@ -263,11 +263,11 @@ _data = {
 radius = 2.9
 height = 13.0
 
-[node name="Shop_Rifle" type="Node3D"]
+[node name="ShopRifle" type="Node3D"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_grug5")
 shop_item_scene_path = "res://scenes/M4.tscn"
-item_cost = 10
+item_cost = 200
 tooltip_text = "Buy M4 for 200 Points"
 
 [node name="M4_8" type="Node3D" parent="."]

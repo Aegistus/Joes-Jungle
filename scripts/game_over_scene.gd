@@ -12,7 +12,7 @@ func _ready():
 
 func _on_restart_button_pressed():
 	GameManager.start_game()
-	get_tree().change_scene_to_file("res://scenes/build_scenes/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/game_scenes/main.tscn")
 
 func _on_main_menu_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/build_scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/game_scenes/main_menu.tscn")

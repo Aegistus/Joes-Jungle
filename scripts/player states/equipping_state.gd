@@ -9,13 +9,16 @@ var state_complete = false
 
 func enter():
 	controlled_player.current_animation_tree.active = false
+	var success
 	if weapon_index == 0:
-		controlled_player.equip_weapon(controlled_player.primary_weapon)
+		success = controlled_player.equip_weapon(controlled_player.primary_weapon)
 	else:
-		controlled_player.equip_weapon(controlled_player.secondary_weapon)
-	state_complete = false
-	animation_player.play("Rifle Anims/equip weapon")
-	animation_player.animation_finished.connect(func(anim_name): state_complete = true)
+		success = controlled_player.equip_weapon(controlled_player.secondary_weapon)
+	state_complete = !success
+	if success:
+		animation_player.play("Rifle Anims/equip weapon")
+		animation_player.seek(.6, true)
+		animation_player.animation_finished.connect(func(anim_name): state_complete = true)
 
 func check_transitions():
 	if state_complete:

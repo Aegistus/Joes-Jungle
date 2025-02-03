@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=5 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="2_o32dr"]
+[ext_resource type="Script" path="res://scripts/points_ui.gd" id="3_f4kss"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_605kr"]
 bg_color = Color(2.40654e-07, 0.646853, 0.127014, 1)
@@ -60,6 +61,28 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 18
 text = "00:00:00 "
 horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Points" type="Panel" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -116.0
+offset_top = 46.0
+offset_right = -1.0
+offset_bottom = 84.0
+grow_horizontal = 0
+script = ExtResource("3_f4kss")
+
+[node name="Label" type="Label" parent="CanvasLayer/Points"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = " Points: "
 vertical_alignment = 1
 
 [node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]

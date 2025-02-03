@@ -29,10 +29,10 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	current_health = max_health
 	hurtbox.on_hurt.connect(take_damage)
-	primary_weapon.visible = false
+	#primary_weapon.visible = false
 	secondary_weapon.visible = false
 	equip_weapon(secondary_weapon)
 
@@ -63,9 +63,9 @@ func take_damage(damage):
 		if current_health <= 0:
 			GameManager.end_game()
 
-func equip_weapon(new_gun: Gun):
+func equip_weapon(new_gun: Gun) -> bool:
 	if new_gun == gun:
-		return
+		return false
 	if gun != null:
 		gun.visible = false
 	gun = new_gun
@@ -78,6 +78,7 @@ func equip_weapon(new_gun: Gun):
 		current_animation_tree = rifle_anim_tree
 		current_relaxed_idle_anim = "Rifle Anims/rifle relaxed idle"
 		current_relaxed_jog_anim = "Rifle Anims/rifle run"
+	return true
 
 func pickup_weapon(new_gun: Gun):
 	if primary_weapon != null and secondary_weapon != null:
