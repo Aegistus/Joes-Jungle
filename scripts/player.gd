@@ -11,7 +11,7 @@ signal health_update(health, max_health)
 
 @onready var interact_raycast = $PlayerModel/InteractRaycast
 @onready var hurtbox = $Hurtbox
-@onready var primary_weapon = $PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/M249
+@onready var primary_weapon = $PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/MPX
 @onready var secondary_weapon = $"PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/Pistol 92"
 @onready var pistol_anim_tree = $PlayerModel/Model/PistolAnimTree
 @onready var rifle_anim_tree = $PlayerModel/Model/RifleAnimTree
@@ -34,7 +34,7 @@ func _ready():
 	hurtbox.on_hurt.connect(take_damage)
 	#primary_weapon.visible = false
 	secondary_weapon.visible = false
-	equip_weapon(primary_weapon)
+	equip_weapon(secondary_weapon)
 
 func _physics_process(delta):
 	# Add the gravity.

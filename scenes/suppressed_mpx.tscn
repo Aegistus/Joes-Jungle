@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://bh6hpwnnast85" path="res://materials/mpx_mat.tres" id="1_1hr63"]
 [ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_yfmcm"]
-[ext_resource type="AudioStream" uid="uid://cmqn3awjnto0g" path="res://assets/audio/Silenced Rifle_01.wav" id="3_30aex"]
+[ext_resource type="AudioStream" uid="uid://cp3o22eciexhn" path="res://assets/audio/Pistol Shot_18.wav" id="3_tsjvn"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="5_yrh3e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eoyhi"]
@@ -580,12 +580,14 @@ _data = {
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hqg5y"]
 random_pitch = 1.1
 streams_count = 1
-stream_0/stream = ExtResource("3_30aex")
+stream_0/stream = ExtResource("3_tsjvn")
 
 [node name="MPX" type="Node3D"]
 transform = Transform3D(-8.70455e-08, 0.99669, -0.0812949, 0.0557692, 0.0811684, 0.995139, 0.998444, -0.00453367, -0.0555846, -0.233414, 0.0945325, 0.0153803)
 script = ExtResource("1_yfmcm")
 shot_delay = 0.1
+min_damage = 3
+max_damage = 6
 max_ammo = 35
 suppressed = true
 gun_type = 1

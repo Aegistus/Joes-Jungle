@@ -32,7 +32,7 @@ tonemap_mode = 2
 sdfgi_enabled = true
 glow_enabled = true
 fog_enabled = true
-fog_light_color = Color(0.726229, 0.752314, 0.793301, 1)
+fog_light_color = Color(0.231111, 0.25393, 0.289802, 1)
 fog_density = 0.002
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_7od6u"]
@@ -52,6 +52,8 @@ uv1_world_triplanar = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 9.99904e-08, -4.94805e-07, 5.325e-07, 0.258819, 0.965926, 3.01065e-07, -0.965926, 0.258819, 0, 0, 0)
+light_color = Color(0.0595766, 0.678295, 0.946514, 1)
+light_energy = 0.2
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
