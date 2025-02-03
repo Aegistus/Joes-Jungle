@@ -13,6 +13,7 @@ func _process(delta):
 
 func start_game():
 	run_time = 0
+	current_points = 0
 	is_game_running = true
 
 func end_game():
