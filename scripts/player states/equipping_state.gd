@@ -12,7 +12,7 @@ func enter():
 	controlled_player.equip_weapon(controlled_player.guns[weapon_index])
 	state_complete = false
 	animation_player.play("Rifle Anims/equip weapon")
-	animation_player.animation_finished.connect(func(name): state_complete = true)
+	animation_player.animation_finished.connect(func(anim_name): state_complete = true)
 
 func check_transitions():
 	if state_complete:

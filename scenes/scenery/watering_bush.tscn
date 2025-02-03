@@ -49,10 +49,10 @@ material_override = SubResource("StandardMaterial3D_2c1dl")
 mesh = SubResource("QuadMesh_unt8k")
 skeleton = NodePath("../..")
 
-[node name="Area3D" type="StaticBody3D" parent="." index="4" groups=["plant"]]
+[node name="Area3D" type="StaticBody3D" parent="." index="4" groups=["interactable"]]
 collision_layer = 32
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" groups=["plant"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02498, 0)
 shape = SubResource("CylinderShape3D_vdwn7")
 

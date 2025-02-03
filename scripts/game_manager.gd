@@ -1,8 +1,9 @@
 extends Node
 
 var run_time = 0.0
-
 var is_game_running = false
+
+var current_points = 0
 
 func _process(delta):
 	if is_game_running:
@@ -15,3 +16,6 @@ func start_game():
 func end_game():
 	is_game_running = false
 	get_tree().change_scene_to_file("res://scenes/build_scenes/game_over_scene.tscn")
+
+func add_points(amount):
+	current_points += amount

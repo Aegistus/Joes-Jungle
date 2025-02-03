@@ -20,4 +20,4 @@ func enter():
 	timer.timeout.connect(zombie.queue_free)
 	timer.wait_time = despawn_delay
 	timer.start()
-	
+	GameManager.add_points(zombie.point_value)

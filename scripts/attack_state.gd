@@ -15,7 +15,7 @@ func enter():
 	var attack_index = randi() % ZOMBIE_ATTACK_ANIM_COUNT
 	animation_player.play(attack_anims[attack_index])
 	exit_state = false
-	animation_player.animation_finished.connect(func(name): exit_state = true)
+	animation_player.animation_finished.connect(func(anim_name): exit_state = true)
 
 func check_transitions():
 	if zombie.current_health <= 0:

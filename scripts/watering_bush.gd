@@ -1,8 +1,9 @@
 class_name WateringBush
-extends Node3D
+extends Interactable
 
 @export var max_water = 120.0
 @export var water_loss_rate = 1.0
+@export var water_increase_rate = 30.0
 
 @onready var watering_bush = $SubViewport/WateringBush
 @onready var watering_sound = $WateringSound
@@ -22,8 +23,8 @@ func _process(delta):
 			current_water = 0
 			GameManager.end_game()
 
-func water(amount):
+func interact_during(delta):
 	if current_water < max_water:
-		current_water += amount
+		current_water += delta * water_increase_rate
 		if !watering_sound.playing:
 			watering_sound.play()

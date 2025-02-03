@@ -2,6 +2,7 @@ class_name Zombie
 extends CharacterBody3D
 
 @export var starting_health = 10
+@export var point_value = 10
 @onready var ragdoll = $zombie_model/Armature/GeneralSkeleton/PhysicalBoneSimulator3D
 @onready var state_machine = $StateMachine
 @onready var hit_state = $StateMachine/HitState
