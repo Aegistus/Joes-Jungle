@@ -3,7 +3,6 @@ extends PlayerState
 
 @onready var idle_state = $"../IdleState"
 @onready var animation_player = $"../../PlayerModel/Model/AnimationPlayer"
-@onready var reload_audio_player = $"../../ReloadAudioPlayer"
 
 var done_reloading = false
 

@@ -3,8 +3,8 @@ extends Gun
 
 @export var shot_delay := .2
 
-var current_time
 @onready var timer = $Timer
+var current_time
 
 func _ready():
 	super()

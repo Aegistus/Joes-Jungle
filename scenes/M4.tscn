@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/machine_gun.gd" id="1_fhn77"]
 [ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="2_qdry2"]
-[ext_resource type="AudioStream" uid="uid://qn21imdsbvoc" path="res://assets/audio/Revolver Shot_01.wav" id="3_tafqj"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="4_nfk42"]
+[ext_resource type="AudioStream" uid="uid://d0l6l1t32bd1m" path="res://assets/audio/Assault Rifle Shot_06.wav" id="4_oudcc"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="4_xqsjn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbbeg"]
@@ -341,14 +341,13 @@ _data = {
 "shoot": SubResource("Animation_lh8sp")
 }
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3bh0c"]
-random_pitch = 1.05
-random_volume_offset_db = 0.48
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ksflp"]
+random_pitch = 1.1
 streams_count = 1
-stream_0/stream = ExtResource("3_tafqj")
+stream_0/stream = ExtResource("4_oudcc")
 
 [node name="M4" type="Node3D"]
-transform = Transform3D(-4.36442e-08, 0.998463, 0.0554207, -2.42252e-09, 0.0554207, -0.998463, -1, -4.37114e-08, 1.91069e-15, -0.252601, 0.304844, 0.0460553)
+transform = Transform3D(-4.32917e-08, 0.990399, 0.13824, -6.04265e-09, 0.13824, -0.990399, -1, -4.37114e-08, 1.88224e-15, -0.26737, 0.282876, 0.0460553)
 script = ExtResource("1_fhn77")
 shot_delay = 0.1
 max_ammo = 30
@@ -410,7 +409,7 @@ libraries = {
 }
 
 [node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = SubResource("AudioStreamRandomizer_3bh0c")
+stream = SubResource("AudioStreamRandomizer_ksflp")
 bus = &"Sound Effects"
 
 [node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]

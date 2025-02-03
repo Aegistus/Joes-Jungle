@@ -16,6 +16,7 @@ var current_ammo: int:
 
 @onready var gun_audio_player = $GunAudioPlayer
 @onready var dry_shot_audio_player = $DryShotAudioPlayer
+@onready var reload_audio_player = $ReloadAudioPlayer
 @onready var muzzle_flash = $"gun model/MuzzleFlash"
 @onready var muzzle_flash_2 = $"gun model/MuzzleFlash2"
 @onready var animation_player = $AnimationPlayer as AnimationPlayer
@@ -48,6 +49,9 @@ func shoot_continue():
 
 func shoot_end():
 	pass
+
+func reload_start():
+	reload_audio_player.play()
 
 func reload():
 	current_ammo = max_ammo

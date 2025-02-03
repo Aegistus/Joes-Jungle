@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0l6l1t32bd1m"
+path="res://.godot/imported/Assault Rifle Shot_06.wav-88347fd93fb5f29e1995e9f404a6e4cd.sample"
+
+[deps]
+
+source_file="res://assets/audio/Assault Rifle Shot_06.wav"
+dest_files=["res://.godot/imported/Assault Rifle Shot_06.wav-88347fd93fb5f29e1995e9f404a6e4cd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

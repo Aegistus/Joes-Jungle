@@ -19,7 +19,7 @@ signal health_update(health, max_health)
 var current_animation_tree
 var current_relaxed_idle_anim
 var current_relaxed_jog_anim
-var gun
+var gun : Gun
 var raycast
 
 var current_plant
