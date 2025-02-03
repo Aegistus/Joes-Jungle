@@ -8,6 +8,7 @@ signal on_ammo_count_change(ammo)
 @export var min_damage = 6
 @export var max_damage = 10
 @export var max_ammo = 10
+@export var suppressed = false
 @export var gun_type: GunType
 var current_ammo: int:
 	set(value):
@@ -24,8 +25,9 @@ var current_ammo: int:
 var can_shoot = true
 
 func _ready():
-	muzzle_flash.visible = false
-	muzzle_flash_2.visible = false
+	if !suppressed:
+		muzzle_flash.visible = false
+		muzzle_flash_2.visible = false
 	current_ammo = max_ammo
 
 func shoot():
