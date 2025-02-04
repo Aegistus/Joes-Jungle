@@ -10,7 +10,6 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eoyhi"]
 resource_name = "Modern Weapon Pack Vol.01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xcn0a"]
@@ -476,7 +475,6 @@ shadow_mesh = SubResource("ArrayMesh_t8rce")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yhkdj"]
 resource_name = "Modern Weapon Pack Vol.01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_eh5wc"]

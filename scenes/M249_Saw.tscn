@@ -11,7 +11,6 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42npd"]
 resource_name = "Mat"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("2_8iw11")
 emission_enabled = true
 uv1_offset = Vector3(0, -1, 0)
@@ -187,58 +186,6 @@ shadow_mesh = SubResource("ArrayMesh_e5320")
 [sub_resource type="Animation" id="Animation_vndia"]
 resource_name = "Main"
 
-[sub_resource type="Animation" id="Animation_p5adf"]
-resource_name = "shoot"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("gun model:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.187772, 0, 3.55271e-17), Vector3(0.188, 0, 0.08), Vector3(0.187772, 0, 3.55271e-17)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("gun model:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.151599, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("gun model/MuzzleFlash:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("gun model/MuzzleFlash2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.0666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
 [sub_resource type="Animation" id="Animation_lpsxb"]
 length = 0.001
 tracks/0/type = "value"
@@ -290,6 +237,58 @@ tracks/3/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_p5adf"]
+resource_name = "shoot"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gun model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.187772, 0, 3.55271e-17), Vector3(0.188, 0, 0.08), Vector3(0.187772, 0, 3.55271e-17)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun model:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0523599, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gun model/MuzzleFlash:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gun model/MuzzleFlash2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_66r3h"]
 _data = {
 "Main": SubResource("Animation_vndia"),
@@ -303,7 +302,7 @@ streams_count = 1
 stream_0/stream = ExtResource("4_srnpi")
 
 [node name="M249" type="Node3D"]
-transform = Transform3D(-4.36196e-08, 0.9979, 0.0647761, -2.83145e-09, 0.0647761, -0.9979, -1, -4.37114e-08, 1.91069e-15, 0.0246565, 0.305878, 0.193539)
+transform = Transform3D(0.00200784, 0.998816, 0.0486165, -0.0412164, 0.048658, -0.997965, -0.999148, -4.35096e-08, 0.0412653, 0.0246565, 0.305878, 0.193539)
 script = ExtResource("1_qj7bu")
 shot_delay = 0.08
 min_damage = 9
