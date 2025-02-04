@@ -4,6 +4,7 @@ extends Node3D
 enum GunType { PISTOL, RIFLE, SHOTGUN }
 
 signal on_ammo_count_change(ammo)
+signal on_shoot
 
 @export var min_damage = 6
 @export var max_damage = 10
@@ -41,6 +42,7 @@ func shoot():
 			var collided = raycast.get_collider()
 			if collided != null and collided.is_in_group("enemy"):
 				collided.hit(randi_range(min_damage, max_damage))
+			on_shoot.emit()
 		else:
 			# play dead mans click
 			dry_shot_audio_player.play()

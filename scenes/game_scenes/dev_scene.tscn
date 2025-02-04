@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://ddhplb0t3aute" path="res://scenes/scenery/palm_tree_04.tscn" id="10_kcw2q"]
 [ext_resource type="PackedScene" uid="uid://bs0wmr63q1ofr" path="res://scenes/player.tscn" id="11_8raem"]
 [ext_resource type="PackedScene" uid="uid://g62ygu32m5ji" path="res://scenes/aim_reticle.tscn" id="12_iucx2"]
-[ext_resource type="PackedScene" uid="uid://dlrj2ln8hxx6l" path="res://scenes/zombie_spawn_points.tscn" id="13_t30w5"]
 [ext_resource type="PackedScene" uid="uid://cwp0spuqeu7jj" path="res://scenes/scenery/watering_bush.tscn" id="14_ow336"]
 [ext_resource type="PackedScene" uid="uid://c4p6ldvfdioho" path="res://scenes/ui/player_ui.tscn" id="15_4t01c"]
 [ext_resource type="Script" path="res://scripts/shop.gd" id="17_068wg"]
@@ -20,6 +19,7 @@
 [ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="18_uw2uv"]
 [ext_resource type="Texture2D" uid="uid://b6ngkmijn43fr" path="res://assets/models/Bennelli_M4_0.png" id="19_c1otj"]
 [ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="20_s5ewt"]
+[ext_resource type="Script" path="res://scripts/zombie_spawn_point.gd" id="21_0spru"]
 [ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="21_4fe3f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
@@ -759,9 +759,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61931, 0, -3.49537)
 [node name="AimReticle" parent="." instance=ExtResource("12_iucx2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 
-[node name="Zombie Spawn Point" parent="." instance=ExtResource("13_t30w5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3769, -0.1, 2.25152)
-
 [node name="WateringBush" parent="." instance=ExtResource("14_ow336")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.36292, -0.1, -4.6756)
 
@@ -898,3 +895,41 @@ stream = ExtResource("20_s5ewt")
 
 [node name="ShopFailureAudioPlayer" type="AudioStreamPlayer3D" parent="ShopShotgun"]
 stream = ExtResource("21_4fe3f")
+
+[node name="ZombieSpawnPoints" type="Node3D" parent="."]
+script = ExtResource("21_0spru")
+
+[node name="WaveTimer" type="Timer" parent="ZombieSpawnPoints"]
+
+[node name="Marker3D" type="Marker3D" parent="ZombieSpawnPoints"]
+gizmo_extents = 1.0
+
+[node name="SpawnTimer" type="Timer" parent="ZombieSpawnPoints"]
+
+[node name="SpawnPointParent" type="Node3D" parent="ZombieSpawnPoints"]
+
+[node name="SpawnPoint" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.176, -0.5, -1.567)
+
+[node name="SpawnPoint2" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19, -0.5, -63.242)
+
+[node name="SpawnPoint3" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8685, -0.5, -1.1921)
+
+[node name="SpawnPoint4" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.9185, -0.5, -61.4727)
+
+[node name="SpawnPoint5" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4185, -0.5, -26.4227)
+
+[node name="SpawnPoint6" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5685, -0.5, -28.2227)
+
+[node name="SpawnPoint7" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9185, -0.5, -1.2227)
+
+[node name="SpawnPoint8" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6185, -0.5, -63.4727)
+
+[connection signal="timeout" from="ZombieSpawnPoints/WaveTimer" to="ZombieSpawnPoints" method="_on_timer_timeout"]
