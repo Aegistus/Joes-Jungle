@@ -3,6 +3,7 @@ extends PlayerState
 
 @onready var animation_player = $"../../PlayerModel/Model/AnimationPlayer"
 @onready var idle_state = $"../IdleState"
+@onready var equip_audio_player = $"../../EquipAudioPlayer"
 
 var weapon_index = 0
 var state_complete = false
@@ -17,8 +18,9 @@ func enter():
 	state_complete = !success
 	if success:
 		animation_player.play("Rifle Anims/equip weapon")
-		animation_player.seek(.6, true)
+		animation_player.seek(1, true)
 		animation_player.animation_finished.connect(func(anim_name): state_complete = true)
+		equip_audio_player.play()
 
 func check_transitions():
 	if state_complete:
