@@ -827,6 +827,14 @@ parameters/WalkSpeed/blend_position = Vector2(0, 0)
 transform = Transform3D(1, 0, 0, 0, -6.44843e-08, -1, 0, 1.47523, -4.37114e-08, 0, 1, 0.205727)
 collision_mask = 32
 
+[node name="SpotLight3D" type="SpotLight3D" parent="PlayerModel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0311234, 1.17491, -0.640336)
+light_color = Color(0.999999, 0.984116, 0.591251, 1)
+light_energy = 4.0
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 30.0
+
 [node name="CameraMount" type="Node3D" parent="." node_paths=PackedStringArray("player", "directional_reference")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
 script = ExtResource("2_mupqo")
