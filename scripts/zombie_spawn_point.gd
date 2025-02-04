@@ -34,6 +34,6 @@ func spawn_wave():
 		spawn_timer.wait_time = .1
 		spawn_timer.start()
 		await spawn_timer.timeout
-	current_wave_spawn_count += 1
+	current_wave_spawn_count += 3
 	wave_timer.wait_time = wave_delay
 	wave_timer.start()

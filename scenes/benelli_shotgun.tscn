@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://dx7sbijp1upmd"]
+[gd_scene load_steps=17 format=4 uid="uid://dx7sbijp1upmd"]
 
 [ext_resource type="Script" path="res://scripts/weapons/shotgun.gd" id="2_kl248"]
 [ext_resource type="Texture2D" uid="uid://b6ngkmijn43fr" path="res://assets/models/Bennelli_M4_0.png" id="2_tw5e1"]
 [ext_resource type="AudioStream" uid="uid://i6aor6h1rbq7" path="res://assets/audio/Shotgun Shot_02.wav" id="3_1mj8t"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_78sej"]
+[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="5_gf8jc"]
+[ext_resource type="PackedScene" uid="uid://dmpg4pql6ql1n" path="res://scenes/shotgun_shell_casing_particles.tscn" id="6_7270x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eeaau"]
 resource_name = "Mat.1"
@@ -227,8 +229,9 @@ _data = {
 [node name="Benelli_M4" type="Node3D" node_paths=PackedStringArray("raycasts")]
 transform = Transform3D(1.31134e-07, 0.997253, 0.0740737, 4.37114e-08, 0.0740737, -0.997253, -1, 1.34012e-07, -3.38777e-08, 0.0996198, 0.254223, 0.0305307)
 script = ExtResource("2_kl248")
-raycasts = [NodePath("gun model/BarrelRaycast"), NodePath("gun model/BarrelRaycast2"), NodePath("gun model/BarrelRaycast3")]
-min_damage = 4
+raycasts = [NodePath("gun model/BarrelRaycast"), NodePath("gun model/BarrelRaycast5"), NodePath("gun model/BarrelRaycast4"), NodePath("gun model/BarrelRaycast2"), NodePath("gun model/BarrelRaycast7"), NodePath("gun model/BarrelRaycast9"), NodePath("gun model/BarrelRaycast3"), NodePath("gun model/BarrelRaycast6"), NodePath("gun model/BarrelRaycast8")]
+min_damage = 3
+max_damage = 4
 max_ammo = 8
 gun_type = 2
 
@@ -248,19 +251,31 @@ mesh = SubResource("ArrayMesh_x73jx")
 skeleton = NodePath("")
 
 [node name="BarrelRaycast" type="RayCast3D" parent="gun model"]
-transform = Transform3D(1, 2.27374e-13, 7.10543e-14, -1.42109e-14, -2.38419e-06, -1, 0, 40, -4.47035e-08, -5.96046e-08, -0.06172, -2.20909)
+transform = Transform3D(3, -8.13152e-20, 8.886e-29, 0, -5.24537e-06, -3, 2.03288e-21, 120, -1.31134e-07, -5.96046e-08, -0.06172, -2.20909)
 
 [node name="BarrelRaycast5" type="RayCast3D" parent="gun model"]
-transform = Transform3D(0.997564, -2.79026, 3.04915e-09, 0, -1.74846e-06, -1, 0.0697565, 39.9026, -4.36049e-08, -5.96046e-08, -0.06172, -2.20909)
+transform = Transform3D(2.99817, -4.18794, 4.57652e-09, 0, -5.24537e-06, -3, 0.104698, 119.927, -1.31054e-07, -5.96046e-08, -0.06172, -2.20909)
 
 [node name="BarrelRaycast4" type="RayCast3D" parent="gun model"]
-transform = Transform3D(0.997564, 2.79026, -3.04915e-09, 0, -1.74846e-06, -1, -0.0697565, 39.9026, -4.36049e-08, -5.96046e-08, -0.06172, -2.20909)
+transform = Transform3D(2.99817, 4.18794, -4.57652e-09, 0, -5.24537e-06, -3, -0.104698, 119.927, -1.31054e-07, -5.96046e-08, -0.06172, -2.20909)
 
 [node name="BarrelRaycast2" type="RayCast3D" parent="gun model"]
-transform = Transform3D(0.990268, 5.56693, -6.08338e-09, 1.40284e-09, -2.17655e-06, -1, -0.139173, 39.6107, -4.47035e-08, -5.96046e-08, -0.06172, -2.20909)
+transform = Transform3D(2.99269, 8.37077, -9.14745e-09, 0, -5.24537e-06, -3, -0.209269, 119.708, -1.30815e-07, -5.96046e-08, -0.06172, -2.20909)
+
+[node name="BarrelRaycast7" type="RayCast3D" parent="gun model"]
+transform = Transform3D(2.98357, 12.5434, -1.37072e-08, 0, -5.24537e-06, -3, -0.313585, 119.343, -1.30416e-07, -5.96046e-08, -0.06172, -2.20909)
+
+[node name="BarrelRaycast9" type="RayCast3D" parent="gun model"]
+transform = Transform3D(2.9708, 16.7008, -1.82504e-08, 0, -5.24537e-06, -3, -0.417519, 118.832, -1.29858e-07, -5.96046e-08, -0.06172, -2.20909)
 
 [node name="BarrelRaycast3" type="RayCast3D" parent="gun model"]
-transform = Transform3D(0.990268, -5.56693, 6.08352e-09, -3.25376e-09, -1.63815e-06, -1, 0.139173, 39.6107, -4.47035e-08, -5.96046e-08, -0.06172, -2.20909)
+transform = Transform3D(2.99269, -8.37077, 9.14745e-09, 0, -5.24537e-06, -3, 0.209269, 119.708, -1.30815e-07, -5.96046e-08, -0.06172, -2.20909)
+
+[node name="BarrelRaycast6" type="RayCast3D" parent="gun model"]
+transform = Transform3D(2.98357, -12.5434, 1.37072e-08, 0, -5.24537e-06, -3, 0.313585, 119.343, -1.30416e-07, -5.96046e-08, -0.06172, -2.20909)
+
+[node name="BarrelRaycast8" type="RayCast3D" parent="gun model"]
+transform = Transform3D(2.9708, -16.7008, 1.82504e-08, 0, -5.24537e-06, -3, 0.417519, 118.832, -1.29858e-07, -5.96046e-08, -0.06172, -2.20909)
 
 [node name="MuzzleFlash" type="Sprite3D" parent="gun model"]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.0069878, -0.136525, -4.84059)
@@ -281,4 +296,13 @@ stream = ExtResource("3_1mj8t")
 
 [node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 
+[node name="ShellEjector" type="Node3D" parent="."]
+transform = Transform3D(1, -1.59266e-11, 1.66914e-09, 1.59374e-11, -0.999818, -0.0190928, 1.66914e-09, 0.0190928, -0.999818, 0.0296187, 0.0026645, 0.00259642)
+script = ExtResource("5_gf8jc")
+shell_particle_path = "res://scenes/shotgun_shell_casing_particles.tscn"
+shell_scale = 1.0
+
+[node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("6_7270x")]
+
+[connection signal="on_shoot" from="." to="ShellEjector" method="eject"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

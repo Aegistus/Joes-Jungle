@@ -8,11 +8,11 @@ signal health_update(health, max_health)
 @export var directional_reference: Node3D
 @export var player_model: Node3D
 @export var animation_player: AnimationPlayer
+@export var primary_weapon : Gun
+@export var secondary_weapon : Gun
 
 @onready var interact_raycast = $PlayerModel/InteractRaycast
 @onready var hurtbox = $Hurtbox
-@onready var primary_weapon = $PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/MPX
-@onready var secondary_weapon = $"PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/Pistol 92"
 @onready var pistol_anim_tree = $PlayerModel/Model/PistolAnimTree
 @onready var rifle_anim_tree = $PlayerModel/Model/RifleAnimTree
 @onready var gun_holder = $PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder
@@ -69,7 +69,7 @@ func take_damage(damage):
 			GameManager.end_game()
 
 func equip_weapon(new_gun: Gun) -> bool:
-	if new_gun == gun:
+	if new_gun == null or new_gun == gun:
 		return false
 	if gun != null:
 		gun.visible = false

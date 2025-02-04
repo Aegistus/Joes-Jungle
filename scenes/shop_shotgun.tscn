@@ -220,3 +220,10 @@ stream = ExtResource("4_pw3i5")
 
 [node name="ShopFailureAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_grljo")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0.0311234, 9.02833, -0.0420203)
+light_energy = 6.0
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 30.0

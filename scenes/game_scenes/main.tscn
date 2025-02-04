@@ -27,13 +27,15 @@ sky_material = SubResource("ProceduralSkyMaterial_27m1f")
 
 [sub_resource type="Environment" id="Environment_112m7"]
 background_mode = 2
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_sfs03")
+ambient_light_source = 1
 tonemap_mode = 2
 sdfgi_enabled = true
 glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.231111, 0.25393, 0.289802, 1)
-fog_density = 0.0482
+fog_density = 0.06
 volumetric_fog_enabled = true
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_7od6u"]
@@ -52,10 +54,11 @@ uv1_world_triplanar = true
 [node name="GameManager" parent="." instance=ExtResource("1_okwba")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.707107, 0.5, 0.5, -6.12024e-07, 0.707107, -0.707107, -0.707107, 0.5, 0.5, 0, 0, 0)
-light_color = Color(0.00269111, 0.266174, 0.384969, 1)
-light_energy = 0.0
-light_indirect_energy = 0.0
+transform = Transform3D(0.866025, -0.482963, 0.129409, 2.98023e-08, 0.258819, 0.965926, -0.5, -0.836516, 0.224144, 0.14235, 4.86252, 0.246558)
+light_color = Color(0.0091381, 0.470179, 0.664388, 1)
+light_energy = 0.5
+light_indirect_energy = 0.1
+light_volumetric_fog_energy = 0.1
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

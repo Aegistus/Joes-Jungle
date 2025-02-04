@@ -301,3 +301,10 @@ skeleton = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_66r3h")
 }
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0311234, 9.86099, -0.0420206)
+light_energy = 6.0
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 30.0
