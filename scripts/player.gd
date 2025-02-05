@@ -8,8 +8,6 @@ signal health_update(health, max_health)
 @export var directional_reference: Node3D
 @export var player_model: Node3D
 @export var animation_player: AnimationPlayer
-@export var primary_weapon : Gun
-@export var secondary_weapon : Gun
 
 @onready var interact_raycast = $PlayerModel/InteractRaycast
 @onready var hurtbox = $Hurtbox
@@ -17,6 +15,8 @@ signal health_update(health, max_health)
 @onready var rifle_anim_tree = $PlayerModel/Model/RifleAnimTree
 @onready var gun_holder = $PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder
 
+var primary_weapon : Gun
+var secondary_weapon : Gun
 var current_animation_tree
 var current_relaxed_idle_anim
 var current_relaxed_jog_anim
@@ -32,8 +32,16 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	current_health = max_health
 	hurtbox.on_hurt.connect(take_damage)
-	#primary_weapon.visible = false
-	secondary_weapon.visible = false
+	for i in gun_holder.get_child_count():
+		if gun_holder.get_child(i) is Gun:
+			if secondary_weapon == null:
+				secondary_weapon = gun_holder.get_child(i)
+			elif primary_weapon == null:
+				primary_weapon = gun_holder.get_child(i)
+	if primary_weapon:
+		primary_weapon.visible = false
+	if secondary_weapon:
+		secondary_weapon.visible = false
 	equip_weapon(secondary_weapon)
 
 func _physics_process(delta):

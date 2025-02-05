@@ -1252,12 +1252,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 
 [node name="WateringBush" parent="." instance=ExtResource("13_yxl1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -0.5, -14.5)
+location = 2
 
 [node name="WateringBush2" parent="." instance=ExtResource("13_yxl1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -0.5, -32)
 
 [node name="WateringBush3" parent="." instance=ExtResource("13_yxl1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2, -0.5, -47.9)
+location = 1
 
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 script = ExtResource("17_owi3h")

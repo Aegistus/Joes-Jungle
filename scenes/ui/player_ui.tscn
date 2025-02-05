@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=7 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="2_o32dr"]
 [ext_resource type="Script" path="res://scripts/points_ui.gd" id="3_f4kss"]
+[ext_resource type="Script" path="res://scripts/water_bars_ui.gd" id="4_u2l3y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_605kr"]
 bg_color = Color(2.40654e-07, 0.646853, 0.127014, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66koy"]
+bg_color = Color(5.77569e-07, 0.642912, 0.925276, 1)
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -142,3 +146,58 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "2 - Secondary Weapon "
 horizontal_alignment = 2
+
+[node name="WaterBarsUI" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 4.0
+offset_top = 38.0
+offset_right = 238.0
+offset_bottom = 97.0
+script = ExtResource("4_u2l3y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/WaterBarsUI"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/WaterBarsUI/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Entry-Way Plant"
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/WaterBarsUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 10
+theme_override_styles/fill = SubResource("StyleBoxFlat_66koy")
+show_percentage = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/WaterBarsUI"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/WaterBarsUI/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Kitchen Plant     "
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/WaterBarsUI/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 10
+theme_override_styles/fill = SubResource("StyleBoxFlat_66koy")
+show_percentage = false
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/WaterBarsUI"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/WaterBarsUI/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Patio Plant         "
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/WaterBarsUI/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 10
+theme_override_styles/fill = SubResource("StyleBoxFlat_66koy")
+show_percentage = false

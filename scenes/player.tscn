@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=4 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=33 format=4 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Script" path="res://scripts/camera_mount.gd" id="2_mupqo"]
 [ext_resource type="PackedScene" uid="uid://bpdhjy3tvivvm" path="res://scenes/pistol.tscn" id="2_scene"]
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_5cvyg"]
+[ext_resource type="PackedScene" uid="uid://c6ecwjphk3ure" path="res://scenes/suppressed_mpx.tscn" id="3_exvge"]
 [ext_resource type="AnimationLibrary" uid="uid://wubbon5nyek1" path="res://assets/animations/libraries/Pistol Anim Pack.res" id="3_q8g1f"]
 [ext_resource type="Script" path="res://scripts/player states/idle_state.gd" id="4_s0a0d"]
 [ext_resource type="AnimationLibrary" uid="uid://bhfy6y3yys725" path="res://assets/animations/libraries/Rifle Anims.res" id="5_a1aim"]
@@ -306,14 +307,13 @@ nodes/WalkSpeed/node = SubResource("AnimationNodeBlendSpace2D_bfkv4")
 nodes/WalkSpeed/position = Vector2(-55.5345, 102.547)
 node_connections = [&"output", 0, &"WalkSpeed"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("directional_reference", "player_model", "animation_player", "secondary_weapon") groups=["player"]]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("directional_reference", "player_model", "animation_player") groups=["player"]]
 collision_mask = 3
 script = ExtResource("1_51t2t")
 turn_rate = 10.0
 directional_reference = NodePath("CameraMount/Camera3D/Directional_Reference")
 player_model = NodePath("PlayerModel")
 animation_player = NodePath("PlayerModel/Model/AnimationPlayer")
-secondary_weapon = NodePath("PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder/Pistol 92")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -804,6 +804,8 @@ transform = Transform3D(0.999421, -0.0326995, 0.00938384, 0.0326636, 0.999458, 0
 [node name="Pistol 92" parent="PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder" instance=ExtResource("2_scene")]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 1.19209e-06, 0.110825, 0.0540304)
 visible = false
+
+[node name="MPX" parent="PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder" instance=ExtResource("3_exvge")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerModel/Model"]
 libraries = {

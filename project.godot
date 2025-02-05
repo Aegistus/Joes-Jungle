@@ -45,6 +45,7 @@ camera=""
 hitbox=""
 hurtbox=""
 interactable=""
+plant=""
 
 [input]
 

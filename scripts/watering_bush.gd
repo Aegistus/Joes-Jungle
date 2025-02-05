@@ -1,6 +1,9 @@
 class_name WateringBush
 extends Interactable
 
+enum HouseLocation { ENTRY, KITCHEN, PATIO }
+
+@export var location : HouseLocation
 @export var max_water = 120.0
 @export var water_loss_rate = 1.0
 @export var water_increase_rate = 30.0

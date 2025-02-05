@@ -20,7 +20,7 @@ albedo_texture = SubResource("ViewportTexture_swfeb")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vdwn7"]
 
-[node name="WateringBush" instance=ExtResource("1_jo5n8")]
+[node name="WateringBush" groups=["plant"] instance=ExtResource("1_jo5n8")]
 script = ExtResource("2_r8aun")
 tooltip_text = "Hold E to Water Plant"
 
