@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://c6ecwjphk3ure"]
+[gd_scene load_steps=48 format=4 uid="uid://c6ecwjphk3ure"]
 
 [ext_resource type="Material" uid="uid://bh6hpwnnast85" path="res://materials/mpx_mat.tres" id="1_1hr63"]
 [ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_yfmcm"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/shell_casing_particles.tscn" id="3_ll840"]
 [ext_resource type="AudioStream" uid="uid://cp3o22eciexhn" path="res://assets/audio/Pistol Shot_18.wav" id="3_tsjvn"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="5_yrh3e"]
+[ext_resource type="AudioStream" uid="uid://ptskec0rcqxr" path="res://assets/audio/reload_sounds/M4_mag_out.wav" id="8_155tn"]
+[ext_resource type="AudioStream" uid="uid://bpaaehrpp1qw4" path="res://assets/audio/reload_sounds/M4_mag_in.wav" id="9_fed3u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mi6py"]
 resource_name = "Modern Weapon Pack Vol.002"
@@ -643,7 +645,7 @@ streams_count = 1
 stream_0/stream = ExtResource("3_tsjvn")
 
 [node name="MPX" type="Node3D" node_paths=PackedStringArray("magazine")]
-transform = Transform3D(-8.70455e-08, 0.99669, -0.0812949, 0.0557692, 0.0811684, 0.995139, 0.998444, -0.00453367, -0.0555846, -0.233414, 0.0945325, 0.0153803)
+transform = Transform3D(0.00198471, 0.99669, -0.0812707, 0.0314565, 0.0811684, 0.996204, 0.999504, -0.00453367, -0.0311913, -0.233414, 0.0945325, 0.0153803)
 script = ExtResource("1_yfmcm")
 shot_delay = 0.06
 min_damage = 3
@@ -788,5 +790,11 @@ shell_particle_path = "res://scenes/shell_casing_particles.tscn"
 shell_scale = 1.0
 
 [node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("3_ll840")]
+
+[node name="RemoveMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_155tn")
+
+[node name="InsertMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_fed3u")
 
 [connection signal="on_shoot" from="." to="ShellEjector" method="eject"]

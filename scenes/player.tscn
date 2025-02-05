@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=32 format=4 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Script" path="res://scripts/camera_mount.gd" id="2_mupqo"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" path="res://scripts/player states/resting_state.gd" id="9_d0et7"]
 [ext_resource type="Script" path="res://scripts/player states/reloading_state.gd" id="9_q5wgv"]
 [ext_resource type="Script" path="res://scripts/player states/equipping_state.gd" id="12_odjy0"]
-[ext_resource type="AudioStream" uid="uid://ckwb5xmn5ctgy" path="res://assets/audio/Pistol_Reload.wav" id="12_v8aab"]
 [ext_resource type="PackedScene" uid="uid://cs4bpkimumjf4" path="res://scenes/hurtbox.tscn" id="13_m6j14"]
 [ext_resource type="Script" path="res://scripts/hurtbox.gd" id="14_kudje"]
 [ext_resource type="AudioStream" uid="uid://cs0ymulhw0pkm" path="res://assets/audio/Gun Pickup_02.wav" id="17_c8ao6"]
@@ -915,9 +914,6 @@ relaxed_state = NodePath("../RelaxedState")
 script = ExtResource("9_d0et7")
 player_model = NodePath("../../PlayerModel")
 aiming_state = NodePath("../AimingState")
-
-[node name="ReloadAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("12_v8aab")
 
 [node name="EquipAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("17_c8ao6")

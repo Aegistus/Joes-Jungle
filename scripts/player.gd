@@ -119,17 +119,20 @@ func drop_weapon(weapon_to_drop : Gun):
 
 func remove_magazine():
 	magazine = gun.remove_magazine()
-	left_hand_bone.add_child(magazine)
-	magazine.global_position = left_hand_bone.global_position
-	magazine.global_rotation = left_hand_bone.global_rotation
+	if magazine != null:
+		left_hand_bone.add_child(magazine)
+		magazine.global_position = left_hand_bone.global_position
+		magazine.global_rotation = left_hand_bone.global_rotation
 
 func drop_magazine():
-	var global_pos = magazine.global_position
-	left_hand_bone.remove_child(magazine)
-	get_parent().add_child(magazine)
-	magazine.global_position = global_pos
-	magazine.freeze = false
-	magazine.apply_impulse(player_model.transform * Vector3.LEFT)
+	if magazine != null:
+		var global_pos = magazine.global_position
+		left_hand_bone.remove_child(magazine)
+		get_parent().add_child(magazine)
+		magazine.global_position = global_pos
+		magazine.freeze = false
+		magazine.apply_impulse(player_model.transform * Vector3.LEFT)
+	magazine = null
 
 func insert_magazine():
 	gun.insert_magazine()

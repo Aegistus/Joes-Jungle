@@ -24,6 +24,8 @@ var current_ammo: int:
 @onready var muzzle_flash_2 = $"gun model/MuzzleFlash2"
 @onready var animation_player = $AnimationPlayer as AnimationPlayer
 @onready var raycast = $"gun model/RayCast3D"
+@onready var remove_mag_audio_player = $RemoveMagAudioPlayer
+@onready var insert_mag_audio_player = $InsertMagAudioPlayer
 
 var can_shoot = true
 
@@ -60,13 +62,18 @@ func _on_animation_player_animation_finished(anim_name):
 		can_shoot = true
 
 func remove_magazine() -> Node3D:
-	var copy = magazine.duplicate()
-	magazine.top_level = true
-	copy.scale = magazine.scale
-	magazine.top_level = false
+	remove_mag_audio_player.play()
 	if magazine:
+		var copy = magazine.duplicate()
+		magazine.top_level = true
+		copy.scale = magazine.scale
+		magazine.top_level = false
 		magazine.visible = false
-	return copy
+		return copy
+	else:
+		return null
 
 func insert_magazine():
-	magazine.visible = true
+	insert_mag_audio_player.play()
+	if magazine:
+		magazine.visible = true
