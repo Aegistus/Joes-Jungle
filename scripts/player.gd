@@ -132,6 +132,11 @@ func drop_magazine():
 		magazine.global_position = global_pos
 		magazine.freeze = false
 		magazine.apply_impulse(player_model.transform * Vector3.LEFT)
+		var timer = Timer.new()
+		magazine.add_child(timer)
+		timer.wait_time = Gun.MAG_DESPAWN_TIME
+		timer.timeout.connect(func(): timer.get_parent().queue_free())
+		timer.start()
 	magazine = null
 
 func insert_magazine():

@@ -13,11 +13,6 @@ signal on_shoot
 @export var gun_type: GunType
 @export var magazine : Node3D
 
-var current_ammo: int:
-	set(value):
-		current_ammo = value
-		on_ammo_count_change.emit(current_ammo)
-
 @onready var gun_audio_player = $GunAudioPlayer
 @onready var dry_shot_audio_player = $DryShotAudioPlayer
 @onready var muzzle_flash = $"gun model/MuzzleFlash"
@@ -27,7 +22,13 @@ var current_ammo: int:
 @onready var remove_mag_audio_player = $RemoveMagAudioPlayer
 @onready var insert_mag_audio_player = $InsertMagAudioPlayer
 
+var current_ammo: int:
+	set(value):
+		current_ammo = value
+		on_ammo_count_change.emit(current_ammo)
 var can_shoot = true
+
+const MAG_DESPAWN_TIME = 60
 
 func _ready():
 	if !suppressed:
