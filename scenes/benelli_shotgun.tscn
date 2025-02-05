@@ -252,30 +252,39 @@ skeleton = NodePath("")
 
 [node name="BarrelRaycast" type="RayCast3D" parent="gun model"]
 transform = Transform3D(3, -8.13152e-20, 8.886e-29, 0, -5.24537e-06, -3, 2.03288e-21, 120, -1.31134e-07, -5.96046e-08, -0.06172, -2.20909)
+collision_mask = 67
 
 [node name="BarrelRaycast5" type="RayCast3D" parent="gun model"]
 transform = Transform3D(2.99817, -4.18794, 4.57652e-09, 0, -5.24537e-06, -3, 0.104698, 119.927, -1.31054e-07, -5.96046e-08, -0.06172, -2.20909)
+collision_mask = 67
 
 [node name="BarrelRaycast4" type="RayCast3D" parent="gun model"]
 transform = Transform3D(2.99817, 4.18794, -4.57652e-09, 0, -5.24537e-06, -3, -0.104698, 119.927, -1.31054e-07, -5.96046e-08, -0.06172, -2.20909)
+collision_mask = 67
 
 [node name="BarrelRaycast2" type="RayCast3D" parent="gun model"]
 transform = Transform3D(2.99269, 8.37077, -9.14745e-09, 0, -5.24537e-06, -3, -0.209269, 119.708, -1.30815e-07, -5.96046e-08, -0.06172, -2.20909)
+collision_mask = 67
 
 [node name="BarrelRaycast7" type="RayCast3D" parent="gun model"]
 transform = Transform3D(2.98357, 12.5434, -1.37072e-08, 0, -5.24537e-06, -3, -0.313585, 119.343, -1.30416e-07, -5.96046e-08, -0.06172, -2.20909)
+collision_mask = 67
 
 [node name="BarrelRaycast9" type="RayCast3D" parent="gun model"]
 transform = Transform3D(2.9708, 16.7008, -1.82504e-08, 0, -5.24537e-06, -3, -0.417519, 118.832, -1.29858e-07, -5.96046e-08, -0.06172, -2.20909)
+collision_mask = 67
 
 [node name="BarrelRaycast3" type="RayCast3D" parent="gun model"]
 transform = Transform3D(2.99269, -8.37077, 9.14745e-09, 0, -5.24537e-06, -3, 0.209269, 119.708, -1.30815e-07, -5.96046e-08, -0.06172, -2.20909)
+collision_mask = 67
 
 [node name="BarrelRaycast6" type="RayCast3D" parent="gun model"]
 transform = Transform3D(2.98357, -12.5434, 1.37072e-08, 0, -5.24537e-06, -3, 0.313585, 119.343, -1.30416e-07, -5.96046e-08, -0.06172, -2.20909)
+collision_mask = 67
 
 [node name="BarrelRaycast8" type="RayCast3D" parent="gun model"]
 transform = Transform3D(2.9708, -16.7008, 1.82504e-08, 0, -5.24537e-06, -3, 0.417519, 118.832, -1.29858e-07, -5.96046e-08, -0.06172, -2.20909)
+collision_mask = 67
 
 [node name="MuzzleFlash" type="Sprite3D" parent="gun model"]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.0069878, -0.136525, -4.84059)

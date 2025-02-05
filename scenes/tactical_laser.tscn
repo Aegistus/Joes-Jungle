@@ -52,4 +52,4 @@ skeleton = NodePath("")
 
 [node name="LaserRaycast" type="RayCast3D" parent="."]
 transform = Transform3D(0.005, 0, 0, 0, -4.37114e-08, 0.005, 0, -1, -2.18557e-10, 0.000127918, 0.000169393, 0.000717564)
-collision_mask = 23
+collision_mask = 87

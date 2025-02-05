@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://85xnmfq8ecf8"]
+[gd_scene load_steps=25 format=4 uid="uid://85xnmfq8ecf8"]
 
 [ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_qj7bu"]
 [ext_resource type="Texture2D" uid="uid://vsw6o5ywt0l5" path="res://assets/models/M249_0.png" id="2_8iw11"]
@@ -183,6 +183,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e5320")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0hudy"]
+size = Vector3(1.34912, 1.10596, 0.540771)
+
 [sub_resource type="Animation" id="Animation_vndia"]
 resource_name = "Main"
 
@@ -301,7 +304,7 @@ random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("4_srnpi")
 
-[node name="M249" type="Node3D"]
+[node name="M249" type="Node3D" node_paths=PackedStringArray("magazine")]
 transform = Transform3D(0.00200784, 0.998816, 0.0486165, -0.0412164, 0.048658, -0.997965, -0.999148, -4.35096e-08, 0.0412653, 0.0246565, 0.305878, 0.193539)
 script = ExtResource("1_qj7bu")
 shot_delay = 0.08
@@ -309,6 +312,7 @@ min_damage = 9
 max_damage = 20
 max_ammo = 100
 gun_type = 1
+magazine = NodePath("gun model/Magazine")
 
 [node name="gun model" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.187772, 0, 3.55271e-17)
@@ -330,14 +334,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.786433, 0.115631)
 mesh = SubResource("ArrayMesh_rtm1o")
 skeleton = NodePath("")
 
-[node name="Magazin" type="MeshInstance3D" parent="gun model"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375545, 0.0720872, 0.3747)
-mesh = SubResource("ArrayMesh_ole88")
-skeleton = NodePath("")
-
 [node name="RayCast3D" type="RayCast3D" parent="gun model"]
 transform = Transform3D(-3.05101e-09, -1.41291e-05, -2, -1.99878, 11.2876, 0, 0.069799, 323.235, -8.74228e-08, -0.15, 0.575556, -0.814024)
-collision_mask = 3
+collision_mask = 67
 collide_with_areas = true
 
 [node name="MuzzleFlash" type="Sprite3D" parent="gun model"]
@@ -347,6 +346,20 @@ texture = ExtResource("3_u14cf")
 [node name="MuzzleFlash2" type="Sprite3D" parent="gun model"]
 transform = Transform3D(1.07288e-07, -0.598922, 0.0359494, 0.0257215, 0.0359164, 0.598372, -0.599448, 0.00154102, 0.0256753, -0.159332, 0.533663, -5.15482)
 texture = ExtResource("3_u14cf")
+
+[node name="Magazine" type="RigidBody3D" parent="gun model"]
+collision_layer = 4
+collision_mask = 71
+freeze = true
+
+[node name="Model" type="MeshInstance3D" parent="gun model/Magazine"]
+transform = Transform3D(1, -2.99611e-10, 0, -2.62897e-10, 1, -1.76811e-09, 3.72529e-09, -1.79544e-09, 1, -0.375545, 0.0720872, 0.3747)
+mesh = SubResource("ArrayMesh_ole88")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gun model/Magazine"]
+transform = Transform3D(1, -2.42112e-08, 0, -2.62897e-10, 1, -9.21869e-09, 7.45058e-09, -4.53317e-09, 1, -0.134528, -0.43407, 0.345533)
+shape = SubResource("BoxShape3D_0hudy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

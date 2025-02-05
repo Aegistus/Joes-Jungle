@@ -11,6 +11,8 @@ signal on_shoot
 @export var max_ammo = 10
 @export var suppressed = false
 @export var gun_type: GunType
+@export var magazine : Node3D
+
 var current_ammo: int:
 	set(value):
 		current_ammo = value
@@ -56,3 +58,15 @@ func reload():
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "shoot":
 		can_shoot = true
+
+func remove_magazine() -> Node3D:
+	var copy = magazine.duplicate()
+	magazine.top_level = true
+	copy.scale = magazine.scale
+	magazine.top_level = false
+	if magazine:
+		magazine.visible = false
+	return copy
+
+func insert_magazine():
+	magazine.visible = true

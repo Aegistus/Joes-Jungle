@@ -347,12 +347,13 @@ random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("4_oudcc")
 
-[node name="M4" type="Node3D"]
+[node name="M4" type="Node3D" node_paths=PackedStringArray("magazine")]
 transform = Transform3D(-4.32917e-08, 0.990399, 0.13824, -6.04265e-09, 0.13824, -0.990399, -1, -4.37114e-08, 1.88224e-15, -0.26737, 0.282876, 0.0460553)
 script = ExtResource("1_fhn77")
 shot_delay = 0.1
 max_ammo = 30
 gun_type = 1
+magazine = NodePath("gun model/Mag")
 
 [node name="gun model" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.0239423, 0.259269, 0.0324934)
@@ -391,7 +392,7 @@ skeleton = NodePath("")
 
 [node name="RayCast3D" type="RayCast3D" parent="gun model"]
 transform = Transform3D(-1.11735, 3.80268, -9.84742, -10.1995, -1.62061, 1.07833, -0.0379717, 323.406, 0.121191, -2.98023e-08, 0.625556, -0.614024)
-collision_mask = 3
+collision_mask = 67
 collide_with_areas = true
 
 [node name="MuzzleFlash" type="Sprite3D" parent="gun model"]

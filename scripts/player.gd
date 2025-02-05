@@ -13,7 +13,8 @@ signal health_update(health, max_health)
 @onready var hurtbox = $Hurtbox
 @onready var pistol_anim_tree = $PlayerModel/Model/PistolAnimTree
 @onready var rifle_anim_tree = $PlayerModel/Model/RifleAnimTree
-@onready var gun_holder = $PlayerModel/Model/Armature/GeneralSkeleton/BoneAttachment3D/GunHolder
+@onready var gun_holder = $PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder
+@onready var left_hand_bone = $PlayerModel/Model/Armature/GeneralSkeleton/LeftHandBone
 
 var primary_weapon : Gun
 var secondary_weapon : Gun
@@ -21,6 +22,7 @@ var current_animation_tree
 var current_relaxed_idle_anim
 var current_relaxed_jog_anim
 var gun : Gun
+var magazine : RigidBody3D
 
 var current_interactable
 var current_health
@@ -114,3 +116,20 @@ func pickup_weapon(new_gun: Gun):
 func drop_weapon(weapon_to_drop : Gun):
 	print("Dropping: " + weapon_to_drop.name)
 	weapon_to_drop.queue_free()
+
+func remove_magazine():
+	magazine = gun.remove_magazine()
+	left_hand_bone.add_child(magazine)
+	magazine.global_position = left_hand_bone.global_position
+	magazine.global_rotation = left_hand_bone.global_rotation
+
+func drop_magazine():
+	var global_pos = magazine.global_position
+	left_hand_bone.remove_child(magazine)
+	get_parent().add_child(magazine)
+	magazine.global_position = global_pos
+	magazine.freeze = false
+	magazine.apply_impulse(player_model.transform * Vector3.LEFT)
+
+func insert_magazine():
+	gun.insert_magazine()

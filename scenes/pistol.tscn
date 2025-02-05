@@ -564,7 +564,7 @@ skeleton = NodePath("")
 
 [node name="RayCast3D" type="RayCast3D" parent="gun model"]
 transform = Transform3D(-4.48523e-07, 10000, 2.95252e-07, -10.261, -0.000437114, -1.3405e-14, -5.16941e-16, -0.000298023, 9.907, 3.23996, 2.62088, -0.566382)
-collision_mask = 3
+collision_mask = 67
 collide_with_areas = true
 
 [node name="MuzzleFlash" type="Sprite3D" parent="gun model"]

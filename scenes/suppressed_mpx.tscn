@@ -639,7 +639,7 @@ random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("3_tsjvn")
 
-[node name="MPX" type="Node3D"]
+[node name="MPX" type="Node3D" node_paths=PackedStringArray("magazine")]
 transform = Transform3D(-8.70455e-08, 0.99669, -0.0812949, 0.0557692, 0.0811684, 0.995139, 0.998444, -0.00453367, -0.0555846, -0.233414, 0.0945325, 0.0153803)
 script = ExtResource("1_yfmcm")
 shot_delay = 0.06
@@ -648,6 +648,7 @@ max_damage = 6
 max_ammo = 35
 suppressed = true
 gun_type = 1
+magazine = NodePath("gun model/SMG_J_Mag")
 
 [node name="gun model" type="Node3D" parent="."]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.0239423, 0.259269, 0.0324934)
@@ -747,7 +748,7 @@ skeleton = NodePath("")
 
 [node name="RayCast3D" type="RayCast3D" parent="gun model"]
 transform = Transform3D(7.27596e-12, 1.11759e-08, -0.0125, 0.0125, -1.43409e-08, 3.63798e-12, -4.06089e-10, -0.375, -5.82077e-10, 6.40284e-10, 0.00059581, 0.00397038)
-collision_mask = 3
+collision_mask = 67
 collide_with_areas = true
 
 [node name="Laser_A_Left" parent="gun model" instance=ExtResource("3_aklim")]
