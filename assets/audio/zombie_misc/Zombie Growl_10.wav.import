@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cr5dui40k3rfm"
+path="res://.godot/imported/Zombie Growl_10.wav-529993e6c0361ff3e66eae15daf1f35d.sample"
+
+[deps]
+
+source_file="res://assets/audio/zombie_misc/Zombie Growl_10.wav"
+dest_files=["res://.godot/imported/Zombie Growl_10.wav-529993e6c0361ff3e66eae15daf1f35d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

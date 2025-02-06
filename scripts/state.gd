@@ -4,8 +4,6 @@ extends Node
 
 var target: Node
 
-signal on_state_changed()
-
 func enter():
 	print("Entering: " + name)
 

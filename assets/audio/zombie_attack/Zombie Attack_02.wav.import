@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dr3q7pouts37v"
+path="res://.godot/imported/Zombie Attack_02.wav-04dfa8cfee7560bb5b6ded26c2d8e655.sample"
+
+[deps]
+
+source_file="res://assets/audio/zombie_attack/Zombie Attack_02.wav"
+dest_files=["res://.godot/imported/Zombie Attack_02.wav-04dfa8cfee7560bb5b6ded26c2d8e655.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

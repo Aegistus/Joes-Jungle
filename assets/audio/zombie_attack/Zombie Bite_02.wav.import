@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cdibmn3mmukfi"
+path="res://.godot/imported/Zombie Bite_02.wav-caf1b34440d30d1c7126eda7e0283f39.sample"
+
+[deps]
+
+source_file="res://assets/audio/zombie_attack/Zombie Bite_02.wav"
+dest_files=["res://.godot/imported/Zombie Bite_02.wav-caf1b34440d30d1c7126eda7e0283f39.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

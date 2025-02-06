@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxfdoh2818e0j"
+path="res://.godot/imported/Zombie Death_05.wav-8435e0128756538339e93de1ddabcf1f.sample"
+
+[deps]
+
+source_file="res://assets/audio/zombie_death/Zombie Death_05.wav"
+dest_files=["res://.godot/imported/Zombie Death_05.wav-8435e0128756538339e93de1ddabcf1f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

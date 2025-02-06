@@ -4,6 +4,8 @@ extends Node
 @export var default_state: State
 @export var target: Node
 
+signal on_state_change(new_state : State)
+
 var current_state: State
 
 func _ready():
@@ -28,3 +30,4 @@ func transition_to(next: State):
 	current_state.exit()
 	current_state = next
 	current_state.enter()
+	on_state_change.emit(current_state)
