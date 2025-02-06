@@ -12,7 +12,7 @@ var all_spawn_points
 var spawn_point_count
 
 const MAX_ZOMBIES = 100
-const ZOMBIE_SCENE = preload("res://scenes/zombie.tscn")
+const ZOMBIE_SCENE = preload("res://scenes/enemies/fast_zombie.tscn")
 
 func _ready():
 	wave_timer.wait_time = initial_delay

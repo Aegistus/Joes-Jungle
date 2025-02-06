@@ -10,6 +10,7 @@ extends ZombieState
 
 func enter():
 	hitbox.monitoring = false
+	hitbox.queue_free()
 	collision_shape_3d.disabled = true
 	zombie.velocity = Vector3.ZERO
 	#hip_bone.linear_velocity = Vector3.BACK * hip_bone.transform * 10

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/hitbox.gd" id="1_b6gfh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s75st"]
-size = Vector3(0.644287, 1, 0.63623)
+size = Vector3(1, 1, 0.85)
 
 [node name="Hitbox" type="Area3D" groups=["hitbox"]]
 collision_layer = 8

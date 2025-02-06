@@ -3,23 +3,22 @@ extends ZombieState
 
 @export var attack_distance = 1.0
 @export var dead_state: State
+@export var all_walk_anims = ["Zombie Anims/Zombie Walk", "Zombie Anims/Zombie Walk 2", "Zombie Anims/Zombie Walk 3"]
+@export var anim_speed_scales = [1.5, 2, 1]
+@export var move_speeds = [60, 60, 100]
 
 @onready var attack_state = $"../AttackState"
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var nav_agent = $"../../NavigationAgent3D"
 @onready var animation_player = $"../../AnimationPlayer"
 
-const WALK_ANIM_COUNT = 3
 const ANIM_SPEED_VARIANCE_RANGE = .1
 
-var all_walk_anims = ["Zombie Anims/Zombie Walk", "Zombie Anims/Zombie Walk 2", "Zombie Anims/Zombie Walk 3"]
-var anim_speed_scales = [1.5, 2, 1]
-var move_speeds = [60, 60, 100]
 var anim_index
 var anim_speed_variance
 
 func _ready():
-	anim_index = randi() % WALK_ANIM_COUNT
+	anim_index = randi() % all_walk_anims.size()
 	anim_speed_variance = randf() * ANIM_SPEED_VARIANCE_RANGE
 
 func enter():
