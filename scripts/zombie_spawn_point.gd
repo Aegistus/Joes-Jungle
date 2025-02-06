@@ -30,6 +30,8 @@ func _on_timer_timeout():
 	spawn_wave()
 
 func spawn_wave():
+	randomize()
+	all_spawn_points.shuffle()
 	var all_zombies = get_tree().get_nodes_in_group("enemy")
 	for i in range(0, current_wave_spawn_count):
 		all_zombies = get_tree().get_nodes_in_group("enemy")
