@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cr54mkjgh3ou0"
+path="res://.godot/imported/Body Head (Headshot) 3.wav-82823e5ff3424e1e2411f025c6855a8e.sample"
+
+[deps]
+
+source_file="res://assets/audio/bullet_hits/flesh/Body Head (Headshot) 3.wav"
+dest_files=["res://.godot/imported/Body Head (Headshot) 3.wav-82823e5ff3424e1e2411f025c6855a8e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

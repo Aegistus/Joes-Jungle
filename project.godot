@@ -46,6 +46,9 @@ hitbox=""
 hurtbox=""
 interactable=""
 plant=""
+material_flesh=""
+material_wood=""
+material_stone=""
 
 [input]
 
@@ -114,6 +117,9 @@ show_mouse={
 3d_physics/layer_5="hurtbox"
 3d_physics/layer_6="interactable"
 3d_physics/layer_7="actor"
+3d_physics/layer_17="material_flesh"
+3d_physics/layer_18="material_wood"
+3d_physics/layer_19="material_stone"
 
 [physics]
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cjk7c6ko1y81a"
+path="res://.godot/imported/Rock 1.wav-d0fd993b824fb4ef6fce39a7b7d4402e.sample"
+
+[deps]
+
+source_file="res://assets/audio/bullet_hits/stone/Rock 1.wav"
+dest_files=["res://.godot/imported/Rock 1.wav-d0fd993b824fb4ef6fce39a7b7d4402e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

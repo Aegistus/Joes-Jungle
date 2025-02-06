@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dur6lwnkxp51j"
+path="res://.godot/imported/Wood Heavy 3.wav-b98575307b808ebb8e2cceaa6e181a6d.sample"
+
+[deps]
+
+source_file="res://assets/audio/bullet_hits/wood/Wood Heavy 3.wav"
+dest_files=["res://.godot/imported/Wood Heavy 3.wav-b98575307b808ebb8e2cceaa6e181a6d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

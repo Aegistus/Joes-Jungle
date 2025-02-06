@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://chxm22aanbxae"]
+
+[ext_resource type="AudioStream" uid="uid://drew2ouhsprtu" path="res://assets/audio/bullet_hits/flesh/Body Head (Headshot) 1.wav" id="1_5558c"]
+[ext_resource type="AudioStream" uid="uid://bw6mwyl7lgde3" path="res://assets/audio/bullet_hits/flesh/Body Head (Headshot) 2.wav" id="2_8ci6i"]
+[ext_resource type="AudioStream" uid="uid://cr54mkjgh3ou0" path="res://assets/audio/bullet_hits/flesh/Body Head (Headshot) 3.wav" id="3_hyixc"]
+[ext_resource type="AudioStream" uid="uid://c72ex64g78p0s" path="res://assets/audio/bullet_hits/flesh/Body Head (Headshot) 4.wav" id="4_8cb1t"]
+[ext_resource type="AudioStream" uid="uid://3delelswf1r2" path="res://assets/audio/bullet_hits/flesh/Body Head (Headshot) 5.wav" id="5_2shxq"]
+[ext_resource type="Script" path="res://scripts/temporary_audio_source.gd" id="6_801oo"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_28k52"]
+random_pitch = 1.1
+streams_count = 5
+stream_0/stream = ExtResource("1_5558c")
+stream_1/stream = ExtResource("2_8ci6i")
+stream_2/stream = ExtResource("3_hyixc")
+stream_3/stream = ExtResource("4_8cb1t")
+stream_4/stream = ExtResource("5_2shxq")
+
+[node name="FleshHitAudioSource" type="AudioStreamPlayer3D"]
+stream = SubResource("AudioStreamRandomizer_28k52")
+autoplay = true
+script = ExtResource("6_801oo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true

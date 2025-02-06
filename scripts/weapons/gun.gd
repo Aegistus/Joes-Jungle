@@ -22,6 +22,10 @@ signal on_shoot
 @onready var remove_mag_audio_player = $RemoveMagAudioPlayer
 @onready var insert_mag_audio_player = $InsertMagAudioPlayer
 
+@onready var flesh_hit = preload("res://scenes/audio_scenes/flesh_hit_audio_source.tscn")
+@onready var wood_hit = preload("res://scenes/audio_scenes/wood_hit_audio_source.tscn")
+@onready var stone_hit = preload("res://scenes/audio_scenes/stone_hit_audio_source.tscn")
+
 var current_ammo: int:
 	set(value):
 		current_ammo = value
@@ -44,11 +48,24 @@ func shoot():
 			gun_audio_player.play()
 			can_shoot = false
 			current_ammo -= 1
-			var collided = raycast.get_collider()
-			if collided != null and collided.is_in_group("enemy"):
-				var rotation = (raycast.get_collision_point() - global_position).normalized().inverse()
-				rotation.y += 180
-				collided.hit(randi_range(min_damage, max_damage), raycast.get_collision_point(), rotation)
+			var collided = raycast.get_collider() as CollisionObject3D
+			if collided != null:
+				if collided.is_in_group("enemy"):
+					var rotation = (raycast.get_collision_point() - global_position).normalized().inverse()
+					rotation.y += 180
+					collided.hit(randi_range(min_damage, max_damage), raycast.get_collision_point(), rotation)
+				#if (collided.collision_layer & 1 << 16) == 1 << 16: # flesh
+					#var hit_audio = flesh_hit.instantiate()
+					#get_parent().add_child(hit_audio)
+					#hit_audio.global_position = raycast.get_collision_point()
+				#elif (collided.collision_layer & 1 << 17) == 1 << 17: # wood
+					#var hit_audio = wood_hit.instantiate()
+					#get_parent().add_child(hit_audio)
+					#hit_audio.global_position = raycast.get_collision_point()
+				#else:
+					#var hit_audio = stone_hit.instantiate()
+					#get_parent().add_child(hit_audio)
+					#hit_audio.global_position = raycast.get_collision_point()
 			on_shoot.emit()
 		else:
 			# play dead mans click
