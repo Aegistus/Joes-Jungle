@@ -1,5 +1,6 @@
-[gd_scene load_steps=102 format=4 uid="uid://d1otweixyixi3"]
+[gd_scene load_steps=103 format=4 uid="uid://d1otweixyixi3"]
 
+[ext_resource type="Script" path="res://scripts/main_level.gd" id="1_jwhk1"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_veg6g"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="2_nhdfr"]
 [ext_resource type="Material" uid="uid://odnvymp1mqhf" path="res://materials/grid_3.tres" id="3_11wmu"]
@@ -1023,6 +1024,7 @@ radius = 2.9
 height = 13.0
 
 [node name="world" type="Node3D"]
+script = ExtResource("1_jwhk1")
 
 [node name="GameManager" parent="." instance=ExtResource("1_veg6g")]
 
@@ -1413,6 +1415,8 @@ stream = ExtResource("21_4fe3f")
 
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 script = ExtResource("21_0spru")
+fast_zombie_delay = 10
+tank_zombie_delay = 10
 
 [node name="WaveTimer" type="Timer" parent="ZombieSpawnPoints"]
 

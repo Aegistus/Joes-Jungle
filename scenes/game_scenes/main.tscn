@@ -1,5 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=26 format=3 uid="uid://br201tqu48j8s"]
 
+[ext_resource type="Script" path="res://scripts/main_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="2_6ha5v"]
 [ext_resource type="Material" uid="uid://btglo4s1fu73t" path="res://materials/grid_1.tres" id="5_povn2"]
@@ -51,6 +52,7 @@ uv1_world_triplanar = true
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_30c14"]
 
 [node name="world" type="Node3D"]
+script = ExtResource("1_gfbx0")
 
 [node name="GameManager" parent="." instance=ExtResource("1_okwba")]
 
