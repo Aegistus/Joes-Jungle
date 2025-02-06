@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://i6aor6h1rbq7" path="res://assets/audio/Shotgun Shot_02.wav" id="3_1mj8t"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_78sej"]
 [ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="5_gf8jc"]
-[ext_resource type="PackedScene" uid="uid://dmpg4pql6ql1n" path="res://scenes/shotgun_shell_casing_particles.tscn" id="6_7270x"]
+[ext_resource type="PackedScene" uid="uid://dmpg4pql6ql1n" path="res://scenes/particles/shotgun_shell_casing_particles.tscn" id="6_7270x"]
 [ext_resource type="AudioStream" uid="uid://b734ac3aqa05f" path="res://assets/audio/reload_sounds/benelli_round_in.wav" id="7_ylr0r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eeaau"]
@@ -309,7 +309,7 @@ stream = ExtResource("3_1mj8t")
 [node name="ShellEjector" type="Node3D" parent="."]
 transform = Transform3D(1, -1.59266e-11, 1.66914e-09, 1.59374e-11, -0.999818, -0.0190928, 1.66914e-09, 0.0190928, -0.999818, 0.0296187, 0.0026645, 0.00259642)
 script = ExtResource("5_gf8jc")
-shell_particle_path = "res://scenes/shotgun_shell_casing_particles.tscn"
+shell_particle_path = "res://scenes/particles/shotgun_shell_casing_particles.tscn"
 shell_scale = 1.0
 
 [node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("6_7270x")]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0o4lmfe1m7dh"]
 
-[ext_resource type="ArrayMesh" uid="uid://dv54olngjtss4" path="res://assets/models/bullet_casing.tres" id="1_8k4on"]
-[ext_resource type="Script" path="res://scripts/shell_casing_particles.gd" id="2_md4l7"]
+[ext_resource type="ArrayMesh" uid="uid://dv54olngjtss4" path="res://assets/models/bullet_casing.tres" id="1_lr68d"]
+[ext_resource type="Script" path="res://scripts/shell_casing_particles.gd" id="2_4c5i3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hkbqc"]
 albedo_color = Color(0.966604, 0.921459, 0, 1)
@@ -25,5 +25,5 @@ amount = 1
 lifetime = 2.0
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_em0kn")
-draw_pass_1 = ExtResource("1_8k4on")
-script = ExtResource("2_md4l7")
+draw_pass_1 = ExtResource("1_lr68d")
+script = ExtResource("2_4c5i3")

@@ -18,7 +18,7 @@ signal on_shoot
 @onready var muzzle_flash = $"gun model/MuzzleFlash"
 @onready var muzzle_flash_2 = $"gun model/MuzzleFlash2"
 @onready var animation_player = $AnimationPlayer as AnimationPlayer
-@onready var raycast = $"gun model/RayCast3D"
+@onready var raycast = $"gun model/RayCast3D" as RayCast3D
 @onready var remove_mag_audio_player = $RemoveMagAudioPlayer
 @onready var insert_mag_audio_player = $InsertMagAudioPlayer
 
@@ -46,7 +46,9 @@ func shoot():
 			current_ammo -= 1
 			var collided = raycast.get_collider()
 			if collided != null and collided.is_in_group("enemy"):
-				collided.hit(randi_range(min_damage, max_damage))
+				var rotation = (raycast.get_collision_point() - global_position).normalized().inverse()
+				rotation.y += 180
+				collided.hit(randi_range(min_damage, max_damage), raycast.get_collision_point(), rotation)
 			on_shoot.emit()
 		else:
 			# play dead mans click

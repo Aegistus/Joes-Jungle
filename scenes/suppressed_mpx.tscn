@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_yfmcm"]
 [ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="3_86xac"]
 [ext_resource type="PackedScene" uid="uid://l0fpwhcilnwo" path="res://scenes/tactical_laser.tscn" id="3_aklim"]
-[ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/shell_casing_particles.tscn" id="3_ll840"]
+[ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="3_ll840"]
 [ext_resource type="AudioStream" uid="uid://cp3o22eciexhn" path="res://assets/audio/Pistol Shot_18.wav" id="3_tsjvn"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="5_yrh3e"]
 [ext_resource type="AudioStream" uid="uid://ptskec0rcqxr" path="res://assets/audio/reload_sounds/M4_mag_out.wav" id="8_155tn"]
@@ -786,7 +786,7 @@ stream = ExtResource("5_yrh3e")
 [node name="ShellEjector" type="Node3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.00824303, 0.320377, 0.126833)
 script = ExtResource("3_86xac")
-shell_particle_path = "res://scenes/shell_casing_particles.tscn"
+shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
 shell_scale = 1.0
 
 [node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("3_ll840")]

@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://qn21imdsbvoc" path="res://assets/audio/Revolver Shot_01.wav" id="3_ncd2q"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="4_spmkr"]
 [ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="6_fx1as"]
-[ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/shell_casing_particles.tscn" id="7_6myuf"]
+[ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_6myuf"]
 [ext_resource type="AudioStream" uid="uid://bimsx8ggdoj7t" path="res://assets/audio/reload_sounds/pistol_mag_out.wav" id="8_km4c5"]
 [ext_resource type="AudioStream" uid="uid://2qgiy3wloc8a" path="res://assets/audio/reload_sounds/pistol_mag_in.wav" id="9_pnim4"]
 
@@ -593,7 +593,7 @@ shape = SubResource("BoxShape3D_po52b")
 [node name="ShellEjector" type="Node3D" parent="."]
 transform = Transform3D(-0.965926, 0.258819, -4.47035e-08, 0.062202, 0.232141, -0.970692, -0.251233, -0.937616, -0.24033, 2.25694, 0.370309, -1.70888)
 script = ExtResource("6_fx1as")
-shell_particle_path = "res://scenes/shell_casing_particles.tscn"
+shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
 shell_scale = 1.0
 
 [node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("7_6myuf")]
