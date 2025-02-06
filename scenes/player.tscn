@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/camera_mount.gd" id="2_mupqo"]
 [ext_resource type="PackedScene" uid="uid://bpdhjy3tvivvm" path="res://scenes/pistol.tscn" id="2_scene"]
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_5cvyg"]
-[ext_resource type="PackedScene" uid="uid://c6ecwjphk3ure" path="res://scenes/suppressed_mpx.tscn" id="3_exvge"]
+[ext_resource type="PackedScene" uid="uid://dx7sbijp1upmd" path="res://scenes/benelli_shotgun.tscn" id="3_61pej"]
 [ext_resource type="AnimationLibrary" uid="uid://wubbon5nyek1" path="res://assets/animations/libraries/Pistol Anim Pack.res" id="3_q8g1f"]
 [ext_resource type="Script" path="res://scripts/player states/idle_state.gd" id="4_s0a0d"]
 [ext_resource type="AnimationLibrary" uid="uid://bhfy6y3yys725" path="res://assets/animations/libraries/Rifle Anims.res" id="5_a1aim"]
@@ -805,7 +805,7 @@ transform = Transform3D(0.999421, -0.0326995, 0.00938384, 0.0326636, 0.999458, 0
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 1.19209e-06, 0.110825, 0.0540304)
 visible = false
 
-[node name="MPX" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("3_exvge")]
+[node name="Benelli_M4" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("3_61pej")]
 
 [node name="LeftHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
 transform = Transform3D(-0.752849, -0.657564, -0.0287715, 0.00704396, -0.0517599, 0.998635, -0.658155, 0.751619, 0.0435993, -0.0502117, 1.37924, 0.531639)

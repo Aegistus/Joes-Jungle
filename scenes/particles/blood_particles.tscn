@@ -26,6 +26,7 @@ size = Vector3(0.01, 0.01, 0.01)
 material_override = SubResource("StandardMaterial3D_ft2pj")
 emitting = false
 amount = 500
+lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
 randomness = 0.63

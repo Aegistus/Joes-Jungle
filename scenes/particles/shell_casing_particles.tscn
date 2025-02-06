@@ -13,16 +13,19 @@ emission = Color(0.734429, 0.807011, 0, 1)
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_em0kn"]
 spread = 10.0
 initial_velocity_min = 3.0
-initial_velocity_max = 3.0
+initial_velocity_max = 4.0
 scale_min = 10.0
 scale_max = 10.0
+collision_mode = 1
+collision_friction = 0.8
+collision_bounce = 0.1
 collision_use_scale = true
 
 [node name="ShellCasingParticles" type="GPUParticles3D"]
 material_override = SubResource("StandardMaterial3D_hkbqc")
 emitting = false
 amount = 1
-lifetime = 2.0
+lifetime = 40.0
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_em0kn")
 draw_pass_1 = ExtResource("1_lr68d")

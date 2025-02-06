@@ -14,7 +14,9 @@ func shoot():
 			for i in raycasts.size():
 				var collided = raycasts[i].get_collider()
 				if collided != null and collided.is_in_group("enemy"):
-					collided.hit(randi_range(min_damage, max_damage), raycasts[i].target_position)
+					var rotation = (raycasts[i].get_collision_point() - global_position).normalized().inverse()
+					rotation.y += 180
+					collided.hit(randi_range(min_damage, max_damage), raycasts[i].get_collision_point(), rotation)
 			on_shoot.emit()
 		else:
 			# play dead mans click
