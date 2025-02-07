@@ -10,14 +10,12 @@ extends PlayerState
 @export_category("Transition States")
 @export var idle_state: State
 @export var walking_state: State
-
-@onready var anim_tree = $"../../PlayerModel/Model/AnimTree"
+@onready var reloading_state = $"../ReloadingState"
+@onready var equipping_state = $"../EquippingState"
 
 func enter():
 	super()
-	anim_tree["parameters/conditions/Idle"] = false
-	anim_tree["parameters/conditions/Jog"] = true
-	anim_tree["parameters/conditions/Walk"] = false
+	controlled_player.current_animation_tree.active = false
 
 func process_state_physics(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -31,8 +29,16 @@ func process_state_physics(delta):
 	animation_player.play(controlled_player.current_relaxed_jog_anim)
 
 func check_transitions():
+	if Input.is_action_just_pressed("reload"):
+		return reloading_state
 	if aim_state_machine.current_state is AimingState:
 		return walking_state
+	if Input.is_action_just_pressed("equip_primary"):
+		equipping_state.weapon_index = 0
+		return equipping_state
+	if Input.is_action_just_pressed("equip_secondary"):
+		equipping_state.weapon_index = 1
+		return equipping_state
 	var input = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	if input.length() == 0:
 		return idle_state
