@@ -76,7 +76,7 @@ func take_damage(damage):
 		current_health = clampf(current_health, 0, max_health)
 		health_update.emit(current_health, max_health)
 		if current_health <= 0:
-			GameManager.end_game()
+			GameManager.end_game(GameManager.CauseOfDeath.ZOMBIE)
 
 func equip_weapon(new_gun: Gun) -> bool:
 	if new_gun == null or new_gun == gun:

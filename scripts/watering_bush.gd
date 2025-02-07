@@ -24,7 +24,7 @@ func _process(delta):
 		current_water -= water_loss_rate * delta
 		if current_water <= 0:
 			current_water = 0
-			GameManager.end_game()
+			GameManager.end_game(GameManager.CauseOfDeath.PLANT)
 
 func interact_during(delta):
 	if current_water < max_water:
