@@ -12,7 +12,6 @@ func _ready():
 	for child in get_children():
 		child.target = target
 	current_state = default_state
-	current_state.enter()
 
 func _process(delta):
 	current_state.process_state(delta)

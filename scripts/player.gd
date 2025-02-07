@@ -11,24 +11,26 @@ signal health_update(health, max_health)
 
 @onready var interact_raycast = $PlayerModel/InteractRaycast
 @onready var hurtbox = $Hurtbox
-@onready var pistol_anim_tree = $PlayerModel/Model/PistolAnimTree
-@onready var rifle_anim_tree = $PlayerModel/Model/RifleAnimTree
 @onready var gun_holder = $PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder
 @onready var left_hand_bone = $PlayerModel/Model/Armature/GeneralSkeleton/LeftHandBone
+@onready var anim_tree = $PlayerModel/Model/AnimTree
+@onready var movement_state_machine = $MovementStateMachine
+@onready var aim_state_machine = $AimStateMachine
 
 var primary_weapon : Gun
 var secondary_weapon : Gun
-var current_animation_tree
 var current_relaxed_idle_anim
 var current_relaxed_jog_anim
+var current_aim_anim
+var current_reload_anim
 var gun : Gun
 var magazine : RigidBody3D
 
 var current_interactable
 var current_health
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+#const SPEED = 5.0
+const ANIM_BLEND = .85 
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
@@ -45,6 +47,8 @@ func _ready():
 	if secondary_weapon:
 		secondary_weapon.visible = false
 	equip_weapon(secondary_weapon)
+	movement_state_machine.current_state.enter()
+	aim_state_machine.current_state.enter()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -86,15 +90,15 @@ func equip_weapon(new_gun: Gun) -> bool:
 	gun = new_gun
 	gun.visible = true
 	if new_gun.gun_type == Gun.GunType.PISTOL:
-		rifle_anim_tree.active = false
-		current_animation_tree = pistol_anim_tree
 		current_relaxed_idle_anim = "Pistol Anim Pack/Relaxed Idle"
 		current_relaxed_jog_anim = "Pistol Anim Pack/Relaxed Run"
+		current_aim_anim = "Pistol Anim Pack/Idle"
+		current_reload_anim = "Pistol Anim Pack/Reloading"
 	else:
-		pistol_anim_tree.active = false
-		current_animation_tree = rifle_anim_tree
 		current_relaxed_idle_anim = "Rifle Anims/rifle relaxed idle"
 		current_relaxed_jog_anim = "Rifle Anims/rifle run"
+		current_aim_anim = "Rifle Anim/rifle aiming idle"
+		current_reload_anim = "Pistol Anim Pack/Reloading"
 	return true
 
 func pickup_weapon(new_gun: Gun):
@@ -141,3 +145,14 @@ func drop_magazine():
 
 func insert_magazine():
 	gun.insert_magazine()
+
+func set_upper_body_anims(animation:String, blend:float):
+	# idle
+	anim_tree.get_node("Idle").get_node("Blend2").blend = blend
+	anim_tree.get_node("Idle").get_node("upper_body").animation = animation
+	# walk
+	anim_tree.get_node("Walk").get_node("Blend2").blend = blend
+	anim_tree.get_node("Walk").get_node("upper_body").animation = animation
+	# jog
+	anim_tree.get_node("Jog").get_node("Blend2").blend = blend
+	anim_tree.get_node("Jog").get_node("upper_body").animation = animation

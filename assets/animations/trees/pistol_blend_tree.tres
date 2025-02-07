@@ -1,4 +1,7 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=7 format=3 uid="uid://c4e5wj28gmxw3"]
+[gd_resource type="AnimationNodeBlendTree" load_steps=9 format=3 uid="uid://c4e5wj28gmxw3"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_tg0gj"]
+filters = ["%GeneralSkeleton:Chest", "%GeneralSkeleton:Head", "%GeneralSkeleton:LeftHand", "%GeneralSkeleton:LeftIndexDistal", "%GeneralSkeleton:LeftIndexIntermediate", "%GeneralSkeleton:LeftIndexProximal", "%GeneralSkeleton:LeftLittleDistal", "%GeneralSkeleton:LeftLittleIntermediate", "%GeneralSkeleton:LeftLittleProximal", "%GeneralSkeleton:LeftLowerArm", "%GeneralSkeleton:LeftMiddleDistal", "%GeneralSkeleton:LeftMiddleIntermediate", "%GeneralSkeleton:LeftMiddleProximal", "%GeneralSkeleton:LeftRingDistal", "%GeneralSkeleton:LeftRingIntermediate", "%GeneralSkeleton:LeftRingProximal", "%GeneralSkeleton:LeftShoulder", "%GeneralSkeleton:LeftThumbDistal", "%GeneralSkeleton:LeftThumbMetacarpal", "%GeneralSkeleton:LeftThumbProximal", "%GeneralSkeleton:LeftUpperArm", "%GeneralSkeleton:Neck", "%GeneralSkeleton:RightHand", "%GeneralSkeleton:RightIndexDistal", "%GeneralSkeleton:RightIndexIntermediate", "%GeneralSkeleton:RightIndexProximal", "%GeneralSkeleton:RightLittleDistal", "%GeneralSkeleton:RightLittleIntermediate", "%GeneralSkeleton:RightLittleProximal", "%GeneralSkeleton:RightLowerArm", "%GeneralSkeleton:RightMiddleDistal", "%GeneralSkeleton:RightMiddleIntermediate", "%GeneralSkeleton:RightMiddleProximal", "%GeneralSkeleton:RightRingDistal", "%GeneralSkeleton:RightRingIntermediate", "%GeneralSkeleton:RightRingProximal", "%GeneralSkeleton:RightShoulder", "%GeneralSkeleton:RightThumbDistal", "%GeneralSkeleton:RightThumbMetacarpal", "%GeneralSkeleton:RightThumbProximal", "%GeneralSkeleton:RightUpperArm", "%GeneralSkeleton:Spine", "%GeneralSkeleton:UpperChest", "%GeneralSkeleton:mixamorig_LeftHandThumb4", "%GeneralSkeleton:mixamorig_RightHandThumb4"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ss2ly"]
 animation = &"Pistol Anim Pack/Idle"
@@ -27,8 +30,14 @@ blend_point_3/pos = Vector2(-1, 0)
 blend_point_4/node = SubResource("AnimationNodeAnimation_iabis")
 blend_point_4/pos = Vector2(0, -1)
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y2l23"]
+
 [resource]
-graph_offset = Vector2(-605.063, -4.82909)
+graph_offset = Vector2(-558.323, 113.735)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_tg0gj")
+nodes/Blend2/position = Vector2(0, 140)
 nodes/WalkSpeed/node = SubResource("AnimationNodeBlendSpace2D_smib0")
-nodes/WalkSpeed/position = Vector2(-140, 100)
-node_connections = [&"output", 0, &"WalkSpeed"]
+nodes/WalkSpeed/position = Vector2(-320, 100)
+nodes/upper_body/node = SubResource("AnimationNodeAnimation_y2l23")
+nodes/upper_body/position = Vector2(-300, 320)
+node_connections = [&"Blend2", 0, &"WalkSpeed", &"Blend2", 1, &"upper_body", &"output", 0, &"Blend2"]
