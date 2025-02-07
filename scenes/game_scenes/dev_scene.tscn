@@ -1,6 +1,6 @@
-[gd_scene load_steps=103 format=4 uid="uid://d1otweixyixi3"]
+[gd_scene load_steps=104 format=4 uid="uid://d1otweixyixi3"]
 
-[ext_resource type="Script" path="res://scripts/main_level.gd" id="1_jwhk1"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_jwhk1"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_veg6g"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="2_nhdfr"]
 [ext_resource type="Material" uid="uid://odnvymp1mqhf" path="res://materials/grid_3.tres" id="3_11wmu"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" path="res://scripts/zombie_spawn_point.gd" id="21_0spru"]
 [ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="21_4fe3f"]
 [ext_resource type="PackedScene" uid="uid://22lknia5oy4" path="res://scenes/shop_lmg.tscn" id="22_45akl"]
+[ext_resource type="PackedScene" uid="uid://cfvbl74p3th85" path="res://scenes/ui/pause_menu.tscn" id="24_tnonh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1577,5 +1578,7 @@ spot_angle = 30.0
 [node name="ShopLMG" parent="." instance=ExtResource("22_45akl")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.51404, 0, -1.62839)
 item_cost = 0
+
+[node name="PauseMenu" parent="." instance=ExtResource("24_tnonh")]
 
 [connection signal="timeout" from="ZombieSpawnPoints/WaveTimer" to="ZombieSpawnPoints" method="_on_timer_timeout"]

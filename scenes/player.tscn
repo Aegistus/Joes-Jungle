@@ -794,7 +794,7 @@ mesh = SubResource("ArrayMesh_flhun")
 skin = SubResource("Skin_ongte")
 
 [node name="RightHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(-0.101822, 0.0273611, 0.994426, 0.989731, 0.103592, 0.0984909, -0.10032, 0.994243, -0.037628, -0.152832, 1.33109, 0.202266)
+transform = Transform3D(-0.101822, 0.0273644, 0.994426, 0.989731, 0.103593, 0.0984908, -0.10032, 0.994243, -0.0376316, -0.152831, 1.33109, 0.202265)
 bone_name = "RightHand"
 bone_idx = 34
 
@@ -808,7 +808,7 @@ visible = false
 [node name="Benelli_M4" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("3_61pej")]
 
 [node name="LeftHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(-0.752849, -0.657564, -0.0287715, 0.00704396, -0.0517599, 0.998635, -0.658155, 0.751619, 0.0435993, -0.0502117, 1.37924, 0.531639)
+transform = Transform3D(-0.75285, -0.657563, -0.0287695, 0.00704467, -0.0517575, 0.998635, -0.658154, 0.75162, 0.0435977, -0.0502109, 1.37924, 0.531639)
 bone_name = "LeftHand"
 bone_idx = 10
 

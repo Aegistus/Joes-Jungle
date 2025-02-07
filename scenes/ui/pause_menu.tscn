@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfvbl74p3th85"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_bnuoa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s24kv"]
+bg_color = Color(1, 1, 1, 0.168627)
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bnuoa")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s24kv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -82.0
+offset_right = 137.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Game is paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="ExitToMainMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit to Main Menu"
+
+[node name="ExitToDesktop" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit to Desktop"
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="toggle_pause"]
+[connection signal="pressed" from="VBoxContainer/ExitToMainMenu" to="." method="exit_to_main_menu"]
+[connection signal="pressed" from="VBoxContainer/ExitToDesktop" to="." method="exit_game"]
