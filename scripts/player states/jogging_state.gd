@@ -24,7 +24,7 @@ func process_state_physics(delta):
 	if direction != Vector3.ZERO:
 		target.velocity.x = direction.x * run_speed * delta
 		target.velocity.z = direction.z * run_speed * delta
-	target.	move_and_slide()
+	target.move_and_slide()
 	# Set animations
 	animation_player.play(controlled_player.current_relaxed_jog_anim)
 

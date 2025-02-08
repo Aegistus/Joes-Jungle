@@ -16,6 +16,7 @@ signal health_update(health, max_health)
 @onready var left_hand_bone = $PlayerModel/Model/Armature/GeneralSkeleton/LeftHandBone
 @onready var player_model = $PlayerModel
 @onready var walking_state = $MovementStateMachine/WalkingState
+@onready var reloading_state = $MovementStateMachine/ReloadingState
 
 var primary_weapon : Gun
 var secondary_weapon : Gun
@@ -116,26 +117,39 @@ func drop_weapon(weapon_to_drop : Gun):
 	weapon_to_drop.queue_free()
 
 func remove_magazine():
-	magazine = gun.remove_magazine()
-	if magazine != null:
-		left_hand_bone.add_child(magazine)
-		magazine.global_position = left_hand_bone.global_position
-		magazine.global_rotation = left_hand_bone.global_rotation
+	if !reloading_state.magazine_removed:
+		reloading_state.magazine_removed = true
+		magazine = gun.remove_magazine()
+		if magazine != null:
+			left_hand_bone.add_child(magazine)
+			magazine.global_position = left_hand_bone.global_position
+			magazine.global_rotation = left_hand_bone.global_rotation
 
 func drop_magazine():
-	if magazine != null:
-		var global_pos = magazine.global_position
-		left_hand_bone.remove_child(magazine)
-		get_parent().add_child(magazine)
-		magazine.global_position = global_pos
-		magazine.freeze = false
-		magazine.apply_impulse(player_model.transform * Vector3.LEFT)
-		var timer = Timer.new()
-		magazine.add_child(timer)
-		timer.wait_time = Gun.MAG_DESPAWN_TIME
-		timer.timeout.connect(func(): timer.get_parent().queue_free())
-		timer.start()
-	magazine = null
+	# do previous step in case it hasn't been done yet
+	if !reloading_state.magazine_removed:
+		remove_magazine()
+	if !reloading_state.magazine_dropped:
+		reloading_state.magazine_dropped = true
+		if magazine != null:
+			var global_pos = magazine.global_position
+			left_hand_bone.remove_child(magazine)
+			get_parent().add_child(magazine)
+			magazine.global_position = global_pos
+			magazine.freeze = false
+			magazine.apply_impulse(player_model.transform * Vector3.LEFT)
+			var timer = Timer.new()
+			magazine.add_child(timer)
+			timer.wait_time = Gun.MAG_DESPAWN_TIME
+			timer.timeout.connect(func(): timer.get_parent().queue_free())
+			timer.start()
+		magazine = null
 
 func insert_magazine():
-	gun.insert_magazine()
+	# do all previous steps in case they haven't been done yet
+	if !reloading_state.magazine_removed:
+		remove_magazine()
+	if !reloading_state.magazine_dropped:
+		drop_magazine()
+	if !reloading_state.magazine_inserted:
+		gun.insert_magazine()

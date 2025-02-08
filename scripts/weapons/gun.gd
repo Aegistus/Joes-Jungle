@@ -94,6 +94,8 @@ func remove_magazine() -> Node3D:
 		return null
 
 func insert_magazine():
+	if magazine.visible:
+		return
 	insert_mag_audio_player.play()
 	if magazine:
 		magazine.visible = true
