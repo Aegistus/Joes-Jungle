@@ -307,7 +307,7 @@ streams_count = 1
 stream_0/stream = ExtResource("4_srnpi")
 
 [node name="M249" type="Node3D" node_paths=PackedStringArray("magazine")]
-transform = Transform3D(0.00200784, 0.998816, 0.0486165, -0.0412164, 0.048658, -0.997965, -0.999148, -4.35096e-08, 0.0412653, 0.0246565, 0.305878, 0.193539)
+transform = Transform3D(0.000340127, 0.999374, 0.0353987, -0.108174, 0.0352278, -0.993508, -0.994132, -0.00349132, 0.108119, 0.00412359, 0.305878, 0.178667)
 script = ExtResource("1_qj7bu")
 shot_delay = 0.08
 min_damage = 9

@@ -6,7 +6,6 @@ signal health_update(health, max_health)
 @export var turn_rate := 5.0
 @export var max_health = 100
 @export var directional_reference: Node3D
-@export var player_model: Node3D
 @export var animation_player: AnimationPlayer
 
 @onready var interact_raycast = $PlayerModel/InteractRaycast
@@ -15,6 +14,7 @@ signal health_update(health, max_health)
 @onready var rifle_anim_tree = $PlayerModel/Model/RifleAnimTree
 @onready var gun_holder = $PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder
 @onready var left_hand_bone = $PlayerModel/Model/Armature/GeneralSkeleton/LeftHandBone
+@onready var player_model = $PlayerModel
 
 var primary_weapon : Gun
 var secondary_weapon : Gun

@@ -4,7 +4,6 @@ extends PlayerState
 @export var movement_speed: float = 100
 @export var animation_player: AnimationPlayer
 @export var directional_reference: Node3D
-@export var player_model: Node3D
 @export var aim_state_machine: StateMachine
 @export var rest_state: State
 @export_category("Transition States")
@@ -12,6 +11,7 @@ extends PlayerState
 @export var jogging_state: State
 @onready var reloading_state = $"../ReloadingState"
 @onready var equipping_state = $"../EquippingState"
+@onready var player_model = $"../../PlayerModel"
 
 func enter():
 	super()
