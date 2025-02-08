@@ -7,6 +7,7 @@ extends ZombieState
 @export var anim_speed_scales = [1.5, 2, 1]
 @export var move_speeds = [60, 60, 100]
 
+@onready var no_target_state = $"../NoTargetState"
 @onready var attack_state = $"../AttackState"
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var nav_agent = $"../../NavigationAgent3D"
@@ -27,18 +28,21 @@ func enter():
 	animation_player.speed_scale = anim_speed_scales[anim_index] + anim_speed_variance
 
 func process_state(delta):
-	zombie.velocity = Vector3.ZERO
-	nav_agent.set_target_position(player.position)
-	var next_nav_point = nav_agent.get_next_path_position()
-	zombie.velocity = (next_nav_point - zombie.transform.origin).normalized() * move_speeds[anim_index] * delta
-	
-	zombie.look_at(Vector3(next_nav_point.x, zombie.position.y, next_nav_point.z))
-	
-	zombie.move_and_slide()
+	if player:
+		zombie.velocity = Vector3.ZERO
+		nav_agent.set_target_position(player.position)
+		var next_nav_point = nav_agent.get_next_path_position()
+		zombie.velocity = (next_nav_point - zombie.transform.origin).normalized() * move_speeds[anim_index] * delta
+		
+		zombie.look_at(Vector3(next_nav_point.x, zombie.position.y, next_nav_point.z))
+		
+		zombie.move_and_slide()
 
 func check_transitions():
 	if zombie.current_health <= 0:
 		return dead_state
+	elif player == null:
+		return no_target_state
 	elif zombie.global_position.distance_squared_to(player.global_position) < pow(attack_distance, 2.0):
 		return attack_state
 	else:

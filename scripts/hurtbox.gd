@@ -5,4 +5,3 @@ signal on_hurt(damage)
 
 func hurt(damage):
 	on_hurt.emit(damage)
-	print("hurt")
