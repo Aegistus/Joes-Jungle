@@ -13,11 +13,10 @@ func enter():
 	hitbox.queue_free()
 	collision_shape_3d.disabled = true
 	zombie.velocity = Vector3.ZERO
-	randomize()
-	var rand_direction = Vector3(randf(), 0, randf()).normalized()
-	hip_bone.linear_velocity = Vector3.BACK * 1000
 	ragdoll.active = true
 	ragdoll.physical_bones_start_simulation()
+	var rand_direction = Vector3(randf() * 2 - 1, randf() * 2 - 1, randf() * 2 - 1).normalized()
+	hip_bone.linear_velocity = rand_direction * 20
 	var timer = Timer.new()
 	self.add_child(timer)
 	timer.timeout.connect(zombie.queue_free)

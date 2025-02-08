@@ -114,44 +114,44 @@ use_collision = true
 collision_mask = 3
 
 [node name="box3" type="CSGBox3D" parent="NavigationRegion3D/map"]
-transform = Transform3D(0.275743, 0, -0.286199, 0, 0.397422, 0, 0.286199, 0, 0.275743, -1.58317, 0.0424422, -5.1138)
+transform = Transform3D(0.275743, 0, -0.286199, 0, 0.397422, 0, 0.286199, 0, 0.275743, -9.21106, 0.0424418, -3.41979)
 material_override = ExtResource("2_etqyt")
 use_collision = true
 collision_mask = 3
 
 [node name="box4" type="CSGBox3D" parent="NavigationRegion3D/map"]
-transform = Transform3D(0.275743, 0, -0.286199, 0, 0.397422, 0, 0.286199, 0, 0.275743, 0.166832, 0.0424422, -4.9638)
+transform = Transform3D(0.275743, 0, -0.286199, 0, 0.397422, 0, 0.286199, 0, 0.275743, -7.46106, 0.0424418, -3.26979)
 material_override = ExtResource("2_etqyt")
 use_collision = true
 collision_mask = 3
 
 [node name="box9" type="CSGBox3D" parent="NavigationRegion3D/map"]
-transform = Transform3D(-0.0162683, 0, -0.397089, 0, 0.397422, 0, 0.397089, 0, -0.0162683, -7.57627, 1.13862, -4.38212)
+transform = Transform3D(-0.0162683, 0, -0.397089, 0, 0.397422, 0, 0.397089, 0, -0.0162683, -15.2042, 1.13862, -2.6881)
 material_override = ExtResource("2_etqyt")
 use_collision = true
 collision_mask = 3
 size = Vector3(1, 1, 11.1473)
 
 [node name="box5" type="CSGBox3D" parent="NavigationRegion3D/map"]
-transform = Transform3D(0.275743, 0, -0.286199, 0, 0.397422, 0, 0.286199, 0, 0.275743, -2.90241, 0.0424422, -6.34876)
+transform = Transform3D(0.275743, 0, -0.286199, 0, 0.397422, 0, 0.286199, 0, 0.275743, -10.5303, 0.0424418, -4.65474)
 material_override = ExtResource("2_etqyt")
 use_collision = true
 collision_mask = 3
 
 [node name="box6" type="CSGBox3D" parent="NavigationRegion3D/map"]
-transform = Transform3D(0.275743, 0, -0.286199, 0, 0.397422, 0, 0.286199, 0, 0.275743, -3.0323, 0.0424422, -4.5358)
+transform = Transform3D(0.275743, 0, -0.286199, 0, 0.397422, 0, 0.286199, 0, 0.275743, -10.6602, 0.0424418, -2.84178)
 material_override = ExtResource("2_etqyt")
 use_collision = true
 collision_mask = 3
 
 [node name="box7" type="CSGBox3D" parent="NavigationRegion3D/map"]
-transform = Transform3D(0.275743, 0, -0.286199, 0, 0.397422, 0, 0.286199, 0, 0.275743, -0.932296, 0.0424422, -4.3858)
+transform = Transform3D(0.275743, 0, -0.286199, 0, 0.397422, 0, 0.286199, 0, 0.275743, -8.56019, 0.0424418, -2.69178)
 material_override = ExtResource("2_etqyt")
 use_collision = true
 collision_mask = 3
 
 [node name="box8" type="CSGBox3D" parent="NavigationRegion3D/map"]
-transform = Transform3D(0.275743, 0, -0.286199, 0, 0.397422, 0, 0.286199, 0, 0.275743, 0.426822, 0.0424422, -6.14745)
+transform = Transform3D(0.275743, 0, -0.286199, 0, 0.397422, 0, 0.286199, 0, 0.275743, -7.20107, 0.0424418, -4.45344)
 material_override = ExtResource("2_etqyt")
 use_collision = true
 collision_mask = 3
