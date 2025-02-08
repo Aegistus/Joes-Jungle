@@ -7,7 +7,7 @@ signal on_ammo_count_change(ammo)
 signal on_shoot
 
 @export var min_damage = 6
-@export var max_damage = 10
+@export var max_damage = 9
 @export var max_ammo = 10
 @export var suppressed = false
 @export var gun_type: GunType
