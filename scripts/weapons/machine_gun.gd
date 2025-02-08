@@ -15,7 +15,7 @@ func _ready():
 func shoot():
 	can_shoot = true
 	super()
-	if current_ammo > 0:
+	if ammo.current_ammo > 0:
 		timer.wait_time = shot_delay
 		timer.start()
 

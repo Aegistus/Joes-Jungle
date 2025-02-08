@@ -650,7 +650,6 @@ script = ExtResource("1_yfmcm")
 shot_delay = 0.06
 min_damage = 3
 max_damage = 6
-max_ammo = 35
 suppressed = true
 gun_type = 1
 magazine = NodePath("gun model/Magazine")

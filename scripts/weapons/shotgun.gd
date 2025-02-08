@@ -5,12 +5,12 @@ extends Gun
 
 func shoot():
 	if can_shoot:
-		if current_ammo > 0:
+		if ammo.current_ammo > 0:
 			animation_player.stop(true)
 			animation_player.play("shoot")
 			gun_audio_player.play()
 			can_shoot = false
-			current_ammo -= 1
+			ammo.current_ammo -= 1
 			for i in raycasts.size():
 				var collided = raycasts[i].get_collider()
 				if collided != null and collided.is_in_group("enemy"):

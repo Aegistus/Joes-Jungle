@@ -1563,7 +1563,7 @@ item_cost = 0
 
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 script = ExtResource("21_0spru")
-initial_delay = 1.0
+initial_delay = 1000.0
 
 [node name="WaveTimer" type="Timer" parent="ZombieSpawnPoints"]
 

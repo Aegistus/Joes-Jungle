@@ -312,7 +312,6 @@ script = ExtResource("1_qj7bu")
 shot_delay = 0.08
 min_damage = 9
 max_damage = 20
-max_ammo = 100
 gun_type = 1
 magazine = NodePath("gun model/Magazine")
 magazine_scale = 0.14

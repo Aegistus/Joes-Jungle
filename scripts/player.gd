@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody3D
 
 signal health_update(health, max_health)
+signal on_equip_weapon(gun : Gun)
 
 @export var turn_rate := 5.0
 @export var max_health = 100
@@ -98,6 +99,7 @@ func equip_weapon(new_gun: Gun) -> bool:
 		current_animation_tree = rifle_anim_tree
 		current_relaxed_idle_anim = "Michael Rifle/relaxed idle"
 		current_relaxed_jog_anim = "Michael Rifle/jog"
+	on_equip_weapon.emit(gun)
 	return true
 
 func pickup_weapon(new_gun: Gun):

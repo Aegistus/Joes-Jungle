@@ -356,7 +356,6 @@ stream_0/stream = ExtResource("4_oudcc")
 transform = Transform3D(0.0158893, 0.998441, 0.0535047, -0.126364, 0.0550876, -0.990453, -0.991857, 0.00897652, 0.127043, -0.243178, 0.26633, 0.0471534)
 script = ExtResource("1_fhn77")
 shot_delay = 0.1
-max_ammo = 30
 gun_type = 1
 magazine = NodePath("gun model/Magazine")
 magazine_scale = 0.12
