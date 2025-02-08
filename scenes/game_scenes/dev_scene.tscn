@@ -1416,6 +1416,7 @@ stream = ExtResource("21_4fe3f")
 
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 script = ExtResource("21_0spru")
+initial_delay = 1000.0
 fast_zombie_delay = 0
 fast_zombie_spawn_chance = 100
 

@@ -317,7 +317,7 @@ gun_type = 1
 magazine = NodePath("gun model/Magazine")
 
 [node name="gun model" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.187772, 0, 3.55271e-17)
+transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.14, 0.187772, 0, 3.55271e-17)
 mesh = SubResource("ArrayMesh_7xexq")
 skeleton = NodePath("")
 

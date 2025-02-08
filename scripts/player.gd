@@ -15,6 +15,7 @@ signal health_update(health, max_health)
 @onready var gun_holder = $PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder
 @onready var left_hand_bone = $PlayerModel/Model/Armature/GeneralSkeleton/LeftHandBone
 @onready var player_model = $PlayerModel
+@onready var walking_state = $MovementStateMachine/WalkingState
 
 var primary_weapon : Gun
 var secondary_weapon : Gun
@@ -26,9 +27,6 @@ var magazine : RigidBody3D
 
 var current_interactable
 var current_health
-
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
