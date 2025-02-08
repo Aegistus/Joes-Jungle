@@ -12,6 +12,7 @@ signal on_shoot
 @export var suppressed = false
 @export var gun_type: GunType
 @export var magazine : Node3D
+@export var magazine_scale = 1.0
 
 @onready var gun_audio_player = $GunAudioPlayer
 @onready var dry_shot_audio_player = $DryShotAudioPlayer
@@ -77,9 +78,7 @@ func remove_magazine() -> Node3D:
 	remove_mag_audio_player.play()
 	if magazine:
 		var copy = magazine.duplicate()
-		magazine.top_level = true
-		copy.scale = magazine.scale
-		magazine.top_level = false
+		copy.global_scale(Vector3(magazine_scale, magazine_scale, magazine_scale))
 		magazine.visible = false
 		return copy
 	else:

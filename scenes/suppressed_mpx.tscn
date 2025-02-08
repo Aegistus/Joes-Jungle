@@ -654,6 +654,7 @@ max_ammo = 35
 suppressed = true
 gun_type = 1
 magazine = NodePath("gun model/Magazine")
+magazine_scale = 80.0
 
 [node name="gun model" type="Node3D" parent="."]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.0239423, 0.259269, 0.0324934)
@@ -754,7 +755,7 @@ collide_with_areas = true
 transform = Transform3D(1, -4.76837e-10, -3.8147e-09, 4.76837e-10, 1, -1.0848e-08, 3.8147e-09, 1.0848e-08, 1, 0.00032815, 0.00075599, 0.00380184)
 
 [node name="Magazine" type="RigidBody3D" parent="gun model"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.68434e-13, 0.00145194)
+transform = Transform3D(1, 0, -1.86265e-09, 4.65661e-10, 1, 1.37661e-08, -1.86265e-09, -1.13505e-09, 1, 5.82077e-11, 0, 0.00145194)
 collision_layer = 4
 collision_mask = 7
 freeze = true
