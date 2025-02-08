@@ -101,7 +101,9 @@ func generate_impact_effects(collided):
 		var impact = BULLET_IMPACT_TERRAIN.instantiate()
 		collided.add_child(impact)
 		impact.global_position = raycast.get_collision_point()
-		impact.look_at(impact.global_position + raycast.get_collision_normal())
+		var direction = impact.global_position + raycast.get_collision_normal()
+		if raycast.get_collision_normal() != Vector3.UP: # this check prevents occasional error
+			impact.look_at(direction)
 		impact.emitting = true
 		if (collided.collision_layer & 1 << 17) == 1 << 17: # wood
 			var hit_audio = wood_hit.instantiate()
