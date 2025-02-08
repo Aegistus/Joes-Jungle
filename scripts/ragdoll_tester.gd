@@ -1,6 +1,6 @@
 extends Node
 
-@export var spawn_interval = 5
+@export var spawn_interval = 7
 
 const ZOMBIE = preload("res://scenes/enemies/zombie.tscn")
 const TANK_ZOMBIE = preload("res://scenes/enemies/tank_zombie.tscn")
@@ -18,7 +18,7 @@ func _ready():
 
 func spawn_new():
 	for i in get_child_count():
-		var zombie = ZOMBIE.instantiate()
+		var zombie = TANK_ZOMBIE.instantiate()
 		get_child(i).add_child(zombie)
 		zombie.position = Vector3.ZERO
 		zombie.rotate(Vector3.UP, 180)
