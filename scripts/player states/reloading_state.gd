@@ -7,7 +7,7 @@ extends PlayerState
 var done_reloading = false
 
 func enter():
-	animation_player.play("Pistol Anim Pack/Reloading")
+	animation_player.play("Michael Misc/reload idle")
 	controlled_player.current_animation_tree.active = false
 	controlled_player.velocity = Vector3.ZERO
 	done_reloading = false

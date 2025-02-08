@@ -530,7 +530,7 @@ libraries = {
 }
 
 [node name="gun model" type="Node3D" parent="."]
-transform = Transform3D(0.0680474, 0.99767, 0.00484527, -0.970383, 0.0673131, -0.232003, -0.231788, 0.0110854, 0.972703, 0, 0, 0)
+transform = Transform3D(0.0225354, 0.999746, -0.000272124, -0.993496, 0.0223643, -0.111645, -0.11161, 0.00278628, 0.993748, 0, 0, 0)
 
 [node name="Cube_004" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.525853, 1.33521, -0.49531)

@@ -2,8 +2,9 @@ class_name AimingState
 extends PlayerState
 
 @export var camera: Camera3D
-@export var player_model: Node3D
 @export var relaxed_state: State
+
+@onready var player_model = $"../../PlayerModel"
 
 var intersection
 

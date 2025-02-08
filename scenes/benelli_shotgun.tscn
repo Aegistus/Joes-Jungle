@@ -237,7 +237,7 @@ max_ammo = 8
 gun_type = 2
 
 [node name="gun model" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0, 0)
 mesh = SubResource("ArrayMesh_1nj5t")
 skeleton = NodePath("")
 

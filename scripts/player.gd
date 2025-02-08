@@ -93,8 +93,8 @@ func equip_weapon(new_gun: Gun) -> bool:
 	else:
 		pistol_anim_tree.active = false
 		current_animation_tree = rifle_anim_tree
-		current_relaxed_idle_anim = "Rifle Anims/rifle relaxed idle"
-		current_relaxed_jog_anim = "Rifle Anims/rifle run"
+		current_relaxed_idle_anim = "Michael Rifle/relaxed idle"
+		current_relaxed_jog_anim = "Michael Rifle/jog"
 	return true
 
 func pickup_weapon(new_gun: Gun):

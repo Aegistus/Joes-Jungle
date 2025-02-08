@@ -1,19 +1,19 @@
 [gd_resource type="AnimationNodeBlendTree" load_steps=7 format=3 uid="uid://c4e5wj28gmxw3"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ss2ly"]
-animation = &"Pistol Anim Pack/Idle"
+animation = &"Michael Pistol/aim idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4undh"]
-animation = &"Pistol Anim Pack/Walk Forward"
+animation = &"Michael Pistol/walk forward"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wxywc"]
-animation = &"Pistol Anim Pack/Strafe Right"
+animation = &"Michael Pistol/strafe right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s7t5k"]
-animation = &"Pistol Anim Pack/Strafe Left"
+animation = &"Michael Pistol/strafe left"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iabis"]
-animation = &"Pistol Anim Pack/Walk Backward"
+animation = &"Michael Pistol/walk back"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_smib0"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_ss2ly")
@@ -28,7 +28,7 @@ blend_point_4/node = SubResource("AnimationNodeAnimation_iabis")
 blend_point_4/pos = Vector2(0, -1)
 
 [resource]
-graph_offset = Vector2(-605.063, -4.82909)
+graph_offset = Vector2(-414.924, 8.87939)
 nodes/WalkSpeed/node = SubResource("AnimationNodeBlendSpace2D_smib0")
 nodes/WalkSpeed/position = Vector2(-140, 100)
 node_connections = [&"output", 0, &"WalkSpeed"]

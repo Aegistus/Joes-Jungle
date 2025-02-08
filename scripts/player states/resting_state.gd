@@ -1,10 +1,11 @@
 class_name RelaxedState
 extends PlayerState
 
-@export var player_model: Node3D
 @export var turn_rate: float = 10
 @export_category("Transition States")
 @export var aiming_state: State
+
+@onready var player_model = $"../../PlayerModel"
 
 func process_state_physics(delta):
 	# Rotate player model to look in movement direction
