@@ -4,6 +4,7 @@ extends Node3D
 
 func _ready():
 	animation_player.play("Thriller Anims/Thriller 1")
+	animation_player.animation_finished.connect(_on_animation_player_animation_finished)
 
 func _on_animation_player_animation_finished(anim_name):
 	var next_anim = ""
