@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=27 format=3 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Script" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://scripts/zombie_spawn_point.gd" id="17_owi3h"]
 [ext_resource type="PackedScene" uid="uid://22lknia5oy4" path="res://scenes/shop_lmg.tscn" id="17_rtvpl"]
 [ext_resource type="PackedScene" uid="uid://cfvbl74p3th85" path="res://scenes/ui/pause_menu.tscn" id="20_a311c"]
+[ext_resource type="PackedScene" uid="uid://c0j4glofdqgpk" path="res://scenes/fruit_punch_bowl.tscn" id="20_elqkj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1739,5 +1740,8 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -16.3, -0.5, -19.55)
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -28.8, -0.5, -12.5)
 
 [node name="PauseMenu" parent="." instance=ExtResource("20_a311c")]
+
+[node name="FruitPunchBowl" parent="." instance=ExtResource("20_elqkj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76069, -0.5, -50.8533)
 
 [connection signal="timeout" from="ZombieSpawnPoints/WaveTimer" to="ZombieSpawnPoints" method="_on_timer_timeout"]

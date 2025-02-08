@@ -929,3 +929,7 @@ stream = ExtResource("17_c8ao6")
 
 [node name="Hurtbox" parent="." instance=ExtResource("13_m6j14")]
 script = ExtResource("14_kudje")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 1.57123, 0)
+current = true
