@@ -18,7 +18,7 @@ func _ready():
 
 func spawn_new():
 	for i in get_child_count():
-		var zombie = TANK_ZOMBIE.instantiate()
+		var zombie = FAST_ZOMBIE.instantiate()
 		get_child(i).add_child(zombie)
 		zombie.position = Vector3.ZERO
 		zombie.rotate(Vector3.UP, 180)
