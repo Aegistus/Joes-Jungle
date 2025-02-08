@@ -22,6 +22,7 @@ signal on_shoot
 @onready var remove_mag_audio_player = $RemoveMagAudioPlayer
 @onready var insert_mag_audio_player = $InsertMagAudioPlayer
 
+const BULLET_IMPACT_TERRAIN = preload("res://scenes/particles/bullet_impact_terrain.tscn")
 @onready var flesh_hit = preload("res://scenes/audio_scenes/flesh_hit_audio_source.tscn")
 @onready var wood_hit = preload("res://scenes/audio_scenes/wood_hit_audio_source.tscn")
 @onready var stone_hit = preload("res://scenes/audio_scenes/stone_hit_audio_source.tscn")
@@ -49,6 +50,8 @@ func shoot():
 			can_shoot = false
 			current_ammo -= 1
 			var collided = raycast.get_collider() as CollisionObject3D
+			if collided == null:
+				collided = raycast.get_collider() as CSGShape3D
 			if collided != null:
 				if collided.is_in_group("enemy"):
 					var rotation = (raycast.get_collision_point() - global_position).normalized().inverse()
@@ -66,6 +69,13 @@ func shoot():
 					#var hit_audio = stone_hit.instantiate()
 					#get_parent().add_child(hit_audio)
 					#hit_audio.global_position = raycast.get_collision_point()
+				else:
+					var impact = BULLET_IMPACT_TERRAIN.instantiate()
+					collided.add_child(impact)
+					impact.global_position = raycast.get_collision_point()
+					impact.look_at(impact.global_position + raycast.get_collision_normal())
+					impact.emitting = true
+					print("hit")
 			on_shoot.emit()
 		else:
 			# play dead mans click

@@ -1,0 +1,137 @@
+[gd_scene load_steps=21 format=3 uid="uid://boar5pjwlg348"]
+
+[ext_resource type="Script" path="res://scripts/bullet_impact_terrain.gd" id="1_gmje7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l2ero"]
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(0.836006, 0.836006, 0, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="Gradient" id="Gradient_7511m"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4g4iq"]
+gradient = SubResource("Gradient_7511m")
+
+[sub_resource type="Curve" id="Curve_06upt"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.491765, 0), -5.30776, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6d0ga"]
+curve = SubResource("Curve_06upt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wiyi2"]
+angle_min = -360.0
+angle_max = 360.0
+direction = Vector3(0, 0, -1)
+spread = 25.0
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+scale_max = 1.5
+color = Color(0.748317, 0.748316, 3.85046e-07, 1)
+color_ramp = SubResource("GradientTexture1D_4g4iq")
+emission_curve = SubResource("CurveTexture_6d0ga")
+sub_emitter_mode = 3
+sub_emitter_amount_at_collision = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_05hon"]
+size = Vector3(0.01, 0.01, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ghne"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vxtt5"]
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+scale_max = 1.5
+color = Color(0.18359, 0.18359, 0.18359, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b7is0"]
+size = Vector3(0.02, 0.02, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ck7x3"]
+transparency = 1
+vertex_color_use_as_albedo = true
+
+[sub_resource type="Curve" id="Curve_xqerv"]
+_data = [Vector2(0.409412, 0.501338), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_np8aw"]
+curve = SubResource("Curve_xqerv")
+
+[sub_resource type="Curve" id="Curve_tacsi"]
+_data = [Vector2(0.00470588, 1), 0.0, -2.74866, 0, 0, Vector2(0.997647, 0.0258697), -0.117349, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yj2pg"]
+curve = SubResource("Curve_tacsi")
+
+[sub_resource type="Curve" id="Curve_v7ouu"]
+max_value = 10.0
+_data = [Vector2(0, 0.026762), 0.0, 23.6164, 0, 0, Vector2(1, 8.37645), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3wxgc"]
+curve = SubResource("Curve_v7ouu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tki2s"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 0.2
+emission_ring_inner_radius = 0.05
+direction = Vector3(0, 0, 1)
+spread = 10.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+radial_velocity_min = 0.499978
+radial_velocity_max = 0.999978
+radial_velocity_curve = SubResource("CurveTexture_yj2pg")
+gravity = Vector3(0, 0.5, 0)
+radial_accel_min = -10.0
+radial_accel_max = -2.23517e-06
+damping_min = 10.0
+damping_max = 10.0
+scale_curve = SubResource("CurveTexture_3wxgc")
+color = Color(0.404511, 0.404511, 0.404511, 1)
+alpha_curve = SubResource("CurveTexture_np8aw")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2p481"]
+size = Vector3(0.01, 0.01, 0.01)
+
+[node name="BulletImpactTerrain" type="GPUParticles3D"]
+material_override = SubResource("StandardMaterial3D_l2ero")
+emitting = false
+amount = 3
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_wiyi2")
+draw_pass_1 = SubResource("BoxMesh_05hon")
+script = ExtResource("1_gmje7")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="DarkerMaterial" type="GPUParticles3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_1ghne")
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_vxtt5")
+draw_pass_1 = SubResource("BoxMesh_b7is0")
+
+[node name="Dust" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0380209, 0.010463, 0, 0)
+material_override = SubResource("StandardMaterial3D_ck7x3")
+emitting = false
+amount = 120
+one_shot = true
+explosiveness = 1.0
+randomness = 0.56
+process_material = SubResource("ParticleProcessMaterial_tki2s")
+draw_pass_1 = SubResource("BoxMesh_2p481")
