@@ -268,7 +268,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_grug5")
 shop_item_scene_path = "res://scenes/M4.tscn"
 item_cost = 200
-tooltip_text = "Buy M4 for 200 Points"
+tooltip_text = "Buy M4"
 
 [node name="M4_8" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.80678, -0.434969)

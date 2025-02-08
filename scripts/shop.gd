@@ -11,6 +11,7 @@ var shop_item
 func _ready():
 	shop_item = load(shop_item_scene_path)
 	animation_player.play("spin")
+	tooltip_text += " ($" + str(item_cost) + " Joe Bucks)"
 
 func interact_start():
 	if GameManager.current_points >= item_cost:

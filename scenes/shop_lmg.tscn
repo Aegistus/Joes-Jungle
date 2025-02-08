@@ -238,7 +238,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_jflvj")
 shop_item_scene_path = "res://scenes/M249_Saw.tscn"
 item_cost = 1000
-tooltip_text = "Buy M249 SAW for 1000 Points"
+tooltip_text = "Buy M249 SAW"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(5.47362, 0, 0, 0, 0.273578, 0, 0, 0, 5.47362, 0, 0, 0)

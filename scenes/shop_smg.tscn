@@ -519,7 +519,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_yet33")
 shop_item_scene_path = "res://scenes/suppressed_mpx.tscn"
 item_cost = 200
-tooltip_text = "Buy Suppressed MPX for 200 Points"
+tooltip_text = "Buy Suppressed MPX"
 
 [node name="MPX" type="Node3D" parent="."]
 transform = Transform3D(800, 0, 0, 0, 800, 0, 0, 0, 800, 0, 2.25, -0.5)

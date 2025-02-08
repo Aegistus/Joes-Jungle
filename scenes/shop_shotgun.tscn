@@ -172,7 +172,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_ne553")
 shop_item_scene_path = "res://scenes/benelli_shotgun.tscn"
 item_cost = 200
-tooltip_text = "Buy Benelli Shotgun for 200 Points"
+tooltip_text = "Buy Benelli Shotgun"
 
 [node name="Bennelli_M4" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127432, 2.31189, 0.0658554)
