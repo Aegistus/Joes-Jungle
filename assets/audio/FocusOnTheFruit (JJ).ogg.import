@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://chimp8f8vsx8g"
+path="res://.godot/imported/FocusOnTheFruit (JJ).ogg-abc832fca66809cc6d63b7c44e37d6a3.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/FocusOnTheFruit (JJ).ogg"
+dest_files=["res://.godot/imported/FocusOnTheFruit (JJ).ogg-abc832fca66809cc6d63b7c44e37d6a3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

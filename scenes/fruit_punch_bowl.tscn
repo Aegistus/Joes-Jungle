@@ -1,6 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://c0j4glofdqgpk"]
+[gd_scene load_steps=13 format=4 uid="uid://c0j4glofdqgpk"]
 
 [ext_resource type="Script" path="res://scripts/fruit_punch_bowl.gd" id="1_terny"]
+[ext_resource type="AudioStream" uid="uid://chimp8f8vsx8g" path="res://assets/audio/FocusOnTheFruit (JJ).ogg" id="2_8d5au"]
+[ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="3_h8ef0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8bc3"]
 transparency = 1
@@ -85,8 +87,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_i5noc")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8mfxx"]
+radius = 0.584141
+
 [node name="FruitPunchBowl" type="Node3D"]
 script = ExtResource("1_terny")
+item_cost = 10
+tooltip_text = "Press E to Drink Fruit Punch"
 
 [node name="fruit punch bowl" type="Node3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -107,3 +114,18 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.065, 0)
 light_energy = 10.0
 spot_angle = 22.4063
+
+[node name="HealAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774559, 0)
+stream = ExtResource("2_8d5au")
+volume_db = 20.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.961956, 0)
+shape = SubResource("CapsuleShape3D_8mfxx")
+
+[node name="FailureAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_h8ef0")

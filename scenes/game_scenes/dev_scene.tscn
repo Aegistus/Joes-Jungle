@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://d1otweixyixi3"]
+[gd_scene load_steps=105 format=4 uid="uid://d1otweixyixi3"]
 
 [ext_resource type="Script" path="res://scripts/game_level.gd" id="1_jlul2"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_veg6g"]
@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="21_4fe3f"]
 [ext_resource type="PackedScene" uid="uid://22lknia5oy4" path="res://scenes/shop_lmg.tscn" id="22_45akl"]
 [ext_resource type="PackedScene" uid="uid://cfvbl74p3th85" path="res://scenes/ui/pause_menu.tscn" id="24_tnonh"]
+[ext_resource type="PackedScene" uid="uid://c0j4glofdqgpk" path="res://scenes/fruit_punch_bowl.tscn" id="25_1ethd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1563,9 +1564,6 @@ item_cost = 0
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 script = ExtResource("21_0spru")
 initial_delay = 1.0
-wave_delay = 10.0
-tank_zombie_delay = 0
-tank_zombie_spawn_chance = 100
 
 [node name="WaveTimer" type="Timer" parent="ZombieSpawnPoints"]
 
@@ -1902,5 +1900,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9185, -0.5, -1.2227)
 
 [node name="SpawnPoint8" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6185, -0.5, -63.4727)
+
+[node name="FruitPunchBowl" parent="." instance=ExtResource("25_1ethd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05074, -0.0999999, -5.58617)
 
 [connection signal="timeout" from="ZombieSpawnPoints/WaveTimer" to="ZombieSpawnPoints" method="_on_timer_timeout"]
