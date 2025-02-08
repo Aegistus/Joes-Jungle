@@ -53,29 +53,11 @@ func shoot():
 			if collided == null:
 				collided = raycast.get_collider() as CSGShape3D
 			if collided != null:
+				generate_impact_effects(collided)
 				if collided.is_in_group("enemy"):
 					var rotation = (raycast.get_collision_point() - global_position).normalized().inverse()
 					rotation.y += 180
 					collided.hit(randi_range(min_damage, max_damage), raycast.get_collision_point(), rotation)
-				#if (collided.collision_layer & 1 << 16) == 1 << 16: # flesh
-					#var hit_audio = flesh_hit.instantiate()
-					#get_parent().add_child(hit_audio)
-					#hit_audio.global_position = raycast.get_collision_point()
-				#elif (collided.collision_layer & 1 << 17) == 1 << 17: # wood
-					#var hit_audio = wood_hit.instantiate()
-					#get_parent().add_child(hit_audio)
-					#hit_audio.global_position = raycast.get_collision_point()
-				#else:
-					#var hit_audio = stone_hit.instantiate()
-					#get_parent().add_child(hit_audio)
-					#hit_audio.global_position = raycast.get_collision_point()
-				else:
-					var impact = BULLET_IMPACT_TERRAIN.instantiate()
-					collided.add_child(impact)
-					impact.global_position = raycast.get_collision_point()
-					impact.look_at(impact.global_position + raycast.get_collision_normal())
-					impact.emitting = true
-					print("hit")
 			on_shoot.emit()
 		else:
 			# play dead mans click
@@ -109,3 +91,23 @@ func insert_magazine():
 	insert_mag_audio_player.play()
 	if magazine:
 		magazine.visible = true
+
+func generate_impact_effects(collided):
+	if collided.is_in_group("enemy"):
+		var hit_audio = flesh_hit.instantiate()
+		get_parent().add_child(hit_audio)
+		hit_audio.global_position = raycast.get_collision_point()
+	else:
+		var impact = BULLET_IMPACT_TERRAIN.instantiate()
+		collided.add_child(impact)
+		impact.global_position = raycast.get_collision_point()
+		impact.look_at(impact.global_position + raycast.get_collision_normal())
+		impact.emitting = true
+		if (collided.collision_layer & 1 << 17) == 1 << 17: # wood
+			var hit_audio = wood_hit.instantiate()
+			get_parent().add_child(hit_audio)
+			hit_audio.global_position = raycast.get_collision_point()
+		else: # stone hit
+			var hit_audio = stone_hit.instantiate()
+			get_parent().add_child(hit_audio)
+			hit_audio.global_position = raycast.get_collision_point()
