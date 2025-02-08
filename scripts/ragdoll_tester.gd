@@ -1,6 +1,6 @@
 extends Node
 
-@export var spawn_interval = 7
+@export var spawn_interval = 6
 
 const ZOMBIE = preload("res://scenes/enemies/zombie.tscn")
 const TANK_ZOMBIE = preload("res://scenes/enemies/tank_zombie.tscn")
