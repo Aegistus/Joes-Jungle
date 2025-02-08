@@ -9,11 +9,13 @@ extends PlayerState
 @onready var directional_reference = $"../../CameraMount/Camera3D/Directional_Reference"
 @onready var aim_state_machine = $"../../AimStateMachine"
 @onready var relaxed_state = $"../../AimStateMachine/RelaxedState"
+@onready var aiming_state = $"../../AimStateMachine/AimingState"
 
 var done_reloading = false
 var magazine_removed = false
 var magazine_dropped = false
 var magazine_inserted = false
+var return_to_aiming = false
 
 func enter():
 	magazine_removed = false
@@ -23,6 +25,10 @@ func enter():
 	reload_anim_tree.active = true
 	done_reloading = false
 	reload_anim_tree.animation_finished.connect(func(anim_name): done_reloading = true)
+	if aim_state_machine.current_state is AimingState:
+		return_to_aiming = true
+	else:
+		return_to_aiming = false
 	aim_state_machine.transition_to(relaxed_state)
 
 func process_state_physics(delta):
@@ -43,6 +49,8 @@ func check_transitions():
 		return null
 
 func exit():
+	if return_to_aiming:
+		aim_state_machine.transition_to(aiming_state)
 	reload_anim_tree.active = false
 	if !magazine_inserted:
 		controlled_player.insert_magazine()

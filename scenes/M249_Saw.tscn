@@ -267,7 +267,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.0333333, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.0523599, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0.0174533, 0, 0), Vector3(0, 0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -307,7 +307,7 @@ streams_count = 1
 stream_0/stream = ExtResource("4_srnpi")
 
 [node name="M249" type="Node3D" node_paths=PackedStringArray("magazine")]
-transform = Transform3D(0.000340127, 0.999374, 0.0353987, -0.108174, 0.0352278, -0.993508, -0.994132, -0.00349132, 0.108119, 0.00412359, 0.305878, 0.178667)
+transform = Transform3D(-0.00218776, 0.999924, 0.0121729, -0.108152, 0.011865, -0.994064, -0.994132, -0.00349132, 0.108119, 0.0125365, 0.295159, 0.178612)
 script = ExtResource("1_qj7bu")
 shot_delay = 0.08
 min_damage = 9
