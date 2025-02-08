@@ -126,7 +126,7 @@ use_collision = true
 collision_mask = 3
 
 [node name="box9" type="CSGBox3D" parent="NavigationRegion3D/map"]
-transform = Transform3D(-0.0162683, 0, -0.397089, 0, 0.397422, 0, 0.397089, 0, -0.0162683, -1.54062, 1.13862, -4.45308)
+transform = Transform3D(-0.0162683, 0, -0.397089, 0, 0.397422, 0, 0.397089, 0, -0.0162683, -7.57627, 1.13862, -4.38212)
 material_override = ExtResource("2_etqyt")
 use_collision = true
 collision_mask = 3
@@ -376,7 +376,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -25.75)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.75, 0, 12)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.784463, 0.234328, -0.574203, -7.1013e-09, 0.925871, 0.377841, 0.620176, 0.296402, -0.726311, -3.48157, 1.68594, -7.68853)
+transform = Transform3D(0.999862, 0.00627773, -0.0153831, -7.1013e-09, 0.925871, 0.377841, 0.0166148, -0.377789, 0.925743, -1.7643, 1.68594, -1.66701)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.976258, 0.18759, -0.108304, -9.83852e-09, 0.5, 0.866025, 0.21661, -0.845464, 0.488129, 0, 0, 0)
