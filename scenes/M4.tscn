@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://b8gi7noqhm3jn"]
+[gd_scene load_steps=36 format=4 uid="uid://b8gi7noqhm3jn"]
 
 [ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_fhn77"]
 [ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="2_qdry2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_522ti"]
 [ext_resource type="AudioStream" uid="uid://ptskec0rcqxr" path="res://assets/audio/reload_sounds/M4_mag_out.wav" id="8_r5v0s"]
 [ext_resource type="AudioStream" uid="uid://bpaaehrpp1qw4" path="res://assets/audio/reload_sounds/M4_mag_in.wav" id="9_eea0t"]
+[ext_resource type="Script" path="res://scripts/magazine_ammo.gd" id="10_e4bef"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbbeg"]
 albedo_texture = ExtResource("2_qdry2")
@@ -446,6 +447,11 @@ stream = ExtResource("8_r5v0s")
 
 [node name="InsertMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_eea0t")
+
+[node name="Ammo" type="Node" parent="."]
+script = ExtResource("10_e4bef")
+max_magazine_count = 2
+magazine_round_capacity = 30
 
 [connection signal="on_shoot" from="." to="ShellEjector" method="eject"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

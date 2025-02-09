@@ -11,6 +11,7 @@ extends PlayerState
 @onready var relaxed_state = $"../../AimStateMachine/RelaxedState"
 @onready var aiming_state = $"../../AimStateMachine/AimingState"
 
+var cancel = false
 var done_reloading = false
 var magazine_removed = false
 var magazine_dropped = false
@@ -18,18 +19,23 @@ var magazine_inserted = false
 var return_to_aiming = false
 
 func enter():
-	magazine_removed = false
-	magazine_dropped = false
-	magazine_inserted = false
-	controlled_player.current_animation_tree.active = false
-	reload_anim_tree.active = true
-	done_reloading = false
-	reload_anim_tree.animation_finished.connect(func(anim_name): done_reloading = true)
-	if aim_state_machine.current_state is AimingState:
-		return_to_aiming = true
+	if controlled_player.gun.ammo.can_reload():
+		cancel = false
+		magazine_removed = false
+		magazine_dropped = false
+		magazine_inserted = false
+		controlled_player.current_animation_tree.active = false
+		reload_anim_tree.active = true
+		done_reloading = false
+		reload_anim_tree.animation_finished.connect(func(anim_name): done_reloading = true)
+		if aim_state_machine.current_state is AimingState:
+			return_to_aiming = true
+		else:
+			return_to_aiming = false
+		aim_state_machine.transition_to(relaxed_state)
 	else:
+		cancel = true
 		return_to_aiming = false
-	aim_state_machine.transition_to(relaxed_state)
 
 func process_state_physics(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -42,6 +48,8 @@ func process_state_physics(delta):
 	reload_anim_tree.set("parameters/blend_position", direction.length())
 
 func check_transitions():
+	if cancel:
+		return idle_state
 	if done_reloading:
 		controlled_player.gun.reload()
 		return idle_state

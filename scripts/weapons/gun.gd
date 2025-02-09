@@ -43,7 +43,6 @@ func shoot():
 			animation_player.play("shoot")
 			gun_audio_player.play()
 			can_shoot = false
-			ammo.shoot()
 			var collided = raycast.get_collider() as CollisionObject3D
 			if collided == null:
 				collided = raycast.get_collider() as CSGShape3D
@@ -53,8 +52,8 @@ func shoot():
 					var rotation = (raycast.get_collision_point() - global_position).normalized().inverse()
 					rotation.y += 180
 					collided.hit(randi_range(min_damage, max_damage), raycast.get_collision_point(), rotation)
+			ammo.use_ammo()
 			on_shoot.emit()
-			ammo.shoot()
 		else:
 			# play dead mans click
 			dry_shot_audio_player.play()

@@ -15,7 +15,6 @@ func _ready():
 	timer.timeout.connect(spawn_new)
 	spawn_new()
 
-
 func spawn_new():
 	for i in get_child_count():
 		var zombie = FAST_ZOMBIE.instantiate()

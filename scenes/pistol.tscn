@@ -613,7 +613,7 @@ stream = ExtResource("9_pnim4")
 
 [node name="Ammo" type="Node" parent="."]
 script = ExtResource("9_vkxs6")
-max_magazine_count = 6
+max_magazine_count = 2
 magazine_round_capacity = 10
 
 [connection signal="on_shoot" from="." to="ShellEjector" method="eject"]

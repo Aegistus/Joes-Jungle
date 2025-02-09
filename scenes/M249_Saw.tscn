@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://85xnmfq8ecf8"]
+[gd_scene load_steps=28 format=4 uid="uid://85xnmfq8ecf8"]
 
 [ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_qj7bu"]
 [ext_resource type="Texture2D" uid="uid://vsw6o5ywt0l5" path="res://assets/models/M249_0.png" id="2_8iw11"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_e5mm6"]
 [ext_resource type="AudioStream" uid="uid://khvutnhujlf0" path="res://assets/audio/reload_sounds/M249_mag_out.wav" id="8_jwyxi"]
 [ext_resource type="AudioStream" uid="uid://bjym08erj6sy3" path="res://assets/audio/reload_sounds/M249_mag_in.wav" id="9_28o3r"]
+[ext_resource type="Script" path="res://scripts/magazine_ammo.gd" id="10_e5lua"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42npd"]
 resource_name = "Mat"
@@ -391,5 +392,10 @@ stream = ExtResource("8_jwyxi")
 
 [node name="InsertMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_28o3r")
+
+[node name="Ammo" type="Node" parent="."]
+script = ExtResource("10_e5lua")
+max_magazine_count = 2
+magazine_round_capacity = 100
 
 [connection signal="on_shoot" from="." to="ShellEjector" method="eject"]

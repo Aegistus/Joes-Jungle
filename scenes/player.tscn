@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=41 format=4 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Texture2D" uid="uid://b1fvgtdrsmiic" path="res://assets/models/Michael_Ch18_1001_Diffuse.png" id="2_55ldf"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/player states/idle_state.gd" id="4_s0a0d"]
 [ext_resource type="AnimationLibrary" uid="uid://bhfy6y3yys725" path="res://assets/animations/libraries/Rifle Anims.res" id="5_a1aim"]
 [ext_resource type="AnimationLibrary" uid="uid://ckpcjepwfvaok" path="res://assets/animations/libraries/Michael Misc.res" id="5_cv0v5"]
+[ext_resource type="PackedScene" uid="uid://b8gi7noqhm3jn" path="res://scenes/M4.tscn" id="5_web4k"]
 [ext_resource type="AnimationLibrary" uid="uid://7frjr3q8mcex" path="res://assets/animations/libraries/Michael Pistol.res" id="6_7v3rf"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c4e5wj28gmxw3" path="res://assets/animations/trees/pistol_blend_tree.tres" id="6_o7fui"]
 [ext_resource type="AnimationLibrary" uid="uid://drpkkhs3fwp35" path="res://assets/animations/libraries/Michael Rifle.res" id="7_uv515"]
@@ -799,6 +800,8 @@ transform = Transform3D(0.999421, -0.0326995, 0.00938384, 0.0326636, 0.999458, 0
 
 [node name="Pistol 92" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("2_scene")]
 visible = false
+
+[node name="M4" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("5_web4k")]
 
 [node name="LeftHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
 transform = Transform3D(-0.747873, -0.663489, 0.0216288, 0.0101632, 0.0211339, 0.999725, -0.663764, 0.747887, -0.00906244, -0.0617182, 1.40535, 0.505493)

@@ -322,6 +322,8 @@ stream = ExtResource("7_ylr0r")
 
 [node name="Ammo" type="Node" parent="."]
 script = ExtResource("8_vg0j6")
+max_carried_ammo = 56
+max_loaded_ammo = 8
 
 [connection signal="on_shoot" from="." to="ShellEjector" method="eject"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
