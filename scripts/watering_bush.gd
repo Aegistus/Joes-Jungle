@@ -15,6 +15,7 @@ var current_water: float:
 		watering_bush.set_progress_bar(current_water / max_water * 100.0)
 
 func _ready():
+	await get_tree().process_frame
 	current_water = max_water
 	var letter
 	if id == 0:

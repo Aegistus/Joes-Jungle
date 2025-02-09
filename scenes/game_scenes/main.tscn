@@ -1,25 +1,16 @@
-[gd_scene load_steps=27 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=18 format=3 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Script" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="2_6ha5v"]
 [ext_resource type="Material" uid="uid://btglo4s1fu73t" path="res://materials/grid_1.tres" id="5_povn2"]
-[ext_resource type="PackedScene" uid="uid://bs0wmr63q1ofr" path="res://scenes/player.tscn" id="6_11ef4"]
-[ext_resource type="PackedScene" uid="uid://g62ygu32m5ji" path="res://scenes/aim_reticle.tscn" id="7_eo36d"]
 [ext_resource type="Material" uid="uid://p001di78373p" path="res://materials/grid_2.tres" id="8_ijifm"]
 [ext_resource type="PackedScene" uid="uid://ciu738dd2fsak" path="res://scenes/scenery/palm_tree_01.tscn" id="9_41nok"]
 [ext_resource type="PackedScene" uid="uid://yttdwroyehgm" path="res://scenes/scenery/palm_tree_02.tscn" id="10_8b1qe"]
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="11_2gnx2"]
 [ext_resource type="PackedScene" uid="uid://ddhplb0t3aute" path="res://scenes/scenery/palm_tree_04.tscn" id="12_i1j5x"]
-[ext_resource type="PackedScene" uid="uid://c7baeq2p0p2hk" path="res://scenes/shop_rifle.tscn" id="13_2gncx"]
-[ext_resource type="PackedScene" uid="uid://cwp0spuqeu7jj" path="res://scenes/scenery/watering_bush.tscn" id="13_yxl1k"]
-[ext_resource type="PackedScene" uid="uid://ddgpevn3nkya1" path="res://scenes/shop_shotgun.tscn" id="14_6fxx3"]
-[ext_resource type="PackedScene" uid="uid://c4p6ldvfdioho" path="res://scenes/ui/player_ui.tscn" id="14_f7yqe"]
-[ext_resource type="PackedScene" uid="uid://buup8044hp4ox" path="res://scenes/shop_smg.tscn" id="16_c32sb"]
 [ext_resource type="Script" path="res://scripts/zombie_spawn_point.gd" id="17_owi3h"]
-[ext_resource type="PackedScene" uid="uid://22lknia5oy4" path="res://scenes/shop_lmg.tscn" id="17_rtvpl"]
 [ext_resource type="PackedScene" uid="uid://cfvbl74p3th85" path="res://scenes/ui/pause_menu.tscn" id="20_a311c"]
-[ext_resource type="PackedScene" uid="uid://c0j4glofdqgpk" path="res://scenes/fruit_punch_bowl.tscn" id="20_elqkj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1365,25 +1356,6 @@ material_override = ExtResource("8_ijifm")
 use_collision = true
 size = Vector3(4.45, 2, 0.5)
 
-[node name="Player" parent="." instance=ExtResource("6_11ef4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9, -0.5, -30)
-
-[node name="AimReticle" parent="." instance=ExtResource("7_eo36d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
-
-[node name="PlayerUI" parent="." instance=ExtResource("14_f7yqe")]
-
-[node name="WateringBush" parent="." instance=ExtResource("13_yxl1k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -0.5, -14.5)
-
-[node name="WateringBush2" parent="." instance=ExtResource("13_yxl1k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -0.5, -32)
-id = 1
-
-[node name="WateringBush3" parent="." instance=ExtResource("13_yxl1k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2, -0.5, -47.9)
-id = 2
-
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 script = ExtResource("17_owi3h")
 
@@ -1723,25 +1695,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9185, -0.5, -1.2227)
 [node name="SpawnPoint8" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6185, -0.5, -63.4727)
 
-[node name="ShopRifle" parent="." instance=ExtResource("13_2gncx")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -13.35, -0.5, -39.3)
-item_cost = 500
-tooltip_text = "Buy M4 for 500 Points"
+[node name="ObjectiveSpawnPointsParent" type="Node3D" parent="."]
 
-[node name="ShopShotgun" parent="." instance=ExtResource("14_6fxx3")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -20.85, -0.5, -42.95)
-item_cost = 500
-tooltip_text = "Buy Benelli Shotgun for 500 Points"
+[node name="SpawnPoint" type="Node3D" parent="ObjectiveSpawnPointsParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0401, -0.5, -32.0305)
 
-[node name="ShopSMG" parent="." instance=ExtResource("16_c32sb")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -16.3, -0.5, -19.55)
+[node name="SpawnPoint2" type="Node3D" parent="ObjectiveSpawnPointsParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2624, -0.5, -19.5762)
 
-[node name="ShopLMG" parent="." instance=ExtResource("17_rtvpl")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -28.8, -0.5, -12.5)
+[node name="SpawnPoint3" type="Node3D" parent="ObjectiveSpawnPointsParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0229, -0.5, -14.4773)
+
+[node name="SpawnPoint4" type="Node3D" parent="ObjectiveSpawnPointsParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8487, -0.5, -12.5196)
+
+[node name="SpawnPoint5" type="Node3D" parent="ObjectiveSpawnPointsParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3635, -0.499998, -39.3723)
+
+[node name="SpawnPoint6" type="Node3D" parent="ObjectiveSpawnPointsParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9613, -0.499998, -42.6035)
+
+[node name="SpawnPoint7" type="Node3D" parent="ObjectiveSpawnPointsParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1682, -0.499998, -47.9066)
+
+[node name="SpawnPoint8" type="Node3D" parent="ObjectiveSpawnPointsParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50525, -0.499998, -50.7311)
+
+[node name="SpawnPoint9" type="Node3D" parent="ObjectiveSpawnPointsParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.8165, -0.499998, -51.4999)
+
+[node name="SpawnPoint10" type="Node3D" parent="ObjectiveSpawnPointsParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.506, -0.499998, -12.4451)
+
+[node name="SpawnPoint11" type="Node3D" parent="ObjectiveSpawnPointsParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0545, -0.499998, -22.887)
+
+[node name="PlayerSpawnPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9587, 0, -29.3864)
 
 [node name="PauseMenu" parent="." instance=ExtResource("20_a311c")]
-
-[node name="FruitPunchBowl" parent="." instance=ExtResource("20_elqkj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76069, -0.5, -50.8533)
 
 [connection signal="timeout" from="ZombieSpawnPoints/WaveTimer" to="ZombieSpawnPoints" method="_on_timer_timeout"]
