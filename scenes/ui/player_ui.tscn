@@ -1,15 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=12 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="2_o32dr"]
 [ext_resource type="Script" path="res://scripts/points_ui.gd" id="3_f4kss"]
+[ext_resource type="Texture2D" uid="uid://cbfrrjsyv4lu3" path="res://assets/UI/health_ui_under.png" id="4_gjt3j"]
 [ext_resource type="Script" path="res://scripts/water_bars_ui.gd" id="4_u2l3y"]
 [ext_resource type="Script" path="res://scripts/ammo_panel_ui.gd" id="5_m6bhq"]
+[ext_resource type="Texture2D" uid="uid://b2e3j71sjxhny" path="res://assets/UI/health_ui_over.png" id="5_mf036"]
 [ext_resource type="Texture2D" uid="uid://dkabu7bj24wwm" path="res://assets/UI/Magazine UI.png" id="5_x82tv"]
+[ext_resource type="Texture2D" uid="uid://cfbamgceavyxt" path="res://assets/UI/health_ui_progress.png" id="6_pj4sn"]
 [ext_resource type="Texture2D" uid="uid://b8aimspfiume" path="res://assets/UI/Shotgun Shells UI.png" id="6_uplld"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_605kr"]
-bg_color = Color(2.40654e-07, 0.646853, 0.127014, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66koy"]
 bg_color = Color(5.77569e-07, 0.642912, 0.925276, 1)
@@ -92,10 +92,29 @@ theme_override_font_sizes/font_size = 14
 text = "  Joe Bucks $0"
 vertical_alignment = 1
 
-[node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
-offset_right = 393.0
-offset_bottom = 27.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_605kr")
+[node name="DamageBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_right = 512.0
+offset_bottom = 512.0
+scale = Vector2(0.15, 0.15)
+max_value = 1.0
+step = 0.001
+value = 1.0
+fill_mode = 4
+texture_under = ExtResource("4_gjt3j")
+texture_progress = ExtResource("6_pj4sn")
+tint_progress = Color(0.817521, 0.817521, 0.817521, 1)
+
+[node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer/DamageBar"]
+offset_right = 512.0
+offset_bottom = 512.0
+max_value = 1.0
+step = 0.01
+value = 0.3
+fill_mode = 4
+texture_over = ExtResource("5_mf036")
+texture_progress = ExtResource("6_pj4sn")
+tint_over = Color(0.732402, 1, 0.707756, 1)
+tint_progress = Color(0, 0.677058, 1.92523e-07, 1)
 
 [node name="Controls" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 3
@@ -152,9 +171,9 @@ horizontal_alignment = 2
 
 [node name="WaterBarsUI" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = 4.0
-offset_top = 38.0
+offset_top = 107.0
 offset_right = 238.0
-offset_bottom = 97.0
+offset_bottom = 166.0
 script = ExtResource("4_u2l3y")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/WaterBarsUI"]
