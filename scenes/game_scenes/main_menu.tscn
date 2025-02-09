@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://bn6a8dl5ya46g"]
+[gd_scene load_steps=69 format=4 uid="uid://bn6a8dl5ya46g"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_r7pwv"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="1_v6ggs"]
@@ -9,10 +9,17 @@
 [ext_resource type="Script" path="res://scripts/MainMenuPlayer.gd" id="6_vqvsw"]
 [ext_resource type="AnimationLibrary" uid="uid://draryw3phd0gf" path="res://assets/animations/libraries/Thriller Anims.res" id="8_nbejq"]
 [ext_resource type="Script" path="res://scripts/thriller_zombie.gd" id="8_xue38"]
+[ext_resource type="FontFile" uid="uid://cidbiqe8esbi2" path="res://assets/fonts/dead_font_walking/Dead Font Walking.otf" id="11_hrwtr"]
 [ext_resource type="AudioStream" uid="uid://cnaxpxtwthb6f" path="res://assets/audio/Joes_Jungle.wav" id="11_o7yfk"]
+[ext_resource type="FontFile" uid="uid://b1st00ad0rqs8" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.ttf" id="12_qylgg"]
 [ext_resource type="Script" path="res://scripts/main_menu_music.gd" id="12_r2v6h"]
+[ext_resource type="StyleBox" uid="uid://sug2avk8xlue" path="res://assets/UI/button_hover_theme.tres" id="13_2qiyi"]
+[ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="13_347ng"]
+[ext_resource type="StyleBox" uid="uid://dmp4oly27mddf" path="res://assets/UI/button_normal_theme.tres" id="14_uwviw"]
+[ext_resource type="StyleBox" uid="uid://c0nqerilbeu5v" path="res://assets/UI/button_pressed_theme.tres" id="14_wk5mc"]
 [ext_resource type="Material" uid="uid://clj8od07w7lfo" path="res://materials/palm_tree.tres" id="15_y5yst"]
 [ext_resource type="PackedScene" uid="uid://ciu738dd2fsak" path="res://scenes/scenery/palm_tree_01.tscn" id="16_6hmv5"]
+[ext_resource type="Script" path="res://scripts/flavor_text.gd" id="17_tj3us"]
 [ext_resource type="PackedScene" uid="uid://yttdwroyehgm" path="res://scenes/scenery/palm_tree_02.tscn" id="17_yyiik"]
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="18_nonfs"]
 [ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="19_jcydp"]
@@ -36,7 +43,10 @@ sky_material = SubResource("ProceduralSkyMaterial_xxe1a")
 
 [sub_resource type="Environment" id="Environment_0imun"]
 background_mode = 2
+background_energy_multiplier = 0.2
 sky = SubResource("Sky_mqxia")
+ambient_light_sky_contribution = 0.4
+ambient_light_energy = 0.34
 tonemap_mode = 2
 sdfgi_enabled = true
 glow_enabled = true
@@ -526,7 +536,7 @@ script = ExtResource("1_r7pwv")
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, 0.5, 0.5, -6.12024e-07, 0.707107, -0.707107, -0.707107, 0.5, 0.5, 0, 0, 0)
 light_color = Color(0.0595766, 0.678295, 0.946514, 1)
-light_energy = 0.2
+light_energy = 0.1
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -556,6 +566,7 @@ collision_mask = 3
 
 [node name="wall2" type="CSGBox3D" parent="map"]
 transform = Transform3D(0.115012, 0, 0.996867, 0, 0.919, 0, -1.44944, 0, 0.0791035, -18.4325, 0.673605, 1.19191)
+visible = false
 material_override = ExtResource("3_i8ipt")
 use_collision = true
 collision_mask = 3
@@ -563,6 +574,7 @@ size = Vector3(1.5, 1.75, 3.75)
 
 [node name="wall23" type="CSGBox3D" parent="map"]
 transform = Transform3D(0.115012, 0, 0.996867, 0, 0.919, 0, -1.44944, 0, 0.0791035, -5.38715, 0.673605, -17.8282)
+visible = false
 material_override = ExtResource("3_i8ipt")
 use_collision = true
 collision_mask = 3
@@ -570,6 +582,7 @@ size = Vector3(1.5, 1.75, 3.75)
 
 [node name="wall3" type="CSGBox3D" parent="map"]
 transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -3.99937, 0.904928, 0.00278687)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -577,6 +590,7 @@ size = Vector3(0.499939, 2, 7.5)
 
 [node name="wall4" type="CSGBox3D" parent="map"]
 transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -4.00531, 0.906236, -8.99721)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -584,6 +598,7 @@ size = Vector3(0.499939, 2, 7.5)
 
 [node name="wall5" type="CSGBox3D" parent="map"]
 transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -11.625, 0.908813, 4.00504)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -591,6 +606,7 @@ size = Vector3(0.499939, 2, 29.5)
 
 [node name="wall16" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -26.1351, 0.920183, -11.2354)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -598,6 +614,7 @@ size = Vector3(0.499939, 2, 30)
 
 [node name="wall19" type="CSGBox3D" parent="map"]
 transform = Transform3D(0.000660297, 0.000631304, -1, -0.000145397, 1, 0.000631206, 1, 0.00014497, 0.000660387, -11.5197, 0.913078, -25.87)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -605,6 +622,7 @@ size = Vector3(0.499939, 2, 28.5)
 
 [node name="wall6" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, 2.99397, 0.902327, -11.125)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -612,6 +630,7 @@ size = Vector3(0.499939, 2, 30)
 
 [node name="wall7" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -12.0023, 0.910632, -4.49193)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -619,6 +638,7 @@ size = Vector3(0.499939, 2, 11.5)
 
 [node name="wall17" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -22.2543, 0.917538, -7.48516)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -626,6 +646,7 @@ size = Vector3(0.499939, 2, 5.5)
 
 [node name="wall18" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -22.2489, 0.916339, 0.76484)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -633,6 +654,7 @@ size = Vector3(0.499939, 2, 6)
 
 [node name="wall8" type="CSGBox3D" parent="map"]
 transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -2.5, 0.906, -13)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -640,6 +662,7 @@ size = Vector3(0.499939, 2, 5.5)
 
 [node name="wall20" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -0.0015683, 0.905345, -18.125)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -647,6 +670,7 @@ size = Vector3(0.499939, 2, 10)
 
 [node name="wall21" type="CSGBox3D" parent="map"]
 transform = Transform3D(0.000660297, 0.000631304, -1, -0.000145397, 1, 0.000631206, 1, 0.00014497, 0.000660387, -5.5047, 0.909508, -22.8714)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -654,6 +678,7 @@ size = Vector3(0.499939, 2, 10.5)
 
 [node name="wall22" type="CSGBox3D" parent="map"]
 transform = Transform3D(-1, 0.000631304, -0.000660251, 0.000631198, 1, 0.000145384, 0.000660345, 0.00014497, -1, -11.0016, 0.912288, -18.1177)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -661,6 +686,7 @@ size = Vector3(0.499939, 2, 10)
 
 [node name="wall9" type="CSGBox3D" parent="map"]
 transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -13.5079, 0.912814, -12.9909)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -668,6 +694,7 @@ size = Vector3(0.499939, 2, 11.5)
 
 [node name="wall24" type="CSGBox3D" parent="map"]
 transform = Transform3D(-1, 0.000631304, -0.000660426, 0.000631198, 1, 0.000145384, 0.00066052, 0.00014497, -1, -19.0147, 0.917776, -23.2373)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -675,6 +702,7 @@ size = Vector3(0.499939, 2, 5)
 
 [node name="wall26" type="CSGBox3D" parent="map"]
 transform = Transform3D(-1, 0.000631304, -0.000660426, 0.000631198, 1, 0.000145384, 0.00066052, 0.00014497, -1, -22.0149, 0.919706, -23.4853)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -682,6 +710,7 @@ size = Vector3(0.499939, 2, 1.5)
 
 [node name="wall27" type="CSGBox3D" parent="map"]
 transform = Transform3D(-1, 0.000631304, -0.000660426, 0.000631198, 1, 0.000145384, 0.00066052, 0.00014497, -1, -22.0129, 0.91927, -20.4853)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -689,6 +718,7 @@ size = Vector3(0.499939, 2, 1.5)
 
 [node name="wall28" type="CSGBox3D" parent="map"]
 transform = Transform3D(-1, 0.000631304, -0.000660426, 0.000631198, 1, 0.000145384, 0.00066052, 0.00014497, -1, -22.0109, 0.918834, -17.4853)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -696,6 +726,7 @@ size = Vector3(0.499939, 2, 1.5)
 
 [node name="wall29" type="CSGBox3D" parent="map"]
 transform = Transform3D(-1, 0.000631304, -0.000660426, 0.000631198, 1, 0.000145384, 0.00066052, 0.00014497, -1, -22.0089, 0.918398, -14.4853)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -703,6 +734,7 @@ size = Vector3(0.499939, 2, 1.5)
 
 [node name="wall30" type="CSGBox3D" parent="map"]
 transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -24.8836, 0.92014, -13.9834)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -710,6 +742,7 @@ size = Vector3(0.499939, 2, 2.25)
 
 [node name="wall25" type="CSGBox3D" parent="map"]
 transform = Transform3D(-1, 0.000631304, -0.000660426, 0.000631198, 1, 0.000145384, 0.00066052, 0.00014497, -1, -19.0098, 0.916686, -15.7373)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -717,6 +750,7 @@ size = Vector3(0.499939, 2, 5)
 
 [node name="wall14" type="CSGBox3D" parent="map"]
 transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -14.256, 0.912852, -9.99044)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -724,6 +758,7 @@ size = Vector3(0.499939, 2, 4)
 
 [node name="wall15" type="CSGBox3D" parent="map"]
 transform = Transform3D(-0.000660385, 0.000631304, 1, 0.000145376, 1, -0.00063121, -1, 0.00014497, -0.000660474, -20.381, 0.916718, -9.9864)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -731,6 +766,7 @@ size = Vector3(0.499939, 2, 3.25)
 
 [node name="wall10" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -0.000277191, 0.902603, -1.37486)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -738,6 +774,7 @@ size = Vector3(0.499939, 2, 3.25)
 
 [node name="wall11" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -0.00440437, 0.903512, -7.62485)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -745,6 +782,7 @@ size = Vector3(0.499939, 2, 3.25)
 
 [node name="wall12" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -8.00027, 0.907653, -1.36957)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -752,6 +790,7 @@ size = Vector3(0.499939, 2, 3.25)
 
 [node name="wall13" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0.000631304, 0.000660339, -0.000631218, 1, -0.000145389, -0.000660433, 0.00014497, 1, -8.0044, 0.908561, -7.61957)
+visible = false
 material_override = ExtResource("4_etorg")
 use_collision = true
 collision_mask = 3
@@ -952,24 +991,17 @@ offset_bottom = 40.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UI"]
 
-[node name="Panel" type="Panel" parent="UI/CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -212.0
-offset_top = 60.0
-offset_right = 213.0
-offset_bottom = 195.0
-grow_horizontal = 2
+[node name="Title" type="CenterContainer" parent="UI/CanvasLayer"]
+offset_left = 7.0
+offset_top = 37.0
+offset_right = 487.0
+offset_bottom = 172.0
+rotation = -0.0514867
 
-[node name="Label" type="Label" parent="UI/CanvasLayer/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 50
+[node name="Title" type="Label" parent="UI/CanvasLayer/Title"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_hrwtr")
+theme_override_font_sizes/font_size = 80
 text = "Joe's Jungle"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -978,20 +1010,68 @@ vertical_alignment = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 123.0
-offset_top = -240.0
-offset_right = 374.0
-offset_bottom = -151.0
+offset_left = 65.0
+offset_top = -225.0
+offset_right = 358.0
+offset_bottom = -130.0
 grow_vertical = 0
 
 [node name="StartGameButton" type="Button" parent="UI/CanvasLayer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("12_qylgg")
+theme_override_styles/hover = ExtResource("13_2qiyi")
+theme_override_styles/pressed = ExtResource("14_wk5mc")
+theme_override_styles/normal = ExtResource("14_uwviw")
 text = "Start Game"
+
+[node name="OptionsButton" type="Button" parent="UI/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("12_qylgg")
+theme_override_styles/hover = ExtResource("13_2qiyi")
+theme_override_styles/pressed = ExtResource("14_wk5mc")
+theme_override_styles/normal = ExtResource("14_uwviw")
+text = "Options"
 
 [node name="QuitButton" type="Button" parent="UI/CanvasLayer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("13_347ng")
+theme_override_styles/hover = ExtResource("13_2qiyi")
+theme_override_styles/pressed = ExtResource("14_wk5mc")
+theme_override_styles/normal = ExtResource("14_uwviw")
 text = "Quit
- (like a lil baby)"
+"
+
+[node name="FlavorText" type="Label" parent="UI/CanvasLayer"]
+offset_left = 320.0
+offset_top = 518.0
+offset_right = 443.0
+offset_bottom = 541.0
+rotation = -0.206195
+theme_override_fonts/font = ExtResource("11_hrwtr")
+theme_override_font_sizes/font_size = 16
+text = "(like a lil' baby)"
+script = ExtResource("17_tj3us")
+
+[node name="FlavorText2" type="Label" parent="UI/CanvasLayer"]
+offset_left = 29.0
+offset_top = 423.0
+offset_right = 177.0
+offset_bottom = 445.0
+rotation = -0.206195
+theme_override_fonts/font = ExtResource("11_hrwtr")
+theme_override_font_sizes/font_size = 16
+text = "(Like a chad gamer)"
+script = ExtResource("17_tj3us")
+
+[node name="ColorRect" type="ColorRect" parent="UI/CanvasLayer"]
+offset_left = 61.0
+offset_top = 151.0
+offset_right = 464.0
+offset_bottom = 154.0
+rotation = -0.0371165
 
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_o7yfk")
@@ -1134,22 +1214,22 @@ libraries = {
 }
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.0200187, -0.999692, -0.0146387, 0.0321404, -0.0152775, 0.999367, -0.999283, 0.0195355, 0.0324363, -6.87362, 3.15446, -5.28577)
+transform = Transform3D(-0.0200187, -0.999692, -0.0146387, 0.0321404, -0.0152775, 0.999367, -0.999283, 0.0195355, 0.0324363, -3.16775, 3.15446, -5.28577)
 light_energy = 6.0
 spot_angle = 30.0
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.0200187, -0.999692, -0.0146387, 0.0321404, -0.0152775, 0.999367, -0.999283, 0.0195355, 0.0324363, -6.87362, 3.15446, -6.72075)
+transform = Transform3D(-0.0200187, -0.999692, -0.0146387, 0.0321404, -0.0152775, 0.999367, -0.999283, 0.0195355, 0.0324363, -3.16775, 3.15446, -6.72075)
 light_energy = 6.0
 spot_angle = 30.0
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.0200187, -0.999692, -0.0146387, 0.0321404, -0.0152775, 0.999367, -0.999283, 0.0195355, 0.0324363, -6.87362, 3.15446, -3.83397)
+transform = Transform3D(-0.0200187, -0.999692, -0.0146387, 0.0321404, -0.0152775, 0.999367, -0.999283, 0.0195355, 0.0324363, -3.16775, 3.15446, -3.83397)
 light_energy = 6.0
 spot_angle = 30.0
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.0200187, -0.999692, -0.0146387, 0.0321404, -0.0152775, 0.999367, -0.999283, 0.0195355, 0.0324363, -6.87362, 3.15446, -2.2791)
+transform = Transform3D(-0.0200187, -0.999692, -0.0146387, 0.0321404, -0.0152775, 0.999367, -0.999283, 0.0195355, 0.0324363, -3.16775, 3.15446, -2.2791)
 light_energy = 6.0
 spot_angle = 30.0
 
