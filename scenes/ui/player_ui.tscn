@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=14 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="2_o32dr"]
+[ext_resource type="FontFile" uid="uid://cidbiqe8esbi2" path="res://assets/fonts/dead_font_walking/Dead Font Walking.otf" id="2_vju5m"]
 [ext_resource type="Script" path="res://scripts/points_ui.gd" id="3_f4kss"]
 [ext_resource type="Texture2D" uid="uid://cbfrrjsyv4lu3" path="res://assets/UI/health_ui_under.png" id="4_gjt3j"]
 [ext_resource type="Script" path="res://scripts/water_bars_ui.gd" id="4_u2l3y"]
@@ -50,27 +51,44 @@ text = "Hold E to water plant"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Points" type="Panel" parent="CanvasLayer"]
+[node name="JoeBucks" type="Label" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -125.0
-offset_top = 45.0
-offset_right = -1.0
-offset_bottom = 73.0
+offset_left = -133.0
+offset_top = 15.0
+offset_right = -17.0
+offset_bottom = 37.0
 grow_horizontal = 0
-script = ExtResource("3_f4kss")
-
-[node name="Label" type="Label" parent="CanvasLayer/Points"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 14
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_vju5m")
+theme_override_font_sizes/font_size = 24
 text = "  Joe Bucks $0"
 vertical_alignment = 1
+script = ExtResource("3_f4kss")
+add_color = Color(0, 0.803922, 0, 1)
+subtract_color = Color(0.858824, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/JoeBucks"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 25.0
+offset_right = 138.0
+offset_bottom = 26.0
+rotation = 0.00761837
+
+[node name="PointsChange" type="Label" parent="CanvasLayer/JoeBucks"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 33.0
+offset_right = 139.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0.759174, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_vju5m")
+text = "+ $999"
 
 [node name="DamageBar" type="TextureProgressBar" parent="CanvasLayer"]
 offset_right = 512.0

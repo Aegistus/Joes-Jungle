@@ -2,7 +2,7 @@ extends Node
 
 enum CauseOfDeath { ZOMBIE, PLANT }
 
-signal on_point_change(points)
+signal on_point_change(current_points, added_points)
 
 var run_time = 0.0
 var is_game_running = false
@@ -39,11 +39,11 @@ func end_game(cause_of_death : CauseOfDeath):
 
 func add_points(amount):
 	current_points += amount
-	on_point_change.emit(current_points)
+	on_point_change.emit(current_points, amount)
 
 func spend_points(amount):
 	current_points -= amount
-	on_point_change.emit(current_points)
+	on_point_change.emit(current_points, -amount)
 
 func get_cause_of_death_text() -> String:
 	if cause_of_death == CauseOfDeath.ZOMBIE:
