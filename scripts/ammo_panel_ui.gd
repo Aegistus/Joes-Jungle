@@ -11,6 +11,7 @@ func _ready():
 	update_weapon_ui(player.gun)
 
 func update_weapon_ui(weapon : Gun):
+	weapon_name.text = weapon.gun_name
 	if weapon.gun_type == Gun.GunType.PISTOL or weapon.gun_type == Gun.GunType.RIFLE:
 		magazine_ui.visible = true
 		shotgun_shells_ui.visible = false

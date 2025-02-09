@@ -1,18 +1,18 @@
 [gd_scene load_steps=36 format=4 uid="uid://b8gi7noqhm3jn"]
 
-[ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_fhn77"]
-[ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="2_qdry2"]
-[ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="4_nfk42"]
-[ext_resource type="AudioStream" uid="uid://d0l6l1t32bd1m" path="res://assets/audio/Assault Rifle Shot_06.wav" id="4_oudcc"]
-[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="4_xqsjn"]
-[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="6_o3qst"]
-[ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_522ti"]
-[ext_resource type="AudioStream" uid="uid://ptskec0rcqxr" path="res://assets/audio/reload_sounds/M4_mag_out.wav" id="8_r5v0s"]
-[ext_resource type="AudioStream" uid="uid://bpaaehrpp1qw4" path="res://assets/audio/reload_sounds/M4_mag_in.wav" id="9_eea0t"]
-[ext_resource type="Script" path="res://scripts/magazine_ammo.gd" id="10_e4bef"]
+[ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_w4ooq"]
+[ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="2_h6l83"]
+[ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_e3ql5"]
+[ext_resource type="AudioStream" uid="uid://d0l6l1t32bd1m" path="res://assets/audio/Assault Rifle Shot_06.wav" id="4_p5q8i"]
+[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="5_0uiun"]
+[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="6_q3a0l"]
+[ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_cbm1q"]
+[ext_resource type="AudioStream" uid="uid://ptskec0rcqxr" path="res://assets/audio/reload_sounds/M4_mag_out.wav" id="8_uh1aq"]
+[ext_resource type="AudioStream" uid="uid://bpaaehrpp1qw4" path="res://assets/audio/reload_sounds/M4_mag_in.wav" id="9_7yfxn"]
+[ext_resource type="Script" path="res://scripts/magazine_ammo.gd" id="10_bwb2o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbbeg"]
-albedo_texture = ExtResource("2_qdry2")
+albedo_texture = ExtResource("2_h6l83")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3l32"]
 resource_name = "Mat"
@@ -53,7 +53,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0noyv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wonjp"]
-albedo_texture = ExtResource("2_qdry2")
+albedo_texture = ExtResource("2_h6l83")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qk6sc"]
 _surfaces = [{
@@ -88,7 +88,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qk6sc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vnuv0"]
-albedo_texture = ExtResource("2_qdry2")
+albedo_texture = ExtResource("2_h6l83")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_711ge"]
 _surfaces = [{
@@ -123,7 +123,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_711ge")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cx8f8"]
-albedo_texture = ExtResource("2_qdry2")
+albedo_texture = ExtResource("2_h6l83")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_x2jhy"]
 _surfaces = [{
@@ -158,7 +158,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_x2jhy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvdwc"]
-albedo_texture = ExtResource("2_qdry2")
+albedo_texture = ExtResource("2_h6l83")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0fnfu"]
 _surfaces = [{
@@ -195,7 +195,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0fnfu")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aj2td"]
-albedo_texture = ExtResource("2_qdry2")
+albedo_texture = ExtResource("2_h6l83")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_msnk8"]
 _surfaces = [{
@@ -351,12 +351,13 @@ _data = {
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ksflp"]
 random_pitch = 1.1
 streams_count = 1
-stream_0/stream = ExtResource("4_oudcc")
+stream_0/stream = ExtResource("4_p5q8i")
 
 [node name="M4" type="Node3D" node_paths=PackedStringArray("magazine")]
 transform = Transform3D(0.0158893, 0.998441, 0.0535047, -0.126364, 0.0550876, -0.990453, -0.991857, 0.00897652, 0.127043, -0.243178, 0.26633, 0.0471534)
-script = ExtResource("1_fhn77")
+script = ExtResource("1_w4ooq")
 shot_delay = 0.1
+gun_name = "M4"
 gun_type = 1
 magazine = NodePath("gun model/Magazine")
 magazine_scale = 0.12
@@ -398,11 +399,11 @@ collide_with_areas = true
 
 [node name="MuzzleFlash" type="Sprite3D" parent="gun model"]
 transform = Transform3D(7.68341e-08, 0.029958, 0.499102, 0.0299581, 0.498205, -0.0299042, -0.499102, 0.0299043, -0.00179489, 0.0295915, 0.454229, -4.37306)
-texture = ExtResource("4_nfk42")
+texture = ExtResource("3_e3ql5")
 
 [node name="MuzzleFlash2" type="Sprite3D" parent="gun model"]
 transform = Transform3D(5.96047e-08, -0.499102, 0.0299578, 0.0214346, 0.0299303, 0.498643, -0.49954, 0.00128421, 0.0213961, 0.0406685, 0.533663, -4.25482)
-texture = ExtResource("4_nfk42")
+texture = ExtResource("3_e3ql5")
 
 [node name="Magazine" type="RigidBody3D" parent="gun model"]
 transform = Transform3D(1, 9.31323e-10, -1.49012e-08, -9.31323e-10, 1, -5.93718e-09, 0, 4.65661e-10, 1, 0, 0, 0)
@@ -430,27 +431,27 @@ stream = SubResource("AudioStreamRandomizer_ksflp")
 bus = &"Sound Effects"
 
 [node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_xqsjn")
+stream = ExtResource("5_0uiun")
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="ShellEjector" type="Node3D" parent="."]
 transform = Transform3D(1, 1.59414e-11, -1.66914e-09, 1.59374e-11, 0.999818, 0.0190927, 1.66914e-09, -0.0190927, 0.999818, 0.0522966, 0.330831, 0.0730912)
-script = ExtResource("6_o3qst")
+script = ExtResource("6_q3a0l")
 shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
 shell_scale = 1.0
 
-[node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("7_522ti")]
+[node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("7_cbm1q")]
 
 [node name="RemoveMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("8_r5v0s")
+stream = ExtResource("8_uh1aq")
 
 [node name="InsertMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("9_eea0t")
+stream = ExtResource("9_7yfxn")
 
 [node name="Ammo" type="Node" parent="."]
-script = ExtResource("10_e4bef")
-max_magazine_count = 2
+script = ExtResource("10_bwb2o")
+max_magazine_count = 6
 magazine_round_capacity = 30
 
 [connection signal="on_shoot" from="." to="ShellEjector" method="eject"]

@@ -1,15 +1,15 @@
 [gd_scene load_steps=49 format=4 uid="uid://c6ecwjphk3ure"]
 
-[ext_resource type="Material" uid="uid://bh6hpwnnast85" path="res://materials/mpx_mat.tres" id="1_1hr63"]
-[ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_yfmcm"]
-[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="3_86xac"]
-[ext_resource type="PackedScene" uid="uid://l0fpwhcilnwo" path="res://scenes/tactical_laser.tscn" id="3_aklim"]
-[ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="3_ll840"]
-[ext_resource type="AudioStream" uid="uid://cp3o22eciexhn" path="res://assets/audio/Pistol Shot_18.wav" id="3_tsjvn"]
-[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="5_yrh3e"]
-[ext_resource type="AudioStream" uid="uid://ptskec0rcqxr" path="res://assets/audio/reload_sounds/M4_mag_out.wav" id="8_155tn"]
-[ext_resource type="AudioStream" uid="uid://bpaaehrpp1qw4" path="res://assets/audio/reload_sounds/M4_mag_in.wav" id="9_fed3u"]
-[ext_resource type="Script" path="res://scripts/magazine_ammo.gd" id="10_l1hqe"]
+[ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_abj7n"]
+[ext_resource type="Material" uid="uid://bh6hpwnnast85" path="res://materials/mpx_mat.tres" id="2_5cyhq"]
+[ext_resource type="PackedScene" uid="uid://l0fpwhcilnwo" path="res://scenes/tactical_laser.tscn" id="3_cl058"]
+[ext_resource type="AudioStream" uid="uid://cp3o22eciexhn" path="res://assets/audio/Pistol Shot_18.wav" id="4_fxorh"]
+[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="5_r5uu6"]
+[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="6_6kf06"]
+[ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_2hrnk"]
+[ext_resource type="AudioStream" uid="uid://ptskec0rcqxr" path="res://assets/audio/reload_sounds/M4_mag_out.wav" id="8_k1wor"]
+[ext_resource type="AudioStream" uid="uid://bpaaehrpp1qw4" path="res://assets/audio/reload_sounds/M4_mag_in.wav" id="9_b5mj3"]
+[ext_resource type="Script" path="res://scripts/magazine_ammo.gd" id="10_7hq3a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mi6py"]
 resource_name = "Modern Weapon Pack Vol.002"
@@ -643,12 +643,13 @@ _data = {
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hqg5y"]
 random_pitch = 1.1
 streams_count = 1
-stream_0/stream = ExtResource("3_tsjvn")
+stream_0/stream = ExtResource("4_fxorh")
 
 [node name="MPX" type="Node3D" node_paths=PackedStringArray("magazine")]
 transform = Transform3D(0.00198471, 0.99669, -0.0812707, 0.0314565, 0.0811684, 0.996204, 0.999504, -0.00453367, -0.0311913, -0.233414, 0.0945325, 0.0153803)
-script = ExtResource("1_yfmcm")
+script = ExtResource("1_abj7n")
 shot_delay = 0.06
+gun_name = "MPX Suppressed"
 min_damage = 3
 max_damage = 6
 suppressed = true
@@ -661,79 +662,79 @@ transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.0239423, 0.259269, 0.032
 
 [node name="SMG_J_Receiver_Down" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(1, 4.65661e-10, 1.11759e-08, 0, 1, -1.55589e-07, 1.11759e-08, 1.80531e-07, 1, -5.82077e-11, 0.000288, 0.000413)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_baly5")
 skeleton = NodePath("")
 
 [node name="SMG_J_Receiver_Up" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, 0, 0.000788, 0.001338)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_pxkq5")
 skeleton = NodePath("")
 
 [node name="SMG_J_Grip" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, -5.82077e-11, -0.000187, -0.000212)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_27lq3")
 skeleton = NodePath("")
 
 [node name="SMG_J_Barrel" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, 0, 0.000713, 0.003188)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_jyy6l")
 skeleton = NodePath("")
 
 [node name="SMG_J_Trigger" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, 0, 2.85218e-09, 0.000363)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_22and")
 skeleton = NodePath("")
 
 [node name="SMG_J_Stock" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, 0, 0.000838, -0.001112)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_jm1fl")
 skeleton = NodePath("")
 
 [node name="SMG_J_Stock_Part" type="MeshInstance3D" parent="gun model/SMG_J_Stock"]
 transform = Transform3D(1, 0, 0, 0, 1, 1.19209e-07, 0, -1.19209e-07, 1, 0, -1.01896e-10, -0.0018)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_i4xl4")
 skeleton = NodePath("")
 
 [node name="SMG_J_Sight_Back" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, 0, 0.001275, -0.000162)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_i3dnc")
 skeleton = NodePath("")
 
 [node name="SMG_f_Sight_Back_Part" type="MeshInstance3D" parent="gun model/SMG_J_Sight_Back"]
 transform = Transform3D(1, 3.52901e-24, 2.66433e-31, -3.52901e-24, 1, 1.19209e-07, 1.54258e-31, -1.19209e-07, 1, 0, 0.0001625, -9.25e-05)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_llfvm")
 skeleton = NodePath("")
 
 [node name="SMG_J_Sight_Front" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, 0, 0.001275, 0.003763)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_33ow2")
 skeleton = NodePath("")
 
 [node name="SMG_J_Sight_Front_Part" type="MeshInstance3D" parent="gun model/SMG_J_Sight_Front"]
 transform = Transform3D(1, -7.40542e-24, 2.22045e-16, -1.90644e-23, 1, 1.19209e-07, -2.22045e-16, -1.19209e-07, 1, 0, 0.0001625, -0.0001175)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_nefry")
 skeleton = NodePath("")
 
 [node name="SMG_J_Bolt" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, -5.82077e-11, 0.001195, -0.000699)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_h0ksh")
 skeleton = NodePath("")
 
 [node name="SMG_J_Muzzle" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, -5.82077e-11, 0.000713, 0.004626)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_1l0xi")
 skeleton = NodePath("")
 
@@ -742,7 +743,7 @@ transform = Transform3D(1, 4.65661e-10, 1.11759e-08, -9.31323e-10, 1, 8.14907e-1
 
 [node name="Muzzle_Suppressor_H" type="MeshInstance3D" parent="gun model/Muzzle_Suppressor_H"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0, 0)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_0qhxe")
 skeleton = NodePath("")
 
@@ -751,7 +752,7 @@ transform = Transform3D(7.27596e-12, 1.11759e-08, -0.0125, 0.0125, -1.43409e-08,
 collision_mask = 67
 collide_with_areas = true
 
-[node name="Laser_A_Left" parent="gun model" instance=ExtResource("3_aklim")]
+[node name="Laser_A_Left" parent="gun model" instance=ExtResource("3_cl058")]
 transform = Transform3D(1, -4.76837e-10, -3.8147e-09, 4.76837e-10, 1, -1.0848e-08, 3.8147e-09, 1.0848e-08, 1, 0.00032815, 0.00075599, 0.00380184)
 
 [node name="Magazine" type="RigidBody3D" parent="gun model"]
@@ -762,7 +763,7 @@ freeze = true
 
 [node name="SMG_J_Mag" type="MeshInstance3D" parent="gun model/Magazine"]
 transform = Transform3D(1, 4.65661e-10, 7.45058e-09, 0, 1, -1.48168e-07, 1.11759e-08, 1.80531e-07, 1, -3.68446e-12, -0.000462, -8.30819e-05)
-material_override = ExtResource("1_1hr63")
+material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_c655b")
 skeleton = NodePath("")
 
@@ -780,27 +781,27 @@ stream = SubResource("AudioStreamRandomizer_hqg5y")
 bus = &"Sound Effects"
 
 [node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_yrh3e")
+stream = ExtResource("5_r5uu6")
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="ShellEjector" type="Node3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.00824303, 0.320377, 0.126833)
-script = ExtResource("3_86xac")
+script = ExtResource("6_6kf06")
 shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
 shell_scale = 1.0
 
-[node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("3_ll840")]
+[node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("7_2hrnk")]
 
 [node name="RemoveMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("8_155tn")
+stream = ExtResource("8_k1wor")
 
 [node name="InsertMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("9_fed3u")
+stream = ExtResource("9_b5mj3")
 
 [node name="Ammo" type="Node" parent="."]
-script = ExtResource("10_l1hqe")
-max_magazine_count = 2
+script = ExtResource("10_7hq3a")
+max_magazine_count = 8
 magazine_round_capacity = 36
 
 [connection signal="on_shoot" from="." to="ShellEjector" method="eject"]

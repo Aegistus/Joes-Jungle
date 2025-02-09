@@ -5,6 +5,7 @@ enum GunType { PISTOL, RIFLE, SHOTGUN }
 
 signal on_shoot
 
+@export var gun_name : String
 @export var min_damage = 6
 @export var max_damage = 9
 @export var suppressed = false

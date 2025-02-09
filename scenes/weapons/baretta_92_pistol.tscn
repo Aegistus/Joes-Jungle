@@ -1,14 +1,14 @@
 [gd_scene load_steps=39 format=4 uid="uid://bpdhjy3tvivvm"]
 
-[ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="1_lvrt8"]
-[ext_resource type="Texture2D" uid="uid://c4mkkqmwt568m" path="res://assets/textures/Pistol Black Diffuse.png" id="2_7aleb"]
-[ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="2_gbh6g"]
-[ext_resource type="AudioStream" uid="uid://qn21imdsbvoc" path="res://assets/audio/Revolver Shot_01.wav" id="3_ncd2q"]
-[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="4_spmkr"]
-[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="6_fx1as"]
-[ext_resource type="AudioStream" uid="uid://bimsx8ggdoj7t" path="res://assets/audio/reload_sounds/pistol_mag_out.wav" id="8_km4c5"]
-[ext_resource type="AudioStream" uid="uid://2qgiy3wloc8a" path="res://assets/audio/reload_sounds/pistol_mag_in.wav" id="9_pnim4"]
-[ext_resource type="Script" path="res://scripts/magazine_ammo.gd" id="9_vkxs6"]
+[ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="1_0dppu"]
+[ext_resource type="Texture2D" uid="uid://c4mkkqmwt568m" path="res://assets/textures/Pistol Black Diffuse.png" id="2_rkfkd"]
+[ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_u1m3e"]
+[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="4_30mby"]
+[ext_resource type="AudioStream" uid="uid://qn21imdsbvoc" path="res://assets/audio/Revolver Shot_01.wav" id="5_k2nk8"]
+[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="6_yk5b5"]
+[ext_resource type="AudioStream" uid="uid://bimsx8ggdoj7t" path="res://assets/audio/reload_sounds/pistol_mag_out.wav" id="7_pi4ou"]
+[ext_resource type="AudioStream" uid="uid://2qgiy3wloc8a" path="res://assets/audio/reload_sounds/pistol_mag_in.wav" id="8_vpqxc"]
+[ext_resource type="Script" path="res://scripts/magazine_ammo.gd" id="9_4uq1i"]
 
 [sub_resource type="Animation" id="Animation_30618"]
 length = 0.001
@@ -96,7 +96,7 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a57kn"]
-albedo_texture = ExtResource("2_7aleb")
+albedo_texture = ExtResource("2_rkfkd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4yw0"]
 resource_name = "Material.003"
@@ -141,7 +141,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1hbvh")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1uhm"]
-albedo_texture = ExtResource("2_7aleb")
+albedo_texture = ExtResource("2_rkfkd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pww31"]
 resource_name = "Material.002"
@@ -240,7 +240,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_towd5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qt7jf"]
-albedo_texture = ExtResource("2_7aleb")
+albedo_texture = ExtResource("2_rkfkd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vn0se"]
 resource_name = "Material.008"
@@ -438,7 +438,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_j5s8m")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntnop"]
-albedo_texture = ExtResource("2_7aleb")
+albedo_texture = ExtResource("2_rkfkd")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bbbak"]
 _surfaces = [{
@@ -475,7 +475,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bbbak")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ulvey"]
-albedo_texture = ExtResource("2_7aleb")
+albedo_texture = ExtResource("2_rkfkd")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5hgnl"]
 _surfaces = [{
@@ -518,11 +518,12 @@ size = Vector3(1, 3.27795, 1.34827)
 random_pitch = 1.05
 random_volume_offset_db = 0.48
 streams_count = 1
-stream_0/stream = ExtResource("3_ncd2q")
+stream_0/stream = ExtResource("5_k2nk8")
 
-[node name="Pistol 92" type="Node3D" node_paths=PackedStringArray("magazine")]
+[node name="Baretta 92" type="Node3D" node_paths=PackedStringArray("magazine")]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0.110825, 0.0540304)
-script = ExtResource("1_lvrt8")
+script = ExtResource("1_0dppu")
+gun_name = "Baretta 92"
 magazine = NodePath("gun model/Clip")
 magazine_scale = 0.04
 
@@ -570,11 +571,11 @@ collide_with_areas = true
 
 [node name="MuzzleFlash" type="Sprite3D" parent="gun model"]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -7.37162, 2.47589, -0.492264)
-texture = ExtResource("2_gbh6g")
+texture = ExtResource("3_u1m3e")
 
 [node name="MuzzleFlash2" type="Sprite3D" parent="gun model"]
 transform = Transform3D(-1, -8.9407e-08, 4.77396e-15, 0, 2.98023e-08, 1, -8.9407e-08, 1, -2.98023e-08, -7.37162, 2.47589, -0.492264)
-texture = ExtResource("2_gbh6g")
+texture = ExtResource("3_u1m3e")
 
 [node name="Clip" type="RigidBody3D" parent="gun model"]
 transform = Transform3D(1, -2.32831e-09, 7.45058e-09, 4.07454e-10, 1, 2.32831e-10, 0, 2.32831e-10, 1, 0, 0, 0)
@@ -594,7 +595,7 @@ shape = SubResource("BoxShape3D_po52b")
 
 [node name="ShellEjector" type="Node3D" parent="."]
 transform = Transform3D(0.447431, 0.894319, -5.21541e-08, 0.214931, -0.107531, -0.970692, -0.868107, 0.434318, -0.24033, 2.25694, 0.370309, -1.70888)
-script = ExtResource("6_fx1as")
+script = ExtResource("4_30mby")
 shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
 shell_scale = 1.0
 
@@ -603,17 +604,17 @@ stream = SubResource("AudioStreamRandomizer_8vgvq")
 bus = &"Sound Effects"
 
 [node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_spmkr")
+stream = ExtResource("6_yk5b5")
 
 [node name="RemoveMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("8_km4c5")
+stream = ExtResource("7_pi4ou")
 
 [node name="InsertMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("9_pnim4")
+stream = ExtResource("8_vpqxc")
 
 [node name="Ammo" type="Node" parent="."]
-script = ExtResource("9_vkxs6")
-max_magazine_count = 2
+script = ExtResource("9_4uq1i")
+max_magazine_count = 6
 magazine_round_capacity = 10
 
 [connection signal="on_shoot" from="." to="ShellEjector" method="eject"]

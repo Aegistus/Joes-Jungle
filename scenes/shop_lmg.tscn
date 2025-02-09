@@ -236,7 +236,7 @@ _data = {
 [node name="ShopLMG" type="Node3D"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_jflvj")
-shop_item_scene_path = "res://scenes/M249_Saw.tscn"
+shop_item_scene_path = "res://scenes/weapons/M249_Saw.tscn"
 item_cost = 1000
 tooltip_text = "Buy M249 SAW"
 

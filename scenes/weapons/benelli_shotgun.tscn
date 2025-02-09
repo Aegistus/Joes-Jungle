@@ -1,18 +1,18 @@
 [gd_scene load_steps=19 format=4 uid="uid://dx7sbijp1upmd"]
 
-[ext_resource type="Script" path="res://scripts/weapons/shotgun.gd" id="2_kl248"]
-[ext_resource type="Texture2D" uid="uid://b6ngkmijn43fr" path="res://assets/models/Bennelli_M4_0.png" id="2_tw5e1"]
-[ext_resource type="AudioStream" uid="uid://i6aor6h1rbq7" path="res://assets/audio/Shotgun Shot_02.wav" id="3_1mj8t"]
-[ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_78sej"]
-[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="5_gf8jc"]
-[ext_resource type="PackedScene" uid="uid://dmpg4pql6ql1n" path="res://scenes/particles/shotgun_shell_casing_particles.tscn" id="6_7270x"]
-[ext_resource type="AudioStream" uid="uid://b734ac3aqa05f" path="res://assets/audio/reload_sounds/benelli_round_in.wav" id="7_ylr0r"]
-[ext_resource type="Script" path="res://scripts/single_load_ammo.gd" id="8_vg0j6"]
+[ext_resource type="Script" path="res://scripts/weapons/shotgun.gd" id="1_nnxu6"]
+[ext_resource type="Texture2D" uid="uid://b6ngkmijn43fr" path="res://assets/models/Bennelli_M4_0.png" id="2_gdv27"]
+[ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_daph4"]
+[ext_resource type="AudioStream" uid="uid://i6aor6h1rbq7" path="res://assets/audio/Shotgun Shot_02.wav" id="4_uvq5q"]
+[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="5_ynbqx"]
+[ext_resource type="PackedScene" uid="uid://dmpg4pql6ql1n" path="res://scenes/particles/shotgun_shell_casing_particles.tscn" id="6_i2oo6"]
+[ext_resource type="AudioStream" uid="uid://b734ac3aqa05f" path="res://assets/audio/reload_sounds/benelli_round_in.wav" id="7_5c4lj"]
+[ext_resource type="Script" path="res://scripts/single_load_ammo.gd" id="8_d08jv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eeaau"]
 resource_name = "Mat.1"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_tw5e1")
+albedo_texture = ExtResource("2_gdv27")
 emission_enabled = true
 uv1_offset = Vector3(0, -1, 0)
 
@@ -230,8 +230,9 @@ _data = {
 
 [node name="Benelli_M4" type="Node3D" node_paths=PackedStringArray("raycasts")]
 transform = Transform3D(1.31134e-07, 0.997253, 0.0740737, 4.37114e-08, 0.0740737, -0.997253, -1, 1.34012e-07, -3.38777e-08, 0.0996198, 0.254223, 0.0305307)
-script = ExtResource("2_kl248")
+script = ExtResource("1_nnxu6")
 raycasts = [NodePath("gun model/BarrelRaycast"), NodePath("gun model/BarrelRaycast5"), NodePath("gun model/BarrelRaycast4"), NodePath("gun model/BarrelRaycast2"), NodePath("gun model/BarrelRaycast7"), NodePath("gun model/BarrelRaycast9"), NodePath("gun model/BarrelRaycast3"), NodePath("gun model/BarrelRaycast6"), NodePath("gun model/BarrelRaycast8")]
+gun_name = "Benelli M4"
 min_damage = 3
 max_damage = 4
 gun_type = 2
@@ -289,12 +290,12 @@ collision_mask = 67
 
 [node name="MuzzleFlash" type="Sprite3D" parent="gun model"]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.0069878, -0.136525, -4.84059)
-texture = ExtResource("3_78sej")
+texture = ExtResource("3_daph4")
 
 [node name="MuzzleFlash2" type="Sprite3D" parent="gun model"]
 transform = Transform3D(-2.18557e-08, -0.5, -2.18557e-08, 0, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 9.55343e-16, 0.0406685, -0.0603859, -4.85136)
 visible = false
-texture = ExtResource("3_78sej")
+texture = ExtResource("3_daph4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -302,27 +303,27 @@ libraries = {
 }
 
 [node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_1mj8t")
+stream = ExtResource("4_uvq5q")
 
 [node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 
 [node name="ShellEjector" type="Node3D" parent="."]
 transform = Transform3D(1, -1.59266e-11, 1.66914e-09, 1.59374e-11, -0.999818, -0.0190928, 1.66914e-09, 0.0190928, -0.999818, 0.0296187, 0.0026645, 0.00259642)
-script = ExtResource("5_gf8jc")
+script = ExtResource("5_ynbqx")
 shell_particle_path = "res://scenes/particles/shotgun_shell_casing_particles.tscn"
 shell_scale = 1.0
 
-[node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("6_7270x")]
+[node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("6_i2oo6")]
 
 [node name="RemoveMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("7_ylr0r")
+stream = ExtResource("7_5c4lj")
 
 [node name="InsertMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("7_ylr0r")
+stream = ExtResource("7_5c4lj")
 
 [node name="Ammo" type="Node" parent="."]
-script = ExtResource("8_vg0j6")
-max_carried_ammo = 56
+script = ExtResource("8_d08jv")
+max_carried_ammo = 48
 max_loaded_ammo = 8
 
 [connection signal="on_shoot" from="." to="ShellEjector" method="eject"]
