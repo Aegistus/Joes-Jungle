@@ -74,7 +74,7 @@ vertical_alignment = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -195.0
+offset_left = -125.0
 offset_top = 45.0
 offset_right = -1.0
 offset_bottom = 73.0
@@ -97,7 +97,7 @@ offset_right = 393.0
 offset_bottom = 27.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_605kr")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="Controls" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -108,43 +108,43 @@ offset_top = -136.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Controls"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "WASD - Move "
 horizontal_alignment = 2
 
-[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label2" type="Label" parent="CanvasLayer/Controls"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "RMB - Aim "
 horizontal_alignment = 2
 
-[node name="Label3" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label3" type="Label" parent="CanvasLayer/Controls"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "LMB - Shoot "
 horizontal_alignment = 2
 
-[node name="Label4" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label4" type="Label" parent="CanvasLayer/Controls"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "E - Interact "
 horizontal_alignment = 2
 
-[node name="Label5" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label5" type="Label" parent="CanvasLayer/Controls"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "R - Reload "
 horizontal_alignment = 2
 
-[node name="Label6" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label6" type="Label" parent="CanvasLayer/Controls"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "1 - Primary Weapon "
 horizontal_alignment = 2
 
-[node name="Label7" type="Label" parent="CanvasLayer/VBoxContainer"]
+[node name="Label7" type="Label" parent="CanvasLayer/Controls"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "2 - Secondary Weapon "
@@ -163,7 +163,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CanvasLayer/WaterBarsUI/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
-text = "Entry-Way Plant"
+text = "Plant A"
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/WaterBarsUI/HBoxContainer"]
 layout_mode = 2
@@ -179,7 +179,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CanvasLayer/WaterBarsUI/HBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
-text = "Kitchen Plant     "
+text = "Plant B"
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/WaterBarsUI/HBoxContainer2"]
 layout_mode = 2
@@ -195,7 +195,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CanvasLayer/WaterBarsUI/HBoxContainer3"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
-text = "Patio Plant         "
+text = "Plant C"
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/WaterBarsUI/HBoxContainer3"]
 layout_mode = 2

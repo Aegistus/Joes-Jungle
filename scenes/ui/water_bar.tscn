@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/water_bar.gd" id="1_s3hc2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ms56"]
-bg_color = Color(2.88785e-06, 0.646676, 0.908603, 1)
+bg_color = Color(0.136854, 0.468859, 0.857006, 1)
 
 [node name="WaterBar" type="Control"]
 layout_mode = 3
@@ -17,8 +17,22 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_8ms56")
 value = 23.65
 show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 300
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1

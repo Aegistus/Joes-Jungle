@@ -367,12 +367,12 @@ max_water = 3000.0
 
 [node name="WateringBush2" parent="." instance=ExtResource("14_ow336")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8629, -0.1, -4.9256)
-location = 1
+id = 1
 max_water = 3000.0
 
 [node name="WateringBush3" parent="." instance=ExtResource("14_ow336")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3629, -0.1, -22.6756)
-location = 2
+id = 2
 max_water = 3000.0
 
 [node name="PlayerUI" parent="." instance=ExtResource("15_4t01c")]

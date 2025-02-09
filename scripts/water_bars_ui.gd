@@ -1,25 +1,22 @@
 extends VBoxContainer
 
-@onready var entry_hall_prog = $HBoxContainer/ProgressBar
-@onready var kitchen_prog = $HBoxContainer2/ProgressBar
-@onready var patio_prog = $HBoxContainer3/ProgressBar
+@onready var plant_a_prog = $HBoxContainer/ProgressBar
+@onready var plant_b_prog = $HBoxContainer2/ProgressBar
+@onready var plant_c_prog = $HBoxContainer3/ProgressBar
 
-var entry_plant : WateringBush
-var kitchen_plant : WateringBush
-var patio_plant : WateringBush
+var plant_a : WateringBush
+var plant_b : WateringBush
+var plant_c : WateringBush
 
 func _ready():
 	var all_plants = get_tree().get_nodes_in_group("plant")
 	for i in all_plants.size():
-		match (all_plants[i].location):
-			WateringBush.HouseLocation.ENTRY:
-				entry_plant = all_plants[i]
-			WateringBush.HouseLocation.KITCHEN:
-				kitchen_plant = all_plants[i]
-			WateringBush.HouseLocation.PATIO:
-				patio_plant = all_plants[i]
+		match (all_plants[i].id):
+			0: plant_a = all_plants[i]
+			1: plant_b = all_plants[i]
+			2: plant_c = all_plants[i]
 
 func _process(delta):
-	entry_hall_prog.value = entry_plant.current_water / entry_plant.max_water * 100
-	kitchen_prog.value = kitchen_plant.current_water / kitchen_plant.max_water * 100
-	patio_prog.value = patio_plant.current_water / patio_plant.max_water * 100
+	plant_a_prog.value = plant_a.current_water / plant_a.max_water * 100
+	plant_b_prog.value = plant_b.current_water / plant_b.max_water * 100
+	plant_c_prog.value = plant_c.current_water / plant_c.max_water * 100

@@ -248,7 +248,6 @@ size = Vector3(1.74097, 2.42944, 1)
 
 [node name="AmmoBox" type="Node3D"]
 script = ExtResource("1_n8p1w")
-cooldown = 5
 tooltip_text = "Refill Ammo"
 
 [node name="SM_Prop_Crate_01" type="Node3D" parent="."]
@@ -351,3 +350,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020752, 0.652445, 0)
 shape = SubResource("BoxShape3D_c2le1")
 
 [node name="CooldownTimer" type="Timer" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.3, 0)
+spot_angle = 21.5082

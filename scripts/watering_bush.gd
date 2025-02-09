@@ -1,9 +1,7 @@
 class_name WateringBush
 extends Interactable
 
-enum HouseLocation { ENTRY, KITCHEN, PATIO }
-
-@export var location : HouseLocation
+@export var id : int
 @export var max_water = 120.0
 @export var water_loss_rate = 1.0
 @export var water_increase_rate = 30.0
@@ -18,6 +16,14 @@ var current_water: float:
 
 func _ready():
 	current_water = max_water
+	var letter
+	if id == 0:
+		letter = "A"
+	elif id == 1:
+		letter = "B"
+	else:
+		letter = "C"
+	watering_bush.label.text = letter
 
 func _process(delta):
 	if (current_water > 0):
