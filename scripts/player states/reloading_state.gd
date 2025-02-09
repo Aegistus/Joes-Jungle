@@ -60,5 +60,5 @@ func exit():
 	if return_to_aiming:
 		aim_state_machine.transition_to(aiming_state)
 	reload_anim_tree.active = false
-	if !magazine_inserted:
+	if !cancel and !magazine_inserted:
 		controlled_player.insert_magazine()

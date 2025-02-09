@@ -13,3 +13,6 @@ func use_ammo():
 
 func reload():
 	pass
+
+func refill_ammo():
+	pass

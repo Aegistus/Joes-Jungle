@@ -23,4 +23,7 @@ func reload() -> bool:
 	current_ammo = magazine_round_capacity
 	on_reload.emit(current_mag_count)
 	return true
-	
+
+func refill_ammo():
+	current_mag_count = max_magazine_count
+	on_reload.emit(current_mag_count)

@@ -21,7 +21,7 @@ signal on_shoot
 @onready var raycast = $"gun model/RayCast3D" as RayCast3D
 @onready var remove_mag_audio_player = $RemoveMagAudioPlayer
 @onready var insert_mag_audio_player = $InsertMagAudioPlayer
-@onready var ammo = $Ammo
+@onready var ammo = $Ammo as Ammo
 
 const BULLET_IMPACT_TERRAIN = preload("res://scenes/particles/bullet_impact_terrain.tscn")
 @onready var flesh_hit = preload("res://scenes/audio_scenes/flesh_hit_audio_source.tscn")
