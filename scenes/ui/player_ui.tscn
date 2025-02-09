@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=15 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="2_o32dr"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cfbamgceavyxt" path="res://assets/UI/health_ui_progress.png" id="6_pj4sn"]
 [ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="6_r7kat"]
 [ext_resource type="Texture2D" uid="uid://b8aimspfiume" path="res://assets/UI/Shotgun Shells UI.png" id="6_uplld"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ljnu"]
+bg_color = Color(0, 0, 0, 0.192157)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66koy"]
 bg_color = Color(5.77569e-07, 0.642912, 0.925276, 1)
@@ -28,27 +31,30 @@ script = ExtResource("1_e3uo4")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="InteractableTooltip" type="Panel" parent="CanvasLayer"]
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -218.0
-offset_top = -84.0
-offset_right = 219.0
-offset_bottom = -44.0
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = 57.0
+offset_right = 445.0
+offset_bottom = 73.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ljnu")
 
 [node name="Label" type="Label" parent="CanvasLayer/InteractableTooltip"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 5.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
+theme_override_font_sizes/font_size = 8
 text = "Hold E to water plant"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="JoeBucks" type="Label" parent="CanvasLayer"]
