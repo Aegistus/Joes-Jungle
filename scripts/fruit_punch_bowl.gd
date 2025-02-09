@@ -7,7 +7,7 @@ extends Interactable
 @onready var failure_audio_player = $FailureAudioPlayer
 
 func _ready():
-	tooltip_text += "(" + str(item_cost) + " Joe Bucks)"
+	tooltip_text += " ($" + str(item_cost) + " Joe Bucks)"
 
 func interact_start():
 	if GameManager.current_points >= item_cost:

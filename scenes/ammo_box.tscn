@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://d4jtl2hk346is"]
+[gd_scene load_steps=22 format=4 uid="uid://d4jtl2hk346is"]
 
 [ext_resource type="Script" path="res://scripts/ammo_box.gd" id="1_n8p1w"]
 [ext_resource type="Material" uid="uid://dy1nxwgepagrt" path="res://materials/crate_mat.tres" id="1_w5wiu"]
@@ -118,9 +118,129 @@ shadow_mesh = SubResource("ArrayMesh_qti7w")
 resource_name = "Take 001"
 length = 4.95833
 
+[sub_resource type="Animation" id="Animation_42iic"]
+resource_name = "close"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_Prop_Crate_01/SM_Prop_Crate_01_Lid")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.793353, 0, 0, 0.608761, 0.166667, 1, -0.857687, 0, 0, 0.51417, 0.566667, 1, -0.00668392, 0, 0, 0.999977)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SM_Prop_Crate_01/contents:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ymrbs"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_Prop_Crate_01/SM_Prop_Crate_01_Lid")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.793353, 0, 0, 0.608761)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SM_Prop_Crate_01/contents:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SM_Prop_Crate_01/SM_Prop_Crate_01_Lid:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0100203, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t6ewb"]
+resource_name = "open"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_Prop_Crate_01/SM_Prop_Crate_01_Lid")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.00739162, 0, 0, 0.999972, 0.2, 1, 0.890304, 0, 0, -0.455366, 0.3, 1, -0.831313, 0, 0, 0.555802)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SM_Prop_Crate_01/contents:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_mqed5"]
+resource_name = "idle open"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_Prop_Crate_01/SM_Prop_Crate_01_Lid")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.862305, 0, 0, 0.506388)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SM_Prop_Crate_01/contents:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_pubql"]
+resource_name = "idle close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_Prop_Crate_01/SM_Prop_Crate_01_Lid:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0100203, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t5wi0"]
 _data = {
-"Take 001": SubResource("Animation_3223n")
+"RESET": SubResource("Animation_ymrbs"),
+"Take 001": SubResource("Animation_3223n"),
+"close": SubResource("Animation_42iic"),
+"idle close": SubResource("Animation_pubql"),
+"idle open": SubResource("Animation_mqed5"),
+"open": SubResource("Animation_t6ewb")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c2le1"]
@@ -128,6 +248,7 @@ size = Vector3(1.74097, 2.42944, 1)
 
 [node name="AmmoBox" type="Node3D"]
 script = ExtResource("1_n8p1w")
+cooldown = 5
 tooltip_text = "Refill Ammo"
 
 [node name="SM_Prop_Crate_01" type="Node3D" parent="."]
@@ -139,7 +260,7 @@ mesh = SubResource("ArrayMesh_hjk5a")
 skeleton = NodePath("")
 
 [node name="SM_Prop_Crate_01_Lid" type="MeshInstance3D" parent="SM_Prop_Crate_01/SM_Prop_Crate_01"]
-transform = Transform3D(1, 0, 0, 0, -0.258819, 0.965926, 0, -0.965926, -0.258819, 9.53674e-09, 0.00255536, -0.0024116)
+transform = Transform3D(1, 0, 0, 0, 0.999949, -0.0100201, 0, 0.0100201, 0.999949, 9.53674e-09, 0.00255536, -0.0024116)
 material_override = ExtResource("1_w5wiu")
 mesh = SubResource("ArrayMesh_qsfhf")
 skeleton = NodePath("")
@@ -228,3 +349,5 @@ collision_layer = 32
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020752, 0.652445, 0)
 shape = SubResource("BoxShape3D_c2le1")
+
+[node name="CooldownTimer" type="Timer" parent="."]
