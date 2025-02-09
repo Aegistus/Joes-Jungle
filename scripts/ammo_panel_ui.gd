@@ -18,7 +18,7 @@ func update_weapon_ui(weapon : Gun):
 	elif weapon.gun_type == Gun.GunType.SHOTGUN:
 		magazine_ui.visible = false
 		shotgun_shells_ui.visible = true
-		ammo_count.text = "X " + str((weapon.ammo as SingleLoadAmmo).carried_ammo)
+		ammo_count.text = "X " + str((weapon.ammo as SingleLoadAmmo).current_carried_ammo)
 	weapon.ammo.on_reload.connect(update_carried)
 	
 func update_carried(mags_or_ammo : int):

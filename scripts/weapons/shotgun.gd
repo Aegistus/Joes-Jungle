@@ -10,7 +10,7 @@ func shoot():
 			animation_player.play("shoot")
 			gun_audio_player.play()
 			can_shoot = false
-			ammo.current_ammo -= 1
+			ammo.use_ammo()
 			for i in raycasts.size():
 				var collided = raycasts[i].get_collider()
 				if collided != null and collided.is_in_group("enemy"):
