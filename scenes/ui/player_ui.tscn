@@ -47,10 +47,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = -2.0
-offset_right = 5.0
-offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e3uo4")
@@ -140,8 +136,10 @@ theme_override_fonts/font = ExtResource("2_vju5m")
 text = "+ $999"
 
 [node name="DamageBar" type="TextureProgressBar" parent="CanvasLayer"]
-offset_right = 512.0
-offset_bottom = 512.0
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 525.0
+offset_bottom = 525.0
 scale = Vector2(0.2, 0.2)
 max_value = 1.0
 step = 0.001
@@ -246,10 +244,10 @@ text = "R - Reload "
 horizontal_alignment = 2
 
 [node name="WaterBarsUI" type="VBoxContainer" parent="CanvasLayer"]
-offset_left = 4.0
-offset_top = 107.0
-offset_right = 238.0
-offset_bottom = 166.0
+offset_left = 5.0
+offset_top = 133.0
+offset_right = 184.0
+offset_bottom = 169.0
 script = ExtResource("4_u2l3y")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/WaterBarsUI"]
@@ -257,6 +255,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/WaterBarsUI/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
 theme_override_font_sizes/font_size = 8
 text = "Plant A"
 
@@ -273,6 +274,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/WaterBarsUI/HBoxContainer2"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
 theme_override_font_sizes/font_size = 8
 text = "Plant B"
 
@@ -289,6 +293,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/WaterBarsUI/HBoxContainer3"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
 theme_override_font_sizes/font_size = 8
 text = "Plant C"
 

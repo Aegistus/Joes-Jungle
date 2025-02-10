@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=44 format=4 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Texture2D" uid="uid://b1fvgtdrsmiic" path="res://assets/models/Michael_Ch18_1001_Diffuse.png" id="2_55ldf"]
@@ -22,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://cs4bpkimumjf4" path="res://scenes/hurtbox.tscn" id="13_m6j14"]
 [ext_resource type="Script" path="res://scripts/hurtbox.gd" id="14_kudje"]
 [ext_resource type="AudioStream" uid="uid://cs0ymulhw0pkm" path="res://assets/audio/Gun Pickup_02.wav" id="17_c8ao6"]
+[ext_resource type="AudioStream" uid="uid://ctwo3bkilu81s" path="res://assets/audio/player_hit/Punch Impact (Flesh) 1.wav" id="21_ifr0a"]
+[ext_resource type="AudioStream" uid="uid://bi5e4hbvdb4g8" path="res://assets/audio/player_hit/Punch Impact (Flesh) 2.wav" id="22_pmkco"]
+[ext_resource type="AudioStream" uid="uid://dkqodqi8cw4yb" path="res://assets/audio/player_hit/Punch Impact (Flesh) 3.wav" id="23_b2vfi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n57sy"]
 resource_name = "Ch18_Body"
@@ -310,6 +313,13 @@ sync = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eakgp"]
 radius = 0.3
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tsakp"]
+random_pitch = 1.2
+streams_count = 3
+stream_0/stream = ExtResource("21_ifr0a")
+stream_1/stream = ExtResource("22_pmkco")
+stream_2/stream = ExtResource("23_b2vfi")
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("directional_reference", "animation_player") groups=["player"]]
 collision_layer = 64
@@ -926,6 +936,9 @@ aiming_state = NodePath("../AimingState")
 
 [node name="EquipAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("17_c8ao6")
+
+[node name="TakeDamageAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_tsakp")
 
 [node name="Hurtbox" parent="." instance=ExtResource("13_m6j14")]
 script = ExtResource("14_kudje")

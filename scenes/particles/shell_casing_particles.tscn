@@ -32,6 +32,7 @@ collision_bounce = 0.1
 collision_use_scale = true
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jx5xm"]
+random_pitch = 1.2
 streams_count = 10
 stream_0/stream = ExtResource("3_ygj21")
 stream_1/stream = ExtResource("4_iscup")

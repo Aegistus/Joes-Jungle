@@ -18,6 +18,7 @@ signal on_equip_weapon(gun : Gun)
 @onready var player_model = $PlayerModel
 @onready var walking_state = $MovementStateMachine/WalkingState
 @onready var reloading_state = $MovementStateMachine/ReloadingState
+@onready var take_damage_audio_player = $TakeDamageAudioPlayer
 
 var primary_weapon : Gun
 var secondary_weapon : Gun
@@ -75,6 +76,7 @@ func take_damage(damage):
 		current_health -= damage
 		current_health = clampf(current_health, 0, max_health)
 		health_update.emit(current_health, max_health)
+		take_damage_audio_player.play()
 		if current_health <= 0:
 			GameManager.end_game(GameManager.CauseOfDeath.ZOMBIE)
 

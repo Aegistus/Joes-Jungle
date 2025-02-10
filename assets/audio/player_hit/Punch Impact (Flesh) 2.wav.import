@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bi5e4hbvdb4g8"
+path="res://.godot/imported/Punch Impact (Flesh) 2.wav-a7ca218d1d410e7a97d1d37b5e3dcf83.sample"
+
+[deps]
+
+source_file="res://assets/audio/player_hit/Punch Impact (Flesh) 2.wav"
+dest_files=["res://.godot/imported/Punch Impact (Flesh) 2.wav-a7ca218d1d410e7a97d1d37b5e3dcf83.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
