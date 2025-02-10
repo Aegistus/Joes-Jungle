@@ -1,7 +1,7 @@
 class_name Ammo
 extends Node
 
-signal on_reload(carried_ammo_or_mags)
+signal on_reload(carried_ammo_or_mags, ammo_low: bool)
 
 var current_ammo : int
 
@@ -16,3 +16,9 @@ func reload():
 
 func refill_ammo():
 	pass
+
+func low_on_ammo() -> bool:
+	return false
+
+func carried_count() -> int:
+	return 0

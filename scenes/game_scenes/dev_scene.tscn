@@ -695,53 +695,58 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05074, -0.0999999, -5.58617
 item_cost = 10
 
 [node name="ShopLMG" parent="." instance=ExtResource("22_45akl")]
+item_cost = 10
 
 [node name="ShopRifle" parent="." instance=ExtResource("20_dypad")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -2.20411)
+item_cost = 10
 
 [node name="ShopShotgun" parent="." instance=ExtResource("21_lme77")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -4.66613)
+item_cost = 10
 
 [node name="ShopSMG" parent="." instance=ExtResource("22_qt2uy")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -6.71712)
+item_cost = 10
 
 [node name="AmmoBox" parent="." instance=ExtResource("23_kq4uc")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.51286, 0, -1.0695)
 
 [node name="ObjectiveSpawnPointsParent" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0829646, 0)
 
 [node name="SpawnPoint" type="Node3D" parent="ObjectiveSpawnPointsParent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0401, -0.5, -32.0305)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0401, -0.0170355, -32.0305)
 
 [node name="SpawnPoint2" type="Node3D" parent="ObjectiveSpawnPointsParent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2624, -0.5, -19.5762)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2624, -0.0170355, -19.5762)
 
 [node name="SpawnPoint3" type="Node3D" parent="ObjectiveSpawnPointsParent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0229, -0.5, -14.4773)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0229, -0.0170355, -14.4773)
 
 [node name="SpawnPoint4" type="Node3D" parent="ObjectiveSpawnPointsParent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8487, -0.5, -12.5196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8487, -0.0170355, -12.5196)
 
 [node name="SpawnPoint5" type="Node3D" parent="ObjectiveSpawnPointsParent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3635, -0.499998, -39.3723)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3635, -0.0170354, -39.3723)
 
 [node name="SpawnPoint6" type="Node3D" parent="ObjectiveSpawnPointsParent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9613, -0.499998, -42.6035)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9613, -0.0170354, -42.6035)
 
 [node name="SpawnPoint7" type="Node3D" parent="ObjectiveSpawnPointsParent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1682, -0.499998, -47.9066)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1682, -0.0170354, -47.9066)
 
 [node name="SpawnPoint8" type="Node3D" parent="ObjectiveSpawnPointsParent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50525, -0.499998, -50.7311)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50525, -0.0170354, -50.7311)
 
 [node name="SpawnPoint9" type="Node3D" parent="ObjectiveSpawnPointsParent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.8165, -0.499998, -51.4999)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.8165, -0.0170354, -51.4999)
 
 [node name="SpawnPoint10" type="Node3D" parent="ObjectiveSpawnPointsParent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.506, -0.499998, -12.4451)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.506, -0.0170354, -12.4451)
 
 [node name="SpawnPoint11" type="Node3D" parent="ObjectiveSpawnPointsParent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0545, -0.499998, -22.887)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0545, -0.0170354, -22.887)
 
 [node name="PlayerSpawnPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61931, 0, -3.49537)

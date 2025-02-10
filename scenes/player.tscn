@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=40 format=4 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Texture2D" uid="uid://b1fvgtdrsmiic" path="res://assets/models/Michael_Ch18_1001_Diffuse.png" id="2_55ldf"]
@@ -8,7 +8,6 @@
 [ext_resource type="AnimationLibrary" uid="uid://wubbon5nyek1" path="res://assets/animations/libraries/Pistol Anim Pack.res" id="3_q8g1f"]
 [ext_resource type="Texture2D" uid="uid://bbnqvko5wjhyb" path="res://assets/models/Michael_Ch18_1001_Normal.png" id="3_x7y07"]
 [ext_resource type="Script" path="res://scripts/player states/idle_state.gd" id="4_s0a0d"]
-[ext_resource type="PackedScene" uid="uid://dx7sbijp1upmd" path="res://scenes/weapons/benelli_shotgun.tscn" id="5_6li1n"]
 [ext_resource type="AnimationLibrary" uid="uid://bhfy6y3yys725" path="res://assets/animations/libraries/Rifle Anims.res" id="5_a1aim"]
 [ext_resource type="AnimationLibrary" uid="uid://ckpcjepwfvaok" path="res://assets/animations/libraries/Michael Misc.res" id="5_cv0v5"]
 [ext_resource type="AnimationLibrary" uid="uid://7frjr3q8mcex" path="res://assets/animations/libraries/Michael Pistol.res" id="6_7v3rf"]
@@ -791,7 +790,7 @@ mesh = SubResource("ArrayMesh_f1ndv")
 skin = SubResource("Skin_avvwo")
 
 [node name="RightHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(-0.105258, 0.131593, 0.9857, 0.990233, 0.105006, 0.0917238, -0.0914345, 0.985727, -0.141361, -0.146031, 1.34969, 0.151987)
+transform = Transform3D(-0.105256, 0.131593, 0.9857, 0.990233, 0.105008, 0.0917213, -0.0914364, 0.985726, -0.14136, -0.146032, 1.34969, 0.151988)
 bone_name = "RightHand"
 bone_idx = 34
 
@@ -801,10 +800,8 @@ transform = Transform3D(0.999421, -0.0326995, 0.00938384, 0.0326636, 0.999458, 0
 [node name="Pistol 92" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("2_scene")]
 visible = false
 
-[node name="Benelli_M4" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("5_6li1n")]
-
 [node name="LeftHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(-0.745674, -0.664901, 0.0433253, 0.0113291, 0.0523616, 0.998564, -0.666214, 0.745095, -0.031512, -0.0743822, 1.39857, 0.498352)
+transform = Transform3D(-0.745674, -0.664901, 0.0433248, 0.0113277, 0.0523623, 0.998564, -0.666214, 0.745094, -0.0315136, -0.0743825, 1.39857, 0.498352)
 bone_name = "LeftHand"
 bone_idx = 10
 
