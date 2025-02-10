@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf5bqx383k7jd"]
+[gd_scene load_steps=5 format=3 uid="uid://bf5bqx383k7jd"]
 
 [ext_resource type="PackedScene" uid="uid://b6yqwgkenh3pv" path="res://assets/models/scenery/SM_Env_Hedge_02.fbx" id="1_kykvj"]
 [ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_ibqns"]
@@ -6,8 +6,17 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pstv8"]
 albedo_texture = ExtResource("2_ibqns")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_oo3fv"]
+size = Vector3(1, 1.2, 5.1)
+
 [node name="SM_Env_Hedge_02" instance=ExtResource("1_kykvj")]
 
 [node name="SM_Env_Hedge_02" parent="." index="0"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_pstv8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.05)
+shape = SubResource("BoxShape3D_oo3fv")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpy6f2h7b4c1g"]
+[gd_scene load_steps=5 format=3 uid="uid://bpy6f2h7b4c1g"]
 
 [ext_resource type="PackedScene" uid="uid://bpdmpatayd2es" path="res://assets/models/scenery/SM_Env_Hedge_Bush_03.fbx" id="1_umc8p"]
 [ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_etao0"]
@@ -6,8 +6,17 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ur8m"]
 albedo_texture = ExtResource("2_etao0")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_yux1h"]
+radius = 1.7
+
 [node name="SM_Env_Hedge_Bush_03" instance=ExtResource("1_umc8p")]
 
 [node name="SM_Env_Hedge_Bush_03" parent="." index="0"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_2ur8m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0.1)
+shape = SubResource("SphereShape3D_yux1h")

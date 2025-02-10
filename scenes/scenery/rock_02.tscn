@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpffvcbta5ec2"]
+[gd_scene load_steps=5 format=3 uid="uid://cpffvcbta5ec2"]
 
 [ext_resource type="PackedScene" uid="uid://ckyy8ai4ep0rr" path="res://assets/models/scenery/SM_Env_Rock_02.fbx" id="1_dmgwi"]
 [ext_resource type="Texture2D" uid="uid://62ob6g87c662" path="res://assets/textures/PolygonPirates_texture.png" id="2_d6mgn"]
@@ -6,8 +6,18 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hd4ob"]
 albedo_texture = ExtResource("2_d6mgn")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a8uvx"]
+radius = 1.0
+height = 2.6
+
 [node name="SM_Env_Rock_02" instance=ExtResource("1_dmgwi")]
 
 [node name="SM_Env_Rock_02" parent="." index="0"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_hd4ob")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.95, -5.96046e-08)
+shape = SubResource("CapsuleShape3D_a8uvx")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://xg04imsil4xb"]
+[gd_scene load_steps=5 format=3 uid="uid://xg04imsil4xb"]
 
 [ext_resource type="PackedScene" uid="uid://cpxcuro1lrd7h" path="res://assets/models/scenery/SM_Env_Tree_Dead_02.fbx" id="1_tf847"]
 [ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_qmsrb"]
@@ -6,8 +6,18 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rq1hn"]
 albedo_texture = ExtResource("2_qmsrb")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rpe1q"]
+radius = 0.4
+height = 6.4
+
 [node name="SM_Env_Tree_Dead_02" instance=ExtResource("1_tf847")]
 
 [node name="SM_Env_Tree_Dead_02" parent="." index="0"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 5.68434e-16)
 material_override = SubResource("StandardMaterial3D_rq1hn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1, 0.3)
+shape = SubResource("CapsuleShape3D_rpe1q")
