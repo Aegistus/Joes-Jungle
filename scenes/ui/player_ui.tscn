@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=24 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/timer.gd" id="2_o32dr"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://b8aimspfiume" path="res://assets/UI/Shotgun Shells UI.png" id="6_uplld"]
 [ext_resource type="Script" path="res://scripts/holstered_weapon_ui.gd" id="13_02gl4"]
 [ext_resource type="FontFile" uid="uid://b4d3e84d08sjt" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer_Bold.otf" id="14_sq8fp"]
+[ext_resource type="Shader" path="res://assets/shaders/player_ui.gdshader" id="15_xu7e1"]
+[ext_resource type="Script" path="res://scripts/damage_overlay.gd" id="16_taqfw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ljnu"]
 bg_color = Color(0, 0, 0, 0.192157)
@@ -41,6 +43,13 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lklw5"]
 bg_color = Color(0, 0, 0, 0.431373)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_08fwq"]
+shader = ExtResource("15_xu7e1")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 1.0
+shader_parameter/outer_radius = 2.0
+shader_parameter/color = Color(0.378232, 6.04643e-07, 4.81308e-08, 1)
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -410,3 +419,12 @@ theme_override_fonts/font = ExtResource("6_r7kat")
 theme_override_font_sizes/font_size = 12
 text = " Pistol"
 vertical_alignment = 1
+
+[node name="DamageOverlay" type="Panel" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_08fwq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_taqfw")
