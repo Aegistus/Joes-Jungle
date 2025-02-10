@@ -10,6 +10,7 @@ const SHOP_SMG = preload("res://scenes/shop_smg.tscn")
 const PLAYER = preload("res://scenes/player.tscn")
 const AIM_RETICLE = preload("res://scenes/aim_reticle.tscn")
 const PLAYER_UI = preload("res://scenes/ui/player_ui.tscn")
+const PAUSE_MENU = preload("res://scenes/ui/pause_menu.tscn")
 
 @onready var objective_spawn_points_parent = $ObjectiveSpawnPointsParent
 @onready var player_spawn_point = $PlayerSpawnPoint
@@ -46,6 +47,8 @@ func _ready():
 	add_child(aim_ret)
 	var ui = PLAYER_UI.instantiate()
 	add_child(ui)
+	var pause_menu = PAUSE_MENU.instantiate()
+	add_child(pause_menu)
 
 func place_objective(prototype_scene) -> Node3D:
 	var objective = prototype_scene.instantiate()

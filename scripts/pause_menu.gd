@@ -1,16 +1,18 @@
 extends Control
 
+@onready var canvas_layer = $CanvasLayer
+
 func _physics_process(delta):
 	if Input.is_action_just_pressed("pause"):
 		toggle_pause()
 
 func toggle_pause():
 	if get_tree().paused == true:
-		hide()
+		canvas_layer.hide()
 		get_tree().paused = false
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	elif get_tree().paused == false:
-		show()
+		canvas_layer.show()
 		get_tree().paused = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
