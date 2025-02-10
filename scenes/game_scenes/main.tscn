@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=54 format=3 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Script" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
@@ -11,19 +11,18 @@
 [ext_resource type="PackedScene" uid="uid://by678sc0pnrke" path="res://scenes/scenery/hedge_01.tscn" id="10_ikd42"]
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="11_2gnx2"]
 [ext_resource type="PackedScene" uid="uid://bf5bqx383k7jd" path="res://scenes/scenery/hedge_02.tscn" id="11_8g8nb"]
+[ext_resource type="PackedScene" uid="uid://b6xqry56rutnh" path="res://scenes/scenery/oven_01.tscn" id="11_ufg14"]
 [ext_resource type="PackedScene" uid="uid://ddhplb0t3aute" path="res://scenes/scenery/palm_tree_04.tscn" id="12_i1j5x"]
 [ext_resource type="PackedScene" uid="uid://cxsrpaiv0t8da" path="res://scenes/scenery/hedge_bush_01.tscn" id="12_xt65b"]
-[ext_resource type="PackedScene" uid="uid://b8itn4yaa812y" path="res://scenes/scenery/hedge_bush_02.tscn" id="13_wh7me"]
 [ext_resource type="PackedScene" uid="uid://bpy6f2h7b4c1g" path="res://scenes/scenery/hedge_bush_03.tscn" id="14_t6xn1"]
-[ext_resource type="PackedScene" uid="uid://b4s2kdokjms8u" path="res://scenes/scenery/hedge_bush_04.tscn" id="15_b2uwo"]
-[ext_resource type="PackedScene" uid="uid://b51u3xlsl4jxl" path="res://scenes/scenery/rock_01.tscn" id="16_1poj8"]
 [ext_resource type="Script" path="res://scripts/zombie_spawn_point.gd" id="17_owi3h"]
 [ext_resource type="PackedScene" uid="uid://cpffvcbta5ec2" path="res://scenes/scenery/rock_02.tscn" id="17_xsrh6"]
-[ext_resource type="PackedScene" uid="uid://ctn1gocqsmwey" path="res://scenes/scenery/rock_03.tscn" id="18_pl4gd"]
-[ext_resource type="PackedScene" uid="uid://dvwcxgm35qhom" path="res://scenes/scenery/stone_single_01.tscn" id="19_gmoku"]
-[ext_resource type="PackedScene" uid="uid://dybj8mw6pqq5r" path="res://scenes/scenery/stone_single_02.tscn" id="20_j3851"]
+[ext_resource type="PackedScene" uid="uid://cfr2u7qy1n0fv" path="res://scenes/scenery/vine_wall_01.tscn" id="20_e3swa"]
 [ext_resource type="PackedScene" uid="uid://b1uu5s8rj206g" path="res://scenes/scenery/stone_wall_01.tscn" id="21_l7i85"]
+[ext_resource type="PackedScene" uid="uid://cx5b0cxtc4w45" path="res://scenes/scenery/coffee_table_01.tscn" id="21_njevt"]
+[ext_resource type="PackedScene" uid="uid://cvgssvrfjioia" path="res://scenes/scenery/flower_hanging_01.tscn" id="22_ipe01"]
 [ext_resource type="PackedScene" uid="uid://r00tnhjsa0sn" path="res://scenes/scenery/stone_wall_03.tscn" id="22_n38su"]
+[ext_resource type="PackedScene" uid="uid://gpemc8wh337i" path="res://scenes/scenery/flower_hanging_02.tscn" id="23_0mp1p"]
 [ext_resource type="PackedScene" uid="uid://ccwmikladigvb" path="res://scenes/scenery/stone_wall_pillar_01.tscn" id="23_jh0gs"]
 [ext_resource type="PackedScene" uid="uid://dpcc7siuvyhyr" path="res://scenes/scenery/stone_wall_rubble_01.tscn" id="24_vncji"]
 [ext_resource type="PackedScene" uid="uid://bv08t2e7vfcx7" path="res://scenes/scenery/stone_wall_rubble_02.tscn" id="25_07ac2"]
@@ -31,10 +30,22 @@
 [ext_resource type="PackedScene" uid="uid://dkjt686bxxe74" path="res://scenes/scenery/stone_wall_rubble_04.tscn" id="27_50f8y"]
 [ext_resource type="PackedScene" uid="uid://dy7nsmch3eake" path="res://scenes/scenery/tree_dead_01.tscn" id="28_oo16f"]
 [ext_resource type="PackedScene" uid="uid://xg04imsil4xb" path="res://scenes/scenery/tree_dead_02.tscn" id="29_u1ntb"]
-[ext_resource type="PackedScene" uid="uid://dr3u8iddljsaf" path="res://scenes/scenery/tree_dead_03.tscn" id="30_m5dba"]
+[ext_resource type="PackedScene" uid="uid://duyp5t7j0lgjg" path="res://scenes/scenery/planter_01.tscn" id="30_3b5c8"]
 [ext_resource type="PackedScene" uid="uid://cluiqhm4o72ca" path="res://scenes/scenery/fountain_01.tscn" id="31_jkp6c"]
 [ext_resource type="PackedScene" uid="uid://d1wcghjdfvw2j" path="res://scenes/scenery/well_01.tscn" id="33_3wdbl"]
+[ext_resource type="PackedScene" uid="uid://bmb7xh8c2d46f" path="res://scenes/scenery/road_dirt_swerve_02.tscn" id="33_m75sv"]
+[ext_resource type="PackedScene" uid="uid://b4euoq8oal062" path="res://scenes/scenery/car_01.tscn" id="34_01axc"]
 [ext_resource type="PackedScene" uid="uid://dlxbdxq2sbifd" path="res://scenes/scenery/sunshade_01.tscn" id="34_2cv7o"]
+[ext_resource type="PackedScene" uid="uid://2rw51eimrhya" path="res://scenes/scenery/washing_line_01.tscn" id="38_ito7w"]
+[ext_resource type="PackedScene" uid="uid://dsc4ntlq3hgea" path="res://scenes/scenery/washing_line_03.tscn" id="39_bggit"]
+[ext_resource type="PackedScene" uid="uid://d37ipau1u41hv" path="res://scenes/scenery/table_03.tscn" id="41_3yadl"]
+[ext_resource type="PackedScene" uid="uid://nyh6bl3d57rk" path="res://scenes/scenery/chair_02.tscn" id="42_f2byx"]
+[ext_resource type="PackedScene" uid="uid://dkloiayukyhgp" path="res://scenes/scenery/grandfather_clock_01.tscn" id="43_dpquu"]
+[ext_resource type="PackedScene" uid="uid://4dpswvkh3syu" path="res://scenes/scenery/piano_01.tscn" id="44_args3"]
+[ext_resource type="PackedScene" uid="uid://ccyoc7ixe7h1a" path="res://scenes/scenery/dining_table_01.tscn" id="45_yl3fy"]
+[ext_resource type="PackedScene" uid="uid://bsx1a2tvdqk3b" path="res://scenes/scenery/table_01.tscn" id="46_s5lel"]
+[ext_resource type="PackedScene" uid="uid://c88hfjhnwtlme" path="res://scenes/scenery/table_02.tscn" id="47_hks2b"]
+[ext_resource type="PackedScene" uid="uid://bvqyai4c6uqv1" path="res://scenes/scenery/table_small_01.tscn" id="48_rxix5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -273,7 +284,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -65)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -55)
 
 [node name="PalmTree_22" parent="NavigationRegion3D/map/Trees" instance=ExtResource("10_8b1qe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -41)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1, 0, -41.5)
 
 [node name="PalmTree_23" parent="NavigationRegion3D/map/Trees" instance=ExtResource("10_8b1qe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -38)
@@ -300,10 +311,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 9)
 
 [node name="PalmTree_03" parent="NavigationRegion3D/map/Trees" instance=ExtResource("11_2gnx2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2, 0, -9)
 
 [node name="PalmTree_31" parent="NavigationRegion3D/map/Trees" instance=ExtResource("11_2gnx2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 0, -5.5)
 
 [node name="PalmTree_32" parent="NavigationRegion3D/map/Trees" instance=ExtResource("11_2gnx2")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -42, 0, -42)
@@ -312,7 +323,7 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -35, 0, -59)
 
 [node name="PalmTree_34" parent="NavigationRegion3D/map/Trees" instance=ExtResource("11_2gnx2")]
-transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 7, 0, -47)
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 12.1, 0, -49.4)
 
 [node name="PalmTree_35" parent="NavigationRegion3D/map/Trees" instance=ExtResource("11_2gnx2")]
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 5, 0, -32)
@@ -1265,12 +1276,6 @@ material_override = ExtResource("8_ijifm")
 use_collision = true
 size = Vector3(3.05, 2, 0.5)
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, -0.125, -53.5)
-material_override = ExtResource("8_ijifm")
-use_collision = true
-size = Vector3(3, 0.75, 1)
-
 [node name="CSGBox3D14" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, -0.125, -53.5)
 material_override = ExtResource("8_ijifm")
@@ -1355,73 +1360,67 @@ material_override = ExtResource("8_ijifm")
 use_collision = true
 size = Vector3(4.45, 2, 0.5)
 
+[node name="SM_Prop_Oven_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("11_ufg14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4, -0.5, -53.3)
+
+[node name="SM_Prop_Table_03" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("41_3yadl")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.9, -0.5, -51.5)
+
+[node name="SM_Prop_Chair_02" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("42_f2byx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30, -0.5, -51.3)
+
+[node name="SM_Prop_GrandfatherClock_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("43_dpquu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7, -0.5, -55.1)
+
+[node name="SM_Prop_Piano_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("44_args3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5, -0.5, -15.8)
+
+[node name="SM_Prop_Chair_03" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("42_f2byx")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -28.5, -0.5, -15.2)
+
+[node name="SM_Prop_DinningTable_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("45_yl3fy")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -19.5, -0.5, -11.8)
+
+[node name="SM_Prop_Chair_04" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("42_f2byx")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20.1, -0.5, -11.2)
+
+[node name="SM_Prop_Chair_05" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("42_f2byx")]
+transform = Transform3D(-1, 0, 8.74228e-08, 4.37114e-08, 0.866025, 0.5, -7.57103e-08, 0.5, -0.866025, -18.9, -0.33, -11.45)
+
+[node name="SM_Prop_Chair_06" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("42_f2byx")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -18.9, -0.5, -12.5)
+
+[node name="SM_Prop_Chair_07" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("42_f2byx")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -20.2, -0.5, -12.5)
+
+[node name="SM_Prop_Chair_08" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("42_f2byx")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -20.9, -0.5, -11.8)
+
+[node name="SM_Prop_Chair_09" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("42_f2byx")]
+transform = Transform3D(0.316394, 0, -0.948628, 0, 1, 0, 0.948628, 0, 0.316394, -18.1, -0.5, -11.8)
+
+[node name="SM_Prop_Table_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("46_s5lel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7, -0.5, -9)
+
+[node name="SM_Prop_Table_02" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("47_hks2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7, -0.5, -15.8)
+
+[node name="SM_Prop_Table_Small_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("48_rxix5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2, -0.5, -12.5)
+
+[node name="SM_Bld_Cuba_VineWall_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("20_e3swa")]
+transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, -11.3, -0.5, -27.9)
+
+[node name="SM_Prop_CoffeeTable_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("21_njevt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, -0.5, -40.9)
+
+[node name="SM_Prop_FlowerHanging_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("22_ipe01")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.5, 0.2, -20.4)
+
+[node name="SM_Prop_FlowerHanging_02" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("23_0mp1p")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27.4, 0.4, -25)
+
 [node name="Outer" type="Node3D" parent="NavigationRegion3D/map"]
-
-[node name="Palette" type="Node3D" parent="NavigationRegion3D/map/Outer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4, 0, -85.5)
-
-[node name="SM_Env_Hedge_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("10_ikd42")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.5, 0)
-
-[node name="SM_Env_Hedge_02" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("11_8g8nb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.5, 0)
-
-[node name="SM_Env_Hedge_Bush_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("12_xt65b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8, -0.603261, 0)
-
-[node name="SM_Env_Hedge_Bush_02" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("13_wh7me")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1, -0.5, 0)
-
-[node name="SM_Env_Hedge_Bush_03" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("14_t6xn1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -0.500006, 0)
-
-[node name="SM_Env_Hedge_Bush_04" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("15_b2uwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.7, -0.500068, 0)
-
-[node name="SM_Env_Rock_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("16_1poj8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100014, -0.5, 4.00001)
-
-[node name="SM_Env_Rock_02" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("17_xsrh6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89999, -0.5, 4.00002)
-
-[node name="SM_Env_Rock_03" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("18_pl4gd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3, -0.5, 4.00002)
-
-[node name="SM_Env_StoneWall_Single_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("19_gmoku")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2, -0.5, 4.00002)
-
-[node name="SM_Env_StoneWall_Single_02" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("20_j3851")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7, -0.5, 4.00002)
-
-[node name="SM_Env_StoneWall_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("21_l7i85")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99999, -0.5, 7.10003)
-
-[node name="SM_Env_StoneWall_03" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("22_n38su")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.49999, -0.5, 7.10003)
-
-[node name="SM_Env_StoneWall_Pillar_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("23_jh0gs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3, -0.5, 7.10004)
-
-[node name="SM_Env_StoneWall_Rubble_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("24_vncji")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2, -0.5, 7.10004)
-
-[node name="SM_Env_StoneWall_Rubble_02" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("25_07ac2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8, -0.5, 7.10004)
-
-[node name="SM_Env_StoneWall_Rubble_03" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("26_8gqcl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9, -0.5, 7.10005)
-
-[node name="SM_Env_StoneWall_Rubble_04" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("27_50f8y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2, -0.5, 7.10005)
-
-[node name="SM_Env_Tree_Dead_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("28_oo16f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7, -0.5, 4.90006)
-
-[node name="SM_Env_Tree_Dead_02" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("29_u1ntb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2999, -0.5, 4.90006)
-
-[node name="SM_Env_Tree_Dead_03" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("30_m5dba")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9999, -0.5, 4.90007)
 
 [node name="FountainArea" type="Node3D" parent="NavigationRegion3D/map/Outer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5, 0, -32)
@@ -1432,11 +1431,32 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.1000
 [node name="SM_Env_Hedge_10" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.10001, -0.5, 9.5)
 
+[node name="SM_Env_Hedge_11" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0.300011, -0.5, 15.6)
+
+[node name="SM_Env_Hedge_13" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
+transform = Transform3D(-0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, -0.5, -7.39999, -0.5, 15.6)
+
+[node name="SM_Env_Hedge_14" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
+transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, -7.29999, -0.5, 23.4)
+
+[node name="SM_Env_Hedge_12" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
+transform = Transform3D(0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, 0.5, 0.300011, -0.5, 23.4)
+
 [node name="SM_Env_Hedge_06" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.99999, -0.5, -4.4)
 
 [node name="SM_Env_Hedge_08" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.99999, -0.5, -9.4)
+
+[node name="SM_Env_Hedge_15" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.09999, -0.5, -17.7)
+
+[node name="SM_Env_Hedge_16" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.09999, -0.5, -22.8)
+
+[node name="SM_Env_Hedge_17" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -2.19999, -0.5, -28.6)
 
 [node name="SM_Env_Hedge_04" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("11_8g8nb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0999985, -0.5, -6.4)
@@ -1458,6 +1478,39 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.499
 
 [node name="SM_Prop_Fountain_01" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("31_jkp6c")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.5, 0)
+
+[node name="SM_Env_Rock_02" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("17_xsrh6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50001, -0.9, 19.5)
+
+[node name="SM_Prop_Pillar_05" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("9_ph64a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, -0.5, 14.5)
+
+[node name="SM_Prop_Pillar_06" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("9_ph64a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.5, 14.5)
+
+[node name="SM_Prop_Pillar_07" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("9_ph64a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.5, 24.5)
+
+[node name="SM_Prop_Pillar_08" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("9_ph64a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.5, 24.5)
+
+[node name="SM_Prop_Pillar_09" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("9_ph64a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7, -0.5, 21.9)
+
+[node name="SM_Prop_Pillar_10" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("9_ph64a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8, -0.5, 17.3)
+
+[node name="SM_Prop_Planter_01" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("30_3b5c8")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0, -0.5, -16.6)
+
+[node name="SM_Prop_Planter_02" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("30_3b5c8")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0, -0.5, -22.4)
+
+[node name="SM_Prop_Planter_03" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("30_3b5c8")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3, -0.5, -22.4)
+
+[node name="SM_Prop_Planter_04" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("30_3b5c8")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3, -0.5, -16.5)
 
 [node name="Front Entrance" type="Node3D" parent="NavigationRegion3D/map/Outer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.5, -32)
@@ -1497,6 +1550,24 @@ transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107
 
 [node name="SM_Env_StoneWall_Rubble_08" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("27_50f8y")]
 transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, 2.40005, 0, -9.89994)
+
+[node name="SM_Env_Road_Dirt_Swerve_02" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("33_m75sv")]
+transform = Transform3D(-4.37114e-08, 0, 0.64, 0, 1, 0, -1, 0, -2.79753e-08, 9.9, 0, -14.9)
+
+[node name="SM_Env_Road_Dirt_Swerve_04" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("33_m75sv")]
+transform = Transform3D(0.5, 0, 0.554256, 0, 1, 0, -0.866025, 0, 0.32, 27.6, 0, -50.5)
+
+[node name="SM_Env_Road_Dirt_Swerve_03" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("33_m75sv")]
+transform = Transform3D(-0.5, 0, 0.554256, 0, 1, 0, -0.866025, 0, -0.32, 12.7, 0.2, 24)
+
+[node name="SM_Veh_Car_01" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("34_01axc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0.299999)
+
+[node name="SM_Env_Tree_Dead_01" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("28_oo16f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 4.3)
+
+[node name="SM_Env_Tree_Dead_02" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("29_u1ntb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.200001, 0, -4)
 
 [node name="ReflectionPool" type="Node3D" parent="NavigationRegion3D/map/Outer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, -0.5, -4.1)
@@ -1555,11 +1626,26 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 3.9, -0.103261, -10.
 [node name="SM_Env_StoneWall_03" parent="NavigationRegion3D/map/Outer/SideEntrance" instance=ExtResource("21_l7i85")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00001, 2.38419e-07, -14.6)
 
+[node name="SM_Env_StoneWall_05" parent="NavigationRegion3D/map/Outer/SideEntrance" instance=ExtResource("21_l7i85")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.8, 2.38419e-07, -11.6)
+
 [node name="SM_Env_StoneWall_04" parent="NavigationRegion3D/map/Outer/SideEntrance" instance=ExtResource("22_n38su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00001, -1.19209e-07, -14.6)
 
 [node name="SM_Env_StoneWall_Pillar_04" parent="NavigationRegion3D/map/Outer/SideEntrance" instance=ExtResource("23_jh0gs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99998, 1.19209e-07, -14.6)
+
+[node name="SM_Env_StoneWall_Pillar_05" parent="NavigationRegion3D/map/Outer/SideEntrance" instance=ExtResource("23_jh0gs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100018, 1.19209e-07, -14.6)
+
+[node name="SM_Env_StoneWall_Pillar_06" parent="NavigationRegion3D/map/Outer/SideEntrance" instance=ExtResource("23_jh0gs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9, 1.19209e-07, -14.6)
+
+[node name="SM_Env_StoneWall_Pillar_07" parent="NavigationRegion3D/map/Outer/SideEntrance" instance=ExtResource("23_jh0gs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9, 1.19209e-07, -14.5)
+
+[node name="SM_Env_StoneWall_Pillar_08" parent="NavigationRegion3D/map/Outer/SideEntrance" instance=ExtResource("23_jh0gs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9, 1.19209e-07, -8.69996)
 
 [node name="SM_Env_StoneWall_Rubble_05" parent="NavigationRegion3D/map/Outer/SideEntrance" instance=ExtResource("24_vncji")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89998, 1.19209e-07, -14.6)
@@ -1572,6 +1658,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6, 0, -14.5999)
 
 [node name="SM_Env_Hedge_Bush_06" parent="NavigationRegion3D/map/Outer/SideEntrance" instance=ExtResource("14_t6xn1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60001, -0.100006, -10.6)
+
+[node name="SM_Prop_WashingLine_01" parent="NavigationRegion3D/map/Outer/SideEntrance" instance=ExtResource("38_ito7w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.6, 0, -6.3)
+
+[node name="SM_Prop_WashingLine_03" parent="NavigationRegion3D/map/Outer/SideEntrance" instance=ExtResource("39_bggit")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.6, 0, -3.49999)
 
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
