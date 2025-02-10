@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blpayu0qp8pm8"
+path="res://.godot/imported/Bullet Falling on Wood 6.wav-6b3365ee68cb9d80c4c2d71aace70a72.sample"
+
+[deps]
+
+source_file="res://assets/audio/shell_casing/Bullet Falling on Wood 6.wav"
+dest_files=["res://.godot/imported/Bullet Falling on Wood 6.wav-6b3365ee68cb9d80c4c2d71aace70a72.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
