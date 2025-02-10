@@ -4,7 +4,7 @@ extends ZombieState
 @export var attack_distance = 1.0
 @export var dead_state: State
 @export var all_walk_anims = ["Zombie Anims/Zombie Walk", "Zombie Anims/Zombie Walk 2", "Zombie Anims/Zombie Walk 3"]
-@export var anim_speed_scales = [1.5, 2, 1]
+@export var anim_speed_scales : Array[float] = [1.5, 2, 1]
 @export var move_speeds = [60, 60, 100]
 
 @onready var no_target_state = $"../NoTargetState"
