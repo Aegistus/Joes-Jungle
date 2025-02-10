@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhopuen2h0u8k"]
+
+[ext_resource type="PackedScene" uid="uid://bao037fee2wom" path="res://assets/models/scenery/SM_Env_Flowers_02.fbx" id="1_y6ryn"]
+[ext_resource type="Texture2D" uid="uid://62ob6g87c662" path="res://assets/textures/PolygonPirates_texture.png" id="2_lm1jj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etfe2"]
+albedo_texture = ExtResource("2_lm1jj")
+
+[node name="SM_Env_Flowers_02" instance=ExtResource("1_y6ryn")]
+
+[node name="SM_Env_Flowers_02" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_etfe2")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6xqry56rutnh"]
+
+[ext_resource type="PackedScene" uid="uid://cgbjifpji25j" path="res://assets/models/scenery/SM_Prop_Oven_01.fbx" id="1_afd14"]
+[ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_eocgy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_krjch"]
+albedo_texture = ExtResource("2_eocgy")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nqc5b"]
+size = Vector3(1.8, 1.2, 1)
+
+[node name="SM_Prop_Oven_01" instance=ExtResource("1_afd14")]
+
+[node name="SM_Prop_Oven_01" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_krjch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9407e-08, 0.6, 0)
+shape = SubResource("BoxShape3D_nqc5b")

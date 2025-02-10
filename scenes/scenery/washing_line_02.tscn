@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://xahxatlrxqei"]
+
+[ext_resource type="PackedScene" uid="uid://de7nyoqgxkav8" path="res://assets/models/scenery/SM_Prop_WashingLine_02.fbx" id="1_5k1bk"]
+[ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_7ocv2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2m18"]
+albedo_texture = ExtResource("2_7ocv2")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4r5p7"]
+radius = 0.1
+height = 2.4
+
+[node name="SM_Prop_WashingLine_02" instance=ExtResource("1_5k1bk")]
+
+[node name="SM_Prop_WashingLine_02" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_p2m18")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2.64833)
+shape = SubResource("CapsuleShape3D_4r5p7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.65167)
+shape = SubResource("CapsuleShape3D_4r5p7")

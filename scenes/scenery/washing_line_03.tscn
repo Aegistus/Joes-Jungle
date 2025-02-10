@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsc4ntlq3hgea"]
+
+[ext_resource type="PackedScene" uid="uid://ce1q1q1phlcni" path="res://assets/models/scenery/SM_Prop_WashingLine_03.fbx" id="1_5w7g6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wyef4"]
+radius = 0.1
+height = 2.4
+
+[node name="SM_Prop_WashingLine_03" instance=ExtResource("1_5w7g6")]
+
+[node name="SM_Prop_WashingLine_03" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 2.64929)
+shape = SubResource("CapsuleShape3D_wyef4")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -2.65071)
+shape = SubResource("CapsuleShape3D_wyef4")

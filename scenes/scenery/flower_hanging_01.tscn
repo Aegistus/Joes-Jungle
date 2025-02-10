@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvgssvrfjioia"]
+
+[ext_resource type="PackedScene" uid="uid://bcp6td5fgcube" path="res://assets/models/scenery/SM_Prop_FlowerHanging_01.fbx" id="1_l77cy"]
+[ext_resource type="Texture2D" uid="uid://62ob6g87c662" path="res://assets/textures/PolygonPirates_texture.png" id="2_y3hda"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bof05"]
+albedo_texture = ExtResource("2_y3hda")
+
+[node name="SM_Prop_FlowerHanging_01" instance=ExtResource("1_l77cy")]
+
+[node name="SM_Prop_FlowerHanging_01" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_bof05")

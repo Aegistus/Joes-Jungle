@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4euoq8oal062"]
+
+[ext_resource type="PackedScene" uid="uid://bx0x5us314cp4" path="res://assets/models/scenery/SM_Veh_Car_01.fbx" id="1_6eavf"]
+[ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_ppcne"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5iauu"]
+albedo_texture = ExtResource("2_ppcne")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3vl7c"]
+albedo_texture = ExtResource("2_ppcne")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5reqn"]
+albedo_texture = ExtResource("2_ppcne")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c6bl5"]
+albedo_texture = ExtResource("2_ppcne")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f71x7"]
+albedo_texture = ExtResource("2_ppcne")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xlee"]
+albedo_texture = ExtResource("2_ppcne")
+
+[node name="SM_Veh_Car_01" instance=ExtResource("1_6eavf")]
+
+[node name="SM_Veh_Car_01" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_5iauu")
+
+[node name="SM_Veh_Car_01_Glass" parent="SM_Veh_Car_01" index="1"]
+material_override = SubResource("StandardMaterial3D_3vl7c")
+
+[node name="SM_Veh_Car_01_Wheel_fr" parent="SM_Veh_Car_01" index="3"]
+material_override = SubResource("StandardMaterial3D_5reqn")
+
+[node name="SM_Veh_Car_01_Wheel_fl" parent="SM_Veh_Car_01" index="4"]
+material_override = SubResource("StandardMaterial3D_c6bl5")
+
+[node name="SM_Veh_Car_01_Wheel_rr" parent="SM_Veh_Car_01" index="5"]
+material_override = SubResource("StandardMaterial3D_f71x7")
+
+[node name="SM_Veh_Car_01_Wheel_rl" parent="SM_Veh_Car_01" index="6"]
+material_override = SubResource("StandardMaterial3D_8xlee")

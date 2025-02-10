@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://4dpswvkh3syu"]
+
+[ext_resource type="PackedScene" uid="uid://bufl0ww87ctck" path="res://assets/models/scenery/SM_Prop_Piano_01.fbx" id="1_8066t"]
+[ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_jnhnl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1q10"]
+albedo_texture = ExtResource("2_jnhnl")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2wftr"]
+size = Vector3(2.2, 1.8, 0.7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_45car"]
+size = Vector3(2.3, 1.1, 0.5)
+
+[node name="SM_Prop_Piano_01" instance=ExtResource("1_8066t")]
+
+[node name="SM_Prop_Piano_01" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_q1q10")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 0.95, -0.2)
+shape = SubResource("BoxShape3D_2wftr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.55, 0.35)
+shape = SubResource("BoxShape3D_45car")

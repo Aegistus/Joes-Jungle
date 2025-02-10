@@ -1429,20 +1429,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5, 0, -32)
 [node name="SM_Env_Hedge_03" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.10001, -0.5, 6.2)
 
+[node name="SM_Env_Hedge_10" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.10001, -0.5, 9.5)
+
 [node name="SM_Env_Hedge_06" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.99999, -0.5, -4.4)
+
+[node name="SM_Env_Hedge_08" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.99999, -0.5, -9.4)
 
 [node name="SM_Env_Hedge_04" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("11_8g8nb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0999985, -0.5, -6.4)
 
+[node name="SM_Env_Hedge_09" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("11_8g8nb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0999985, -0.5, -9.5)
+
 [node name="SM_Env_Hedge_05" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("11_8g8nb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.5, 4.3)
 
+[node name="SM_Env_Hedge_07" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("11_8g8nb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.5, 9.4)
+
 [node name="SM_Env_Tree_Dead_04" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("28_oo16f")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.300064, -0.5, 7.90005)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.300064, -0.5, 8.30005)
 
 [node name="SM_Env_Tree_Dead_05" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("29_u1ntb")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.499939, -0.5, -7.59995)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.499939, -0.5, -8.09995)
 
 [node name="SM_Prop_Fountain_01" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("31_jkp6c")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.5, 0)

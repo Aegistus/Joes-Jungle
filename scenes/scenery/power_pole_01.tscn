@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://hdnfcathrv08"]
+
+[ext_resource type="PackedScene" uid="uid://hx0pjc6ibicq" path="res://assets/models/scenery/SM_Prop_PowerPole_01.fbx" id="1_t05i5"]
+[ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_6xts7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1x7l"]
+albedo_texture = ExtResource("2_6xts7")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lb6kb"]
+radius = 0.2
+height = 7.8
+
+[node name="SM_Prop_PowerPole_01" instance=ExtResource("1_t05i5")]
+
+[node name="SM_Prop_PowerPole_01" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_m1x7l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7, 0)
+shape = SubResource("CapsuleShape3D_lb6kb")
