@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmpg4pql6ql1n"]
 
-[ext_resource type="ArrayMesh" uid="uid://dv54olngjtss4" path="res://assets/models/bullet_casing.tres" id="1_3lpxg"]
+[ext_resource type="ArrayMesh" uid="uid://dv54olngjtss4" path="res://assets/models/weapons/bullet_casing.tres" id="1_3lpxg"]
 [ext_resource type="Script" path="res://scripts/shell_casing_particles.gd" id="2_rxvw4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hkbqc"]

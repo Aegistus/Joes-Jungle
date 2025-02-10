@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxsrpaiv0t8da"]
+
+[ext_resource type="PackedScene" uid="uid://511gd1hhjmm4" path="res://assets/models/scenery/SM_Env_Hedge_Bush_01.fbx" id="1_87bsm"]
+[ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_cry33"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dcrsk"]
+albedo_texture = ExtResource("2_cry33")
+
+[node name="SM_Env_Hedge_Bush_01" instance=ExtResource("1_87bsm")]
+
+[node name="SM_Env_Hedge_Bush_01" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_dcrsk")

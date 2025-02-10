@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_67exj"]
 [ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="4_ilg0x"]
 [ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="5_f5m6t"]
-[ext_resource type="Texture2D" uid="uid://vsw6o5ywt0l5" path="res://assets/models/M249_0.png" id="5_ljtd0"]
+[ext_resource type="Texture2D" uid="uid://vsw6o5ywt0l5" path="res://assets/models/weapons/M249_0.png" id="5_ljtd0"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_q5ege"]
 

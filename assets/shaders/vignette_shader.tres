@@ -220,7 +220,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-262.927, 240.859)
 varyings/inner_radius = "0,0"
 varyings/outer_radius = "0,0"
 varyings/alpha = "0,0"

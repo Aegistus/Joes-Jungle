@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkjt686bxxe74"]
+
+[ext_resource type="PackedScene" uid="uid://83nwuwlc0mu8" path="res://assets/models/scenery/SM_Env_StoneWall_Rubble_04.fbx" id="1_jwv7s"]
+[ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_1ujhs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kg8e0"]
+albedo_texture = ExtResource("2_1ujhs")
+
+[node name="SM_Env_StoneWall_Rubble_04" instance=ExtResource("1_jwv7s")]
+
+[node name="SM_Env_StoneWall_Rubble_04" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_kg8e0")

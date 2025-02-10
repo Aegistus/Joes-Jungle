@@ -91,6 +91,7 @@ vertical_alignment = 1
 
 [node name="KeyboardKey" type="PanelContainer" parent="CanvasLayer/InteractableTooltip"]
 custom_minimum_size = Vector2(25, 25)
+layout_mode = 0
 offset_left = -30.0
 offset_top = -5.0
 offset_right = -5.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ciu738dd2fsak"]
 
-[ext_resource type="PackedScene" uid="uid://c4gtuwt4coav7" path="res://assets/models/SM_Env_PalmTree_01.fbx" id="1_yvtd3"]
+[ext_resource type="PackedScene" uid="uid://c4gtuwt4coav7" path="res://assets/models/scenery/SM_Env_PalmTree_01.fbx" id="1_yvtd3"]
 [ext_resource type="Material" uid="uid://clj8od07w7lfo" path="res://materials/palm_tree.tres" id="2_c673e"]
 
 [node name="PalmTree01" instance=ExtResource("1_yvtd3")]

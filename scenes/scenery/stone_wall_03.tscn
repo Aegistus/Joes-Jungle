@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://r00tnhjsa0sn"]
+
+[ext_resource type="PackedScene" uid="uid://itbm17j8ks43" path="res://assets/models/scenery/SM_Env_StoneWall_03.fbx" id="1_chsx5"]
+[ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_hyqdm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtc0w"]
+albedo_texture = ExtResource("2_hyqdm")
+
+[node name="SM_Env_StoneWall_03" instance=ExtResource("1_chsx5")]
+
+[node name="SM_Env_StoneWall_03" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vtc0w")

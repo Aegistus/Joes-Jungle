@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=39 format=3 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Script" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
@@ -7,9 +7,30 @@
 [ext_resource type="Material" uid="uid://p001di78373p" path="res://materials/grid_2.tres" id="8_ijifm"]
 [ext_resource type="PackedScene" uid="uid://ciu738dd2fsak" path="res://scenes/scenery/palm_tree_01.tscn" id="9_41nok"]
 [ext_resource type="PackedScene" uid="uid://yttdwroyehgm" path="res://scenes/scenery/palm_tree_02.tscn" id="10_8b1qe"]
+[ext_resource type="PackedScene" uid="uid://by678sc0pnrke" path="res://scenes/scenery/hedge_01.tscn" id="10_ikd42"]
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="11_2gnx2"]
+[ext_resource type="PackedScene" uid="uid://bf5bqx383k7jd" path="res://scenes/scenery/hedge_02.tscn" id="11_8g8nb"]
 [ext_resource type="PackedScene" uid="uid://ddhplb0t3aute" path="res://scenes/scenery/palm_tree_04.tscn" id="12_i1j5x"]
+[ext_resource type="PackedScene" uid="uid://cxsrpaiv0t8da" path="res://scenes/scenery/hedge_bush_01.tscn" id="12_xt65b"]
+[ext_resource type="PackedScene" uid="uid://b8itn4yaa812y" path="res://scenes/scenery/hedge_bush_02.tscn" id="13_wh7me"]
+[ext_resource type="PackedScene" uid="uid://bpy6f2h7b4c1g" path="res://scenes/scenery/hedge_bush_03.tscn" id="14_t6xn1"]
+[ext_resource type="PackedScene" uid="uid://b4s2kdokjms8u" path="res://scenes/scenery/hedge_bush_04.tscn" id="15_b2uwo"]
+[ext_resource type="PackedScene" uid="uid://b51u3xlsl4jxl" path="res://scenes/scenery/rock_01.tscn" id="16_1poj8"]
 [ext_resource type="Script" path="res://scripts/zombie_spawn_point.gd" id="17_owi3h"]
+[ext_resource type="PackedScene" uid="uid://cpffvcbta5ec2" path="res://scenes/scenery/rock_02.tscn" id="17_xsrh6"]
+[ext_resource type="PackedScene" uid="uid://ctn1gocqsmwey" path="res://scenes/scenery/rock_03.tscn" id="18_pl4gd"]
+[ext_resource type="PackedScene" uid="uid://dvwcxgm35qhom" path="res://scenes/scenery/stone_single_01.tscn" id="19_gmoku"]
+[ext_resource type="PackedScene" uid="uid://dybj8mw6pqq5r" path="res://scenes/scenery/stone_single_02.tscn" id="20_j3851"]
+[ext_resource type="PackedScene" uid="uid://b1uu5s8rj206g" path="res://scenes/scenery/stone_wall_01.tscn" id="21_l7i85"]
+[ext_resource type="PackedScene" uid="uid://r00tnhjsa0sn" path="res://scenes/scenery/stone_wall_03.tscn" id="22_n38su"]
+[ext_resource type="PackedScene" uid="uid://ccwmikladigvb" path="res://scenes/scenery/stone_wall_pillar_01.tscn" id="23_jh0gs"]
+[ext_resource type="PackedScene" uid="uid://dpcc7siuvyhyr" path="res://scenes/scenery/stone_wall_rubble_01.tscn" id="24_vncji"]
+[ext_resource type="PackedScene" uid="uid://bv08t2e7vfcx7" path="res://scenes/scenery/stone_wall_rubble_02.tscn" id="25_07ac2"]
+[ext_resource type="PackedScene" uid="uid://20mjnqpncu7g" path="res://scenes/scenery/stone_wall_rubble_03.tscn" id="26_8gqcl"]
+[ext_resource type="PackedScene" uid="uid://dkjt686bxxe74" path="res://scenes/scenery/stone_wall_rubble_04.tscn" id="27_50f8y"]
+[ext_resource type="PackedScene" uid="uid://dy7nsmch3eake" path="res://scenes/scenery/tree_dead_01.tscn" id="28_oo16f"]
+[ext_resource type="PackedScene" uid="uid://xg04imsil4xb" path="res://scenes/scenery/tree_dead_02.tscn" id="29_u1ntb"]
+[ext_resource type="PackedScene" uid="uid://dr3u8iddljsaf" path="res://scenes/scenery/tree_dead_03.tscn" id="30_m5dba"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -20,7 +41,7 @@ sky_material = SubResource("ProceduralSkyMaterial_27m1f")
 
 [sub_resource type="Environment" id="Environment_112m7"]
 background_mode = 2
-background_energy_multiplier = 0.0
+background_energy_multiplier = 2.0
 sky = SubResource("Sky_sfs03")
 ambient_light_source = 1
 tonemap_mode = 2
@@ -54,7 +75,7 @@ script = ExtResource("1_gfbx0")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, -0.482963, 0.129409, 2.98023e-08, 0.258819, 0.965926, -0.5, -0.836516, 0.224144, 0.14235, 4.86252, 0.246558)
 light_color = Color(0.0091381, 0.470179, 0.664388, 1)
-light_energy = 0.5
+light_energy = 0.1
 light_indirect_energy = 0.1
 light_volumetric_fog_energy = 0.1
 shadow_enabled = true
@@ -63,6 +84,7 @@ shadow_enabled = true
 environment = SubResource("Environment_112m7")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
 navigation_mesh = SubResource("NavigationMesh_7od6u")
 
 [node name="map" type="Node3D" parent="NavigationRegion3D"]
@@ -75,9 +97,20 @@ use_collision = true
 collision_layer = 262146
 collision_mask = 3
 size = Vector3(500, 1, 500)
+metadata/_edit_lock_ = true
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/floor"]
 size = Vector3(500, 1, 500)
+
+[node name="ReflectingPool" type="CSGBox3D" parent="NavigationRegion3D/map/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4, 0.2, -23.2)
+operation = 2
+size = Vector3(6, 0.7, 3.5)
+
+[node name="ReflectingPool2" type="CSGBox3D" parent="NavigationRegion3D/map/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5, 0.275, -23.2)
+operation = 2
+size = Vector3(6, 0.7, 3.5)
 
 [node name="Trees" type="Node3D" parent="NavigationRegion3D/map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
@@ -286,7 +319,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 6)
 [node name="Mansion" type="Node3D" parent="NavigationRegion3D/map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -25)
 
-[node name="Walls" type="Node" parent="NavigationRegion3D/map/Mansion"]
+[node name="Walls" type="Node3D" parent="NavigationRegion3D/map/Mansion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.9937, 0, 25.0315)
 
 [node name="wall" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.25, 0.75, -33.5)
@@ -1104,7 +1138,8 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.5)
 
-[node name="Stairs" type="Node" parent="NavigationRegion3D/map/Mansion"]
+[node name="Stairs" type="Node3D" parent="NavigationRegion3D/map/Mansion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 25)
 
 [node name="stair1" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -23.75, -0.425, -25.5)
@@ -1232,9 +1267,7 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/map/World Boundary"]
 shape = SubResource("WorldBoundaryShape3D_30c14")
 
-[node name="Outer Walls" type="Node" parent="NavigationRegion3D/map"]
-
-[node name="Furniture" type="Node" parent="NavigationRegion3D/map"]
+[node name="Furniture" type="Node3D" parent="NavigationRegion3D/map"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.775, 0.5, -24.75)
@@ -1338,7 +1371,158 @@ material_override = ExtResource("8_ijifm")
 use_collision = true
 size = Vector3(4.45, 2, 0.5)
 
+[node name="Outer" type="Node3D" parent="NavigationRegion3D/map"]
+
+[node name="Palette" type="Node3D" parent="NavigationRegion3D/map/Outer"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -53.6, 0, -29.9)
+
+[node name="SM_Env_Hedge_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("10_ikd42")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.5, 0)
+
+[node name="SM_Env_Hedge_02" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("11_8g8nb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.5, 0)
+
+[node name="SM_Env_Hedge_Bush_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("12_xt65b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8, -0.603261, 0)
+
+[node name="SM_Env_Hedge_Bush_02" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("13_wh7me")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1, -0.5, 0)
+
+[node name="SM_Env_Hedge_Bush_03" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("14_t6xn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -0.500006, 0)
+
+[node name="SM_Env_Hedge_Bush_04" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("15_b2uwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.7, -0.500068, 0)
+
+[node name="SM_Env_Rock_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("16_1poj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100014, -0.5, 4.00001)
+
+[node name="SM_Env_Rock_02" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("17_xsrh6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89999, -0.5, 4.00002)
+
+[node name="SM_Env_Rock_03" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("18_pl4gd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3, -0.5, 4.00002)
+
+[node name="SM_Env_StoneWall_Single_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("19_gmoku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2, -0.5, 4.00002)
+
+[node name="SM_Env_StoneWall_Single_02" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("20_j3851")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7, -0.5, 4.00002)
+
+[node name="SM_Env_StoneWall_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("21_l7i85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99999, -0.5, 7.10003)
+
+[node name="SM_Env_StoneWall_03" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("22_n38su")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.49999, -0.5, 7.10003)
+
+[node name="SM_Env_StoneWall_Pillar_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("23_jh0gs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3, -0.5, 7.10004)
+
+[node name="SM_Env_StoneWall_Rubble_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("24_vncji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2, -0.5, 7.10004)
+
+[node name="SM_Env_StoneWall_Rubble_02" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("25_07ac2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8, -0.5, 7.10004)
+
+[node name="SM_Env_StoneWall_Rubble_03" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("26_8gqcl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9, -0.5, 7.10005)
+
+[node name="SM_Env_StoneWall_Rubble_04" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("27_50f8y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2, -0.5, 7.10005)
+
+[node name="SM_Env_Tree_Dead_01" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("28_oo16f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7, -0.5, 4.90006)
+
+[node name="SM_Env_Tree_Dead_02" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("29_u1ntb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2999, -0.5, 4.90006)
+
+[node name="SM_Env_Tree_Dead_03" parent="NavigationRegion3D/map/Outer/Palette" instance=ExtResource("30_m5dba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9999, -0.5, 4.90007)
+
+[node name="FountainArea" type="Node3D" parent="NavigationRegion3D/map/Outer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5, 0, -32)
+
+[node name="Fountain" type="Node3D" parent="NavigationRegion3D/map/Outer/FountainArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="NavigationRegion3D/map/Outer/FountainArea/Fountain"]
+radius = 2.5
+height = 0.6
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="NavigationRegion3D/map/Outer/FountainArea/Fountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+radius = 1.9
+height = 0.6
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="NavigationRegion3D/map/Outer/FountainArea/Fountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+radius = 1.3
+height = 0.6
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="NavigationRegion3D/map/Outer/FountainArea/Fountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 0)
+radius = 0.3
+height = 1.2
+
+[node name="SM_Env_Hedge_03" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.10001, -0.5, 6.2)
+
+[node name="SM_Env_Hedge_06" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.99999, -0.5, -4.4)
+
+[node name="SM_Env_Hedge_04" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("11_8g8nb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0999985, -0.5, -6.4)
+
+[node name="SM_Env_Hedge_05" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("11_8g8nb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.5, 4.3)
+
+[node name="SM_Env_Tree_Dead_04" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("28_oo16f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.300064, -0.5, 7.90005)
+
+[node name="SM_Env_Tree_Dead_05" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("29_u1ntb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.499939, -0.5, -7.59995)
+
+[node name="Front Entrance" type="Node3D" parent="NavigationRegion3D/map/Outer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.5, -32)
+
+[node name="SM_Env_StoneWall_02" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("21_l7i85")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.50003, 2.38419e-07, 5.40002)
+
+[node name="SM_Env_StoneWall_03" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("21_l7i85")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.40003, 2.38419e-07, 1.90735e-05)
+
+[node name="SM_Env_StoneWall_04" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("22_n38su")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.50003, -1.19209e-07, -5.39999)
+
+[node name="SM_Env_StoneWall_Pillar_02" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("23_jh0gs")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.50004, 1.19209e-07, -2.49998)
+
+[node name="SM_Env_StoneWall_Pillar_03" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("23_jh0gs")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.50004, 1.19209e-07, 2.50002)
+
+[node name="SM_Env_StoneWall_Pillar_04" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("23_jh0gs")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.40004, 1.19209e-07, -2.49998)
+
+[node name="SM_Env_StoneWall_Pillar_05" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("23_jh0gs")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.40004, 1.19209e-07, 2.50002)
+
+[node name="SM_Env_StoneWall_Rubble_05" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("24_vncji")]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 2.10005, 1.19209e-07, 9.80003)
+
+[node name="SM_Env_StoneWall_Rubble_06" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("25_07ac2")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 1.80005, 0, -8.89997)
+
+[node name="SM_Env_StoneWall_Rubble_09" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("25_07ac2")]
+transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, 3.70004, 0, -12.1)
+
+[node name="SM_Env_StoneWall_Rubble_07" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("26_8gqcl")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5.40005, 0, 14.5)
+
+[node name="SM_Env_StoneWall_Rubble_08" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("27_50f8y")]
+transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, 2.40005, 0, -9.89994)
+
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
 script = ExtResource("17_owi3h")
 
 [node name="WaveTimer" type="Timer" parent="ZombieSpawnPoints"]
@@ -1678,6 +1862,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9185, -0.5, -1.2227)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6185, -0.5, -63.4727)
 
 [node name="ObjectiveSpawnPointsParent" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
 
 [node name="SpawnPoint" type="Node3D" parent="ObjectiveSpawnPointsParent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0401, -0.5, -32.0305)
@@ -1713,6 +1898,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.506, -0.499998, -12.4451)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0545, -0.499998, -22.887)
 
 [node name="PlayerSpawnPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9587, 0, -29.3864)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.9587, 0, -49.3864)
 
 [connection signal="timeout" from="ZombieSpawnPoints/WaveTimer" to="ZombieSpawnPoints" method="_on_timer_timeout"]
