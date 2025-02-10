@@ -18,6 +18,14 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ljnu"]
 bg_color = Color(0, 0, 0, 0.192157)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuq0p"]
+bg_color = Color(0.233925, 0.233925, 0.233925, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_blend = true
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66koy"]
 bg_color = Color(5.77569e-07, 0.642912, 0.925276, 1)
 
@@ -33,14 +41,6 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lklw5"]
 bg_color = Color(0, 0, 0, 0.431373)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuq0p"]
-bg_color = Color(0.233925, 0.233925, 0.233925, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_blend = true
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -63,9 +63,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 39.0
+offset_left = 74.0
 offset_top = 57.0
-offset_right = 445.0
+offset_right = 480.0
 offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -82,6 +82,22 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_r7kat")
 theme_override_font_sizes/font_size = 8
 text = "Hold E to water plant"
+vertical_alignment = 1
+
+[node name="KeyboardKey" type="PanelContainer" parent="CanvasLayer/InteractableTooltip"]
+custom_minimum_size = Vector2(25, 25)
+offset_left = -30.0
+offset_top = -5.0
+offset_right = -5.0
+offset_bottom = 21.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kuq0p")
+
+[node name="KeyboardKey" type="Label" parent="CanvasLayer/InteractableTooltip/KeyboardKey"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_sq8fp")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="JoeBucks" type="Label" parent="CanvasLayer"]
@@ -201,7 +217,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -118.0
-offset_top = -136.0
+offset_top = -102.0
 grow_horizontal = 0
 grow_vertical = 0
 
@@ -223,28 +239,10 @@ theme_override_font_sizes/font_size = 15
 text = "LMB - Shoot "
 horizontal_alignment = 2
 
-[node name="Label4" type="Label" parent="CanvasLayer/Controls"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 15
-text = "E - Interact "
-horizontal_alignment = 2
-
 [node name="Label5" type="Label" parent="CanvasLayer/Controls"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "R - Reload "
-horizontal_alignment = 2
-
-[node name="Label6" type="Label" parent="CanvasLayer/Controls"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 15
-text = "1 - Primary Weapon "
-horizontal_alignment = 2
-
-[node name="Label7" type="Label" parent="CanvasLayer/Controls"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 15
-text = "2 - Secondary Weapon "
 horizontal_alignment = 2
 
 [node name="WaterBarsUI" type="VBoxContainer" parent="CanvasLayer"]
