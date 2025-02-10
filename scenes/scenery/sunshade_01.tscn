@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlxbdxq2sbifd"]
+
+[ext_resource type="PackedScene" uid="uid://bpwybti6taxaf" path="res://assets/models/scenery/SM_Bld_Cuba_Sunshade_01.fbx" id="1_twvek"]
+[ext_resource type="Texture2D" uid="uid://62ob6g87c662" path="res://assets/textures/PolygonPirates_texture.png" id="2_ixvw7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yaj8b"]
+albedo_texture = ExtResource("2_ixvw7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_80q5i"]
+size = Vector3(0.2, 2.5, 0.2)
+
+[node name="SM_Bld_Cuba_Sunshade_01" instance=ExtResource("1_twvek")]
+
+[node name="SM_Bld_Cuba_Sunshade_01" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_yaj8b")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 1.25, 1.9)
+shape = SubResource("BoxShape3D_80q5i")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 1.25, 1.9)
+shape = SubResource("BoxShape3D_80q5i")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 1.25, -1.9)
+shape = SubResource("BoxShape3D_80q5i")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 1.25, -1.9)
+shape = SubResource("BoxShape3D_80q5i")

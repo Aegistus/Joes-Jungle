@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cluiqhm4o72ca"]
+
+[ext_resource type="PackedScene" uid="uid://brwvqslolrohk" path="res://assets/models/scenery/SM_Prop_Fountain_01.fbx" id="1_yix0v"]
+[ext_resource type="Texture2D" uid="uid://62ob6g87c662" path="res://assets/textures/PolygonPirates_texture.png" id="2_76xmj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17hyy"]
+albedo_texture = ExtResource("2_76xmj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vblut"]
+albedo_texture = ExtResource("2_76xmj")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2c6v2"]
+height = 1.4
+
+[node name="SM_Prop_Fountain_01" instance=ExtResource("1_yix0v")]
+
+[node name="SM_Prop_Fountain_01" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0.0135126, 0)
+material_override = SubResource("StandardMaterial3D_17hyy")
+
+[node name="SM_Prop_Fountain_Water_01" parent="SM_Prop_Fountain_01" index="0"]
+material_override = SubResource("StandardMaterial3D_vblut")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0)
+shape = SubResource("CylinderShape3D_2c6v2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("CylinderShape3D_2c6v2")

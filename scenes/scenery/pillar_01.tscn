@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt6dau15gvne7"]
+
+[ext_resource type="PackedScene" uid="uid://cm26incmsr6nr" path="res://assets/models/scenery/SM_Prop_Pillar_01.fbx" id="1_n2khi"]
+[ext_resource type="Texture2D" uid="uid://62ob6g87c662" path="res://assets/textures/PolygonPirates_texture.png" id="2_mef3d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijvg5"]
+albedo_texture = ExtResource("2_mef3d")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f3vja"]
+radius = 0.238186
+height = 4.0
+
+[node name="SM_Prop_Pillar_01" instance=ExtResource("1_n2khi")]
+
+[node name="SM_Prop_Pillar_01" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ijvg5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+shape = SubResource("CapsuleShape3D_f3vja")

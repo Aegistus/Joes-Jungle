@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=40 format=3 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Script" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://dy7nsmch3eake" path="res://scenes/scenery/tree_dead_01.tscn" id="28_oo16f"]
 [ext_resource type="PackedScene" uid="uid://xg04imsil4xb" path="res://scenes/scenery/tree_dead_02.tscn" id="29_u1ntb"]
 [ext_resource type="PackedScene" uid="uid://dr3u8iddljsaf" path="res://scenes/scenery/tree_dead_03.tscn" id="30_m5dba"]
+[ext_resource type="PackedScene" uid="uid://cluiqhm4o72ca" path="res://scenes/scenery/fountain_01.tscn" id="31_jkp6c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -131,7 +132,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 18)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 14)
 
 [node name="PalmTree06" parent="NavigationRegion3D/map/Trees" instance=ExtResource("9_41nok")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 16)
 
 [node name="PalmTree07" parent="NavigationRegion3D/map/Trees" instance=ExtResource("9_41nok")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 0, 6)
@@ -314,7 +315,7 @@ transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 5, 0, -32)
 
 [node name="PalmTree_04" parent="NavigationRegion3D/map/Trees" instance=ExtResource("12_i1j5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 13.1)
 
 [node name="Mansion" type="Node3D" parent="NavigationRegion3D/map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -25)
@@ -1442,28 +1443,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9999, -0.5, 4.90007)
 [node name="FountainArea" type="Node3D" parent="NavigationRegion3D/map/Outer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5, 0, -32)
 
-[node name="Fountain" type="Node3D" parent="NavigationRegion3D/map/Outer/FountainArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="NavigationRegion3D/map/Outer/FountainArea/Fountain"]
-radius = 2.5
-height = 0.6
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="NavigationRegion3D/map/Outer/FountainArea/Fountain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
-radius = 1.9
-height = 0.6
-
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="NavigationRegion3D/map/Outer/FountainArea/Fountain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
-radius = 1.3
-height = 0.6
-
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="NavigationRegion3D/map/Outer/FountainArea/Fountain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 0)
-radius = 0.3
-height = 1.2
-
 [node name="SM_Env_Hedge_03" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("10_ikd42")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.10001, -0.5, 6.2)
 
@@ -1481,6 +1460,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.3000
 
 [node name="SM_Env_Tree_Dead_05" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("29_u1ntb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.499939, -0.5, -7.59995)
+
+[node name="SM_Prop_Fountain_01" parent="NavigationRegion3D/map/Outer/FountainArea" instance=ExtResource("31_jkp6c")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.5, 0)
 
 [node name="Front Entrance" type="Node3D" parent="NavigationRegion3D/map/Outer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.5, -32)
@@ -1520,6 +1502,33 @@ transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107
 
 [node name="SM_Env_StoneWall_Rubble_08" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("27_50f8y")]
 transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, 2.40005, 0, -9.89994)
+
+[node name="ReflectionPool" type="Node3D" parent="NavigationRegion3D/map/Outer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, -0.5, -4.1)
+
+[node name="SM_Env_Hedge_Bush_05" parent="NavigationRegion3D/map/Outer/ReflectionPool" instance=ExtResource("14_t6xn1")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 5.5, 0, 6.1)
+
+[node name="SM_Env_Hedge_Bush_06" parent="NavigationRegion3D/map/Outer/ReflectionPool" instance=ExtResource("14_t6xn1")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 8.5, 0, 6.1)
+
+[node name="SM_Env_Hedge_Bush_07" parent="NavigationRegion3D/map/Outer/ReflectionPool" instance=ExtResource("14_t6xn1")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 11.5, 0, 6.1)
+
+[node name="SM_Env_Hedge_Bush_12" parent="NavigationRegion3D/map/Outer/ReflectionPool" instance=ExtResource("14_t6xn1")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 14.5, 0, 6.1)
+
+[node name="SM_Env_Hedge_Bush_08" parent="NavigationRegion3D/map/Outer/ReflectionPool" instance=ExtResource("14_t6xn1")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -5.5, 0, 6.1)
+
+[node name="SM_Env_Hedge_Bush_09" parent="NavigationRegion3D/map/Outer/ReflectionPool" instance=ExtResource("14_t6xn1")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -8.5, 0, 6.1)
+
+[node name="SM_Env_Hedge_Bush_10" parent="NavigationRegion3D/map/Outer/ReflectionPool" instance=ExtResource("14_t6xn1")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -11.5, 0, 6.1)
+
+[node name="SM_Env_Hedge_Bush_11" parent="NavigationRegion3D/map/Outer/ReflectionPool" instance=ExtResource("14_t6xn1")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -14.5, 0, 6.1)
 
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)

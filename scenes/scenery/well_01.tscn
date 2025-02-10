@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1wcghjdfvw2j"]
+
+[ext_resource type="PackedScene" uid="uid://d1enfdy06mksr" path="res://assets/models/scenery/SM_Prop_Well_01.fbx" id="1_apa6l"]
+[ext_resource type="Texture2D" uid="uid://62ob6g87c662" path="res://assets/textures/PolygonPirates_texture.png" id="2_yy5qn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qh12"]
+albedo_texture = ExtResource("2_yy5qn")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6teuy"]
+size = Vector3(1.6, 0.9, 1.2)
+
+[node name="SM_Prop_Well_01" instance=ExtResource("1_apa6l")]
+
+[node name="SM_Prop_Well_01" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_8qh12")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, 0.45, 0)
+shape = SubResource("BoxShape3D_6teuy")

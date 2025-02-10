@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfr2u7qy1n0fv"]
+
+[ext_resource type="PackedScene" uid="uid://b05f6qy0mgnfr" path="res://assets/models/scenery/SM_Bld_Cuba_VineWall_01.fbx" id="1_kcpmd"]
+[ext_resource type="Texture2D" uid="uid://62ob6g87c662" path="res://assets/textures/PolygonPirates_texture.png" id="2_gxs56"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wl7mb"]
+albedo_texture = ExtResource("2_gxs56")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aq02h"]
+size = Vector3(3.4, 3.4, 0.5)
+
+[node name="SM_Bld_Cuba_VineWall_01" instance=ExtResource("1_kcpmd")]
+
+[node name="SM_Bld_Cuba_VineWall_01" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_wl7mb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, 1.8, 0.05)
+shape = SubResource("BoxShape3D_aq02h")
