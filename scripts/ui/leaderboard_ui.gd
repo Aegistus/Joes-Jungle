@@ -12,9 +12,9 @@ func _ready():
 			entry_parent.add_child(entry)
 			entry.rank.text = str(runs[i].rank)
 			entry.player_name.text = runs[i].player_name
-			var minutes : int = GameManager.run_time / 60
-			var seconds := fmod(GameManager.run_time, 60)
-			var milliseconds := fmod(GameManager.run_time, 1) * 100
+			var minutes : int = runs[i].time / 60
+			var seconds := fmod(runs[i].time, 60)
+			var milliseconds := fmod(runs[i].time, 1) * 100
 			var time_string := "%02d:%02d:%02d" % [minutes, seconds, milliseconds]
 			entry.time.text = time_string
 
