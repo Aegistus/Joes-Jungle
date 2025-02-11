@@ -1,0 +1,184 @@
+[gd_scene load_steps=9 format=3 uid="uid://c32vcet1xi7k7"]
+
+[ext_resource type="PackedScene" uid="uid://bqcbebfpewhh4" path="res://scenes/ui/leaderboard_entry.tscn" id="3_dhclq"]
+[ext_resource type="FontFile" uid="uid://cidbiqe8esbi2" path="res://assets/fonts/dead_font_walking/Dead Font Walking.otf" id="4_ftsn5"]
+[ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="4_h8iur"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yyaic"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.5, 0.5, 0.5, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="Sky" id="Sky_a1auv"]
+sky_material = SubResource("ProceduralSkyMaterial_yyaic")
+
+[sub_resource type="Environment" id="Environment_eq101"]
+background_mode = 1
+sky = SubResource("Sky_a1auv")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vir5t"]
+bg_color = Color(0.156863, 0.152941, 0.113725, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1luhy"]
+bg_color = Color(0.246607, 0.234048, 0.137804, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[node name="GameOverScene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.330173, -0.375486, 0, -0.750966, 0.660341, -0.500003, 0.571871, 0.650354, -3.01056, -2.38419e-07, 4.27072)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_eq101")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.855, 1.277, 2.198)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI"]
+
+[node name="Title" type="CenterContainer" parent="UI/CanvasLayer"]
+offset_left = 7.0
+offset_top = 37.0
+offset_right = 487.0
+offset_bottom = 172.0
+rotation = -0.0514867
+
+[node name="Title" type="Label" parent="UI/CanvasLayer/Title"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ftsn5")
+theme_override_font_sizes/font_size = 80
+text = "Leaderboard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="UI/CanvasLayer/Title/Title"]
+offset_left = -20.5583
+offset_top = 83.8653
+offset_right = 382.442
+offset_bottom = 86.8653
+rotation = -0.0371165
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -676.0
+offset_top = -190.0
+offset_bottom = 232.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TabBar" type="TabBar" parent="UI/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+theme_override_fonts/font = ExtResource("4_h8iur")
+current_tab = 0
+tab_count = 3
+tab_0/title = "Personal"
+tab_1/title = "Friends"
+tab_1/disabled = true
+tab_2/title = "Global"
+tab_2/disabled = true
+
+[node name="Leaderboard" type="VBoxContainer" parent="UI/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColumnHeaders" type="HBoxContainer" parent="UI/CanvasLayer/VBoxContainer/Leaderboard"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.09
+
+[node name="PanelContainer" type="Panel" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ColumnHeaders"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vir5t")
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ColumnHeaders/PanelContainer"]
+layout_mode = 2
+offset_top = 8.0
+offset_right = 55.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("4_h8iur")
+text = " Rank"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="Panel" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ColumnHeaders"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vir5t")
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ColumnHeaders/PanelContainer2"]
+layout_mode = 2
+offset_top = 8.0
+offset_right = 306.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("4_h8iur")
+text = " Name"
+
+[node name="PanelContainer3" type="Panel" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ColumnHeaders"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vir5t")
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ColumnHeaders/PanelContainer3"]
+layout_mode = 2
+offset_top = 8.0
+offset_right = 307.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("4_h8iur")
+text = " Time"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/CanvasLayer/VBoxContainer/Leaderboard"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1luhy")
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LeaderboardEntry" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ScrollContainer/VBoxContainer" instance=ExtResource("3_dhclq")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/CanvasLayer"]
+offset_left = 135.0
+offset_top = 423.0
+offset_right = 317.0
+offset_bottom = 496.0
+
+[node name="Button" type="Button" parent="UI/CanvasLayer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h8iur")
+text = "Start New Run"
+
+[node name="Button2" type="Button" parent="UI/CanvasLayer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_h8iur")
+text = "Main Menu"
