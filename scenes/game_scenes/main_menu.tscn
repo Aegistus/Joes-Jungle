@@ -19,7 +19,7 @@
 [ext_resource type="StyleBox" uid="uid://c0nqerilbeu5v" path="res://assets/UI/button_pressed_theme.tres" id="14_wk5mc"]
 [ext_resource type="Material" uid="uid://clj8od07w7lfo" path="res://materials/palm_tree.tres" id="15_y5yst"]
 [ext_resource type="PackedScene" uid="uid://ciu738dd2fsak" path="res://scenes/scenery/palm_tree_01.tscn" id="16_6hmv5"]
-[ext_resource type="Script" path="res://scripts/flavor_text.gd" id="17_tj3us"]
+[ext_resource type="Script" path="res://scripts/ui/flavor_text.gd" id="17_tj3us"]
 [ext_resource type="PackedScene" uid="uid://yttdwroyehgm" path="res://scenes/scenery/palm_tree_02.tscn" id="17_yyiik"]
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="18_nonfs"]
 [ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="19_jcydp"]

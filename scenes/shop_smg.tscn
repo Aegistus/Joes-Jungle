@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=4 uid="uid://buup8044hp4ox"]
 
-[ext_resource type="Script" path="res://scripts/shop.gd" id="1_yet33"]
+[ext_resource type="Script" path="res://scripts/objectives/shop.gd" id="1_yet33"]
 [ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_rpcek"]
 [ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="4_3sm8t"]
 [ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="5_sg2ua"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://c0j4glofdqgpk"]
 
-[ext_resource type="Script" path="res://scripts/fruit_punch_bowl.gd" id="1_terny"]
+[ext_resource type="Script" path="res://scripts/objectives/fruit_punch_bowl.gd" id="1_terny"]
 [ext_resource type="AudioStream" uid="uid://chimp8f8vsx8g" path="res://assets/audio/FocusOnTheFruit (JJ).ogg" id="2_8d5au"]
 [ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="3_h8ef0"]
 

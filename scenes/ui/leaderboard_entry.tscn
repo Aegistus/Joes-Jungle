@@ -1,16 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqcbebfpewhh4"]
+[gd_scene load_steps=3 format=3 uid="uid://bqcbebfpewhh4"]
 
+[ext_resource type="Script" path="res://scripts/ui/leaderboard_entry.gd" id="1_1rusj"]
 [ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="1_yafji"]
 
 [node name="LeaderboardEntry" type="HBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
+script = ExtResource("1_1rusj")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.3
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Rank" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +28,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Panel2"]
+[node name="Name" type="Label" parent="Panel2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,7 +44,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Panel3"]
+[node name="Time" type="Label" parent="Panel3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

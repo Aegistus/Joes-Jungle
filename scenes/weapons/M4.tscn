@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_cbm1q"]
 [ext_resource type="AudioStream" uid="uid://ptskec0rcqxr" path="res://assets/audio/reload_sounds/M4_mag_out.wav" id="8_uh1aq"]
 [ext_resource type="AudioStream" uid="uid://bpaaehrpp1qw4" path="res://assets/audio/reload_sounds/M4_mag_in.wav" id="9_7yfxn"]
-[ext_resource type="Script" path="res://scripts/magazine_ammo.gd" id="10_bwb2o"]
+[ext_resource type="Script" path="res://scripts/weapons/magazine_ammo.gd" id="10_bwb2o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbbeg"]
 albedo_texture = ExtResource("2_h6l83")

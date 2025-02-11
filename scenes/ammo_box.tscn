@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=4 uid="uid://d4jtl2hk346is"]
 
-[ext_resource type="Script" path="res://scripts/ammo_box.gd" id="1_n8p1w"]
+[ext_resource type="Script" path="res://scripts/objectives/ammo_box.gd" id="1_n8p1w"]
 [ext_resource type="Material" uid="uid://dy1nxwgepagrt" path="res://materials/crate_mat.tres" id="1_w5wiu"]
 [ext_resource type="Material" uid="uid://l5e4u1851kdr" path="res://materials/ammo_box_casing_mat.tres" id="2_a5pya"]
 [ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="4_qx11r"]

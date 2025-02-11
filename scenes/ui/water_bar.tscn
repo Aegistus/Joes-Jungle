@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsdldfkq75yyj"]
 
-[ext_resource type="Script" path="res://scripts/water_bar.gd" id="1_s3hc2"]
+[ext_resource type="Script" path="res://scripts/ui/water_bar.gd" id="1_s3hc2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ms56"]
 bg_color = Color(0.136854, 0.468859, 0.857006, 1)

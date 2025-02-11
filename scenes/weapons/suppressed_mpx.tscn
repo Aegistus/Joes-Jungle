@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_2hrnk"]
 [ext_resource type="AudioStream" uid="uid://ptskec0rcqxr" path="res://assets/audio/reload_sounds/M4_mag_out.wav" id="8_k1wor"]
 [ext_resource type="AudioStream" uid="uid://bpaaehrpp1qw4" path="res://assets/audio/reload_sounds/M4_mag_in.wav" id="9_b5mj3"]
-[ext_resource type="Script" path="res://scripts/magazine_ammo.gd" id="10_7hq3a"]
+[ext_resource type="Script" path="res://scripts/weapons/magazine_ammo.gd" id="10_7hq3a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mi6py"]
 resource_name = "Modern Weapon Pack Vol.002"

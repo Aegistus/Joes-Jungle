@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_ulh05"]
 [ext_resource type="AudioStream" uid="uid://khvutnhujlf0" path="res://assets/audio/reload_sounds/M249_mag_out.wav" id="8_o5ap2"]
 [ext_resource type="AudioStream" uid="uid://bjym08erj6sy3" path="res://assets/audio/reload_sounds/M249_mag_in.wav" id="9_ptuhx"]
-[ext_resource type="Script" path="res://scripts/magazine_ammo.gd" id="10_b2ynf"]
+[ext_resource type="Script" path="res://scripts/weapons/magazine_ammo.gd" id="10_b2ynf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42npd"]
 resource_name = "Mat"

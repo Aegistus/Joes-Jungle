@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c32vcet1xi7k7"]
 
-[ext_resource type="Script" path="res://scripts/leaderboard.gd" id="1_wdp07"]
+[ext_resource type="Script" path="res://scripts/ui/leaderboard_ui.gd" id="1_wdp07"]
 [ext_resource type="PackedScene" uid="uid://bqcbebfpewhh4" path="res://scenes/ui/leaderboard_entry.tscn" id="3_dhclq"]
 [ext_resource type="FontFile" uid="uid://cidbiqe8esbi2" path="res://assets/fonts/dead_font_walking/Dead Font Walking.otf" id="4_ftsn5"]
 [ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="4_h8iur"]
@@ -73,6 +73,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="UI/CanvasLayer/Title/Title"]
+layout_mode = 0
 offset_left = -20.5583
 offset_top = 83.8653
 offset_right = 382.442
@@ -161,12 +162,13 @@ size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_1luhy")
 vertical_scroll_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ScrollContainer"]
+[node name="EntryParent" type="VBoxContainer" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="LeaderboardEntry" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ScrollContainer/VBoxContainer" instance=ExtResource("3_dhclq")]
+[node name="LeaderboardEntry" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ScrollContainer/EntryParent" instance=ExtResource("3_dhclq")]
+visible = false
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="UI/CanvasLayer"]

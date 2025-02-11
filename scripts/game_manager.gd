@@ -4,12 +4,13 @@ enum CauseOfDeath { ZOMBIE, PLANT }
 
 signal on_point_change(current_points, added_points)
 
+const SAVE_FILE_PATH = "user://savegame.dat"
+
 var run_time = 0.0
+var current_points = 0
 var is_game_running = false
 
-var current_points = 0
-
-var cause_of_death :CauseOfDeath
+var cause_of_death : CauseOfDeath
 var zombie_death_text : Array[String] = ["Being Too Tasty for Your Own Good",\
  "Having a Brain that Brings All the Zombies to the Yard",\
 "Trying to Befriend the Zombies Instead of Killing Them",\
@@ -23,6 +24,20 @@ var plant_death_text : Array[String] = ["Plant Neglect",\
 "Soiling Your Pants (Instead of Your Plants)",\
 "Stopping to Smell the Roses, Instead of Watering Them"]
 
+class GameRunEntry:
+	var rank : int
+	var player_name : String
+	var time : int
+	
+	func _init(player_name : String, time : int):
+		self.player_name = player_name
+		self.time = time
+
+var all_player_runs : Array[GameRunEntry]
+
+func _ready():
+	load_save_data()
+
 func _process(delta):
 	if is_game_running:
 		run_time += delta
@@ -35,6 +50,17 @@ func start_game():
 func end_game(cause_of_death : CauseOfDeath):
 	self.cause_of_death = cause_of_death
 	is_game_running = false
+	if all_player_runs == null:
+		all_player_runs = []
+	var inserted = false
+	for i in all_player_runs.size():
+		if all_player_runs[i] != null and run_time > all_player_runs[i].time:
+			all_player_runs.insert(i, GameRunEntry.new("Player", run_time))
+			inserted = true
+			break
+	if !inserted:
+		all_player_runs.append(GameRunEntry.new("Player", run_time))
+	save()
 	get_tree().change_scene_to_file("res://scenes/game_scenes/game_over_scene.tscn")
 
 func add_points(amount):
@@ -50,3 +76,20 @@ func get_cause_of_death_text() -> String:
 		return zombie_death_text.pick_random()
 	else:
 		return plant_death_text.pick_random()
+
+func save():
+	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
+	for i in all_player_runs.size():
+		file.store_string(all_player_runs[i].player_name)
+		file.store_float(all_player_runs[i].time)
+	file.close()
+
+func load_save_data():
+	all_player_runs = []
+	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
+	if file != null:
+		while not file.eof_reached():
+			var player_name = file.get_as_text()
+			var time = file.get_float()
+			all_player_runs.append(GameRunEntry.new(player_name, time))
+		file.close()

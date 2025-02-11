@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="5_ynbqx"]
 [ext_resource type="PackedScene" uid="uid://dmpg4pql6ql1n" path="res://scenes/particles/shotgun_shell_casing_particles.tscn" id="6_i2oo6"]
 [ext_resource type="AudioStream" uid="uid://b734ac3aqa05f" path="res://assets/audio/reload_sounds/benelli_round_in.wav" id="7_5c4lj"]
-[ext_resource type="Script" path="res://scripts/single_load_ammo.gd" id="8_d08jv"]
+[ext_resource type="Script" path="res://scripts/weapons/single_load_ammo.gd" id="8_d08jv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eeaau"]
 resource_name = "Mat.1"

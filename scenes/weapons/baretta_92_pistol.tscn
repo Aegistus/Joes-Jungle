@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="6_yk5b5"]
 [ext_resource type="AudioStream" uid="uid://bimsx8ggdoj7t" path="res://assets/audio/reload_sounds/pistol_mag_out.wav" id="7_pi4ou"]
 [ext_resource type="AudioStream" uid="uid://2qgiy3wloc8a" path="res://assets/audio/reload_sounds/pistol_mag_in.wav" id="8_vpqxc"]
-[ext_resource type="Script" path="res://scripts/magazine_ammo.gd" id="9_4uq1i"]
+[ext_resource type="Script" path="res://scripts/weapons/magazine_ammo.gd" id="9_4uq1i"]
 
 [sub_resource type="Animation" id="Animation_30618"]
 length = 0.001
