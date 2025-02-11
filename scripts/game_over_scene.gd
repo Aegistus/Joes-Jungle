@@ -12,9 +12,5 @@ func _ready():
 	final_time.text = "Final Time: " + time_string
 	cause_of_death.text = "Cause of Death: " + GameManager.get_cause_of_death_text()
 
-func _on_restart_button_pressed():
-	GameManager.start_game()
-	get_tree().change_scene_to_file("res://scenes/game_scenes/main.tscn")
-
-func _on_main_menu_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/game_scenes/main_menu.tscn")
+func _on_leaderboard_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/game_scenes/leaderboard.tscn")
