@@ -60,6 +60,7 @@ func end_game(cause_of_death : CauseOfDeath):
 			break
 	if !inserted:
 		all_player_runs.append(GameRunEntry.new("Player", run_time))
+	set_run_rankings()
 	save()
 	get_tree().change_scene_to_file("res://scenes/game_scenes/game_over_scene.tscn")
 
@@ -91,5 +92,18 @@ func load_save_data():
 		while not file.eof_reached():
 			var player_name = file.get_line()
 			var time = file.get_float()
-			all_player_runs.append(GameRunEntry.new(player_name, time))
+			if player_name != "" and time != 0:
+				all_player_runs.append(GameRunEntry.new(player_name, time))
 		file.close()
+	set_run_rankings()
+
+func set_run_rankings():
+	all_player_runs.sort_custom(compare_runs)
+	for i in all_player_runs.size():
+		all_player_runs[i].rank = i + 1
+
+func compare_runs(run1 : GameRunEntry, run2 : GameRunEntry) -> bool:
+	if run1.time > run2.time:
+		return true
+	else:
+		return false
