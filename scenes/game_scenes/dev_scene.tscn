@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://d1otweixyixi3"]
+[gd_scene load_steps=32 format=4 uid="uid://d1otweixyixi3"]
 
 [ext_resource type="Script" path="res://scripts/game_level.gd" id="1_jlul2"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_veg6g"]
@@ -7,7 +7,9 @@
 [ext_resource type="Material" uid="uid://p001di78373p" path="res://materials/grid_2.tres" id="4_dvauu"]
 [ext_resource type="Material" uid="uid://btglo4s1fu73t" path="res://materials/grid_1.tres" id="5_v4u3d"]
 [ext_resource type="Material" uid="uid://clj8od07w7lfo" path="res://materials/palm_tree.tres" id="6_smev7"]
+[ext_resource type="Shader" path="res://assets/shaders/brick_wall.gdshader" id="7_c36ol"]
 [ext_resource type="PackedScene" uid="uid://ciu738dd2fsak" path="res://scenes/scenery/palm_tree_01.tscn" id="7_y21f8"]
+[ext_resource type="Texture2D" uid="uid://n7k4pxl60p5g" path="res://assets/textures/Brick Texture.png" id="8_4qu7h"]
 [ext_resource type="PackedScene" uid="uid://yttdwroyehgm" path="res://scenes/scenery/palm_tree_02.tscn" id="8_sua0m"]
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="9_6qvas"]
 [ext_resource type="PackedScene" uid="uid://ddhplb0t3aute" path="res://scenes/scenery/palm_tree_04.tscn" id="10_kcw2q"]
@@ -43,6 +45,12 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gvvsr"]
 albedo_texture = ExtResource("2_nhdfr")
 uv1_triplanar = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vvlha"]
+render_priority = 0
+shader = ExtResource("7_c36ol")
+shader_parameter/brightness = 1.0
+shader_parameter/wall_texture = ExtResource("8_4qu7h")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_52wjb"]
 resource_name = "lambert1"
@@ -153,8 +161,8 @@ collision_mask = 3
 size = Vector3(0.499939, 2, 3.25)
 
 [node name="wall14" type="CSGBox3D" parent="NavigationRegion3D/map"]
-transform = Transform3D(0.000660298, 0.000631304, -1, -0.000145397, 1, 0.000631206, 1, 0.00014497, 0.000660387, 1.72822, 0.902557, -8.59046)
-material_override = ExtResource("5_v4u3d")
+transform = Transform3D(0.000660298, 0.000631304, -1, -0.000145397, 1, 0.000631206, 1, 0.00014497, 0.000660387, 1.7282, 0.878478, -8.59046)
+material_override = SubResource("ShaderMaterial_vvlha")
 use_collision = true
 collision_mask = 3
 size = Vector3(0.499939, 2, 3.25)
