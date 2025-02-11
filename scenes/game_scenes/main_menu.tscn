@@ -1034,6 +1034,15 @@ theme_override_styles/pressed = ExtResource("14_wk5mc")
 theme_override_styles/normal = ExtResource("14_uwviw")
 text = "Options"
 
+[node name="LeaderboardButton" type="Button" parent="UI/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("12_qylgg")
+theme_override_styles/hover = ExtResource("13_2qiyi")
+theme_override_styles/pressed = ExtResource("14_wk5mc")
+theme_override_styles/normal = ExtResource("14_uwviw")
+text = "Leaderboard"
+
 [node name="QuitButton" type="Button" parent="UI/CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -1056,10 +1065,10 @@ text = "(like a lil' baby)"
 script = ExtResource("17_tj3us")
 
 [node name="FlavorText2" type="Label" parent="UI/CanvasLayer"]
-offset_left = 29.0
-offset_top = 423.0
-offset_right = 177.0
-offset_bottom = 445.0
+offset_left = 24.0
+offset_top = 412.0
+offset_right = 172.0
+offset_bottom = 434.0
 rotation = -0.206195
 theme_override_fonts/font = ExtResource("11_hrwtr")
 theme_override_font_sizes/font_size = 16
@@ -1234,5 +1243,6 @@ light_energy = 6.0
 spot_angle = 30.0
 
 [connection signal="pressed" from="UI/CanvasLayer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/VBoxContainer/LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="on_shoot" from="Pistol 93" to="Pistol 93/ShellEjector" method="eject"]

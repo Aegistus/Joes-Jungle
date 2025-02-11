@@ -27,9 +27,9 @@ var plant_death_text : Array[String] = ["Plant Neglect",\
 class GameRunEntry:
 	var rank : int
 	var player_name : String
-	var time : int
+	var time : float
 	
-	func _init(player_name : String, time : int):
+	func _init(player_name : String, time : float):
 		self.player_name = player_name
 		self.time = time
 
@@ -80,7 +80,7 @@ func get_cause_of_death_text() -> String:
 func save():
 	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
 	for i in all_player_runs.size():
-		file.store_string(all_player_runs[i].player_name)
+		file.store_line(all_player_runs[i].player_name)
 		file.store_float(all_player_runs[i].time)
 	file.close()
 
@@ -89,7 +89,7 @@ func load_save_data():
 	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
 	if file != null:
 		while not file.eof_reached():
-			var player_name = file.get_as_text()
+			var player_name = file.get_line()
 			var time = file.get_float()
 			all_player_runs.append(GameRunEntry.new(player_name, time))
 		file.close()
