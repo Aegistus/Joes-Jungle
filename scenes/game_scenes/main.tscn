@@ -2209,8 +2209,11 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.6, 
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
 script = ExtResource("17_owi3h")
+wave_delay = 120.0
+wave_count_increase = 10
 
 [node name="WaveTimer" type="Timer" parent="ZombieSpawnPoints"]
+one_shot = true
 
 [node name="Marker3D" type="Marker3D" parent="ZombieSpawnPoints"]
 gizmo_extents = 1.0
