@@ -39,6 +39,10 @@ window/size/always_on_top.release=false
 
 movie_writer/movie_file="C:/Users/joeba/OneDrive/Documents/Game Dev/Godot/Projects/godot-top-down-test/movies/movie_01.avi"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+
 [global_group]
 
 player=""

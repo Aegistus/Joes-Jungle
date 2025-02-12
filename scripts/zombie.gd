@@ -29,3 +29,9 @@ func hit(damage, position : Vector3, hit_direction : Vector3):
 		print("I'm dead")
 	elif not stagger_immune:
 		state_machine.transition_to(hit_state)
+
+# quick damage that doesn't cause stagger or blood
+func quick_hit(damage):
+	current_health -= damage
+	if current_health <= 0:
+		current_health = 0
