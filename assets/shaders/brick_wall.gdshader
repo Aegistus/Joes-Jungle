@@ -39,5 +39,3 @@ void fragment() {
 		ALBEDO = mix(vec3(0.0f), mix((albedoX * normal_weights.x + albedoY * normal_weights.y + albedoZ * normal_weights.z), color_offset.rgb, 0.05f), brightness);
 	}
 }
-
-
