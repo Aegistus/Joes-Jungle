@@ -12,6 +12,7 @@ signal on_shoot
 @export var gun_type: GunType
 @export var magazine : Node3D
 @export var magazine_scale = 1.0
+@export var base_accuracy = 100
 
 @onready var gun_audio_player = $GunAudioPlayer
 @onready var dry_shot_audio_player = $DryShotAudioPlayer
@@ -22,6 +23,7 @@ signal on_shoot
 @onready var raycast_parent = %RaycastParent as Node3D
 
 const BULLET_IMPACT_TERRAIN = preload("res://scenes/particles/bullet_impact_terrain.tscn")
+const DEGREE_PER_ACCURACY_POINT = .05
 @onready var flesh_hit = preload("res://scenes/audio_scenes/flesh_hit_audio_source.tscn")
 @onready var wood_hit = preload("res://scenes/audio_scenes/wood_hit_audio_source.tscn")
 @onready var stone_hit = preload("res://scenes/audio_scenes/stone_hit_audio_source.tscn")
@@ -42,17 +44,7 @@ func shoot():
 			gun_audio_player.play()
 			can_shoot = false
 			var raycast = raycast_parent.get_child(0) as RayCast3D
-			var collided = raycast.get_collider() as CollisionObject3D
-			var collision_point = raycast.get_collision_point()
-			var collision_normal = raycast.get_collision_normal()
-			if collided == null:
-				collided = raycast.get_collider() as CSGShape3D
-			if collided != null:
-				generate_impact_effects(collided, collision_point, collision_normal)
-				if collided.is_in_group("enemy"):
-					var rotation = (collision_point - global_position).normalized().inverse()
-					rotation.y += 180
-					collided.hit(randi_range(min_damage, max_damage), collision_point, rotation)
+			shoot_with_raycast(raycast)
 			ammo.use_ammo()
 			on_shoot.emit()
 		else:
@@ -61,6 +53,29 @@ func shoot():
 
 func shoot_end():
 	pass
+
+func shoot_with_raycast(raycast : RayCast3D):
+	# apply accuracy
+	raycast.rotation_degrees = Vector3(0,0,0)
+	var inaccuracy = (100 - base_accuracy) * randf()
+	var degree_change = inaccuracy * DEGREE_PER_ACCURACY_POINT
+	var radians_change = PI / 180.0
+	var axis = Vector3(randf() * 2 - 1, randf() * 2 - 1, 0).normalized()
+	print("axis " + str(axis))
+	print(degree_change)
+	raycast.rotate_object_local(axis, radians_change)
+	print(raycast.rotation_degrees)
+	var collided = raycast.get_collider() as CollisionObject3D
+	var collision_point = raycast.get_collision_point()
+	var collision_normal = raycast.get_collision_normal()
+	if collided == null:
+		collided = raycast.get_collider() as CSGShape3D
+	if collided != null:
+		generate_impact_effects(collided, collision_point, collision_normal)
+		if collided.is_in_group("enemy"):
+			var rotation = (collision_point - global_position).normalized().inverse()
+			rotation.y += 180
+			collided.hit(randi_range(min_damage, max_damage), collision_point, rotation)
 
 func reload():
 	ammo.reload()

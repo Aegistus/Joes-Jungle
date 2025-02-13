@@ -55,7 +55,6 @@ func _physics_process(delta):
 	if interactable != null:
 		if interactable.is_in_group("interactable"):
 			current_interactable = interactable.get_parent() as Interactable
-			print(current_interactable.name)
 	else:
 		current_interactable = null
 	if current_interactable != null:
