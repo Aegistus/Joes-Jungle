@@ -646,7 +646,7 @@ streams_count = 1
 stream_0/stream = ExtResource("4_fxorh")
 
 [node name="MPX" type="Node3D" node_paths=PackedStringArray("magazine")]
-transform = Transform3D(0.00198471, 0.99669, -0.0812707, 0.0314565, 0.0811684, 0.996204, 0.999504, -0.00453367, -0.0311913, -0.233414, 0.0945325, 0.0153803)
+transform = Transform3D(-0.00381118, 0.99669, -0.0812056, 0.10236, 0.0811684, 0.99143, 0.994741, -0.00453367, -0.10233, -0.229265, 0.0438833, 0.0206081)
 script = ExtResource("1_abj7n")
 shot_delay = 0.06
 gun_name = "MPX Suppressed"
@@ -656,6 +656,8 @@ suppressed = true
 gun_type = 1
 magazine = NodePath("gun model/Magazine")
 magazine_scale = 80.0
+base_accuracy = 75
+base_recoil = 20
 
 [node name="gun model" type="Node3D" parent="."]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.0239423, 0.259269, 0.0324934)
@@ -747,11 +749,6 @@ material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_0qhxe")
 skeleton = NodePath("")
 
-[node name="RayCast3D" type="RayCast3D" parent="gun model"]
-transform = Transform3D(7.27596e-12, 1.11759e-08, -0.0125, 0.0125, -1.43409e-08, 3.63798e-12, -4.06089e-10, -0.375, -5.82077e-10, 6.40284e-10, 0.00059581, 0.00397038)
-collision_mask = 67
-collide_with_areas = true
-
 [node name="Laser_A_Left" parent="gun model" instance=ExtResource("3_cl058")]
 transform = Transform3D(1, -4.76837e-10, -3.8147e-09, 4.76837e-10, 1, -1.0848e-08, 3.8147e-09, 1.0848e-08, 1, 0.00032815, 0.00075599, 0.00380184)
 
@@ -770,6 +767,16 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="gun model/Magazine"]
 transform = Transform3D(0.0999844, 8.44834e-05, 0.00176593, -0.00048944, 0.0973045, 0.0230563, -0.00169885, -0.0230613, 0.0972897, -1.40702e-05, -0.00117328, 0.000232508)
 shape = SubResource("BoxShape3D_p6yd2")
+
+[node name="RaycastParent" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.999976, 0.00698126, 3.05161e-10, 0, -4.37114e-08, 1, 0.00698126, -0.999976, -4.37103e-08, 0.0613041, 0.284005, 0.324866)
+
+[node name="RayCast3D" type="RayCast3D" parent="RaycastParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000790462, -0.00988328, 0.0351841)
+target_position = Vector3(0, -200, 0)
+collision_mask = 67
+collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

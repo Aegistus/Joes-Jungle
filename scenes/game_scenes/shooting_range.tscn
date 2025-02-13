@@ -142,7 +142,7 @@ ammo_cost = 0
 cooldown = 1
 
 [node name="PlayerSpawnPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61931, 0, -3.49537)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51931, 0, -8.94537)
 
 [node name="Zombie" parent="." instance=ExtResource("6_hpolm")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -5.9, -0.1, -0.7)

@@ -337,7 +337,8 @@ gun_name = "M4"
 gun_type = 1
 magazine = NodePath("gun model/Magazine")
 magazine_scale = 0.12
-base_accuracy = 50
+base_accuracy = 80
+base_recoil = 40
 
 [node name="gun model" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.0239423, 0.259269, 0.0324934)
