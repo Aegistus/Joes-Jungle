@@ -169,7 +169,7 @@ value = 0.3
 fill_mode = 4
 texture_over = ExtResource("5_mf036")
 texture_progress = ExtResource("6_pj4sn")
-tint_over = Color(0, 0, 0, 1)
+tint_over = Color(0.808998, 0.808998, 0.808998, 1)
 tint_progress = Color(0, 0.678431, 0, 0.552941)
 
 [node name="Timer" type="Label" parent="CanvasLayer/DamageBar"]

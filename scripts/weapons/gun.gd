@@ -15,8 +15,6 @@ signal on_shoot
 
 @onready var gun_audio_player = $GunAudioPlayer
 @onready var dry_shot_audio_player = $DryShotAudioPlayer
-@onready var muzzle_flash = $"gun model/MuzzleFlash"
-@onready var muzzle_flash_2 = $"gun model/MuzzleFlash2"
 @onready var animation_player = $AnimationPlayer as AnimationPlayer
 @onready var raycast = $"gun model/RayCast3D" as RayCast3D
 @onready var remove_mag_audio_player = $RemoveMagAudioPlayer
@@ -34,8 +32,7 @@ const MAG_DESPAWN_TIME = 60
 
 func _ready():
 	if !suppressed:
-		muzzle_flash.visible = false
-		muzzle_flash_2.visible = false
+		%MuzzleFlash.visible = false
 
 func shoot():
 	if can_shoot:
@@ -85,7 +82,6 @@ func insert_magazine():
 	insert_mag_audio_player.play()
 	if magazine:
 		magazine.visible = true
-	
 
 func generate_impact_effects(collided):
 	if collided.is_in_group("enemy"):

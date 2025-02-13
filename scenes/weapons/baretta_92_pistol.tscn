@@ -37,18 +37,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("gun model/MuzzleFlash2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_dtyrj"]
 resource_name = "shoot"
@@ -72,19 +60,7 @@ tracks/1/path = NodePath("gun model/MuzzleFlash:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("gun model/MuzzleFlash2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0666667),
+"times": PackedFloat32Array(0, 0.0333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -581,14 +557,6 @@ transform = Transform3D(-4.48523e-07, 10000, 2.95252e-07, -10.261, -0.000437114,
 collision_mask = 67
 collide_with_areas = true
 
-[node name="MuzzleFlash" type="Sprite3D" parent="gun model"]
-transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -7.37162, 2.47589, -0.492264)
-texture = ExtResource("3_u1m3e")
-
-[node name="MuzzleFlash2" type="Sprite3D" parent="gun model"]
-transform = Transform3D(-1, -8.9407e-08, 4.77396e-15, 0, 2.98023e-08, 1, -8.9407e-08, 1, -2.98023e-08, -7.37162, 2.47589, -0.492264)
-texture = ExtResource("3_u1m3e")
-
 [node name="Clip" type="RigidBody3D" parent="gun model"]
 transform = Transform3D(1, -2.32831e-09, 7.45058e-09, 4.07454e-10, 1, 2.32831e-10, 0, 2.32831e-10, 1, 0, 0, 0)
 collision_layer = 4
@@ -604,6 +572,21 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="gun model/Clip"]
 transform = Transform3D(0.992703, -0.120588, 0, 0.120585, 0.992681, 4.65661e-09, -1.63913e-07, -1.11759e-08, 1, 0.901769, 0.00708459, -0.522644)
 shape = SubResource("BoxShape3D_po52b")
+
+[node name="MuzzleFlash" type="Node3D" parent="gun model"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.78503, 2.63577, -0.317172)
+
+[node name="MuzzleFlash" type="Sprite3D" parent="gun model/MuzzleFlash"]
+transform = Transform3D(-1, -2.32831e-09, 8.9407e-08, -6.69388e-10, 1, -4.65661e-10, -8.9407e-08, 2.32831e-10, -1, -1.58658, -0.159879, -0.175092)
+texture = ExtResource("3_u1m3e")
+
+[node name="MuzzleFlash2" type="Sprite3D" parent="gun model/MuzzleFlash"]
+transform = Transform3D(-1, -8.9407e-08, -8.73115e-10, -6.69388e-10, 3.0268e-08, 1, -8.9407e-08, 1, -2.95695e-08, -1.58658, -0.159879, -0.175092)
+texture = ExtResource("3_u1m3e")
+
+[node name="MuzzleFlashLight" type="OmniLight3D" parent="gun model/MuzzleFlash"]
+light_color = Color(0.922285, 0.920269, 7.70092e-07, 1)
 
 [node name="ShellEjector" type="Node3D" parent="."]
 transform = Transform3D(-0.376557, -0.891677, -0.251233, -0.0877085, -0.235662, 0.96787, -0.922232, 0.386494, 0.0105321, 2.25694, 0.370309, -1.70888)

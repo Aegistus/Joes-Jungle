@@ -30,12 +30,16 @@ sky_material = SubResource("ProceduralSkyMaterial_27m1f")
 
 [sub_resource type="Environment" id="Environment_112m7"]
 background_mode = 2
+background_energy_multiplier = 0.1
 sky = SubResource("Sky_mdijn")
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.1
 tonemap_mode = 2
 sdfgi_enabled = true
 glow_enabled = true
 fog_enabled = true
-fog_light_color = Color(0.726229, 0.752314, 0.793301, 1)
+fog_light_color = Color(0.307284, 0.335232, 0.379163, 1)
+fog_light_energy = 0.1
 fog_density = 0.002
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_7od6u"]
@@ -106,6 +110,7 @@ script = ExtResource("1_jlul2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_energy = 0.1
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
