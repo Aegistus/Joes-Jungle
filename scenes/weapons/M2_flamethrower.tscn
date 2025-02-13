@@ -1,10 +1,14 @@
-[gd_scene load_steps=25 format=4 uid="uid://ch2ki4by231v"]
+[gd_scene load_steps=29 format=4 uid="uid://ch2ki4by231v"]
 
 [ext_resource type="Script" path="res://scripts/weapons/flamethrower.gd" id="1_m7ukc"]
 [ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_2u2rb"]
-[ext_resource type="AudioStream" uid="uid://dekvy1ass6cmj" path="res://assets/audio/Machine Gun Shot_03.wav" id="4_dwo5w"]
+[ext_resource type="AudioStream" uid="uid://bkrw4ke5x8fvn" path="res://assets/audio/flamethrower/flamethrower_start.wav" id="4_sqa53"]
+[ext_resource type="AudioStream" uid="uid://cqymuimtywd4d" path="res://assets/audio/flamethrower/flamethrower_start2.wav" id="5_j4x8r"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="5_wbnbn"]
+[ext_resource type="AudioStream" uid="uid://sw6aa03beh08" path="res://assets/audio/flamethrower/flamethrower_start3.wav" id="6_5mfw0"]
+[ext_resource type="AudioStream" uid="uid://bft1uiv83fncc" path="res://assets/audio/flamethrower/flamethrower_start4.wav" id="7_8rt1w"]
 [ext_resource type="PackedScene" uid="uid://b0mybql7fsmdv" path="res://scenes/particles/flamethrower_fire.tscn" id="8_a077o"]
+[ext_resource type="AudioStream" uid="uid://cj36nm8gfmls2" path="res://assets/audio/flamethrower/flamethrower_loop.wav" id="8_bu0wy"]
 [ext_resource type="AudioStream" uid="uid://khvutnhujlf0" path="res://assets/audio/reload_sounds/M249_mag_out.wav" id="8_s1ct1"]
 [ext_resource type="AudioStream" uid="uid://bjym08erj6sy3" path="res://assets/audio/reload_sounds/M249_mag_in.wav" id="9_ay7ge"]
 [ext_resource type="Script" path="res://scripts/weapons/magazine_ammo.gd" id="10_lc605"]
@@ -145,8 +149,11 @@ _data = {
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3id5m"]
 random_pitch = 1.1
-streams_count = 1
-stream_0/stream = ExtResource("4_dwo5w")
+streams_count = 4
+stream_0/stream = ExtResource("4_sqa53")
+stream_1/stream = ExtResource("5_j4x8r")
+stream_2/stream = ExtResource("6_5mfw0")
+stream_3/stream = ExtResource("7_8rt1w")
 
 [node name="M2Flamethrower" type="Node3D"]
 transform = Transform3D(-0.00218776, 0.999924, 0.0121729, -0.108152, 0.011865, -0.994064, -0.994132, -0.00349132, 0.108119, 0.0125365, 0.295159, 0.178612)
@@ -183,14 +190,24 @@ enabled = false
 shape = SubResource("CylinderShape3D_2wy71")
 collision_mask = 64
 
+[node name="OmniLight3D" type="OmniLight3D" parent="gun_model"]
+transform = Transform3D(8.33334, 6.18049e-07, 1.07884e-05, 1.68802e-09, 8.3333, -2.96681e-07, 5.96046e-08, 2.83035e-09, 8.33333, 0.613024, 2.17946, 25.7204)
+light_color = Color(0.900495, 0.485923, 0.150973, 1)
+light_energy = 6.0
+omni_range = 10.0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_66r3h")
 }
 
-[node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+[node name="FlamethrowerStartAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_3id5m")
 bus = &"Sound Effects"
+
+[node name="FlamethrowerLoopAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, -1.53668e-08, 1.16974e-06, 0, 1, 7.24103e-08, 0, 8.14907e-10, 0.999999, 0, 0, 0)
+stream = ExtResource("8_bu0wy")
 
 [node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_wbnbn")

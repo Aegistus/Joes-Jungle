@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b0mybql7fsmdv"]
+[gd_scene load_steps=23 format=3 uid="uid://b0mybql7fsmdv"]
 
 [ext_resource type="Script" path="res://scripts/flamethrower_fire.gd" id="1_k2nm2"]
 [ext_resource type="Shader" uid="uid://ct55kpxc5prw6" path="res://assets/shaders/fireshader.tres" id="1_no3cs"]
@@ -14,6 +14,7 @@ shader = ExtResource("1_no3cs")
 shader_parameter/DissolveTiling = Vector2(0.2, 0.25)
 shader_parameter/DissolveSpeed = Vector2(0, 0.2)
 shader_parameter/DissolveAmount = 0.647
+shader_parameter/Emission = null
 shader_parameter/MainTex = ExtResource("3_q7rhr")
 shader_parameter/DissolveTex = ExtResource("2_0jmb1")
 
@@ -29,6 +30,7 @@ shader = ExtResource("1_no3cs")
 shader_parameter/DissolveTiling = Vector2(1, 1)
 shader_parameter/DissolveSpeed = Vector2(0, 0)
 shader_parameter/DissolveAmount = 0.0
+shader_parameter/Emission = Color(0.900495, 0.485923, 0.150973, 1)
 shader_parameter/MainTex = ExtResource("4_wtq4s")
 shader_parameter/DissolveTex = ExtResource("2_0jmb1")
 
@@ -55,6 +57,16 @@ scale_curve = SubResource("CurveTexture_5jaxi")
 color = Color(4.01176, 1.2549, 0.623529, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_7cbim"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mup66"]
+render_priority = 0
+shader = ExtResource("1_no3cs")
+shader_parameter/DissolveTiling = Vector2(1, 1)
+shader_parameter/DissolveSpeed = Vector2(0, 0)
+shader_parameter/DissolveAmount = 0.0
+shader_parameter/Emission = Color(0, 0, 0, 1)
+shader_parameter/MainTex = ExtResource("4_wtq4s")
+shader_parameter/DissolveTex = ExtResource("2_0jmb1")
 
 [sub_resource type="Gradient" id="Gradient_yod8t"]
 offsets = PackedFloat32Array(0, 0.229219, 0.501259, 1)
@@ -116,7 +128,7 @@ draw_pass_1 = SubResource("QuadMesh_7cbim")
 
 [node name="Smoke" type="GPUParticles3D" parent="."]
 sorting_offset = -1.0
-material_override = SubResource("ShaderMaterial_0os4j")
+material_override = SubResource("ShaderMaterial_mup66")
 amount = 20
 lifetime = 2.5
 process_material = SubResource("ParticleProcessMaterial_hh5vq")

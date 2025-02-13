@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cagotr0wagg1v"]
+[gd_scene load_steps=27 format=3 uid="uid://cagotr0wagg1v"]
 
 [ext_resource type="Script" path="res://scripts/weapons/fire.gd" id="1_hhtcc"]
 [ext_resource type="Shader" uid="uid://ct55kpxc5prw6" path="res://assets/shaders/fireshader.tres" id="1_iwtsh"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://hy1kdbphpu4u" path="res://assets/textures/Flame02.png" id="4_idvdm"]
 [ext_resource type="Shader" uid="uid://btkevv5lnfopg" path="res://assets/shaders/simple_particles_fire.tres" id="5_rynsm"]
 [ext_resource type="Texture2D" uid="uid://d2eofb0h60311" path="res://assets/textures/Flare00.PNG" id="6_o3aie"]
+[ext_resource type="AudioStream" uid="uid://dgxacsx7ku6km" path="res://assets/audio/fire/Fireplace loop 1.wav" id="8_iw3gp"]
+[ext_resource type="AudioStream" uid="uid://btxgflxrpnii6" path="res://assets/audio/fire/Fireplace loop 2.wav" id="9_hbjax"]
+[ext_resource type="AudioStream" uid="uid://l6xiff0y334u" path="res://assets/audio/fire/Fireplace loop 4.wav" id="10_37chu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gw7gk"]
 render_priority = 0
@@ -14,6 +17,7 @@ shader = ExtResource("1_iwtsh")
 shader_parameter/DissolveTiling = Vector2(0.2, 0.25)
 shader_parameter/DissolveSpeed = Vector2(0, 0.2)
 shader_parameter/DissolveAmount = 0.647
+shader_parameter/Emission = null
 shader_parameter/MainTex = ExtResource("2_3xte6")
 shader_parameter/DissolveTex = ExtResource("2_0c250")
 
@@ -29,6 +33,7 @@ shader = ExtResource("1_iwtsh")
 shader_parameter/DissolveTiling = Vector2(1, 1)
 shader_parameter/DissolveSpeed = Vector2(0, 0)
 shader_parameter/DissolveAmount = 0.0
+shader_parameter/Emission = null
 shader_parameter/MainTex = ExtResource("4_idvdm")
 shader_parameter/DissolveTex = ExtResource("2_0c250")
 
@@ -94,6 +99,12 @@ turbulence_noise_scale = 5.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vx3g5"]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ug8oc"]
+streams_count = 3
+stream_0/stream = ExtResource("8_iw3gp")
+stream_1/stream = ExtResource("9_hbjax")
+stream_2/stream = ExtResource("10_37chu")
+
 [node name="Fire" type="Node3D"]
 script = ExtResource("1_hhtcc")
 damage_min = 2
@@ -143,3 +154,11 @@ collision_mask = 64
 [node name="FlameDamageTimer" type="Timer" parent="."]
 
 [node name="LifetimeTimer" type="Timer" parent="."]
+
+[node name="FireAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_ug8oc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.900495, 0.485923, 0.150973, 1)
+light_energy = 4.0
+omni_range = 10.0
