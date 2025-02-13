@@ -522,7 +522,7 @@ libraries = {
 }
 
 [node name="gun model" type="Node3D" parent="."]
-transform = Transform3D(-0.0163629, 0.999865, -0.00159287, -0.99516, -0.0164403, -0.096875, -0.096888, 1.43091e-11, 0.995295, 0, 0, 0)
+transform = Transform3D(-0.0163091, 0.999865, -0.00207247, -0.991888, -0.0164403, -0.126043, -0.12606, 1.59286e-10, 0.992022, 0, 0, 0)
 
 [node name="Cube_004" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.525853, 1.33521, -0.49531)
@@ -586,11 +586,11 @@ light_color = Color(0.922285, 0.920269, 7.70092e-07, 1)
 
 [node name="RaycastParent" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999391, 0.0348994, -8.68257e-08, 0.0346611, -0.992566, 0.116671, 0.00407166, -0.1166, -0.993171, 2.64322, -0.416946, -0.609683)
+transform = Transform3D(0.999391, 0.0348995, 8.68779e-08, 0.0346819, -0.993163, 0.111469, 0.00389029, -0.111401, -0.993768, 2.62358, -0.15861, 1.98079)
 
 [node name="RayCast" type="RayCast3D" parent="RaycastParent"]
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)
-target_position = Vector3(0, -10000, 0)
+target_position = Vector3(0, -1000, 0)
 collision_mask = 67
 collide_with_areas = true
 
