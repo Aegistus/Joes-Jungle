@@ -368,11 +368,6 @@ material_override = SubResource("StandardMaterial3D_mvdwc")
 mesh = SubResource("ArrayMesh_jaqk5")
 skeleton = NodePath("")
 
-[node name="RayCast3D" type="RayCast3D" parent="gun model"]
-transform = Transform3D(-1.11735, 3.80268, -9.84742, -10.1995, -1.62061, 1.07833, -0.0379717, 323.406, 0.121191, -2.98023e-08, 0.625556, -0.614024)
-collision_mask = 67
-collide_with_areas = true
-
 [node name="Magazine" type="RigidBody3D" parent="gun model"]
 transform = Transform3D(1, 9.31323e-10, -1.49012e-08, -9.31323e-10, 1, -5.93718e-09, 0, 4.65661e-10, 1, 0, 0, 0)
 collision_layer = 4
@@ -405,6 +400,15 @@ texture = ExtResource("3_e3ql5")
 light_color = Color(0.922285, 0.920269, 7.70092e-07, 1)
 light_energy = 4.0
 omni_range = 10.0
+
+[node name="RaycastParent" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 9.31323e-10, 1.49012e-08, 0, 1, 1.5134e-09, 1.49012e-08, -3.25963e-09, 1, 0.024471, 0.335764, -3.18318e-09)
+
+[node name="RayCast3D" type="RayCast3D" parent="RaycastParent"]
+transform = Transform3D(-0.134082, 0.456321, -1.18169, -1.22394, -0.194473, 0.1294, -0.00455661, 38.8087, 0.014543, -0.000528663, -0.00142874, -0.0411895)
+collision_mask = 67
+collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

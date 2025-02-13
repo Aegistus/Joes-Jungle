@@ -708,22 +708,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05074, -0.0999999, -5.58617
 item_cost = 10
 
 [node name="ShopLMG" parent="." instance=ExtResource("22_45akl")]
-item_cost = 10
+item_cost = 0
 
 [node name="ShopRifle" parent="." instance=ExtResource("20_dypad")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -2.20411)
-item_cost = 10
+item_cost = 0
 
 [node name="ShopShotgun" parent="." instance=ExtResource("21_lme77")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -4.66613)
-item_cost = 10
+item_cost = 0
 
 [node name="ShopSMG" parent="." instance=ExtResource("22_qt2uy")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -6.71712)
-item_cost = 10
+item_cost = 0
 
 [node name="AmmoBox" parent="." instance=ExtResource("23_kq4uc")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.51286, 0, -1.0695)
+ammo_cost = 0
+cooldown = 5
 
 [node name="ObjectiveSpawnPointsParent" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0829646, 0)
