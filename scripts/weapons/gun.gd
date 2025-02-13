@@ -13,6 +13,7 @@ signal on_shoot
 @export var magazine : Node3D
 @export var magazine_scale = 1.0
 @export var base_accuracy = 100
+@export var base_recoil = 0
 
 @onready var gun_audio_player = $GunAudioPlayer
 @onready var dry_shot_audio_player = $DryShotAudioPlayer
@@ -24,10 +25,14 @@ signal on_shoot
 
 const BULLET_IMPACT_TERRAIN = preload("res://scenes/particles/bullet_impact_terrain.tscn")
 const DEGREE_PER_ACCURACY_POINT = .3
+const RECOIL_ACCURACY_CHANGE = .1
+const RECOIL_RECOVERY_TIME = 2.0
+const MAX_INACCURACY = 0
 @onready var flesh_hit = preload("res://scenes/audio_scenes/flesh_hit_audio_source.tscn")
 @onready var wood_hit = preload("res://scenes/audio_scenes/wood_hit_audio_source.tscn")
 @onready var stone_hit = preload("res://scenes/audio_scenes/stone_hit_audio_source.tscn")
 
+@onready var current_accuracy = base_accuracy
 var can_shoot = true
 
 const MAG_DESPAWN_TIME = 60
@@ -35,6 +40,11 @@ const MAG_DESPAWN_TIME = 60
 func _ready():
 	if !suppressed:
 		%MuzzleFlash.visible = false
+
+func _process(delta):
+	if current_accuracy != base_accuracy:
+		current_accuracy = lerpf(current_accuracy, base_accuracy, RECOIL_RECOVERY_TIME * delta)
+		print(current_accuracy)
 
 func shoot():
 	if can_shoot:
@@ -57,14 +67,12 @@ func shoot_end():
 func shoot_with_raycast(raycast : RayCast3D):
 	# apply accuracy
 	raycast.rotation_degrees = Vector3(0,0,0)
-	var inaccuracy = (100 - base_accuracy) * randf()
+	var inaccuracy = (100 - current_accuracy) * randf()
 	var degree_change = inaccuracy * DEGREE_PER_ACCURACY_POINT
 	var radians_change = degree_change * (PI / 180.0)
 	var axis = Vector3(randf() * 2 - 1, randf() * 2 - 1, 0).normalized()
-	print("axis " + str(axis))
-	print(degree_change)
 	raycast.rotate_object_local(axis, radians_change)
-	print(raycast.rotation_degrees)
+	
 	var collided = raycast.get_collider() as CollisionObject3D
 	var collision_point = raycast.get_collision_point()
 	var collision_normal = raycast.get_collision_normal()
@@ -76,6 +84,9 @@ func shoot_with_raycast(raycast : RayCast3D):
 			var rotation = (collision_point - global_position).normalized().inverse()
 			rotation.y += 180
 			collided.hit(randi_range(min_damage, max_damage), collision_point, rotation)
+	# apply recoil
+	current_accuracy -= base_recoil * RECOIL_ACCURACY_CHANGE
+	print(current_accuracy)
 
 func reload():
 	ammo.reload()
