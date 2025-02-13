@@ -552,11 +552,6 @@ material_override = SubResource("StandardMaterial3D_ntnop")
 mesh = SubResource("ArrayMesh_6e8p6")
 skeleton = NodePath("")
 
-[node name="RayCast3D" type="RayCast3D" parent="gun model"]
-transform = Transform3D(-4.48523e-07, 10000, 2.95252e-07, -10.261, -0.000437114, -1.3405e-14, -5.16941e-16, -0.000298023, 9.907, 3.23996, 2.62088, -0.566382)
-collision_mask = 67
-collide_with_areas = true
-
 [node name="Clip" type="RigidBody3D" parent="gun model"]
 transform = Transform3D(1, -2.32831e-09, 7.45058e-09, 4.07454e-10, 1, 2.32831e-10, 0, 2.32831e-10, 1, 0, 0, 0)
 collision_layer = 4
@@ -587,6 +582,14 @@ texture = ExtResource("3_u1m3e")
 
 [node name="MuzzleFlashLight" type="OmniLight3D" parent="gun model/MuzzleFlash"]
 light_color = Color(0.922285, 0.920269, 7.70092e-07, 1)
+
+[node name="RaycastParent" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="RayCast" type="RayCast3D" parent="RaycastParent"]
+transform = Transform3D(-10.2584, 225.354, -0.00269593, -0.22948, -9934.96, -1.10607, -0.02859, -1116.1, 9.84506, 2.69338, -3.09704, -0.91715)
+collision_mask = 67
+collide_with_areas = true
 
 [node name="ShellEjector" type="Node3D" parent="."]
 transform = Transform3D(-0.376557, -0.891677, -0.251233, -0.0877085, -0.235662, 0.96787, -0.922232, 0.386494, 0.0105321, 2.25694, 0.370309, -1.70888)

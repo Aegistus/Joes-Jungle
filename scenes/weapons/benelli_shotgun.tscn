@@ -204,10 +204,9 @@ _data = {
 "shoot": SubResource("Animation_yatb0")
 }
 
-[node name="Benelli_M4" type="Node3D" node_paths=PackedStringArray("raycasts")]
+[node name="Benelli_M4" type="Node3D"]
 transform = Transform3D(1.31134e-07, 0.997253, 0.0740737, 4.37114e-08, 0.0740737, -0.997253, -1, 1.34012e-07, -3.38777e-08, 0.0996198, 0.254223, 0.0305307)
 script = ExtResource("1_nnxu6")
-raycasts = [NodePath("gun model/BarrelRaycast"), NodePath("gun model/BarrelRaycast5"), NodePath("gun model/BarrelRaycast4"), NodePath("gun model/BarrelRaycast2"), NodePath("gun model/BarrelRaycast7"), NodePath("gun model/BarrelRaycast9"), NodePath("gun model/BarrelRaycast3"), NodePath("gun model/BarrelRaycast6"), NodePath("gun model/BarrelRaycast8")]
 gun_name = "Benelli M4"
 min_damage = 3
 max_damage = 4
@@ -228,42 +227,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.245481, -1.08735)
 mesh = SubResource("ArrayMesh_x73jx")
 skeleton = NodePath("")
 
-[node name="BarrelRaycast" type="RayCast3D" parent="gun model"]
-transform = Transform3D(3, -8.13152e-20, 8.886e-29, 0, -5.24537e-06, -3, 2.03288e-21, 120, -1.31134e-07, -5.96046e-08, -0.06172, -2.20909)
-collision_mask = 67
-
-[node name="BarrelRaycast5" type="RayCast3D" parent="gun model"]
-transform = Transform3D(2.99817, -4.18794, 4.57652e-09, 0, -5.24537e-06, -3, 0.104698, 119.927, -1.31054e-07, -5.96046e-08, -0.06172, -2.20909)
-collision_mask = 67
-
-[node name="BarrelRaycast4" type="RayCast3D" parent="gun model"]
-transform = Transform3D(2.99817, 4.18794, -4.57652e-09, 0, -5.24537e-06, -3, -0.104698, 119.927, -1.31054e-07, -5.96046e-08, -0.06172, -2.20909)
-collision_mask = 67
-
-[node name="BarrelRaycast2" type="RayCast3D" parent="gun model"]
-transform = Transform3D(2.99269, 8.37077, -9.14745e-09, 0, -5.24537e-06, -3, -0.209269, 119.708, -1.30815e-07, -5.96046e-08, -0.06172, -2.20909)
-collision_mask = 67
-
-[node name="BarrelRaycast7" type="RayCast3D" parent="gun model"]
-transform = Transform3D(2.98357, 12.5434, -1.37072e-08, 0, -5.24537e-06, -3, -0.313585, 119.343, -1.30416e-07, -5.96046e-08, -0.06172, -2.20909)
-collision_mask = 67
-
-[node name="BarrelRaycast9" type="RayCast3D" parent="gun model"]
-transform = Transform3D(2.9708, 16.7008, -1.82504e-08, 0, -5.24537e-06, -3, -0.417519, 118.832, -1.29858e-07, -5.96046e-08, -0.06172, -2.20909)
-collision_mask = 67
-
-[node name="BarrelRaycast3" type="RayCast3D" parent="gun model"]
-transform = Transform3D(2.99269, -8.37077, 9.14745e-09, 0, -5.24537e-06, -3, 0.209269, 119.708, -1.30815e-07, -5.96046e-08, -0.06172, -2.20909)
-collision_mask = 67
-
-[node name="BarrelRaycast6" type="RayCast3D" parent="gun model"]
-transform = Transform3D(2.98357, -12.5434, 1.37072e-08, 0, -5.24537e-06, -3, 0.313585, 119.343, -1.30416e-07, -5.96046e-08, -0.06172, -2.20909)
-collision_mask = 67
-
-[node name="BarrelRaycast8" type="RayCast3D" parent="gun model"]
-transform = Transform3D(2.9708, -16.7008, 1.82504e-08, 0, -5.24537e-06, -3, 0.417519, 118.832, -1.29858e-07, -5.96046e-08, -0.06172, -2.20909)
-collision_mask = 67
-
 [node name="MuzzleFlash" type="Node3D" parent="gun model"]
 unique_name_in_owner = true
 transform = Transform3D(1, 1.42109e-14, 3.55271e-15, -1.42109e-14, 1, -4.54e-15, 0, -4.54002e-15, 1, 1.33726e-07, -0.0571491, -3.90753)
@@ -279,6 +242,46 @@ texture = ExtResource("3_daph4")
 [node name="MuzzleFlashLight" type="OmniLight3D" parent="gun model/MuzzleFlash"]
 light_color = Color(0.922285, 0.920269, 7.70092e-07, 1)
 light_energy = 4.0
+
+[node name="RaycastParent" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.13, 0, 8.88178e-16, 0, 0.13, -5.90201e-16, -4.44089e-16, -5.90203e-16, 0.13, 0, 7.45058e-09, -0.278539)
+
+[node name="BarrelRaycast" type="RayCast3D" parent="RaycastParent"]
+transform = Transform3D(3, 0, -2.84217e-14, 0, -5.72205e-06, -3, 0, 120, -1.19209e-07, -4.47035e-08, -0.0617201, -0.0664825)
+collision_mask = 67
+
+[node name="BarrelRaycast5" type="RayCast3D" parent="RaycastParent"]
+transform = Transform3D(2.99817, -4.18794, 4.57649e-09, 7.61986e-11, -4.20714e-06, -3, 0.104698, 119.927, -1.19209e-07, -4.47035e-08, -0.0617201, -0.0664825)
+collision_mask = 67
+
+[node name="BarrelRaycast4" type="RayCast3D" parent="RaycastParent"]
+transform = Transform3D(2.99817, 4.18794, -4.57655e-09, -3.89463e-10, -4.37593e-06, -3, -0.104698, 119.927, -1.19209e-07, -4.47035e-08, -0.0617201, -0.0664825)
+collision_mask = 67
+
+[node name="BarrelRaycast2" type="RayCast3D" parent="RaycastParent"]
+transform = Transform3D(2.99269, 8.37077, -9.14747e-09, 3.44897e-10, -5.89015e-06, -3, -0.209269, 119.708, -1.19209e-07, -4.47035e-08, -0.0617201, -0.0664825)
+collision_mask = 67
+
+[node name="BarrelRaycast7" type="RayCast3D" parent="RaycastParent"]
+transform = Transform3D(2.98357, 12.5434, -1.37072e-08, 6.35737e-10, -5.49566e-06, -3, -0.313585, 119.343, -1.19209e-07, -4.47035e-08, -0.0617201, -0.0664825)
+collision_mask = 67
+
+[node name="BarrelRaycast9" type="RayCast3D" parent="RaycastParent"]
+transform = Transform3D(2.9708, 16.7008, -1.82504e-08, 2.34712e-09, -5.09912e-06, -3, -0.417519, 118.832, -1.19209e-07, -4.47035e-08, -0.0617201, -0.0664825)
+collision_mask = 67
+
+[node name="BarrelRaycast3" type="RayCast3D" parent="RaycastParent"]
+transform = Transform3D(2.99269, -8.37077, 9.14741e-09, -1.51775e-09, -5.55394e-06, -3, 0.209269, 119.708, -1.19209e-07, -4.47035e-08, -0.0617201, -0.0664825)
+collision_mask = 67
+
+[node name="BarrelRaycast6" type="RayCast3D" parent="RaycastParent"]
+transform = Transform3D(2.98357, -12.5434, 1.37072e-08, 6.35737e-10, -4.99476e-06, -3, 0.313585, 119.343, -1.19209e-07, -4.47035e-08, -0.0617201, -0.0664825)
+collision_mask = 67
+
+[node name="BarrelRaycast8" type="RayCast3D" parent="RaycastParent"]
+transform = Transform3D(2.9708, -16.7008, 1.82504e-08, 4.84476e-10, -5.39129e-06, -3, 0.417519, 118.832, -1.19209e-07, -4.47035e-08, -0.0617201, -0.0664825)
+collision_mask = 67
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

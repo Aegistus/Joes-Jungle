@@ -16,10 +16,10 @@ signal on_shoot
 @onready var gun_audio_player = $GunAudioPlayer
 @onready var dry_shot_audio_player = $DryShotAudioPlayer
 @onready var animation_player = $AnimationPlayer as AnimationPlayer
-@onready var raycast = $"gun model/RayCast3D" as RayCast3D
 @onready var remove_mag_audio_player = $RemoveMagAudioPlayer
 @onready var insert_mag_audio_player = $InsertMagAudioPlayer
 @onready var ammo = $Ammo as Ammo
+@onready var raycast_parent = %RaycastParent as Node3D
 
 const BULLET_IMPACT_TERRAIN = preload("res://scenes/particles/bullet_impact_terrain.tscn")
 @onready var flesh_hit = preload("res://scenes/audio_scenes/flesh_hit_audio_source.tscn")
@@ -41,15 +41,18 @@ func shoot():
 			animation_player.play("shoot")
 			gun_audio_player.play()
 			can_shoot = false
+			var raycast = raycast_parent.get_child(0) as RayCast3D
 			var collided = raycast.get_collider() as CollisionObject3D
+			var collision_point = raycast.get_collision_point()
+			var collision_normal = raycast.get_collision_normal()
 			if collided == null:
 				collided = raycast.get_collider() as CSGShape3D
 			if collided != null:
-				generate_impact_effects(collided)
+				generate_impact_effects(collided, collision_point, collision_normal)
 				if collided.is_in_group("enemy"):
-					var rotation = (raycast.get_collision_point() - global_position).normalized().inverse()
+					var rotation = (collision_point - global_position).normalized().inverse()
 					rotation.y += 180
-					collided.hit(randi_range(min_damage, max_damage), raycast.get_collision_point(), rotation)
+					collided.hit(randi_range(min_damage, max_damage), collision_point, rotation)
 			ammo.use_ammo()
 			on_shoot.emit()
 		else:
@@ -83,27 +86,27 @@ func insert_magazine():
 	if magazine:
 		magazine.visible = true
 
-func generate_impact_effects(collided):
+func generate_impact_effects(collided, collision_point, collision_normal):
 	if collided.is_in_group("enemy"):
 		var hit_audio = flesh_hit.instantiate()
 		get_parent().add_child(hit_audio)
-		hit_audio.global_position = raycast.get_collision_point()
+		hit_audio.global_position = collision_point
 	else:
 		var impact = BULLET_IMPACT_TERRAIN.instantiate()
 		collided.add_child(impact)
-		impact.global_position = raycast.get_collision_point()
-		var direction = impact.global_position + raycast.get_collision_normal()
-		if raycast.get_collision_normal() != Vector3.UP: # this check prevents occasional error
+		impact.global_position = collision_point
+		var direction = impact.global_position + collision_point
+		if collision_normal != Vector3.UP: # this check prevents occasional error
 			impact.look_at(direction)
 		impact.emitting = true
 		if (collided.collision_layer & 1 << 17) == 1 << 17: # wood
 			var hit_audio = wood_hit.instantiate()
 			get_parent().add_child(hit_audio)
-			hit_audio.global_position = raycast.get_collision_point()
+			hit_audio.global_position = collision_point
 		else: # stone hit
 			var hit_audio = stone_hit.instantiate()
 			get_parent().add_child(hit_audio)
-			hit_audio.global_position = raycast.get_collision_point()
+			hit_audio.global_position = collision_point
 
 func equip(player : Node3D):
 	pass
