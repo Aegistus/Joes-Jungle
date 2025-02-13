@@ -23,7 +23,7 @@ signal on_shoot
 @onready var raycast_parent = %RaycastParent as Node3D
 
 const BULLET_IMPACT_TERRAIN = preload("res://scenes/particles/bullet_impact_terrain.tscn")
-const DEGREE_PER_ACCURACY_POINT = .05
+const DEGREE_PER_ACCURACY_POINT = .3
 @onready var flesh_hit = preload("res://scenes/audio_scenes/flesh_hit_audio_source.tscn")
 @onready var wood_hit = preload("res://scenes/audio_scenes/wood_hit_audio_source.tscn")
 @onready var stone_hit = preload("res://scenes/audio_scenes/stone_hit_audio_source.tscn")
@@ -59,7 +59,7 @@ func shoot_with_raycast(raycast : RayCast3D):
 	raycast.rotation_degrees = Vector3(0,0,0)
 	var inaccuracy = (100 - base_accuracy) * randf()
 	var degree_change = inaccuracy * DEGREE_PER_ACCURACY_POINT
-	var radians_change = PI / 180.0
+	var radians_change = degree_change * (PI / 180.0)
 	var axis = Vector3(randf() * 2 - 1, randf() * 2 - 1, 0).normalized()
 	print("axis " + str(axis))
 	print(degree_change)
