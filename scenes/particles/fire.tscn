@@ -96,6 +96,8 @@ turbulence_noise_scale = 5.0
 
 [node name="Fire" type="Node3D"]
 script = ExtResource("1_hhtcc")
+damage_min = 2
+damage_max = 4
 
 [node name="StaticFlame" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

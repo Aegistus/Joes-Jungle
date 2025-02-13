@@ -93,6 +93,7 @@ func equip_weapon(new_gun: Gun) -> bool:
 		return false
 	if gun != null:
 		gun.visible = false
+		gun.unequip()
 	gun = new_gun
 	gun.visible = true
 	if new_gun.gun_type == Gun.GunType.PISTOL:
@@ -105,6 +106,7 @@ func equip_weapon(new_gun: Gun) -> bool:
 		current_animation_tree = rifle_anim_tree
 		current_relaxed_idle_anim = "Michael Rifle/relaxed idle"
 		current_relaxed_jog_anim = "Michael Rifle/jog"
+	gun.equip(self)
 	on_equip_weapon.emit(gun)
 	return true
 

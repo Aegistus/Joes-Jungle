@@ -108,3 +108,9 @@ func generate_impact_effects(collided):
 			var hit_audio = stone_hit.instantiate()
 			get_parent().add_child(hit_audio)
 			hit_audio.global_position = raycast.get_collision_point()
+
+func equip(player : Node3D):
+	pass
+
+func unequip():
+	pass
