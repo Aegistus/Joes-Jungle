@@ -78,7 +78,7 @@ func shoot_with_raycast(raycast : RayCast3D):
 	var inaccuracy = (100 - current_accuracy) * randf()
 	var degree_change = inaccuracy * DEGREE_PER_ACCURACY_POINT
 	var radians_change = degree_change * (PI / 180.0)
-	var axis = Vector3(randf() * 2 - 1, randf() * 2 - 1, 0).normalized()
+	var axis = Vector3(randf() * 2 - 1, 0, randf() * 2 - 1).normalized()
 	raycast.rotate_object_local(axis, radians_change)
 	
 	var collided = raycast.get_collider() as CollisionObject3D
