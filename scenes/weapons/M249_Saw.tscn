@@ -293,7 +293,8 @@ max_damage = 15
 gun_type = 1
 magazine = NodePath("gun model/Magazine")
 magazine_scale = 0.14
-base_recoil = 100
+base_accuracy = 75
+base_recoil = 75
 
 [node name="gun model" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.14, 0.187772, 0, 3.55271e-17)

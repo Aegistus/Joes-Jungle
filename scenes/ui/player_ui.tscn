@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=25 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -16,6 +16,7 @@
 [ext_resource type="FontFile" uid="uid://b4d3e84d08sjt" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer_Bold.otf" id="14_sq8fp"]
 [ext_resource type="Shader" path="res://assets/shaders/player_ui.gdshader" id="15_xu7e1"]
 [ext_resource type="Script" path="res://scripts/ui/damage_overlay.gd" id="16_taqfw"]
+[ext_resource type="Script" path="res://scripts/ui/recoil_ui.gd" id="17_32jpq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ljnu"]
 bg_color = Color(0, 0, 0, 0.192157)
@@ -429,3 +430,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("16_taqfw")
+
+[node name="Recoil" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 982.0
+offset_top = 278.0
+offset_right = 1129.0
+offset_bottom = 300.0
+script = ExtResource("17_32jpq")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Recoil"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2

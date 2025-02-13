@@ -24,26 +24,34 @@ signal on_shoot
 @onready var raycast_parent = %RaycastParent as Node3D
 
 const BULLET_IMPACT_TERRAIN = preload("res://scenes/particles/bullet_impact_terrain.tscn")
-const DEGREE_PER_ACCURACY_POINT = .3
+const DEGREE_PER_ACCURACY_POINT = .1
 const RECOIL_ACCURACY_CHANGE = .1
-const RECOIL_RECOVERY_TIME = 2.0
-const MAX_INACCURACY = 0
+const RECOIL_RECOVERY_SPEED = 2.0
+const MIN_ACCURACY = -50
+const RECOIL_RECOVERY_DELAY = .1
 @onready var flesh_hit = preload("res://scenes/audio_scenes/flesh_hit_audio_source.tscn")
 @onready var wood_hit = preload("res://scenes/audio_scenes/wood_hit_audio_source.tscn")
 @onready var stone_hit = preload("res://scenes/audio_scenes/stone_hit_audio_source.tscn")
 
 @onready var current_accuracy = base_accuracy
 var can_shoot = true
+var recoil_recovery_timer : Timer
 
 const MAG_DESPAWN_TIME = 60
 
 func _ready():
 	if !suppressed:
 		%MuzzleFlash.visible = false
+	recoil_recovery_timer = Timer.new()
+	add_child(recoil_recovery_timer)
+	recoil_recovery_timer.one_shot = true
+	recoil_recovery_timer.wait_time = RECOIL_RECOVERY_DELAY
 
 func _process(delta):
-	if current_accuracy != base_accuracy:
-		current_accuracy = lerpf(current_accuracy, base_accuracy, RECOIL_RECOVERY_TIME * delta)
+	if current_accuracy != base_accuracy and recoil_recovery_timer.time_left == 0:
+		current_accuracy = lerpf(current_accuracy, base_accuracy, RECOIL_RECOVERY_SPEED * delta)
+		if abs(base_accuracy - current_accuracy) < 1:
+			current_accuracy = base_accuracy
 		print(current_accuracy)
 
 func shoot():
@@ -86,7 +94,9 @@ func shoot_with_raycast(raycast : RayCast3D):
 			collided.hit(randi_range(min_damage, max_damage), collision_point, rotation)
 	# apply recoil
 	current_accuracy -= base_recoil * RECOIL_ACCURACY_CHANGE
+	current_accuracy = clampf(current_accuracy, MIN_ACCURACY, base_accuracy)
 	print(current_accuracy)
+	recoil_recovery_timer.start()
 
 func reload():
 	ammo.reload()
