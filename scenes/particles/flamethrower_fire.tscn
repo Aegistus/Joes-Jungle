@@ -122,7 +122,7 @@ draw_pass_1 = SubResource("QuadMesh_schho")
 [node name="Flames" type="GPUParticles3D" parent="."]
 material_override = SubResource("ShaderMaterial_0os4j")
 amount = 100
-lifetime = 3.0
+lifetime = 2.0
 process_material = SubResource("ParticleProcessMaterial_sewyi")
 draw_pass_1 = SubResource("QuadMesh_7cbim")
 

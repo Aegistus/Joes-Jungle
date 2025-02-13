@@ -158,6 +158,8 @@ stream_3/stream = ExtResource("7_8rt1w")
 [node name="M2Flamethrower" type="Node3D"]
 transform = Transform3D(-0.00218776, 0.999924, 0.0121729, -0.108152, 0.011865, -0.994064, -0.994132, -0.00349132, 0.108119, 0.0125365, 0.295159, 0.178612)
 script = ExtResource("1_m7ukc")
+light_color = Color(0.900495, 0.485923, 0.150973, 1)
+gun_name = "M2 Flamethrower"
 suppressed = true
 gun_type = 1
 
@@ -190,11 +192,8 @@ enabled = false
 shape = SubResource("CylinderShape3D_2wy71")
 collision_mask = 64
 
-[node name="OmniLight3D" type="OmniLight3D" parent="gun_model"]
-transform = Transform3D(8.33334, 6.18049e-07, 1.07884e-05, 1.68802e-09, 8.3333, -2.96681e-07, 5.96046e-08, 2.83035e-09, 8.33333, 0.613024, 2.17946, 25.7204)
-light_color = Color(0.900495, 0.485923, 0.150973, 1)
-light_energy = 6.0
-omni_range = 10.0
+[node name="LightSpawnPoint" type="Node3D" parent="gun_model"]
+transform = Transform3D(1, 4.18368e-10, 0, 3.92902e-10, 1, 5.74937e-09, 0, 3.3433e-09, 1, 0.613024, 2.17946, 25.7204)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
