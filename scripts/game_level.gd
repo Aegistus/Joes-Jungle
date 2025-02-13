@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var spawn_objectives = true
+
 const WATERING_BUSH = preload("res://scenes/scenery/watering_bush.tscn")
 const AMMO_BOX = preload("res://scenes/ammo_box.tscn")
 const FRUIT_PUNCH_BOWL = preload("res://scenes/fruit_punch_bowl.tscn")
@@ -21,25 +23,26 @@ var index = -1
 func _ready():
 	if not GameManager.is_game_running:
 		GameManager.start_game()
-	obj_spawns = objective_spawn_points_parent.get_children() as Array[Node3D]
-	obj_spawns.shuffle()
-	# bushes
-	var bush = place_objective(WATERING_BUSH)
-	(bush as WateringBush).id = index
-	bush = place_objective(WATERING_BUSH)
-	(bush as WateringBush).id = index
-	bush = place_objective(WATERING_BUSH)
-	(bush as WateringBush).id = index
-	# ammo boxes
-	place_objective(AMMO_BOX)
-	place_objective(AMMO_BOX)
-	# punch
-	place_objective(FRUIT_PUNCH_BOWL)
-	#shops
-	place_objective(SHOP_LMG)
-	place_objective(SHOP_RIFLE)
-	place_objective(SHOP_SHOTGUN)
-	place_objective(SHOP_SMG)
+	if spawn_objectives:
+		obj_spawns = objective_spawn_points_parent.get_children() as Array[Node3D]
+		obj_spawns.shuffle()
+		# bushes
+		var bush = place_objective(WATERING_BUSH)
+		(bush as WateringBush).id = index
+		bush = place_objective(WATERING_BUSH)
+		(bush as WateringBush).id = index
+		bush = place_objective(WATERING_BUSH)
+		(bush as WateringBush).id = index
+		# ammo boxes
+		place_objective(AMMO_BOX)
+		place_objective(AMMO_BOX)
+		# punch
+		place_objective(FRUIT_PUNCH_BOWL)
+		#shops
+		place_objective(SHOP_LMG)
+		place_objective(SHOP_RIFLE)
+		place_objective(SHOP_SHOTGUN)
+		place_objective(SHOP_SMG)
 	var player = PLAYER.instantiate()
 	add_child(player)
 	player.global_transform.origin = player_spawn_point.global_position

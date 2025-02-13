@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqrn1mssks6mm"]
+
+[ext_resource type="Material" uid="uid://cqmfgyapl3iyx" path="res://materials/brick_mat.tres" id="1_xqk44"]
+
+[node name="ZombieHolder" type="Node3D"]
+transform = Transform3D(1, 1.45519e-11, -5.82077e-11, -1.40972e-11, 1, -1.74623e-10, 5.82077e-11, -1.74623e-10, 1, -5.00001, 0.0790085, -0.775033)
+
+[node name="wall15" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0.00014497, 0.000660431, -0.000145397, 1, 0.000631206, -0.000660342, -0.000631304, 1, 0.25, 0, 0)
+material_override = ExtResource("1_xqk44")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.5, 0.4, 2.55)
+
+[node name="wall16" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.000660386, -0.000631304, 1, -0.000145397, 1, 0.000631206, -1, -0.00014497, -0.000660475, -0.521406, 0.000166349, -1.01492)
+material_override = ExtResource("1_xqk44")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.55, 0.4, 1.1)
+
+[node name="wall17" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.000660386, -0.000631304, 1, -0.000145397, 1, 0.000631206, -1, -0.00014497, -0.000660475, -0.520763, 0.000308104, 1.01008)
+material_override = ExtResource("1_xqk44")
+use_collision = true
+collision_mask = 3
+size = Vector3(0.5, 0.4, 1.1)
+
+[node name="wall18" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.000660386, -0.000631304, 1, -0.000145397, 1, 0.000631206, -1, -0.00014497, -0.000660475, -1.32122, 0.80013, 0.0351623)
+material_override = ExtResource("1_xqk44")
+use_collision = true
+collision_mask = 3
+size = Vector3(2.55, 2, 0.5)
