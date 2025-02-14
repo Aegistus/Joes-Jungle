@@ -8,8 +8,8 @@ var current_ammo : int
 func can_reload() -> bool:
 	return true
 
-func use_ammo():
-	current_ammo -= 1
+func use_ammo(amount = 1):
+	current_ammo -= amount
 
 func reload():
 	pass

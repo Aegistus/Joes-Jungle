@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_2u2rb"]
 [ext_resource type="AudioStream" uid="uid://bkrw4ke5x8fvn" path="res://assets/audio/flamethrower/flamethrower_start.wav" id="4_sqa53"]
 [ext_resource type="AudioStream" uid="uid://cqymuimtywd4d" path="res://assets/audio/flamethrower/flamethrower_start2.wav" id="5_j4x8r"]
-[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="5_wbnbn"]
 [ext_resource type="AudioStream" uid="uid://sw6aa03beh08" path="res://assets/audio/flamethrower/flamethrower_start3.wav" id="6_5mfw0"]
 [ext_resource type="AudioStream" uid="uid://bft1uiv83fncc" path="res://assets/audio/flamethrower/flamethrower_start4.wav" id="7_8rt1w"]
 [ext_resource type="PackedScene" uid="uid://b0mybql7fsmdv" path="res://scenes/particles/flamethrower_fire.tscn" id="8_a077o"]
 [ext_resource type="AudioStream" uid="uid://cj36nm8gfmls2" path="res://assets/audio/flamethrower/flamethrower_loop.wav" id="8_bu0wy"]
 [ext_resource type="AudioStream" uid="uid://khvutnhujlf0" path="res://assets/audio/reload_sounds/M249_mag_out.wav" id="8_s1ct1"]
 [ext_resource type="AudioStream" uid="uid://bjym08erj6sy3" path="res://assets/audio/reload_sounds/M249_mag_in.wav" id="9_ay7ge"]
+[ext_resource type="AudioStream" uid="uid://c67i5f4sxmhbo" path="res://assets/audio/flamethrower/flamethrower_dry_shot.wav" id="9_fdkrs"]
 [ext_resource type="Script" path="res://scripts/weapons/magazine_ammo.gd" id="10_lc605"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptlcp"]
@@ -224,10 +224,10 @@ transform = Transform3D(1, -1.53668e-08, 1.16974e-06, 0, 1, 7.24103e-08, 0, 8.14
 stream = ExtResource("8_bu0wy")
 
 [node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_wbnbn")
+stream = ExtResource("9_fdkrs")
 
 [node name="FlameCheckTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.25
 
 [node name="RemoveMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_s1ct1")
@@ -237,5 +237,4 @@ stream = ExtResource("9_ay7ge")
 
 [node name="Ammo" type="Node" parent="."]
 script = ExtResource("10_lc605")
-max_magazine_count = 3
-magazine_round_capacity = 100
+magazine_round_capacity = 1000

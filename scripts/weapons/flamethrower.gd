@@ -15,25 +15,32 @@ extends Gun
 const FIRE = preload("res://scenes/particles/fire.tscn")
 const FLAMETHROWER_TANK = preload("res://scenes/weapons/flamethrower_tank.tscn")
 const DEFAULT_RANGE = 65
+const FUEL_USE_RATE = 5
 
 var backpack
 var light
+var is_shooting := false
 
 func _ready():
 	flame_check_timer.timeout.connect(set_targets_on_fire)
 
 func shoot():
-	fire_particles.play()
-	flame_check_timer.start()
-	flamethrower_start_audio_player.play()
-	flamethrower_loop_audio_player.play()
-	light = OmniLight3D.new()
-	get_parent_node_3d().add_child(light)
-	light.global_position = light_spawn_point.global_position
-	var tween = get_tree().create_tween()
-	tween.tween_property(light, "light_energy", max_light_energy, light_up_time)
+	if ammo.current_ammo > 0:
+		is_shooting = true
+		fire_particles.play()
+		flame_check_timer.start()
+		flamethrower_start_audio_player.play()
+		flamethrower_loop_audio_player.play()
+		light = OmniLight3D.new()
+		get_parent_node_3d().add_child(light)
+		light.global_position = light_spawn_point.global_position
+		var tween = get_tree().create_tween()
+		tween.tween_property(light, "light_energy", max_light_energy, light_up_time)
+	else:
+		dry_shot_audio_player.play()
 
 func shoot_end():
+	is_shooting = false
 	fire_particles.stop()
 	flame_check_timer.stop()
 	flamethrower_loop_audio_player.stop()
@@ -42,6 +49,11 @@ func shoot_end():
 		var tween = get_tree().create_tween()
 		tween.tween_property(light, "light_energy", 0, dim_light_time)
 		tween.tween_callback(light.queue_free).set_delay(dim_light_time)
+
+func _process(delta):
+	if is_shooting:
+		ammo.use_ammo(delta * FUEL_USE_RATE)
+		print(ammo.current_ammo)
 
 func set_targets_on_fire():
 	for i in raycast_parent.get_child_count():

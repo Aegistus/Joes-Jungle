@@ -22,9 +22,6 @@ func reload():
 		current_carried_ammo -= added
 	on_reload.emit(current_carried_ammo, low_on_ammo())
 
-func use_ammo():
-	current_ammo -= 1
-
 func can_reload() -> bool:
 	if current_carried_ammo > 0 and current_ammo < max_loaded_ammo:
 		return true
