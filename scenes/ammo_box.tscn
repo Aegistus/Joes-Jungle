@@ -353,4 +353,5 @@ shape = SubResource("BoxShape3D_c2le1")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.3, 0)
+light_energy = 10.0
 spot_angle = 21.5082
