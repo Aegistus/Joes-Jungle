@@ -14,6 +14,7 @@ signal on_shoot
 @export var magazine_scale = 1.0
 @export var base_accuracy = 100
 @export var base_recoil = 0
+@export var base_ergonomics = 100
 
 @onready var gun_audio_player = $GunAudioPlayer
 @onready var dry_shot_audio_player = $DryShotAudioPlayer
@@ -36,6 +37,10 @@ const RECOIL_RECOVERY_DELAY = .1
 @onready var current_accuracy = base_accuracy
 var can_shoot = true
 var recoil_recovery_timer : Timer
+var ergo_adjusted_accuracy:
+	get:
+		return base_accuracy - ((100 - base_ergonomics) * ergonomics_multiplier)
+var ergonomics_multiplier := 0.0
 
 const MAG_DESPAWN_TIME = 60
 
@@ -48,10 +53,10 @@ func _ready():
 	recoil_recovery_timer.wait_time = RECOIL_RECOVERY_DELAY
 
 func _process(delta):
-	if current_accuracy != base_accuracy and recoil_recovery_timer.time_left == 0:
-		current_accuracy = lerpf(current_accuracy, base_accuracy, RECOIL_RECOVERY_SPEED * delta)
-		if abs(base_accuracy - current_accuracy) < 1:
-			current_accuracy = base_accuracy
+	if current_accuracy != ergo_adjusted_accuracy and recoil_recovery_timer.time_left == 0:
+		current_accuracy = lerpf(current_accuracy, ergo_adjusted_accuracy, RECOIL_RECOVERY_SPEED * delta)
+		if abs(ergo_adjusted_accuracy - current_accuracy) < 1:
+			current_accuracy = ergo_adjusted_accuracy
 		print(current_accuracy)
 
 func shoot():

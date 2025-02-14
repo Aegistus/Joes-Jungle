@@ -16,6 +16,11 @@ extends PlayerState
 func enter():
 	super()
 	controlled_player.current_animation_tree.active = true
+	var tween = get_tree().create_tween()
+	#tween.tween_property(controlled_player.primary_weapon, "ergonomics_multiplier", 1, 1)
+	#tween.tween_property(controlled_player.secondary_weapon, "ergonomics_multiplier", 1, 1)
+	controlled_player.primary_weapon.ergonomics_multiplier = 1
+	controlled_player.secondary_weapon.ergonomics_multiplier = 1
 
 func process_state_physics(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -35,6 +40,12 @@ func process_state_physics(delta):
 		if Input.is_action_just_released("shoot"):
 			controlled_player.gun.shoot_end()
 
+func exit():
+	var tween = get_tree().create_tween()
+	#tween.tween_property(controlled_player.primary_weapon, "ergonomics_multiplier", 0, 1)
+	#tween.tween_property(controlled_player.secondary_weapon, "ergonomics_multiplier", 0, 1)
+	controlled_player.primary_weapon.ergonomics_multiplier = 0
+	controlled_player.secondary_weapon.ergonomics_multiplier = 0
 
 func check_transitions():
 	if Input.is_action_just_pressed("reload"):

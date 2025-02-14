@@ -657,7 +657,8 @@ gun_type = 1
 magazine = NodePath("gun model/Magazine")
 magazine_scale = 80.0
 base_accuracy = 75
-base_recoil = 20
+base_recoil = 10
+base_ergonomics = 90
 
 [node name="gun model" type="Node3D" parent="."]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.0239423, 0.259269, 0.0324934)

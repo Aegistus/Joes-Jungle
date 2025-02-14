@@ -514,8 +514,9 @@ script = ExtResource("1_0dppu")
 gun_name = "Baretta 92"
 magazine = NodePath("gun model/Clip")
 magazine_scale = 0.04
-base_accuracy = 90
+base_accuracy = 80
 base_recoil = 20
+base_ergonomics = 80
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
