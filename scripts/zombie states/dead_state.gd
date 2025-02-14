@@ -1,6 +1,8 @@
 class_name DeadState
 extends ZombieState
 
+signal on_zombie_death
+
 @export var despawn_delay = 5.0
 
 @onready var ragdoll = $"../../zombie_model/Armature/GeneralSkeleton/PhysicalBoneSimulator3D"
@@ -23,3 +25,4 @@ func enter():
 	timer.wait_time = despawn_delay
 	timer.start()
 	GameManager.add_points(zombie.point_value)
+	on_zombie_death.emit()
