@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=27 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -17,6 +17,8 @@
 [ext_resource type="Shader" path="res://assets/shaders/player_ui.gdshader" id="15_xu7e1"]
 [ext_resource type="Script" path="res://scripts/ui/damage_overlay.gd" id="16_taqfw"]
 [ext_resource type="Script" path="res://scripts/ui/recoil_ui.gd" id="17_32jpq"]
+[ext_resource type="Script" path="res://scripts/ui/weapon_stats_panel.gd" id="18_qi647"]
+[ext_resource type="FontFile" uid="uid://b1st00ad0rqs8" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.ttf" id="18_t8k2g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ljnu"]
 bg_color = Color(0, 0, 0, 0.192157)
@@ -463,3 +465,134 @@ grow_vertical = 2
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="WeaponStatsPanel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -67.0
+offset_right = 195.0
+offset_bottom = 44.0
+grow_vertical = 2
+script = ExtResource("18_qi647")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/WeaponStatsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GunNameLabel" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_t8k2g")
+theme_override_font_sizes/font_size = 10
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Damage" type="HBoxContainer" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Damage"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
+theme_override_font_sizes/font_size = 8
+text = "Damage"
+horizontal_alignment = 2
+
+[node name="DamageLabel" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Damage"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
+theme_override_font_sizes/font_size = 8
+text = "1-2
+"
+
+[node name="Accuracy" type="HBoxContainer" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Accuracy"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
+theme_override_font_sizes/font_size = 8
+text = "Accuracy"
+horizontal_alignment = 2
+
+[node name="AccuracyProgressBar" type="ProgressBar" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Accuracy"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 5)
+layout_mode = 2
+size_flags_vertical = 4
+step = 1.0
+show_percentage = false
+
+[node name="AccuracyLabel" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Accuracy"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
+theme_override_font_sizes/font_size = 8
+text = "100"
+
+[node name="Recoil" type="HBoxContainer" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Recoil"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
+theme_override_font_sizes/font_size = 8
+text = "Recoil"
+horizontal_alignment = 2
+
+[node name="RecoilProgressBar" type="ProgressBar" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Recoil"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 5)
+layout_mode = 2
+size_flags_vertical = 4
+step = 1.0
+show_percentage = false
+
+[node name="RecoilLabel" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Recoil"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
+theme_override_font_sizes/font_size = 8
+text = "100"
+
+[node name="Ergonomics" type="HBoxContainer" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Ergonomics"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
+theme_override_font_sizes/font_size = 8
+text = "Ergonomics"
+horizontal_alignment = 2
+
+[node name="ErgonomicsProgressBar" type="ProgressBar" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Ergonomics"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 5)
+layout_mode = 2
+size_flags_vertical = 4
+step = 1.0
+show_percentage = false
+
+[node name="ErgonomicsLabel" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Ergonomics"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
+theme_override_font_sizes/font_size = 8
+text = "100"

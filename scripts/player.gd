@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 signal health_update(health, max_health)
 signal on_equip_weapon(gun : Gun)
+signal on_pickup_weapon(gun : Gun)
 
 @export var turn_rate := 5.0
 @export var max_health = 100
@@ -123,6 +124,7 @@ func pickup_weapon(new_gun: Gun):
 		secondary_weapon = new_gun
 		print("New weapon is secondary")
 	gun_holder.add_child(new_gun)
+	on_pickup_weapon.emit(new_gun)
 	equip_weapon(new_gun)
 
 func drop_weapon(weapon_to_drop : Gun):
