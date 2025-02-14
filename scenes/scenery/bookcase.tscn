@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://8eq1ywe0gm4j"]
+
+[ext_resource type="PackedScene" uid="uid://twn7ybhgt74g" path="res://assets/models/scenery/bookcase.glb" id="1_5oa56"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ay0fp"]
+albedo_color = Color(0.390923, 0.364889, 0.170138, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gyw3k"]
+size = Vector3(0.5, 2.5, 2.8)
+
+[node name="bookcase" instance=ExtResource("1_5oa56")]
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_ay0fp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.25, -1.4)
+shape = SubResource("BoxShape3D_gyw3k")

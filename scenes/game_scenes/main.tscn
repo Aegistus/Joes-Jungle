@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dpdrosnb70eiy" path="res://assets/textures/Wood Texture.png" id="3_ro61b"]
 [ext_resource type="Texture2D" uid="uid://21lfi3leb2p6" path="res://assets/textures/Stone Tile Texture.png" id="4_t6404"]
 [ext_resource type="Texture2D" uid="uid://cj22wf72y50x" path="res://assets/textures/Grass Texture.png" id="5_npq4s"]
-[ext_resource type="Material" uid="uid://btglo4s1fu73t" path="res://materials/grid_1.tres" id="5_povn2"]
 [ext_resource type="Shader" path="res://assets/shaders/brick_wall.gdshader" id="8_4jkm0"]
 [ext_resource type="Material" uid="uid://p001di78373p" path="res://materials/grid_2.tres" id="8_ijifm"]
 [ext_resource type="PackedScene" uid="uid://ciu738dd2fsak" path="res://scenes/scenery/palm_tree_01.tscn" id="9_41nok"]
@@ -35,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://20mjnqpncu7g" path="res://scenes/scenery/stone_wall_rubble_03.tscn" id="26_8gqcl"]
 [ext_resource type="PackedScene" uid="uid://dkjt686bxxe74" path="res://scenes/scenery/stone_wall_rubble_04.tscn" id="27_50f8y"]
 [ext_resource type="PackedScene" uid="uid://dy7nsmch3eake" path="res://scenes/scenery/tree_dead_01.tscn" id="28_oo16f"]
+[ext_resource type="PackedScene" uid="uid://8eq1ywe0gm4j" path="res://scenes/scenery/bookcase.tscn" id="29_5wduh"]
 [ext_resource type="PackedScene" uid="uid://xg04imsil4xb" path="res://scenes/scenery/tree_dead_02.tscn" id="29_u1ntb"]
 [ext_resource type="PackedScene" uid="uid://duyp5t7j0lgjg" path="res://scenes/scenery/planter_01.tscn" id="30_3b5c8"]
 [ext_resource type="PackedScene" uid="uid://cluiqhm4o72ca" path="res://scenes/scenery/fountain_01.tscn" id="31_jkp6c"]
@@ -125,7 +125,7 @@ light_volumetric_fog_energy = 0.1
 shadow_enabled = true
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.866025, -0.482963, 0.129409, 2.98023e-08, 0.258819, 0.965926, -0.5, -0.836516, 0.224144, 0.14235, 4.86252, 0.246558)
+transform = Transform3D(0.866025, -0.482963, 0.12941, -0.353553, -0.408493, 0.841506, -0.353553, -0.774519, -0.524519, 0.14235, 4.86252, 0.246558)
 light_color = Color(0.0091381, 0.470179, 0.664388, 1)
 light_energy = 5.0
 light_indirect_energy = 0.1
@@ -2081,7 +2081,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 25)
 
 [node name="stair1" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -23.75, -0.425, -25.5)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
@@ -2097,7 +2097,7 @@ shape = SubResource("BoxShape3D_di1i8")
 
 [node name="stair2" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -23.25, -0.325, -25.5)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
@@ -2105,7 +2105,7 @@ size = Vector3(0.5, 0.4, 2)
 
 [node name="stair3" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -22.75, -0.225, -25.5)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
@@ -2113,7 +2113,7 @@ size = Vector3(0.5, 0.6, 2)
 
 [node name="stair4" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -22.25, -0.125, -25.5)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
@@ -2121,7 +2121,7 @@ size = Vector3(0.5, 0.8, 2)
 
 [node name="stair5" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, -0.0249999, -25.5)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
@@ -2129,7 +2129,7 @@ size = Vector3(2, 1, 2)
 
 [node name="stair6" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.0750001, -24.25)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
@@ -2137,7 +2137,7 @@ size = Vector3(2, 1.2, 0.5)
 
 [node name="stair7" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.175, -23.75)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
@@ -2145,7 +2145,7 @@ size = Vector3(2, 1.4, 0.5)
 
 [node name="stair8" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.275, -23.25)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
@@ -2153,7 +2153,7 @@ size = Vector3(2, 1.6, 0.5)
 
 [node name="stair9" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.375, -22.75)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
@@ -2161,7 +2161,7 @@ size = Vector3(2, 1.8, 0.5)
 
 [node name="stair10" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.475, -22.25)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
@@ -2169,7 +2169,7 @@ size = Vector3(2, 2, 0.5)
 
 [node name="stair11" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.575, -21.75)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
@@ -2177,7 +2177,7 @@ size = Vector3(2, 2.2, 0.5)
 
 [node name="stair12" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.675, -21.25)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
@@ -2185,7 +2185,7 @@ size = Vector3(2, 2.4, 0.5)
 
 [node name="stair13" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.775, -20.75)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
@@ -2193,25 +2193,19 @@ size = Vector3(2, 2.6, 0.5)
 
 [node name="stair14" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.875, -20.25)
-material_override = ExtResource("5_povn2")
+material_override = ExtResource("3_mkkog")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(2, 2.8, 0.5)
 
 [node name="World Boundary" type="StaticBody3D" parent="NavigationRegion3D/map"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, -4)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 13.8, 0, -4)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/map/World Boundary"]
 shape = SubResource("WorldBoundaryShape3D_30c14")
 
 [node name="Furniture" type="Node3D" parent="NavigationRegion3D/map"]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.775, 0.5, -24.75)
-material_override = ExtResource("8_ijifm")
-use_collision = true
-size = Vector3(4.45, 2, 0.5)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.025, 0.5, -55.25)
@@ -2291,18 +2285,6 @@ material_override = ExtResource("8_ijifm")
 use_collision = true
 size = Vector3(0.6, 0.1, 0.6)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.775, 0.5, -22.75)
-material_override = ExtResource("8_ijifm")
-use_collision = true
-size = Vector3(4.45, 2, 0.5)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.775, 0.5, -20.75)
-material_override = ExtResource("8_ijifm")
-use_collision = true
-size = Vector3(4.45, 2, 0.5)
-
 [node name="SM_Prop_Oven_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("11_ufg14")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4, -0.5, -53.3)
 
@@ -2362,6 +2344,18 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.5,
 
 [node name="SM_Prop_FlowerHanging_02" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("23_0mp1p")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27.4, 0.4, -25)
+
+[node name="bookcase" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("29_5wduh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.2, -0.5, -24.5)
+
+[node name="bookcase2" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("29_5wduh")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -17, -0.5, -24.5)
+
+[node name="bookcase3" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("29_5wduh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.2, -0.5, -22)
+
+[node name="bookcase4" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("29_5wduh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17, -0.5, -22)
 
 [node name="Outer" type="Node3D" parent="NavigationRegion3D/map"]
 
