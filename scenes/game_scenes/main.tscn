@@ -124,6 +124,15 @@ light_indirect_energy = 0.1
 light_volumetric_fog_energy = 0.1
 shadow_enabled = true
 
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.482963, 0.129409, 2.98023e-08, 0.258819, 0.965926, -0.5, -0.836516, 0.224144, 0.14235, 4.86252, 0.246558)
+light_color = Color(0.0091381, 0.470179, 0.664388, 1)
+light_energy = 5.0
+light_indirect_energy = 0.1
+light_volumetric_fog_energy = 0.1
+shadow_enabled = true
+editor_only = true
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_112m7")
 
@@ -887,6 +896,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+size = Vector3(0.4, 2.5, 1)
+
 [node name="wall3" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27.75, 0.75, -34.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -894,6 +907,10 @@ snap = 0.1
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1.6)
 
 [node name="wall4" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27.75, 0.75, -29.75)
@@ -903,6 +920,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1.6)
+
 [node name="wall2" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.25, 0.75, -30.5)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -910,6 +931,10 @@ snap = 0.1
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1)
 
 [node name="wall5" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -28)
@@ -919,6 +944,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.0500031)
+size = Vector3(0.5, 2.4, 3.1)
+
 [node name="wall55" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -26)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -926,6 +955,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall55"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, -0.150002)
+size = Vector3(0.5, 2.4, 1.3)
 
 [node name="wall56" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -20.125)
@@ -935,6 +968,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.25)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall56"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 2.2)
+
 [node name="wall97" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -23.375)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -942,6 +979,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.25)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall97"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 2.2)
 
 [node name="wall58" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -17.5)
@@ -951,6 +992,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall58"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1)
+
 [node name="wall64" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 0.75, -15.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -958,6 +1003,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall64"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.0499992)
+size = Vector3(0.5, 2.4, 3.3)
 
 [node name="wall65" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 0.75, -9.75)
@@ -967,6 +1016,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall65"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 3.4)
+
 [node name="wall6" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -36.75)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -974,6 +1027,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 4.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.0499992)
+size = Vector3(0.5, 2.4, 4.5)
 
 [node name="wall29" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -41.75)
@@ -983,6 +1040,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.0499992)
+size = Vector3(0.5, 2.4, 3.5)
+
 [node name="wall31" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -46.025)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -990,6 +1051,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.95)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 3)
 
 [node name="wall38" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 0.75, -47.75)
@@ -999,6 +1064,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall38"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 2.6)
+
 [node name="wall39" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 0.75, -52.75)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1006,6 +1075,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 2.6)
 
 [node name="wall33" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.75, 0.75, -48)
@@ -1015,6 +1088,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall33"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.0500031)
+size = Vector3(0.5, 2.4, 1.1)
+
 [node name="wall46" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 0.75, -48)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1022,6 +1099,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall46"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1)
 
 [node name="wall49" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 0.75, -55)
@@ -1031,6 +1112,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall49"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1)
+
 [node name="wall35" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.75, 0.75, -55)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1038,6 +1123,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall35"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1)
 
 [node name="wall43" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 0.75, -55.25)
@@ -1047,6 +1136,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall43"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.0499954)
+size = Vector3(0.5, 2.4, 1.5)
+
 [node name="wall47" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7, 0.75, -55)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1054,6 +1147,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall47"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 2)
 
 [node name="wall34" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.75, 0, -51.5)
@@ -1063,6 +1160,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall34"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, -0.05, 0)
+size = Vector3(0.5, 1.1, 2.2)
+
 [node name="wall52" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0, -44.025)
 material_override = ExtResource("9_wwjne")
@@ -1071,12 +1172,20 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1.05)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall52"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 1, 1.2)
+
 [node name="wall70" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0, -39.5)
 material_override = ExtResource("9_wwjne")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
+size = Vector3(0.5, 1, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall70"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
 size = Vector3(0.5, 1, 1)
 
 [node name="wall88" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
@@ -1087,6 +1196,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall88"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, -0.1, 0)
+size = Vector3(0.5, 1.2, 1)
+
 [node name="wall98" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0, -21.75)
 material_override = ExtResource("9_wwjne")
@@ -1094,6 +1207,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall98"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, -0.05, 0)
+size = Vector3(0.5, 1.1, 1)
 
 [node name="wall89" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0, -18.5)
@@ -1103,6 +1220,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall89"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, -0.05, 0)
+size = Vector3(0.5, 1.1, 1)
+
 [node name="wall90" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 0, -23)
 material_override = ExtResource("9_wwjne")
@@ -1111,12 +1232,20 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall90"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, -0.05, 0)
+size = Vector3(0.5, 1.1, 1)
+
 [node name="wall94" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 0, -20.5)
 material_override = ExtResource("9_wwjne")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
+size = Vector3(0.5, 1, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall94"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
 size = Vector3(0.5, 1, 1)
 
 [node name="wall96" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
@@ -1127,12 +1256,20 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall96"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 1, 1)
+
 [node name="wall91" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 0, -25.5)
 material_override = ExtResource("9_wwjne")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
+size = Vector3(0.5, 1, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall91"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
 size = Vector3(0.5, 1, 1)
 
 [node name="wall92" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
@@ -1143,6 +1280,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall92"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 1, 1)
+
 [node name="wall78" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -31.3207, 0, -48.6457)
 material_override = ExtResource("9_wwjne")
@@ -1150,6 +1291,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.999, 1.45)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall78"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500069, 0, -0.150002)
+size = Vector3(0.5, 1, 1.3)
 
 [node name="wall79" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -31.3207, 0, -54.3207)
@@ -1159,6 +1304,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.999, 1.45)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall79"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0499954, -0.05, -0.0499954)
+size = Vector3(0.5, 1.1, 1.5)
+
 [node name="wall81" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -31.3207, 0, -9.69571)
 material_override = ExtResource("9_wwjne")
@@ -1166,6 +1315,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.999, 1.45)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall81"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500011, -0.05, 0.149994)
+size = Vector3(0.5, 1.1, 1.9)
 
 [node name="wall82" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -31.3207, 0, -15.3707)
@@ -1175,6 +1328,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.999, 1.45)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall82"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500183, -0.05, 0.100006)
+size = Vector3(0.5, 0.9, 1.6)
+
 [node name="wall7" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.5, 0.75, -37.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1182,6 +1339,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1)
 
 [node name="wall9" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.5, 0.75, -26.75)
@@ -1191,6 +1352,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1)
+
 [node name="wall8" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21.5, 0.75, -37.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1198,6 +1363,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 5)
 
 [node name="wall14" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.5, 0.75, -37.25)
@@ -1207,6 +1376,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 5)
+
 [node name="wall16" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -35.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1214,6 +1387,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 4.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 4.6)
 
 [node name="wall18" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -10.25, 0.75, -33.75)
@@ -1223,6 +1400,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1.6)
+
 [node name="wall19" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -10.25, 0.75, -30.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1230,6 +1411,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1.6)
 
 [node name="wall20" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -11, 0.75, -29.75)
@@ -1239,6 +1424,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 2)
+
 [node name="wall21" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -11, 0.75, -34.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1246,6 +1435,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 2)
 
 [node name="wall17" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -28.5)
@@ -1255,6 +1448,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 5)
+
 [node name="wall66" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -17)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1262,6 +1459,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall66"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1)
 
 [node name="wall67" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -24.25)
@@ -1271,6 +1472,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall67"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1.4)
+
 [node name="wall93" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -21.75)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1278,6 +1483,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall93"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1.6)
 
 [node name="wall95" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -19.25)
@@ -1287,6 +1496,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall95"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1.6)
+
 [node name="wall10" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.5, 0.75, -26.75)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1294,6 +1507,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 7)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 7.2)
 
 [node name="wall57" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.5, 0.75, -16.75)
@@ -1303,6 +1520,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 7)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall57"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.0499992)
+size = Vector3(0.5, 2.4, 7.1)
+
 [node name="wall75" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.75, 0.75, -16.75)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1310,6 +1531,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall75"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1.6)
 
 [node name="wall12" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13.5, 0.75, -26.75)
@@ -1319,6 +1544,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 3.2)
+
 [node name="wall11" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19.75, 0.75, -23.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1326,6 +1555,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 6.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 6.6)
 
 [node name="wall73" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -14.25, 0.75, -9.725)
@@ -1335,6 +1568,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.45)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall73"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 3.6)
+
 [node name="wall74" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -14.25, 0.75, -15)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1342,6 +1579,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall74"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 3)
 
 [node name="wall13" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19.75, 0.75, -42)
@@ -1351,6 +1592,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.0499992)
+size = Vector3(0.5, 2.4, 3.1)
+
 [node name="wall53" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19.75, 0.75, -45.75)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1358,6 +1603,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 0.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall53"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 0.6)
 
 [node name="wall26" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19.75, 0.75, -38)
@@ -1367,6 +1616,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1)
+
 [node name="wall15" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -16.25, 0.75, -38)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1374,6 +1627,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, -0.0499992)
+size = Vector3(0.5, 2.4, 1.1)
 
 [node name="wall23" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -16.25, 0.75, -41)
@@ -1383,6 +1640,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1)
+
 [node name="wall24" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -14, 0.75, -41.75)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1390,6 +1651,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 5)
 
 [node name="wall28" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -22, 0.75, -41.75)
@@ -1399,6 +1664,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 4)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 4)
+
 [node name="wall32" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -29.25, 0.75, -47.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1406,6 +1675,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall32"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 3.6)
 
 [node name="wall45" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -9.75, 0.75, -47.25)
@@ -1415,6 +1688,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall45"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 3.6)
+
 [node name="wall36" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -30.25, 0.75, -55.75)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1422,6 +1699,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall36"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1.6)
 
 [node name="wall59" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.75, 0.75, -9)
@@ -1431,6 +1712,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall59"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.25)
+size = Vector3(0.5, 2.4, 1.5)
+
 [node name="wall60" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.75, 0.75, -16)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1438,6 +1723,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall60"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1)
 
 [node name="wall61" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.75, 0, -12.5)
@@ -1447,6 +1736,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall61"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, -0.05, 0)
+size = Vector3(0.5, 1.1, 5)
+
 [node name="wall83" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -7.7069, 0, -15.3486)
 material_override = ExtResource("9_wwjne")
@@ -1454,6 +1747,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.999, 1.45)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall83"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, -0.05, -0.0499725)
+size = Vector3(0.5, 1.1, 1.5)
 
 [node name="wall84" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -7.7069, 0, -9.67357)
@@ -1463,12 +1760,20 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.999, 1.45)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall84"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, -0.05, -0.0500069)
+size = Vector3(0.5, 1.1, 1.7)
+
 [node name="wall80" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.27761, 0, -12.5443)
 material_override = ExtResource("9_wwjne")
 snap = 0.05
 use_collision = true
 collision_layer = 131073
+size = Vector3(0.5, 1, 5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall80"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, -3.8147e-06)
 size = Vector3(0.5, 1, 5)
 
 [node name="wall85" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
@@ -1479,6 +1784,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.45)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall85"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.0500031)
+size = Vector3(0.5, 2.4, 1.7)
+
 [node name="wall86" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -7.7069, 0.7505, -48.6236)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1486,6 +1795,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.45)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall86"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, -1.90735e-06)
+size = Vector3(0.5, 2.4, 1.4)
 
 [node name="wall87" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.27761, 0.75, -51.4943)
@@ -1495,6 +1808,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall87"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, -0.0500031)
+size = Vector3(0.5, 2.4, 5.1)
+
 [node name="wall62" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -29.25, 0.75, -8.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1502,6 +1819,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall62"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, -0.0499992)
+size = Vector3(0.5, 2.4, 3.5)
 
 [node name="wall76" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -25.25, 0.75, -8.25)
@@ -1511,6 +1832,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 0.5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall76"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.0499992)
+size = Vector3(0.5, 2.4, 0.5)
+
 [node name="wall77" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -13.75, 0.75, -8.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1518,6 +1843,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 0.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall77"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 0.6)
 
 [node name="wall63" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -29, 0.75, -16.75)
@@ -1527,6 +1856,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 4)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall63"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 4)
+
 [node name="wall37" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -26.25, 0.75, -55.75)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1534,6 +1867,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall37"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 2.6)
 
 [node name="wall48" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -9.75, 0.75, -55.75)
@@ -1543,6 +1880,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall48"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 3.4)
+
 [node name="wall68" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 0.75, -9)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1550,6 +1891,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall68"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.0499992)
+size = Vector3(0.5, 2.4, 1.1)
 
 [node name="wall69" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 0.75, -16)
@@ -1559,6 +1904,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall69"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, -0.25)
+size = Vector3(0.5, 2.4, 1.5)
+
 [node name="wall71" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -10, 0.75, -8.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1566,6 +1915,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 4)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall71"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 4)
 
 [node name="wall72" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -9.75, 0.75, -16.75)
@@ -1575,6 +1928,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall72"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, -0.0500011)
+size = Vector3(0.5, 2.4, 3.5)
+
 [node name="wall50" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -13.875, 0.75, -54.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1582,6 +1939,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 0.25)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall50"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 0.2)
 
 [node name="wall51" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -12.05, 0.75, -54.25)
@@ -1591,6 +1952,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 0.2)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall51"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 0.2)
+
 [node name="wall30" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -26.5, 0.75, -41.75)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1598,6 +1963,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 1)
 
 [node name="wall27" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -19.5, 0.75, -46.25)
@@ -1607,6 +1976,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 11)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 11)
+
 [node name="wall40" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -19.5, 0.75, -54.25)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1614,6 +1987,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 11)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall40"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 11)
 
 [node name="wall22" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -40.2485)
@@ -1623,6 +2000,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.50293)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.0499992)
+size = Vector3(0.5, 2.4, 2.5)
+
 [node name="wall54" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -37.7471)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1630,6 +2011,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 0.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall54"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 0.6)
 
 [node name="wall25" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -45.5)
@@ -1639,6 +2024,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 7)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0.0500031)
+size = Vector3(0.5, 2.4, 7.1)
+
 [node name="wall41" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -14.25, 0.75, -47.75)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1646,6 +2035,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall41"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, -7.62939e-06)
+size = Vector3(0.5, 2.4, 2.6)
 
 [node name="wall42" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -14.25, 0.75, -52.75)
@@ -1655,6 +2048,10 @@ use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.5)
 
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall42"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 2.6)
+
 [node name="wall44" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.7, 0.75, -52.75)
 material_override = SubResource("ShaderMaterial_kwoof")
@@ -1662,6 +2059,10 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.5)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/map/Mansion/Walls/wall44"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0500031, 0, 0)
+size = Vector3(0.5, 2.4, 2.6)
 
 [node name="SM_Prop_Pillar_01" parent="NavigationRegion3D/map/Mansion/Walls" instance=ExtResource("9_ph64a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5937, -0.5, -8.6315)

@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://scripts/player states/idle_state.gd" id="4_s0a0d"]
 [ext_resource type="AnimationLibrary" uid="uid://bhfy6y3yys725" path="res://assets/animations/libraries/Rifle Anims.res" id="5_a1aim"]
 [ext_resource type="AnimationLibrary" uid="uid://ckpcjepwfvaok" path="res://assets/animations/libraries/Michael Misc.res" id="5_cv0v5"]
-[ext_resource type="PackedScene" uid="uid://c6ecwjphk3ure" path="res://scenes/weapons/suppressed_mpx.tscn" id="5_upim8"]
+[ext_resource type="PackedScene" uid="uid://ch2ki4by231v" path="res://scenes/weapons/M2_flamethrower.tscn" id="5_d1v35"]
 [ext_resource type="AnimationLibrary" uid="uid://7frjr3q8mcex" path="res://assets/animations/libraries/Michael Pistol.res" id="6_7v3rf"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c4e5wj28gmxw3" path="res://assets/animations/trees/pistol_blend_tree.tres" id="6_o7fui"]
 [ext_resource type="PackedScene" uid="uid://oii8bwkvvqje" path="res://scenes/weapons/flamethrower_tank.tscn" id="6_qhwyx"]
@@ -812,8 +812,7 @@ transform = Transform3D(0.999421, -0.0326995, 0.00938384, 0.0326636, 0.999458, 0
 
 [node name="Pistol 92" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("2_scene")]
 
-[node name="MPX" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("5_upim8")]
-visible = false
+[node name="M2Flamethrower" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("5_d1v35")]
 
 [node name="LeftHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
 transform = Transform3D(-0.209851, -0.380545, -0.900638, -0.975605, 0.020748, 0.218552, -0.0644827, 0.92453, -0.375615, 0.0277897, 1.37862, 0.439542)

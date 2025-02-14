@@ -55,6 +55,8 @@ scale_min = 0.75
 scale_max = 1.75
 scale_curve = SubResource("CurveTexture_5jaxi")
 color = Color(4.01176, 1.2549, 0.623529, 1)
+collision_mode = 2
+collision_use_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_7cbim"]
 
