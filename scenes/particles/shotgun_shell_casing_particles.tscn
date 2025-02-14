@@ -9,6 +9,7 @@ metallic = 1.0
 metallic_specular = 1.0
 emission_enabled = true
 emission = Color(0.552941, 0.0352941, 0, 1)
+emission_energy_multiplier = 0.75
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_em0kn"]
 spread = 10.0

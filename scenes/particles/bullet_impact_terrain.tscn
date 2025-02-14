@@ -54,6 +54,9 @@ size = Vector3(0.02, 0.02, 0.02)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ck7x3"]
 transparency = 1
 vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(0.581033, 0.581033, 0.581033, 1)
+emission_energy_multiplier = 0.5
 
 [sub_resource type="Curve" id="Curve_xqerv"]
 _data = [Vector2(0.409412, 0.501338), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -96,7 +99,7 @@ radial_accel_max = -2.23517e-06
 damping_min = 10.0
 damping_max = 10.0
 scale_curve = SubResource("CurveTexture_3wxgc")
-color = Color(0.404511, 0.404511, 0.404511, 1)
+color = Color(0.804743, 0.804743, 0.804743, 1)
 alpha_curve = SubResource("CurveTexture_np8aw")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2p481"]
