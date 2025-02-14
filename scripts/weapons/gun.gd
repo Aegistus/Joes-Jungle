@@ -25,7 +25,7 @@ signal on_shoot
 @onready var raycast_parent = %RaycastParent as Node3D
 
 const BULLET_IMPACT_TERRAIN = preload("res://scenes/particles/bullet_impact_terrain.tscn")
-const DEGREE_PER_ACCURACY_POINT = .1
+const DEGREE_PER_ACCURACY_POINT = .05
 const RECOIL_ACCURACY_CHANGE = .1
 const RECOIL_RECOVERY_SPEED = 2.0
 const MIN_ACCURACY = -50
