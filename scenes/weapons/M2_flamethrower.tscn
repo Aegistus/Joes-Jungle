@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://ch2ki4by231v"]
+[gd_scene load_steps=28 format=4 uid="uid://ch2ki4by231v"]
 
 [ext_resource type="Script" path="res://scripts/weapons/flamethrower.gd" id="1_m7ukc"]
 [ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_2u2rb"]
@@ -126,10 +126,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_t6oi1")
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_2wy71"]
-height = 40.0
-radius = 4.0
-
 [sub_resource type="Animation" id="Animation_vndia"]
 resource_name = "Main"
 
@@ -186,14 +182,33 @@ skeleton = NodePath("")
 [node name="Fire_Particles" parent="gun_model" instance=ExtResource("8_a077o")]
 transform = Transform3D(8.33333, 0, 0, 0, 8.33333, 0, 0, 0, 8.33333, 0.0271152, 0.440259, 1.69917)
 
-[node name="FlameHitbox" type="ShapeCast3D" parent="gun_model"]
-transform = Transform3D(1, -7.45058e-09, 3.01952e-10, 1.70985e-10, -4.67267e-08, 1, 7.45058e-09, -1, -4.15544e-08, -0.0456473, -0.213271, 23.09)
-enabled = false
-shape = SubResource("CylinderShape3D_2wy71")
-collision_mask = 64
-
 [node name="LightSpawnPoint" type="Node3D" parent="gun_model"]
 transform = Transform3D(1, 4.18368e-10, 0, 3.92902e-10, 1, 5.74937e-09, 0, 3.3433e-09, 1, 0.613024, 2.17946, 25.7204)
+
+[node name="RaycastParent" type="Node3D" parent="gun_model"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.99315e-08, 0.384269, 4.54081)
+
+[node name="RayCast3D" type="RayCast3D" parent="gun_model/RaycastParent"]
+transform = Transform3D(2, -1.34856e-06, 2.07503e-07, 1.19209e-07, 1, 5.98448e-08, -5.74364e-08, 1.96496e-09, 2, 0, 0, 0)
+target_position = Vector3(0, -65, 0)
+
+[node name="RayCast3D4" type="RayCast3D" parent="gun_model/RaycastParent"]
+transform = Transform3D(2, -1.34856e-06, 2.08369e-07, 1.19209e-07, 1, 5.9903e-08, -5.69707e-08, 1.96542e-09, 2, 2.41875, -4.76103, 0)
+target_position = Vector3(0, -60, 0)
+
+[node name="RayCast3D5" type="RayCast3D" parent="gun_model/RaycastParent"]
+transform = Transform3D(2, -1.34856e-06, 2.08369e-07, 1.19209e-07, 1, 5.9903e-08, -5.69707e-08, 1.96542e-09, 2, -2.76341, -4.76103, 0)
+target_position = Vector3(0, -60, 0)
+collide_with_areas = true
+
+[node name="RayCast3D2" type="RayCast3D" parent="gun_model/RaycastParent"]
+transform = Transform3D(2, -1.34856e-06, 2.08369e-07, 1.19209e-07, 1, 5.9903e-08, -5.69707e-08, 1.96542e-09, 2, 1.18034, 0, 0)
+target_position = Vector3(0, -65, 0)
+
+[node name="RayCast3D3" type="RayCast3D" parent="gun_model/RaycastParent"]
+transform = Transform3D(2, -1.34856e-06, 2.08369e-07, 1.19209e-07, 1, 5.9903e-08, -5.69707e-08, 1.96542e-09, 2, -1.49047, 0, 0)
+target_position = Vector3(0, -65, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

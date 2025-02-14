@@ -57,7 +57,6 @@ func _process(delta):
 		current_accuracy = lerpf(current_accuracy, ergo_adjusted_accuracy, RECOIL_RECOVERY_SPEED * delta)
 		if abs(ergo_adjusted_accuracy - current_accuracy) < 1:
 			current_accuracy = ergo_adjusted_accuracy
-		print(current_accuracy)
 
 func shoot():
 	if can_shoot:
