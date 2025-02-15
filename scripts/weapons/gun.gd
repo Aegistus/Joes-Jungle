@@ -31,7 +31,7 @@ const RECOIL_ACCURACY_CHANGE = .3
 const RECOIL_RECOVERY_SPEED = 2.0
 const MIN_ACCURACY = -50
 const RECOIL_RECOVERY_DELAY = .1
-const PENETRATION_DAMAGE_REDUCTION = .5
+const PENETRATION_DAMAGE_REDUCTION = .25
 @onready var flesh_hit = preload("res://scenes/audio_scenes/flesh_hit_audio_source.tscn")
 @onready var wood_hit = preload("res://scenes/audio_scenes/wood_hit_audio_source.tscn")
 @onready var stone_hit = preload("res://scenes/audio_scenes/stone_hit_audio_source.tscn")
@@ -105,8 +105,8 @@ func shoot_with_raycast(raycast : RayCast3D):
 				var rotation = (collision_point - global_position).normalized().inverse()
 				rotation.y += 180
 				var damage = randi_range(min_damage, max_damage)
-				damage -= (i - 1) * PENETRATION_DAMAGE_REDUCTION * damage
-				collided.hit(randi_range(min_damage, max_damage), collision_point, rotation)
+				damage -= i * PENETRATION_DAMAGE_REDUCTION * damage
+				collided.hit(damage, collision_point, rotation)
 				already_hit.append(collided)
 				raycast.add_exception(collided)
 	for i in already_hit.size():
