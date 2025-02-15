@@ -1,7 +1,7 @@
 class_name Gun
 extends Node3D
 
-enum GunType { PISTOL, RIFLE, SHOTGUN }
+enum GunType { PISTOL, REVOLVER, RIFLE, SHOTGUN }
 
 signal on_shoot
 

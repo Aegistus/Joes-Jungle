@@ -95,7 +95,7 @@ func equip_weapon(new_gun: Gun) -> bool:
 		gun.unequip()
 	gun = new_gun
 	gun.visible = true
-	if new_gun.gun_type == Gun.GunType.PISTOL:
+	if new_gun.gun_type == Gun.GunType.PISTOL or new_gun.gun_type == Gun.GunType.REVOLVER:
 		rifle_anim_tree.active = false
 		current_animation_tree = pistol_anim_tree
 		current_relaxed_idle_anim = "Pistol Anim Pack/Relaxed Idle"

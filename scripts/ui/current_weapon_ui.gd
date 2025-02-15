@@ -24,7 +24,7 @@ func update_weapon_ui(weapon : Gun):
 		magazine_ui.visible = true
 		shotgun_shells_ui.visible = false
 		ammo_count.text = "X " + str((weapon.ammo as MagazineAmmo).current_mag_count)
-	elif weapon.gun_type == Gun.GunType.SHOTGUN:
+	elif weapon.gun_type == Gun.GunType.SHOTGUN or weapon.gun_type == Gun.GunType.REVOLVER:
 		magazine_ui.visible = false
 		shotgun_shells_ui.visible = true
 		ammo_count.text = "X " + str((weapon.ammo as SingleLoadAmmo).current_carried_ammo)
