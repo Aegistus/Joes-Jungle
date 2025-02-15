@@ -28,7 +28,7 @@ var current_relaxed_idle_anim
 var current_relaxed_jog_anim
 var gun : Gun
 var magazine : RigidBody3D
-
+var move_speed_multiplier = 1.0
 var current_interactable
 var current_health
 
@@ -36,6 +36,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	current_health = max_health
 	hurtbox.on_hurt.connect(take_damage)
+	hurtbox.on_slow.connect(apply_slow)
 	for i in gun_holder.get_child_count():
 		if gun_holder.get_child(i) is Gun:
 			if secondary_weapon == null:
@@ -170,3 +171,8 @@ func insert_magazine():
 
 func insert_round():
 	gun.insert_mag_audio_player.play()
+
+func apply_slow(amount, duration):
+	move_speed_multiplier = 1 - amount
+	await get_tree().create_timer(duration).timeout
+	move_speed_multiplier = 1

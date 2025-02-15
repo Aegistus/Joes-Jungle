@@ -30,8 +30,8 @@ func process_state_physics(delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction = (directional_reference.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction != Vector3.ZERO:
-		target.velocity.x = direction.x * movement_speed * delta
-		target.velocity.z = direction.z * movement_speed * delta
+		target.velocity.x = direction.x * movement_speed * delta * controlled_player.move_speed_multiplier
+		target.velocity.z = direction.z * movement_speed * delta * controlled_player.move_speed_multiplier
 	target.	move_and_slide()
 	# Set animations
 	var relative_dir = (player_model.basis * Vector3(direction.z, 0, direction.x)).normalized()

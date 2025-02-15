@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://boas4tlaagxef"]
+
+[ext_resource type="Script" path="res://scripts/slowbox.gd" id="1_e7boo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_imqnn"]
+size = Vector3(1, 1, 0.771484)
+
+[node name="Slowbox" type="Area3D"]
+collision_mask = 64
+monitoring = false
+script = ExtResource("1_e7boo")
+slow = 0.75
+duration = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_imqnn")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

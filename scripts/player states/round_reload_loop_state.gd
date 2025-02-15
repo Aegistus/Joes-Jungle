@@ -31,8 +31,8 @@ func process_state_physics(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction = (directional_reference.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	target.velocity.x = direction.x * walk_speed * delta
-	target.velocity.z = direction.z * walk_speed * delta
+	target.velocity.x = direction.x * walk_speed * delta * controlled_player.move_speed_multiplier
+	target.velocity.z = direction.z * walk_speed * delta * controlled_player.move_speed_multiplier
 	target.move_and_slide()
 	round_reload_anim_tree.set("parameters/Movement/blend_position", direction.length())
 

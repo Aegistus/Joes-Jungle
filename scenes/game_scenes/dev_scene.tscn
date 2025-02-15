@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://d1otweixyixi3"]
+[gd_scene load_steps=34 format=4 uid="uid://d1otweixyixi3"]
 
 [ext_resource type="Script" path="res://scripts/game_level.gd" id="1_jlul2"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_veg6g"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://d2t1be5npyy0h" path="res://scenes/shop_flamethrower.tscn" id="21_554pv"]
 [ext_resource type="PackedScene" uid="uid://ddgpevn3nkya1" path="res://scenes/shop_shotgun.tscn" id="21_lme77"]
 [ext_resource type="PackedScene" uid="uid://22lknia5oy4" path="res://scenes/shop_lmg.tscn" id="22_45akl"]
+[ext_resource type="PackedScene" uid="uid://dsxmj3jw6gqcd" path="res://scenes/shop_revolver.tscn" id="22_ec5ts"]
 [ext_resource type="PackedScene" uid="uid://buup8044hp4ox" path="res://scenes/shop_smg.tscn" id="22_qt2uy"]
 [ext_resource type="PackedScene" uid="uid://d4jtl2hk346is" path="res://scenes/ammo_box.tscn" id="23_kq4uc"]
 [ext_resource type="PackedScene" uid="uid://c0j4glofdqgpk" path="res://scenes/fruit_punch_bowl.tscn" id="25_1ethd"]
@@ -111,7 +112,6 @@ script = ExtResource("1_jlul2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-light_energy = 0.1
 shadow_enabled = true
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
@@ -778,6 +778,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61931, 0, -3.49537)
 
 [node name="ShopFlamethrower" parent="." instance=ExtResource("21_554pv")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.6, -0.1, -6.5)
+item_cost = 0
+
+[node name="ShopRevolver" parent="." instance=ExtResource("22_ec5ts")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.53446, -0.100001, -4.49313)
 item_cost = 0
 
 [connection signal="timeout" from="ZombieSpawnPoints/WaveTimer" to="ZombieSpawnPoints" method="_on_timer_timeout"]

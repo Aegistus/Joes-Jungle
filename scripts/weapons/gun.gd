@@ -104,6 +104,8 @@ func shoot_with_raycast(raycast : RayCast3D):
 			if collided.is_in_group("enemy"):
 				var rotation = (collision_point - global_position).normalized().inverse()
 				rotation.y += 180
+				var damage = randi_range(min_damage, max_damage)
+				damage -= (i - 1) * PENETRATION_DAMAGE_REDUCTION * damage
 				collided.hit(randi_range(min_damage, max_damage), collision_point, rotation)
 				already_hit.append(collided)
 				raycast.add_exception(collided)
