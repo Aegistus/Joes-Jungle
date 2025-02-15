@@ -448,6 +448,7 @@ grow_vertical = 2
 script = ExtResource("16_taqfw")
 
 [node name="Recoil" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 982.0

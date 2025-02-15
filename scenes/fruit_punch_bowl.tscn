@@ -92,7 +92,8 @@ radius = 0.584141
 
 [node name="FruitPunchBowl" type="Node3D"]
 script = ExtResource("1_terny")
-item_cost = 1000
+item_cost = 500
+healing_amount = 40
 tooltip_text = "Drink Fruit Punch"
 
 [node name="fruit punch bowl" type="Node3D" parent="."]

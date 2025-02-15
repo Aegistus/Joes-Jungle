@@ -31,7 +31,7 @@ gdscript/warnings/unused_parameter=0
 
 window/size/always_on_top=true
 window/stretch/mode="canvas_items"
-window/size/mode.release=2
+window/size/mode.release=4
 window/size/always_on_top.release=false
 
 [editor]
