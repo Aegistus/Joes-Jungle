@@ -378,7 +378,7 @@ magazine_scale = 0.04
 base_accuracy = 90
 base_recoil = 100
 base_ergonomics = 75
-base_penetration = 3
+base_penetration = 2
 
 [node name="gun model" type="Node3D" parent="."]
 transform = Transform3D(-8.72612e-05, 1997.74, -95.1195, -226.406, 94.508, 1984.9, 1987.14, 10.7679, 226.15, 1.50345, 0.550427, -3.11682e-08)

@@ -96,7 +96,8 @@ func shoot_with_raycast(raycast : RayCast3D):
 		var collision_normal = raycast.get_collision_normal()
 		if collided == null:
 			collided = raycast.get_collider() as CSGShape3D
-			generate_impact_effects(collided, collision_point, collision_normal)
+			if collided != null:
+				generate_impact_effects(collided, collision_point, collision_normal)
 			break
 		if collided != null:
 			generate_impact_effects(collided, collision_point, collision_normal)

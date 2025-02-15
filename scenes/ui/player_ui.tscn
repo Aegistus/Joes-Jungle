@@ -486,7 +486,7 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -67.0
 offset_right = 195.0
-offset_bottom = 44.0
+offset_bottom = 65.0
 grow_vertical = 2
 script = ExtResource("18_qi647")
 
@@ -610,3 +610,25 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("6_r7kat")
 theme_override_font_sizes/font_size = 8
 text = "100"
+
+[node name="Penetration" type="HBoxContainer" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Penetration"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
+theme_override_font_sizes/font_size = 8
+text = "Penetration"
+horizontal_alignment = 2
+
+[node name="PenetrationLabel" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Penetration"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_r7kat")
+theme_override_font_sizes/font_size = 8
+text = "1"
+horizontal_alignment = 2

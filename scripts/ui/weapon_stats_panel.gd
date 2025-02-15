@@ -10,6 +10,7 @@ extends Panel
 @onready var recoil_label = %RecoilLabel
 @onready var ergonomics_progress_bar = %ErgonomicsProgressBar
 @onready var ergonomics_label = %ErgonomicsLabel
+@onready var penetration_label = $VBoxContainer/Penetration/PenetrationLabel
 
 func _ready():
 	player.on_pickup_weapon.connect(show_panel)
@@ -24,6 +25,7 @@ func show_panel(gun : Gun):
 	recoil_label.text = str(gun.base_recoil)
 	ergonomics_progress_bar.value = gun.base_ergonomics
 	ergonomics_label.text = str(gun.base_ergonomics)
+	penetration_label.text = str(gun.base_penetration)
 	visible = true
 	await get_tree().create_timer(5).timeout
 	visible = false
