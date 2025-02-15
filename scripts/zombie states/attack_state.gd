@@ -11,6 +11,7 @@ extends ZombieState
 @onready var follow_state = $"../FollowState"
 @onready var dead_state = $"../DeadState"
 @onready var player = get_tree().get_first_node_in_group("player")
+@onready var slowbox = $"../../Slowbox"
 
 var exit_state = false
 
@@ -29,6 +30,7 @@ func process_state(delta):
 
 func exit():
 	animation_player.speed_scale = 1
+	slowbox.monitoring = false
 
 func check_transitions():
 	if zombie.current_health <= 0:
