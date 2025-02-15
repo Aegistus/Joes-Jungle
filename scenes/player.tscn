@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=54 format=4 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Texture2D" uid="uid://b1fvgtdrsmiic" path="res://assets/models/characters/Michael_Ch18_1001_Diffuse.png" id="2_55ldf"]
@@ -24,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://cs4bpkimumjf4" path="res://scenes/hurtbox.tscn" id="13_m6j14"]
 [ext_resource type="Script" path="res://scripts/hurtbox.gd" id="14_kudje"]
 [ext_resource type="AudioStream" uid="uid://cs0ymulhw0pkm" path="res://assets/audio/Gun Pickup_02.wav" id="17_c8ao6"]
-[ext_resource type="Script" path="res://scripts/player states/round_reload_start_state.gd" id="20_dmscc"]
 [ext_resource type="AudioStream" uid="uid://ctwo3bkilu81s" path="res://assets/audio/player_hit/Punch Impact (Flesh) 1.wav" id="21_ifr0a"]
 [ext_resource type="Script" path="res://scripts/player states/round_reload_loop_state.gd" id="21_neiou"]
 [ext_resource type="Script" path="res://scripts/player states/round_reload_end_state.gd" id="22_kpsrj"]
@@ -316,6 +315,35 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_ydneg")
 blend_point_1/pos = 1.0
 sync = true
 
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ugm6x"]
+filters = ["%GeneralSkeleton:Chest", "%GeneralSkeleton:Head", "%GeneralSkeleton:LeftHand", "%GeneralSkeleton:LeftIndexDistal", "%GeneralSkeleton:LeftIndexIntermediate", "%GeneralSkeleton:LeftIndexProximal", "%GeneralSkeleton:LeftLittleDistal", "%GeneralSkeleton:LeftLittleIntermediate", "%GeneralSkeleton:LeftLittleProximal", "%GeneralSkeleton:LeftLowerArm", "%GeneralSkeleton:LeftMiddleDistal", "%GeneralSkeleton:LeftMiddleIntermediate", "%GeneralSkeleton:LeftMiddleProximal", "%GeneralSkeleton:LeftRingDistal", "%GeneralSkeleton:LeftRingIntermediate", "%GeneralSkeleton:LeftRingProximal", "%GeneralSkeleton:LeftShoulder", "%GeneralSkeleton:LeftThumbDistal", "%GeneralSkeleton:LeftThumbMetacarpal", "%GeneralSkeleton:LeftThumbProximal", "%GeneralSkeleton:LeftUpperArm", "%GeneralSkeleton:Neck", "%GeneralSkeleton:RightHand", "%GeneralSkeleton:RightIndexDistal", "%GeneralSkeleton:RightIndexIntermediate", "%GeneralSkeleton:RightIndexProximal", "%GeneralSkeleton:RightLittleDistal", "%GeneralSkeleton:RightLittleIntermediate", "%GeneralSkeleton:RightLittleProximal", "%GeneralSkeleton:RightLowerArm", "%GeneralSkeleton:RightMiddleDistal", "%GeneralSkeleton:RightMiddleIntermediate", "%GeneralSkeleton:RightMiddleProximal", "%GeneralSkeleton:RightRingDistal", "%GeneralSkeleton:RightRingIntermediate", "%GeneralSkeleton:RightRingProximal", "%GeneralSkeleton:RightShoulder", "%GeneralSkeleton:RightThumbDistal", "%GeneralSkeleton:RightThumbMetacarpal", "%GeneralSkeleton:RightThumbProximal", "%GeneralSkeleton:RightUpperArm", "%GeneralSkeleton:Spine", "%GeneralSkeleton:UpperChest", "%GeneralSkeleton:mixamorig_LeftHandThumb4", "%GeneralSkeleton:mixamorig_RightHandThumb4"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xb1w8"]
+animation = &"Michael Rifle/aim idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n5k3y"]
+animation = &"Michael Rifle/walk forward"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_islrq"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_xb1w8")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_n5k3y")
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_prmxw"]
+animation = &"Michael Misc/single round reload loop"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_m5eay"]
+graph_offset = Vector2(-574.033, 92.9103)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_ugm6x")
+nodes/Blend2/position = Vector2(200, 280)
+nodes/Movement/node = SubResource("AnimationNodeBlendSpace1D_islrq")
+nodes/Movement/position = Vector2(-240, 120)
+nodes/ReloadAnimation/node = SubResource("AnimationNodeAnimation_prmxw")
+nodes/ReloadAnimation/position = Vector2(-280, 500)
+nodes/output/position = Vector2(480, 280)
+node_connections = [&"Blend2", 0, &"Movement", &"Blend2", 1, &"ReloadAnimation", &"output", 0, &"Blend2"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eakgp"]
 radius = 0.3
 
@@ -449,7 +477,7 @@ bones/14/rest = Transform3D(0.0438698, -0.367299, -0.929068, 0.0210869, 0.930662
 bones/14/enabled = true
 bones/14/position = Vector3(-0.00942335, 0.0247184, 0.00627236)
 bones/14/rotation = Quaternion(0.127625, -0.677829, 0.136476, 0.711079)
-bones/14/scale = Vector3(1.00058, 1.00049, 1.00015)
+bones/14/scale = Vector3(1.00061, 1.00053, 1.00008)
 bones/15/name = "LeftIndexProximal"
 bones/15/parent = 10
 bones/15/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0477935, 0.103369, 0.0150548)
@@ -617,7 +645,7 @@ bones/38/rest = Transform3D(0.0416084, 0.391496, 0.919239, -0.0174082, 0.920739,
 bones/38/enabled = true
 bones/38/position = Vector3(0.0105581, 0.0256821, 0.00739579)
 bones/38/rotation = Quaternion(0.138061, 0.677054, -0.144245, 0.70833)
-bones/38/scale = Vector3(1.00058, 1.00049, 1.00015)
+bones/38/scale = Vector3(1.00061, 1.00051, 1.00009)
 bones/39/name = "RightIndexProximal"
 bones/39/parent = 34
 bones/39/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.047548, 0.103439, 0.0154931)
@@ -814,6 +842,7 @@ bone_idx = 34
 transform = Transform3D(0.999421, -0.0326995, 0.00938384, 0.0326636, 0.999458, 0.00395178, -0.00950798, -0.00364298, 0.999948, -0.00428164, 0.000796795, 0.000735223)
 
 [node name="Pistol 92" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("2_scene")]
+visible = false
 
 [node name="Benelli_M4" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("5_y5erv")]
 
@@ -863,6 +892,13 @@ active = false
 tree_root = SubResource("AnimationNodeBlendSpace1D_ap2nd")
 anim_player = NodePath("../AnimationPlayer")
 parameters/blend_position = -0.164659
+
+[node name="RoundReloadAnimTree" type="AnimationTree" parent="PlayerModel/Model"]
+active = false
+tree_root = SubResource("AnimationNodeBlendTree_m5eay")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Blend2/blend_amount = 1.0
+parameters/Movement/blend_position = 0.00535476
 
 [node name="InteractRaycast" type="RayCast3D" parent="PlayerModel"]
 transform = Transform3D(1, -2.98428e-13, -3.82137e-15, -3.82137e-15, 6.44844e-08, -1, 2.13163e-14, 1.47523, 4.37114e-08, 1.79851e-08, 1, 0.331003)
@@ -941,10 +977,6 @@ movement_speed = 100
 [node name="EquippingState" type="Node" parent="MovementStateMachine"]
 unique_name_in_owner = true
 script = ExtResource("12_odjy0")
-
-[node name="RoundReloadStartState" type="Node" parent="MovementStateMachine"]
-unique_name_in_owner = true
-script = ExtResource("20_dmscc")
 
 [node name="RoundReloadLoopState" type="Node" parent="MovementStateMachine"]
 unique_name_in_owner = true

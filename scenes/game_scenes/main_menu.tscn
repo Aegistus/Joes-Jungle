@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://bn6a8dl5ya46g"]
+[gd_scene load_steps=67 format=4 uid="uid://bn6a8dl5ya46g"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_r7pwv"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="1_v6ggs"]
@@ -22,11 +22,9 @@
 [ext_resource type="Script" path="res://scripts/ui/flavor_text.gd" id="17_tj3us"]
 [ext_resource type="PackedScene" uid="uid://yttdwroyehgm" path="res://scenes/scenery/palm_tree_02.tscn" id="17_yyiik"]
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="18_nonfs"]
-[ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="19_jcydp"]
 [ext_resource type="PackedScene" uid="uid://ddhplb0t3aute" path="res://scenes/scenery/palm_tree_04.tscn" id="19_tvkrf"]
 [ext_resource type="Texture2D" uid="uid://c4mkkqmwt568m" path="res://assets/textures/Pistol Black Diffuse.png" id="20_iujni"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="21_alwyw"]
-[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="22_ry7h1"]
 [ext_resource type="AudioStream" uid="uid://qn21imdsbvoc" path="res://assets/audio/Revolver Shot_01.wav" id="23_g2qsg"]
 [ext_resource type="PackedScene" uid="uid://dhnwoljf7q2gf" path="res://assets/models/characters/Joe.glb" id="24_cs133"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="24_db8s1"]
@@ -1088,10 +1086,8 @@ autoplay = true
 bus = &"Music"
 script = ExtResource("12_r2v6h")
 
-[node name="Pistol 93" type="Node3D" parent="." node_paths=PackedStringArray("magazine")]
+[node name="Pistol 93" type="Node3D" parent="."]
 transform = Transform3D(-0.0217651, 0.0335601, 1.46696e-09, 0, -1.74846e-09, 0.04, 0.0335601, 0.0217651, 9.51381e-10, -0.892596, -0.0496777, -4.22267)
-script = ExtResource("19_jcydp")
-magazine = NodePath("gun model/Clip")
 
 [node name="gun model" type="Node3D" parent="Pistol 93"]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -1132,10 +1128,12 @@ collide_with_areas = true
 
 [node name="MuzzleFlash" type="Sprite3D" parent="Pistol 93/gun model"]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -7.37162, 2.47589, -0.492264)
+visible = false
 texture = ExtResource("21_alwyw")
 
 [node name="MuzzleFlash2" type="Sprite3D" parent="Pistol 93/gun model"]
 transform = Transform3D(-1, -8.9407e-08, 4.77396e-15, 0, 2.98023e-08, 1, -8.9407e-08, 1, -2.98023e-08, -7.37162, 2.47589, -0.492264)
+visible = false
 texture = ExtResource("21_alwyw")
 
 [node name="Clip" type="RigidBody3D" parent="Pistol 93/gun model"]
@@ -1155,9 +1153,6 @@ shape = SubResource("BoxShape3D_po52b")
 
 [node name="ShellEjector" type="Node3D" parent="Pistol 93"]
 transform = Transform3D(0.447431, 0.894319, -5.21541e-08, 0.214931, -0.107531, -0.970692, -0.868107, 0.434318, -0.24033, 2.25694, 0.370309, -1.70888)
-script = ExtResource("22_ry7h1")
-shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
-shell_scale = 1.0
 
 [node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="Pistol 93"]
 stream = SubResource("AudioStreamRandomizer_8vgvq")
@@ -1245,4 +1240,3 @@ spot_angle = 30.0
 [connection signal="pressed" from="UI/CanvasLayer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/VBoxContainer/LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="on_shoot" from="Pistol 93" to="Pistol 93/ShellEjector" method="eject"]

@@ -65,7 +65,6 @@ func _physics_process(delta):
 			current_interactable.interact_during(delta)
 		if Input.is_action_just_released("interact"):
 			current_interactable.interact_end()
-	
 	#debugging
 	if Input.is_action_just_pressed("show_mouse"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CONFINED_HIDDEN:
