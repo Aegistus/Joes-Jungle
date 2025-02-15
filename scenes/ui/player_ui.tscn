@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=28 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -13,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="6_r7kat"]
 [ext_resource type="Texture2D" uid="uid://b8aimspfiume" path="res://assets/UI/Shotgun Shells UI.png" id="6_uplld"]
 [ext_resource type="Script" path="res://scripts/ui/holstered_weapon_ui.gd" id="13_02gl4"]
+[ext_resource type="Texture2D" uid="uid://bwycpy1avy4mw" path="res://assets/UI/pistol_rounds_ui.png" id="14_p76ya"]
 [ext_resource type="FontFile" uid="uid://b4d3e84d08sjt" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer_Bold.otf" id="14_sq8fp"]
 [ext_resource type="Shader" path="res://assets/shaders/player_ui.gdshader" id="15_xu7e1"]
 [ext_resource type="Script" path="res://scripts/ui/damage_overlay.gd" id="16_taqfw"]
@@ -377,6 +378,19 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_uplld")
 expand_mode = 3
+
+[node name="RoundsIcon" type="TextureRect" parent="CanvasLayer/CurrentWeaponUI/AmmoPanelUI/Icons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_right = 4.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_p76ya")
+expand_mode = 1
 
 [node name="AmmoCount" type="Label" parent="CanvasLayer/CurrentWeaponUI/AmmoPanelUI"]
 layout_mode = 2

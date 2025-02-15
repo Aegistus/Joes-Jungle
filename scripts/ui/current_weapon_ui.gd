@@ -3,6 +3,7 @@ extends Panel
 @onready var weapon_name = $AmmoPanelUI/MarginContainer/WeaponName
 @onready var magazine_ui = $AmmoPanelUI/Icons/MagazineIcon
 @onready var shotgun_shells_ui = $AmmoPanelUI/Icons/ShellsIcon
+@onready var rounds_icon = $AmmoPanelUI/Icons/RoundsIcon
 @onready var ammo_count = $AmmoPanelUI/AmmoCount
 
 var last_weapon
@@ -23,11 +24,17 @@ func update_weapon_ui(weapon : Gun):
 	if weapon.gun_type == Gun.GunType.PISTOL or weapon.gun_type == Gun.GunType.RIFLE:
 		magazine_ui.visible = true
 		shotgun_shells_ui.visible = false
+		rounds_icon.visible = false
 		ammo_count.text = "X " + str((weapon.ammo as MagazineAmmo).current_mag_count)
-	elif weapon.gun_type == Gun.GunType.SHOTGUN or weapon.gun_type == Gun.GunType.REVOLVER:
+	elif weapon.gun_type == Gun.GunType.SHOTGUN:
 		magazine_ui.visible = false
 		shotgun_shells_ui.visible = true
+		rounds_icon.visible = false
 		ammo_count.text = "X " + str((weapon.ammo as SingleLoadAmmo).current_carried_ammo)
+	elif weapon.gun_type == Gun.GunType.REVOLVER:
+		magazine_ui.visible = false
+		shotgun_shells_ui.visible = false
+		rounds_icon.visible = true
 	weapon.ammo.on_reload.connect(update_carried)
 	update_carried(weapon.ammo.carried_count(), weapon.ammo.low_on_ammo())
 	last_weapon = weapon
