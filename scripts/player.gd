@@ -168,5 +168,5 @@ func insert_magazine():
 	if !reloading_state.magazine_inserted:
 		gun.insert_magazine()
 
-func play_insert_ammo_sound():
+func insert_round():
 	gun.insert_mag_audio_player.play()

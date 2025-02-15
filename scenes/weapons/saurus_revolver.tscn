@@ -1,18 +1,18 @@
 [gd_scene load_steps=35 format=4 uid="uid://h1to06bl3p65"]
 
-[ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="1_316qd"]
-[ext_resource type="Texture2D" uid="uid://65bjesvp374a" path="res://assets/textures/Low Poly Weapon.png" id="2_in2bq"]
-[ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_ro8ly"]
-[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="4_7e2n0"]
-[ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="5_fu1px"]
-[ext_resource type="AudioStream" uid="uid://cfb2seulox4dm" path="res://assets/audio/gunshots/Revolver Shot_02.wav" id="6_5pxdp"]
-[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/gunshots/Dry Shot_01.wav" id="7_y8qdu"]
-[ext_resource type="AudioStream" uid="uid://bimsx8ggdoj7t" path="res://assets/audio/reload_sounds/pistol_mag_out.wav" id="8_qhxsd"]
-[ext_resource type="AudioStream" uid="uid://ctjg85ji6od2m" path="res://assets/audio/reload_sounds/revolver_round_in.wav" id="9_a3n1b"]
-[ext_resource type="Script" path="res://scripts/weapons/single_load_ammo.gd" id="10_x4ggy"]
+[ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="1_63uvw"]
+[ext_resource type="Texture2D" uid="uid://65bjesvp374a" path="res://assets/textures/Low Poly Weapon.png" id="2_c3wmp"]
+[ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_t33mi"]
+[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="4_yfg50"]
+[ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="5_m42q5"]
+[ext_resource type="AudioStream" uid="uid://cfb2seulox4dm" path="res://assets/audio/gunshots/Revolver Shot_02.wav" id="6_f80n0"]
+[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/gunshots/Dry Shot_01.wav" id="7_bh52i"]
+[ext_resource type="AudioStream" uid="uid://bimsx8ggdoj7t" path="res://assets/audio/reload_sounds/pistol_mag_out.wav" id="8_820ws"]
+[ext_resource type="AudioStream" uid="uid://ctjg85ji6od2m" path="res://assets/audio/reload_sounds/revolver_round_in.wav" id="9_vpbks"]
+[ext_resource type="Script" path="res://scripts/weapons/single_load_ammo.gd" id="10_0gxvq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a50kn"]
-albedo_texture = ExtResource("2_in2bq")
+albedo_texture = ExtResource("2_c3wmp")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nyuhd"]
 resource_name = "Modern Weapon Pack Vol.01"
@@ -360,17 +360,17 @@ collision_use_scale = true
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1yqi7"]
 random_pitch = 1.1
 streams_count = 1
-stream_0/stream = ExtResource("6_5pxdp")
+stream_0/stream = ExtResource("6_f80n0")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bbg1m"]
 random_pitch = 1.1
 streams_count = 1
-stream_0/stream = ExtResource("9_a3n1b")
+stream_0/stream = ExtResource("9_vpbks")
 
-[node name="Revolver6Mill" type="Node3D"]
+[node name="SaurusRevolver" type="Node3D"]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0.110825, 0.0540304)
-script = ExtResource("1_316qd")
-gun_name = "Revolver 6 Million"
+script = ExtResource("1_63uvw")
+gun_name = "Saurus Revolver"
 min_damage = 9
 max_damage = 18
 gun_type = 1
@@ -436,18 +436,18 @@ transform = Transform3D(1.45519e-11, 0, 0.0005, 0, 0.0005, 0, -0.0005, 0, 1.4551
 
 [node name="MuzzleFlash" type="Sprite3D" parent="gun model/MuzzleFlash"]
 transform = Transform3D(-1, -2.32831e-09, 8.9407e-08, -6.69388e-10, 1, -4.65661e-10, -8.9407e-08, 2.32831e-10, -1, -1.58658, -0.159879, -0.175092)
-texture = ExtResource("3_ro8ly")
+texture = ExtResource("3_t33mi")
 
 [node name="MuzzleFlash2" type="Sprite3D" parent="gun model/MuzzleFlash"]
 transform = Transform3D(-1, -8.9407e-08, -8.73115e-10, -6.69388e-10, 3.0268e-08, 1, -8.9407e-08, 1, -2.95695e-08, -1.58658, -0.159879, -0.175092)
-texture = ExtResource("3_ro8ly")
+texture = ExtResource("3_t33mi")
 
 [node name="MuzzleFlashLight" type="OmniLight3D" parent="gun model/MuzzleFlash"]
 light_color = Color(0.922285, 0.920269, 7.70092e-07, 1)
 
 [node name="RaycastParent" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(-4.36306e-08, 0.0475597, 0.998868, -0.113203, -0.992448, 0.047254, 0.993572, -0.113075, 0.00538395, 2.38907, 6.41374, 0.389129)
+transform = Transform3D(0.00568489, 0.0344775, 0.999389, -0.113134, -0.992967, 0.0348995, 0.993564, -0.113264, -0.00174432, 2.38907, 6.28183, 1.54686)
 
 [node name="RayCast" type="RayCast3D" parent="RaycastParent"]
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)
@@ -462,11 +462,11 @@ libraries = {
 
 [node name="ShellEjector" type="Node3D" parent="."]
 transform = Transform3D(-0.376557, -0.891677, -0.251233, -0.0877085, -0.235662, 0.96787, -0.922232, 0.386494, 0.0105321, 2.25694, 0.370309, -1.70888)
-script = ExtResource("4_7e2n0")
+script = ExtResource("4_yfg50")
 shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
 shell_scale = 1.0
 
-[node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("5_fu1px")]
+[node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("5_m42q5")]
 process_material = SubResource("ParticleProcessMaterial_o6lox")
 
 [node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="."]
@@ -474,16 +474,16 @@ stream = SubResource("AudioStreamRandomizer_1yqi7")
 bus = &"Sound Effects"
 
 [node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("7_y8qdu")
+stream = ExtResource("7_bh52i")
 
 [node name="RemoveMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("8_qhxsd")
+stream = ExtResource("8_820ws")
 
 [node name="InsertMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_bbg1m")
 
 [node name="Ammo" type="Node" parent="."]
-script = ExtResource("10_x4ggy")
+script = ExtResource("10_0gxvq")
 max_carried_ammo = 36
 max_loaded_ammo = 6
 
