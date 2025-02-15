@@ -15,6 +15,7 @@ signal on_shoot
 @export var base_accuracy = 100
 @export var base_recoil = 0
 @export var base_ergonomics = 100
+@export var base_penetration = 1
 
 @onready var gun_audio_player = $GunAudioPlayer
 @onready var dry_shot_audio_player = $DryShotAudioPlayer
@@ -26,10 +27,11 @@ signal on_shoot
 
 const BULLET_IMPACT_TERRAIN = preload("res://scenes/particles/bullet_impact_terrain.tscn")
 const DEGREE_PER_ACCURACY_POINT = .05
-const RECOIL_ACCURACY_CHANGE = .1
+const RECOIL_ACCURACY_CHANGE = .3
 const RECOIL_RECOVERY_SPEED = 2.0
 const MIN_ACCURACY = -50
 const RECOIL_RECOVERY_DELAY = .1
+const PENETRATION_DAMAGE_REDUCTION = .5
 @onready var flesh_hit = preload("res://scenes/audio_scenes/flesh_hit_audio_source.tscn")
 @onready var wood_hit = preload("res://scenes/audio_scenes/wood_hit_audio_source.tscn")
 @onready var stone_hit = preload("res://scenes/audio_scenes/stone_hit_audio_source.tscn")
@@ -85,17 +87,27 @@ func shoot_with_raycast(raycast : RayCast3D):
 	var axis = Vector3(randf() * 2 - 1, 0, randf() * 2 - 1).normalized()
 	raycast.rotate_object_local(axis, radians_change)
 	
-	var collided = raycast.get_collider() as CollisionObject3D
-	var collision_point = raycast.get_collision_point()
-	var collision_normal = raycast.get_collision_normal()
-	if collided == null:
-		collided = raycast.get_collider() as CSGShape3D
-	if collided != null:
-		generate_impact_effects(collided, collision_point, collision_normal)
-		if collided.is_in_group("enemy"):
-			var rotation = (collision_point - global_position).normalized().inverse()
-			rotation.y += 180
-			collided.hit(randi_range(min_damage, max_damage), collision_point, rotation)
+	# shoot with penetration
+	var already_hit : Array[CollisionObject3D] = []
+	for i in base_penetration:
+		raycast.force_raycast_update()
+		var collided = raycast.get_collider() as CollisionObject3D
+		var collision_point = raycast.get_collision_point()
+		var collision_normal = raycast.get_collision_normal()
+		if collided == null:
+			collided = raycast.get_collider() as CSGShape3D
+			generate_impact_effects(collided, collision_point, collision_normal)
+			break
+		if collided != null:
+			generate_impact_effects(collided, collision_point, collision_normal)
+			if collided.is_in_group("enemy"):
+				var rotation = (collision_point - global_position).normalized().inverse()
+				rotation.y += 180
+				collided.hit(randi_range(min_damage, max_damage), collision_point, rotation)
+				already_hit.append(collided)
+				raycast.add_exception(collided)
+	for i in already_hit.size():
+		raycast.remove_exception(already_hit[i])
 	# apply recoil
 	current_accuracy -= base_recoil * RECOIL_ACCURACY_CHANGE
 	current_accuracy = clampf(current_accuracy, MIN_ACCURACY, base_accuracy)
