@@ -13,13 +13,8 @@ func _ready():
 func reload():
 	if current_carried_ammo == 0:
 		return
-	if max_loaded_ammo - current_ammo > current_carried_ammo:
-		current_ammo += current_carried_ammo
-		current_carried_ammo = 0
-	else:
-		var added = max_loaded_ammo - current_ammo
-		current_ammo += added
-		current_carried_ammo -= added
+	current_ammo += 1
+	current_carried_ammo -= 1
 	on_reload.emit(current_carried_ammo, low_on_ammo())
 
 func can_reload() -> bool:

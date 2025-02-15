@@ -9,6 +9,7 @@ extends PlayerState
 @export_category("Transition States")
 @export var idle_state: State
 @export var jogging_state: State
+@onready var round_reload_start_state = %RoundReloadStartState
 @onready var reloading_state = $"../ReloadingState"
 @onready var equipping_state = $"../EquippingState"
 @onready var player_model = $"../../PlayerModel"
@@ -50,7 +51,10 @@ func exit():
 func check_transitions():
 	if Input.is_action_just_pressed("reload"):
 		controlled_player.gun.shoot_end()
-		return reloading_state
+		if controlled_player.gun.ammo is SingleLoadAmmo:
+			return round_reload_start_state
+		else:
+			return reloading_state
 	if aim_state_machine.current_state is RelaxedState:
 		controlled_player.gun.shoot_end()
 		return jogging_state
