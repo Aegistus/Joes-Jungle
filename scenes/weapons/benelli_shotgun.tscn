@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/weapons/shotgun.gd" id="1_nnxu6"]
 [ext_resource type="Texture2D" uid="uid://b6ngkmijn43fr" path="res://assets/models/weapons/Bennelli_M4_0.png" id="2_gdv27"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_daph4"]
-[ext_resource type="AudioStream" uid="uid://i6aor6h1rbq7" path="res://assets/audio/Shotgun Shot_02.wav" id="4_uvq5q"]
+[ext_resource type="AudioStream" uid="uid://i6aor6h1rbq7" path="res://assets/audio/gunshots/benelli_m4_shot.wav" id="4_uvq5q"]
 [ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="5_ynbqx"]
 [ext_resource type="PackedScene" uid="uid://dmpg4pql6ql1n" path="res://scenes/particles/shotgun_shell_casing_particles.tscn" id="6_i2oo6"]
 [ext_resource type="Script" path="res://scripts/weapons/single_load_ammo.gd" id="8_d08jv"]
@@ -210,7 +210,7 @@ script = ExtResource("1_nnxu6")
 gun_name = "Benelli M4"
 min_damage = 3
 max_damage = 4
-gun_type = 2
+gun_type = 3
 base_accuracy = 30
 base_recoil = 80
 base_ergonomics = 50

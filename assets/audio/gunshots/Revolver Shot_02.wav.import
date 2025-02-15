@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cfb2seulox4dm"
+path="res://.godot/imported/Revolver Shot_02.wav-f7ea3bcae684b7f369ed58e34c620b9e.sample"
+
+[deps]
+
+source_file="res://assets/audio/gunshots/Revolver Shot_02.wav"
+dest_files=["res://.godot/imported/Revolver Shot_02.wav-f7ea3bcae684b7f369ed58e34c620b9e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

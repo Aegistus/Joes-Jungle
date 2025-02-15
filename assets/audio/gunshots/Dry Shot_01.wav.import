@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dbjk4oteguiys"
-path="res://.godot/imported/Dry Shot_01.wav-626e5e0ce184c535d9c1615065605788.sample"
+path="res://.godot/imported/Dry Shot_01.wav-cedf203b1ddf259ef2decfc1c97a82ef.sample"
 
 [deps]
 
-source_file="res://assets/audio/Dry Shot_01.wav"
-dest_files=["res://.godot/imported/Dry Shot_01.wav-626e5e0ce184c535d9c1615065605788.sample"]
+source_file="res://assets/audio/gunshots/Dry Shot_01.wav"
+dest_files=["res://.godot/imported/Dry Shot_01.wav-cedf203b1ddf259ef2decfc1c97a82ef.sample"]
 
 [params]
 

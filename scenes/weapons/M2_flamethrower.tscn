@@ -157,7 +157,7 @@ script = ExtResource("1_m7ukc")
 light_color = Color(0.900495, 0.485923, 0.150973, 1)
 gun_name = "M2 Flamethrower"
 suppressed = true
-gun_type = 1
+gun_type = 2
 
 [node name="gun_model" type="Node3D" parent="."]
 transform = Transform3D(-0.119894, -0.000693307, -0.00499201, -0.00058581, 0.119971, -0.00259239, 0.00500577, -0.00256574, -0.119868, 0.157082, 0.0176355, -0.13817)

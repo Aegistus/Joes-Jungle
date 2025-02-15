@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dekvy1ass6cmj"
-path="res://.godot/imported/Machine Gun Shot_03.wav-db97d994b5103feb20d6d93427ee97d5.sample"
+path="res://.godot/imported/m249_saw_shot.wav-ecfd7258e1146af12e337e8253b09988.sample"
 
 [deps]
 
-source_file="res://assets/audio/Machine Gun Shot_03.wav"
-dest_files=["res://.godot/imported/Machine Gun Shot_03.wav-db97d994b5103feb20d6d93427ee97d5.sample"]
+source_file="res://assets/audio/gunshots/m249_saw_shot.wav"
+dest_files=["res://.godot/imported/m249_saw_shot.wav-ecfd7258e1146af12e337e8253b09988.sample"]
 
 [params]
 

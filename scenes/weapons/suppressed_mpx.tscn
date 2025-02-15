@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_abj7n"]
 [ext_resource type="Material" uid="uid://bh6hpwnnast85" path="res://materials/mpx_mat.tres" id="2_5cyhq"]
 [ext_resource type="PackedScene" uid="uid://l0fpwhcilnwo" path="res://scenes/tactical_laser.tscn" id="3_cl058"]
-[ext_resource type="AudioStream" uid="uid://cp3o22eciexhn" path="res://assets/audio/Pistol Shot_18.wav" id="4_fxorh"]
-[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="5_r5uu6"]
+[ext_resource type="AudioStream" uid="uid://cp3o22eciexhn" path="res://assets/audio/gunshots/mpx_suppressed_shot.wav" id="4_fxorh"]
+[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/gunshots/Dry Shot_01.wav" id="5_r5uu6"]
 [ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="6_6kf06"]
 [ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_2hrnk"]
 [ext_resource type="AudioStream" uid="uid://ptskec0rcqxr" path="res://assets/audio/reload_sounds/M4_mag_out.wav" id="8_k1wor"]
@@ -653,7 +653,7 @@ gun_name = "MPX Suppressed"
 min_damage = 3
 max_damage = 6
 suppressed = true
-gun_type = 1
+gun_type = 2
 magazine = NodePath("gun model/Magazine")
 magazine_scale = 80.0
 base_accuracy = 75

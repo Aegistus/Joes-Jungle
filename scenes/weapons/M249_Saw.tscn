@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_gfnge"]
 [ext_resource type="Texture2D" uid="uid://vsw6o5ywt0l5" path="res://assets/models/weapons/M249_0.png" id="2_5pcpy"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_q1m5b"]
-[ext_resource type="AudioStream" uid="uid://dekvy1ass6cmj" path="res://assets/audio/Machine Gun Shot_03.wav" id="4_dw3qo"]
-[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="5_g0yt6"]
+[ext_resource type="AudioStream" uid="uid://dekvy1ass6cmj" path="res://assets/audio/gunshots/m249_saw_shot.wav" id="4_dw3qo"]
+[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/gunshots/Dry Shot_01.wav" id="5_g0yt6"]
 [ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="6_cx3u5"]
 [ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_ulh05"]
 [ext_resource type="AudioStream" uid="uid://khvutnhujlf0" path="res://assets/audio/reload_sounds/M249_mag_out.wav" id="8_o5ap2"]
@@ -290,7 +290,7 @@ shot_delay = 0.08
 gun_name = "M249 SAW"
 min_damage = 9
 max_damage = 15
-gun_type = 1
+gun_type = 2
 magazine = NodePath("gun model/Magazine")
 magazine_scale = 0.14
 base_accuracy = 75

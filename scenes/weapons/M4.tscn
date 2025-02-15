@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_w4ooq"]
 [ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="2_h6l83"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_e3ql5"]
-[ext_resource type="AudioStream" uid="uid://d0l6l1t32bd1m" path="res://assets/audio/Assault Rifle Shot_06.wav" id="4_p5q8i"]
-[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/Dry Shot_01.wav" id="5_0uiun"]
+[ext_resource type="AudioStream" uid="uid://d0l6l1t32bd1m" path="res://assets/audio/gunshots/m4_shot.wav" id="4_p5q8i"]
+[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/gunshots/Dry Shot_01.wav" id="5_0uiun"]
 [ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="6_q3a0l"]
 [ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_cbm1q"]
 [ext_resource type="AudioStream" uid="uid://ptskec0rcqxr" path="res://assets/audio/reload_sounds/M4_mag_out.wav" id="8_uh1aq"]
@@ -334,7 +334,7 @@ transform = Transform3D(0.0158893, 0.998441, 0.0535047, -0.126364, 0.0550876, -0
 script = ExtResource("1_w4ooq")
 shot_delay = 0.1
 gun_name = "M4"
-gun_type = 1
+gun_type = 2
 magazine = NodePath("gun model/Magazine")
 magazine_scale = 0.12
 base_accuracy = 80

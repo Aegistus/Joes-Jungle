@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://i6aor6h1rbq7"
-path="res://.godot/imported/Shotgun Shot_02.wav-e040b8515850dbf84ec8f855c5be6981.sample"
+path="res://.godot/imported/benelli_m4_shot.wav-5cdd144dc091a31a925e4ab11ad7abec.sample"
 
 [deps]
 
-source_file="res://assets/audio/Shotgun Shot_02.wav"
-dest_files=["res://.godot/imported/Shotgun Shot_02.wav-e040b8515850dbf84ec8f855c5be6981.sample"]
+source_file="res://assets/audio/gunshots/benelli_m4_shot.wav"
+dest_files=["res://.godot/imported/benelli_m4_shot.wav-5cdd144dc091a31a925e4ab11ad7abec.sample"]
 
 [params]
 

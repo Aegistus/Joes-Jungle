@@ -4,7 +4,6 @@ extends PlayerState
 @export var walk_speed := 200.0
 
 @onready var animation_player = $"../../PlayerModel/Model/AnimationPlayer" as AnimationPlayer
-@onready var round_reload_end_state = %RoundReloadEndState
 @onready var idle_state = %IdleState
 @onready var directional_reference = $"../../CameraMount/Camera3D/Directional_Reference"
 @onready var round_reload_anim_tree = $"../../PlayerModel/Model/RoundReloadAnimTree" as AnimationTree
