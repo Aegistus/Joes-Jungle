@@ -26,6 +26,7 @@ signal on_pickup_weapon(gun : Gun)
 
 var primary_weapon : Gun
 var secondary_weapon : Gun
+var build_gun : Gun
 var current_animation_tree
 var current_relaxed_idle_anim
 var current_relaxed_jog_anim
@@ -40,12 +41,15 @@ func _ready():
 	current_health = max_health
 	hurtbox.on_hurt.connect(take_damage)
 	hurtbox.on_slow.connect(apply_slow)
-	for i in gun_holder.get_child_count():
-		if gun_holder.get_child(i) is Gun:
-			if secondary_weapon == null:
-				secondary_weapon = gun_holder.get_child(i)
+	for gun in gun_holder.get_children():
+		if gun is Gun:
+			gun = gun as Gun
+			if gun.gun_type == Gun.GunType.BUILDGUN:
+				build_gun = gun
+			elif secondary_weapon == null:
+				secondary_weapon = gun
 			elif primary_weapon == null:
-				primary_weapon = gun_holder.get_child(i)
+				primary_weapon = gun
 	if primary_weapon:
 		primary_weapon.visible = false
 	if secondary_weapon:
@@ -101,14 +105,22 @@ func equip_weapon(new_gun: Gun) -> bool:
 	gun.visible = true
 	if new_gun.gun_type == Gun.GunType.PISTOL or new_gun.gun_type == Gun.GunType.REVOLVER:
 		rifle_anim_tree.active = false
+		build_anim_tree.active = false
 		current_animation_tree = pistol_anim_tree
 		current_relaxed_idle_anim = "Pistol Anim Pack/Relaxed Idle"
 		current_relaxed_jog_anim = "Pistol Anim Pack/Relaxed Run"
-	else:
+	elif new_gun.gun_type == Gun.GunType.RIFLE or new_gun.gun_type == Gun.GunType.SHOTGUN:
 		pistol_anim_tree.active = false
+		build_anim_tree.active = false
 		current_animation_tree = rifle_anim_tree
 		current_relaxed_idle_anim = "Michael Rifle/relaxed idle"
 		current_relaxed_jog_anim = "Michael Rifle/jog"
+	elif new_gun.gun_type == Gun.GunType.BUILDGUN:
+		pistol_anim_tree.active = false
+		rifle_anim_tree.active = false
+		current_animation_tree = build_anim_tree
+		current_relaxed_idle_anim = "Michael Build/build_idle"
+		current_relaxed_jog_anim = "Pistol Anim Pack/Relaxed Run"
 	gun.equip(self)
 	on_equip_weapon.emit(gun)
 	return true
@@ -117,6 +129,8 @@ func unequip_weapon():
 	if gun == null:
 		return
 	gun.unequip()
+	gun.visible = false
+	gun = null
 	rifle_anim_tree.active = false
 	pistol_anim_tree.active = false
 	current_animation_tree = build_anim_tree

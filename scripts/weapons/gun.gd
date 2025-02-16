@@ -1,7 +1,7 @@
 class_name Gun
 extends Node3D
 
-enum GunType { PISTOL, REVOLVER, RIFLE, SHOTGUN }
+enum GunType { PISTOL, REVOLVER, RIFLE, SHOTGUN, BUILDGUN }
 
 signal on_shoot
 
@@ -47,7 +47,7 @@ var ergonomics_multiplier := 0.0
 const MAG_DESPAWN_TIME = 60
 
 func _ready():
-	if !suppressed:
+	if %MuzzleFlash != null:
 		%MuzzleFlash.visible = false
 	recoil_recovery_timer = Timer.new()
 	add_child(recoil_recovery_timer)

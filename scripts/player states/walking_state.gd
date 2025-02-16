@@ -62,6 +62,9 @@ func check_transitions():
 	if Input.is_action_just_pressed("equip_secondary"):
 		equipping_state.weapon_index = 1
 		return equipping_state
+	elif Input.is_action_just_pressed("toggle_build_mode"):
+		equipping_state.weapon_index = 2
+		return equipping_state
 	var input = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	if input.length() == 0:
 		return idle_state

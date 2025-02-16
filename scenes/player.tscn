@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/player states/idle_state.gd" id="4_s0a0d"]
 [ext_resource type="AnimationLibrary" uid="uid://bhfy6y3yys725" path="res://assets/animations/libraries/Rifle Anims.res" id="5_a1aim"]
 [ext_resource type="AnimationLibrary" uid="uid://ckpcjepwfvaok" path="res://assets/animations/libraries/Michael Misc.res" id="5_cv0v5"]
+[ext_resource type="PackedScene" uid="uid://egau4xfffmk8" path="res://scenes/weapons/build_gun.tscn" id="5_hif0p"]
 [ext_resource type="AnimationLibrary" uid="uid://7frjr3q8mcex" path="res://assets/animations/libraries/Michael Pistol.res" id="6_7v3rf"]
 [ext_resource type="AnimationLibrary" uid="uid://bnlabos6fsi8u" path="res://assets/animations/libraries/Michael Build.res" id="6_ma1ls"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c4e5wj28gmxw3" path="res://assets/animations/trees/pistol_blend_tree.tres" id="6_o7fui"]
@@ -26,7 +27,6 @@
 [ext_resource type="AudioStream" uid="uid://cs0ymulhw0pkm" path="res://assets/audio/Gun Pickup_02.wav" id="17_c8ao6"]
 [ext_resource type="AudioStream" uid="uid://ctwo3bkilu81s" path="res://assets/audio/player_hit/Punch Impact (Flesh) 1.wav" id="21_ifr0a"]
 [ext_resource type="Script" path="res://scripts/player states/round_reload_loop_state.gd" id="21_neiou"]
-[ext_resource type="Script" path="res://scripts/player states/build_state.gd" id="22_a36gy"]
 [ext_resource type="AudioStream" uid="uid://bi5e4hbvdb4g8" path="res://assets/audio/player_hit/Punch Impact (Flesh) 2.wav" id="22_pmkco"]
 [ext_resource type="AudioStream" uid="uid://dkqodqi8cw4yb" path="res://assets/audio/player_hit/Punch Impact (Flesh) 3.wav" id="23_b2vfi"]
 
@@ -394,7 +394,7 @@ collision_layer = 64
 collision_mask = 67
 script = ExtResource("1_51t2t")
 turn_rate = 10.0
-directional_reference = NodePath("CameraMount/MainCamera/Directional_Reference")
+directional_reference = NodePath("CameraMount/MainCamera/DirectionalReference")
 animation_player = NodePath("PlayerModel/Model/AnimationPlayer")
 
 [node name="PlayerModel" type="Node3D" parent="."]
@@ -869,7 +869,7 @@ mesh = SubResource("ArrayMesh_f1ndv")
 skin = SubResource("Skin_avvwo")
 
 [node name="RightHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(0.803192, -0.587477, 0.09876, 0.548077, 0.663765, -0.508948, 0.233441, 0.462911, 0.855113, -0.484165, 1.33397, -0.119755)
+transform = Transform3D(0.803193, -0.587476, 0.0987599, 0.548075, 0.663766, -0.508949, 0.233441, 0.462912, 0.855113, -0.484165, 1.33397, -0.119755)
 bone_name = "RightHand"
 bone_idx = 34
 
@@ -878,13 +878,16 @@ transform = Transform3D(0.999421, -0.0326995, 0.00938384, 0.0326636, 0.999458, 0
 
 [node name="Baretta 92" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("4_p3ook")]
 
+[node name="BuildGun" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("5_hif0p")]
+transform = Transform3D(0.999421, 0.0326637, -0.00950795, -0.0326994, 0.999459, -0.00364301, 0.00938383, 0.00395173, 0.999948, 0.00426015, -0.000933528, -0.00069809)
+
 [node name="LeftHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(0.926956, -0.314584, -0.204424, -0.313747, -0.35125, -0.882148, 0.205706, 0.88185, -0.424293, 0.0620629, 0.943817, 0.538693)
+transform = Transform3D(0.926956, -0.314585, -0.204423, -0.313747, -0.351251, -0.882148, 0.205707, 0.881849, -0.424295, 0.0620627, 0.943817, 0.538692)
 bone_name = "LeftHand"
 bone_idx = 10
 
 [node name="BackpackBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(0.597482, -0.318709, -0.735826, -0.151841, 0.856056, -0.494077, 0.787375, 0.406931, 0.463085, -0.0416347, 1.23552, 0.0280498)
+transform = Transform3D(0.597483, -0.318709, -0.735826, -0.151841, 0.856056, -0.494077, 0.787375, 0.406931, 0.463086, -0.0416347, 1.23552, 0.0280499)
 bone_name = "UpperChest"
 bone_idx = 3
 
@@ -965,13 +968,14 @@ shape = SubResource("CapsuleShape3D_eakgp")
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
 script = ExtResource("2_mupqo")
 player = NodePath("..")
-directional_reference = NodePath("MainCamera/Directional_Reference")
+directional_reference = NodePath("MainCamera/DirectionalReference")
 
 [node name="MainCamera" type="Camera3D" parent="CameraMount" groups=["camera"]]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866026, 0, -0.866026, 0.5, 0, 10, 5)
 
-[node name="Directional_Reference" type="Node3D" parent="CameraMount/MainCamera"]
+[node name="DirectionalReference" type="Node3D" parent="CameraMount/MainCamera"]
+unique_name_in_owner = true
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.53553, 5, 3.53553)
 top_level = true
 
@@ -993,7 +997,7 @@ unique_name_in_owner = true
 script = ExtResource("7_vgdlh")
 movement_speed = 200.0
 animation_player = NodePath("../../PlayerModel/Model/AnimationPlayer")
-directional_reference = NodePath("../../CameraMount/MainCamera/Directional_Reference")
+directional_reference = NodePath("../../CameraMount/MainCamera/DirectionalReference")
 aim_state_machine = NodePath("../../AimStateMachine")
 rest_state = NodePath("../../AimStateMachine/RelaxedState")
 idle_state = NodePath("../IdleState")
@@ -1004,7 +1008,7 @@ unique_name_in_owner = true
 script = ExtResource("8_h5fvr")
 run_speed = 245.0
 animation_player = NodePath("../../PlayerModel/Model/AnimationPlayer")
-directional_reference = NodePath("../../CameraMount/MainCamera/Directional_Reference")
+directional_reference = NodePath("../../CameraMount/MainCamera/DirectionalReference")
 aim_state_machine = NodePath("../../AimStateMachine")
 idle_state = NodePath("../IdleState")
 walking_state = NodePath("../WalkingState")
@@ -1038,10 +1042,6 @@ relaxed_state = NodePath("../RelaxedState")
 unique_name_in_owner = true
 script = ExtResource("9_d0et7")
 aiming_state = NodePath("../AimingState")
-
-[node name="BuildState" type="Node" parent="AimStateMachine"]
-unique_name_in_owner = true
-script = ExtResource("22_a36gy")
 
 [node name="EquipAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("17_c8ao6")

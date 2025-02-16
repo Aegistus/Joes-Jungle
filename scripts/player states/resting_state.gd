@@ -17,5 +17,3 @@ func process_state_physics(delta):
 func check_transitions():
 	if Input.is_action_just_pressed("aim_weapon"):
 		return aiming_state
-	if Input.is_action_just_pressed("toggle_build_mode"):
-		return %BuildState
