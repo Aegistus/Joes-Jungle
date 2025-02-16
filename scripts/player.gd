@@ -12,8 +12,11 @@ signal on_pickup_weapon(gun : Gun)
 
 @onready var interact_raycast = $PlayerModel/InteractRaycast
 @onready var hurtbox = $Hurtbox
+
 @onready var pistol_anim_tree = $PlayerModel/Model/PistolAnimTree
 @onready var rifle_anim_tree = $PlayerModel/Model/RifleAnimTree
+@onready var build_anim_tree = $PlayerModel/Model/BuildAnimTree
+
 @onready var gun_holder = $PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder
 @onready var left_hand_bone = $PlayerModel/Model/Armature/GeneralSkeleton/LeftHandBone
 @onready var player_model = $PlayerModel
@@ -109,6 +112,16 @@ func equip_weapon(new_gun: Gun) -> bool:
 	gun.equip(self)
 	on_equip_weapon.emit(gun)
 	return true
+
+func unequip_weapon():
+	if gun == null:
+		return
+	gun.unequip()
+	rifle_anim_tree.active = false
+	pistol_anim_tree.active = false
+	current_animation_tree = build_anim_tree
+	current_animation_tree.active = true
+	current_relaxed_idle_anim = "Michael Build/build_idle"
 
 func pickup_weapon(new_gun: Gun):
 	if primary_weapon != null and secondary_weapon != null:

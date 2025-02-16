@@ -17,9 +17,6 @@ extends PlayerState
 func enter():
 	super()
 	controlled_player.current_animation_tree.active = true
-	#var tween = get_tree().create_tween()
-	#tween.tween_property(controlled_player.primary_weapon, "ergonomics_multiplier", 1, 1)
-	#tween.tween_property(controlled_player.secondary_weapon, "ergonomics_multiplier", 1, 1)
 	if controlled_player.primary_weapon != null:
 		controlled_player.primary_weapon.ergonomics_multiplier = 1
 	if controlled_player.secondary_weapon != null:
@@ -44,9 +41,6 @@ func process_state_physics(delta):
 			controlled_player.gun.shoot_end()
 
 func exit():
-	#var tween = get_tree().create_tween()
-	#tween.tween_property(controlled_player.primary_weapon, "ergonomics_multiplier", 0, 1)
-	#tween.tween_property(controlled_player.secondary_weapon, "ergonomics_multiplier", 0, 1)
 	if controlled_player.primary_weapon != null:
 		controlled_player.primary_weapon.ergonomics_multiplier = 0
 	if controlled_player.secondary_weapon != null:
