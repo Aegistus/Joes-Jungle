@@ -8,7 +8,6 @@ signal on_shoot
 @export var gun_name : String
 @export var min_damage = 6
 @export var max_damage = 9
-@export var suppressed = false
 @export var gun_type: GunType
 @export var magazine : Node3D
 @export var magazine_scale = 1.0

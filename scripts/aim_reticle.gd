@@ -10,7 +10,7 @@ extends Node3D
 const ACCURACY_DISTANCE_MAX = 3.0
 
 func _process(delta):
-	if aim_state_machine.current_state is AimingState or aim_state_machine.current_state is BuildState:
+	if aim_state_machine.current_state is AimingState:
 		if aim_state_machine.current_state.intersection != null:
 			position = aim_state_machine.current_state.intersection.position
 			rotation = player_model.rotation

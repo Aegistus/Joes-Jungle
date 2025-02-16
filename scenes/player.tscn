@@ -336,7 +336,6 @@ blend_point_1/pos = 1.0
 animation = &"Michael Misc/single round reload loop"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_m5eay"]
-graph_offset = Vector2(-470.421, 329.286)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_ugm6x")
 nodes/Blend2/position = Vector2(200, 280)
 nodes/Movement/node = SubResource("AnimationNodeBlendSpace1D_islrq")
@@ -374,7 +373,7 @@ blend_point_4/node = SubResource("AnimationNodeAnimation_o3ty7")
 blend_point_4/pos = Vector2(0, -1)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ytwm2"]
-graph_offset = Vector2(-566.822, -32.4523)
+graph_offset = Vector2(-100, 0)
 nodes/WalkSpeed/node = SubResource("AnimationNodeBlendSpace2D_wrpj1")
 nodes/WalkSpeed/position = Vector2(-100, 40)
 node_connections = [&"output", 0, &"WalkSpeed"]
@@ -869,7 +868,7 @@ mesh = SubResource("ArrayMesh_f1ndv")
 skin = SubResource("Skin_avvwo")
 
 [node name="RightHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(0.803193, -0.587476, 0.0987599, 0.548075, 0.663766, -0.508949, 0.233441, 0.462912, 0.855113, -0.484165, 1.33397, -0.119755)
+transform = Transform3D(0.803192, -0.587477, 0.09876, 0.548077, 0.663765, -0.508948, 0.233441, 0.462911, 0.855113, -0.484165, 1.33397, -0.119755)
 bone_name = "RightHand"
 bone_idx = 34
 
@@ -882,12 +881,12 @@ transform = Transform3D(0.999421, -0.0326995, 0.00938384, 0.0326636, 0.999458, 0
 transform = Transform3D(0.999421, 0.0326637, -0.00950795, -0.0326994, 0.999459, -0.00364301, 0.00938383, 0.00395173, 0.999948, 0.00426015, -0.000933528, -0.00069809)
 
 [node name="LeftHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(0.926956, -0.314585, -0.204423, -0.313747, -0.351251, -0.882148, 0.205707, 0.881849, -0.424295, 0.0620627, 0.943817, 0.538692)
+transform = Transform3D(0.926956, -0.314584, -0.204424, -0.313747, -0.35125, -0.882148, 0.205706, 0.88185, -0.424293, 0.0620629, 0.943817, 0.538693)
 bone_name = "LeftHand"
 bone_idx = 10
 
 [node name="BackpackBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(0.597483, -0.318709, -0.735826, -0.151841, 0.856056, -0.494077, 0.787375, 0.406931, 0.463086, -0.0416347, 1.23552, 0.0280499)
+transform = Transform3D(0.597482, -0.318709, -0.735826, -0.151841, 0.856056, -0.494077, 0.787375, 0.406931, 0.463085, -0.0416347, 1.23552, 0.0280498)
 bone_name = "UpperChest"
 bone_idx = 3
 

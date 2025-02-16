@@ -54,6 +54,7 @@ plant=""
 material_flesh=""
 material_wood=""
 material_stone=""
+aim_reticle=""
 
 [input]
 

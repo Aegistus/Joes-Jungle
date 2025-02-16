@@ -15,7 +15,7 @@ size = Vector3(0.1, 0.1, 0.1)
 [sub_resource type="PrismMesh" id="PrismMesh_ujm0x"]
 size = Vector3(0.1, 0.1, 0.1)
 
-[node name="AimReticle" type="Node3D"]
+[node name="AimReticle" type="Node3D" groups=["aim_reticle"]]
 script = ExtResource("1_q2hic")
 
 [node name="Base" type="MeshInstance3D" parent="."]

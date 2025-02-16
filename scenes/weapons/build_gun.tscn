@@ -1,14 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://egau4xfffmk8"]
+[gd_scene load_steps=10 format=3 uid="uid://egau4xfffmk8"]
 
 [ext_resource type="Script" path="res://scripts/weapons/build_gun.gd" id="1_s4m0f"]
+[ext_resource type="AudioStream" uid="uid://cfb2seulox4dm" path="res://assets/audio/gunshots/Revolver Shot_02.wav" id="2_n8kbh"]
+[ext_resource type="Script" path="res://scripts/weapons/magazine_ammo.gd" id="2_ybmnv"]
+[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/gunshots/Dry Shot_01.wav" id="3_sqhos"]
+[ext_resource type="AudioStream" uid="uid://bimsx8ggdoj7t" path="res://assets/audio/reload_sounds/pistol_mag_out.wav" id="4_t0ugo"]
+[ext_resource type="AudioStream" uid="uid://ctjg85ji6od2m" path="res://assets/audio/reload_sounds/revolver_round_in.wav" id="5_x3h1q"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_f4r63"]
 radius = 0.1
 height = 0.2
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6obpo"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("2_n8kbh")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_apk84"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("5_x3h1q")
+
 [node name="BuildGun" type="Node3D"]
 script = ExtResource("1_s4m0f")
+gun_name = "Build Emplacement"
 gun_type = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_f4r63")
+
+[node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_6obpo")
+bus = &"Sound Effects"
+
+[node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_sqhos")
+
+[node name="RemoveMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_t0ugo")
+
+[node name="InsertMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_apk84")
+
+[node name="Ammo" type="Node" parent="."]
+script = ExtResource("2_ybmnv")
