@@ -6,7 +6,7 @@ extends PlayerState
 @onready var idle_state = $"../IdleState"
 @onready var animation_player = $"../../PlayerModel/Model/AnimationPlayer"
 @onready var reload_anim_tree = $"../../PlayerModel/Model/ReloadAnimTree"
-@onready var directional_reference = $"../../CameraMount/Camera3D/Directional_Reference"
+@onready var directional_reference = %DirectionalReference
 @onready var aim_state_machine = $"../../AimStateMachine"
 @onready var relaxed_state = $"../../AimStateMachine/RelaxedState"
 @onready var aiming_state = $"../../AimStateMachine/AimingState"

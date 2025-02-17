@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=60 format=4 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Texture2D" uid="uid://b1fvgtdrsmiic" path="res://assets/models/characters/Michael_Ch18_1001_Diffuse.png" id="2_55ldf"]
@@ -23,7 +23,6 @@
 [ext_resource type="Script" path="res://scripts/player states/reloading_state.gd" id="9_q5wgv"]
 [ext_resource type="Script" path="res://scripts/player states/equipping_state.gd" id="12_odjy0"]
 [ext_resource type="PackedScene" uid="uid://cs4bpkimumjf4" path="res://scenes/hurtbox.tscn" id="13_m6j14"]
-[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="14_kudje"]
 [ext_resource type="AudioStream" uid="uid://cs0ymulhw0pkm" path="res://assets/audio/Gun Pickup_02.wav" id="17_c8ao6"]
 [ext_resource type="AudioStream" uid="uid://ctwo3bkilu81s" path="res://assets/audio/player_hit/Punch Impact (Flesh) 1.wav" id="21_ifr0a"]
 [ext_resource type="Script" path="res://scripts/player states/round_reload_loop_state.gd" id="21_neiou"]
@@ -1049,7 +1048,6 @@ stream = ExtResource("17_c8ao6")
 stream = SubResource("AudioStreamRandomizer_tsakp")
 
 [node name="Hurtbox" parent="." instance=ExtResource("13_m6j14")]
-script = ExtResource("14_kudje")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 1.57123, 0)

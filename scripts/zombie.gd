@@ -12,6 +12,7 @@ extends CharacterBody3D
 @onready var blood_particle_scene = preload("res://scenes/particles/blood_particles.tscn")
 
 var current_health
+var target_barricade
 
 func _ready():
 	current_health = starting_health
@@ -35,3 +36,10 @@ func quick_hit(damage):
 	current_health -= damage
 	if current_health <= 0:
 		current_health = 0
+
+func barricade_detected(area : Area3D):
+	target_barricade = area
+
+func barricade_removed(area : Area3D):
+	if area == target_barricade:
+		target_barricade = null

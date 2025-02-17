@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://0pbg6jpb0fmj"]
+[gd_scene load_steps=10 format=4 uid="uid://0pbg6jpb0fmj"]
 
 [ext_resource type="Script" path="res://scripts/emplacements/barricade_emplacement.gd" id="1_o24el"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="1_xrn8h"]
+[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="3_887t6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yalxg"]
 albedo_texture = ExtResource("1_xrn8h")
@@ -47,6 +48,9 @@ shadow_mesh = SubResource("ArrayMesh_vq0uu")
 [sub_resource type="BoxShape3D" id="BoxShape3D_548x4"]
 size = Vector3(3.3, 0.8, 0.45)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mdsa6"]
+size = Vector3(3.35, 0.75, 0.55)
+
 [node name="BarricadeEmplacement" type="Node3D" node_paths=PackedStringArray("models")]
 script = ExtResource("1_o24el")
 models = [NodePath("SM_Env_Sandbag_Wall_01")]
@@ -57,9 +61,23 @@ material_override = SubResource("StandardMaterial3D_yalxg")
 mesh = SubResource("ArrayMesh_xhfti")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="Area3D" parent="."]
+collision_layer = 129
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78814e-07, 0.45, -0.025)
 shape = SubResource("BoxShape3D_548x4")
 disabled = true
+
+[node name="Hurtbox" type="Area3D" parent="." groups=["hurtbox"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.817832, 0)
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("3_887t6")
+
+[node name="HurtboxCollision" type="CollisionShape3D" parent="Hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0749999, -0.425, -0.025)
+shape = SubResource("BoxShape3D_mdsa6")
+
+[connection signal="on_hurt" from="Hurtbox" to="." method="damage"]

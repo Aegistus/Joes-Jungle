@@ -43,6 +43,8 @@ func check_transitions():
 		return dead_state
 	elif player == null:
 		return no_target_state
+	elif zombie.target_barricade != null:
+		return attack_state
 	elif zombie.global_position.distance_squared_to(player.global_position) < pow(attack_distance, 2.0):
 		return attack_state
 	else:

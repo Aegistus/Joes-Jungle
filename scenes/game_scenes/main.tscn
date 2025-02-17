@@ -142,7 +142,7 @@ navigation_mesh = SubResource("NavigationMesh_7od6u")
 
 [node name="map" type="Node3D" parent="NavigationRegion3D"]
 
-[node name="floor" type="Node3D" parent="NavigationRegion3D/map" groups=["material_stone"]]
+[node name="floor" type="Node3D" parent="NavigationRegion3D/map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 top_level = true
 metadata/_edit_lock_ = true
