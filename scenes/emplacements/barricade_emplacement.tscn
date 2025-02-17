@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://0pbg6jpb0fmj"]
 
-[ext_resource type="Script" path="res://scripts/Emplacements/barricade_emplacement.gd" id="1_o24el"]
+[ext_resource type="Script" path="res://scripts/emplacements/barricade_emplacement.gd" id="1_o24el"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="1_xrn8h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yalxg"]

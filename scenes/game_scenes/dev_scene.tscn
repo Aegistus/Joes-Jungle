@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://d1otweixyixi3"]
+[gd_scene load_steps=35 format=4 uid="uid://d1otweixyixi3"]
 
 [ext_resource type="Script" path="res://scripts/game_level.gd" id="1_jlul2"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_veg6g"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dsxmj3jw6gqcd" path="res://scenes/shop_revolver.tscn" id="22_ec5ts"]
 [ext_resource type="PackedScene" uid="uid://buup8044hp4ox" path="res://scenes/shop_smg.tscn" id="22_qt2uy"]
 [ext_resource type="PackedScene" uid="uid://d4jtl2hk346is" path="res://scenes/ammo_box.tscn" id="23_kq4uc"]
+[ext_resource type="PackedScene" uid="uid://bq78d2teut4yk" path="res://scenes/emplacements/claymore_mine.tscn" id="23_y2py0"]
 [ext_resource type="PackedScene" uid="uid://c0j4glofdqgpk" path="res://scenes/fruit_punch_bowl.tscn" id="25_1ethd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
@@ -783,5 +784,8 @@ item_cost = 0
 [node name="ShopRevolver" parent="." instance=ExtResource("22_ec5ts")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.53446, -0.100001, -4.49313)
 item_cost = 0
+
+[node name="ClaymoreMine" parent="." instance=ExtResource("23_y2py0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.1, -5.2)
 
 [connection signal="timeout" from="ZombieSpawnPoints/WaveTimer" to="ZombieSpawnPoints" method="_on_timer_timeout"]
