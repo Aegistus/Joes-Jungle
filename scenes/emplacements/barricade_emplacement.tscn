@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://0pbg6jpb0fmj"]
+[gd_scene load_steps=8 format=4 uid="uid://0pbg6jpb0fmj"]
 
-[ext_resource type="Script" path="res://scripts/emplacement.gd" id="1_it87j"]
+[ext_resource type="Script" path="res://scripts/Emplacements/barricade_emplacement.gd" id="1_o24el"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="1_xrn8h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yalxg"]
@@ -44,8 +44,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vq0uu")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_548x4"]
+size = Vector3(3.3, 0.8, 0.45)
+
 [node name="BarricadeEmplacement" type="Node3D" node_paths=PackedStringArray("models")]
-script = ExtResource("1_it87j")
+script = ExtResource("1_o24el")
 models = [NodePath("SM_Env_Sandbag_Wall_01")]
 
 [node name="SM_Env_Sandbag_Wall_01" type="MeshInstance3D" parent="."]
@@ -53,3 +56,10 @@ transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_yalxg")
 mesh = SubResource("ArrayMesh_xhfti")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78814e-07, 0.45, -0.025)
+shape = SubResource("BoxShape3D_548x4")
+disabled = true

@@ -14,10 +14,11 @@ func _ready():
 	currently_selected_build = all_builds[0]
 
 func shoot():
-	var emplacement = BARRICADE_EMPLACEMENT.instantiate()
+	var emplacement = BARRICADE_EMPLACEMENT.instantiate() as Emplacement
 	get_tree().root.add_child(emplacement)
 	emplacement.global_position = reticle.global_position
 	emplacement.global_rotation = current_emplacement_ghost.global_rotation
+	emplacement.place()
 
 func equip(player : Node3D):
 	is_equipped = true
@@ -39,7 +40,7 @@ func _physics_process(delta):
 			current_emplacement_ghost.global_position = reticle.global_position
 
 func spawn_emplacement_ghost():
-	current_emplacement_ghost = currently_selected_build.instantiate()
+	current_emplacement_ghost = currently_selected_build.instantiate() as Emplacement
 	player.add_child(current_emplacement_ghost)
 	current_emplacement_ghost.global_position = reticle.global_position
 	current_emplacement_ghost.make_transparent()
