@@ -5,7 +5,7 @@ const BARRICADE_EMPLACEMENT = preload("res://scenes/emplacements/barricade_empla
 
 var all_builds = [BARRICADE_EMPLACEMENT, ]
 var currently_selected_build
-var current_emplacement_ghost
+var current_emplacement_ghost : Node3D
 var is_equipped = false
 var player : Player
 var reticle
@@ -17,6 +17,7 @@ func shoot():
 	var emplacement = BARRICADE_EMPLACEMENT.instantiate()
 	get_tree().root.add_child(emplacement)
 	emplacement.global_position = reticle.global_position
+	emplacement.global_rotation = current_emplacement_ghost.global_rotation
 
 func equip(player : Node3D):
 	is_equipped = true
@@ -42,3 +43,9 @@ func spawn_emplacement_ghost():
 	player.add_child(current_emplacement_ghost)
 	current_emplacement_ghost.global_position = reticle.global_position
 	current_emplacement_ghost.make_transparent()
+
+func rotate_right():
+	current_emplacement_ghost.rotate_object_local(Vector3.UP, PI/4.0)
+
+func rotate_left():
+	current_emplacement_ghost.rotate_object_local(Vector3.UP, -PI/4.0)

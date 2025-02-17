@@ -47,6 +47,13 @@ func exit():
 		controlled_player.secondary_weapon.ergonomics_multiplier = 0
 
 func check_transitions():
+	if controlled_player.gun.gun_type == Gun.GunType.BUILDGUN:
+		if Input.is_action_just_pressed("build_rotate_left"):
+			controlled_player.gun.rotate_left()
+			return null
+		if Input.is_action_just_pressed("build_rotate_right"):
+			controlled_player.gun.rotate_right()
+			return null
 	if Input.is_action_just_pressed("reload"):
 		controlled_player.gun.shoot_end()
 		if controlled_player.gun.ammo is SingleLoadAmmo:

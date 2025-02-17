@@ -30,6 +30,13 @@ func process_state_physics(delta):
 	animation_player.play(controlled_player.current_relaxed_jog_anim)
 
 func check_transitions():
+	if controlled_player.gun.gun_type == Gun.GunType.BUILDGUN:
+		if Input.is_action_just_pressed("build_rotate_left"):
+			controlled_player.gun.rotate_left()
+			return null
+		if Input.is_action_just_pressed("build_rotate_right"):
+			controlled_player.gun.rotate_right()
+			return null
 	if Input.is_action_just_pressed("reload"):
 		if controlled_player.gun.ammo is SingleLoadAmmo:
 			return round_reload_loop_state

@@ -31,6 +31,13 @@ func process_state_physics(delta):
 			controlled_player.gun.shoot_end()
 
 func check_transitions():
+	if controlled_player.gun.gun_type == Gun.GunType.BUILDGUN:
+		if Input.is_action_just_pressed("build_rotate_left"):
+			controlled_player.gun.rotate_left()
+			return null
+		if Input.is_action_just_pressed("build_rotate_right"):
+			controlled_player.gun.rotate_right()
+			return null
 	if Input.is_action_pressed("move_forward") or Input.is_action_pressed("move_backward") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 		if aim_state_machine.current_state is RelaxedState:
 			controlled_player.gun.shoot_end()
