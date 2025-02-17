@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://0pbg6jpb0fmj"]
+[gd_scene load_steps=7 format=4 uid="uid://0pbg6jpb0fmj"]
 
+[ext_resource type="Script" path="res://scripts/emplacement.gd" id="1_it87j"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="1_xrn8h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yalxg"]
@@ -43,7 +44,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vq0uu")
 
-[node name="BarricadeEmplacement" type="Node3D"]
+[node name="BarricadeEmplacement" type="Node3D" node_paths=PackedStringArray("models")]
+script = ExtResource("1_it87j")
+models = [NodePath("SM_Env_Sandbag_Wall_01")]
 
 [node name="SM_Env_Sandbag_Wall_01" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)

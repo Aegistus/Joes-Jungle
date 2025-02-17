@@ -41,3 +41,4 @@ func spawn_emplacement_ghost():
 	current_emplacement_ghost = currently_selected_build.instantiate()
 	player.add_child(current_emplacement_ghost)
 	current_emplacement_ghost.global_position = reticle.global_position
+	current_emplacement_ghost.make_transparent()
