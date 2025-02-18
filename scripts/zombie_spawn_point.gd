@@ -2,6 +2,7 @@ extends Node3D
 
 @export var initial_delay = 3.0
 @export var wave_delay = 30.0
+@export var initial_zombie_count = 20
 @export var wave_count_increase = 5
 @export var fast_zombie_delay = 120
 @export var tank_zombie_delay = 300
@@ -12,7 +13,7 @@ extends Node3D
 @onready var spawn_timer = $SpawnTimer
 @onready var spawn_point_parent = $SpawnPointParent
 
-var current_wave_spawn_count = 20
+@onready var current_wave_spawn_count = initial_zombie_count
 var all_spawn_points
 var spawn_point_count
 

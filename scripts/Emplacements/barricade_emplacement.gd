@@ -4,11 +4,14 @@ extends Emplacement
 @export var max_health := 100.0
 
 @onready var collision_shape_3d = $StaticBody3D/CollisionShape3D
+@onready var hurtbox = $Hurtbox
 
 var current_health
 
 func _ready():
 	current_health = max_health
+	hurtbox.monitoring = true
+	hurtbox.monitorable = true
 
 func place():
 	collision_shape_3d.disabled = false

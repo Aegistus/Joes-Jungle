@@ -214,10 +214,12 @@ shadow_mesh = SubResource("ArrayMesh_m4eqg")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dnmji"]
 points = PackedVector3Array(-1, 0, 1.3, 1, 0, 0.2, 1, 0, -0.2, -1, 0, -1.3, -1, 1, 1.3, 1, 1, 0.2, 1, 1, -0.2, -1, 1, -1.3)
 
-[node name="ClaymoreMine" type="Node3D"]
+[node name="ClaymoreMine" type="Node3D" node_paths=PackedStringArray("models")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00977507)
 script = ExtResource("1_y0hqb")
 field_of_fire_degrees = 60.0
+base_penetration = 6
+models = [NodePath("Model/Claymore"), NodePath("Model/Cube"), NodePath("Model/Cube_001"), NodePath("Model/Cube_002"), NodePath("Model/Cube_003"), NodePath("LaserSight/Laser_A_Left"), NodePath("LaserSight2/Laser_A_Left")]
 
 [node name="Model" type="Node3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.13884, 0)
@@ -334,6 +336,30 @@ target_position = Vector3(0, -10, 0)
 collision_mask = 195
 
 [node name="RayCast3D10" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D11" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D12" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D13" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D14" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D15" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D16" type="RayCast3D" parent="Raycasts"]
 target_position = Vector3(0, -10, 0)
 collision_mask = 195
 
