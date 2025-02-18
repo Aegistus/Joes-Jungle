@@ -2,25 +2,35 @@ class_name BuildGun
 extends Gun
 
 const BARRICADE_EMPLACEMENT = preload("res://scenes/emplacements/barricade_emplacement.tscn")
+const BARRICADE_GHOST = preload("res://scenes/emplacements/barricade_ghost.tscn")
 const CLAYMORE_MINE = preload("res://scenes/emplacements/claymore_mine.tscn")
+const CLAYMORE_GHOST = preload("res://scenes/emplacements/claymore_ghost.tscn")
 
 var all_builds = [BARRICADE_EMPLACEMENT, CLAYMORE_MINE]
+var build_blueprint_dict = {
+	BARRICADE_EMPLACEMENT: BARRICADE_GHOST,
+	CLAYMORE_MINE: CLAYMORE_GHOST,
+}
 var currently_selected_build
 var current_index = 0
 var current_emplacement_ghost : Node3D
 var is_equipped = false
 var player : Player
 var reticle
+var overlapping = false
 
 func _ready():
 	currently_selected_build = all_builds[current_index]
 
 func shoot():
-	var emplacement = currently_selected_build.instantiate() as Emplacement
-	get_tree().root.add_child(emplacement)
-	emplacement.global_position = reticle.global_position
-	emplacement.global_rotation = current_emplacement_ghost.global_rotation
-	emplacement.place()
+	if current_emplacement_ghost.valid_placement:
+		var emplacement = currently_selected_build.instantiate() as Emplacement
+		get_tree().root.add_child(emplacement)
+		emplacement.global_position = reticle.global_position
+		emplacement.global_rotation = current_emplacement_ghost.global_rotation
+		emplacement.place()
+	else:
+		print("INVALID PLACEMENT")
 
 func equip(player : Node3D):
 	is_equipped = true
@@ -48,10 +58,9 @@ func _physics_process(delta):
 			select_new_emplacement()
 
 func spawn_emplacement_ghost():
-	current_emplacement_ghost = currently_selected_build.instantiate() as Emplacement
+	current_emplacement_ghost = build_blueprint_dict[currently_selected_build].instantiate() as EmplacementGhost
 	player.add_child(current_emplacement_ghost)
 	current_emplacement_ghost.global_position = reticle.global_position
-	current_emplacement_ghost.make_transparent()
 
 func rotate_right():
 	current_emplacement_ghost.rotate_object_local(Vector3.UP, PI/4.0)

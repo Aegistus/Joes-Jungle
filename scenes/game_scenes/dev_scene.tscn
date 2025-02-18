@@ -390,7 +390,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.75, 0, 12)
 
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 script = ExtResource("21_0spru")
-initial_delay = 5.0
+initial_delay = 1000.0
 initial_zombie_count = 60
 
 [node name="WaveTimer" type="Timer" parent="ZombieSpawnPoints"]

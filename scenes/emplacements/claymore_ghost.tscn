@@ -1,13 +1,13 @@
-[gd_scene load_steps=43 format=4 uid="uid://bq78d2teut4yk"]
+[gd_scene load_steps=42 format=4 uid="uid://cb58bwdr1dq3w"]
 
-[ext_resource type="Material" uid="uid://qfqe5n8ybnlr" path="res://materials/claymore_mat.tres" id="1_hlshf"]
-[ext_resource type="Script" path="res://scripts/emplacements/claymore_mine.gd" id="1_y0hqb"]
-[ext_resource type="Script" path="res://scripts/weapons/tactical_laser.gd" id="2_ihdhp"]
-[ext_resource type="Material" uid="uid://b62emo2vh0yym" path="res://materials/claymore_laser_mat.tres" id="3_53pl5"]
-[ext_resource type="Material" uid="uid://bh6hpwnnast85" path="res://materials/mpx_mat.tres" id="3_u3kfx"]
-[ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="6_w6yv7"]
-[ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="7_l1ayr"]
-[ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="8_4q8xo"]
+[ext_resource type="Script" path="res://scripts/emplacements/emplacement_ghost.gd" id="1_4auh7"]
+[ext_resource type="Material" uid="uid://0u5rl405kkud" path="res://materials/blueprint_ghost_mat.tres" id="2_0a7lt"]
+[ext_resource type="Script" path="res://scripts/weapons/tactical_laser.gd" id="3_skmio"]
+[ext_resource type="Material" uid="uid://b62emo2vh0yym" path="res://materials/claymore_laser_mat.tres" id="4_sfp1x"]
+[ext_resource type="Material" uid="uid://bh6hpwnnast85" path="res://materials/mpx_mat.tres" id="5_p6tk6"]
+[ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="6_v7sps"]
+[ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="7_03cwx"]
+[ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="8_l55hl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pcvw"]
 resource_name = "Material"
@@ -214,9 +214,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m4eqg")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dnmji"]
-points = PackedVector3Array(-1, 0, 1.3, 1, 0, 0.2, 1, 0, -0.2, -1, 0, -1.3, -1, 1, 1.3, 1, 1, 0.2, 1, 1, -0.2, -1, 1, -1.3)
-
 [sub_resource type="Animation" id="Animation_4mlc2"]
 length = 0.001
 tracks/0/type = "value"
@@ -409,18 +406,16 @@ size = Vector3(0.01, 0.01, 0.01)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_alm1j"]
 streams_count = 3
-stream_0/stream = ExtResource("6_w6yv7")
-stream_1/stream = ExtResource("7_l1ayr")
-stream_2/stream = ExtResource("8_4q8xo")
+stream_0/stream = ExtResource("6_v7sps")
+stream_1/stream = ExtResource("7_03cwx")
+stream_2/stream = ExtResource("8_l55hl")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wiitf"]
-radius = 0.709551
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ynot"]
+radius = 0.6
 
 [node name="ClaymoreMine" type="Node3D" node_paths=PackedStringArray("models")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
-script = ExtResource("1_y0hqb")
-field_of_fire_degrees = 60.0
-base_penetration = 6
+script = ExtResource("1_4auh7")
 models = [NodePath("Model/Claymore"), NodePath("Model/Cube"), NodePath("Model/Cube_001"), NodePath("Model/Cube_002"), NodePath("Model/Cube_003"), NodePath("Model/LaserSight/Laser_A_Left"), NodePath("Model/LaserSight2/Laser_A_Left")]
 
 [node name="Model" type="Node3D" parent="."]
@@ -428,42 +423,42 @@ transform = Transform3D(0.145136, 0.0378889, 0, -0.0378889, 0.145136, 0, 0, 0, 0
 
 [node name="Claymore" type="MeshInstance3D" parent="Model"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.3029, 0.674365, 0.992993, 0.0559975)
-material_override = ExtResource("1_hlshf")
+material_override = ExtResource("2_0a7lt")
 mesh = SubResource("ArrayMesh_sbrr7")
 skeleton = NodePath("")
 
 [node name="Cube" type="MeshInstance3D" parent="Model"]
 transform = Transform3D(0.904681, 0.42609, 0, -0.42609, 0.904681, 0, 0, 0, 1, -0.0699392, -0.295166, 0.815732)
-material_override = ExtResource("1_hlshf")
+material_override = ExtResource("2_0a7lt")
 mesh = SubResource("ArrayMesh_g7x44")
 skeleton = NodePath("")
 
 [node name="Cube_001" type="MeshInstance3D" parent="Model"]
 transform = Transform3D(0.902654, -0.430366, 0, 0.430366, 0.902654, 0, 0, 0, 1, 0.19258, -0.295166, 0.763053)
-material_override = ExtResource("1_hlshf")
+material_override = ExtResource("2_0a7lt")
 mesh = SubResource("ArrayMesh_qv2sn")
 skeleton = NodePath("")
 
 [node name="Cube_002" type="MeshInstance3D" parent="Model"]
 transform = Transform3D(0.902654, -0.430366, 0, 0.430366, 0.902654, 0, 0, 0, 1, 0.19258, -0.295166, -0.656083)
-material_override = ExtResource("1_hlshf")
+material_override = ExtResource("2_0a7lt")
 mesh = SubResource("ArrayMesh_lapud")
 skeleton = NodePath("")
 
 [node name="Cube_003" type="MeshInstance3D" parent="Model"]
 transform = Transform3D(0.904681, 0.42609, 0, -0.42609, 0.904681, 0, 0, 0, 1, -0.0699392, -0.295166, -0.712168)
-material_override = ExtResource("1_hlshf")
+material_override = ExtResource("2_0a7lt")
 mesh = SubResource("ArrayMesh_ceh08")
 skeleton = NodePath("")
 
 [node name="LaserSight" type="Node3D" parent="Model"]
 transform = Transform3D(-133.333, 0, -230.94, 0, 266.667, 0, 230.94, 0, -133.333, -0.0323615, 1.29559, -0.669187)
-script = ExtResource("2_ihdhp")
-laser_material = ExtResource("3_53pl5")
+script = ExtResource("3_skmio")
+laser_material = ExtResource("4_sfp1x")
 
 [node name="Laser_A_Left" type="MeshInstance3D" parent="Model/LaserSight"]
 transform = Transform3D(1, 2.75998e-28, 1.69407e-21, 2.40741e-35, 1, -1.62921e-07, -1.69407e-21, 1.62921e-07, 1, 0, 0, 0)
-material_override = ExtResource("3_u3kfx")
+material_override = ExtResource("5_p6tk6")
 mesh = SubResource("ArrayMesh_lyhm3")
 skeleton = NodePath("")
 
@@ -474,12 +469,12 @@ collision_mask = 87
 
 [node name="LaserSight2" type="Node3D" parent="Model"]
 transform = Transform3D(133.333, 0, -230.94, 0, 266.667, 0, 230.94, 0, 133.333, -0.0323615, 1.29559, 0.742728)
-script = ExtResource("2_ihdhp")
-laser_material = ExtResource("3_53pl5")
+script = ExtResource("3_skmio")
+laser_material = ExtResource("4_sfp1x")
 
 [node name="Laser_A_Left" type="MeshInstance3D" parent="Model/LaserSight2"]
 transform = Transform3D(1, 2.75998e-28, 1.69407e-21, 2.40741e-35, 1, -1.62921e-07, -1.69407e-21, 1.62921e-07, 1, 0, 0, 0)
-material_override = ExtResource("3_u3kfx")
+material_override = ExtResource("5_p6tk6")
 mesh = SubResource("ArrayMesh_lyhm3")
 skeleton = NodePath("")
 
@@ -487,83 +482,6 @@ skeleton = NodePath("")
 transform = Transform3D(0.00499988, 3.49063e-05, 1.5258e-12, 0, -2.18557e-10, 0.005, 3.49063e-05, -0.00499988, -2.18552e-10, 0.000127918, 0.000169393, 0.000717564)
 target_position = Vector3(0, -10, 0)
 collision_mask = 87
-
-[node name="EnemyDetector" type="Area3D" parent="."]
-unique_name_in_owner = true
-collision_mask = 64
-monitoring = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyDetector"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05884, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_dnmji")
-
-[node name="Raycasts" type="Node3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1, -1, -4.37114e-08, -4.37114e-08, -0.0797795, 0.209579, 0)
-
-[node name="RayCast3D" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D2" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D3" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D4" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D5" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D6" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D7" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D8" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D9" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D10" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D11" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D12" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D13" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D14" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D15" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
-
-[node name="RayCast3D16" type="RayCast3D" parent="Raycasts"]
-target_position = Vector3(0, -10, 0)
-collision_mask = 195
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -592,7 +510,7 @@ collision_mask = 384
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmplacementOverlapper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.025)
-shape = SubResource("CapsuleShape3D_wiitf")
+shape = SubResource("CapsuleShape3D_8ynot")
 
-[connection signal="area_entered" from="EnemyDetector" to="." method="trigger"]
-[connection signal="body_entered" from="EnemyDetector" to="." method="trigger"]
+[connection signal="area_entered" from="EmplacementOverlapper" to="." method="_on_emplacement_overlapper_area_entered"]
+[connection signal="area_exited" from="EmplacementOverlapper" to="." method="_on_emplacement_overlapper_area_exited"]

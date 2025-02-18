@@ -1,14 +1,10 @@
-[gd_scene load_steps=28 format=4 uid="uid://0pbg6jpb0fmj"]
+[gd_scene load_steps=24 format=4 uid="uid://c3qv1os0x2l0f"]
 
-[ext_resource type="Script" path="res://scripts/emplacements/barricade_emplacement.gd" id="1_o24el"]
-[ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="1_xrn8h"]
-[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="3_887t6"]
-[ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="4_gobs6"]
-[ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="5_jbhnd"]
-[ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="6_fmdhp"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yalxg"]
-albedo_texture = ExtResource("1_xrn8h")
+[ext_resource type="Script" path="res://scripts/emplacements/emplacement_ghost.gd" id="1_thhlo"]
+[ext_resource type="Material" uid="uid://0u5rl405kkud" path="res://materials/blueprint_ghost_mat.tres" id="2_jenxi"]
+[ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="4_8ixst"]
+[ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="5_unmbg"]
+[ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="6_5yw3b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mumfi"]
 resource_name = "lambert430"
@@ -47,12 +43,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vq0uu")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_548x4"]
-size = Vector3(3.3, 0.8, 0.45)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mdsa6"]
-size = Vector3(3.35, 0.75, 0.55)
 
 [sub_resource type="Animation" id="Animation_06our"]
 length = 0.001
@@ -212,43 +202,22 @@ size = Vector3(0.01, 0.01, 0.01)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3xl5b"]
 streams_count = 3
-stream_0/stream = ExtResource("4_gobs6")
-stream_1/stream = ExtResource("5_jbhnd")
-stream_2/stream = ExtResource("6_fmdhp")
+stream_0/stream = ExtResource("4_8ixst")
+stream_1/stream = ExtResource("5_unmbg")
+stream_2/stream = ExtResource("6_5yw3b")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_a6y88"]
-size = Vector3(2.5, 0.8, 0.55)
+[sub_resource type="BoxShape3D" id="BoxShape3D_6nwfg"]
+size = Vector3(2.5, 0.8, 1.75)
 
 [node name="BarricadeEmplacement" type="Node3D" node_paths=PackedStringArray("models")]
-script = ExtResource("1_o24el")
+script = ExtResource("1_thhlo")
 models = [NodePath("SM_Env_Sandbag_Wall_01")]
 
 [node name="SM_Env_Sandbag_Wall_01" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_yalxg")
+material_override = ExtResource("2_jenxi")
 mesh = SubResource("ArrayMesh_xhfti")
 skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-collision_layer = 129
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78814e-07, 0.45, -0.025)
-shape = SubResource("BoxShape3D_548x4")
-disabled = true
-
-[node name="Hurtbox" type="Area3D" parent="." groups=["hurtbox"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.817832, 0)
-collision_layer = 144
-collision_mask = 8
-monitoring = false
-monitorable = false
-script = ExtResource("3_887t6")
-
-[node name="HurtboxCollision" type="CollisionShape3D" parent="Hurtbox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0749999, -0.425, -0.025)
-shape = SubResource("BoxShape3D_mdsa6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
@@ -277,6 +246,7 @@ collision_mask = 384
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmplacementOverlapper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.025)
-shape = SubResource("BoxShape3D_a6y88")
+shape = SubResource("BoxShape3D_6nwfg")
 
-[connection signal="on_hurt" from="Hurtbox" to="." method="damage"]
+[connection signal="area_entered" from="EmplacementOverlapper" to="." method="_on_emplacement_overlapper_area_entered"]
+[connection signal="area_exited" from="EmplacementOverlapper" to="." method="_on_emplacement_overlapper_area_exited"]
