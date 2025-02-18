@@ -5,7 +5,7 @@ extends PlayerState
 
 @onready var animation_player = $"../../PlayerModel/Model/AnimationPlayer" as AnimationPlayer
 @onready var idle_state = %IdleState
-@onready var directional_reference = $"../../CameraMount/Camera3D/Directional_Reference"
+@onready var directional_reference = %DirectionalReference
 @onready var round_reload_anim_tree = $"../../PlayerModel/Model/RoundReloadAnimTree" as AnimationTree
 
 var finished = false

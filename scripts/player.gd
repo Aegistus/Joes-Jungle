@@ -81,6 +81,8 @@ func _physics_process(delta):
 			Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	if Input.is_action_just_pressed("debug_suicide"):
 		take_damage(999999)
+	if Input.is_action_just_pressed("debug_add_cash"):
+		GameManager.add_points(1000)
 
 func take_damage(damage):
 	if current_health > 0:

@@ -11,6 +11,10 @@ var build_blueprint_dict = {
 	BARRICADE_EMPLACEMENT: BARRICADE_GHOST,
 	CLAYMORE_MINE: CLAYMORE_GHOST,
 }
+var build_costs = {
+	BARRICADE_EMPLACEMENT: 1000,
+	CLAYMORE_MINE: 1000,
+}
 var currently_selected_build
 var current_index = 0
 var current_emplacement_ghost : Node3D
@@ -23,12 +27,13 @@ func _ready():
 	currently_selected_build = all_builds[current_index]
 
 func shoot():
-	if current_emplacement_ghost.valid_placement:
+	if current_emplacement_ghost.valid_placement and GameManager.current_points >= build_costs[currently_selected_build]:
 		var emplacement = currently_selected_build.instantiate() as Emplacement
 		get_tree().root.add_child(emplacement)
 		emplacement.global_position = reticle.global_position
 		emplacement.global_rotation = current_emplacement_ghost.global_rotation
 		emplacement.place()
+		GameManager.spend_points(build_costs[currently_selected_build])
 	else:
 		%InvalidErrorAudioPlayer.play()
 
