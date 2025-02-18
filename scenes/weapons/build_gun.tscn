@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://egau4xfffmk8"]
+[gd_scene load_steps=11 format=3 uid="uid://egau4xfffmk8"]
 
 [ext_resource type="Script" path="res://scripts/weapons/build_gun.gd" id="1_s4m0f"]
 [ext_resource type="AudioStream" uid="uid://cfb2seulox4dm" path="res://assets/audio/gunshots/Revolver Shot_02.wav" id="2_n8kbh"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/gunshots/Dry Shot_01.wav" id="3_sqhos"]
 [ext_resource type="AudioStream" uid="uid://bimsx8ggdoj7t" path="res://assets/audio/reload_sounds/pistol_mag_out.wav" id="4_t0ugo"]
 [ext_resource type="AudioStream" uid="uid://ctjg85ji6od2m" path="res://assets/audio/reload_sounds/revolver_round_in.wav" id="5_x3h1q"]
+[ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="7_flfop"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_f4r63"]
 radius = 0.1
@@ -44,3 +45,8 @@ stream = SubResource("AudioStreamRandomizer_apk84")
 
 [node name="Ammo" type="Node" parent="."]
 script = ExtResource("2_ybmnv")
+
+[node name="InvalidErrorAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_flfop")
+volume_db = -12.0

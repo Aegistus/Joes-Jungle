@@ -30,7 +30,7 @@ func shoot():
 		emplacement.global_rotation = current_emplacement_ghost.global_rotation
 		emplacement.place()
 	else:
-		print("INVALID PLACEMENT")
+		%InvalidErrorAudioPlayer.play()
 
 func equip(player : Node3D):
 	is_equipped = true
