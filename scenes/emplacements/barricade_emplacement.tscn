@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://0pbg6jpb0fmj"]
+[gd_scene load_steps=27 format=4 uid="uid://0pbg6jpb0fmj"]
 
 [ext_resource type="Script" path="res://scripts/emplacements/barricade_emplacement.gd" id="1_o24el"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="1_xrn8h"]
 [ext_resource type="Script" path="res://scripts/hurtbox.gd" id="3_887t6"]
+[ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="4_gobs6"]
+[ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="5_jbhnd"]
+[ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="6_fmdhp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yalxg"]
 albedo_texture = ExtResource("1_xrn8h")
@@ -51,12 +54,174 @@ size = Vector3(3.3, 0.8, 0.45)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mdsa6"]
 size = Vector3(3.35, 0.75, 0.55)
 
+[sub_resource type="Animation" id="Animation_06our"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dust:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BuildAudioPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SM_Env_Sandbag_Wall_01:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.55, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_077gg"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_Env_Sandbag_Wall_01:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_43icc"]
+resource_name = "place"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dust:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BuildAudioPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.233333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SM_Env_Sandbag_Wall_01:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 4.15, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lpllk"]
+_data = {
+"RESET": SubResource("Animation_06our"),
+"default": SubResource("Animation_077gg"),
+"place": SubResource("Animation_43icc")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jglc"]
+transparency = 1
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(0.581033, 0.581033, 0.581033, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="Curve" id="Curve_gvfwh"]
+_data = [Vector2(0.409412, 0.501338), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_np8aw"]
+curve = SubResource("Curve_gvfwh")
+
+[sub_resource type="Curve" id="Curve_ctrds"]
+_data = [Vector2(0.00470588, 1), 0.0, -2.74866, 0, 0, Vector2(0.997647, 0.0258697), -0.117349, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yj2pg"]
+curve = SubResource("Curve_ctrds")
+
+[sub_resource type="Curve" id="Curve_gsepu"]
+max_value = 10.0
+_data = [Vector2(0, 0.026762), 0.0, 23.6164, 0, 0, Vector2(1, 8.37645), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3wxgc"]
+curve = SubResource("Curve_gsepu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kljac"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.95
+direction = Vector3(0, 0, 1)
+spread = 10.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+radial_velocity_min = 0.499978
+radial_velocity_max = 0.999978
+radial_velocity_curve = SubResource("CurveTexture_yj2pg")
+gravity = Vector3(0, 0.5, 0)
+radial_accel_min = -10.0
+radial_accel_max = -2.23517e-06
+damping_min = 10.0
+damping_max = 10.0
+scale_min = 2.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_3wxgc")
+color = Color(0.804743, 0.804743, 0.804743, 1)
+alpha_curve = SubResource("CurveTexture_np8aw")
+
+[sub_resource type="BoxMesh" id="BoxMesh_mv2k3"]
+size = Vector3(0.01, 0.01, 0.01)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3xl5b"]
+streams_count = 3
+stream_0/stream = ExtResource("4_gobs6")
+stream_1/stream = ExtResource("5_jbhnd")
+stream_2/stream = ExtResource("6_fmdhp")
+
 [node name="BarricadeEmplacement" type="Node3D" node_paths=PackedStringArray("models")]
 script = ExtResource("1_o24el")
 models = [NodePath("SM_Env_Sandbag_Wall_01")]
 
 [node name="SM_Env_Sandbag_Wall_01" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 3.55, 0)
 material_override = SubResource("StandardMaterial3D_yalxg")
 mesh = SubResource("ArrayMesh_xhfti")
 skeleton = NodePath("")
@@ -81,5 +246,25 @@ script = ExtResource("3_887t6")
 [node name="HurtboxCollision" type="CollisionShape3D" parent="Hurtbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0749999, -0.425, -0.025)
 shape = SubResource("BoxShape3D_mdsa6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_lpllk")
+}
+
+[node name="Dust" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 0.0380209, 0, -1, -1.66195e-09, 0.010463, 0, 0)
+material_override = SubResource("StandardMaterial3D_5jglc")
+emitting = false
+amount = 120
+one_shot = true
+explosiveness = 1.0
+randomness = 0.56
+process_material = SubResource("ParticleProcessMaterial_kljac")
+draw_pass_1 = SubResource("BoxMesh_mv2k3")
+
+[node name="BuildAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_3xl5b")
 
 [connection signal="on_hurt" from="Hurtbox" to="." method="damage"]

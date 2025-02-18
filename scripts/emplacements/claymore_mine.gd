@@ -14,10 +14,13 @@ const PENETRATION_DAMAGE_REDUCTION = .25
 @onready var stone_hit = preload("res://scenes/audio_scenes/stone_hit_audio_source.tscn")
 @onready var raycasts = %Raycasts
 @onready var enemy_detector = %EnemyDetector
+@onready var animation_player = %AnimationPlayer
+
 const CLAYMORE_EXPLOSION = preload("res://scenes/particles/claymore_explosion.tscn")
 
 func place():
 	enemy_detector.monitoring = true
+	animation_player.play("place")
 
 func trigger(area):
 	if area.is_in_group("enemy"):
