@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=31 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://scripts/ui/recoil_ui.gd" id="17_32jpq"]
 [ext_resource type="Script" path="res://scripts/ui/weapon_stats_panel.gd" id="18_qi647"]
 [ext_resource type="FontFile" uid="uid://b1st00ad0rqs8" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.ttf" id="18_t8k2g"]
+[ext_resource type="Script" path="res://scripts/ui/build_menu.gd" id="21_wjrj5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ljnu"]
 bg_color = Color(0, 0, 0, 0.192157)
@@ -54,6 +55,20 @@ shader_parameter/alpha = 1.0
 shader_parameter/inner_radius = 1.0
 shader_parameter/outer_radius = 2.0
 shader_parameter/color = Color(0.378232, 6.04643e-07, 4.81308e-08, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7a3hb"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bttvo"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -438,6 +453,46 @@ theme_override_font_sizes/font_size = 12
 text = " Pistol"
 vertical_alignment = 1
 
+[node name="EnterBuildModeUI" type="Panel" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -145.0
+offset_right = 353.0
+offset_bottom = -116.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lklw5")
+script = ExtResource("13_02gl4")
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/EnterBuildModeUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeyboardKey" type="PanelContainer" parent="CanvasLayer/EnterBuildModeUI/HBox"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kuq0p")
+
+[node name="KeyboardKey" type="Label" parent="CanvasLayer/EnterBuildModeUI/HBox/KeyboardKey"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_sq8fp")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/EnterBuildModeUI/HBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
+theme_override_font_sizes/font_size = 12
+text = " Enter Build Mode"
+vertical_alignment = 1
+
 [node name="DamageOverlay" type="Panel" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_08fwq")
 anchors_preset = 15
@@ -633,3 +688,48 @@ theme_override_fonts/font = ExtResource("6_r7kat")
 theme_override_font_sizes/font_size = 8
 text = "1"
 horizontal_alignment = 2
+
+[node name="BuildMenu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -643.0
+offset_top = -66.0
+offset_right = -176.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("21_wjrj5")
+
+[node name="BuildOptions" type="PanelContainer" parent="CanvasLayer/BuildMenu"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BuildOptionsContainer" type="HBoxContainer" parent="CanvasLayer/BuildMenu/BuildOptions"]
+layout_mode = 2
+
+[node name="BuildItemPanel" type="Panel" parent="CanvasLayer/BuildMenu/BuildOptions/BuildOptionsContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7a3hb")
+
+[node name="BuildItemPanel2" type="Panel" parent="CanvasLayer/BuildMenu/BuildOptions/BuildOptionsContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bttvo")
+
+[node name="BuildItemName" type="Label" parent="CanvasLayer/BuildMenu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("6_r7kat")
+text = "Currently Selected"
+vertical_alignment = 2

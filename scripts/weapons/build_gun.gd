@@ -1,6 +1,10 @@
 class_name BuildGun
 extends Gun
 
+signal on_equip
+signal on_unequip
+signal on_change_selected_build(index : int)
+
 const BARRICADE_EMPLACEMENT = preload("res://scenes/emplacements/barricade_emplacement.tscn")
 const BARRICADE_GHOST = preload("res://scenes/emplacements/barricade_ghost.tscn")
 const CLAYMORE_MINE = preload("res://scenes/emplacements/claymore_mine.tscn")
@@ -14,6 +18,10 @@ var build_blueprint_dict = {
 var build_costs = {
 	BARRICADE_EMPLACEMENT: 1000,
 	CLAYMORE_MINE: 1000,
+}
+var build_names = {
+	BARRICADE_EMPLACEMENT: "Barricade",
+	CLAYMORE_MINE: "M18A1 Claymore"
 }
 var currently_selected_build
 var current_index = 0
@@ -43,10 +51,12 @@ func equip(player : Node3D):
 	if reticle == null:
 		reticle = get_tree().get_first_node_in_group("aim_reticle")
 	spawn_emplacement_ghost()
+	on_equip.emit()
 
 func unequip():
 	is_equipped = false
 	current_emplacement_ghost.queue_free()
+	on_unequip.emit()
 
 func _physics_process(delta):
 	if is_equipped:
@@ -57,6 +67,8 @@ func _physics_process(delta):
 			current_emplacement_ghost.global_position = reticle.global_position
 		if Input.is_action_just_pressed("emplacements_scroll_down"):
 			current_index = (current_index - 1) % all_builds.size()
+			if current_index == -1:
+				current_index = all_builds.size() - 1
 			select_new_emplacement()
 		if Input.is_action_just_pressed("emplacements_scroll_up"):
 			current_index = (current_index + 1) % all_builds.size()
@@ -77,3 +89,4 @@ func select_new_emplacement():
 	currently_selected_build = all_builds[current_index]
 	current_emplacement_ghost.queue_free()
 	spawn_emplacement_ghost()
+	on_change_selected_build.emit(current_index)
