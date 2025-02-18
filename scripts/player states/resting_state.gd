@@ -15,5 +15,7 @@ func process_state_physics(delta):
 		player_model.rotation.y = lerp_angle(player_model.rotation.y, look_dir, delta * turn_rate)
 
 func check_transitions():
+	if controlled_player.gun is BuildGun:
+		return aiming_state
 	if Input.is_action_just_pressed("aim_weapon"):
 		return aiming_state

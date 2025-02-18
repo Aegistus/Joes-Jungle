@@ -25,5 +25,5 @@ func process_state_physics(delta):
 	
 
 func check_transitions():
-	if Input.is_action_just_pressed("aim_weapon"):
+	if Input.is_action_just_pressed("aim_weapon") and controlled_player.gun is not BuildGun:
 		return relaxed_state
