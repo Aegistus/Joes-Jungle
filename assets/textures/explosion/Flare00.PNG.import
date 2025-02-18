@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hy1kdbphpu4u"
-path.s3tc="res://.godot/imported/Flame02.png-fadae81385738115d9b1ac7da08e1013.s3tc.ctex"
+uid="uid://yh1lulrm67ei"
+path.s3tc="res://.godot/imported/Flare00.PNG-a8d8f118a8f048f98aacc06b394296c4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/Flame02.png"
-dest_files=["res://.godot/imported/Flame02.png-fadae81385738115d9b1ac7da08e1013.s3tc.ctex"]
+source_file="res://assets/textures/explosion/Flare00.PNG"
+dest_files=["res://.godot/imported/Flare00.PNG-a8d8f118a8f048f98aacc06b394296c4.s3tc.ctex"]
 
 [params]
 

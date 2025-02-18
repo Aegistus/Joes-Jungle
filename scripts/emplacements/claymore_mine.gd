@@ -14,6 +14,7 @@ const PENETRATION_DAMAGE_REDUCTION = .25
 @onready var stone_hit = preload("res://scenes/audio_scenes/stone_hit_audio_source.tscn")
 @onready var raycasts = %Raycasts
 @onready var enemy_detector = %EnemyDetector
+const CLAYMORE_EXPLOSION = preload("res://scenes/particles/claymore_explosion.tscn")
 
 func place():
 	enemy_detector.monitoring = true
@@ -25,6 +26,9 @@ func trigger(area):
 func explode():
 	for ray in raycasts.get_children():
 		shoot_with_raycast(ray)
+	var explosion = CLAYMORE_EXPLOSION.instantiate()
+	get_tree().root.add_child(explosion)
+	explosion.global_position = global_position
 	queue_free()
 
 func shoot_with_raycast(raycast : RayCast3D):
