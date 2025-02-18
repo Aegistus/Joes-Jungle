@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bq78d2teut4yk"]
+[gd_scene load_steps=25 format=4 uid="uid://bq78d2teut4yk"]
 
 [ext_resource type="Material" uid="uid://qfqe5n8ybnlr" path="res://materials/claymore_mat.tres" id="1_hlshf"]
 [ext_resource type="Script" path="res://scripts/emplacements/claymore_mine.gd" id="1_y0hqb"]
@@ -211,6 +211,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m4eqg")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dnmji"]
+points = PackedVector3Array(-1, 0, 1.3, 1, 0, 0.2, 1, 0, -0.2, -1, 0, -1.3, -1, 1, 1.3, 1, 1, 0.2, 1, 1, -0.2, -1, 1, -1.3)
+
 [node name="ClaymoreMine" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00977507)
 script = ExtResource("1_y0hqb")
@@ -279,3 +282,59 @@ skeleton = NodePath("")
 transform = Transform3D(0.00499988, 3.49063e-05, 1.5258e-12, 0, -2.18557e-10, 0.005, 3.49063e-05, -0.00499988, -2.18552e-10, 0.000127918, 0.000169393, 0.000717564)
 target_position = Vector3(0, -10, 0)
 collision_mask = 87
+
+[node name="EnemyDetector" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_mask = 64
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05884, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_dnmji")
+
+[node name="Raycasts" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.0797795, 0.209579, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D2" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D3" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D4" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D5" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D6" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D7" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D8" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D9" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[node name="RayCast3D10" type="RayCast3D" parent="Raycasts"]
+target_position = Vector3(0, -10, 0)
+collision_mask = 195
+
+[connection signal="area_entered" from="EnemyDetector" to="." method="trigger"]
+[connection signal="body_entered" from="EnemyDetector" to="." method="trigger"]
