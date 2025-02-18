@@ -3,7 +3,8 @@ extends Emplacement
 
 @export var min_damage = 10
 @export var max_damage = 20
-@export var field_of_fire_degrees := 60.0
+@export var field_of_fire_degrees := 180.0
+@export var vertical_angle_variation := 5
 @export var base_penetration := 3
 
 const BULLET_IMPACT_TERRAIN = preload("res://scenes/particles/bullet_impact_terrain.tscn")
@@ -29,10 +30,12 @@ func explode():
 func shoot_with_raycast(raycast : RayCast3D):
 	# apply accuracy
 	raycast.rotation_degrees = Vector3(0,0,0)
-	var degree_change = randf() * field_of_fire_degrees - (field_of_fire_degrees / 2)
+	var degree_change = randf() * field_of_fire_degrees - (field_of_fire_degrees / 2.0)
 	var radians_change = degree_change * (PI / 180.0)
-	raycast.rotate_object_local(Vector3.UP, radians_change)
-	
+	raycast.rotate_object_local(Vector3.FORWARD, radians_change)
+	degree_change = randf() * vertical_angle_variation - (vertical_angle_variation / 2.0)
+	radians_change = degree_change * (PI / 180.0)
+	raycast.rotate_object_local(Vector3.RIGHT, radians_change)
 	# shoot with penetration
 	var already_hit : Array[CollisionObject3D] = []
 	for i in base_penetration:
