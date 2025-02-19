@@ -274,12 +274,15 @@ theme_override_font_sizes/font_size = 15
 text = "R - Reload "
 horizontal_alignment = 2
 
-[node name="WaterBarsUI" type="VBoxContainer" parent="CanvasLayer"]
+[node name="WaterBarsUI" type="VBoxContainer" parent="CanvasLayer" node_paths=PackedStringArray("plant_progress_bars")]
 offset_left = 5.0
 offset_top = 133.0
 offset_right = 184.0
 offset_bottom = 169.0
 script = ExtResource("4_u2l3y")
+default_color = Color(0, 0.643137, 0.92549, 1)
+warning_color = Color(0.808137, 3.27289e-06, 7.70092e-07, 1)
+plant_progress_bars = [NodePath("HBoxContainer/ProgressBar"), NodePath("HBoxContainer2/ProgressBar"), NodePath("HBoxContainer3/ProgressBar")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/WaterBarsUI"]
 layout_mode = 2
