@@ -3,6 +3,8 @@ extends Node
 enum CauseOfDeath { ZOMBIE, PLANT }
 
 signal on_point_change(current_points, added_points)
+signal on_zombie_kill
+signal on_wave_end
 
 const SAVE_FILE_PATH = "user://savegame.dat"
 

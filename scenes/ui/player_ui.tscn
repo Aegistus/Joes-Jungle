@@ -463,7 +463,6 @@ offset_right = 353.0
 offset_bottom = -116.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lklw5")
-script = ExtResource("13_02gl4")
 
 [node name="HBox" type="HBoxContainer" parent="CanvasLayer/EnterBuildModeUI"]
 layout_mode = 1

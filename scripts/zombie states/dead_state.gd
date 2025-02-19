@@ -25,4 +25,5 @@ func enter():
 	timer.wait_time = despawn_delay
 	timer.start()
 	GameManager.add_points(zombie.point_value)
+	GameManager.on_zombie_kill.emit()
 	on_zombie_death.emit()

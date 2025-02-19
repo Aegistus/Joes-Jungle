@@ -113,7 +113,7 @@ func shoot_with_raycast(raycast : RayCast3D):
 	# apply recoil
 	current_accuracy -= base_recoil * RECOIL_ACCURACY_CHANGE
 	current_accuracy = clampf(current_accuracy, MIN_ACCURACY, base_accuracy)
-	print(current_accuracy)
+	#print(current_accuracy)
 	recoil_recovery_timer.start()
 
 func reload():

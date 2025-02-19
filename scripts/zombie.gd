@@ -11,6 +11,10 @@ extends CharacterBody3D
 
 @onready var blood_particle_scene = preload("res://scenes/particles/blood_particles.tscn")
 
+var is_alive:
+	get:
+		return current_health > 0
+
 var current_health
 var target_barricade
 
