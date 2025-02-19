@@ -6,9 +6,12 @@ signal on_point_change(current_points, added_points)
 signal on_zombie_kill
 signal on_wave_start
 signal on_wave_end
+signal on_intermission_start
+signal on_intermission_end
 
 const SAVE_FILE_PATH = "user://savegame.dat"
 
+var current_wave
 var run_time = 0.0
 var current_points = 0
 var is_game_running = false
@@ -26,6 +29,8 @@ var plant_death_text : Array[String] = ["Plant Neglect",\
 "Failing to be a Responsible Plant Parent",\
 "Soiling Your Pants (Instead of Your Plants)",\
 "Stopping to Smell the Roses, Instead of Watering Them"]
+
+@onready var intermission_timer : Timer = $IntermissionTimer
 
 class GameRunEntry:
 	var rank : int
@@ -66,6 +71,13 @@ func end_game(cause_of_death : CauseOfDeath):
 	set_run_rankings()
 	save()
 	get_tree().change_scene_to_file("res://scenes/game_scenes/game_over_scene.tscn")
+
+func start_intermission(duration : float):
+	intermission_timer.wait_time = duration
+	intermission_timer.one_shot = true
+	intermission_timer.start()
+	intermission_timer.timeout.connect(func(): on_intermission_end.emit())
+	on_intermission_start.emit()
 
 func add_points(amount):
 	current_points += amount

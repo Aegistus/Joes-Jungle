@@ -20,7 +20,6 @@ class SpawnEntry:
 @export var fast_zombie_spawn_start = 5
 @export var tank_zombie_spawn_start = 8
 
-@onready var intermission_timer = $IntermissionTimer
 @onready var spawn_timer = $SpawnTimer
 @onready var spawn_point_parent = $SpawnPointParent as Node3D
 
@@ -44,11 +43,9 @@ func _ready():
 	all_spawn_points = spawn_point_parent.get_children() as Array[Node3D]
 	for i in zombie_spawn_table.size():
 		sum_of_spawn_weights += zombie_spawn_table[i].spawn_weight
-	intermission_timer.wait_time = starting_wave_delay
-	intermission_timer.one_shot = true
-	intermission_timer.start()
-	intermission_timer.timeout.connect(spawn_next_wave)
+	GameManager.start_intermission(starting_wave_delay)
 	GameManager.on_zombie_kill.connect(check_for_wave_end)
+	GameManager.on_intermission_end.connect(spawn_next_wave)
 
 func spawn_next_wave():
 	wave_completed = false
@@ -89,10 +86,6 @@ func check_for_wave_end():
 		if zombie.is_alive:
 			return
 	wave_completed = true
+	GameManager.start_intermission(intermission_wait_time)
 	GameManager.on_wave_end.emit()
 	print("Wave completed")
-	start_intermission()
-
-func start_intermission():
-	intermission_timer.wait_time = intermission_wait_time
-	intermission_timer.start()
