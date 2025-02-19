@@ -14,7 +14,6 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hjknl"]
 resource_name = "Mat"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("2_xa50g")
 emission_enabled = true
 uv1_offset = Vector3(0, -1, 0)
@@ -335,7 +334,7 @@ base_recoil = 20
 base_ergonomics = 90
 
 [node name="gun model" type="Node3D" parent="."]
-transform = Transform3D(0.06, 5.58794e-11, -4.13081e-19, -5.58794e-11, 0.06, -4.43542e-10, 0, 4.43542e-10, 0.06, 0, 0, 0)
+transform = Transform3D(0.06, 5.58794e-11, -4.13081e-19, -5.58794e-11, 0.06, -4.43542e-10, -2.48154e-25, 4.43542e-10, 0.06, 0, 0, 0)
 
 [node name="Uzi" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4805, -0.317955)
