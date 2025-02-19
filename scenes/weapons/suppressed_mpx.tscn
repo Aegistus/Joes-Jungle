@@ -555,30 +555,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("gun model/MuzzleFlash:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("gun model/MuzzleFlash2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_lh8sp"]
 resource_name = "shoot"
@@ -608,30 +584,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.0523599, 0, 0), Vector3(0, 0, 0)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("gun model/MuzzleFlash:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("gun model/MuzzleFlash2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyq2y"]
 _data = {
@@ -648,11 +600,10 @@ stream_0/stream = ExtResource("4_fxorh")
 [node name="MPX" type="Node3D" node_paths=PackedStringArray("magazine")]
 transform = Transform3D(-0.00381118, 0.99669, -0.0812056, 0.10236, 0.0811684, 0.99143, 0.994741, -0.00453367, -0.10233, -0.229265, 0.0438833, 0.0206081)
 script = ExtResource("1_abj7n")
-shot_delay = 0.06
+shot_delay = 0.07
 gun_name = "MPX Suppressed"
 min_damage = 3
 max_damage = 6
-suppressed = true
 gun_type = 2
 magazine = NodePath("gun model/Magazine")
 magazine_scale = 80.0

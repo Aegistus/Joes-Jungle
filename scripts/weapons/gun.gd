@@ -85,7 +85,6 @@ func shoot_with_raycast(raycast : RayCast3D):
 	var radians_change = degree_change * (PI / 180.0)
 	var axis = Vector3(randf() * 2 - 1, 0, randf() * 2 - 1).normalized()
 	raycast.rotate_object_local(axis, radians_change)
-	
 	# shoot with penetration
 	var already_hit : Array[CollisionObject3D] = []
 	for i in base_penetration:
