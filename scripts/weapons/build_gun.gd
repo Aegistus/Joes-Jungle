@@ -16,8 +16,8 @@ var build_blueprint_dict = {
 	CLAYMORE_MINE: CLAYMORE_GHOST,
 }
 var build_costs = {
-	BARRICADE_EMPLACEMENT: 1000,
-	CLAYMORE_MINE: 1000,
+	BARRICADE_EMPLACEMENT: 500,
+	CLAYMORE_MINE: 500,
 }
 var build_names = {
 	BARRICADE_EMPLACEMENT: "Barricade",

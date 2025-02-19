@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=32 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -17,6 +17,7 @@
 [ext_resource type="FontFile" uid="uid://b4d3e84d08sjt" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer_Bold.otf" id="14_sq8fp"]
 [ext_resource type="Shader" path="res://assets/shaders/player_ui.gdshader" id="15_xu7e1"]
 [ext_resource type="Script" path="res://scripts/ui/damage_overlay.gd" id="16_taqfw"]
+[ext_resource type="Script" path="res://scripts/ui/enter_build_mode_ui.gd" id="16_x3k6u"]
 [ext_resource type="Script" path="res://scripts/ui/recoil_ui.gd" id="17_32jpq"]
 [ext_resource type="Script" path="res://scripts/ui/weapon_stats_panel.gd" id="18_qi647"]
 [ext_resource type="FontFile" uid="uid://b1st00ad0rqs8" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.ttf" id="18_t8k2g"]
@@ -463,6 +464,7 @@ offset_right = 353.0
 offset_bottom = -116.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lklw5")
+script = ExtResource("16_x3k6u")
 
 [node name="HBox" type="HBoxContainer" parent="CanvasLayer/EnterBuildModeUI"]
 layout_mode = 1

@@ -53,6 +53,7 @@ func _ready():
 func spawn_next_wave():
 	wave_completed = false
 	current_wave += 1
+	GameManager.on_wave_start.emit()
 	print("Wave start: " + str(current_wave))
 	all_spawn_points.shuffle()
 	var all_zombies_count = get_tree().get_nodes_in_group("enemy").size()
@@ -95,4 +96,3 @@ func check_for_wave_end():
 func start_intermission():
 	intermission_timer.wait_time = intermission_wait_time
 	intermission_timer.start()
-	intermission_timer.timeout.connect(spawn_next_wave)

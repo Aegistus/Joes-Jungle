@@ -978,6 +978,7 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 top_level = true
 
 [node name="MovementStateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state", "target")]
+unique_name_in_owner = true
 script = ExtResource("3_5cvyg")
 default_state = NodePath("IdleState")
 target = NodePath("..")

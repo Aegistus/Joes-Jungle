@@ -41,6 +41,7 @@ func _ready():
 	current_health = max_health
 	hurtbox.on_hurt.connect(take_damage)
 	hurtbox.on_slow.connect(apply_slow)
+	GameManager.on_wave_start.connect(unequip_build_gun)
 	for gun in gun_holder.get_children():
 		if gun is Gun:
 			gun = gun as Gun
@@ -205,3 +206,8 @@ func apply_slow(amount, duration):
 	move_speed_multiplier = 1 - amount
 	await get_tree().create_timer(duration).timeout
 	move_speed_multiplier = 1
+
+func unequip_build_gun():
+	if gun is BuildGun:
+		%EquippingState.weapon_index = 1
+		%MovementStateMachine.transition_to(%EquippingState)
