@@ -22,7 +22,7 @@ albedo_texture = SubResource("ViewportTexture_swfeb")
 
 [node name="WateringBush" groups=["plant"] instance=ExtResource("1_jo5n8")]
 script = ExtResource("2_r8aun")
-max_water = 180.0
+max_water = 240.0
 water_increase_rate = 60.0
 tooltip_text = "Hold to Water Plant"
 
