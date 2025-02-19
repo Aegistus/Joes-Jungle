@@ -2613,6 +2613,7 @@ one_shot = true
 gizmo_extents = 1.0
 
 [node name="SpawnTimer" type="Timer" parent="ZombieSpawnPoints"]
+one_shot = true
 
 [node name="SpawnPointParent" type="Node3D" parent="ZombieSpawnPoints"]
 

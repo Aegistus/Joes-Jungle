@@ -22,16 +22,16 @@ class SpawnEntry:
 
 @onready var spawn_timer = $SpawnTimer
 @onready var spawn_point_parent = $SpawnPointParent as Node3D
-
-var current_wave = 0
-var wave_completed = true
-var current_enemy_count = starting_enemy_count
-var all_spawn_points
+@onready var current_enemy_count = starting_enemy_count
 @onready var zombie_spawn_table = [
 	SpawnEntry.new(FAST_ZOMBIE, 10, fast_zombie_spawn_start),
 	SpawnEntry.new(TANK_ZOMBIE, 10, tank_zombie_spawn_start),
 	SpawnEntry.new(ZOMBIE, 80, 0),
 ]
+
+var current_wave = 0
+var wave_completed = true
+var all_spawn_points
 var sum_of_spawn_weights : int
 
 const MAX_ZOMBIES = 100
@@ -48,6 +48,7 @@ func _ready():
 	GameManager.on_intermission_end.connect(spawn_next_wave)
 
 func spawn_next_wave():
+	print("Spawning next wave")
 	wave_completed = false
 	current_wave += 1
 	GameManager.on_wave_start.emit()

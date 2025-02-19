@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=60 format=4 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Texture2D" uid="uid://b1fvgtdrsmiic" path="res://assets/models/characters/Michael_Ch18_1001_Diffuse.png" id="2_55ldf"]
@@ -15,7 +15,6 @@
 [ext_resource type="AnimationLibrary" uid="uid://bnlabos6fsi8u" path="res://assets/animations/libraries/Michael Build.res" id="6_ma1ls"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c4e5wj28gmxw3" path="res://assets/animations/trees/pistol_blend_tree.tres" id="6_o7fui"]
 [ext_resource type="PackedScene" uid="uid://oii8bwkvvqje" path="res://scenes/weapons/flamethrower_tank.tscn" id="6_qhwyx"]
-[ext_resource type="PackedScene" uid="uid://dkmqq58ie6jcx" path="res://scenes/weapons/AA12.tscn" id="6_vhwoc"]
 [ext_resource type="AnimationLibrary" uid="uid://drpkkhs3fwp35" path="res://assets/animations/libraries/Michael Rifle.res" id="7_uv515"]
 [ext_resource type="Script" path="res://scripts/player states/walking_state.gd" id="7_vgdlh"]
 [ext_resource type="Script" path="res://scripts/player states/jogging_state.gd" id="8_h5fvr"]
@@ -881,8 +880,6 @@ visible = false
 [node name="BuildGun" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("5_hif0p")]
 transform = Transform3D(0.999421, 0.0326637, -0.00950795, -0.0326994, 0.999459, -0.00364301, 0.00938383, 0.00395173, 0.999948, 0.00426015, -0.000933528, -0.00069809)
 visible = false
-
-[node name="AA12" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("6_vhwoc")]
 
 [node name="LeftHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
 transform = Transform3D(-0.747873, -0.663489, 0.0216288, 0.0101632, 0.0211339, 0.999725, -0.663764, 0.747887, -0.00906244, -0.0617182, 1.40535, 0.505493)

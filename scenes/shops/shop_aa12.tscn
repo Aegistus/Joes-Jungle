@@ -396,7 +396,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_kkffc")
 shop_item_scene_path = "res://scenes/weapons/AA12.tscn"
 item_cost = 500
-tooltip_text = "Buy Suppressed MPX"
+tooltip_text = "Buy AA-12"
 
 [node name="ShotGun_A" type="Node3D" parent="."]
 transform = Transform3D(750, 0, 0, 0, 750, 0, 0, 0, 750, 0, 2.54225, -0.409713)

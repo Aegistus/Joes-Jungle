@@ -6,3 +6,4 @@
 script = ExtResource("1_oc1yj")
 
 [node name="IntermissionTimer" type="Timer" parent="."]
+one_shot = true

@@ -360,7 +360,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_cf4li")
 shop_item_scene_path = "res://scenes/weapons/AK47.tscn"
 item_cost = 750
-tooltip_text = "Buy Suppressed MPX"
+tooltip_text = "Buy AK-47"
 
 [node name="AK47" type="Node3D" parent="."]
 transform = Transform3D(750, 0, 0, 0, 750, 0, 0, 0, 750, 0, 2.4617, -1.28995)

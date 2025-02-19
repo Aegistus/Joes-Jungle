@@ -45,6 +45,7 @@ var all_player_runs : Array[GameRunEntry]
 
 func _ready():
 	load_save_data()
+	intermission_timer.timeout.connect(func(): on_intermission_end.emit())
 
 func _process(delta):
 	if is_game_running:
@@ -76,7 +77,6 @@ func start_intermission(duration : float):
 	intermission_timer.wait_time = duration
 	intermission_timer.one_shot = true
 	intermission_timer.start()
-	intermission_timer.timeout.connect(func(): on_intermission_end.emit())
 	on_intermission_start.emit()
 
 func add_points(amount):
