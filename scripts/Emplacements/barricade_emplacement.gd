@@ -1,11 +1,16 @@
 class_name BarricadeEmplacement
 extends Emplacement
 
+signal on_destroy
+
 @export var max_health := 100.0
 
-@onready var collision_shape_3d = $StaticBody3D/CollisionShape3D
+@onready var actor_collision_shape = $ActorCollision/ActorCollisionShape
 @onready var hurtbox = $Hurtbox
 @onready var animation_player = %AnimationPlayer
+@onready var model = %Model
+@onready var emplacement_collision_shape = %EmplacementCollisionShape
+@onready var navigation_region = %NavigationRegion
 
 var current_health
 
@@ -16,10 +21,19 @@ func _ready():
 	hurtbox.monitorable = true
 
 func place():
-	collision_shape_3d.disabled = false
 	animation_player.play("place")
+	GameManager.on_barricade_added.emit(self)
 
 func damage(amount):
 	current_health -= amount
 	if current_health <= 0:
-		queue_free()
+		destroy()
+
+func destroy():
+	hurtbox.monitoring = false
+	hurtbox.monitorable = false
+	actor_collision_shape.disabled = true
+	model.visible = false
+	emplacement_collision_shape.disabled = true
+	on_destroy.emit()
+	navigation_region.enter_cost = 0

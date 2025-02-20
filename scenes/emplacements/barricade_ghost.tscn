@@ -241,8 +241,8 @@ stream = SubResource("AudioStreamRandomizer_3xl5b")
 
 [node name="EmplacementOverlapper" type="Area3D" parent="."]
 unique_name_in_owner = true
-collision_layer = 384
-collision_mask = 384
+collision_layer = 256
+collision_mask = 256
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmplacementOverlapper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.025)

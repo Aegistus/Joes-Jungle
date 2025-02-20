@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://0pbg6jpb0fmj"]
+[gd_scene load_steps=29 format=4 uid="uid://0pbg6jpb0fmj"]
 
 [ext_resource type="Script" path="res://scripts/emplacements/barricade_emplacement.gd" id="1_o24el"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="1_xrn8h"]
@@ -83,7 +83,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SM_Env_Sandbag_Wall_01:position")
+tracks/2/path = NodePath("Model:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -98,7 +98,7 @@ resource_name = "default"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SM_Env_Sandbag_Wall_01:position")
+tracks/0/path = NodePath("Model:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -137,7 +137,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SM_Env_Sandbag_Wall_01:position")
+tracks/2/path = NodePath("Model:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -219,24 +219,31 @@ stream_2/stream = ExtResource("6_fmdhp")
 [sub_resource type="BoxShape3D" id="BoxShape3D_a6y88"]
 size = Vector3(2.5, 0.8, 0.55)
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_0tkne"]
+vertices = PackedVector3Array(-1.25, 0.5, -0.4, -1.25, 0.5, 0.35, 1.25, 0.5, 0.35, 1.25, 0.5, -0.4)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+agent_height = 2.0
+region_min_size = 1.0
+
 [node name="BarricadeEmplacement" type="Node3D" node_paths=PackedStringArray("models")]
 script = ExtResource("1_o24el")
-models = [NodePath("SM_Env_Sandbag_Wall_01")]
+max_health = 50.0
+models = [NodePath("Model")]
 
-[node name="SM_Env_Sandbag_Wall_01" type="MeshInstance3D" parent="."]
+[node name="Model" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_yalxg")
 mesh = SubResource("ArrayMesh_xhfti")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="ActorCollision" type="StaticBody3D" parent="."]
 collision_layer = 129
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="ActorCollisionShape" type="CollisionShape3D" parent="ActorCollision"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78814e-07, 0.45, -0.025)
 shape = SubResource("BoxShape3D_548x4")
-disabled = true
 
 [node name="Hurtbox" type="Area3D" parent="." groups=["hurtbox"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.817832, 0)
@@ -272,11 +279,22 @@ stream = SubResource("AudioStreamRandomizer_3xl5b")
 
 [node name="EmplacementOverlapper" type="Area3D" parent="."]
 unique_name_in_owner = true
-collision_layer = 384
-collision_mask = 384
+collision_layer = 256
+collision_mask = 256
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EmplacementOverlapper"]
+[node name="EmplacementCollisionShape" type="CollisionShape3D" parent="EmplacementOverlapper"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.025)
 shape = SubResource("BoxShape3D_a6y88")
+
+[node name="NavigationRegion" type="NavigationRegion3D" parent="."]
+unique_name_in_owner = true
+navigation_mesh = SubResource("NavigationMesh_0tkne")
+travel_cost = 10.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, -0.25, 0.0250001)
+visible = false
+size = Vector3(3.5, 0.5, 1.85)
 
 [connection signal="on_hurt" from="Hurtbox" to="." method="damage"]

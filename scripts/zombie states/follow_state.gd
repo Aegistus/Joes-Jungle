@@ -32,6 +32,7 @@ func process_state(delta):
 		zombie.velocity = Vector3.ZERO
 		nav_agent.set_target_position(player.position)
 		var next_nav_point = nav_agent.get_next_path_position()
+		nav_agent.get_path()
 		zombie.velocity = (next_nav_point - zombie.transform.origin).normalized() * move_speeds[anim_index] * delta
 		
 		zombie.look_at(Vector3(next_nav_point.x, zombie.position.y, next_nav_point.z))

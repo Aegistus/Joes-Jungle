@@ -137,6 +137,7 @@ editor_only = true
 environment = SubResource("Environment_112m7")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
 navigation_mesh = SubResource("NavigationMesh_7od6u")
 

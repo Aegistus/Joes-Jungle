@@ -16,7 +16,7 @@ var is_alive:
 		return current_health > 0
 
 var current_health
-var target_barricade
+var target_barricade : BarricadeEmplacement
 
 func _ready():
 	current_health = starting_health
@@ -42,8 +42,5 @@ func quick_hit(damage):
 		current_health = 0
 
 func barricade_detected(area : Area3D):
-	target_barricade = area
-
-func barricade_removed(area : Area3D):
-	if area == target_barricade:
-		target_barricade = null
+	target_barricade = area.get_parent()
+	target_barricade.on_destroy.connect(func(): target_barricade = null)

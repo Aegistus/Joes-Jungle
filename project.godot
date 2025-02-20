@@ -168,6 +168,10 @@ debug_add_cash={
 3d_physics/layer_18="material_wood"
 3d_physics/layer_19="material_stone"
 
+[navigation]
+
+3d/default_edge_connection_margin=1.0
+
 [physics]
 
 3d/physics_engine="JoltPhysics3D"
