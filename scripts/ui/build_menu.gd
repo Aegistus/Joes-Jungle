@@ -19,7 +19,7 @@ func show_menu():
 	select_option(build_gun.current_index)
 
 func select_option(index : int):
-	build_item_name.text = build_gun.build_names[build_gun.currently_selected_build]
+	build_item_name.text = build_gun.current_emplacement.name
 	var options = build_options_container.get_children()
 	for i in options.size():
 		var option = options[i] as Panel

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://0pbg6jpb0fmj"]
+[gd_scene load_steps=31 format=4 uid="uid://0pbg6jpb0fmj"]
 
 [ext_resource type="Script" path="res://scripts/emplacements/barricade_emplacement.gd" id="1_o24el"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="1_xrn8h"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="4_gobs6"]
 [ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="5_jbhnd"]
 [ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="6_fmdhp"]
+[ext_resource type="Script" path="res://scripts/emplacements/emplacement_seller.gd" id="7_2wab3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yalxg"]
 albedo_texture = ExtResource("1_xrn8h")
@@ -225,6 +226,9 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 agent_height = 2.0
 region_min_size = 1.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kcgaj"]
+size = Vector3(3.2, 0.75, 0.45)
+
 [node name="BarricadeEmplacement" type="Node3D" node_paths=PackedStringArray("models") groups=["barricade"]]
 script = ExtResource("1_o24el")
 max_health = 50.0
@@ -296,5 +300,16 @@ enabled = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, -0.25, 0.0250001)
 visible = false
 size = Vector3(3.5, 0.5, 1.85)
+
+[node name="EmplacementSeller" type="Area3D" parent="."]
+script = ExtResource("7_2wab3")
+tooltip_text = "Hold to Sell"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EmplacementSeller"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, 0.425, -0.025)
+shape = SubResource("BoxShape3D_kcgaj")
+
+[node name="Timer" type="Timer" parent="EmplacementSeller"]
+wait_time = 5.0
 
 [connection signal="on_hurt" from="Hurtbox" to="." method="damage"]

@@ -11,6 +11,7 @@ signal on_destroy
 @onready var model = %Model
 @onready var emplacement_collision_shape = %EmplacementCollisionShape
 @onready var navigation_region = %NavigationRegion
+@onready var emplacement_seller = $EmplacementSeller
 
 var current_health
 
@@ -19,6 +20,7 @@ func _ready():
 	current_health = max_health
 	hurtbox.monitoring = true
 	hurtbox.monitorable = true
+	emplacement_seller.on_sell.connect(sell)
 
 func place():
 	animation_player.play("place")
@@ -37,3 +39,9 @@ func destroy():
 	on_destroy.emit()
 	navigation_region.enabled = true
 	GameManager.on_barricade_destroyed.emit()
+
+func sell():
+	on_destroy.emit()
+	navigation_region.enabled = false
+	GameManager.on_barricade_destroyed.emit()
+	#GameManager.add_points(cost)

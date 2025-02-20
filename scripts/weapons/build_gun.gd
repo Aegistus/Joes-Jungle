@@ -5,25 +5,9 @@ signal on_equip
 signal on_unequip
 signal on_change_selected_build(index : int)
 
-const BARRICADE_EMPLACEMENT = preload("res://scenes/emplacements/barricade_emplacement.tscn")
-const BARRICADE_GHOST = preload("res://scenes/emplacements/barricade_ghost.tscn")
-const CLAYMORE_MINE = preload("res://scenes/emplacements/claymore_mine.tscn")
-const CLAYMORE_GHOST = preload("res://scenes/emplacements/claymore_ghost.tscn")
+@export var all_builds : Array[EmplacementStats]
 
-var all_builds = [BARRICADE_EMPLACEMENT, CLAYMORE_MINE]
-var build_blueprint_dict = {
-	BARRICADE_EMPLACEMENT: BARRICADE_GHOST,
-	CLAYMORE_MINE: CLAYMORE_GHOST,
-}
-var build_costs = {
-	BARRICADE_EMPLACEMENT: 500,
-	CLAYMORE_MINE: 500,
-}
-var build_names = {
-	BARRICADE_EMPLACEMENT: "Barricade",
-	CLAYMORE_MINE: "M18A1 Claymore"
-}
-var currently_selected_build
+var current_emplacement : EmplacementStats
 var current_index = 0
 var current_emplacement_ghost : Node3D
 var is_equipped = false
@@ -32,16 +16,16 @@ var reticle
 var overlapping = false
 
 func _ready():
-	currently_selected_build = all_builds[current_index]
+	current_emplacement = all_builds[current_index]
 
 func shoot():
-	if current_emplacement_ghost.valid_placement and GameManager.current_points >= build_costs[currently_selected_build]:
-		var emplacement = currently_selected_build.instantiate() as Emplacement
+	if current_emplacement_ghost.valid_placement and GameManager.current_points >= current_emplacement.cost:
+		var emplacement = current_emplacement.emplacement_scene.instantiate() as Emplacement
 		get_tree().root.add_child(emplacement)
 		emplacement.global_position = reticle.global_position
 		emplacement.global_rotation = current_emplacement_ghost.global_rotation
 		emplacement.place()
-		GameManager.spend_points(build_costs[currently_selected_build])
+		GameManager.spend_points(current_emplacement.cost)
 	else:
 		%InvalidErrorAudioPlayer.play()
 
@@ -75,7 +59,7 @@ func _physics_process(delta):
 			select_new_emplacement()
 
 func spawn_emplacement_ghost():
-	current_emplacement_ghost = build_blueprint_dict[currently_selected_build].instantiate() as EmplacementGhost
+	current_emplacement_ghost = current_emplacement.ghost_scene.instantiate() as EmplacementGhost
 	player.add_child(current_emplacement_ghost)
 	current_emplacement_ghost.global_position = reticle.global_position
 
@@ -86,7 +70,7 @@ func rotate_left():
 	current_emplacement_ghost.rotate_object_local(Vector3.UP, -PI/4.0)
 
 func select_new_emplacement():
-	currently_selected_build = all_builds[current_index]
+	current_emplacement = all_builds[current_index]
 	current_emplacement_ghost.queue_free()
 	spawn_emplacement_ghost()
 	on_change_selected_build.emit(current_index)
