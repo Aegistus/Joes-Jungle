@@ -227,12 +227,12 @@ agent_height = 2.0
 region_min_size = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kcgaj"]
-size = Vector3(3.2, 0.75, 0.45)
+size = Vector3(3.2, 1.5, 0.45)
 
-[node name="BarricadeEmplacement" type="Node3D" node_paths=PackedStringArray("models") groups=["barricade"]]
+[node name="BarricadeEmplacement" type="Node3D" groups=["barricade"]]
 script = ExtResource("1_o24el")
 max_health = 50.0
-models = [NodePath("Model")]
+stats_path = "res://resources/emplacement-stats/barricade_stats.tres"
 
 [node name="Model" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
@@ -301,12 +301,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, -0.25, 0.0250001
 visible = false
 size = Vector3(3.5, 0.5, 1.85)
 
-[node name="EmplacementSeller" type="Area3D" parent="."]
+[node name="EmplacementSeller" type="Area3D" parent="." groups=["interactable"]]
+collision_layer = 32
+collision_mask = 0
 script = ExtResource("7_2wab3")
 tooltip_text = "Hold to Sell"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EmplacementSeller"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, 0.425, -0.025)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EmplacementSeller" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, 0.8, -0.025)
 shape = SubResource("BoxShape3D_kcgaj")
 
 [node name="Timer" type="Timer" parent="EmplacementSeller"]

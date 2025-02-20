@@ -16,6 +16,7 @@ signal on_destroy
 var current_health
 
 func _ready():
+	super()
 	animation_player.play("default")
 	current_health = max_health
 	hurtbox.monitoring = true
@@ -44,4 +45,4 @@ func sell():
 	on_destroy.emit()
 	navigation_region.enabled = false
 	GameManager.on_barricade_destroyed.emit()
-	#GameManager.add_points(cost)
+	super()

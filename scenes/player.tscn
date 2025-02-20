@@ -945,6 +945,7 @@ parameters/WalkSpeed/blend_position = Vector2(0, -0.00429189)
 [node name="InteractRaycast" type="RayCast3D" parent="PlayerModel"]
 transform = Transform3D(1, -2.98428e-13, -3.82137e-15, -3.82137e-15, 6.44844e-08, -1, 2.13163e-14, 1.47523, 4.37114e-08, 1.79851e-08, 1, 0.331003)
 collision_mask = 32
+collide_with_areas = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="PlayerModel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031, 1.77482, -0.294217)

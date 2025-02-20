@@ -416,12 +416,12 @@ stream_2/stream = ExtResource("8_4q8xo")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wiitf"]
 radius = 0.709551
 
-[node name="ClaymoreMine" type="Node3D" node_paths=PackedStringArray("models")]
+[node name="ClaymoreMine" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
 script = ExtResource("1_y0hqb")
 field_of_fire_degrees = 60.0
 base_penetration = 6
-models = [NodePath("Model/Claymore"), NodePath("Model/Cube"), NodePath("Model/Cube_001"), NodePath("Model/Cube_002"), NodePath("Model/Cube_003"), NodePath("Model/LaserSight/Laser_A_Left"), NodePath("Model/LaserSight2/Laser_A_Left")]
+stats_path = "res://resources/emplacement-stats/claymore_stats.tres"
 
 [node name="Model" type="Node3D" parent="."]
 transform = Transform3D(0.145136, 0.0378889, 0, -0.0378889, 0.145136, 0, 0, 0, 0.15, 0, 0.565854, 0)

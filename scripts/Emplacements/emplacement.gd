@@ -1,15 +1,18 @@
 class_name Emplacement
 extends Node3D
 
-@export var models : Array[GeometryInstance3D]
+@export var stats_path : String
 
 @onready var emplacement_overlapper = %EmplacementOverlapper as Area3D
 
-const BLUEPRINT_GHOST_MAT = preload("res://materials/blueprint_ghost_mat.tres")
+var stats : EmplacementStats
 
-func make_transparent():
-	for model in models:
-		model.material_override = BLUEPRINT_GHOST_MAT
+func _ready():
+	stats = load(stats_path)
 
 func place():
 	pass
+
+func sell():
+	GameManager.add_points(stats.cost)
+	queue_free()
