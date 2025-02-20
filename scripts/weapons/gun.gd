@@ -126,6 +126,7 @@ func remove_magazine() -> Node3D:
 	remove_mag_audio_player.play()
 	if magazine:
 		var copy = magazine.duplicate()
+		get_tree().root.add_child(copy)
 		copy.global_scale(Vector3(magazine_scale, magazine_scale, magazine_scale))
 		magazine.visible = false
 		return copy

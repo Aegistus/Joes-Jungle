@@ -166,7 +166,7 @@ func remove_magazine():
 		reloading_state.magazine_removed = true
 		magazine = gun.remove_magazine()
 		if magazine != null:
-			left_hand_bone.add_child(magazine)
+			magazine.reparent(left_hand_bone)
 			magazine.global_position = left_hand_bone.global_position
 			magazine.global_rotation = left_hand_bone.global_rotation
 
@@ -179,7 +179,7 @@ func drop_magazine():
 		if magazine != null:
 			var global_pos = magazine.global_position
 			left_hand_bone.remove_child(magazine)
-			get_parent().add_child(magazine)
+			get_tree().root.add_child(magazine)
 			magazine.global_position = global_pos
 			magazine.freeze = false
 			magazine.apply_impulse(player_model.transform * Vector3.LEFT)

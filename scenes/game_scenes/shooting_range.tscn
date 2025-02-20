@@ -245,17 +245,17 @@ starting_health = 100000
 
 [node name="WateringBush" parent="." instance=ExtResource("14_itv31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2, -0.1, -13.1)
-max_water = 10.0
+max_water = 10000.0
 
 [node name="WateringBush2" parent="." instance=ExtResource("14_itv31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2, -0.1, -16)
 id = 1
-max_water = 10.0
+max_water = 10000.0
 
 [node name="WateringBush3" parent="." instance=ExtResource("14_itv31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2, -0.1, -19.1)
 id = 2
-max_water = 10.0
+max_water = 10000.0
 
 [node name="ShopRevolver" parent="." instance=ExtResource("14_kycbe")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.63386, -0.1, -10.6274)
