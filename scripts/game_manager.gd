@@ -13,6 +13,7 @@ signal on_barricade_destroyed
 
 const SAVE_FILE_PATH = "user://savegame.dat"
 
+var currently_in_wave = false
 var current_wave
 var run_time = 0.0
 var current_points = 0
@@ -47,6 +48,8 @@ var all_player_runs : Array[GameRunEntry]
 
 func _ready():
 	load_save_data()
+	on_wave_start.connect(func(): currently_in_wave = true)
+	on_wave_end.connect(func(): currently_in_wave = false)
 	intermission_timer.timeout.connect(func(): on_intermission_end.emit())
 
 func _process(delta):

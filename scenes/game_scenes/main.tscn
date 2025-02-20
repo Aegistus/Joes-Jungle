@@ -1,8 +1,9 @@
-[gd_scene load_steps=65 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=66 format=3 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Script" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
 [ext_resource type="Material" uid="uid://b3knf26gif5f3" path="res://materials/floor_mat.tres" id="3_mkkog"]
+[ext_resource type="Script" path="res://scripts/navigation_region.gd" id="3_r0bm8"]
 [ext_resource type="Texture2D" uid="uid://dpdrosnb70eiy" path="res://assets/textures/Wood Texture.png" id="3_ro61b"]
 [ext_resource type="Texture2D" uid="uid://21lfi3leb2p6" path="res://assets/textures/Stone Tile Texture.png" id="4_t6404"]
 [ext_resource type="Texture2D" uid="uid://cj22wf72y50x" path="res://assets/textures/Grass Texture.png" id="5_npq4s"]
@@ -140,6 +141,7 @@ environment = SubResource("Environment_112m7")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
 navigation_mesh = SubResource("NavigationMesh_7od6u")
+script = ExtResource("3_r0bm8")
 
 [node name="map" type="Node3D" parent="NavigationRegion3D"]
 
@@ -2496,7 +2498,7 @@ transform = Transform3D(-4.37114e-08, 0, 0.64, 0, 1, 0, -1, 0, -2.79753e-08, 9.9
 transform = Transform3D(0.5, 0, 0.554256, 0, 1, 0, -0.866025, 0, 0.32, 27.6, 0, -50.5)
 
 [node name="SM_Env_Road_Dirt_Swerve_03" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("33_m75sv")]
-transform = Transform3D(-0.5, 0, 0.554256, 0, 1, 0, -0.866025, 0, -0.32, 12.7, 0.2, 24)
+transform = Transform3D(-0.5, 0, 0.554256, 0, 1, 0, -0.866025, 0, -0.32, 12.7, -0.1, 24)
 
 [node name="SM_Veh_Car_01" parent="NavigationRegion3D/map/Outer/Front Entrance" instance=ExtResource("34_01axc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0.299999)

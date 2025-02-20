@@ -39,6 +39,11 @@ func process_state_physics(delta):
 			controlled_player.gun.shoot()
 		if Input.is_action_just_released("shoot"):
 			controlled_player.gun.shoot_end()
+		if controlled_player.gun.gun_type == Gun.GunType.BUILDGUN:
+			if Input.is_action_just_pressed("build_rotate_left"):
+				controlled_player.gun.rotate_left()
+			if Input.is_action_just_pressed("build_rotate_right"):
+				controlled_player.gun.rotate_right()
 
 func exit():
 	if controlled_player.primary_weapon != null:
@@ -47,13 +52,6 @@ func exit():
 		controlled_player.secondary_weapon.ergonomics_multiplier = 0
 
 func check_transitions():
-	if controlled_player.gun.gun_type == Gun.GunType.BUILDGUN:
-		if Input.is_action_just_pressed("build_rotate_left"):
-			controlled_player.gun.rotate_left()
-			return null
-		if Input.is_action_just_pressed("build_rotate_right"):
-			controlled_player.gun.rotate_right()
-			return null
 	if Input.is_action_just_pressed("reload"):
 		controlled_player.gun.shoot_end()
 		if controlled_player.gun.ammo is SingleLoadAmmo:
@@ -69,7 +67,7 @@ func check_transitions():
 	if Input.is_action_just_pressed("equip_secondary"):
 		equipping_state.weapon_index = 1
 		return equipping_state
-	elif Input.is_action_just_pressed("toggle_build_mode"):
+	elif Input.is_action_just_pressed("toggle_build_mode") and !GameManager.currently_in_wave:
 		equipping_state.weapon_index = 2
 		return equipping_state
 	var input = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
