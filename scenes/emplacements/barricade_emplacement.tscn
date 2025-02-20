@@ -225,7 +225,7 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 agent_height = 2.0
 region_min_size = 1.0
 
-[node name="BarricadeEmplacement" type="Node3D" node_paths=PackedStringArray("models")]
+[node name="BarricadeEmplacement" type="Node3D" node_paths=PackedStringArray("models") groups=["barricade"]]
 script = ExtResource("1_o24el")
 max_health = 50.0
 models = [NodePath("Model")]
@@ -290,7 +290,7 @@ shape = SubResource("BoxShape3D_a6y88")
 [node name="NavigationRegion" type="NavigationRegion3D" parent="."]
 unique_name_in_owner = true
 navigation_mesh = SubResource("NavigationMesh_0tkne")
-travel_cost = 10.0
+enabled = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, -0.25, 0.0250001)

@@ -34,6 +34,6 @@ func destroy():
 	hurtbox.monitorable = false
 	actor_collision_shape.disabled = true
 	model.visible = false
-	emplacement_collision_shape.disabled = true
 	on_destroy.emit()
-	navigation_region.enter_cost = 0
+	navigation_region.enabled = true
+	GameManager.on_barricade_destroyed.emit()

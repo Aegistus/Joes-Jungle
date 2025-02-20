@@ -9,6 +9,7 @@ signal on_wave_end
 signal on_intermission_start
 signal on_intermission_end
 signal on_barricade_added(barricade : Node3D)
+signal on_barricade_destroyed
 
 const SAVE_FILE_PATH = "user://savegame.dat"
 

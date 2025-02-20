@@ -54,6 +54,7 @@ interactable=""
 plant=""
 aim_reticle=""
 destructible=""
+barricade=""
 
 [input]
 
