@@ -29,7 +29,6 @@ class SpawnEntry:
 	SpawnEntry.new(ZOMBIE, 80, 0),
 ]
 
-var current_wave = 0
 var wave_completed = true
 var all_spawn_points
 var sum_of_spawn_weights : int
@@ -50,9 +49,9 @@ func _ready():
 func spawn_next_wave():
 	print("Spawning next wave")
 	wave_completed = false
-	current_wave += 1
+	GameManager.current_wave += 1
 	GameManager.on_wave_start.emit()
-	print("Wave start: " + str(current_wave))
+	print("Wave start: " + str(GameManager.current_wave))
 	all_spawn_points.shuffle()
 	var all_zombies_count = get_tree().get_nodes_in_group("enemy").size()
 	for i in current_enemy_count:
@@ -71,7 +70,7 @@ func spawn_zombie(spawn_index : int):
 	var rnd = randf_range(0, sum_of_weight)
 	print(rnd)
 	for table in zombie_spawn_table:
-		if rnd < table.spawn_weight and current_wave >= table.starting_wave:
+		if rnd < table.spawn_weight and GameManager.current_wave >= table.starting_wave:
 			zombie_prototype = table.prototype
 			break
 		rnd -= table.spawn_weight

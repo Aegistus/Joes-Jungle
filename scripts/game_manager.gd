@@ -14,7 +14,7 @@ signal on_barricade_destroyed
 const SAVE_FILE_PATH = "user://savegame.dat"
 
 var currently_in_wave = false
-var current_wave
+var current_wave : int = 0
 var run_time = 0.0
 var current_points = 0
 var is_game_running = false

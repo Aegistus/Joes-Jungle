@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=34 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -23,6 +23,7 @@
 [ext_resource type="FontFile" uid="uid://b1st00ad0rqs8" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.ttf" id="18_t8k2g"]
 [ext_resource type="Script" path="res://scripts/ui/build_menu.gd" id="21_wjrj5"]
 [ext_resource type="Script" path="res://scripts/ui/intermission_timer.gd" id="23_wf65m"]
+[ext_resource type="Script" path="res://scripts/ui/wave_announcer_ui.gd" id="24_ra6va"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ljnu"]
 bg_color = Color(0, 0, 0, 0.192157)
@@ -760,5 +761,50 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_vju5m")
 theme_override_font_sizes/font_size = 24
 text = "0:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WaveCounter" type="Label" parent="CanvasLayer"]
+offset_left = 142.0
+offset_top = 41.0
+offset_right = 210.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0.808137, 3.27289e-06, 7.70092e-07, 1)
+theme_override_fonts/font = ExtResource("2_vju5m")
+theme_override_font_sizes/font_size = 40
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WaveAnnouncer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 113.0
+offset_right = 200.0
+offset_bottom = 153.0
+grow_horizontal = 2
+pivot_offset = Vector2(200, 20)
+script = ExtResource("24_ra6va")
+animation_time = 0.5
+fade_in_time = 0.1
+font_color = Color(0.898039, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/WaveAnnouncer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.5
+offset_bottom = 1.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 20)
+theme_override_colors/font_color = Color(0.898275, 2.59906e-06, 1.2514e-06, 1)
+theme_override_fonts/font = ExtResource("2_vju5m")
+theme_override_font_sizes/font_size = 40
+text = "Wave 9999"
 horizontal_alignment = 1
 vertical_alignment = 1
