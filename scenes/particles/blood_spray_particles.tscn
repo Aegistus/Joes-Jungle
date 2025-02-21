@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo0i6a5eb8yf"]
+
+[ext_resource type="Material" uid="uid://b00k0gx5qr7yr" path="res://materials/blood_mat.tres" id="4_kmmeq"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7tr4p"]
+emission_shape_scale = Vector3(0.1, 0.1, 0.1)
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, -1, 0)
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, -7, 0)
+scale_min = 0.02
+scale_max = 0.02
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+collision_use_scale = true
+
+[sub_resource type="Curve" id="Curve_tuavu"]
+_data = [Vector2(0.00656455, 0.722268), 0.0, 0.0, 0, 0, Vector2(0.238512, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.24859, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_tt46j"]
+shape = 0
+size = 0.5
+sections = 10
+section_length = 0.05
+curve = SubResource("Curve_tuavu")
+
+[node name="LimbExplosionParticles" type="Node3D"]
+
+[node name="Blood" type="GPUParticles3D" parent="."]
+material_override = ExtResource("4_kmmeq")
+amount = 100
+trail_enabled = true
+trail_lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_7tr4p")
+draw_pass_1 = SubResource("RibbonTrailMesh_tt46j")

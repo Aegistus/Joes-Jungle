@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddl2grpfek6t0"]
+
+[ext_resource type="Material" uid="uid://ubhebejacrk1" path="res://materials/skin_mat.tres" id="1_efe6g"]
+[ext_resource type="Script" path="res://scripts/limb_explosion_particles.gd" id="1_r6uie"]
+[ext_resource type="Material" uid="uid://bpcgwdhmkjs1a" path="res://materials/gore_mat.tres" id="2_pwxvw"]
+[ext_resource type="Material" uid="uid://b00k0gx5qr7yr" path="res://materials/blood_mat.tres" id="3_1e5y0"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i4l68"]
+emission_shape_scale = Vector3(0.1, 0.1, 0.1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = -180.0
+angle_max = 180.0
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, -7, 0)
+scale_min = 0.01
+scale_max = 0.03
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+collision_use_scale = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_8sdft"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7tr4p"]
+emission_shape_scale = Vector3(0.1, 0.1, 0.1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = -180.0
+angle_max = 180.0
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, -7, 0)
+scale_min = 0.02
+scale_max = 0.02
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+collision_use_scale = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_tt46j"]
+shape = 0
+size = 0.1
+sections = 10
+section_length = 0.05
+
+[node name="LimbExplosionParticles" type="Node3D"]
+script = ExtResource("1_r6uie")
+
+[node name="Skin" type="GPUParticles3D" parent="."]
+material_override = ExtResource("1_efe6g")
+emitting = false
+amount = 40
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_i4l68")
+draw_pass_1 = SubResource("BoxMesh_8sdft")
+
+[node name="Gore" type="GPUParticles3D" parent="."]
+material_override = ExtResource("2_pwxvw")
+emitting = false
+amount = 40
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_i4l68")
+draw_pass_1 = SubResource("BoxMesh_8sdft")
+
+[node name="Blood" type="GPUParticles3D" parent="."]
+material_override = ExtResource("3_1e5y0")
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_7tr4p")
+draw_pass_1 = SubResource("RibbonTrailMesh_tt46j")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true

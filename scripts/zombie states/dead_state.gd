@@ -10,7 +10,7 @@ signal on_zombie_death
 @onready var collision_shape_3d = $"../../CollisionShape3D"
 @onready var hitbox = $"../../Hitbox"
 @onready var hit_state = %HitState
-@onready var general_skeleton = %GeneralSkeleton
+@onready var general_skeleton : Skeleton3D = %GeneralSkeleton
 
 func enter():
 	hitbox.monitoring = false
@@ -19,8 +19,10 @@ func enter():
 	zombie.velocity = Vector3.ZERO
 	ragdoll.active = true
 	ragdoll.physical_bones_start_simulation()
-	for bone in hit_state.already_dismembered_parts:
-		general_skeleton.set_bone_pose_scale(bone, Vector3.ONE * .001)
+	for bone in zombie.already_dismembered_parts:
+		#general_skeleton.set_bone_pose_scale(bone, Vector3.ONE * .00001)
+		var bone_transform = general_skeleton.get_bone_global_pose(bone)
+		general_skeleton.set_bone_global_pose_override(bone, bone_transform.scaled(Vector3.ONE * .0001), 1.0, true)
 	var rand_direction = Vector3(randf() * 2 - 1, randf() * 2 - 1, randf() * 2 - 1).normalized()
 	hip_bone.linear_velocity = rand_direction * 20
 	var timer = Timer.new()
