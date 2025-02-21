@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=47 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -25,6 +25,17 @@
 [ext_resource type="Script" path="res://scripts/ui/intermission_timer.gd" id="23_wf65m"]
 [ext_resource type="Script" path="res://scripts/ui/wave_announcer_ui.gd" id="24_ra6va"]
 [ext_resource type="Script" path="res://scripts/ui/wave_counter_ui.gd" id="24_w2ypn"]
+[ext_resource type="AudioStream" uid="uid://yko5tw3yfj8h" path="res://assets/audio/church_bell.mp3" id="26_001bm"]
+[ext_resource type="AudioStream" uid="uid://drj0o3h7awq1y" path="res://assets/audio/start_wave_sounds/Zombie Effect_01.wav" id="27_rswbq"]
+[ext_resource type="AudioStream" uid="uid://bi0cqx6j5abcq" path="res://assets/audio/start_wave_sounds/Zombie Effect_02.wav" id="28_uulvo"]
+[ext_resource type="AudioStream" uid="uid://dmjia1ii3q2ev" path="res://assets/audio/start_wave_sounds/Zombie Effect_03.wav" id="29_4axda"]
+[ext_resource type="AudioStream" uid="uid://dwsv0sqtx8ynf" path="res://assets/audio/start_wave_sounds/Zombie Effect_04.wav" id="30_n5ue3"]
+[ext_resource type="AudioStream" uid="uid://bjsp2a0kmuum3" path="res://assets/audio/start_wave_sounds/Zombie Effect_06.wav" id="31_8to6x"]
+[ext_resource type="AudioStream" uid="uid://dyg3fnssbq1vh" path="res://assets/audio/start_wave_sounds/Zombie Effect_07.wav" id="32_vs565"]
+[ext_resource type="AudioStream" uid="uid://c0ngdpigb0ob2" path="res://assets/audio/start_wave_sounds/Zombie Effect_09.wav" id="33_f0ogp"]
+[ext_resource type="AudioStream" uid="uid://cmwts5cc5vr8w" path="res://assets/audio/start_wave_sounds/Zombie Effect_10.wav" id="34_plo1p"]
+[ext_resource type="AudioStream" uid="uid://db1foj5ixkdgs" path="res://assets/audio/start_wave_sounds/Zombie Effect_12.wav" id="35_ww6fr"]
+[ext_resource type="AudioStream" uid="uid://d3srxo2ajoeb8" path="res://assets/audio/start_wave_sounds/Zombie Effect_13.wav" id="36_w8yrs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ljnu"]
 bg_color = Color(0, 0, 0, 0.192157)
@@ -73,6 +84,19 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p24nr"]
+streams_count = 10
+stream_0/stream = ExtResource("27_rswbq")
+stream_1/stream = ExtResource("28_uulvo")
+stream_2/stream = ExtResource("29_4axda")
+stream_3/stream = ExtResource("30_n5ue3")
+stream_4/stream = ExtResource("31_8to6x")
+stream_5/stream = ExtResource("32_vs565")
+stream_6/stream = ExtResource("33_f0ogp")
+stream_7/stream = ExtResource("34_plo1p")
+stream_8/stream = ExtResource("35_ww6fr")
+stream_9/stream = ExtResource("36_w8yrs")
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -811,3 +835,10 @@ theme_override_font_sizes/font_size = 60
 text = "Wave 9999"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ClockGongAudioPlayer" type="AudioStreamPlayer2D" parent="CanvasLayer/WaveAnnouncer"]
+stream = ExtResource("26_001bm")
+volume_db = 15.0
+
+[node name="ZombieNoiseAudioPlayer" type="AudioStreamPlayer2D" parent="CanvasLayer/WaveAnnouncer"]
+stream = SubResource("AudioStreamRandomizer_p24nr")
