@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="4_8ixst"]
 [ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="5_unmbg"]
 [ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="6_5yw3b"]
+[ext_resource type="PackedScene" uid="uid://dk7ilqse6t10n" path="res://scenes/emplacements/emplacement_overlapper.tscn" id="6_mv383"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mumfi"]
 resource_name = "lambert430"
@@ -206,9 +207,6 @@ stream_0/stream = ExtResource("4_8ixst")
 stream_1/stream = ExtResource("5_unmbg")
 stream_2/stream = ExtResource("6_5yw3b")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6nwfg"]
-size = Vector3(2.5, 0.8, 1.75)
-
 [node name="BarricadeEmplacement" type="Node3D" node_paths=PackedStringArray("models")]
 script = ExtResource("1_thhlo")
 models = [NodePath("SM_Env_Sandbag_Wall_01")]
@@ -239,14 +237,12 @@ draw_pass_1 = SubResource("BoxMesh_mv2k3")
 [node name="BuildAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_3xl5b")
 
-[node name="EmplacementOverlapper" type="Area3D" parent="."]
-unique_name_in_owner = true
-collision_layer = 256
-collision_mask = 256
+[node name="EmplacementOverlapper" parent="." instance=ExtResource("6_mv383")]
+input_capture_on_drag = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EmplacementOverlapper"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.025)
-shape = SubResource("BoxShape3D_6nwfg")
-
-[connection signal="area_entered" from="EmplacementOverlapper" to="." method="_on_emplacement_overlapper_area_entered"]
-[connection signal="area_exited" from="EmplacementOverlapper" to="." method="_on_emplacement_overlapper_area_exited"]
+[connection signal="area_entered" from="EmplacementOverlapper" to="." method="add_overlapping_body"]
+[connection signal="area_exited" from="EmplacementOverlapper" to="." method="remove_overlapping_body"]
+[connection signal="area_shape_entered" from="EmplacementOverlapper" to="." method="_on_emplacement_overlapper_area_shape_entered"]
+[connection signal="area_shape_exited" from="EmplacementOverlapper" to="." method="_on_emplacement_overlapper_area_shape_exited"]
+[connection signal="body_entered" from="EmplacementOverlapper" to="." method="add_overlapping_body"]
+[connection signal="body_exited" from="EmplacementOverlapper" to="." method="remove_overlapping_body"]

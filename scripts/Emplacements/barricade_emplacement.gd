@@ -9,7 +9,6 @@ signal on_destroy
 @onready var hurtbox = $Hurtbox
 @onready var animation_player = %AnimationPlayer
 @onready var model = %Model
-@onready var emplacement_collision_shape = %EmplacementCollisionShape
 @onready var navigation_region = %NavigationRegion
 @onready var emplacement_seller = $EmplacementSeller
 

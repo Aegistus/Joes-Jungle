@@ -11,17 +11,25 @@ const BLUEPRINT_GHOST_INVALID_MAT = preload("res://materials/blueprint_ghost_inv
 var valid_placement := true
 var currently_inside = []
 
-func _on_emplacement_overlapper_area_entered(area):
-	currently_inside.append(area)
+func add_overlapping_body(body):
+	currently_inside.append(body)
 	valid_placement = false
 	for model in models:
 		model.material_override = BLUEPRINT_GHOST_INVALID_MAT
 
-func _on_emplacement_overlapper_area_exited(area):
-	var index = currently_inside.find(area)
+func remove_overlapping_body(body):
+	var index = currently_inside.find(body)
 	if index != -1:
 		currently_inside.remove_at(index)
 	if currently_inside.size() == 0:
 		valid_placement = true
 		for model in models:
 			model.material_override = BLUEPRINT_GHOST_MAT
+
+
+func _on_emplacement_overlapper_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	add_overlapping_body(area)
+
+
+func _on_emplacement_overlapper_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
+	remove_overlapping_body(area)

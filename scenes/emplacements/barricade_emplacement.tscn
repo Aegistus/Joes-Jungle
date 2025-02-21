@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://0pbg6jpb0fmj"]
+[gd_scene load_steps=30 format=4 uid="uid://0pbg6jpb0fmj"]
 
 [ext_resource type="Script" path="res://scripts/emplacements/barricade_emplacement.gd" id="1_o24el"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="1_xrn8h"]
@@ -6,7 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="4_gobs6"]
 [ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="5_jbhnd"]
 [ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="6_fmdhp"]
-[ext_resource type="Script" path="res://scripts/emplacements/emplacement_seller.gd" id="7_2wab3"]
+[ext_resource type="PackedScene" uid="uid://dk7ilqse6t10n" path="res://scenes/emplacements/emplacement_overlapper.tscn" id="7_0g7l4"]
+[ext_resource type="PackedScene" uid="uid://c4rrj07uowwaj" path="res://scenes/emplacements/emplacement_seller.tscn" id="8_g2clp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yalxg"]
 albedo_texture = ExtResource("1_xrn8h")
@@ -217,17 +218,11 @@ stream_0/stream = ExtResource("4_gobs6")
 stream_1/stream = ExtResource("5_jbhnd")
 stream_2/stream = ExtResource("6_fmdhp")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_a6y88"]
-size = Vector3(2.5, 0.8, 0.55)
-
 [sub_resource type="NavigationMesh" id="NavigationMesh_0tkne"]
 vertices = PackedVector3Array(-1.25, 0.5, -0.4, -1.25, 0.5, 0.35, 1.25, 0.5, 0.35, 1.25, 0.5, -0.4)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 agent_height = 2.0
 region_min_size = 1.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kcgaj"]
-size = Vector3(3.2, 1.5, 0.45)
 
 [node name="BarricadeEmplacement" type="Node3D" groups=["barricade"]]
 script = ExtResource("1_o24el")
@@ -281,15 +276,9 @@ draw_pass_1 = SubResource("BoxMesh_mv2k3")
 [node name="BuildAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_3xl5b")
 
-[node name="EmplacementOverlapper" type="Area3D" parent="."]
+[node name="EmplacementOverlapper" parent="." instance=ExtResource("7_0g7l4")]
 unique_name_in_owner = true
-collision_layer = 256
-collision_mask = 256
-
-[node name="EmplacementCollisionShape" type="CollisionShape3D" parent="EmplacementOverlapper"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.025)
-shape = SubResource("BoxShape3D_a6y88")
+collision_mask = 321
 
 [node name="NavigationRegion" type="NavigationRegion3D" parent="."]
 unique_name_in_owner = true
@@ -301,17 +290,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, -0.25, 0.0250001
 visible = false
 size = Vector3(3.5, 0.5, 1.85)
 
-[node name="EmplacementSeller" type="Area3D" parent="." groups=["interactable"]]
-collision_layer = 32
-collision_mask = 0
-script = ExtResource("7_2wab3")
-tooltip_text = "Hold to Sell"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EmplacementSeller" groups=["interactable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, 0.8, -0.025)
-shape = SubResource("BoxShape3D_kcgaj")
-
-[node name="Timer" type="Timer" parent="EmplacementSeller"]
-wait_time = 5.0
+[node name="EmplacementSeller" parent="." instance=ExtResource("8_g2clp")]
 
 [connection signal="on_hurt" from="Hurtbox" to="." method="damage"]
