@@ -19,6 +19,6 @@ func announce_wave():
 	label.visible = true
 	var tween = get_tree().create_tween()
 	tween.tween_property(label, "scale", Vector2.ONE, animation_time)
-	tween.tween_property(label, "modulate:a", 1, fade_in_time)
+	tween.parallel().tween_property(label, "modulate:a", 1, fade_in_time)
 	tween.tween_interval(2)
 	tween.tween_property(label, "modulate:a", 0, fade_out_time)
