@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=48 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -23,6 +23,7 @@
 [ext_resource type="FontFile" uid="uid://b1st00ad0rqs8" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.ttf" id="18_t8k2g"]
 [ext_resource type="Script" path="res://scripts/ui/build_menu.gd" id="21_wjrj5"]
 [ext_resource type="Script" path="res://scripts/ui/intermission_timer.gd" id="23_wf65m"]
+[ext_resource type="AudioStream" uid="uid://wwkdoy6htlok" path="res://assets/audio/timer_ticking.mp3" id="24_luh10"]
 [ext_resource type="Script" path="res://scripts/ui/wave_announcer_ui.gd" id="24_ra6va"]
 [ext_resource type="Script" path="res://scripts/ui/wave_counter_ui.gd" id="24_w2ypn"]
 [ext_resource type="AudioStream" uid="uid://yko5tw3yfj8h" path="res://assets/audio/church_bell.mp3" id="26_001bm"]
@@ -788,6 +789,10 @@ theme_override_font_sizes/font_size = 24
 text = "0:00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TickingAudioPlayer" type="AudioStreamPlayer2D" parent="CanvasLayer/IntermissionTimer"]
+stream = ExtResource("24_luh10")
+volume_db = 10.0
 
 [node name="WaveCounter" type="Label" parent="CanvasLayer"]
 offset_left = 115.0
