@@ -20,9 +20,10 @@ func enter():
 	ragdoll.active = true
 	ragdoll.physical_bones_start_simulation()
 	for bone in zombie.already_dismembered_parts:
-		#general_skeleton.set_bone_pose_scale(bone, Vector3.ONE * .00001)
-		var bone_transform = general_skeleton.get_bone_global_pose(bone)
-		general_skeleton.set_bone_global_pose_override(bone, bone_transform.scaled(Vector3.ONE * .0001), 1.0, true)
+		general_skeleton.set_bone_pose_scale(bone, Vector3.ONE * .00001)
+		remove_all_child_bones(bone)
+		#var bone_transform = general_skeleton.get_bone_global_pose(bone)
+		#general_skeleton.set_bone_global_pose_override(bone, bone_transform.scaled(Vector3.ONE * .0001), 1.0, true)
 	var rand_direction = Vector3(randf() * 2 - 1, randf() * 2 - 1, randf() * 2 - 1).normalized()
 	hip_bone.linear_velocity = rand_direction * 20
 	var timer = Timer.new()
@@ -33,3 +34,9 @@ func enter():
 	GameManager.add_points(zombie.point_value)
 	GameManager.on_zombie_kill.emit()
 	on_zombie_death.emit()
+
+func remove_all_child_bones(parent : int):
+	var children = general_skeleton.get_bone_children(parent)
+	for i in children.size():
+		remove_all_child_bones(children[i])
+		general_skeleton.set_bone_pose_scale(children[i], Vector3.ONE * .00001)

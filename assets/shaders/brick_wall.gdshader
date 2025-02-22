@@ -33,9 +33,9 @@ void fragment() {
 		vec3 albedoZ = texture(wall_texture, projected_coords.xy).rgb;
 		vec3 world_normal = abs(INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
 		vec3 normal_weights = world_normal / (world_normal.x + world_normal.y + world_normal.z);
-		
+
 		vec3 color_offset = random(floor(projected_coords.xyz));
-		
+
 		ALBEDO = mix(vec3(0.0f), mix((albedoX * normal_weights.x + albedoY * normal_weights.y + albedoZ * normal_weights.z), color_offset.rgb, 0.05f), brightness);
 	}
 }

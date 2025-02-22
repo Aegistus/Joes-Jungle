@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://ubhebejacrk1" path="res://materials/skin_mat.tres" id="1_efe6g"]
 [ext_resource type="Script" path="res://scripts/limb_explosion_particles.gd" id="1_r6uie"]
 [ext_resource type="Material" uid="uid://bpcgwdhmkjs1a" path="res://materials/gore_mat.tres" id="2_pwxvw"]
-[ext_resource type="Material" uid="uid://b00k0gx5qr7yr" path="res://materials/blood_mat.tres" id="3_1e5y0"]
+[ext_resource type="Material" uid="uid://dq7t7jvor1txo" path="res://materials/blood_mat.tres" id="3_1e5y0"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i4l68"]
 emission_shape_scale = Vector3(0.1, 0.1, 0.1)

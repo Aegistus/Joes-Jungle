@@ -4,8 +4,7 @@ extends CharacterBody3D
 @export var starting_health = 10
 @export var point_value = 10
 @export var stagger_immune = false
-@export var body_part_names = ["Physical Bone Head", "Physical Bone LeftUpperArm",\
-	"Physical Bone LeftLowerArm", "Physical Bone RightUpperArm", "Physical Bone RightLowerArm"]
+@export var body_part_names = ["Physical Bone Head", "Physical Bone LeftLowerArm", "Physical Bone RightLowerArm"]
 
 @onready var ragdoll = $zombie_model/Armature/GeneralSkeleton/PhysicalBoneSimulator3D
 @onready var state_machine = $StateMachine
@@ -56,29 +55,45 @@ func barricade_detected(area : Area3D):
 	target_barricade = area.get_parent()
 
 func random_dismember():
+	if body_part_names.size() == 0:
+		return
 	var body_part_name : String = body_part_names.pick_random()
+	body_part_names.erase(body_part_name)
 	var parent_bone : PhysicalBone3D
 	for b in physics_bones:
 		if b.name == body_part_name:
 			parent_bone = b
+	if parent_bone == null:
+		return
 	var child_bone_ids = general_skeleton.get_bone_children(parent_bone.get_bone_id())
 	var bones_to_remove = [parent_bone]
 	for child_bone in physics_bones:
 		for child_bone_id in child_bone_ids:
 			if child_bone.get_bone_id() == child_bone_id:
 				bones_to_remove.append(child_bone)
-	# add explosion particle effects
+	# add body explosion particle effects
 	var explosion_particles = LIMB_EXPLOSION_PARTICLES.instantiate()
 	get_tree().root.add_child(explosion_particles)
 	explosion_particles.global_position = parent_bone.global_position
-	#var blood_spray = BLOOD_SPRAY_PARTICLES.instantiate()
-	#parent_bone.get_parent().add_child(blood_spray)
-	#blood_spray.global_position = parent_bone.global_position
+	# add blood spray particle effects
+	var blood_spray = BLOOD_SPRAY_PARTICLES.instantiate()
+	var grandparent_id = general_skeleton.get_bone_parent(parent_bone.get_bone_id())
+	var grandparent_name = "Physical Bone " + general_skeleton.get_bone_name(grandparent_id)
+	var grandparent
+	for b in physics_bones:
+		if b.name == grandparent_name:
+			grandparent = b
+			break
+	grandparent.add_child(blood_spray)
+	blood_spray.rotation = Vector3.ZERO
+	blood_spray.global_position = parent_bone.global_position
+	if body_part_name == "Physical Bone Head":
+		blood_spray.rotate_object_local(Vector3.FORWARD, 180)
 	#%DeadState.on_zombie_death.connect(func(): blood_spray.queue_free()) # remove blood spray on death
 	for bone in bones_to_remove:
 		var bone_transform = general_skeleton.get_bone_global_pose(bone.get_bone_id())
-		#general_skeleton.set_bone_pose_scale(bone.get_bone_id(), Vector3.ONE * .0001)
-		general_skeleton.set_bone_global_pose_override(bone.get_bone_id(), bone_transform.scaled(Vector3.ONE * .0001), 1.0, true)	
+		general_skeleton.set_bone_pose_scale(bone.get_bone_id(), Vector3.ONE * .0001)
+		#general_skeleton.set_bone_global_pose_override(bone.get_bone_id(), bone_transform.scaled(Vector3.ONE * .0001), 1.0, true)	
 		already_dismembered_parts.append(bone.get_bone_id())
 		bone.collision_layer = 0
 		bone.collision_mask = 0

@@ -1,7 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://gl6q3hq1x1dl"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ft2pj"]
-albedo_color = Color(0.801263, 4.23551e-06, 2.88785e-07, 1)
+[ext_resource type="Material" uid="uid://dq7t7jvor1txo" path="res://materials/blood_mat.tres" id="1_l328j"]
 
 [sub_resource type="Curve" id="Curve_kgs3q"]
 max_value = 3.0
@@ -23,7 +22,7 @@ scale_over_velocity_curve = SubResource("CurveTexture_5kc5b")
 size = Vector3(0.01, 0.01, 0.01)
 
 [node name="BloodParticles" type="GPUParticles3D"]
-material_override = SubResource("StandardMaterial3D_ft2pj")
+material_override = ExtResource("1_l328j")
 emitting = false
 amount = 500
 lifetime = 2.0

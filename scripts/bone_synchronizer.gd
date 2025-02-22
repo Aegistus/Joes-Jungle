@@ -10,6 +10,7 @@ func _ready():
 func _physics_process(delta):
 	if !active:
 		for bone in physics_bones:
-			var bone_offset : Transform3D = bone.get("body_offset")
-			var bone_global_transform = self.global_transform * general_skeleton.get_bone_global_pose(bone.get_bone_id())
-			bone.global_transform = bone_global_transform * bone_offset
+			if bone != null:
+				var bone_offset : Transform3D = bone.get("body_offset")
+				var bone_global_transform = self.global_transform * general_skeleton.get_bone_global_pose(bone.get_bone_id())
+				bone.global_transform = bone_global_transform * bone_offset

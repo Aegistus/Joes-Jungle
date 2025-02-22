@@ -1,11 +1,9 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://b00k0gx5qr7yr"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dq7t7jvor1txo"]
 
 [resource]
-albedo_color = Color(0.975368, 0.00286498, 0.00156906, 1)
-metallic = 1.0
+albedo_color = Color(0.801263, 4.23551e-06, 2.88785e-07, 1)
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
-use_particle_trails = true
