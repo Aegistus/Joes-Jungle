@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cedacecqwiw57"
+path="res://.godot/imported/Bloody stabs 6.wav-afe7bf06701c77fa2082c76b81e7497c.sample"
+
+[deps]
+
+source_file="res://assets/audio/dismemberment/Bloody stabs 6.wav"
+dest_files=["res://.godot/imported/Bloody stabs 6.wav-afe7bf06701c77fa2082c76b81e7497c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

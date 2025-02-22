@@ -1,9 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddl2grpfek6t0"]
+[gd_scene load_steps=20 format=3 uid="uid://ddl2grpfek6t0"]
 
 [ext_resource type="Material" uid="uid://ubhebejacrk1" path="res://materials/skin_mat.tres" id="1_efe6g"]
 [ext_resource type="Script" path="res://scripts/limb_explosion_particles.gd" id="1_r6uie"]
 [ext_resource type="Material" uid="uid://bpcgwdhmkjs1a" path="res://materials/gore_mat.tres" id="2_pwxvw"]
 [ext_resource type="Material" uid="uid://dq7t7jvor1txo" path="res://materials/blood_mat.tres" id="3_1e5y0"]
+[ext_resource type="AudioStream" uid="uid://o6cgcjox0vb8" path="res://assets/audio/dismemberment/dismemberment.wav" id="5_h7qil"]
+[ext_resource type="AudioStream" uid="uid://bvyytgym1ittx" path="res://assets/audio/dismemberment/dismemberment2.wav" id="6_dnrxf"]
+[ext_resource type="AudioStream" uid="uid://c6g13axn2fe7g" path="res://assets/audio/dismemberment/dismemberment3.wav" id="7_3l0ja"]
+[ext_resource type="AudioStream" uid="uid://c7esrn55row2i" path="res://assets/audio/dismemberment/Bloody stabs 4.wav" id="8_rtb7r"]
+[ext_resource type="AudioStream" uid="uid://c2mx4qaw08an1" path="res://assets/audio/dismemberment/Bloody stabs 5.wav" id="9_qhy43"]
+[ext_resource type="AudioStream" uid="uid://cedacecqwiw57" path="res://assets/audio/dismemberment/Bloody stabs 6.wav" id="10_wptkd"]
+[ext_resource type="AudioStream" uid="uid://btqksukwpn81r" path="res://assets/audio/dismemberment/Bloody stabs 7.wav" id="11_dua7a"]
+[ext_resource type="AudioStream" uid="uid://cmgrwsy7uqm41" path="res://assets/audio/dismemberment/Bloody stabs 8.wav" id="12_mvpqi"]
+[ext_resource type="AudioStream" uid="uid://dcuwx5kpwkycb" path="res://assets/audio/dismemberment/Bloody stabs 9.wav" id="13_5oa2c"]
+[ext_resource type="AudioStream" uid="uid://cmttbifeaow5s" path="res://assets/audio/dismemberment/Bloody stabs 10.wav" id="14_xaiks"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i4l68"]
 emission_shape_scale = Vector3(0.1, 0.1, 0.1)
@@ -41,11 +51,21 @@ collision_friction = 0.0
 collision_bounce = 0.0
 collision_use_scale = true
 
-[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_tt46j"]
-shape = 0
-size = 0.1
-sections = 10
-section_length = 0.05
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_nyxjn"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_834r5"]
+random_pitch = 1.1
+streams_count = 10
+stream_0/stream = ExtResource("5_h7qil")
+stream_1/stream = ExtResource("6_dnrxf")
+stream_2/stream = ExtResource("7_3l0ja")
+stream_3/stream = ExtResource("8_rtb7r")
+stream_4/stream = ExtResource("9_qhy43")
+stream_5/stream = ExtResource("10_wptkd")
+stream_6/stream = ExtResource("11_dua7a")
+stream_7/stream = ExtResource("12_mvpqi")
+stream_8/stream = ExtResource("13_5oa2c")
+stream_9/stream = ExtResource("14_xaiks")
 
 [node name="LimbExplosionParticles" type="Node3D"]
 script = ExtResource("1_r6uie")
@@ -74,11 +94,13 @@ emitting = false
 amount = 100
 one_shot = true
 explosiveness = 1.0
-trail_enabled = true
-trail_lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_7tr4p")
-draw_pass_1 = SubResource("RibbonTrailMesh_tt46j")
+draw_pass_1 = SubResource("RibbonTrailMesh_nyxjn")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_834r5")
+autoplay = true
