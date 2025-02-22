@@ -1,6 +1,8 @@
 class_name HitState
 extends ZombieState
 
+@export var dismember_chance = .3
+
 @onready var animation_player = $"../../AnimationPlayer"
 @onready var follow_state = $"../FollowState"
 @onready var dead_state = $"../DeadState"
@@ -19,7 +21,8 @@ func enter():
 		animation_player.seek(.4)
 	zombie.velocity = Vector3.ZERO
 	animation_player.animation_finished.connect(func(anim_name): animation_done = true)
-	zombie.random_dismember()
+	if randf() <= dismember_chance:
+		zombie.random_dismember()
 
 func check_transitions():
 	if zombie.current_health <= 0:
