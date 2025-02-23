@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=50 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -87,6 +87,13 @@ border_width_right = 1
 border_width_bottom = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toqvd"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48bjt"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 1
 border_width_top = 1
@@ -769,6 +776,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_bttvo")
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_toqvd")
+
+[node name="BuildItemPanel4" type="Panel" parent="CanvasLayer/BuildMenu/BuildOptions/BuildOptionsContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_48bjt")
 
 [node name="BuildItemName" type="Label" parent="CanvasLayer/BuildMenu"]
 layout_mode = 0
