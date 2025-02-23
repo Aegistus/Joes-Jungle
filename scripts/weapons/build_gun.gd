@@ -49,12 +49,12 @@ func _physics_process(delta):
 		elif current_emplacement_ghost != null:
 			current_emplacement_ghost.visible = true
 			current_emplacement_ghost.global_position = reticle.global_position
-		if Input.is_action_just_pressed("emplacements_scroll_down"):
+		if Input.is_action_just_pressed("emplacements_scroll_up"):
 			current_index = (current_index - 1) % all_builds.size()
 			if current_index == -1:
 				current_index = all_builds.size() - 1
 			select_new_emplacement()
-		if Input.is_action_just_pressed("emplacements_scroll_up"):
+		if Input.is_action_just_pressed("emplacements_scroll_down"):
 			current_index = (current_index + 1) % all_builds.size()
 			select_new_emplacement()
 
@@ -74,3 +74,4 @@ func select_new_emplacement():
 	current_emplacement_ghost.queue_free()
 	spawn_emplacement_ghost()
 	on_change_selected_build.emit(current_index)
+	print(current_index)

@@ -238,11 +238,5 @@ draw_pass_1 = SubResource("BoxMesh_mv2k3")
 stream = SubResource("AudioStreamRandomizer_3xl5b")
 
 [node name="EmplacementOverlapper" parent="." instance=ExtResource("6_mv383")]
+unique_name_in_owner = true
 input_capture_on_drag = true
-
-[connection signal="area_entered" from="EmplacementOverlapper" to="." method="add_overlapping_body"]
-[connection signal="area_exited" from="EmplacementOverlapper" to="." method="remove_overlapping_body"]
-[connection signal="area_shape_entered" from="EmplacementOverlapper" to="." method="_on_emplacement_overlapper_area_shape_entered"]
-[connection signal="area_shape_exited" from="EmplacementOverlapper" to="." method="_on_emplacement_overlapper_area_shape_exited"]
-[connection signal="body_entered" from="EmplacementOverlapper" to="." method="add_overlapping_body"]
-[connection signal="body_exited" from="EmplacementOverlapper" to="." method="remove_overlapping_body"]
