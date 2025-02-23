@@ -20,6 +20,7 @@ var is_alive:
 	get:
 		return current_health > 0
 var current_health
+var speed_modifier := 1.0
 var target_barricade : BarricadeEmplacement:
 	set(value):
 		target_barricade = value
@@ -50,6 +51,9 @@ func quick_hit(damage):
 	current_health -= damage
 	if current_health <= 0:
 		current_health = 0
+
+func slow(amount_modifier):
+	speed_modifier = amount_modifier
 
 func barricade_detected(area : Area3D):
 	target_barricade = area.get_parent()

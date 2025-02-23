@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bvcwy7ibucwdn"]
+[gd_scene load_steps=27 format=4 uid="uid://bvcwy7ibucwdn"]
 
 [ext_resource type="Script" path="res://scripts/emplacements/barbed_wire.gd" id="1_cg26m"]
 [ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="1_n1n4j"]
@@ -181,9 +181,26 @@ tracks/3/keys = {
 "values": [Vector3(0, 1.35, 0), Vector3(0, 1.35, 0), Vector3(0, 1.7, 0), Vector3(0, 0.0500001, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_dblv3"]
+resource_name = "damage"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.5, 0), Vector3(0.01, 0.49, 0.01), Vector3(-0.01, 0.51, -0.01), Vector3(0.01, 0.51, -0.01), Vector3(-0.01, 0.49, 0.01), Vector3(0, 0.5, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rhexk"]
 _data = {
 "RESET": SubResource("Animation_4mlc2"),
+"damage": SubResource("Animation_dblv3"),
 "default": SubResource("Animation_vuhqx"),
 "place": SubResource("Animation_p14hv")
 }
@@ -302,5 +319,7 @@ collision_mask = 321
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 0.45, -2.04891e-08)
 shape = SubResource("BoxShape3D_5rd2t")
 
-[connection signal="area_entered" from="EnemyDetector" to="." method="trigger"]
-[connection signal="body_entered" from="EnemyDetector" to="." method="trigger"]
+[node name="DamageTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="EnemyDetector" to="." method="_on_enemy_detector_body_entered"]
+[connection signal="body_exited" from="EnemyDetector" to="." method="_on_enemy_detector_body_exited"]
