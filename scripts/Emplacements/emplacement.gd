@@ -16,3 +16,6 @@ func place():
 func sell():
 	GameManager.add_points(stats.cost)
 	queue_free()
+
+func destroy():
+	pass

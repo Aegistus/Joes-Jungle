@@ -8,8 +8,12 @@ extends Emplacement
 @onready var animation_player = %AnimationPlayer
 @onready var damage_timer = $DamageTimer
 @onready var damage_audio_source = $DamageAudioSource
+@onready var model = $Model
+@onready var enemy_detector = %EnemyDetector
+@onready var ragdoll_collider_shape = $RagdollCollider/RagdollColliderShape
+@onready var destroyed_model = $DestroyedModel
 
-var self_damage = 2
+var self_damage = 10
 var damage_interval = 1
 var current_health = 100
 var in_wire = []
@@ -28,6 +32,16 @@ func damage():
 			damage_audio_source.play()
 		for zombie in in_wire:
 			zombie.quick_hit(randi_range(min_damage, max_damage))
+		current_health -= self_damage * in_wire.size()
+		if current_health <= 0:
+			destroy()
+
+func destroy():
+	in_wire.clear()
+	model.visible = false
+	enemy_detector.monitoring = false
+	ragdoll_collider_shape.disabled = true
+	destroyed_model.visible = true
 
 func _on_enemy_detector_body_entered(body):
 	in_wire.append(body)
