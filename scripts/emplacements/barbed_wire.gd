@@ -7,6 +7,7 @@ extends Emplacement
 
 @onready var animation_player = %AnimationPlayer
 @onready var damage_timer = $DamageTimer
+@onready var damage_audio_source = $DamageAudioSource
 
 var self_damage = 2
 var damage_interval = 1
@@ -24,6 +25,7 @@ func damage():
 		await damage_timer.timeout
 		if in_wire.size() > 0:
 			animation_player.play("damage")
+			damage_audio_source.play()
 		for zombie in in_wire:
 			zombie.quick_hit(randi_range(min_damage, max_damage))
 

@@ -165,6 +165,7 @@ debug_add_cash={
 3d_physics/layer_8="barricade"
 3d_physics/layer_9="emplacement"
 3d_physics/layer_10="player"
+3d_physics/layer_11="ragdoll_only"
 3d_physics/layer_17="material_flesh"
 3d_physics/layer_18="material_wood"
 3d_physics/layer_19="material_stone"

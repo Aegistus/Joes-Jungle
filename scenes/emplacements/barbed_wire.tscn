@@ -1,8 +1,10 @@
-[gd_scene load_steps=27 format=4 uid="uid://bvcwy7ibucwdn"]
+[gd_scene load_steps=31 format=4 uid="uid://bvcwy7ibucwdn"]
 
 [ext_resource type="Script" path="res://scripts/emplacements/barbed_wire.gd" id="1_cg26m"]
 [ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="1_n1n4j"]
 [ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="6_77shj"]
+[ext_resource type="AudioStream" uid="uid://bp6f1q7xj36mv" path="res://assets/audio/barbed_wire/barbed_wire_1.ogg" id="6_wxxn8"]
+[ext_resource type="AudioStream" uid="uid://tx624memi8b5" path="res://assets/audio/barbed_wire/barbed_wire_2.ogg" id="7_0m7yw"]
 [ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="7_3fvyi"]
 [ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="8_es15i"]
 
@@ -268,6 +270,16 @@ stream_2/stream = ExtResource("8_es15i")
 [sub_resource type="BoxShape3D" id="BoxShape3D_5rd2t"]
 size = Vector3(1.25, 1, 2.85)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q7itn"]
+random_pitch = 1.2
+streams_count = 2
+stream_0/stream = ExtResource("6_wxxn8")
+stream_1/stream = ExtResource("7_0m7yw")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5reqh"]
+radius = 0.287375
+height = 3.11625
+
 [node name="BarbedWire" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
 script = ExtResource("1_cg26m")
@@ -320,6 +332,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 0.45, -2.04891e-08)
 shape = SubResource("BoxShape3D_5rd2t")
 
 [node name="DamageTimer" type="Timer" parent="."]
+
+[node name="DamageAudioSource" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_q7itn")
+
+[node name="RagdollCollider" type="StaticBody3D" parent="."]
+collision_layer = 1024
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RagdollCollider"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.6, 0)
+shape = SubResource("CapsuleShape3D_5reqh")
 
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_enemy_detector_body_entered"]
 [connection signal="body_exited" from="EnemyDetector" to="." method="_on_enemy_detector_body_exited"]
