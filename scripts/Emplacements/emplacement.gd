@@ -9,6 +9,7 @@ var stats : EmplacementStats
 
 func _ready():
 	stats = load(stats_path)
+	GameManager.on_wave_end.connect(place)
 
 func place():
 	pass

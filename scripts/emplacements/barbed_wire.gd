@@ -4,6 +4,7 @@ extends Emplacement
 @export var min_damage = 2
 @export var max_damage = 3
 @export var slow = .5
+@export var max_health := 100
 
 @onready var animation_player = %AnimationPlayer
 @onready var damage_timer = $DamageTimer
@@ -15,16 +16,23 @@ extends Emplacement
 
 var self_damage = 10
 var damage_interval = 1
-var current_health = 100
+var current_health
 var in_wire = []
+var alive = true
 
 func place():
+	alive = true
+	current_health = max_health
 	animation_player.play("place")
 	damage_timer.wait_time = damage_interval
 	damage()
+	model.visible = true
+	enemy_detector.monitoring = true
+	ragdoll_collider_shape.disabled = false
+	destroyed_model.visible = false
 
 func damage():
-	while true:
+	while alive:
 		damage_timer.start()
 		await damage_timer.timeout
 		if in_wire.size() > 0:
@@ -37,6 +45,7 @@ func damage():
 			destroy()
 
 func destroy():
+	alive = false
 	in_wire.clear()
 	model.visible = false
 	enemy_detector.monitoring = false

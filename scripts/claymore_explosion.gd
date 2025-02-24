@@ -5,11 +5,11 @@ extends Node3D
 @onready var flash = $Flash
 @onready var fire = $Fire
 @onready var smoke = $Smoke
+@onready var explosion_audio_player = $ExplosionAudioPlayer
 
-func _ready():
+func emit():
 	sparks.emitting = true
 	flash.emitting = true
 	fire.emitting = true
 	smoke.emitting = true
-	timer.timeout.connect(func(): queue_free())
-	timer.start()
+	explosion_audio_player.play()

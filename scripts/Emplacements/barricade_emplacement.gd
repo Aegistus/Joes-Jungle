@@ -17,13 +17,16 @@ var current_health
 func _ready():
 	super()
 	animation_player.play("default")
-	current_health = max_health
-	hurtbox.monitoring = true
-	hurtbox.monitorable = true
 	emplacement_seller.on_sell.connect(sell)
 
 func place():
 	animation_player.play("place")
+	current_health = max_health
+	hurtbox.monitoring = true
+	hurtbox.monitorable = true
+	model.visible = true
+	actor_collision_shape.disabled = false
+	navigation_region.enabled = false
 	GameManager.on_barricade_added.emit(self)
 
 func damage(amount):

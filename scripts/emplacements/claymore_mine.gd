@@ -15,12 +15,14 @@ const PENETRATION_DAMAGE_REDUCTION = .25
 @onready var raycasts = %Raycasts
 @onready var enemy_detector = %EnemyDetector
 @onready var animation_player = %AnimationPlayer
-
-const CLAYMORE_EXPLOSION = preload("res://scenes/particles/claymore_explosion.tscn")
+@onready var model = $Model
+@onready var claymore_explosion = $ClaymoreExplosion
 
 func place():
 	enemy_detector.monitoring = true
 	animation_player.play("place")
+	model.visible = true
+	enemy_detector.monitoring = true
 
 func trigger(area):
 	if area.is_in_group("enemy"):
@@ -29,10 +31,9 @@ func trigger(area):
 func explode():
 	for ray in raycasts.get_children():
 		shoot_with_raycast(ray)
-	var explosion = CLAYMORE_EXPLOSION.instantiate()
-	get_tree().root.add_child(explosion)
-	explosion.global_position = global_position
-	queue_free()
+	claymore_explosion.emit()
+	model.visible = false
+	enemy_detector.set_deferred("monitoring", false)
 
 func shoot_with_raycast(raycast : RayCast3D):
 	# apply accuracy
