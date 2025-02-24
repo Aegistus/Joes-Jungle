@@ -250,7 +250,7 @@ shape = SubResource("BoxShape3D_548x4")
 [node name="Hurtbox" type="Area3D" parent="." groups=["hurtbox"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.817832, 0)
 collision_layer = 144
-collision_mask = 8
+collision_mask = 2056
 monitoring = false
 monitorable = false
 script = ExtResource("3_887t6")

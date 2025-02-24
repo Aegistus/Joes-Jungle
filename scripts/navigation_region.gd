@@ -5,7 +5,7 @@ func _ready():
 
 func add_obstacle(added_obstacle : Node3D):
 	added_obstacle.reparent(self)
-	if is_baking():
+	while is_baking():
 		await bake_finished
 	bake_navigation_mesh(true)
 	print("REBAKING NAVMESH")
