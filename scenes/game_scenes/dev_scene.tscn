@@ -611,7 +611,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9545, -0.0170354, -25.987
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9545, -0.0170354, -25.987)
 
 [node name="PlayerSpawnPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.58069, 0, -1.59537)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9807, 0, -11.1954)
 
 [node name="ShopFlamethrower" parent="." instance=ExtResource("21_554pv")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.6, -0.1, -6.5)
