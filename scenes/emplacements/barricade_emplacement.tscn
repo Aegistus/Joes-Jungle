@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://0pbg6jpb0fmj"]
+[gd_scene load_steps=31 format=4 uid="uid://0pbg6jpb0fmj"]
 
 [ext_resource type="Script" path="res://scripts/emplacements/barricade_emplacement.gd" id="1_o24el"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="1_xrn8h"]
@@ -224,6 +224,9 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 agent_height = 2.0
 region_min_size = 1.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yb355"]
+size = Vector3(2.85, 1.35, 0.4)
+
 [node name="BarricadeEmplacement" type="Node3D" groups=["barricade"]]
 script = ExtResource("1_o24el")
 max_health = 50.0
@@ -291,5 +294,9 @@ visible = false
 size = Vector3(3.5, 0.5, 1.85)
 
 [node name="EmplacementSeller" parent="." instance=ExtResource("8_g2clp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EmplacementSeller"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0250001, 0.775, 1.49012e-08)
+shape = SubResource("BoxShape3D_yb355")
 
 [connection signal="on_hurt" from="Hurtbox" to="." method="damage"]

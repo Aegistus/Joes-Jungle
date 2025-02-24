@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bq78d2teut4yk"]
+[gd_scene load_steps=45 format=4 uid="uid://bq78d2teut4yk"]
 
 [ext_resource type="Material" uid="uid://qfqe5n8ybnlr" path="res://materials/claymore_mat.tres" id="1_hlshf"]
 [ext_resource type="Script" path="res://scripts/emplacements/claymore_mine.gd" id="1_y0hqb"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="6_w6yv7"]
 [ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="7_l1ayr"]
 [ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="8_4q8xo"]
+[ext_resource type="PackedScene" uid="uid://c4rrj07uowwaj" path="res://scenes/emplacements/emplacement_seller.tscn" id="9_kciie"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pcvw"]
 resource_name = "Material"
@@ -416,6 +417,9 @@ stream_2/stream = ExtResource("8_4q8xo")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wiitf"]
 radius = 0.709551
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bgw0m"]
+size = Vector3(0.3, 1.7, 0.4)
+
 [node name="ClaymoreMine" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
 script = ExtResource("1_y0hqb")
@@ -594,5 +598,12 @@ collision_mask = 321
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.025)
 shape = SubResource("CapsuleShape3D_wiitf")
 
+[node name="EmplacementSeller" parent="." instance=ExtResource("9_kciie")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EmplacementSeller"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.58794e-08, 0.95, 1.49012e-08)
+shape = SubResource("BoxShape3D_bgw0m")
+
 [connection signal="area_entered" from="EnemyDetector" to="." method="trigger"]
 [connection signal="body_entered" from="EnemyDetector" to="." method="trigger"]
+[connection signal="on_sell" from="EmplacementSeller" to="." method="sell"]
