@@ -214,3 +214,6 @@ func unequip_build_gun():
 	if gun is BuildGun:
 		%EquippingState.weapon_index = 1
 		%MovementStateMachine.transition_to(%EquippingState)
+
+func use_emplacement():
+	%MovementStateMachine.transition_to(%UsingEmplacementState)

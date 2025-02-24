@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://d1otweixyixi3"]
+[gd_scene load_steps=40 format=4 uid="uid://d1otweixyixi3"]
 
 [ext_resource type="Script" path="res://scripts/game_level.gd" id="1_jlul2"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_veg6g"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://rvebx7d8u8xm" path="res://scenes/shops/shop_aa12.tscn" id="25_yolw6"]
 [ext_resource type="PackedScene" uid="uid://det47gkltg7fa" path="res://scenes/shops/shop_ak47.tscn" id="26_htfvm"]
 [ext_resource type="PackedScene" uid="uid://b6mjww5vs5pl6" path="res://scenes/shops/shop_uzi.tscn" id="27_vfxh4"]
+[ext_resource type="PackedScene" uid="uid://b41xu6x4ttbv5" path="res://scenes/enemies/boomer_zombie.tscn" id="28_a2108"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -404,9 +405,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.75, 0, 12)
 
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 script = ExtResource("21_0spru")
-starting_wave_delay = 30
+starting_wave_delay = 5
+starting_enemy_count = 3
 enemy_count_increase_per_wave = 2
 intermission_wait_time = 5.0
+boomer_zombie_spawn_start = 0
+fast_zombie_spawn_chance = 0
+tank_zombie_spawn_chance = 0
+boomer_zombie_spawn_chance = 100
+normal_zombie_spawn_chance = 0
 
 [node name="IntermissionTimer" type="Timer" parent="ZombieSpawnPoints"]
 
@@ -628,5 +635,8 @@ item_cost = 0
 [node name="ShopUzi" parent="." instance=ExtResource("27_vfxh4")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.2, -0.1, -6.3)
 item_cost = 0
+
+[node name="BoomerZombie" parent="." instance=ExtResource("28_a2108")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3765, -0.1, -15.8761)
 
 [connection signal="timeout" from="ZombieSpawnPoints/IntermissionTimer" to="ZombieSpawnPoints" method="_on_timer_timeout"]

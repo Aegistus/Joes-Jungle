@@ -1,6 +1,7 @@
 class_name Zombie
 extends CharacterBody3D
 
+@export var allow_dismember := false
 @export var starting_health = 10
 @export var point_value = 10
 @export var stagger_immune = false
@@ -31,7 +32,8 @@ var already_dismembered_parts = []
 func _ready():
 	current_health = starting_health
 	ragdoll.physical_bones_stop_simulation()
-	physics_bones = ragdoll.get_children().filter(func(i): return i as PhysicalBone3D)
+	if allow_dismember:
+		physics_bones = ragdoll.get_children().filter(func(i): return i as PhysicalBone3D)
 
 func hit(damage, position : Vector3, hit_direction : Vector3):
 	current_health -= damage

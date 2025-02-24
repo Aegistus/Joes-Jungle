@@ -21,7 +21,7 @@ func enter():
 		animation_player.seek(.4)
 	zombie.velocity = Vector3.ZERO
 	animation_player.animation_finished.connect(func(anim_name): animation_done = true)
-	if randf() <= dismember_chance:
+	if randf() <= dismember_chance && zombie.allow_dismember:
 		zombie.random_dismember()
 
 func check_transitions():

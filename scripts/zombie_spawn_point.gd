@@ -16,17 +16,25 @@ class SpawnEntry:
 @export var intermission_wait_time = 10.0
 @export var intermission_increase = 5.0
 @export var intermission_max = 60.0
-@export_group("Enemies")
+@export_category("Enemy Spawn Starts")
 @export var fast_zombie_spawn_start = 5
-@export var tank_zombie_spawn_start = 8
+@export var tank_zombie_spawn_start = 10
+@export var boomer_zombie_spawn_start = 15
+@export var normal_zombie_spawn_start = 0
+@export_category("Enemy Spawn Chance")
+@export var fast_zombie_spawn_chance = 10
+@export var tank_zombie_spawn_chance = 10
+@export var boomer_zombie_spawn_chance = 10 
+@export var normal_zombie_spawn_chance = 70
 
 @onready var spawn_timer = $SpawnTimer
 @onready var spawn_point_parent = $SpawnPointParent as Node3D
 @onready var current_enemy_count = starting_enemy_count
 @onready var zombie_spawn_table = [
-	SpawnEntry.new(FAST_ZOMBIE, 10, fast_zombie_spawn_start),
-	SpawnEntry.new(TANK_ZOMBIE, 10, tank_zombie_spawn_start),
-	SpawnEntry.new(ZOMBIE, 80, 0),
+	SpawnEntry.new(FAST_ZOMBIE, fast_zombie_spawn_chance, fast_zombie_spawn_start),
+	SpawnEntry.new(TANK_ZOMBIE, tank_zombie_spawn_chance, tank_zombie_spawn_start),
+	SpawnEntry.new(BOOMER_ZOMBIE, boomer_zombie_spawn_chance, boomer_zombie_spawn_start),
+	SpawnEntry.new(ZOMBIE, normal_zombie_spawn_chance, normal_zombie_spawn_start),
 ]
 
 var wave_completed = true
@@ -37,6 +45,7 @@ const MAX_ZOMBIES = 100
 const ZOMBIE = preload("res://scenes/enemies/zombie.tscn")
 const FAST_ZOMBIE = preload("res://scenes/enemies/fast_zombie.tscn")
 const TANK_ZOMBIE = preload("res://scenes/enemies/tank_zombie.tscn")
+const BOOMER_ZOMBIE = preload("res://scenes/enemies/boomer_zombie.tscn")
 
 func _ready():
 	all_spawn_points = spawn_point_parent.get_children() as Array[Node3D]

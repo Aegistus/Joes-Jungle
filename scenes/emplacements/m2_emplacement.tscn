@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://k1yrpwih83w7"]
+[gd_scene load_steps=45 format=4 uid="uid://k1yrpwih83w7"]
 
 [ext_resource type="Script" path="res://scripts/emplacements/m2_emplacement.gd" id="1_r2ivg"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="2_ir43p"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="5_6bkuo"]
 [ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="6_270s3"]
 [ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="7_1h2y2"]
+[ext_resource type="Script" path="res://scripts/weapons/M2_50_Cal.gd" id="7_vvmmm"]
 [ext_resource type="PackedScene" uid="uid://c4rrj07uowwaj" path="res://scenes/emplacements/emplacement_seller.tscn" id="8_m4cwt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usnah"]
@@ -462,6 +463,7 @@ shape = SubResource("CapsuleShape3D_vpb1u")
 
 [node name="M2_50cal" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.65, -0.06)
+script = ExtResource("7_vvmmm")
 
 [node name="M2" type="MeshInstance3D" parent="M2_50cal"]
 skeleton = NodePath("")
