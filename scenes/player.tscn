@@ -869,7 +869,7 @@ mesh = SubResource("ArrayMesh_f1ndv")
 skin = SubResource("Skin_avvwo")
 
 [node name="RightHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(0.40798, 0.861971, -0.300929, 0.648929, -0.50563, -0.568532, -0.642217, 0.0366685, -0.765645, -0.170692, 0.707566, 0.13365)
+transform = Transform3D(0.407979, 0.861971, -0.30093, 0.648929, -0.505629, -0.568533, -0.642218, 0.0366675, -0.765644, -0.170692, 0.707567, 0.13365)
 bone_name = "RightHand"
 bone_idx = 34
 
@@ -884,12 +884,12 @@ transform = Transform3D(0.999421, 0.0326637, -0.00950795, -0.0326994, 0.999459, 
 visible = false
 
 [node name="LeftHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(0.400304, -0.915782, 0.0331715, -0.776643, -0.358253, -0.518151, 0.486397, 0.181656, -0.854646, 0.378325, 0.693188, 0.152169)
+transform = Transform3D(0.400304, -0.915782, 0.0331702, -0.776644, -0.358252, -0.518151, 0.486396, 0.181657, -0.854646, 0.378325, 0.693188, 0.152168)
 bone_name = "LeftHand"
 bone_idx = 10
 
 [node name="BackpackBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(0.994162, 0.0929647, -0.0547692, -0.098746, 0.579313, -0.809102, -0.0434894, 0.809787, 0.585111, 0.0702114, 0.960683, 0.182283)
+transform = Transform3D(0.994162, 0.0929647, -0.0547692, -0.098746, 0.579313, -0.809102, -0.0434893, 0.809786, 0.585111, 0.0702114, 0.960683, 0.182283)
 bone_name = "UpperChest"
 bone_idx = 3
 
@@ -1059,6 +1059,7 @@ stream = ExtResource("17_c8ao6")
 stream = SubResource("AudioStreamRandomizer_tsakp")
 
 [node name="Hurtbox" parent="." instance=ExtResource("13_m6j14")]
+collision_layer = 2064
 
 [node name="AudioListener3D" type="AudioListener3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 1.57123, 0)

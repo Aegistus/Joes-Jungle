@@ -12,6 +12,9 @@ extends DeadState
 @onready var physical_bone_sim_legs = $"../../BodyParts/Boomer Zombie Legs/Armature/Skeleton3D/PhysicalBoneSimLegs"
 @onready var physical_bone_sim_right_arm = $"../../BodyParts/Boomer Zombie Right Arm/Armature/Skeleton3D/PhysicalBoneSimRightArm"
 @onready var zombie_head = $"../../BodyParts/ZombieHead"
+@onready var explosion_hitbox = $"../../ExplosionHitbox"
+
+var explosion_active_time := .1
 
 func enter():
 	body_parts.visible = true
@@ -32,4 +35,8 @@ func enter():
 		direction = direction.normalized()
 		var velocity = randf_range(min_velocity, max_velocity) * direction
 		bone.linear_velocity = velocity
+	# explosion hitbox
 	super()
+	explosion_hitbox.monitoring = true
+	await get_tree().create_timer(explosion_active_time).timeout
+	explosion_hitbox.monitoring = false

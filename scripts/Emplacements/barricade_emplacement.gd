@@ -33,7 +33,7 @@ func damage(amount):
 
 func destroy():
 	hurtbox.monitoring = false
-	hurtbox.monitorable = false
+	hurtbox.set_deferred("monitorable", false)
 	actor_collision_shape.disabled = true
 	model.visible = false
 	on_destroy.emit()

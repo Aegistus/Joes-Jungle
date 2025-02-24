@@ -35,7 +35,7 @@ func _ready():
 	if allow_dismember:
 		physics_bones = ragdoll.get_children().filter(func(i): return i as PhysicalBone3D)
 
-func hit(damage, position : Vector3, hit_direction : Vector3):
+func hit(damage, position : Vector3 = global_position, hit_direction : Vector3 = Vector3.ZERO):
 	current_health -= damage
 	var blood = blood_particle_scene.instantiate() as GPUParticles3D
 	add_child(blood)
