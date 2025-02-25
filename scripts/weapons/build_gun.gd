@@ -26,6 +26,8 @@ func shoot():
 		emplacement.global_rotation = current_emplacement_ghost.global_rotation
 		emplacement.place()
 		GameManager.spend_points(current_emplacement.cost)
+		if (player.movement_state_machine as StateMachine).current_state != player.build_construct_state:
+			(player.movement_state_machine as StateMachine).transition_to(player.build_construct_state)
 	else:
 		%InvalidErrorAudioPlayer.play()
 

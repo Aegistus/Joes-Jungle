@@ -20,8 +20,12 @@ signal on_pickup_weapon(gun : Gun)
 @onready var gun_holder = $PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder
 @onready var left_hand_bone = $PlayerModel/Model/Armature/GeneralSkeleton/LeftHandBone
 @onready var player_model = $PlayerModel
+
+@onready var movement_state_machine = %MovementStateMachine
 @onready var walking_state = $MovementStateMachine/WalkingState
 @onready var reloading_state = $MovementStateMachine/ReloadingState
+@onready var build_construct_state = %BuildConstructState
+
 @onready var take_damage_audio_player = $TakeDamageAudioPlayer
 
 var primary_weapon : Gun
