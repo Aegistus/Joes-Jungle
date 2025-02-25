@@ -31,6 +31,7 @@ func enter():
 	timer.timeout.connect(zombie.queue_free)
 	timer.wait_time = despawn_delay
 	timer.start()
+	zombie.remove_from_group("enemy")
 	GameManager.add_points(randi_range(zombie.min_point_value, zombie.max_point_value))
 	GameManager.add_to_killstreak()
 	GameManager.on_zombie_kill.emit()

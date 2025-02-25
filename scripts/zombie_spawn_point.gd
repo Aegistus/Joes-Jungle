@@ -62,14 +62,16 @@ func spawn_next_wave():
 	GameManager.on_wave_start.emit()
 	print("Wave start: " + str(GameManager.current_wave))
 	all_spawn_points.shuffle()
-	var all_zombies_count = get_tree().get_nodes_in_group("enemy").size()
-	for i in current_enemy_count:
+	var i = 0
+	while i < current_enemy_count: 
+		var all_zombies_count = get_tree().get_nodes_in_group("enemy").size()
 		if all_zombies_count < MAX_ZOMBIES:
 			spawn_zombie(i)
 			all_zombies_count += 1
-			spawn_timer.wait_time = .2
-			spawn_timer.start()
-			await spawn_timer.timeout
+			i += 1
+		spawn_timer.wait_time = .2
+		spawn_timer.start()
+		await spawn_timer.timeout
 	current_enemy_count += enemy_count_increase_per_wave
 	intermission_wait_time = clampf(intermission_wait_time + intermission_increase, 0, intermission_max)
 

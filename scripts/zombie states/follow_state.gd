@@ -15,12 +15,14 @@ extends ZombieState
 
 const ANIM_SPEED_VARIANCE_RANGE = .1
 const RECALCULATE_PATH_DISTANCE = 10
+const SMOOTH_SPEED = 3
+const NAV_POINT_Y_OFFSET = .5
 
 var anim_index
 var anim_speed_variance
 var follow_target
 var navigation_timer : Timer
-var navigation_delay = .5
+var navigation_delay = .1
 var in_state = false
 var next_nav_point : Vector3
 
@@ -59,10 +61,14 @@ func process_navigation(delta):
 		next_nav_point = nav_agent.get_next_path_position()
 
 func process_state_physics(delta):
-		zombie.velocity = zombie.speed_modifier * move_speeds[anim_index] * delta * (next_nav_point - zombie.transform.origin).normalized()
-		if zombie.position != next_nav_point:
-			zombie.look_at(Vector3(next_nav_point.x, zombie.position.y, next_nav_point.z))
-		zombie.move_and_slide()
+	zombie.velocity = zombie.speed_modifier * move_speeds[anim_index] * delta * (next_nav_point - zombie.transform.origin).normalized()
+	if zombie.position != next_nav_point:
+		var target_transform = zombie.transform.looking_at(next_nav_point + NAV_POINT_Y_OFFSET * Vector3.UP)
+		var a = Quaternion(zombie.transform.basis)
+		var b = Quaternion(target_transform.basis)
+		var c = a.slerp(b, delta * SMOOTH_SPEED)
+		zombie.transform.basis = Basis(c)
+	zombie.move_and_slide()
 
 func check_transitions():
 	if zombie.current_health <= 0:
