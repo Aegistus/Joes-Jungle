@@ -18,20 +18,29 @@ const ANIM_SPEED_VARIANCE_RANGE = .1
 var anim_index
 var anim_speed_variance
 var follow_target
+var navigation_timer : Timer
+var navigation_delay = .5
+var in_state = false
 
 func _ready():
+	navigation_timer = Timer.new()
+	add_child(navigation_timer)
+	navigation_timer.wait_time = navigation_delay
+	navigation_timer.timeout.connect(func(): process_navigation(navigation_delay))
+	navigation_timer.start()
 	anim_index = randi() % all_walk_anims.size()
 	anim_speed_variance = randf() * ANIM_SPEED_VARIANCE_RANGE
 
 func enter():
 	super()
+	in_state = true
 	animation_player.play(all_walk_anims[anim_index])
 	animation_player.speed_scale = anim_speed_scales[anim_index] + anim_speed_variance
 
-func process_state(delta):
-	if player:
+func process_navigation(delta):
+	if in_state and player:
 		nav_agent.set_target_position(player.position)
-		if not nav_agent.is_target_reachable() and zombie.target_barricade == null:
+		if zombie.target_barricade == null and not nav_agent.is_target_reachable():
 			var barricades = get_tree().get_nodes_in_group("barricade")
 			var closest = 999999999
 			for b : BarricadeEmplacement in barricades:
@@ -45,12 +54,13 @@ func process_state(delta):
 			follow_target = player
 		zombie.velocity = Vector3.ZERO
 		nav_agent.set_target_position(follow_target.position)
-		var next_nav_point = nav_agent.get_next_path_position()
+
+func process_state_physics(delta):
+		var next_nav_point : Vector3 = nav_agent.get_next_path_position()
 		nav_agent.get_path()
-		zombie.velocity = (next_nav_point - zombie.transform.origin).normalized() * move_speeds[anim_index] * delta
-		zombie.velocity *= zombie.speed_modifier
-		zombie.look_at(Vector3(next_nav_point.x, zombie.position.y, next_nav_point.z))
-		
+		zombie.velocity = zombie.speed_modifier * move_speeds[anim_index] * delta * (next_nav_point - zombie.transform.origin).normalized()
+		if zombie.position != next_nav_point:
+			zombie.look_at(Vector3(next_nav_point.x, zombie.position.y, next_nav_point.z))
 		zombie.move_and_slide()
 
 func check_transitions():
@@ -66,4 +76,5 @@ func check_transitions():
 		return null
 
 func exit():
+	in_state = false
 	animation_player.speed_scale = 1

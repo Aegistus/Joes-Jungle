@@ -5,6 +5,7 @@ signal health_update(health, max_health)
 signal on_equip_weapon(gun : Gun)
 signal on_pickup_weapon(gun : Gun)
 
+@export var invincible = false
 @export var turn_rate := 5.0
 @export var max_health = 100
 @export var directional_reference: Node3D
@@ -41,6 +42,8 @@ var current_interactable
 var current_health
 
 func _ready():
+	if OS.has_feature("standalone"):
+		invincible = false
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	current_health = max_health
 	hurtbox.on_hurt.connect(take_damage)
@@ -93,6 +96,8 @@ func _physics_process(delta):
 		GameManager.add_points(1000)
 
 func take_damage(damage):
+	if invincible:
+		return
 	if current_health > 0:
 		current_health -= damage
 		current_health = clampf(current_health, 0, max_health)
