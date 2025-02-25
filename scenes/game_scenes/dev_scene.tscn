@@ -404,8 +404,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.75, 0, 12)
 
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 script = ExtResource("21_0spru")
-starting_wave_delay = 30
-starting_enemy_count = 20
+starting_wave_delay = 20
+starting_enemy_count = 100
 enemy_count_increase_per_wave = 2
 intermission_wait_time = 5.0
 boomer_zombie_spawn_start = 0
@@ -515,6 +515,285 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.676, -0.5, -23.367)
 
 [node name="SpawnPoint31" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.676, -0.5, -23.367)
+
+[node name="SpawnPoint32" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.676, -0.5, -24.867)
+
+[node name="SpawnPoint33" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.776, -0.5, -24.867)
+
+[node name="SpawnPoint34" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.376, -0.5, -24.867)
+
+[node name="SpawnPoint35" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.276, -0.5, -24.867)
+
+[node name="SpawnPoint36" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.576, -0.5, -24.867)
+
+[node name="SpawnPoint37" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.376, -0.5, -24.867)
+
+[node name="SpawnPoint38" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.876, -0.5, -24.867)
+
+[node name="SpawnPoint39" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.576, -0.5, -24.867)
+
+[node name="SpawnPoint40" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.576, -0.5, -25.867)
+
+[node name="SpawnPoint41" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.676, -0.5, -25.867)
+
+[node name="SpawnPoint42" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.676, -0.5, -25.867)
+
+[node name="SpawnPoint43" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.776, -0.5, -26.267)
+
+[node name="SpawnPoint44" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.076, -0.5, -26.467)
+
+[node name="SpawnPoint45" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.076, -0.5, -26.667)
+
+[node name="SpawnPoint46" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.076, -0.5, -26.767)
+
+[node name="SpawnPoint47" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.976, -0.5, -26.767)
+
+[node name="SpawnPoint48" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.376, -0.5, -26.667)
+
+[node name="SpawnPoint49" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.976, -0.5, -26.567)
+
+[node name="SpawnPoint50" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.076, -0.5, -26.467)
+
+[node name="SpawnPoint51" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.276, -0.5, -27.567)
+
+[node name="SpawnPoint52" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.176, -0.5, -27.567)
+
+[node name="SpawnPoint53" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.476, -0.5, -27.567)
+
+[node name="SpawnPoint54" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.576, -0.5, -27.567)
+
+[node name="SpawnPoint55" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.876, -0.5, -27.567)
+
+[node name="SpawnPoint56" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.876, -0.5, -27.567)
+
+[node name="SpawnPoint57" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.976, -0.5, -27.567)
+
+[node name="SpawnPoint58" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.876, -0.5, -27.567)
+
+[node name="SpawnPoint59" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.176, -0.5, -27.667)
+
+[node name="SpawnPoint60" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.276, -0.5, -27.767)
+
+[node name="SpawnPoint61" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.676, -0.5, -27.667)
+
+[node name="SpawnPoint62" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.676, -0.5, -27.667)
+
+[node name="SpawnPoint63" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.676, -0.5, -30.467)
+
+[node name="SpawnPoint64" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.776, -0.5, -30.467)
+
+[node name="SpawnPoint65" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.376, -0.5, -30.467)
+
+[node name="SpawnPoint66" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.276, -0.5, -30.467)
+
+[node name="SpawnPoint67" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.576, -0.5, -30.467)
+
+[node name="SpawnPoint68" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.376, -0.5, -30.467)
+
+[node name="SpawnPoint69" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.876, -0.5, -30.467)
+
+[node name="SpawnPoint70" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.576, -0.5, -30.467)
+
+[node name="SpawnPoint71" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.576, -0.5, -31.467)
+
+[node name="SpawnPoint72" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.676, -0.5, -31.467)
+
+[node name="SpawnPoint73" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.676, -0.5, -31.467)
+
+[node name="SpawnPoint74" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.776, -0.5, -31.867)
+
+[node name="SpawnPoint75" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.076, -0.5, -32.067)
+
+[node name="SpawnPoint76" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.076, -0.5, -32.267)
+
+[node name="SpawnPoint77" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.076, -0.5, -32.367)
+
+[node name="SpawnPoint78" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.976, -0.5, -32.367)
+
+[node name="SpawnPoint79" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.376, -0.5, -32.267)
+
+[node name="SpawnPoint80" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.976, -0.5, -32.167)
+
+[node name="SpawnPoint81" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.076, -0.5, -32.067)
+
+[node name="SpawnPoint82" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.276, -0.5, -33.167)
+
+[node name="SpawnPoint83" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.176, -0.5, -33.167)
+
+[node name="SpawnPoint84" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.476, -0.5, -33.167)
+
+[node name="SpawnPoint85" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.576, -0.5, -33.167)
+
+[node name="SpawnPoint86" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.876, -0.5, -33.167)
+
+[node name="SpawnPoint87" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.876, -0.5, -33.167)
+
+[node name="SpawnPoint88" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.976, -0.5, -33.167)
+
+[node name="SpawnPoint89" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.876, -0.5, -33.167)
+
+[node name="SpawnPoint90" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.176, -0.5, -33.267)
+
+[node name="SpawnPoint91" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.276, -0.5, -33.367)
+
+[node name="SpawnPoint92" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.676, -0.5, -33.267)
+
+[node name="SpawnPoint93" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.676, -0.5, -33.267)
+
+[node name="SpawnPoint94" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.676, -0.5, -38.567)
+
+[node name="SpawnPoint95" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.776, -0.5, -38.567)
+
+[node name="SpawnPoint96" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.376, -0.5, -38.567)
+
+[node name="SpawnPoint97" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.276, -0.5, -38.567)
+
+[node name="SpawnPoint98" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.576, -0.5, -38.567)
+
+[node name="SpawnPoint99" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.376, -0.5, -38.567)
+
+[node name="SpawnPoint100" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.876, -0.5, -38.567)
+
+[node name="SpawnPoint101" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.576, -0.5, -38.567)
+
+[node name="SpawnPoint102" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.576, -0.5, -39.567)
+
+[node name="SpawnPoint103" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.676, -0.5, -39.567)
+
+[node name="SpawnPoint104" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.676, -0.5, -39.567)
+
+[node name="SpawnPoint105" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.776, -0.5, -39.967)
+
+[node name="SpawnPoint106" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.076, -0.5, -40.167)
+
+[node name="SpawnPoint107" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.076, -0.5, -40.367)
+
+[node name="SpawnPoint108" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.076, -0.5, -40.467)
+
+[node name="SpawnPoint109" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.976, -0.5, -40.467)
+
+[node name="SpawnPoint110" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.376, -0.5, -40.367)
+
+[node name="SpawnPoint111" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.976, -0.5, -40.267)
+
+[node name="SpawnPoint112" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.076, -0.5, -40.167)
+
+[node name="SpawnPoint113" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.276, -0.5, -41.267)
+
+[node name="SpawnPoint114" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.176, -0.5, -41.267)
+
+[node name="SpawnPoint115" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.476, -0.5, -41.267)
+
+[node name="SpawnPoint116" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.576, -0.5, -41.267)
+
+[node name="SpawnPoint117" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.876, -0.5, -41.267)
+
+[node name="SpawnPoint118" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.876, -0.5, -41.267)
+
+[node name="SpawnPoint119" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.976, -0.5, -41.267)
+
+[node name="SpawnPoint120" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.876, -0.5, -41.267)
+
+[node name="SpawnPoint121" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.176, -0.5, -41.367)
+
+[node name="SpawnPoint122" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.276, -0.5, -41.467)
+
+[node name="SpawnPoint123" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.676, -0.5, -41.367)
+
+[node name="SpawnPoint124" type="Node3D" parent="ZombieSpawnPoints/SpawnPointParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.676, -0.5, -41.367)
 
 [node name="FruitPunchBowl" parent="." instance=ExtResource("25_1ethd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05074, -0.0999999, -5.58617)
