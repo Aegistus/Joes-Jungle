@@ -69,7 +69,7 @@ func spawn_next_wave():
 			spawn_zombie(i)
 			all_zombies_count += 1
 			i += 1
-		spawn_timer.wait_time = .2
+		spawn_timer.wait_time = .5
 		spawn_timer.start()
 		await spawn_timer.timeout
 	current_enemy_count += enemy_count_increase_per_wave

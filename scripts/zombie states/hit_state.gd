@@ -13,16 +13,18 @@ var animation_done = false
 
 func enter():
 	animation_done = false
-	if randf() > .5:
-		animation_player.play("Zombie Anims/Zombie Hit 1")
-		animation_player.seek(.3)
-	else:
-		animation_player.play("Zombie Anims/Zombie Hit 2")
-		animation_player.seek(.4)
-	zombie.velocity = Vector3.ZERO
-	animation_player.animation_finished.connect(func(anim_name): animation_done = true)
 	if randf() <= dismember_chance && zombie.allow_dismember:
 		zombie.random_dismember()
+		if randf() > .5:
+			animation_player.play("Zombie Anims/Zombie Hit 1")
+			animation_player.seek(.3)
+		else:
+			animation_player.play("Zombie Anims/Zombie Hit 2")
+			animation_player.seek(.4)
+		zombie.velocity = Vector3.ZERO
+		animation_player.animation_finished.connect(func(anim_name): animation_done = true)
+	else:
+		animation_done = true
 
 func check_transitions():
 	if zombie.current_health <= 0:
