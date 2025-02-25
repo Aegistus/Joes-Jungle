@@ -411,8 +411,8 @@ intermission_wait_time = 5.0
 boomer_zombie_spawn_start = 0
 fast_zombie_spawn_chance = 0
 tank_zombie_spawn_chance = 0
-boomer_zombie_spawn_chance = 50
-normal_zombie_spawn_chance = 50
+boomer_zombie_spawn_chance = 0
+normal_zombie_spawn_chance = 100
 
 [node name="IntermissionTimer" type="Timer" parent="ZombieSpawnPoints"]
 

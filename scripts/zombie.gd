@@ -3,7 +3,8 @@ extends CharacterBody3D
 
 @export var allow_dismember := false
 @export var starting_health = 10
-@export var point_value = 10
+@export var min_point_value = 5
+@export var max_point_value = 15
 @export var stagger_immune = false
 @export var body_part_names = ["Physical Bone Head", "Physical Bone LeftLowerArm", "Physical Bone RightLowerArm"]
 
