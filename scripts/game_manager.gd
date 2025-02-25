@@ -10,14 +10,17 @@ signal on_intermission_start
 signal on_intermission_end
 signal on_barricade_added(barricade : Node3D)
 signal on_barricade_destroyed
+signal on_killstreak_updated(current_killstreak)
 
 const SAVE_FILE_PATH = "user://savegame.dat"
+const BUCKS_PER_KILLSTREAK_KILL = 10
 
 var currently_in_wave = false
 var current_wave : int = 0
 var run_time = 0.0
 var current_points = 0
 var is_game_running = false
+var current_killstreak = 0
 
 var cause_of_death : CauseOfDeath
 var zombie_death_text : Array[String] = ["Being Too Tasty for Your Own Good",\
@@ -34,6 +37,7 @@ var plant_death_text : Array[String] = ["Plant Neglect",\
 "Stopping to Smell the Roses, Instead of Watering Them"]
 
 @onready var intermission_timer : Timer = $IntermissionTimer
+@onready var kill_streak_timer : Timer = $KillStreakTimer
 
 class GameRunEntry:
 	var rank : int
@@ -51,6 +55,7 @@ func _ready():
 	on_wave_start.connect(func(): currently_in_wave = true)
 	on_wave_end.connect(func(): currently_in_wave = false)
 	intermission_timer.timeout.connect(func(): on_intermission_end.emit())
+	kill_streak_timer.timeout.connect(cash_out_killstreak)
 
 func _process(delta):
 	if is_game_running:
@@ -83,6 +88,17 @@ func start_intermission(duration : float):
 	intermission_timer.one_shot = true
 	intermission_timer.start()
 	on_intermission_start.emit()
+
+func add_to_killstreak():
+	current_killstreak += 1
+	kill_streak_timer.start()
+	on_killstreak_updated.emit(current_killstreak)
+
+func cash_out_killstreak():
+	if current_killstreak > 3:
+		add_points(current_killstreak * BUCKS_PER_KILLSTREAK_KILL)
+	current_killstreak = 0
+	on_killstreak_updated.emit(current_killstreak)
 
 func add_points(amount):
 	current_points += amount

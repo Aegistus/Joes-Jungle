@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=53 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -37,6 +37,8 @@
 [ext_resource type="AudioStream" uid="uid://cmwts5cc5vr8w" path="res://assets/audio/start_wave_sounds/Zombie Effect_10.wav" id="34_plo1p"]
 [ext_resource type="AudioStream" uid="uid://db1foj5ixkdgs" path="res://assets/audio/start_wave_sounds/Zombie Effect_12.wav" id="35_ww6fr"]
 [ext_resource type="AudioStream" uid="uid://d3srxo2ajoeb8" path="res://assets/audio/start_wave_sounds/Zombie Effect_13.wav" id="36_w8yrs"]
+[ext_resource type="Script" path="res://scripts/ui/killstreak_timer_ui.gd" id="38_s2j5o"]
+[ext_resource type="Texture2D" uid="uid://lbgg8ejhj7ne" path="res://assets/UI/Handsome Skull.png" id="39_1ukt0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ljnu"]
 bg_color = Color(0, 0, 0, 0.192157)
@@ -112,6 +114,9 @@ stream_6/stream = ExtResource("33_f0ogp")
 stream_7/stream = ExtResource("34_plo1p")
 stream_8/stream = ExtResource("35_ww6fr")
 stream_9/stream = ExtResource("36_w8yrs")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_he6tt"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -871,3 +876,40 @@ volume_db = 15.0
 
 [node name="ZombieNoiseAudioPlayer" type="AudioStreamPlayer2D" parent="CanvasLayer/WaveAnnouncer"]
 stream = SubResource("AudioStreamRandomizer_p24nr")
+
+[node name="KillstreakTimer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -224.0
+offset_top = 91.0
+offset_bottom = 132.0
+grow_horizontal = 0
+script = ExtResource("38_s2j5o")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/KillstreakTimer"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/KillstreakTimer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+texture = ExtResource("39_1ukt0")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/KillstreakTimer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vju5m")
+theme_override_font_sizes/font_size = 30
+text = "x 999"
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/KillstreakTimer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/fill = SubResource("StyleBoxFlat_he6tt")
+max_value = 1.0
+show_percentage = false
