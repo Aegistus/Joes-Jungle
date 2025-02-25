@@ -14,6 +14,7 @@ extends ZombieState
 @onready var animation_player = $"../../AnimationPlayer"
 
 const ANIM_SPEED_VARIANCE_RANGE = .1
+const RECALCULATE_PATH_DISTANCE = 10
 
 var anim_index
 var anim_speed_variance
@@ -21,6 +22,7 @@ var follow_target
 var navigation_timer : Timer
 var navigation_delay = .5
 var in_state = false
+var next_nav_point : Vector3
 
 func _ready():
 	navigation_timer = Timer.new()
@@ -54,10 +56,9 @@ func process_navigation(delta):
 			follow_target = player
 		zombie.velocity = Vector3.ZERO
 		nav_agent.set_target_position(follow_target.position)
+		next_nav_point = nav_agent.get_next_path_position()
 
 func process_state_physics(delta):
-		var next_nav_point : Vector3 = nav_agent.get_next_path_position()
-		nav_agent.get_path()
 		zombie.velocity = zombie.speed_modifier * move_speeds[anim_index] * delta * (next_nav_point - zombie.transform.origin).normalized()
 		if zombie.position != next_nav_point:
 			zombie.look_at(Vector3(next_nav_point.x, zombie.position.y, next_nav_point.z))

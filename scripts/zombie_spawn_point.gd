@@ -41,7 +41,7 @@ var wave_completed = true
 var all_spawn_points
 var sum_of_spawn_weights : int
 
-const MAX_ZOMBIES = 100
+const MAX_ZOMBIES = 50
 const ZOMBIE = preload("res://scenes/enemies/zombie.tscn")
 const FAST_ZOMBIE = preload("res://scenes/enemies/fast_zombie.tscn")
 const TANK_ZOMBIE = preload("res://scenes/enemies/tank_zombie.tscn")
