@@ -34,9 +34,9 @@ func process_state(delta):
 		if not nav_agent.is_target_reachable() and zombie.target_barricade == null:
 			var barricades = get_tree().get_nodes_in_group("barricade")
 			var closest = 999999999
-			for b in barricades:
+			for b : BarricadeEmplacement in barricades:
 				var sq_dist = zombie.global_position.distance_squared_to(b.global_position)
-				if sq_dist < closest:
+				if sq_dist < closest && b.current_health > 0:
 					closest = sq_dist
 					zombie.target_barricade = b
 		if zombie.target_barricade:
