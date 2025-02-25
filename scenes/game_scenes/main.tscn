@@ -2594,7 +2594,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.6, 
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
 script = ExtResource("17_owi3h")
+starting_wave_delay = 10
 starting_enemy_count = 20
+intermission_max = 90.0
 
 [node name="IntermissionTimer" type="Timer" parent="ZombieSpawnPoints"]
 one_shot = true

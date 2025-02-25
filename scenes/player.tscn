@@ -394,7 +394,6 @@ stream_2/stream = ExtResource("23_b2vfi")
 collision_layer = 512
 collision_mask = 67
 script = ExtResource("1_51t2t")
-invincible = true
 turn_rate = 10.0
 directional_reference = NodePath("CameraMount/MainCamera/DirectionalReference")
 animation_player = NodePath("PlayerModel/Model/AnimationPlayer")
@@ -1022,7 +1021,6 @@ walking_state = NodePath("../WalkingState")
 [node name="ReloadingState" type="Node" parent="MovementStateMachine"]
 unique_name_in_owner = true
 script = ExtResource("9_q5wgv")
-movement_speed = 150
 
 [node name="EquippingState" type="Node" parent="MovementStateMachine"]
 unique_name_in_owner = true
