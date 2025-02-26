@@ -57,5 +57,7 @@ func check_transitions():
 	elif Input.is_action_just_pressed("toggle_build_mode") and !GameManager.currently_in_wave:
 		equipping_state.weapon_index = 2
 		return equipping_state
+	elif Input.is_action_just_pressed("vault") and controlled_player.can_vault:
+		return %VaultState
 	else:
 		return null

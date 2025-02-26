@@ -157,6 +157,11 @@ debug_water_plants={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":53,"key_label":0,"unicode":37,"location":0,"echo":false,"script":null)
 ]
 }
+vault={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
@@ -172,6 +177,7 @@ debug_water_plants={
 3d_physics/layer_10="player"
 3d_physics/layer_11="ragdoll_only"
 3d_physics/layer_12="explosion_hurtbox"
+3d_physics/layer_13="vaultable"
 3d_physics/layer_17="material_flesh"
 3d_physics/layer_18="material_wood"
 3d_physics/layer_19="material_stone"

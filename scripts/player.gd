@@ -39,6 +39,7 @@ var gun : Gun
 var magazine : RigidBody3D
 var move_speed_multiplier = 1.0
 var current_interactable
+var can_vault := false
 var current_health
 
 func _ready():
@@ -68,6 +69,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	# check interactable
 	var interactable = interact_raycast.get_collider()
 	if interactable != null:
 		if interactable.is_in_group("interactable"):
@@ -84,7 +86,13 @@ func _physics_process(delta):
 			current_interactable.interact_during(delta)
 		if Input.is_action_just_released("interact"):
 			current_interactable.interact_end()
-	#debugging
+	# check for vaultable
+	var vaultable = %VaultRaycast.get_collider()
+	if vaultable != null:
+		can_vault = true
+	else:
+		can_vault = false
+	# debugging
 	if Input.is_action_just_pressed("show_mouse"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CONFINED_HIDDEN:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
