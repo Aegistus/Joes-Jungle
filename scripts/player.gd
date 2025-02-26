@@ -94,6 +94,10 @@ func _physics_process(delta):
 		take_damage(999999)
 	if Input.is_action_just_pressed("debug_add_cash"):
 		GameManager.add_points(1000)
+	if Input.is_action_just_pressed("debug_water_plants"):
+		var plants = get_tree().get_nodes_in_group("plant") as Array[WateringBush]
+		for plant in plants:
+			plant.current_water = plant.max_water
 
 func take_damage(damage):
 	if invincible:

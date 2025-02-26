@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_xdefp")
-cost = 1500
+cost = 750
 name = "M18A1 Claymore"
 emplacement_scene = ExtResource("1_twmr4")
 ghost_scene = ExtResource("2_ilek0")

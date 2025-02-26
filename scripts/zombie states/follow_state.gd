@@ -44,20 +44,6 @@ func enter():
 func process_navigation(delta):
 	if in_state and player:
 		nav_agent.set_target_position(player.position)
-		if zombie.target_barricade == null and not nav_agent.is_target_reachable():
-			var barricades = get_tree().get_nodes_in_group("barricade")
-			var closest = 999999999
-			for b : BarricadeEmplacement in barricades:
-				var sq_dist = zombie.global_position.distance_squared_to(b.global_position)
-				if sq_dist < closest && b.current_health > 0:
-					closest = sq_dist
-					zombie.target_barricade = b
-		if zombie.target_barricade:
-			follow_target = zombie.target_barricade
-		else:
-			follow_target = player
-		zombie.velocity = Vector3.ZERO
-		nav_agent.set_target_position(follow_target.position)
 		next_nav_point = nav_agent.get_next_path_position()
 
 func process_state_physics(delta):
