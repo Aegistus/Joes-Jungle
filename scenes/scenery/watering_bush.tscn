@@ -23,7 +23,6 @@ albedo_texture = SubResource("ViewportTexture_swfeb")
 [node name="WateringBush" groups=["plant"] instance=ExtResource("1_jo5n8")]
 script = ExtResource("2_r8aun")
 max_water = 240.0
-water_increase_rate = 60.0
 tooltip_text = "Hold to Water Plant"
 
 [node name="SM_Env_PalmBush_03" parent="." index="0"]
@@ -70,3 +69,4 @@ spot_range = 10.0
 spot_angle = 30.0
 
 [node name="ScrapTimer" type="Timer" parent="." index="7"]
+wait_time = 0.5

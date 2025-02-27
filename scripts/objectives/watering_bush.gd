@@ -44,6 +44,8 @@ func interact_during(delta):
 		current_water += delta * water_increase_rate
 		if !watering_sound.playing:
 			watering_sound.play()
+		if current_water > max_water:
+			interact_end()
 
 func interact_end():
 	scrap_timer.stop()
