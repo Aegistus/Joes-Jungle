@@ -38,6 +38,7 @@ var plant_death_text : Array[String] = ["Plant Neglect",\
 
 @onready var intermission_timer : Timer = $IntermissionTimer
 @onready var kill_streak_timer : Timer = $KillStreakTimer
+@onready var skip_intermission_audio_player = $SkipIntermissionAudioPlayer
 
 class GameRunEntry:
 	var rank : int
@@ -60,6 +61,8 @@ func _ready():
 func _process(delta):
 	if is_game_running:
 		run_time += delta
+	if Input.is_action_just_pressed("skip_intermission") and !currently_in_wave:
+		skip_intermission()
 
 func start_game():
 	run_time = 0
@@ -89,13 +92,19 @@ func start_intermission(duration : float):
 	intermission_timer.start()
 	on_intermission_start.emit()
 
+func skip_intermission():
+	intermission_timer.wait_time = 10
+	intermission_timer.one_shot = true
+	intermission_timer.start()
+	skip_intermission_audio_player.play()
+
 func add_to_killstreak():
 	current_killstreak += 1
 	kill_streak_timer.start()
 	on_killstreak_updated.emit(current_killstreak)
 
 func cash_out_killstreak():
-	if current_killstreak > 3:
+	if current_killstreak > 2:
 		add_points(current_killstreak * BUCKS_PER_KILLSTREAK_KILL)
 	current_killstreak = 0
 	on_killstreak_updated.emit(current_killstreak)

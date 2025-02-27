@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://53o2o6sef8fm"]
+[gd_scene load_steps=3 format=3 uid="uid://53o2o6sef8fm"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_oc1yj"]
+[ext_resource type="AudioStream" uid="uid://be45qxofjy5nk" path="res://assets/audio/Gong 5.wav" id="2_hwfov"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_oc1yj")
@@ -11,3 +12,6 @@ one_shot = true
 [node name="KillStreakTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="SkipIntermissionAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_hwfov")
