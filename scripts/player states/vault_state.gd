@@ -12,7 +12,7 @@ func enter():
 	controlled_player.current_animation_tree.active = false
 	animation_player.play("Vault/vault")
 	animation_player.animation_finished.connect(func(anim_name): finished = true)
-	%PlayerCollider.disabled = true
+	controlled_player.set_collision_mask_value(8, false)
 	%AimStateMachine.transition_to(%RelaxedState)
 
 func process_state_physics(delta):
@@ -20,7 +20,7 @@ func process_state_physics(delta):
 	controlled_player.move_and_slide()
 
 func exit():
-	%PlayerCollider.disabled = false
+	controlled_player.set_collision_mask_value(8, true)
 
 func check_transitions():
 	if finished:

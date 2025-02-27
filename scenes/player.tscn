@@ -394,7 +394,7 @@ stream_2/stream = ExtResource("23_b2vfi")
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("directional_reference", "animation_player") groups=["player"]]
 collision_layer = 512
-collision_mask = 67
+collision_mask = 195
 script = ExtResource("1_51t2t")
 turn_rate = 10.0
 directional_reference = NodePath("CameraMount/MainCamera/DirectionalReference")
