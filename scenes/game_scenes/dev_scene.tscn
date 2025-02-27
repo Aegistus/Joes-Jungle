@@ -403,14 +403,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.75, 0, 12)
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 script = ExtResource("21_0spru")
 starting_wave_delay = 60
-starting_enemy_count = 100
+starting_enemy_count = 1
 enemy_count_increase_per_wave = 2
 intermission_wait_time = 5.0
+tank_zombie_spawn_start = 0
 boomer_zombie_spawn_start = 0
 fast_zombie_spawn_chance = 0
-tank_zombie_spawn_chance = 0
+tank_zombie_spawn_chance = 50
 boomer_zombie_spawn_chance = 0
-normal_zombie_spawn_chance = 100
+normal_zombie_spawn_chance = 0
 
 [node name="IntermissionTimer" type="Timer" parent="ZombieSpawnPoints"]
 
