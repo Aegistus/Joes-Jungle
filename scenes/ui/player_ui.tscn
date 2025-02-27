@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=54 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/ui/current_weapon_ui.gd" id="5_m6bhq"]
 [ext_resource type="Texture2D" uid="uid://b2e3j71sjxhny" path="res://assets/UI/health_ui_over.png" id="5_mf036"]
 [ext_resource type="Texture2D" uid="uid://dkabu7bj24wwm" path="res://assets/UI/Magazine UI.png" id="5_x82tv"]
+[ext_resource type="Script" path="res://scripts/ui/scrap_ui.gd" id="6_m2jb1"]
 [ext_resource type="Texture2D" uid="uid://cfbamgceavyxt" path="res://assets/UI/health_ui_progress.png" id="6_pj4sn"]
 [ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="6_r7kat"]
 [ext_resource type="Texture2D" uid="uid://b8aimspfiume" path="res://assets/UI/Shotgun Shells UI.png" id="6_uplld"]
@@ -211,6 +212,43 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("2_vju5m")
 text = "+ $999"
+
+[node name="JoeScrap" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -292.0
+offset_top = 18.0
+offset_right = -154.0
+offset_bottom = 44.0
+grow_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_vju5m")
+theme_override_font_sizes/font_size = 24
+text = " Joe Scrap 0"
+vertical_alignment = 1
+script = ExtResource("6_m2jb1")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/JoeScrap"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 25.0
+offset_right = 124.0
+offset_bottom = 26.0
+rotation = 0.00761837
+
+[node name="ScrapChange" type="Label" parent="CanvasLayer/JoeScrap"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 29.0
+offset_right = 129.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0.759174, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_vju5m")
+text = "+ 999"
 
 [node name="DamageBar" type="TextureProgressBar" parent="CanvasLayer"]
 offset_left = 13.0
@@ -883,8 +921,8 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -224.0
-offset_top = 91.0
-offset_bottom = 132.0
+offset_top = 150.0
+offset_bottom = 191.0
 grow_horizontal = 0
 script = ExtResource("38_s2j5o")
 

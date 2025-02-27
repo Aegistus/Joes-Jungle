@@ -78,7 +78,9 @@ func _physics_process(delta):
 				current_interactable = interactable.get_parent() as Interactable
 			print(current_interactable.name)
 	else:
-		current_interactable = null
+		if current_interactable != null:
+			current_interactable.interact_end()
+			current_interactable = null
 	if current_interactable != null:
 		if Input.is_action_just_pressed("interact"):
 			current_interactable.interact_start()

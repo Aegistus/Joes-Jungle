@@ -872,7 +872,7 @@ mesh = SubResource("ArrayMesh_f1ndv")
 skin = SubResource("Skin_avvwo")
 
 [node name="RightHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(0.996973, 0.0701071, 0.0336046, 0.00147864, 0.415063, -0.909791, -0.0777309, 0.907088, 0.413703, -0.168009, 1.09464, 0.632178)
+transform = Transform3D(0.996973, 0.0701093, 0.0336043, 0.00147739, 0.415065, -0.909791, -0.0777326, 0.907086, 0.413705, -0.168008, 1.09464, 0.632178)
 bone_name = "RightHand"
 bone_idx = 34
 
@@ -886,12 +886,12 @@ visible = false
 visible = false
 
 [node name="LeftHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(0.95319, -0.272644, -0.130747, -0.0412363, 0.311151, -0.949466, 0.299548, 0.910412, 0.285343, 0.346052, 0.980301, 0.564913)
+transform = Transform3D(0.95319, -0.272644, -0.130747, -0.0412354, 0.311154, -0.949465, 0.299548, 0.910411, 0.285346, 0.346052, 0.980303, 0.564913)
 bone_name = "LeftHand"
 bone_idx = 10
 
 [node name="BackpackBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
-transform = Transform3D(0.952781, 0.0890857, -0.290297, -0.278196, 0.639288, -0.716881, 0.121719, 0.76379, 0.633885, 0.0790369, 1.16449, 0.157294)
+transform = Transform3D(0.952781, 0.0890862, -0.290296, -0.278195, 0.63929, -0.716879, 0.121719, 0.763788, 0.633886, 0.0790369, 1.16449, 0.157293)
 bone_name = "UpperChest"
 bone_idx = 3
 

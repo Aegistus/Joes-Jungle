@@ -3,6 +3,7 @@ extends Node
 enum CauseOfDeath { ZOMBIE, PLANT }
 
 signal on_point_change(current_points, added_points)
+signal on_scrap_change(current_scrap, added_scrap)
 signal on_zombie_kill
 signal on_wave_start
 signal on_wave_end
@@ -19,6 +20,7 @@ var currently_in_wave = false
 var current_wave : int = 0
 var run_time = 0.0
 var current_points = 0
+var current_scrap = 0
 var is_game_running = false
 var current_killstreak = 0
 
@@ -67,6 +69,7 @@ func _process(delta):
 func start_game():
 	run_time = 0
 	current_points = 0
+	current_scrap = 0
 	is_game_running = true
 
 func end_game(cause_of_death : CauseOfDeath):
@@ -116,6 +119,14 @@ func add_points(amount):
 func spend_points(amount):
 	current_points -= amount
 	on_point_change.emit(current_points, -amount)
+
+func add_scrap(amount):
+	current_scrap += amount
+	on_scrap_change.emit(current_scrap, amount)
+
+func spend_scrap(amount):
+	current_scrap -= amount
+	on_scrap_change.emit(current_scrap, -amount)
 
 func get_cause_of_death_text() -> String:
 	if cause_of_death == CauseOfDeath.ZOMBIE:
