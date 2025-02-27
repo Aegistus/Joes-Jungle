@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://0pbg6jpb0fmj"]
+[gd_scene load_steps=60 format=4 uid="uid://0pbg6jpb0fmj"]
 
 [ext_resource type="Script" path="res://scripts/emplacements/barricade_emplacement.gd" id="1_o24el"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="1_xrn8h"]
@@ -8,6 +8,11 @@
 [ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="6_fmdhp"]
 [ext_resource type="PackedScene" uid="uid://dk7ilqse6t10n" path="res://scenes/emplacements/emplacement_overlapper.tscn" id="7_0g7l4"]
 [ext_resource type="PackedScene" uid="uid://c4rrj07uowwaj" path="res://scenes/emplacements/emplacement_seller.tscn" id="8_g2clp"]
+[ext_resource type="AudioStream" uid="uid://3adqomysd8eb" path="res://assets/audio/barricade_hit/Horse Footsteps Sand 1.wav" id="9_srv3k"]
+[ext_resource type="AudioStream" uid="uid://bh42leya3ev8s" path="res://assets/audio/barricade_hit/Horse Footsteps Sand 2.wav" id="10_vpwib"]
+[ext_resource type="AudioStream" uid="uid://do5i4wof5wbey" path="res://assets/audio/barricade_hit/Horse Footsteps Sand 3.wav" id="11_ko4r4"]
+[ext_resource type="AudioStream" uid="uid://h1dq14r6e8f6" path="res://assets/audio/barricade_hit/Horse Footsteps Sand 4.wav" id="12_s4dlc"]
+[ext_resource type="AudioStream" uid="uid://cx4esci7dmju6" path="res://assets/audio/barricade_hit/Horse Footsteps Sand 5.wav" id="13_30tnw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yalxg"]
 albedo_texture = ExtResource("1_xrn8h")
@@ -506,6 +511,14 @@ stream_2/stream = ExtResource("6_fmdhp")
 [sub_resource type="BoxShape3D" id="BoxShape3D_yb355"]
 size = Vector3(2.85, 1.35, 0.4)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_w03b7"]
+streams_count = 5
+stream_0/stream = ExtResource("9_srv3k")
+stream_1/stream = ExtResource("10_vpwib")
+stream_2/stream = ExtResource("11_ko4r4")
+stream_3/stream = ExtResource("12_s4dlc")
+stream_4/stream = ExtResource("13_30tnw")
+
 [node name="BarricadeEmplacement" type="Node3D" groups=["barricade"]]
 script = ExtResource("1_o24el")
 max_health = 200.0
@@ -631,5 +644,8 @@ collision_mask = 321
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmplacementSeller"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0250001, 0.775, 1.49012e-08)
 shape = SubResource("BoxShape3D_yb355")
+
+[node name="HitSoundPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_w03b7")
 
 [connection signal="on_hurt" from="Hurtbox" to="." method="damage"]

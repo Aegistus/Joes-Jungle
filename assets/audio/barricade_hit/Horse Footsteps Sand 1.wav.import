@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3adqomysd8eb"
+path="res://.godot/imported/Horse Footsteps Sand 1.wav-9011864bbc25eb9214f61d796d90d02b.sample"
+
+[deps]
+
+source_file="res://assets/audio/barricade_hit/Horse Footsteps Sand 1.wav"
+dest_files=["res://.godot/imported/Horse Footsteps Sand 1.wav-9011864bbc25eb9214f61d796d90d02b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
