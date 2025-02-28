@@ -108,6 +108,8 @@ func _physics_process(delta):
 		var plants = get_tree().get_nodes_in_group("plant") as Array[WateringBush]
 		for plant in plants:
 			plant.current_water = plant.max_water
+	if Input.is_action_just_pressed("debug_add_scrap"):
+		GameManager.add_scrap(1000)
 
 func take_damage(damage):
 	if invincible:

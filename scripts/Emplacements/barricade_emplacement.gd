@@ -10,8 +10,8 @@ signal on_destroy
 @onready var animation_player = %AnimationPlayer
 @onready var emplacement_seller = $EmplacementSeller
 @onready var healthy_model = %HealthyModel
-@onready var slightly_damaged_model = $SlightlyDamagedModel
-@onready var badly_damaged_model = $BadlyDamagedModel
+@onready var slightly_damaged_model = $Models/SlightlyDamagedModel
+@onready var badly_damaged_model = $Models/BadlyDamagedModel
 @onready var hit_sound_player = $HitSoundPlayer
 
 var current_health
@@ -44,6 +44,7 @@ func damage(amount):
 		slightly_damaged_model.visible = false
 		badly_damaged_model.visible = true
 	hit_sound_player.play()
+	animation_player.play("damage")
 	if current_health <= 0:
 		destroy()
 

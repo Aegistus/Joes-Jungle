@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://0pbg6jpb0fmj"]
+[gd_scene load_steps=61 format=4 uid="uid://0pbg6jpb0fmj"]
 
 [ext_resource type="Script" path="res://scripts/emplacements/barricade_emplacement.gd" id="1_o24el"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="1_xrn8h"]
@@ -375,10 +375,22 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HealthyModel:position")
+tracks/2/path = NodePath("Models/HealthyModel:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Models:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -390,7 +402,7 @@ resource_name = "default"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("HealthyModel:position")
+tracks/0/path = NodePath("Models/HealthyModel:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -429,7 +441,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HealthyModel:position")
+tracks/2/path = NodePath("Models/HealthyModel:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -439,9 +451,25 @@ tracks/2/keys = {
 "values": [Vector3(0, 4.15, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_12rrx"]
+resource_name = "damage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Models:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.01, 0, 0.01), Vector3(-0.01, 0, 0.01), Vector3(-0.01, 0, -0.01), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lpllk"]
 _data = {
 "RESET": SubResource("Animation_06our"),
+"damage": SubResource("Animation_12rrx"),
 "default": SubResource("Animation_077gg"),
 "place": SubResource("Animation_43icc")
 }
@@ -524,73 +552,75 @@ script = ExtResource("1_o24el")
 max_health = 200.0
 stats_path = "res://resources/emplacement-stats/barricade_stats.tres"
 
-[node name="HealthyModel" type="MeshInstance3D" parent="."]
+[node name="Models" type="Node3D" parent="."]
+
+[node name="HealthyModel" type="MeshInstance3D" parent="Models"]
 unique_name_in_owner = true
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_yalxg")
 mesh = SubResource("ArrayMesh_xhfti")
 skeleton = NodePath("")
 
-[node name="SlightlyDamagedModel" type="Node3D" parent="."]
+[node name="SlightlyDamagedModel" type="Node3D" parent="Models"]
 visible = false
 
-[node name="SM_Env_Sandbag_Wall_02" type="MeshInstance3D" parent="SlightlyDamagedModel"]
+[node name="SM_Env_Sandbag_Wall_02" type="MeshInstance3D" parent="Models/SlightlyDamagedModel"]
 transform = Transform3D(85, 0, 0, 0, 85, 0, 0, 0, 85, 0, 0, 0.0192131)
 material_override = SubResource("StandardMaterial3D_35p8m")
 mesh = SubResource("ArrayMesh_4ctex")
 skeleton = NodePath("")
 
-[node name="BadlyDamagedModel" type="Node3D" parent="."]
+[node name="BadlyDamagedModel" type="Node3D" parent="Models"]
 visible = false
 
-[node name="SM_Env_Sandbag_Wall_End_01" type="MeshInstance3D" parent="BadlyDamagedModel"]
+[node name="SM_Env_Sandbag_Wall_End_01" type="MeshInstance3D" parent="Models/BadlyDamagedModel"]
 transform = Transform3D(-85, 0, 7.43094e-06, 0, 85, 0, -7.43094e-06, 0, -85, 0.832634, 0, 0)
 material_override = SubResource("StandardMaterial3D_kq7jv")
 mesh = SubResource("ArrayMesh_u8w3y")
 skeleton = NodePath("")
 
-[node name="SM_Env_Sandbag_Wall_End_02" type="MeshInstance3D" parent="BadlyDamagedModel"]
+[node name="SM_Env_Sandbag_Wall_End_02" type="MeshInstance3D" parent="Models/BadlyDamagedModel"]
 transform = Transform3D(85, 0, -1.48619e-05, 0, 85, 0, 1.48619e-05, 0, 85, -0.765116, 0, 0.0340612)
 material_override = SubResource("StandardMaterial3D_kq7jv")
 mesh = SubResource("ArrayMesh_u8w3y")
 skeleton = NodePath("")
 
-[node name="SM_Env_Sandbag_01" type="Node3D" parent="BadlyDamagedModel"]
+[node name="SM_Env_Sandbag_01" type="Node3D" parent="Models/BadlyDamagedModel"]
 transform = Transform3D(77.435, 0, -35.0544, 0, 85, 0, 35.0544, 0, 77.435, 0.727797, 0, 0.321116)
 
-[node name="SM_Env_Sandbag_01" type="MeshInstance3D" parent="BadlyDamagedModel/SM_Env_Sandbag_01"]
+[node name="SM_Env_Sandbag_01" type="MeshInstance3D" parent="Models/BadlyDamagedModel/SM_Env_Sandbag_01"]
 material_override = SubResource("StandardMaterial3D_lcw2l")
 mesh = SubResource("ArrayMesh_7lp80")
 skeleton = NodePath("")
 
-[node name="SM_Env_Sandbag_02" type="Node3D" parent="BadlyDamagedModel"]
+[node name="SM_Env_Sandbag_02" type="Node3D" parent="Models/BadlyDamagedModel"]
 transform = Transform3D(85, 0, 0, 0, 85, 0, 0, 0, 85, -0.341991, 0, -0.388367)
 
-[node name="SM_Env_Sandbag_02" type="MeshInstance3D" parent="BadlyDamagedModel/SM_Env_Sandbag_02"]
+[node name="SM_Env_Sandbag_02" type="MeshInstance3D" parent="Models/BadlyDamagedModel/SM_Env_Sandbag_02"]
 material_override = SubResource("StandardMaterial3D_lcw2l")
 mesh = SubResource("ArrayMesh_cxfus")
 skeleton = NodePath("")
 
-[node name="SM_Env_Sandbag_03" type="Node3D" parent="BadlyDamagedModel"]
+[node name="SM_Env_Sandbag_03" type="Node3D" parent="Models/BadlyDamagedModel"]
 transform = Transform3D(-84.9912, 0, 1.21941, 0, 85, 0, -1.21941, 0, -84.9912, -1.25328, 0, -0.464848)
 
-[node name="SM_Env_Sandbag_03" type="MeshInstance3D" parent="BadlyDamagedModel/SM_Env_Sandbag_03"]
+[node name="SM_Env_Sandbag_03" type="MeshInstance3D" parent="Models/BadlyDamagedModel/SM_Env_Sandbag_03"]
 material_override = SubResource("StandardMaterial3D_lcw2l")
 mesh = SubResource("ArrayMesh_1ld76")
 skeleton = NodePath("")
 
-[node name="SM_Env_Sandbag_04" type="Node3D" parent="BadlyDamagedModel"]
+[node name="SM_Env_Sandbag_04" type="Node3D" parent="Models/BadlyDamagedModel"]
 transform = Transform3D(85, 0, 0, 0, 85, 0, 0, 0, 85, 1.14353, 0, -0.584292)
 
-[node name="SM_Env_Sandbag_04" type="MeshInstance3D" parent="BadlyDamagedModel/SM_Env_Sandbag_04"]
+[node name="SM_Env_Sandbag_04" type="MeshInstance3D" parent="Models/BadlyDamagedModel/SM_Env_Sandbag_04"]
 material_override = SubResource("StandardMaterial3D_lcw2l")
 mesh = SubResource("ArrayMesh_4lq2f")
 skeleton = NodePath("")
 
-[node name="SM_Env_Sandbag_05" type="Node3D" parent="BadlyDamagedModel"]
+[node name="SM_Env_Sandbag_05" type="Node3D" parent="Models/BadlyDamagedModel"]
 transform = Transform3D(-8.3536, 0, 84.5885, 0, 85, 0, -84.5885, 0, -8.3536, -0.988583, -1.19209e-07, 0.198457)
 
-[node name="SM_Env_Sandbag_05" type="MeshInstance3D" parent="BadlyDamagedModel/SM_Env_Sandbag_05"]
+[node name="SM_Env_Sandbag_05" type="MeshInstance3D" parent="Models/BadlyDamagedModel/SM_Env_Sandbag_05"]
 material_override = SubResource("StandardMaterial3D_lcw2l")
 mesh = SubResource("ArrayMesh_hdybr")
 skeleton = NodePath("")

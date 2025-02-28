@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsdldfkq75yyj"]
+[gd_scene load_steps=6 format=3 uid="uid://dsdldfkq75yyj"]
 
 [ext_resource type="Script" path="res://scripts/ui/water_bar.gd" id="1_s3hc2"]
 [ext_resource type="FontFile" uid="uid://cidbiqe8esbi2" path="res://assets/fonts/dead_font_walking/Dead Font Walking.otf" id="2_omrun"]
 [ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="3_2qa5s"]
+[ext_resource type="Texture2D" uid="uid://cyvj1oov11fld" path="res://assets/UI/Joe Scrap.png" id="4_fqv8a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ms56"]
 bg_color = Color(2.88785e-07, 0.44461, 0.704229, 1)
@@ -58,6 +59,20 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 3
 theme_override_fonts/font = ExtResource("3_2qa5s")
 theme_override_font_sizes/font_size = 100
-text = "0 Scrap"
+text = "9999"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScrapAmount"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -414.0
+offset_top = -113.0
+offset_right = -78.0
+offset_bottom = 211.0
+grow_horizontal = 2
+texture = ExtResource("4_fqv8a")
+expand_mode = 1
+stretch_mode = 4

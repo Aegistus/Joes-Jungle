@@ -10,4 +10,4 @@ func set_progress_bar(value):
 	progress_bar.value = value
 
 func _process(delta):
-	scrap_amount.text = str("Stored scrap: ", bush.stored_scrap)
+	scrap_amount.text = str(bush.stored_scrap)

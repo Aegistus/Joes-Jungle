@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=55 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cfbamgceavyxt" path="res://assets/UI/health_ui_progress.png" id="6_pj4sn"]
 [ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="6_r7kat"]
 [ext_resource type="Texture2D" uid="uid://b8aimspfiume" path="res://assets/UI/Shotgun Shells UI.png" id="6_uplld"]
+[ext_resource type="Texture2D" uid="uid://cyvj1oov11fld" path="res://assets/UI/Joe Scrap.png" id="7_o7t4k"]
 [ext_resource type="Script" path="res://scripts/ui/holstered_weapon_ui.gd" id="13_02gl4"]
 [ext_resource type="Texture2D" uid="uid://bwycpy1avy4mw" path="res://assets/UI/pistol_rounds_ui.png" id="14_p76ya"]
 [ext_resource type="FontFile" uid="uid://b4d3e84d08sjt" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer_Bold.otf" id="14_sq8fp"]
@@ -203,10 +204,10 @@ rotation = 0.00761837
 
 [node name="PointsChange" type="Label" parent="CanvasLayer/JoeBucks"]
 layout_mode = 0
-offset_left = 89.0
-offset_top = 33.0
-offset_right = 139.0
-offset_bottom = 56.0
+offset_left = 81.0
+offset_top = 32.0
+offset_right = 131.0
+offset_bottom = 55.0
 theme_override_colors/font_color = Color(0, 0.759174, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
@@ -217,16 +218,16 @@ text = "+ $999"
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -292.0
-offset_top = 18.0
-offset_right = -154.0
-offset_bottom = 44.0
+offset_left = -139.0
+offset_top = 75.0
+offset_right = -1.0
+offset_bottom = 101.0
 grow_horizontal = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("2_vju5m")
 theme_override_font_sizes/font_size = 24
-text = " Joe Scrap 0"
+text = "Joe Scrap: 0"
 vertical_alignment = 1
 script = ExtResource("6_m2jb1")
 add_color = Color(0.587555, 0.758161, 0.725305, 1)
@@ -242,15 +243,34 @@ rotation = 0.00761837
 
 [node name="ScrapChange" type="Label" parent="CanvasLayer/JoeScrap"]
 layout_mode = 0
-offset_left = 79.0
+offset_left = 63.0
 offset_top = 29.0
-offset_right = 129.0
+offset_right = 113.0
 offset_bottom = 52.0
 theme_override_colors/font_color = Color(0, 0.759174, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("2_vju5m")
 text = "+ 999"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/JoeScrap/ScrapChange"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -6.0
+offset_right = 72.0
+offset_bottom = 26.0
+texture = ExtResource("7_o7t4k")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/JoeScrap"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -18.0
+offset_right = 2.0
+offset_bottom = 44.0
+texture = ExtResource("7_o7t4k")
+expand_mode = 2
 
 [node name="DamageBar" type="TextureProgressBar" parent="CanvasLayer"]
 offset_left = 13.0
