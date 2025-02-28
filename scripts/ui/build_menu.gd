@@ -3,6 +3,7 @@ extends Control
 @export var selected_border_width = 1
 
 @onready var build_item_name = $BuildItemName
+@onready var build_item_cost = $BuildItemCost
 @onready var build_options_container = $BuildOptions/BuildOptionsContainer
 
 var build_gun : BuildGun
@@ -20,6 +21,7 @@ func show_menu():
 
 func select_option(index : int):
 	build_item_name.text = build_gun.current_emplacement.name
+	build_item_cost.text = str(build_gun.current_emplacement.cost)
 	var options = build_options_container.get_children()
 	for i in options.size():
 		var option = options[i] as Panel
