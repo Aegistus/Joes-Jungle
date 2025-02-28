@@ -17,6 +17,7 @@ func _ready():
 			var milliseconds := fmod(runs[i].time, 1) * 100
 			var time_string := "%02d:%02d:%02d" % [minutes, seconds, milliseconds]
 			entry.time.text = time_string
+			entry.wave_number.text = str(runs[i].wave_number)
 
 func _on_start_new_run_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/game_scenes/main.tscn")

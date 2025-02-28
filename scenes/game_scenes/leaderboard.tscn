@@ -133,6 +133,7 @@ vertical_alignment = 1
 [node name="PanelContainer2" type="Panel" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ColumnHeaders"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.98
 theme_override_styles/panel = SubResource("StyleBoxFlat_vir5t")
 
 [node name="Label" type="Label" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ColumnHeaders/PanelContainer2"]
@@ -155,6 +156,19 @@ offset_right = 307.0
 offset_bottom = 24.0
 theme_override_fonts/font = ExtResource("4_h8iur")
 text = " Time"
+
+[node name="PanelContainer4" type="Panel" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ColumnHeaders"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vir5t")
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/VBoxContainer/Leaderboard/ColumnHeaders/PanelContainer4"]
+layout_mode = 2
+offset_top = 8.0
+offset_right = 197.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("4_h8iur")
+text = " Wave Number"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UI/CanvasLayer/VBoxContainer/Leaderboard"]
 layout_mode = 2

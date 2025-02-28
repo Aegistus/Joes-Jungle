@@ -46,10 +46,12 @@ class GameRunEntry:
 	var rank : int
 	var player_name : String
 	var time : float
+	var wave_number : int
 	
-	func _init(player_name : String, time : float):
+	func _init(player_name : String, time : float, wave_number : int):
 		self.player_name = player_name
 		self.time = time
+		self.wave_number = wave_number
 
 var all_player_runs : Array[GameRunEntry]
 
@@ -68,6 +70,7 @@ func _process(delta):
 
 func start_game():
 	run_time = 0
+	current_wave = 0
 	current_points = 0
 	current_scrap = 0
 	is_game_running = true
@@ -80,11 +83,11 @@ func end_game(cause_of_death : CauseOfDeath):
 	var inserted = false
 	for i in all_player_runs.size():
 		if all_player_runs[i] != null and run_time > all_player_runs[i].time:
-			all_player_runs.insert(i, GameRunEntry.new("Player", run_time))
+			all_player_runs.insert(i, GameRunEntry.new("Player", run_time, current_wave))
 			inserted = true
 			break
 	if !inserted:
-		all_player_runs.append(GameRunEntry.new("Player", run_time))
+		all_player_runs.append(GameRunEntry.new("Player", run_time, current_wave))
 	set_run_rankings()
 	save()
 	get_tree().change_scene_to_file.bind("res://scenes/game_scenes/game_over_scene.tscn").call_deferred()
@@ -140,6 +143,7 @@ func save():
 	for i in all_player_runs.size():
 		file.store_line(all_player_runs[i].player_name)
 		file.store_float(all_player_runs[i].time)
+		file.store_64(all_player_runs[i].wave_number)
 	file.close()
 
 func load_save_data():
@@ -149,8 +153,9 @@ func load_save_data():
 		while not file.eof_reached():
 			var player_name = file.get_line()
 			var time = file.get_float()
+			var wave_number = file.get_64()
 			if player_name != "" and time != 0:
-				all_player_runs.append(GameRunEntry.new(player_name, time))
+				all_player_runs.append(GameRunEntry.new(player_name, time, wave_number))
 		file.close()
 	set_run_rankings()
 
@@ -160,7 +165,9 @@ func set_run_rankings():
 		all_player_runs[i].rank = i + 1
 
 func compare_runs(run1 : GameRunEntry, run2 : GameRunEntry) -> bool:
-	if run1.time > run2.time:
+	if run1.wave_number > run2.wave_number:
 		return true
-	else:
-		return false
+	elif run1.wave_number == run2.wave_number:
+		if run1.time < run2.time:
+			return true
+	return false
