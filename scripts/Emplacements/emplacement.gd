@@ -15,7 +15,7 @@ func place():
 	pass
 
 func sell():
-	GameManager.add_points(stats.cost)
+	GameManager.add_scrap(stats.cost)
 	queue_free()
 
 func destroy():

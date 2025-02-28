@@ -10,3 +10,4 @@ tooltip_text = "Hold to Sell"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
+one_shot = true
