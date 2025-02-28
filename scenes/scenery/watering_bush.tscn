@@ -17,6 +17,7 @@ resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_swfeb")
 
 [sub_resource type="QuadMesh" id="QuadMesh_unt8k"]
+size = Vector2(3, 0.5)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vdwn7"]
 
@@ -30,23 +31,18 @@ transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_ghwf4")
 
 [node name="SubViewport" type="SubViewport" parent="." index="2"]
-size = Vector2i(2048, 256)
+size = Vector2i(1500, 250)
 
-[node name="WateringBush" parent="SubViewport" index="0" instance=ExtResource("3_pmvla")]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="WaterBar" parent="SubViewport" index="0" instance=ExtResource("3_pmvla")]
 offset_right = 0.0
 offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="CanvasHolder" type="Node3D" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08987, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27353, 0)
 script = ExtResource("4_cf3ao")
 
 [node name="WorldSpaceCanvas" type="MeshInstance3D" parent="CanvasHolder" index="0"]
-transform = Transform3D(-2, 0, -4.37114e-08, 0, 0.25, 0, 1.74846e-07, 0, -0.5, 0, 0, 0)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_2c1dl")
 mesh = SubResource("QuadMesh_unt8k")
 skeleton = NodePath("../..")

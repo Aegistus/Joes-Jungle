@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_15piw")
-cost = 200
+cost = 50
 name = "Barricade"
 emplacement_scene = ExtResource("1_0csmg")
 ghost_scene = ExtResource("2_0i4li")

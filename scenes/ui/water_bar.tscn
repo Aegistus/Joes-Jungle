@@ -1,38 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsdldfkq75yyj"]
+[gd_scene load_steps=5 format=3 uid="uid://dsdldfkq75yyj"]
 
 [ext_resource type="Script" path="res://scripts/ui/water_bar.gd" id="1_s3hc2"]
+[ext_resource type="FontFile" uid="uid://cidbiqe8esbi2" path="res://assets/fonts/dead_font_walking/Dead Font Walking.otf" id="2_omrun"]
+[ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="3_2qa5s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ms56"]
-bg_color = Color(0.136854, 0.468859, 0.857006, 1)
+bg_color = Color(2.88785e-07, 0.44461, 0.704229, 1)
 
 [node name="WaterBar" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 279.0
-offset_bottom = 40.0
-script = ExtResource("1_s3hc2")
-
-[node name="ProgressBar" type="ProgressBar" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_right = -2.0
+offset_right = 48.0
+offset_bottom = -168.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_s3hc2")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -155.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_styles/fill = SubResource("StyleBoxFlat_8ms56")
 value = 23.65
 show_percentage = false
 
-[node name="Label" type="Label" parent="ProgressBar"]
+[node name="NameLabel" type="Label" parent="ProgressBar"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 300
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_omrun")
+theme_override_font_sizes/font_size = 200
 text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrapAmount" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("3_2qa5s")
+theme_override_font_sizes/font_size = 100
+text = "0 Scrap"
 horizontal_alignment = 1
 vertical_alignment = 1
