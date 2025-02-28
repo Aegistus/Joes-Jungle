@@ -2,6 +2,7 @@ extends Panel
 
 @onready var label = $Label
 @onready var ticking_audio_player = $TickingAudioPlayer
+@onready var skip_intermission_button = $SkipIntermissionButton
 
 var tick_starting_time : float = 9
 var in_intermission = true
@@ -13,6 +14,7 @@ func _ready():
 
 func show_timer():
 	visible = true
+	skip_intermission_button.visible = true
 	in_intermission = true
 	ticking_started = false
 
@@ -31,3 +33,5 @@ func _process(delta):
 		if !ticking_started and GameManager.intermission_timer.time_left < tick_starting_time:
 			ticking_started = true
 			ticking_audio_player.play()
+		if GameManager.intermission_timer.time_left < 10:
+			skip_intermission_button.visible = false

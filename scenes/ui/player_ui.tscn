@@ -927,7 +927,6 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lklw5")
-script = ExtResource("16_x3k6u")
 
 [node name="HBox" type="HBoxContainer" parent="CanvasLayer/IntermissionTimer/SkipIntermissionButton"]
 layout_mode = 1

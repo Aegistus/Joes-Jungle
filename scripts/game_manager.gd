@@ -96,10 +96,11 @@ func start_intermission(duration : float):
 	on_intermission_start.emit()
 
 func skip_intermission():
-	intermission_timer.wait_time = 10
-	intermission_timer.one_shot = true
-	intermission_timer.start()
-	skip_intermission_audio_player.play()
+	if intermission_timer.time_left > 10:
+		intermission_timer.wait_time = 10
+		intermission_timer.one_shot = true
+		intermission_timer.start()
+		skip_intermission_audio_player.play()
 
 func add_to_killstreak():
 	current_killstreak += 1
