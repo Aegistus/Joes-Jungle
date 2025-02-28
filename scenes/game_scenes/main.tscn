@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=64 format=3 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Script" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
@@ -100,9 +100,6 @@ render_priority = 0
 shader = ExtResource("8_4jkm0")
 shader_parameter/brightness = 1.0
 shader_parameter/wall_texture = ExtResource("9_u13fv")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_di1i8"]
-size = Vector3(2.50861, 1.60162, 2.22342)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_30c14"]
 
@@ -2072,14 +2069,6 @@ snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.2, 2)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/map/Mansion/Stairs/stair1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234802, 0, -0.593376)
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/map/Mansion/Stairs/stair1/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00772, 0.718898, 0.582932)
-shape = SubResource("BoxShape3D_di1i8")
 
 [node name="stair2" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -23.25, -0.325, -25.5)
