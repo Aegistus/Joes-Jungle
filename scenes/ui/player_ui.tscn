@@ -913,6 +913,53 @@ vertical_alignment = 1
 stream = ExtResource("24_luh10")
 volume_db = 10.0
 
+[node name="SkipIntermissionButton" type="Panel" parent="CanvasLayer/IntermissionTimer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = 11.0
+offset_right = 91.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lklw5")
+script = ExtResource("16_x3k6u")
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/IntermissionTimer/SkipIntermissionButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_right = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeyboardKey" type="PanelContainer" parent="CanvasLayer/IntermissionTimer/SkipIntermissionButton/HBox"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kuq0p")
+
+[node name="KeyboardKey" type="Label" parent="CanvasLayer/IntermissionTimer/SkipIntermissionButton/HBox/KeyboardKey"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("14_sq8fp")
+text = "G"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/IntermissionTimer/SkipIntermissionButton/HBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_r7kat")
+theme_override_font_sizes/font_size = 12
+text = "Skip Intermission"
+vertical_alignment = 1
+
 [node name="WaveCounter" type="Label" parent="CanvasLayer"]
 offset_left = 115.0
 offset_top = 42.0
