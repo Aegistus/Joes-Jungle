@@ -31,10 +31,12 @@ func process_state_physics(delta):
 
 func check_transitions():
 	if Input.is_action_just_pressed("reload"):
-		if controlled_player.gun.ammo is SingleLoadAmmo:
-			return round_reload_loop_state
-		else:
-			return reloading_state
+		if controlled_player.gun.ammo.can_reload():
+			controlled_player.gun.shoot_end()
+			if controlled_player.gun.ammo is SingleLoadAmmo:
+				return round_reload_loop_state
+			else:
+				return reloading_state
 	if aim_state_machine.current_state is AimingState:
 		return walking_state
 	if Input.is_action_just_pressed("equip_primary"):

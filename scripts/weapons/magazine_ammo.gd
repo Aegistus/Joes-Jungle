@@ -11,7 +11,7 @@ func _ready():
 	current_mag_count = max_magazine_count
 
 func can_reload() -> bool:
-	if current_mag_count > 0:
+	if current_mag_count > 0 and current_ammo < magazine_round_capacity:
 		return true
 	else:
 		return false

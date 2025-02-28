@@ -43,11 +43,12 @@ func check_transitions():
 		else:
 			return walking_state
 	elif Input.is_action_just_pressed("reload"):
-		controlled_player.gun.shoot_end()
-		if controlled_player.gun.ammo is SingleLoadAmmo:
-			return round_reload_loop_state
-		else:
-			return reloading_state
+		if controlled_player.gun.ammo.can_reload():
+			controlled_player.gun.shoot_end()
+			if controlled_player.gun.ammo is SingleLoadAmmo:
+				return round_reload_loop_state
+			else:
+				return reloading_state
 	elif Input.is_action_just_pressed("equip_primary"):
 		equipping_state.weapon_index = 0
 		return equipping_state
