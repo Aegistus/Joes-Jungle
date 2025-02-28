@@ -10,8 +10,6 @@ func _ready():
 
 func _process(delta):
 	if player.current_interactable != null and player.current_interactable is EmplacementSeller:
-		if !visible:
-			visible = true
 		if player.current_interactable != emplacement:
 			emplacement = player.current_interactable as EmplacementSeller
 		if emplacement:
@@ -19,5 +17,7 @@ func _process(delta):
 				texture_progress_bar.value = 0
 			else:
 				texture_progress_bar.value = (emplacement.timer.wait_time - emplacement.timer.time_left) / emplacement.timer.wait_time
-	elif visible:
+	if texture_progress_bar.value > 0 and emplacement != null:
+		visible = true
+	else:
 		visible = false
