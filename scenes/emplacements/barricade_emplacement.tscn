@@ -397,6 +397,21 @@ tracks/3/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_12rrx"]
+resource_name = "damage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Models:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.01, 0, 0.01), Vector3(-0.01, 0, 0.01), Vector3(-0.01, 0, -0.01), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_077gg"]
 resource_name = "default"
 tracks/0/type = "value"
@@ -449,21 +464,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 4.15, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_12rrx"]
-resource_name = "damage"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Models:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.01, 0, 0.01), Vector3(-0.01, 0, 0.01), Vector3(-0.01, 0, -0.01), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lpllk"]
@@ -547,7 +547,7 @@ stream_2/stream = ExtResource("11_ko4r4")
 stream_3/stream = ExtResource("12_s4dlc")
 stream_4/stream = ExtResource("13_30tnw")
 
-[node name="BarricadeEmplacement" type="Node3D" groups=["barricade"]]
+[node name="BarricadeEmplacement" type="Node3D" groups=["barricade", "emplacement"]]
 script = ExtResource("1_o24el")
 max_health = 200.0
 stats_path = "res://resources/emplacement-stats/barricade_stats.tres"

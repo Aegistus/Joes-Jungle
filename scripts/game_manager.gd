@@ -90,7 +90,10 @@ func end_game(cause_of_death : CauseOfDeath):
 		all_player_runs.append(GameRunEntry.new("Player", run_time, current_wave))
 	set_run_rankings()
 	save()
-	get_tree().change_scene_to_file.bind("res://scenes/game_scenes/game_over_scene.tscn").call_deferred()
+	var emplacements = get_tree().get_nodes_in_group("emplacement")
+	for e in emplacements:
+		e.queue_free()
+	get_tree().change_scene_to_file("res://scenes/game_scenes/game_over_scene.tscn")
 
 func start_intermission(duration : float):
 	intermission_timer.wait_time = duration

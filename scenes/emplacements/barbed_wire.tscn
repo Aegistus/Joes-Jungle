@@ -328,7 +328,7 @@ height = 3.11625
 [sub_resource type="BoxShape3D" id="BoxShape3D_yw5v3"]
 size = Vector3(0.989282, 1.53406, 2.80453)
 
-[node name="BarbedWire" type="Node3D"]
+[node name="BarbedWire" type="Node3D" groups=["emplacement"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
 script = ExtResource("1_cg26m")
 stats_path = "res://resources/emplacement-stats/barbed_wire_stats.tres"

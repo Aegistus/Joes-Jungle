@@ -55,6 +55,7 @@ plant=""
 aim_reticle=""
 destructible=""
 barricade=""
+emplacement=""
 
 [input]
 

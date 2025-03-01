@@ -421,7 +421,7 @@ radius = 0.709551
 [sub_resource type="BoxShape3D" id="BoxShape3D_bgw0m"]
 size = Vector3(0.3, 1.7, 0.4)
 
-[node name="ClaymoreMine" type="Node3D"]
+[node name="ClaymoreMine" type="Node3D" groups=["emplacement"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
 script = ExtResource("1_y0hqb")
 field_of_fire_degrees = 60.0
