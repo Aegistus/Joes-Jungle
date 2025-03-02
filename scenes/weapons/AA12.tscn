@@ -438,6 +438,8 @@ magazine_scale = 100.0
 base_accuracy = 0
 base_recoil = 20
 base_ergonomics = 80
+reload_anim_speed_modifier = 0.8
+reload_move_speed_modifier = 0.8
 
 [node name="gun model" type="Node3D" parent="."]
 transform = Transform3D(75, 8.72385e-09, 6.34998e-17, -8.72385e-09, 75, 4.50486e-08, -5.82598e-17, -4.50486e-08, 75, -0.0186629, 4.31478e-08, -0.0181347)

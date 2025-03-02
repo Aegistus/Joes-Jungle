@@ -508,10 +508,10 @@ random_volume_offset_db = 0.48
 streams_count = 1
 stream_0/stream = ExtResource("5_k2nk8")
 
-[node name="Baretta 92" type="Node3D" node_paths=PackedStringArray("magazine")]
+[node name="Britta6-1" type="Node3D" node_paths=PackedStringArray("magazine")]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0.110825, 0.0540304)
 script = ExtResource("1_0dppu")
-gun_name = "Baretta 92"
+gun_name = "Britta 6-1"
 magazine = NodePath("gun model/Clip")
 magazine_scale = 0.04
 base_accuracy = 80

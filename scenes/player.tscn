@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_5cvyg"]
 [ext_resource type="AnimationLibrary" uid="uid://wubbon5nyek1" path="res://assets/animations/libraries/Pistol Anim Pack.res" id="3_q8g1f"]
 [ext_resource type="Texture2D" uid="uid://bbnqvko5wjhyb" path="res://assets/models/characters/Michael_Ch18_1001_Normal.png" id="3_x7y07"]
-[ext_resource type="PackedScene" uid="uid://bpdhjy3tvivvm" path="res://scenes/weapons/baretta_92_pistol.tscn" id="4_p3ook"]
+[ext_resource type="PackedScene" uid="uid://bpdhjy3tvivvm" path="res://scenes/weapons/Britta6-1.tscn" id="4_p3ook"]
 [ext_resource type="Script" path="res://scripts/player states/idle_state.gd" id="4_s0a0d"]
 [ext_resource type="AnimationLibrary" uid="uid://bhfy6y3yys725" path="res://assets/animations/libraries/Rifle Anims.res" id="5_a1aim"]
 [ext_resource type="AnimationLibrary" uid="uid://ckpcjepwfvaok" path="res://assets/animations/libraries/Michael Misc.res" id="5_cv0v5"]
