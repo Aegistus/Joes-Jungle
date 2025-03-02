@@ -156,8 +156,9 @@ transform = Transform3D(-0.00218776, 0.999924, 0.0121729, -0.108152, 0.011865, -
 script = ExtResource("1_m7ukc")
 light_color = Color(0.900495, 0.485923, 0.150973, 1)
 gun_name = "M2 Flamethrower"
-suppressed = true
 gun_type = 2
+reload_anim_speed_modifier = 0.7
+reload_move_speed_modifier = 0.5
 
 [node name="gun_model" type="Node3D" parent="."]
 transform = Transform3D(-0.119894, -0.000693307, -0.00499201, -0.00058581, 0.119971, -0.00259239, 0.00500577, -0.00256574, -0.119868, 0.157082, 0.0176355, -0.13817)
