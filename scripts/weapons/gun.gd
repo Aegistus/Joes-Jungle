@@ -15,6 +15,8 @@ signal on_shoot
 @export var base_recoil = 0
 @export var base_ergonomics = 100
 @export var base_penetration = 1
+@export var reload_anim_speed_modifier := 1.0
+@export var reload_move_speed_modifier := 1.0
 
 @onready var gun_audio_player = $GunAudioPlayer
 @onready var dry_shot_audio_player = $DryShotAudioPlayer

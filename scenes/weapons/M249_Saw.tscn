@@ -297,6 +297,8 @@ base_accuracy = 75
 base_recoil = 75
 base_ergonomics = 20
 base_penetration = 3
+reload_anim_speed_modifier = 0.7
+reload_move_speed_modifier = 0.7
 
 [node name="gun model" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.14, 0.187772, 0, 3.55271e-17)
