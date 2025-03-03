@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://g62ygu32m5ji"]
 
-[ext_resource type="Script" path="res://scripts/aim_reticle.gd" id="1_q2hic"]
+[ext_resource type="Script" uid="uid://bghe23abh4xie" path="res://scripts/aim_reticle.gd" id="1_q2hic"]
 [ext_resource type="Material" uid="uid://cel2sxlu2p8lc" path="res://materials/aim_reticle_material.tres" id="2_u6kt7"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_b7g3f"]

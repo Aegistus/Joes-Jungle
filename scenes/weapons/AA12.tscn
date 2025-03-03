@@ -1,13 +1,13 @@
 [gd_scene load_steps=37 format=4 uid="uid://dkmqq58ie6jcx"]
 
-[ext_resource type="Script" path="res://scripts/weapons/auto_shotgun.gd" id="1_723u3"]
+[ext_resource type="Script" uid="uid://5kk6rkbmht4h" path="res://scripts/weapons/auto_shotgun.gd" id="1_723u3"]
 [ext_resource type="Texture2D" uid="uid://65bjesvp374a" path="res://assets/textures/Low Poly Weapon.png" id="2_5318g"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_ycfwj"]
-[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="5_pot63"]
+[ext_resource type="Script" uid="uid://d4ip7nqe0d52x" path="res://scripts/shell_ejector.gd" id="5_pot63"]
 [ext_resource type="AudioStream" uid="uid://cp4isypstuu85" path="res://assets/audio/gunshots/AA12_shot.wav" id="6_r8h1g"]
 [ext_resource type="PackedScene" uid="uid://dmpg4pql6ql1n" path="res://scenes/particles/shotgun_shell_casing_particles.tscn" id="6_u35gr"]
 [ext_resource type="AudioStream" uid="uid://3rq3uyist7bb" path="res://assets/audio/reload_sounds/benelli_round_in_2.wav" id="7_y3e5a"]
-[ext_resource type="Script" path="res://scripts/weapons/magazine_ammo.gd" id="7_yfph7"]
+[ext_resource type="Script" uid="uid://b28klctb4e13h" path="res://scripts/weapons/magazine_ammo.gd" id="7_yfph7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1c6t"]
 albedo_texture = ExtResource("2_5318g")
@@ -417,8 +417,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cdyj4"]
 _data = {
-"RESET": SubResource("Animation_eqhh8"),
-"shoot": SubResource("Animation_yatb0")
+&"RESET": SubResource("Animation_eqhh8"),
+&"shoot": SubResource("Animation_yatb0")
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xb87p"]
@@ -589,7 +589,7 @@ collision_mask = 67
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_cdyj4")
+&"": SubResource("AnimationLibrary_cdyj4")
 }
 
 [node name="ShellEjector" type="Node3D" parent="."]

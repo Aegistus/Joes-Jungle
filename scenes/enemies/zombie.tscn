@@ -1,21 +1,21 @@
 [gd_scene load_steps=102 format=4 uid="uid://cqkrsucbenoss"]
 
-[ext_resource type="Script" path="res://scripts/zombie.gd" id="1_gvi6u"]
+[ext_resource type="Script" uid="uid://cu6vqec214e13" path="res://scripts/zombie.gd" id="1_gvi6u"]
 [ext_resource type="AnimationLibrary" uid="uid://v22hoxowxhme" path="res://assets/animations/libraries/Zombie Anims.res" id="2_dudva"]
 [ext_resource type="Texture2D" uid="uid://beb86sg661idf" path="res://assets/models/characters/Joe_Ch33_1001_Diffuse.png" id="2_r0jby"]
-[ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_clhno"]
+[ext_resource type="Script" uid="uid://b8ujt0ngha7rb" path="res://scripts/state_machine.gd" id="3_clhno"]
 [ext_resource type="Texture2D" uid="uid://c4h3sh16baaxq" path="res://assets/models/characters/Joe_Ch33_1001_Normal.png" id="4_22ax8"]
-[ext_resource type="Script" path="res://scripts/zombie states/follow_state.gd" id="4_fu0ok"]
+[ext_resource type="Script" uid="uid://c0r02ffih1ck5" path="res://scripts/zombie states/follow_state.gd" id="4_fu0ok"]
 [ext_resource type="Texture2D" uid="uid://d3jkutj1yoh61" path="res://assets/models/characters/Joe_Ch33_1002_Diffuse.png" id="5_28wud"]
-[ext_resource type="Script" path="res://scripts/zombie states/dead_state.gd" id="5_71pud"]
-[ext_resource type="Script" path="res://scripts/bone_synchronizer.gd" id="6_242c2"]
-[ext_resource type="Script" path="res://scripts/zombie states/hit_state.gd" id="6_a7m8a"]
+[ext_resource type="Script" uid="uid://cnpng0de2ypnq" path="res://scripts/zombie states/dead_state.gd" id="5_71pud"]
+[ext_resource type="Script" uid="uid://beuldrxbe64mh" path="res://scripts/bone_synchronizer.gd" id="6_242c2"]
+[ext_resource type="Script" uid="uid://baotxitptashe" path="res://scripts/zombie states/hit_state.gd" id="6_a7m8a"]
 [ext_resource type="Texture2D" uid="uid://fetdeketf8cx" path="res://assets/models/characters/Joe_Ch33_1002_Normal.png" id="6_hu8yn"]
-[ext_resource type="Script" path="res://scripts/zombie states/attack_state.gd" id="7_s1wcd"]
+[ext_resource type="Script" uid="uid://d07hmg1r3pqum" path="res://scripts/zombie states/attack_state.gd" id="7_s1wcd"]
 [ext_resource type="PackedScene" uid="uid://c0a5x30ud7p7x" path="res://scenes/hitbox.tscn" id="8_a4oyv"]
-[ext_resource type="Script" path="res://scripts/zombie states/no_target_state.gd" id="12_cj1ea"]
+[ext_resource type="Script" uid="uid://bh1ofg0w4mf8j" path="res://scripts/zombie states/no_target_state.gd" id="12_cj1ea"]
 [ext_resource type="AudioStream" uid="uid://d0ysa610tq268" path="res://assets/audio/zombie_misc/Zombie Classic_01.wav" id="13_r16ju"]
-[ext_resource type="Script" path="res://scripts/zombie_sound_manager.gd" id="13_ypt4m"]
+[ext_resource type="Script" uid="uid://u5bfhk7s287k" path="res://scripts/zombie_sound_manager.gd" id="13_ypt4m"]
 [ext_resource type="AudioStream" uid="uid://cfk650e1kora0" path="res://assets/audio/zombie_misc/Zombie Classic_02.wav" id="14_uumux"]
 [ext_resource type="AudioStream" uid="uid://cr5dui40k3rfm" path="res://assets/audio/zombie_misc/Zombie Growl_10.wav" id="15_gofvk"]
 [ext_resource type="AudioStream" uid="uid://bqm2bxopq3mkg" path="res://assets/audio/zombie_misc/Zombie Growl_11.wav" id="16_upk6f"]
@@ -55,8 +55,8 @@
 [ext_resource type="AudioStream" uid="uid://c4e3mkbilfnem" path="res://assets/audio/zombie_death/Zombie Death_08.wav" id="50_yoa1m"]
 [ext_resource type="AudioStream" uid="uid://brnrfpiflsheq" path="res://assets/audio/zombie_death/Zombie Death_09.wav" id="51_i4ego"]
 [ext_resource type="AudioStream" uid="uid://bwjpc14botm7c" path="res://assets/audio/zombie_death/Zombie Death_10.wav" id="52_p5p1f"]
-[ext_resource type="Script" path="res://scripts/slowbox.gd" id="55_uq643"]
-[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="57_a4r38"]
+[ext_resource type="Script" uid="uid://bayqm66rh8dr4" path="res://scripts/slowbox.gd" id="55_uq643"]
+[ext_resource type="Script" uid="uid://b8wkou56eghag" path="res://scripts/hurtbox.gd" id="57_a4r38"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lq3jg"]
 resource_name = "Ch33_body"
@@ -566,7 +566,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_badax"]
 _data = {
-"RESET": SubResource("Animation_vm8e0")
+&"RESET": SubResource("Animation_vm8e0")
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ue2lw"]
@@ -1143,12 +1143,12 @@ active = false
 script = ExtResource("6_242c2")
 
 [node name="Physical Bone Hips" type="PhysicalBone3D" parent="zombie_model/Armature/GeneralSkeleton/PhysicalBoneSimulator3D"]
-transform = Transform3D(0.998745, -0.0382805, 0.0322984, 0.0380193, 0.159638, -0.986443, 0.0326055, 0.986433, 0.160893, -0.00156141, 0.87788, -0.00784932)
+transform = Transform3D(0.998745, -0.0382805, 0.0322984, 0.0380193, 0.159638, -0.986443, 0.0326054, 0.986433, 0.160893, -0.00156141, 0.87788, -0.00784932)
 collision_layer = 4
 collision_mask = 1027
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.46937e-09, -4.74975e-07, 0.0487907)
-body_offset = Transform3D(1, 6.10948e-07, 3.60887e-07, 2.93134e-07, 0.113728, -0.993512, -6.48201e-07, 0.993512, 0.113728, -2.6077e-08, 0.0484742, -0.0055484)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.10585e-09, -4.74975e-07, 0.0487907)
+body_offset = Transform3D(1, 6.14673e-07, 3.68338e-07, 3.00701e-07, 0.113728, -0.993512, -6.51926e-07, 0.993512, 0.113728, -2.6077e-08, 0.0484742, -0.0055484)
 bone_name = "Hips"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1599,12 +1599,12 @@ transform = Transform3D(10, 0, 0, 0, -4.37114e-07, 10, 0, -10, -4.37114e-07, 1.4
 shape = SubResource("CapsuleShape3D_2a137")
 
 [node name="Physical Bone LeftShoulder" type="PhysicalBone3D" parent="zombie_model/Armature/GeneralSkeleton/PhysicalBoneSimulator3D"]
-transform = Transform3D(0.0535647, 0.149637, -0.987289, -0.796324, 0.602948, 0.0481812, 0.602494, 0.783621, 0.151457, 0.045964, 1.21535, 0.213089)
+transform = Transform3D(0.0535647, 0.149637, -0.987289, -0.796324, 0.602948, 0.0481811, 0.602494, 0.783621, 0.151457, 0.045964, 1.21535, 0.213089)
 collision_layer = 4
 collision_mask = 1027
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12795e-06, -1.2815e-06, 0.0700808)
-body_offset = Transform3D(0.9997, -0.0237333, -0.00607742, 6.37025e-07, 0.248093, -0.968736, 0.0244991, 0.968445, 0.248019, 0.000427008, 0.0678901, -0.0173801)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12894e-06, -1.27777e-06, 0.0700808)
+body_offset = Transform3D(0.9997, -0.0237333, -0.00607741, 6.48201e-07, 0.248093, -0.968736, 0.0244991, 0.968445, 0.248019, 0.000427008, 0.0678901, -0.0173801)
 bone_name = "LeftShoulder"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1679,8 +1679,8 @@ transform = Transform3D(-0.571232, 0.0444023, -0.819586, -0.819153, -0.0938347, 
 collision_layer = 4
 collision_mask = 1027
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8962e-06, 9.29553e-06, 0.136664)
-body_offset = Transform3D(-0.691718, -0.720036, -0.0554565, 3.80271e-07, 0.0767912, -0.997047, 0.722168, -0.689675, -0.0531173, 0.0075897, 0.13626, 0.0072614)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8515e-06, 9.42033e-06, 0.136664)
+body_offset = Transform3D(-0.691718, -0.720036, -0.0554565, 3.80271e-07, 0.0767912, -0.997047, 0.722168, -0.689675, -0.0531173, 0.00758976, 0.13626, 0.00726151)
 bone_name = "LeftUpperArm"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1755,8 +1755,8 @@ transform = Transform3D(0.825936, 0.25781, -0.501362, 0.560812, -0.284849, 0.777
 collision_layer = 4
 collision_mask = 1027
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.78468e-07, -1.51806e-07, 0.104444)
-body_offset = Transform3D(-0.684323, 0.727851, 0.0439893, -1.99303e-06, 0.0603249, -0.998179, -0.729179, -0.683077, -0.0412801, -0.00459385, 0.104254, 0.00431186)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.78468e-07, -1.48313e-07, 0.104444)
+body_offset = Transform3D(-0.684323, 0.727851, 0.0439892, -2.03401e-06, 0.0603249, -0.998179, -0.729179, -0.683077, -0.0412801, -0.00459385, 0.104254, 0.00431186)
 bone_name = "LeftLowerArm"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1827,12 +1827,12 @@ transform = Transform3D(10, 0, 0, 0, -4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 
 shape = SubResource("CapsuleShape3D_7pru2")
 
 [node name="Physical Bone LeftHand" type="PhysicalBone3D" parent="zombie_model/Armature/GeneralSkeleton/PhysicalBoneSimulator3D"]
-transform = Transform3D(0.669355, 0.715192, 0.201156, 0.611778, -0.684217, 0.396956, 0.421535, -0.142642, -0.895523, 0.438941, 0.885172, 0.27925)
+transform = Transform3D(0.669355, 0.715192, 0.201156, 0.611778, -0.684217, 0.396956, 0.421535, -0.142642, -0.895523, 0.438942, 0.885172, 0.27925)
 collision_layer = 4
 collision_mask = 1027
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.67013e-06, -8.52253e-06, 0.0245883)
-body_offset = Transform3D(-0.51072, 0.575284, 0.638916, -2.23517e-07, 0.743144, -0.669132, -0.859747, -0.341739, -0.379538, -0.0157083, 0.0164591, 0.00932354)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.77258e-06, -8.67411e-06, 0.0245883)
+body_offset = Transform3D(-0.51072, 0.575284, 0.638916, -2.23517e-07, 0.743144, -0.669132, -0.859747, -0.341739, -0.379538, -0.0157083, 0.0164593, 0.00932342)
 bone_name = "LeftHand"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -1903,12 +1903,12 @@ transform = Transform3D(10, 0, 0, 0, -4.37114e-07, 10, 0, -10, -4.37114e-07, 2.0
 shape = SubResource("CapsuleShape3D_j6641")
 
 [node name="Physical Bone RightShoulder" type="PhysicalBone3D" parent="zombie_model/Armature/GeneralSkeleton/PhysicalBoneSimulator3D"]
-transform = Transform3D(-0.0447003, -0.587534, 0.807964, 0.819533, 0.440935, 0.365979, -0.571285, 0.678513, 0.461794, -0.209078, 1.16872, 0.167586)
+transform = Transform3D(-0.0447004, -0.587534, 0.807964, 0.819534, 0.440935, 0.365979, -0.571285, 0.678513, 0.461794, -0.209078, 1.16872, 0.167586)
 collision_layer = 4
 collision_mask = 1027
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40775e-06, -6.79307e-06, 0.0700815)
-body_offset = Transform3D(0.999699, -0.0237456, -0.00607967, 1.50502e-06, 0.24809, -0.968737, 0.0245116, 0.968446, 0.248015, 0.000424504, 0.0678923, -0.0173748)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4056e-06, -6.79679e-06, 0.0700815)
+body_offset = Transform3D(0.999699, -0.0237458, -0.00607964, 1.51992e-06, 0.24809, -0.968737, 0.0245118, 0.968446, 0.248015, 0.000424504, 0.0678923, -0.0173748)
 bone_name = "RightShoulder"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -2511,12 +2511,12 @@ transform = Transform3D(10, 0, 0, 0, -4.37114e-07, 10, 0, -10, -4.37114e-07, -0.
 shape = SubResource("CapsuleShape3D_iqe0o")
 
 [node name="Physical Bone RightUpperLeg" type="PhysicalBone3D" parent="zombie_model/Armature/GeneralSkeleton/PhysicalBoneSimulator3D"]
-transform = Transform3D(-0.659765, 0.673435, 0.333458, 0.598509, 0.20257, 0.775082, 0.454419, 0.71095, -0.536706, -0.153467, 0.613283, 0.105318)
+transform = Transform3D(-0.659766, 0.673435, 0.333458, 0.598509, 0.20257, 0.775083, 0.454419, 0.71095, -0.536706, -0.153467, 0.613283, 0.105318)
 collision_layer = 4
 collision_mask = 1027
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84402e-06, -1.18883e-06, 0.205274)
-body_offset = Transform3D(0.561416, -0.823812, -0.0783958, 5.54323e-06, 0.0947381, -0.995502, 0.827534, 0.55889, 0.0531918, 0.0160927, 0.204351, -0.0109167)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87196e-06, -1.22329e-06, 0.205274)
+body_offset = Transform3D(0.561416, -0.823812, -0.0783959, 5.63264e-06, 0.0947382, -0.995502, 0.827534, 0.55889, 0.053192, 0.0160927, 0.204351, -0.0109167)
 bone_name = "RightUpperLeg"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -2591,8 +2591,8 @@ transform = Transform3D(-0.908671, 0.417255, 0.0146398, -0.247519, -0.566606, 0.
 collision_layer = 4
 collision_mask = 1027
 joint_type = 5
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23238e-06, -2.17464e-06, 0.209878)
-body_offset = Transform3D(-0.788734, 0.61091, 0.0684568, -2.38419e-06, 0.111357, -0.99378, -0.614734, -0.783829, -0.0878296, -0.014368, 0.208573, 0.0184305)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22679e-06, -2.18302e-06, 0.209878)
+body_offset = Transform3D(-0.788734, 0.610911, 0.0684569, -2.41399e-06, 0.111357, -0.99378, -0.614734, -0.783829, -0.0878297, -0.014368, 0.208573, 0.0184305)
 bone_name = "RightLowerLeg"
 joint_constraints/x/linear_limit_enabled = true
 joint_constraints/x/linear_limit_upper = 0.0
@@ -2824,8 +2824,8 @@ path_height_offset = 1.1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../zombie_model")
 libraries = {
-"": SubResource("AnimationLibrary_badax"),
-"Zombie Anims": ExtResource("2_dudva")
+&"": SubResource("AnimationLibrary_badax"),
+&"Zombie Anims": ExtResource("2_dudva")
 }
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state", "target")]

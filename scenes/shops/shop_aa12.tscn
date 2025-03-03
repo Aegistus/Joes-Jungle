@@ -1,6 +1,6 @@
 [gd_scene load_steps=55 format=4 uid="uid://rvebx7d8u8xm"]
 
-[ext_resource type="Script" path="res://scripts/objectives/shop.gd" id="1_kkffc"]
+[ext_resource type="Script" uid="uid://bbgnasu78742k" path="res://scripts/objectives/shop.gd" id="1_kkffc"]
 [ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_8y6yk"]
 [ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="3_a1ehf"]
 [ext_resource type="Texture2D" uid="uid://65bjesvp374a" path="res://assets/textures/Low Poly Weapon.png" id="3_b0440"]
@@ -730,8 +730,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b4j5p"]
 _data = {
-"RESET": SubResource("Animation_8dpac"),
-"spin": SubResource("Animation_fn5xm")
+&"RESET": SubResource("Animation_8dpac"),
+&"spin": SubResource("Animation_fn5xm")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7bsmp"]
@@ -897,7 +897,7 @@ mesh = SubResource("CylinderMesh_kg0f7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_b4j5p")
+&"": SubResource("AnimationLibrary_b4j5p")
 }
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]

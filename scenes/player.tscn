@@ -1,13 +1,13 @@
 [gd_scene load_steps=65 format=4 uid="uid://bs0wmr63q1ofr"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_51t2t"]
+[ext_resource type="Script" uid="uid://dnhkunc4st41v" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Texture2D" uid="uid://b1fvgtdrsmiic" path="res://assets/models/characters/Michael_Ch18_1001_Diffuse.png" id="2_55ldf"]
-[ext_resource type="Script" path="res://scripts/camera_mount.gd" id="2_mupqo"]
-[ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_5cvyg"]
+[ext_resource type="Script" uid="uid://djeqx3pudx75n" path="res://scripts/camera_mount.gd" id="2_mupqo"]
+[ext_resource type="Script" uid="uid://b8ujt0ngha7rb" path="res://scripts/state_machine.gd" id="3_5cvyg"]
 [ext_resource type="AnimationLibrary" uid="uid://wubbon5nyek1" path="res://assets/animations/libraries/Pistol Anim Pack.res" id="3_q8g1f"]
 [ext_resource type="Texture2D" uid="uid://bbnqvko5wjhyb" path="res://assets/models/characters/Michael_Ch18_1001_Normal.png" id="3_x7y07"]
 [ext_resource type="PackedScene" uid="uid://bpdhjy3tvivvm" path="res://scenes/weapons/Britta6-1.tscn" id="4_p3ook"]
-[ext_resource type="Script" path="res://scripts/player states/idle_state.gd" id="4_s0a0d"]
+[ext_resource type="Script" uid="uid://b4w6b28utdi21" path="res://scripts/player states/idle_state.gd" id="4_s0a0d"]
 [ext_resource type="AnimationLibrary" uid="uid://bhfy6y3yys725" path="res://assets/animations/libraries/Rifle Anims.res" id="5_a1aim"]
 [ext_resource type="AnimationLibrary" uid="uid://ckpcjepwfvaok" path="res://assets/animations/libraries/Michael Misc.res" id="5_cv0v5"]
 [ext_resource type="PackedScene" uid="uid://egau4xfffmk8" path="res://scenes/weapons/build_gun.tscn" id="5_hif0p"]
@@ -16,23 +16,23 @@
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c4e5wj28gmxw3" path="res://assets/animations/trees/pistol_blend_tree.tres" id="6_o7fui"]
 [ext_resource type="PackedScene" uid="uid://oii8bwkvvqje" path="res://scenes/weapons/flamethrower_tank.tscn" id="6_qhwyx"]
 [ext_resource type="AnimationLibrary" uid="uid://drpkkhs3fwp35" path="res://assets/animations/libraries/Michael Rifle.res" id="7_uv515"]
-[ext_resource type="Script" path="res://scripts/player states/walking_state.gd" id="7_vgdlh"]
-[ext_resource type="Script" path="res://scripts/player states/jogging_state.gd" id="8_h5fvr"]
-[ext_resource type="Script" path="res://scripts/player states/aiming_state.gd" id="8_iqcv1"]
-[ext_resource type="Script" path="res://scripts/player states/resting_state.gd" id="9_d0et7"]
-[ext_resource type="Script" path="res://scripts/player states/reloading_state.gd" id="9_q5wgv"]
-[ext_resource type="Script" path="res://scripts/player states/equipping_state.gd" id="12_odjy0"]
+[ext_resource type="Script" uid="uid://c72r0ppyacr3t" path="res://scripts/player states/walking_state.gd" id="7_vgdlh"]
+[ext_resource type="Script" uid="uid://447kb3trl2s" path="res://scripts/player states/jogging_state.gd" id="8_h5fvr"]
+[ext_resource type="Script" uid="uid://d1nfs76axvtqb" path="res://scripts/player states/aiming_state.gd" id="8_iqcv1"]
+[ext_resource type="Script" uid="uid://bl1oi1xm353lf" path="res://scripts/player states/resting_state.gd" id="9_d0et7"]
+[ext_resource type="Script" uid="uid://caaewasxnlwhy" path="res://scripts/player states/reloading_state.gd" id="9_q5wgv"]
+[ext_resource type="Script" uid="uid://c1cth2q64wkki" path="res://scripts/player states/equipping_state.gd" id="12_odjy0"]
 [ext_resource type="AnimationLibrary" uid="uid://jtio603851qi" path="res://assets/animations/libraries/Turret Twerk.res" id="13_lsu4k"]
 [ext_resource type="PackedScene" uid="uid://cs4bpkimumjf4" path="res://scenes/hurtbox.tscn" id="13_m6j14"]
 [ext_resource type="AnimationLibrary" uid="uid://b6hofelkiwchg" path="res://assets/animations/libraries/Vault.res" id="14_1hjql"]
 [ext_resource type="AudioStream" uid="uid://cs0ymulhw0pkm" path="res://assets/audio/Gun Pickup_02.wav" id="17_c8ao6"]
 [ext_resource type="AudioStream" uid="uid://ctwo3bkilu81s" path="res://assets/audio/player_hit/Punch Impact (Flesh) 1.wav" id="21_ifr0a"]
-[ext_resource type="Script" path="res://scripts/player states/round_reload_loop_state.gd" id="21_neiou"]
+[ext_resource type="Script" uid="uid://lxxkb8bb0tph" path="res://scripts/player states/round_reload_loop_state.gd" id="21_neiou"]
 [ext_resource type="AudioStream" uid="uid://bi5e4hbvdb4g8" path="res://assets/audio/player_hit/Punch Impact (Flesh) 2.wav" id="22_pmkco"]
 [ext_resource type="AudioStream" uid="uid://dkqodqi8cw4yb" path="res://assets/audio/player_hit/Punch Impact (Flesh) 3.wav" id="23_b2vfi"]
-[ext_resource type="Script" path="res://scripts/player states/using_emplacement_state.gd" id="23_si4mn"]
-[ext_resource type="Script" path="res://scripts/player states/build_construct_state.gd" id="24_m1s5f"]
-[ext_resource type="Script" path="res://scripts/player states/vault_state.gd" id="26_kjsdq"]
+[ext_resource type="Script" uid="uid://cdpvg4om2nq4i" path="res://scripts/player states/using_emplacement_state.gd" id="23_si4mn"]
+[ext_resource type="Script" uid="uid://dm4s047v4dlp8" path="res://scripts/player states/build_construct_state.gd" id="24_m1s5f"]
+[ext_resource type="Script" uid="uid://r0cu50bw40wk" path="res://scripts/player states/vault_state.gd" id="26_kjsdq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n57sy"]
 resource_name = "Ch18_Body"
@@ -900,14 +900,14 @@ visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerModel/Model"]
 libraries = {
-"Michael Build": ExtResource("6_ma1ls"),
-"Michael Misc": ExtResource("5_cv0v5"),
-"Michael Pistol": ExtResource("6_7v3rf"),
-"Michael Rifle": ExtResource("7_uv515"),
-"Pistol Anim Pack": ExtResource("3_q8g1f"),
-"Rifle Anims": ExtResource("5_a1aim"),
-"Turret Twerk": ExtResource("13_lsu4k"),
-"Vault": ExtResource("14_1hjql")
+&"Michael Build": ExtResource("6_ma1ls"),
+&"Michael Misc": ExtResource("5_cv0v5"),
+&"Michael Pistol": ExtResource("6_7v3rf"),
+&"Michael Rifle": ExtResource("7_uv515"),
+&"Pistol Anim Pack": ExtResource("3_q8g1f"),
+&"Rifle Anims": ExtResource("5_a1aim"),
+&"Turret Twerk": ExtResource("13_lsu4k"),
+&"Vault": ExtResource("14_1hjql")
 }
 
 [node name="PistolAnimTree" type="AnimationTree" parent="PlayerModel/Model"]

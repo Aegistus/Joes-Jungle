@@ -1,20 +1,20 @@
 [gd_scene load_steps=92 format=4 uid="uid://dwcyfjsfcrmkb"]
 
-[ext_resource type="Script" path="res://scripts/zombie.gd" id="1_3bodt"]
+[ext_resource type="Script" uid="uid://cu6vqec214e13" path="res://scripts/zombie.gd" id="1_3bodt"]
 [ext_resource type="Texture2D" uid="uid://bcb6cdkljfvv2" path="res://assets/models/characters/tank_zombie-compressed-v2_Ch35_1003_Diffuse.png" id="2_31rqw"]
 [ext_resource type="AnimationLibrary" uid="uid://dlfxfiteg1pfp" path="res://assets/animations/libraries/Zombie Tank.res" id="2_olwhd"]
 [ext_resource type="Texture2D" uid="uid://dd8wls1ag0oeq" path="res://assets/models/characters/tank_zombie-compressed-v2_Ch35_1001_Diffuse.png" id="3_n3roq"]
-[ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_pit78"]
-[ext_resource type="Script" path="res://scripts/zombie states/follow_state.gd" id="4_fthfh"]
+[ext_resource type="Script" uid="uid://b8ujt0ngha7rb" path="res://scripts/state_machine.gd" id="3_pit78"]
+[ext_resource type="Script" uid="uid://c0r02ffih1ck5" path="res://scripts/zombie states/follow_state.gd" id="4_fthfh"]
 [ext_resource type="Texture2D" uid="uid://bfdcdplt6vwu0" path="res://assets/models/characters/tank_zombie-compressed-v2_Ch35_1001_Normal.png" id="4_tthi6"]
-[ext_resource type="Script" path="res://scripts/zombie states/dead_state.gd" id="5_7gss3"]
+[ext_resource type="Script" uid="uid://cnpng0de2ypnq" path="res://scripts/zombie states/dead_state.gd" id="5_7gss3"]
 [ext_resource type="Texture2D" uid="uid://chnrgtsg7mno8" path="res://assets/models/characters/tank_zombie-compressed-v2_Ch35_1002_Diffuse.png" id="5_l6rwu"]
-[ext_resource type="Script" path="res://scripts/zombie states/hit_state.gd" id="6_4bvlo"]
+[ext_resource type="Script" uid="uid://baotxitptashe" path="res://scripts/zombie states/hit_state.gd" id="6_4bvlo"]
 [ext_resource type="Texture2D" uid="uid://bav26svf1slrc" path="res://assets/models/characters/tank_zombie-compressed-v2_Ch35_1002_Normal.png" id="6_px3oe"]
-[ext_resource type="Script" path="res://scripts/zombie states/attack_state.gd" id="7_f5uq2"]
-[ext_resource type="Script" path="res://scripts/hitbox.gd" id="8_10467"]
-[ext_resource type="Script" path="res://scripts/zombie states/no_target_state.gd" id="13_1c1p0"]
-[ext_resource type="Script" path="res://scripts/zombie_sound_manager.gd" id="14_sh2dn"]
+[ext_resource type="Script" uid="uid://d07hmg1r3pqum" path="res://scripts/zombie states/attack_state.gd" id="7_f5uq2"]
+[ext_resource type="Script" uid="uid://htelsovlxs77" path="res://scripts/hitbox.gd" id="8_10467"]
+[ext_resource type="Script" uid="uid://bh1ofg0w4mf8j" path="res://scripts/zombie states/no_target_state.gd" id="13_1c1p0"]
+[ext_resource type="Script" uid="uid://u5bfhk7s287k" path="res://scripts/zombie_sound_manager.gd" id="14_sh2dn"]
 [ext_resource type="AudioStream" uid="uid://d0ysa610tq268" path="res://assets/audio/zombie_misc/Zombie Classic_01.wav" id="15_0fxwe"]
 [ext_resource type="PackedScene" uid="uid://boas4tlaagxef" path="res://scenes/slowbox.tscn" id="15_ugmpx"]
 [ext_resource type="AudioStream" uid="uid://cfk650e1kora0" path="res://assets/audio/zombie_misc/Zombie Classic_02.wav" id="16_kod3x"]
@@ -56,7 +56,7 @@
 [ext_resource type="AudioStream" uid="uid://c4e3mkbilfnem" path="res://assets/audio/zombie_death/Zombie Death_08.wav" id="52_ovvm6"]
 [ext_resource type="AudioStream" uid="uid://brnrfpiflsheq" path="res://assets/audio/zombie_death/Zombie Death_09.wav" id="53_oshjn"]
 [ext_resource type="AudioStream" uid="uid://bwjpc14botm7c" path="res://assets/audio/zombie_death/Zombie Death_10.wav" id="54_2ht3p"]
-[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="57_j2mxl"]
+[ext_resource type="Script" uid="uid://b8wkou56eghag" path="res://scripts/hurtbox.gd" id="57_j2mxl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_73pni"]
 resource_name = "Ch35_body2"
@@ -2642,7 +2642,7 @@ path_height_offset = 1.1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../zombie_model")
 libraries = {
-"Zombie Tank": ExtResource("2_olwhd")
+&"Zombie Tank": ExtResource("2_olwhd")
 }
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state", "target")]

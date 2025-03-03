@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://clad71x6nip3w"]
 
-[ext_resource type="Script" path="res://scripts/game_level.gd" id="1_kgqy7"]
+[ext_resource type="Script" uid="uid://dvi44v1xmi7ir" path="res://scripts/game_level.gd" id="1_kgqy7"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="2_pl2ao"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="3_dbp7b"]
 [ext_resource type="Material" uid="uid://cqmfgyapl3iyx" path="res://materials/brick_mat.tres" id="4_jyib5"]

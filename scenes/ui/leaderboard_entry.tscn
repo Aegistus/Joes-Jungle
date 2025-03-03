@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqcbebfpewhh4"]
 
-[ext_resource type="Script" path="res://scripts/ui/leaderboard_entry.gd" id="1_1rusj"]
+[ext_resource type="Script" uid="uid://hsd8vgk2h7o4" path="res://scripts/ui/leaderboard_entry.gd" id="1_1rusj"]
 [ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="1_yafji"]
 
 [node name="LeaderboardEntry" type="HBoxContainer"]

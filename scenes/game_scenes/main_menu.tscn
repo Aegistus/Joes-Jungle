@@ -1,25 +1,25 @@
 [gd_scene load_steps=67 format=4 uid="uid://bn6a8dl5ya46g"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_r7pwv"]
+[ext_resource type="Script" uid="uid://cp3pjrkd0gdu0" path="res://scripts/main_menu.gd" id="1_r7pwv"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="1_v6ggs"]
 [ext_resource type="Material" uid="uid://odnvymp1mqhf" path="res://materials/grid_3.tres" id="2_ng336"]
 [ext_resource type="Material" uid="uid://p001di78373p" path="res://materials/grid_2.tres" id="3_i8ipt"]
 [ext_resource type="Material" uid="uid://btglo4s1fu73t" path="res://materials/grid_1.tres" id="4_etorg"]
 [ext_resource type="AnimationLibrary" uid="uid://v22hoxowxhme" path="res://assets/animations/libraries/Zombie Anims.res" id="6_kvueg"]
-[ext_resource type="Script" path="res://scripts/MainMenuPlayer.gd" id="6_vqvsw"]
+[ext_resource type="Script" uid="uid://bly0b4c0yfjuq" path="res://scripts/MainMenuPlayer.gd" id="6_vqvsw"]
 [ext_resource type="AnimationLibrary" uid="uid://draryw3phd0gf" path="res://assets/animations/libraries/Thriller Anims.res" id="8_nbejq"]
-[ext_resource type="Script" path="res://scripts/thriller_zombie.gd" id="8_xue38"]
+[ext_resource type="Script" uid="uid://d067r85nfcwmb" path="res://scripts/thriller_zombie.gd" id="8_xue38"]
 [ext_resource type="FontFile" uid="uid://cidbiqe8esbi2" path="res://assets/fonts/dead_font_walking/Dead Font Walking.otf" id="11_hrwtr"]
 [ext_resource type="AudioStream" uid="uid://cnaxpxtwthb6f" path="res://assets/audio/Joes_Jungle.wav" id="11_o7yfk"]
 [ext_resource type="FontFile" uid="uid://b1st00ad0rqs8" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.ttf" id="12_qylgg"]
-[ext_resource type="Script" path="res://scripts/main_menu_music.gd" id="12_r2v6h"]
+[ext_resource type="Script" uid="uid://cjl8ay1511vq1" path="res://scripts/main_menu_music.gd" id="12_r2v6h"]
 [ext_resource type="StyleBox" uid="uid://sug2avk8xlue" path="res://assets/UI/button_hover_theme.tres" id="13_2qiyi"]
 [ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="13_347ng"]
 [ext_resource type="StyleBox" uid="uid://dmp4oly27mddf" path="res://assets/UI/button_normal_theme.tres" id="14_uwviw"]
 [ext_resource type="StyleBox" uid="uid://c0nqerilbeu5v" path="res://assets/UI/button_pressed_theme.tres" id="14_wk5mc"]
 [ext_resource type="Material" uid="uid://clj8od07w7lfo" path="res://materials/palm_tree.tres" id="15_y5yst"]
 [ext_resource type="PackedScene" uid="uid://ciu738dd2fsak" path="res://scenes/scenery/palm_tree_01.tscn" id="16_6hmv5"]
-[ext_resource type="Script" path="res://scripts/ui/flavor_text.gd" id="17_tj3us"]
+[ext_resource type="Script" uid="uid://bth186bw5717m" path="res://scripts/ui/flavor_text.gd" id="17_tj3us"]
 [ext_resource type="PackedScene" uid="uid://yttdwroyehgm" path="res://scenes/scenery/palm_tree_02.tscn" id="17_yyiik"]
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="18_nonfs"]
 [ext_resource type="PackedScene" uid="uid://ddhplb0t3aute" path="res://scenes/scenery/palm_tree_04.tscn" id="19_tvkrf"]
@@ -100,7 +100,7 @@ length = 4.95833
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b8ylo"]
 _data = {
-"Take 001": SubResource("Animation_lhgcf")
+&"Take 001": SubResource("Animation_lhgcf")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a57kn"]
@@ -807,7 +807,7 @@ skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="map/Trees/PalmTree01"]
 libraries = {
-"": SubResource("AnimationLibrary_b8ylo")
+&"": SubResource("AnimationLibrary_b8ylo")
 }
 
 [node name="PalmTree02" parent="map/Trees" instance=ExtResource("16_6hmv5")]
@@ -1173,7 +1173,7 @@ script = ExtResource("6_vqvsw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Michael"]
 libraries = {
-"Zombie Anims": ExtResource("6_kvueg")
+&"Zombie Anims": ExtResource("6_kvueg")
 }
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
@@ -1187,7 +1187,7 @@ script = ExtResource("8_xue38")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Joe"]
 libraries = {
-"Thriller Anims": ExtResource("8_nbejq")
+&"Thriller Anims": ExtResource("8_nbejq")
 }
 
 [node name="Joe2" parent="." instance=ExtResource("24_cs133")]
@@ -1196,7 +1196,7 @@ script = ExtResource("8_xue38")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Joe2"]
 libraries = {
-"Thriller Anims": ExtResource("8_nbejq")
+&"Thriller Anims": ExtResource("8_nbejq")
 }
 
 [node name="Joe3" parent="." instance=ExtResource("24_cs133")]
@@ -1205,7 +1205,7 @@ script = ExtResource("8_xue38")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Joe3"]
 libraries = {
-"Thriller Anims": ExtResource("8_nbejq")
+&"Thriller Anims": ExtResource("8_nbejq")
 }
 
 [node name="Joe4" parent="." instance=ExtResource("24_cs133")]
@@ -1214,7 +1214,7 @@ script = ExtResource("8_xue38")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Joe4"]
 libraries = {
-"Thriller Anims": ExtResource("8_nbejq")
+&"Thriller Anims": ExtResource("8_nbejq")
 }
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]

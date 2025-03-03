@@ -1,12 +1,12 @@
 [gd_scene load_steps=64 format=3 uid="uid://br201tqu48j8s"]
 
-[ext_resource type="Script" path="res://scripts/game_level.gd" id="1_gfbx0"]
+[ext_resource type="Script" uid="uid://dvi44v1xmi7ir" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
 [ext_resource type="Material" uid="uid://b3knf26gif5f3" path="res://materials/floor_mat.tres" id="3_mkkog"]
 [ext_resource type="Texture2D" uid="uid://dpdrosnb70eiy" path="res://assets/textures/Wood Texture.png" id="3_ro61b"]
 [ext_resource type="Texture2D" uid="uid://21lfi3leb2p6" path="res://assets/textures/Stone Tile Texture.png" id="4_t6404"]
 [ext_resource type="Texture2D" uid="uid://cj22wf72y50x" path="res://assets/textures/Grass Texture.png" id="5_npq4s"]
-[ext_resource type="Shader" path="res://assets/shaders/brick_wall.gdshader" id="8_4jkm0"]
+[ext_resource type="Shader" uid="uid://ssofg4gjjqrv" path="res://assets/shaders/brick_wall.gdshader" id="8_4jkm0"]
 [ext_resource type="Material" uid="uid://p001di78373p" path="res://materials/grid_2.tres" id="8_ijifm"]
 [ext_resource type="PackedScene" uid="uid://ciu738dd2fsak" path="res://scenes/scenery/palm_tree_01.tscn" id="9_41nok"]
 [ext_resource type="PackedScene" uid="uid://dt6dau15gvne7" path="res://scenes/scenery/pillar_01.tscn" id="9_ph64a"]
@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://ddhplb0t3aute" path="res://scenes/scenery/palm_tree_04.tscn" id="12_i1j5x"]
 [ext_resource type="PackedScene" uid="uid://cxsrpaiv0t8da" path="res://scenes/scenery/hedge_bush_01.tscn" id="12_xt65b"]
 [ext_resource type="PackedScene" uid="uid://bpy6f2h7b4c1g" path="res://scenes/scenery/hedge_bush_03.tscn" id="14_t6xn1"]
-[ext_resource type="Script" path="res://scripts/zombie_spawn_point.gd" id="17_owi3h"]
+[ext_resource type="Script" uid="uid://drmahdnfs57jy" path="res://scripts/zombie_spawn_point.gd" id="17_owi3h"]
 [ext_resource type="PackedScene" uid="uid://cpffvcbta5ec2" path="res://scenes/scenery/rock_02.tscn" id="17_xsrh6"]
 [ext_resource type="PackedScene" uid="uid://cfr2u7qy1n0fv" path="res://scenes/scenery/vine_wall_01.tscn" id="20_e3swa"]
 [ext_resource type="PackedScene" uid="uid://b1uu5s8rj206g" path="res://scenes/scenery/stone_wall_01.tscn" id="21_l7i85"]
@@ -98,8 +98,8 @@ uv1_world_triplanar = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kwoof"]
 render_priority = 0
 shader = ExtResource("8_4jkm0")
-shader_parameter/brightness = 1.0
 shader_parameter/wall_texture = ExtResource("9_u13fv")
+shader_parameter/brightness = 1.0
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_30c14"]
 
@@ -875,7 +875,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.9937, 0, 25.0315)
 [node name="wall" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.25, 0.75, -33.5)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.1
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -887,7 +886,6 @@ size = Vector3(0.4, 2.5, 1)
 [node name="wall3" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27.75, 0.75, -34.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.1
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
@@ -899,7 +897,6 @@ size = Vector3(0.5, 2.4, 1.6)
 [node name="wall4" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27.75, 0.75, -29.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.1
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
@@ -911,7 +908,6 @@ size = Vector3(0.5, 2.4, 1.6)
 [node name="wall2" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.25, 0.75, -30.5)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.1
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -923,7 +919,6 @@ size = Vector3(0.5, 2.4, 1)
 [node name="wall5" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -28)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3)
@@ -935,7 +930,6 @@ size = Vector3(0.5, 2.4, 3.1)
 [node name="wall55" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -26)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -947,7 +941,6 @@ size = Vector3(0.5, 2.4, 1.3)
 [node name="wall56" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -20.125)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.25)
@@ -959,7 +952,6 @@ size = Vector3(0.5, 2.4, 2.2)
 [node name="wall97" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -23.375)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.25)
@@ -971,7 +963,6 @@ size = Vector3(0.5, 2.4, 2.2)
 [node name="wall58" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -17.5)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -983,7 +974,6 @@ size = Vector3(0.5, 2.4, 1)
 [node name="wall64" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 0.75, -15.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
@@ -995,7 +985,6 @@ size = Vector3(0.5, 2.4, 3.3)
 [node name="wall65" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 0.75, -9.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
@@ -1007,7 +996,6 @@ size = Vector3(0.5, 2.4, 3.4)
 [node name="wall6" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -36.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 4.5)
@@ -1019,7 +1007,6 @@ size = Vector3(0.5, 2.4, 4.5)
 [node name="wall29" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -41.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
@@ -1031,7 +1018,6 @@ size = Vector3(0.5, 2.4, 3.5)
 [node name="wall31" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0.75, -46.025)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.95)
@@ -1043,7 +1029,6 @@ size = Vector3(0.5, 2.4, 3)
 [node name="wall38" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 0.75, -47.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.5)
@@ -1055,7 +1040,6 @@ size = Vector3(0.5, 2.4, 2.6)
 [node name="wall39" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 0.75, -52.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.5)
@@ -1067,7 +1051,6 @@ size = Vector3(0.5, 2.4, 2.6)
 [node name="wall33" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.75, 0.75, -48)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1079,7 +1062,6 @@ size = Vector3(0.5, 2.4, 1.1)
 [node name="wall46" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 0.75, -48)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1091,7 +1073,6 @@ size = Vector3(0.5, 2.4, 1)
 [node name="wall49" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 0.75, -55)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1103,7 +1084,6 @@ size = Vector3(0.5, 2.4, 1)
 [node name="wall35" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.75, 0.75, -55)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1115,7 +1095,6 @@ size = Vector3(0.5, 2.4, 1)
 [node name="wall43" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 0.75, -55.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
@@ -1127,7 +1106,6 @@ size = Vector3(0.5, 2.4, 1.5)
 [node name="wall47" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7, 0.75, -55)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2)
@@ -1139,7 +1117,6 @@ size = Vector3(0.5, 2.4, 2)
 [node name="wall34" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.75, 0, -51.5)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 5)
@@ -1151,7 +1128,6 @@ size = Vector3(0.5, 1.1, 2.2)
 [node name="wall52" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0, -44.025)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1.05)
@@ -1163,7 +1139,6 @@ size = Vector3(0.5, 1, 1.2)
 [node name="wall70" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0, -39.5)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
@@ -1175,7 +1150,6 @@ size = Vector3(0.5, 1, 1)
 [node name="wall88" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0, -25)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
@@ -1187,7 +1161,6 @@ size = Vector3(0.5, 1.2, 1)
 [node name="wall98" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0, -21.75)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
@@ -1199,7 +1172,6 @@ size = Vector3(0.5, 1.1, 1)
 [node name="wall89" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.25, 0, -18.5)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
@@ -1211,7 +1183,6 @@ size = Vector3(0.5, 1.1, 1)
 [node name="wall90" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 0, -23)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
@@ -1223,7 +1194,6 @@ size = Vector3(0.5, 1.1, 1)
 [node name="wall94" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 0, -20.5)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
@@ -1235,7 +1205,6 @@ size = Vector3(0.5, 1, 1)
 [node name="wall96" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 0, -18)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
@@ -1247,7 +1216,6 @@ size = Vector3(0.5, 1, 1)
 [node name="wall91" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 0, -25.5)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
@@ -1259,7 +1227,6 @@ size = Vector3(0.5, 1, 1)
 [node name="wall92" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 0, -38.5)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 1)
@@ -1271,7 +1238,6 @@ size = Vector3(0.5, 1, 1)
 [node name="wall78" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -31.3207, 0, -48.6457)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.999, 1.45)
@@ -1283,7 +1249,6 @@ size = Vector3(0.5, 1, 1.3)
 [node name="wall79" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -31.3207, 0, -54.3207)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.999, 1.45)
@@ -1295,7 +1260,6 @@ size = Vector3(0.5, 1.1, 1.5)
 [node name="wall81" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -31.3207, 0, -9.69571)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.999, 1.45)
@@ -1307,7 +1271,6 @@ size = Vector3(0.5, 1.1, 1.9)
 [node name="wall82" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -31.3207, 0, -15.3707)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.999, 1.45)
@@ -1319,7 +1282,6 @@ size = Vector3(0.5, 0.9, 1.6)
 [node name="wall7" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.5, 0.75, -37.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1331,7 +1293,6 @@ size = Vector3(0.5, 2.4, 1)
 [node name="wall9" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.5, 0.75, -26.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1343,7 +1304,6 @@ size = Vector3(0.5, 2.4, 1)
 [node name="wall8" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21.5, 0.75, -37.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 5)
@@ -1355,7 +1315,6 @@ size = Vector3(0.5, 2.4, 5)
 [node name="wall14" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.5, 0.75, -37.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 5)
@@ -1367,7 +1326,6 @@ size = Vector3(0.5, 2.4, 5)
 [node name="wall16" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -35.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 4.5)
@@ -1379,7 +1337,6 @@ size = Vector3(0.5, 2.4, 4.6)
 [node name="wall18" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -10.25, 0.75, -33.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
@@ -1391,7 +1348,6 @@ size = Vector3(0.5, 2.4, 1.6)
 [node name="wall19" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -10.25, 0.75, -30.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
@@ -1403,7 +1359,6 @@ size = Vector3(0.5, 2.4, 1.6)
 [node name="wall20" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -11, 0.75, -29.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1415,7 +1370,6 @@ size = Vector3(0.5, 2.4, 2)
 [node name="wall21" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -11, 0.75, -34.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1427,7 +1381,6 @@ size = Vector3(0.5, 2.4, 2)
 [node name="wall17" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -28.5)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 5)
@@ -1439,7 +1392,6 @@ size = Vector3(0.5, 2.4, 5)
 [node name="wall66" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -17)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1451,7 +1403,6 @@ size = Vector3(0.5, 2.4, 1)
 [node name="wall67" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -24.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
@@ -1463,7 +1414,6 @@ size = Vector3(0.5, 2.4, 1.4)
 [node name="wall93" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -21.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
@@ -1475,7 +1425,6 @@ size = Vector3(0.5, 2.4, 1.6)
 [node name="wall95" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -19.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
@@ -1487,7 +1436,6 @@ size = Vector3(0.5, 2.4, 1.6)
 [node name="wall10" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.5, 0.75, -26.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 7)
@@ -1499,7 +1447,6 @@ size = Vector3(0.5, 2.4, 7.2)
 [node name="wall57" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.5, 0.75, -16.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 7)
@@ -1511,7 +1458,6 @@ size = Vector3(0.5, 2.4, 7.1)
 [node name="wall75" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.75, 0.75, -16.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
@@ -1523,7 +1469,6 @@ size = Vector3(0.5, 2.4, 1.6)
 [node name="wall12" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13.5, 0.75, -26.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3)
@@ -1535,7 +1480,6 @@ size = Vector3(0.5, 2.4, 3.2)
 [node name="wall11" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19.75, 0.75, -23.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 6.5)
@@ -1547,7 +1491,6 @@ size = Vector3(0.5, 2.4, 6.6)
 [node name="wall73" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -14.25, 0.75, -9.725)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.45)
@@ -1559,7 +1502,6 @@ size = Vector3(0.5, 2.4, 3.6)
 [node name="wall74" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -14.25, 0.75, -15)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3)
@@ -1571,7 +1513,6 @@ size = Vector3(0.5, 2.4, 3)
 [node name="wall13" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19.75, 0.75, -42)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3)
@@ -1583,7 +1524,6 @@ size = Vector3(0.5, 2.4, 3.1)
 [node name="wall53" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19.75, 0.75, -45.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 0.5)
@@ -1595,7 +1535,6 @@ size = Vector3(0.5, 2.4, 0.6)
 [node name="wall26" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19.75, 0.75, -38)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1607,7 +1546,6 @@ size = Vector3(0.5, 2.4, 1)
 [node name="wall15" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -16.25, 0.75, -38)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1619,7 +1557,6 @@ size = Vector3(0.5, 2.4, 1.1)
 [node name="wall23" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -16.25, 0.75, -41)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1631,7 +1568,6 @@ size = Vector3(0.5, 2.4, 1)
 [node name="wall24" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -14, 0.75, -41.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 5)
@@ -1643,7 +1579,6 @@ size = Vector3(0.5, 2.4, 5)
 [node name="wall28" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -22, 0.75, -41.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 4)
@@ -1655,7 +1590,6 @@ size = Vector3(0.5, 2.4, 4)
 [node name="wall32" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -29.25, 0.75, -47.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
@@ -1667,7 +1601,6 @@ size = Vector3(0.5, 2.4, 3.6)
 [node name="wall45" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -9.75, 0.75, -47.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
@@ -1679,7 +1612,6 @@ size = Vector3(0.5, 2.4, 3.6)
 [node name="wall36" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -30.25, 0.75, -55.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.5)
@@ -1691,7 +1623,6 @@ size = Vector3(0.5, 2.4, 1.6)
 [node name="wall59" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.75, 0.75, -9)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1703,7 +1634,6 @@ size = Vector3(0.5, 2.4, 1.5)
 [node name="wall60" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.75, 0.75, -16)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1715,7 +1645,6 @@ size = Vector3(0.5, 2.4, 1)
 [node name="wall61" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.75, 0, -12.5)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 5)
@@ -1727,7 +1656,6 @@ size = Vector3(0.5, 1.1, 5)
 [node name="wall83" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -7.7069, 0, -15.3486)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.999, 1.45)
@@ -1739,7 +1667,6 @@ size = Vector3(0.5, 1.1, 1.5)
 [node name="wall84" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -7.7069, 0, -9.67357)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.999, 1.45)
@@ -1751,7 +1678,6 @@ size = Vector3(0.5, 1.1, 1.7)
 [node name="wall80" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.27761, 0, -12.5443)
 material_override = ExtResource("9_wwjne")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 1, 5)
@@ -1763,7 +1689,6 @@ size = Vector3(0.5, 1, 5)
 [node name="wall85" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -7.7069, 0.7505, -54.2986)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.45)
@@ -1775,7 +1700,6 @@ size = Vector3(0.5, 2.4, 1.7)
 [node name="wall86" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -7.7069, 0.7505, -48.6236)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1.45)
@@ -1787,7 +1711,6 @@ size = Vector3(0.5, 2.4, 1.4)
 [node name="wall87" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.27761, 0.75, -51.4943)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 5)
@@ -1799,7 +1722,6 @@ size = Vector3(0.5, 2.4, 5.1)
 [node name="wall62" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -29.25, 0.75, -8.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
@@ -1811,7 +1733,6 @@ size = Vector3(0.5, 2.4, 3.5)
 [node name="wall76" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -25.25, 0.75, -8.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 0.5)
@@ -1823,7 +1744,6 @@ size = Vector3(0.5, 2.4, 0.5)
 [node name="wall77" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -13.75, 0.75, -8.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 0.5)
@@ -1835,7 +1755,6 @@ size = Vector3(0.5, 2.4, 0.6)
 [node name="wall63" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -29, 0.75, -16.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 4)
@@ -1847,7 +1766,6 @@ size = Vector3(0.5, 2.4, 4)
 [node name="wall37" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -26.25, 0.75, -55.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.5)
@@ -1859,7 +1777,6 @@ size = Vector3(0.5, 2.4, 2.6)
 [node name="wall48" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -9.75, 0.75, -55.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
@@ -1871,7 +1788,6 @@ size = Vector3(0.5, 2.4, 3.4)
 [node name="wall68" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 0.75, -9)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1883,7 +1799,6 @@ size = Vector3(0.5, 2.4, 1.1)
 [node name="wall69" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 0.75, -16)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1895,7 +1810,6 @@ size = Vector3(0.5, 2.4, 1.5)
 [node name="wall71" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -10, 0.75, -8.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 4)
@@ -1907,7 +1821,6 @@ size = Vector3(0.5, 2.4, 4)
 [node name="wall72" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -9.75, 0.75, -16.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 3.5)
@@ -1919,7 +1832,6 @@ size = Vector3(0.5, 2.4, 3.5)
 [node name="wall50" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -13.875, 0.75, -54.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 0.25)
@@ -1931,7 +1843,6 @@ size = Vector3(0.5, 2.4, 0.2)
 [node name="wall51" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -12.05, 0.75, -54.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 0.2)
@@ -1943,7 +1854,6 @@ size = Vector3(0.5, 2.4, 0.2)
 [node name="wall30" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -26.5, 0.75, -41.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 1)
@@ -1955,7 +1865,6 @@ size = Vector3(0.5, 2.4, 1)
 [node name="wall27" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -19.5, 0.75, -46.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 11)
@@ -1967,7 +1876,6 @@ size = Vector3(0.5, 2.4, 11)
 [node name="wall40" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -19.5, 0.75, -54.25)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 11)
@@ -1979,7 +1887,6 @@ size = Vector3(0.5, 2.4, 11)
 [node name="wall22" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -40.2485)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.50293)
@@ -1991,7 +1898,6 @@ size = Vector3(0.5, 2.4, 2.5)
 [node name="wall54" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -37.7471)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 0.5)
@@ -2003,7 +1909,6 @@ size = Vector3(0.5, 2.4, 0.6)
 [node name="wall25" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.75, 0.75, -45.5)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 7)
@@ -2015,7 +1920,6 @@ size = Vector3(0.5, 2.4, 7.1)
 [node name="wall41" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -14.25, 0.75, -47.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.5)
@@ -2027,7 +1931,6 @@ size = Vector3(0.5, 2.4, 2.6)
 [node name="wall42" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -14.25, 0.75, -52.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.5)
@@ -2039,7 +1942,6 @@ size = Vector3(0.5, 2.4, 2.6)
 [node name="wall44" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.7, 0.75, -52.75)
 material_override = SubResource("ShaderMaterial_kwoof")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 2.5, 2.5)
@@ -2066,7 +1968,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 25)
 [node name="stair1" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -23.75, -0.425, -25.5)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.2, 2)
@@ -2074,7 +1975,6 @@ size = Vector3(0.5, 0.2, 2)
 [node name="stair2" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -23.25, -0.325, -25.5)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.4, 2)
@@ -2082,7 +1982,6 @@ size = Vector3(0.5, 0.4, 2)
 [node name="stair3" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -22.75, -0.225, -25.5)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.6, 2)
@@ -2090,7 +1989,6 @@ size = Vector3(0.5, 0.6, 2)
 [node name="stair4" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -22.25, -0.125, -25.5)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(0.5, 0.8, 2)
@@ -2098,7 +1996,6 @@ size = Vector3(0.5, 0.8, 2)
 [node name="stair5" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, -0.0249999, -25.5)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(2, 1, 2)
@@ -2106,7 +2003,6 @@ size = Vector3(2, 1, 2)
 [node name="stair6" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.0750001, -24.25)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(2, 1.2, 0.5)
@@ -2114,7 +2010,6 @@ size = Vector3(2, 1.2, 0.5)
 [node name="stair7" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.175, -23.75)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(2, 1.4, 0.5)
@@ -2122,7 +2017,6 @@ size = Vector3(2, 1.4, 0.5)
 [node name="stair8" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.275, -23.25)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(2, 1.6, 0.5)
@@ -2130,7 +2024,6 @@ size = Vector3(2, 1.6, 0.5)
 [node name="stair9" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.375, -22.75)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(2, 1.8, 0.5)
@@ -2138,7 +2031,6 @@ size = Vector3(2, 1.8, 0.5)
 [node name="stair10" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.475, -22.25)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(2, 2, 0.5)
@@ -2146,7 +2038,6 @@ size = Vector3(2, 2, 0.5)
 [node name="stair11" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.575, -21.75)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(2, 2.2, 0.5)
@@ -2154,7 +2045,6 @@ size = Vector3(2, 2.2, 0.5)
 [node name="stair12" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.675, -21.25)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(2, 2.4, 0.5)
@@ -2162,7 +2052,6 @@ size = Vector3(2, 2.4, 0.5)
 [node name="stair13" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.775, -20.75)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(2, 2.6, 0.5)
@@ -2170,7 +2059,6 @@ size = Vector3(2, 2.6, 0.5)
 [node name="stair14" type="CSGBox3D" parent="NavigationRegion3D/map/Mansion/Stairs"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21, 0.875, -20.25)
 material_override = ExtResource("3_mkkog")
-snap = 0.05
 use_collision = true
 collision_layer = 131073
 size = Vector3(2, 2.8, 0.5)

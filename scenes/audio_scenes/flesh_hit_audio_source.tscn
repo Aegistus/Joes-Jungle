@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cr54mkjgh3ou0" path="res://assets/audio/bullet_hits/flesh/Body Head (Headshot) 3.wav" id="3_hyixc"]
 [ext_resource type="AudioStream" uid="uid://c72ex64g78p0s" path="res://assets/audio/bullet_hits/flesh/Body Head (Headshot) 4.wav" id="4_8cb1t"]
 [ext_resource type="AudioStream" uid="uid://3delelswf1r2" path="res://assets/audio/bullet_hits/flesh/Body Head (Headshot) 5.wav" id="5_2shxq"]
-[ext_resource type="Script" path="res://scripts/temporary_audio_source.gd" id="6_801oo"]
+[ext_resource type="Script" uid="uid://drqwc76idmgwm" path="res://scripts/temporary_audio_source.gd" id="6_801oo"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_28k52"]
 random_pitch = 1.1

@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://dmpg4pql6ql1n"]
 
 [ext_resource type="ArrayMesh" uid="uid://dv54olngjtss4" path="res://assets/models/weapons/bullet_casing.tres" id="1_3lpxg"]
-[ext_resource type="Script" path="res://scripts/shell_casing_particles.gd" id="2_rxvw4"]
+[ext_resource type="Script" uid="uid://c0pb05cbq2qqr" path="res://scripts/shell_casing_particles.gd" id="2_rxvw4"]
 [ext_resource type="AudioStream" uid="uid://bsbxbpf8tg5xa" path="res://assets/audio/shell_casing/Bullet Falling on Wood 1.wav" id="3_bonbe"]
 [ext_resource type="AudioStream" uid="uid://dhnogoc3xq2db" path="res://assets/audio/shell_casing/Bullet Falling on Wood 2.wav" id="4_q5hoj"]
 [ext_resource type="AudioStream" uid="uid://dissvjbthqir" path="res://assets/audio/shell_casing/Bullet Falling on Wood 3.wav" id="5_wqh5d"]

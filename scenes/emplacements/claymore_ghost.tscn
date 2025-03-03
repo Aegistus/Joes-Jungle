@@ -1,8 +1,8 @@
 [gd_scene load_steps=42 format=4 uid="uid://cb58bwdr1dq3w"]
 
-[ext_resource type="Script" path="res://scripts/emplacements/emplacement_ghost.gd" id="1_4auh7"]
+[ext_resource type="Script" uid="uid://41mmn5wph2xd" path="res://scripts/emplacements/emplacement_ghost.gd" id="1_4auh7"]
 [ext_resource type="Material" uid="uid://0u5rl405kkud" path="res://materials/blueprint_ghost_mat.tres" id="2_0a7lt"]
-[ext_resource type="Script" path="res://scripts/weapons/tactical_laser.gd" id="3_skmio"]
+[ext_resource type="Script" uid="uid://cpawsn3u83w13" path="res://scripts/weapons/tactical_laser.gd" id="3_skmio"]
 [ext_resource type="Material" uid="uid://b62emo2vh0yym" path="res://materials/claymore_laser_mat.tres" id="4_sfp1x"]
 [ext_resource type="Material" uid="uid://bh6hpwnnast85" path="res://materials/mpx_mat.tres" id="5_p6tk6"]
 [ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="6_v7sps"]
@@ -345,9 +345,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uwogu"]
 _data = {
-"RESET": SubResource("Animation_4mlc2"),
-"default": SubResource("Animation_vuhqx"),
-"place": SubResource("Animation_p14hv")
+&"RESET": SubResource("Animation_4mlc2"),
+&"default": SubResource("Animation_vuhqx"),
+&"place": SubResource("Animation_p14hv")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ck7x3"]
@@ -372,7 +372,7 @@ point_count = 2
 curve = SubResource("Curve_tacsi")
 
 [sub_resource type="Curve" id="Curve_v7ouu"]
-max_value = 10.0
+_limits = [0.0, 10.0, 0.0, 1.0]
 _data = [Vector2(0, 0.026762), 0.0, 23.6164, 0, 0, Vector2(1, 8.37645), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -385,6 +385,7 @@ emission_ring_axis = Vector3(0, 0, 1)
 emission_ring_height = 1.0
 emission_ring_radius = 0.2
 emission_ring_inner_radius = 0.05
+emission_ring_cone_angle = 90.0
 direction = Vector3(0, 0, 1)
 spread = 10.0
 initial_velocity_min = 2.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dsdldfkq75yyj"]
 
-[ext_resource type="Script" path="res://scripts/ui/water_bar.gd" id="1_s3hc2"]
+[ext_resource type="Script" uid="uid://d0uh7vmmyp02e" path="res://scripts/ui/water_bar.gd" id="1_s3hc2"]
 [ext_resource type="FontFile" uid="uid://cidbiqe8esbi2" path="res://assets/fonts/dead_font_walking/Dead Font Walking.otf" id="2_omrun"]
 [ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="3_2qa5s"]
 [ext_resource type="Texture2D" uid="uid://cyvj1oov11fld" path="res://assets/UI/Joe Scrap.png" id="4_fqv8a"]

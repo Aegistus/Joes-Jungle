@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://dq7t7jvor1txo" path="res://materials/blood_mat.tres" id="1_l328j"]
 
 [sub_resource type="Curve" id="Curve_kgs3q"]
-max_value = 3.0
+_limits = [0.0, 3.0, 0.0, 1.0]
 _data = [Vector2(0.00235294, 2.93042), 0.0, 0.0, 0, 0, Vector2(0.995294, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 

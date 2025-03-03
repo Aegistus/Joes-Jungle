@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="1_1nmi8"]
 [ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="1_4cg74"]
-[ext_resource type="Script" path="res://scripts/objectives/shop.gd" id="1_grug5"]
+[ext_resource type="Script" uid="uid://bbgnasu78742k" path="res://scripts/objectives/shop.gd" id="1_grug5"]
 [ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="4_3swtw"]
 [ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="5_6s8e3"]
 
@@ -216,7 +216,7 @@ resource_name = "Main"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyq2y"]
 _data = {
-"Main": SubResource("Animation_4we81")
+&"Main": SubResource("Animation_4we81")
 }
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_q5ege"]
@@ -255,8 +255,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v6nlf"]
 _data = {
-"RESET": SubResource("Animation_cfg3h"),
-"spin": SubResource("Animation_u7lb7")
+&"RESET": SubResource("Animation_cfg3h"),
+&"spin": SubResource("Animation_u7lb7")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6nn7s"]

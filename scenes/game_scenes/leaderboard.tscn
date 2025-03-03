@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c32vcet1xi7k7"]
 
-[ext_resource type="Script" path="res://scripts/ui/leaderboard_ui.gd" id="1_wdp07"]
+[ext_resource type="Script" uid="uid://cdaj6y3xjohd4" path="res://scripts/ui/leaderboard_ui.gd" id="1_wdp07"]
 [ext_resource type="PackedScene" uid="uid://bqcbebfpewhh4" path="res://scenes/ui/leaderboard_entry.tscn" id="3_dhclq"]
 [ext_resource type="FontFile" uid="uid://cidbiqe8esbi2" path="res://assets/fonts/dead_font_walking/Dead Font Walking.otf" id="4_ftsn5"]
 [ext_resource type="FontFile" uid="uid://ch5ik6md6g7rl" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.otf" id="4_h8iur"]

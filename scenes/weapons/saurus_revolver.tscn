@@ -1,15 +1,15 @@
 [gd_scene load_steps=35 format=4 uid="uid://h1to06bl3p65"]
 
-[ext_resource type="Script" path="res://scripts/weapons/gun.gd" id="1_63uvw"]
+[ext_resource type="Script" uid="uid://25me453sk1l5" path="res://scripts/weapons/gun.gd" id="1_63uvw"]
 [ext_resource type="Texture2D" uid="uid://65bjesvp374a" path="res://assets/textures/Low Poly Weapon.png" id="2_c3wmp"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_t33mi"]
-[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="4_yfg50"]
+[ext_resource type="Script" uid="uid://d4ip7nqe0d52x" path="res://scripts/shell_ejector.gd" id="4_yfg50"]
 [ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="5_m42q5"]
 [ext_resource type="AudioStream" uid="uid://cfb2seulox4dm" path="res://assets/audio/gunshots/Revolver Shot_02.wav" id="6_f80n0"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/gunshots/Dry Shot_01.wav" id="7_bh52i"]
 [ext_resource type="AudioStream" uid="uid://bimsx8ggdoj7t" path="res://assets/audio/reload_sounds/pistol_mag_out.wav" id="8_820ws"]
 [ext_resource type="AudioStream" uid="uid://ctjg85ji6od2m" path="res://assets/audio/reload_sounds/revolver_round_in.wav" id="9_vpbks"]
-[ext_resource type="Script" path="res://scripts/weapons/single_load_ammo.gd" id="10_0gxvq"]
+[ext_resource type="Script" uid="uid://cdabgg5nwikn6" path="res://scripts/weapons/single_load_ammo.gd" id="10_0gxvq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a50kn"]
 albedo_texture = ExtResource("2_c3wmp")
@@ -342,8 +342,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m1fgx"]
 _data = {
-"RESET": SubResource("Animation_30618"),
-"shoot": SubResource("Animation_dtyrj")
+&"RESET": SubResource("Animation_30618"),
+&"shoot": SubResource("Animation_dtyrj")
 }
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o6lox"]

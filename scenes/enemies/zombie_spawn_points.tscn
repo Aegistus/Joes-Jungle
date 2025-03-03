@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dlrj2ln8hxx6l"]
 
-[ext_resource type="Script" path="res://scripts/zombie_spawn_point.gd" id="1_4anxp"]
+[ext_resource type="Script" uid="uid://drmahdnfs57jy" path="res://scripts/zombie_spawn_point.gd" id="1_4anxp"]
 
 [node name="ZombieSpawnPoints" type="Node3D"]
 script = ExtResource("1_4anxp")

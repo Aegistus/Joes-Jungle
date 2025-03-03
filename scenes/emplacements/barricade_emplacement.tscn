@@ -1,8 +1,8 @@
 [gd_scene load_steps=61 format=4 uid="uid://0pbg6jpb0fmj"]
 
-[ext_resource type="Script" path="res://scripts/emplacements/barricade_emplacement.gd" id="1_o24el"]
+[ext_resource type="Script" uid="uid://dokn07mjxnnsh" path="res://scripts/emplacements/barricade_emplacement.gd" id="1_o24el"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="1_xrn8h"]
-[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="3_887t6"]
+[ext_resource type="Script" uid="uid://b8wkou56eghag" path="res://scripts/hurtbox.gd" id="3_887t6"]
 [ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="4_gobs6"]
 [ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="5_jbhnd"]
 [ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="6_fmdhp"]
@@ -468,10 +468,10 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lpllk"]
 _data = {
-"RESET": SubResource("Animation_06our"),
-"damage": SubResource("Animation_12rrx"),
-"default": SubResource("Animation_077gg"),
-"place": SubResource("Animation_43icc")
+&"RESET": SubResource("Animation_06our"),
+&"damage": SubResource("Animation_12rrx"),
+&"default": SubResource("Animation_077gg"),
+&"place": SubResource("Animation_43icc")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jglc"]
@@ -496,7 +496,7 @@ point_count = 2
 curve = SubResource("Curve_ctrds")
 
 [sub_resource type="Curve" id="Curve_gsepu"]
-max_value = 10.0
+_limits = [0.0, 10.0, 0.0, 1.0]
 _data = [Vector2(0, 0.026762), 0.0, 23.6164, 0, 0, Vector2(1, 8.37645), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -509,6 +509,7 @@ emission_ring_axis = Vector3(0, 0, 1)
 emission_ring_height = 1.0
 emission_ring_radius = 1.0
 emission_ring_inner_radius = 0.95
+emission_ring_cone_angle = 90.0
 direction = Vector3(0, 0, 1)
 spread = 10.0
 initial_velocity_min = 2.0
@@ -648,7 +649,7 @@ shape = SubResource("BoxShape3D_mdsa6")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_lpllk")
+&"": SubResource("AnimationLibrary_lpllk")
 }
 
 [node name="Dust" type="GPUParticles3D" parent="."]

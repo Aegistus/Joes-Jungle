@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://dd66lkqririkt"]
 
-[ext_resource type="Script" path="res://scripts/boomer_explosion.gd" id="1_sr2uo"]
+[ext_resource type="Script" uid="uid://cifl3iamhyvip" path="res://scripts/boomer_explosion.gd" id="1_sr2uo"]
 [ext_resource type="Texture2D" uid="uid://yh1lulrm67ei" path="res://assets/textures/explosion/Flare00.PNG" id="2_fegel"]
 [ext_resource type="Material" uid="uid://cw5bb0u42opyh" path="res://materials/explosion_flare_mat.tres" id="3_pvpvj"]
 [ext_resource type="AudioStream" uid="uid://dl46i16m6r7ok" path="res://assets/audio/explosions/Explosion Tiny_01.wav" id="4_oaxuu"]
@@ -20,7 +20,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_2w6ye"]
-max_value = 5.0
+_limits = [0.0, 5.0, 0.0, 1.0]
 _data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(1, 5), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -86,7 +86,7 @@ point_count = 2
 curve = SubResource("Curve_a302r")
 
 [sub_resource type="Curve" id="Curve_tn8eh"]
-max_value = 100.0
+_limits = [0.0, 100.0, 0.0, 1.0]
 _data = [Vector2(0, 0.267616), 0.0, 0.0, 0, 0, Vector2(0.105882, 51.8733), 0.0, 0.0, 0, 0, Vector2(0.275294, 3.74665), 0.0, 0.0, 0, 0, Vector2(1, 0), -25.275, 0.0, 0, 0]
 point_count = 4
 

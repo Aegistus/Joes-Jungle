@@ -1,15 +1,15 @@
 [gd_scene load_steps=36 format=4 uid="uid://b8gi7noqhm3jn"]
 
-[ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_w4ooq"]
+[ext_resource type="Script" uid="uid://dbn0yn0eaki2e" path="res://scripts/weapons/machine_gun.gd" id="1_w4ooq"]
 [ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="2_h6l83"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_e3ql5"]
 [ext_resource type="AudioStream" uid="uid://d0l6l1t32bd1m" path="res://assets/audio/gunshots/m4_shot.wav" id="4_p5q8i"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/gunshots/Dry Shot_01.wav" id="5_0uiun"]
-[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="6_q3a0l"]
+[ext_resource type="Script" uid="uid://d4ip7nqe0d52x" path="res://scripts/shell_ejector.gd" id="6_q3a0l"]
 [ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_cbm1q"]
 [ext_resource type="AudioStream" uid="uid://ptskec0rcqxr" path="res://assets/audio/reload_sounds/M4_mag_out.wav" id="8_uh1aq"]
 [ext_resource type="AudioStream" uid="uid://bpaaehrpp1qw4" path="res://assets/audio/reload_sounds/M4_mag_in.wav" id="9_7yfxn"]
-[ext_resource type="Script" path="res://scripts/weapons/magazine_ammo.gd" id="10_bwb2o"]
+[ext_resource type="Script" uid="uid://b28klctb4e13h" path="res://scripts/weapons/magazine_ammo.gd" id="10_bwb2o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbbeg"]
 albedo_texture = ExtResource("2_h6l83")
@@ -319,9 +319,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_244ut"]
 _data = {
-"Main": SubResource("Animation_5kadl"),
-"RESET": SubResource("Animation_5ofkq"),
-"shoot": SubResource("Animation_i2kwn")
+&"Main": SubResource("Animation_5kadl"),
+&"RESET": SubResource("Animation_5ofkq"),
+&"shoot": SubResource("Animation_i2kwn")
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ksflp"]
@@ -416,7 +416,7 @@ collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_244ut")
+&"": SubResource("AnimationLibrary_244ut")
 }
 
 [node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="."]

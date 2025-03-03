@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://du5uuinm0ul5p" path="res://assets/audio/bullet_hits/stone/Rock 3.wav" id="3_6ce6u"]
 [ext_resource type="AudioStream" uid="uid://duj3vlueku032" path="res://assets/audio/bullet_hits/wood/Wood Heavy 4.wav" id="4_irfhy"]
 [ext_resource type="AudioStream" uid="uid://5ufbnho2sr4k" path="res://assets/audio/bullet_hits/stone/Rock 5.wav" id="5_4rl0i"]
-[ext_resource type="Script" path="res://scripts/temporary_audio_source.gd" id="6_ndyw1"]
+[ext_resource type="Script" uid="uid://drqwc76idmgwm" path="res://scripts/temporary_audio_source.gd" id="6_ndyw1"]
 [ext_resource type="AudioStream" uid="uid://c0wtf2ekrdkeh" path="res://assets/audio/bullet_hits/wood/Wood Heavy 6.wav" id="6_ta488"]
 [ext_resource type="AudioStream" uid="uid://d2qxxljxtkj3i" path="res://assets/audio/bullet_hits/wood/Wood Heavy 7.wav" id="7_vhrbv"]
 [ext_resource type="AudioStream" uid="uid://dhid5qmcspnhn" path="res://assets/audio/bullet_hits/wood/Wood Heavy 8.wav" id="8_gjqlu"]

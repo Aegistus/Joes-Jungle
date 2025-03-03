@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://boar5pjwlg348"]
 
-[ext_resource type="Script" path="res://scripts/bullet_impact_terrain.gd" id="1_gmje7"]
+[ext_resource type="Script" uid="uid://ckxk87wshobwm" path="res://scripts/bullet_impact_terrain.gd" id="1_gmje7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l2ero"]
 vertex_color_use_as_albedo = true
@@ -73,7 +73,7 @@ point_count = 2
 curve = SubResource("Curve_tacsi")
 
 [sub_resource type="Curve" id="Curve_v7ouu"]
-max_value = 10.0
+_limits = [0.0, 10.0, 0.0, 1.0]
 _data = [Vector2(0, 0.026762), 0.0, 23.6164, 0, 0, Vector2(1, 8.37645), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -86,6 +86,7 @@ emission_ring_axis = Vector3(0, 0, 1)
 emission_ring_height = 1.0
 emission_ring_radius = 0.2
 emission_ring_inner_radius = 0.05
+emission_ring_cone_angle = 90.0
 direction = Vector3(0, 0, 1)
 spread = 10.0
 initial_velocity_min = 2.0

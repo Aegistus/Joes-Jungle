@@ -1,13 +1,13 @@
 [gd_scene load_steps=45 format=4 uid="uid://k1yrpwih83w7"]
 
-[ext_resource type="Script" path="res://scripts/emplacements/m2_emplacement.gd" id="1_r2ivg"]
+[ext_resource type="Script" uid="uid://cnebc82grd57f" path="res://scripts/emplacements/m2_emplacement.gd" id="1_r2ivg"]
 [ext_resource type="Texture2D" uid="uid://da7hl07qepkvg" path="res://materials/polygon_war_mat.tres" id="2_ir43p"]
-[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="3_6iwlw"]
+[ext_resource type="Script" uid="uid://b8wkou56eghag" path="res://scripts/hurtbox.gd" id="3_6iwlw"]
 [ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="4_45p5j"]
 [ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="5_6bkuo"]
 [ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="6_270s3"]
 [ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="7_1h2y2"]
-[ext_resource type="Script" path="res://scripts/weapons/M2_50_Cal.gd" id="7_vvmmm"]
+[ext_resource type="Script" uid="uid://dyh5a7maj7rki" path="res://scripts/weapons/M2_50_Cal.gd" id="7_vvmmm"]
 [ext_resource type="PackedScene" uid="uid://c4rrj07uowwaj" path="res://scenes/emplacements/emplacement_seller.tscn" id="8_m4cwt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usnah"]
@@ -75,9 +75,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4q34x"]
 _data = {
-"RESET": SubResource("Animation_06our"),
-"default": SubResource("Animation_077gg"),
-"place": SubResource("Animation_43icc")
+&"RESET": SubResource("Animation_06our"),
+&"default": SubResource("Animation_077gg"),
+&"place": SubResource("Animation_43icc")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jglc"]
@@ -102,7 +102,7 @@ point_count = 2
 curve = SubResource("Curve_ctrds")
 
 [sub_resource type="Curve" id="Curve_gsepu"]
-max_value = 10.0
+_limits = [0.0, 10.0, 0.0, 1.0]
 _data = [Vector2(0, 0.026762), 0.0, 23.6164, 0, 0, Vector2(1, 8.37645), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -115,6 +115,7 @@ emission_ring_axis = Vector3(0, 0, 1)
 emission_ring_height = 1.0
 emission_ring_radius = 1.0
 emission_ring_inner_radius = 0.95
+emission_ring_cone_angle = 90.0
 direction = Vector3(0, 0, 1)
 spread = 10.0
 initial_velocity_min = 2.0
@@ -152,7 +153,6 @@ height = 1.6
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6w18"]
 resource_name = "Mat"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("7_1h2y2")
 emission_enabled = true
 uv1_offset = Vector3(0, -1, 0)

@@ -1,12 +1,12 @@
 [gd_scene load_steps=19 format=4 uid="uid://dx7sbijp1upmd"]
 
-[ext_resource type="Script" path="res://scripts/weapons/shotgun.gd" id="1_nnxu6"]
+[ext_resource type="Script" uid="uid://b70tt5coqqwb5" path="res://scripts/weapons/shotgun.gd" id="1_nnxu6"]
 [ext_resource type="Texture2D" uid="uid://b6ngkmijn43fr" path="res://assets/models/weapons/Bennelli_M4_0.png" id="2_gdv27"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_daph4"]
 [ext_resource type="AudioStream" uid="uid://i6aor6h1rbq7" path="res://assets/audio/gunshots/benelli_m4_shot.wav" id="4_uvq5q"]
-[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="5_ynbqx"]
+[ext_resource type="Script" uid="uid://d4ip7nqe0d52x" path="res://scripts/shell_ejector.gd" id="5_ynbqx"]
 [ext_resource type="PackedScene" uid="uid://dmpg4pql6ql1n" path="res://scenes/particles/shotgun_shell_casing_particles.tscn" id="6_i2oo6"]
-[ext_resource type="Script" path="res://scripts/weapons/single_load_ammo.gd" id="8_d08jv"]
+[ext_resource type="Script" uid="uid://cdabgg5nwikn6" path="res://scripts/weapons/single_load_ammo.gd" id="8_d08jv"]
 [ext_resource type="AudioStream" uid="uid://3rq3uyist7bb" path="res://assets/audio/reload_sounds/benelli_round_in_2.wav" id="8_yprxc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eeaau"]
@@ -200,8 +200,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n8w8g"]
 _data = {
-"RESET": SubResource("Animation_eqhh8"),
-"shoot": SubResource("Animation_yatb0")
+&"RESET": SubResource("Animation_eqhh8"),
+&"shoot": SubResource("Animation_yatb0")
 }
 
 [node name="Benelli_M4" type="Node3D"]
@@ -296,7 +296,7 @@ collision_mask = 67
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_n8w8g")
+&"": SubResource("AnimationLibrary_n8w8g")
 }
 
 [node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="."]

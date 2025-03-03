@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=4 uid="uid://ch2ki4by231v"]
 
-[ext_resource type="Script" path="res://scripts/weapons/flamethrower.gd" id="1_m7ukc"]
+[ext_resource type="Script" uid="uid://dawx7hijljjg3" path="res://scripts/weapons/flamethrower.gd" id="1_m7ukc"]
 [ext_resource type="Texture2D" uid="uid://bu6tmmaegi316" path="res://assets/textures/PolygonWar_Texture_01_A.png" id="2_2u2rb"]
 [ext_resource type="AudioStream" uid="uid://bkrw4ke5x8fvn" path="res://assets/audio/flamethrower/flamethrower_start.wav" id="4_sqa53"]
 [ext_resource type="AudioStream" uid="uid://cqymuimtywd4d" path="res://assets/audio/flamethrower/flamethrower_start2.wav" id="5_j4x8r"]
@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://khvutnhujlf0" path="res://assets/audio/reload_sounds/M249_mag_out.wav" id="8_s1ct1"]
 [ext_resource type="AudioStream" uid="uid://bjym08erj6sy3" path="res://assets/audio/reload_sounds/M249_mag_in.wav" id="9_ay7ge"]
 [ext_resource type="AudioStream" uid="uid://c67i5f4sxmhbo" path="res://assets/audio/flamethrower/flamethrower_dry_shot.wav" id="9_fdkrs"]
-[ext_resource type="Script" path="res://scripts/weapons/magazine_ammo.gd" id="10_lc605"]
+[ext_resource type="Script" uid="uid://b28klctb4e13h" path="res://scripts/weapons/magazine_ammo.gd" id="10_lc605"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptlcp"]
 albedo_texture = ExtResource("2_2u2rb")
@@ -138,9 +138,9 @@ length = 0.2
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_66r3h"]
 _data = {
-"Main": SubResource("Animation_vndia"),
-"RESET": SubResource("Animation_lpsxb"),
-"shoot": SubResource("Animation_p5adf")
+&"Main": SubResource("Animation_vndia"),
+&"RESET": SubResource("Animation_lpsxb"),
+&"shoot": SubResource("Animation_p5adf")
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3id5m"]
@@ -213,7 +213,7 @@ target_position = Vector3(0, -65, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_66r3h")
+&"": SubResource("AnimationLibrary_66r3h")
 }
 
 [node name="FlamethrowerStartAudioPlayer" type="AudioStreamPlayer3D" parent="."]

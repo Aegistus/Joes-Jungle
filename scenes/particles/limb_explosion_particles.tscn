@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://ddl2grpfek6t0"]
 
 [ext_resource type="Material" uid="uid://ubhebejacrk1" path="res://materials/skin_mat.tres" id="1_efe6g"]
-[ext_resource type="Script" path="res://scripts/limb_explosion_particles.gd" id="1_r6uie"]
+[ext_resource type="Script" uid="uid://byu8ire8rq6uk" path="res://scripts/limb_explosion_particles.gd" id="1_r6uie"]
 [ext_resource type="Material" uid="uid://bpcgwdhmkjs1a" path="res://materials/gore_mat.tres" id="2_pwxvw"]
 [ext_resource type="Material" uid="uid://dq7t7jvor1txo" path="res://materials/blood_mat.tres" id="3_1e5y0"]
 [ext_resource type="AudioStream" uid="uid://o6cgcjox0vb8" path="res://assets/audio/dismemberment/dismemberment.wav" id="5_h7qil"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://boas4tlaagxef"]
 
-[ext_resource type="Script" path="res://scripts/slowbox.gd" id="1_e7boo"]
+[ext_resource type="Script" uid="uid://bayqm66rh8dr4" path="res://scripts/slowbox.gd" id="1_e7boo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_imqnn"]
 size = Vector3(1, 1, 0.771484)

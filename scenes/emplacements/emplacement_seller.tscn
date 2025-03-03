@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c4rrj07uowwaj"]
 
-[ext_resource type="Script" path="res://scripts/emplacements/emplacement_seller.gd" id="1_c8rsc"]
+[ext_resource type="Script" uid="uid://cykt2ivf3sjdx" path="res://scripts/emplacements/emplacement_seller.gd" id="1_c8rsc"]
 
 [node name="EmplacementSeller" type="Area3D" groups=["interactable"]]
 collision_layer = 32

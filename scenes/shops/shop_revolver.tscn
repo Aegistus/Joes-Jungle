@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=4 uid="uid://dsxmj3jw6gqcd"]
 
-[ext_resource type="Script" path="res://scripts/objectives/shop.gd" id="1_5lkyg"]
+[ext_resource type="Script" uid="uid://bbgnasu78742k" path="res://scripts/objectives/shop.gd" id="1_5lkyg"]
 [ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_x2vgy"]
 [ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="3_5wscc"]
 [ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="4_dmm82"]
@@ -8,7 +8,6 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nyuhd"]
 resource_name = "Modern Weapon Pack Vol.01"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qf3se"]
@@ -313,8 +312,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b4j5p"]
 _data = {
-"RESET": SubResource("Animation_8dpac"),
-"spin": SubResource("Animation_fn5xm")
+&"RESET": SubResource("Animation_8dpac"),
+&"spin": SubResource("Animation_fn5xm")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7bsmp"]

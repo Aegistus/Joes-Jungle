@@ -1,9 +1,9 @@
 [gd_scene load_steps=52 format=3 uid="uid://egau4xfffmk8"]
 
-[ext_resource type="Script" path="res://scripts/weapons/build_gun.gd" id="1_s4m0f"]
+[ext_resource type="Script" uid="uid://s8blajyymri2" path="res://scripts/weapons/build_gun.gd" id="1_s4m0f"]
 [ext_resource type="AudioStream" uid="uid://cfb2seulox4dm" path="res://assets/audio/gunshots/Revolver Shot_02.wav" id="2_n8kbh"]
-[ext_resource type="Script" path="res://scripts/emplacements/emplacement_stats.gd" id="2_oj0vb"]
-[ext_resource type="Script" path="res://scripts/weapons/magazine_ammo.gd" id="2_ybmnv"]
+[ext_resource type="Script" uid="uid://bi34at4n06n46" path="res://scripts/emplacements/emplacement_stats.gd" id="2_oj0vb"]
+[ext_resource type="Script" uid="uid://b28klctb4e13h" path="res://scripts/weapons/magazine_ammo.gd" id="2_ybmnv"]
 [ext_resource type="Resource" uid="uid://7uk5ux3wfh7n" path="res://resources/emplacement-stats/barricade_stats.tres" id="3_4m6a0"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/gunshots/Dry Shot_01.wav" id="3_sqhos"]
 [ext_resource type="Resource" uid="uid://j4tdbjps7cfb" path="res://resources/emplacement-stats/barbed_wire_stats.tres" id="4_g8wad"]
@@ -32,12 +32,12 @@ stream_0/stream = ExtResource("5_x3h1q")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gw7gk"]
 render_priority = 0
 shader = ExtResource("13_gmhsl")
+shader_parameter/MainTex = ExtResource("15_yu2wp")
 shader_parameter/DissolveTiling = Vector2(0.2, 0.25)
 shader_parameter/DissolveSpeed = Vector2(0, 0.2)
-shader_parameter/DissolveAmount = 0.647
-shader_parameter/Emission = null
-shader_parameter/MainTex = ExtResource("15_yu2wp")
 shader_parameter/DissolveTex = ExtResource("14_eagru")
+shader_parameter/DissolveAmount = 0.647
+shader_parameter/Emission = Color(0, 0, 0, 1)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x4ygt"]
 gravity = Vector3(0, 0, 0)
@@ -48,12 +48,12 @@ color = Color(4, 1.25, 0.6, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0os4j"]
 render_priority = 0
 shader = ExtResource("13_gmhsl")
+shader_parameter/MainTex = ExtResource("16_80j1l")
 shader_parameter/DissolveTiling = Vector2(1, 1)
 shader_parameter/DissolveSpeed = Vector2(0, 0)
+shader_parameter/DissolveTex = ExtResource("14_eagru")
 shader_parameter/DissolveAmount = 0.0
 shader_parameter/Emission = Color(0.0726177, 0.65471, 0.842342, 1)
-shader_parameter/MainTex = ExtResource("16_80j1l")
-shader_parameter/DissolveTex = ExtResource("14_eagru")
 
 [sub_resource type="Curve" id="Curve_iie17"]
 _data = [Vector2(0, 0.00267625), 0.0, 5.2709, 0, 0, Vector2(0.164706, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.00847459), -1.18967, 0.0, 0, 0]
@@ -215,8 +215,8 @@ load_path = "res://.godot/imported/Flare00.PNG-00c42578e3e5542d01b596e10c5d4117.
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xkdwg"]
 render_priority = 0
 shader = SubResource("VisualShader_dsrd1")
-shader_parameter/Emission = Color(0.417267, 0.829053, 1, 1)
 shader_parameter/MainTex = SubResource("CompressedTexture2D_5de77")
+shader_parameter/Emission = Color(0.417267, 0.829053, 1, 1)
 
 [sub_resource type="Gradient" id="Gradient_unxm0"]
 offsets = PackedFloat32Array(0, 0.229219, 0.501259, 1)

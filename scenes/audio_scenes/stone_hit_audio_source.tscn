@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://du5uuinm0ul5p" path="res://assets/audio/bullet_hits/stone/Rock 3.wav" id="3_ab8ky"]
 [ext_resource type="AudioStream" uid="uid://b60t1y8ay6ls7" path="res://assets/audio/bullet_hits/stone/Rock 4.wav" id="4_7u7ky"]
 [ext_resource type="AudioStream" uid="uid://5ufbnho2sr4k" path="res://assets/audio/bullet_hits/stone/Rock 5.wav" id="5_ektdo"]
-[ext_resource type="Script" path="res://scripts/temporary_audio_source.gd" id="6_dfxmm"]
+[ext_resource type="Script" uid="uid://drqwc76idmgwm" path="res://scripts/temporary_audio_source.gd" id="6_dfxmm"]
 [ext_resource type="AudioStream" uid="uid://du0iadwi8hbgc" path="res://assets/audio/bullet_hits/stone/Rock 6.wav" id="6_pcx1d"]
 [ext_resource type="AudioStream" uid="uid://dp6dckfvll3bp" path="res://assets/audio/bullet_hits/stone/Rock 7.wav" id="7_jasqm"]
 [ext_resource type="AudioStream" uid="uid://uxmdcndyn1dr" path="res://assets/audio/bullet_hits/stone/Rock 8.wav" id="8_5vf0v"]

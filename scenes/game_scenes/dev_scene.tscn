@@ -1,20 +1,20 @@
 [gd_scene load_steps=38 format=4 uid="uid://d1otweixyixi3"]
 
-[ext_resource type="Script" path="res://scripts/game_level.gd" id="1_jlul2"]
+[ext_resource type="Script" uid="uid://dvi44v1xmi7ir" path="res://scripts/game_level.gd" id="1_jlul2"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_veg6g"]
 [ext_resource type="Texture2D" uid="uid://c8arnlq67qi7" path="res://assets/third_person_controller_assets-main/textures/grids/Dark/texture_05.png" id="2_nhdfr"]
 [ext_resource type="Material" uid="uid://odnvymp1mqhf" path="res://materials/grid_3.tres" id="3_11wmu"]
 [ext_resource type="Material" uid="uid://p001di78373p" path="res://materials/grid_2.tres" id="4_dvauu"]
 [ext_resource type="Material" uid="uid://btglo4s1fu73t" path="res://materials/grid_1.tres" id="5_v4u3d"]
 [ext_resource type="Material" uid="uid://clj8od07w7lfo" path="res://materials/palm_tree.tres" id="6_smev7"]
-[ext_resource type="Shader" path="res://assets/shaders/brick_wall.gdshader" id="7_c36ol"]
+[ext_resource type="Shader" uid="uid://ssofg4gjjqrv" path="res://assets/shaders/brick_wall.gdshader" id="7_c36ol"]
 [ext_resource type="PackedScene" uid="uid://ciu738dd2fsak" path="res://scenes/scenery/palm_tree_01.tscn" id="7_y21f8"]
 [ext_resource type="Texture2D" uid="uid://n7k4pxl60p5g" path="res://assets/textures/Brick Texture.png" id="8_4qu7h"]
 [ext_resource type="PackedScene" uid="uid://yttdwroyehgm" path="res://scenes/scenery/palm_tree_02.tscn" id="8_sua0m"]
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="9_6qvas"]
 [ext_resource type="PackedScene" uid="uid://ddhplb0t3aute" path="res://scenes/scenery/palm_tree_04.tscn" id="10_kcw2q"]
 [ext_resource type="PackedScene" uid="uid://c7baeq2p0p2hk" path="res://scenes/shops/shop_m4.tscn" id="20_dypad"]
-[ext_resource type="Script" path="res://scripts/zombie_spawn_point.gd" id="21_0spru"]
+[ext_resource type="Script" uid="uid://drmahdnfs57jy" path="res://scripts/zombie_spawn_point.gd" id="21_0spru"]
 [ext_resource type="PackedScene" uid="uid://d2t1be5npyy0h" path="res://scenes/shops/shop_flamethrower.tscn" id="21_554pv"]
 [ext_resource type="PackedScene" uid="uid://ddgpevn3nkya1" path="res://scenes/shops/shop_benelli.tscn" id="21_lme77"]
 [ext_resource type="PackedScene" uid="uid://22lknia5oy4" path="res://scenes/shops/shop_saw.tscn" id="22_45akl"]
@@ -61,8 +61,8 @@ uv1_triplanar = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vvlha"]
 render_priority = 0
 shader = ExtResource("7_c36ol")
-shader_parameter/brightness = 1.0
 shader_parameter/wall_texture = ExtResource("8_4qu7h")
+shader_parameter/brightness = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_52wjb"]
 resource_name = "lambert1"
@@ -108,7 +108,7 @@ length = 4.95833
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b8ylo"]
 _data = {
-"Take 001": SubResource("Animation_lhgcf")
+&"Take 001": SubResource("Animation_lhgcf")
 }
 
 [node name="world" type="Node3D"]
@@ -229,7 +229,7 @@ skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationRegion3D/map/Trees/PalmTree01"]
 libraries = {
-"": SubResource("AnimationLibrary_b8ylo")
+&"": SubResource("AnimationLibrary_b8ylo")
 }
 
 [node name="PalmTree02" parent="NavigationRegion3D/map/Trees" instance=ExtResource("7_y21f8")]
@@ -888,7 +888,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9545, -0.0170354, -25.987
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9545, -0.0170354, -25.987)
 
 [node name="PlayerSpawnPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35515, 0, -3.05278)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6951, 9.53674e-07, -13.3517)
 
 [node name="ShopFlamethrower" parent="." instance=ExtResource("21_554pv")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.6, -0.1, -6.5)

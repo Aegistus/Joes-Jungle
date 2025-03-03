@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://ddgpevn3nkya1"]
 
-[ext_resource type="Script" path="res://scripts/objectives/shop.gd" id="1_ne553"]
+[ext_resource type="Script" uid="uid://bbgnasu78742k" path="res://scripts/objectives/shop.gd" id="1_ne553"]
 [ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_623l0"]
 [ext_resource type="Texture2D" uid="uid://b6ngkmijn43fr" path="res://assets/models/weapons/Bennelli_M4_0.png" id="3_paqki"]
 [ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="4_pw3i5"]
@@ -120,7 +120,7 @@ resource_name = "Main"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ddy6t"]
 _data = {
-"Main": SubResource("Animation_kc3f6")
+&"Main": SubResource("Animation_kc3f6")
 }
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_q5ege"]
@@ -159,8 +159,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v6nlf"]
 _data = {
-"RESET": SubResource("Animation_cfg3h"),
-"spin": SubResource("Animation_u7lb7")
+&"RESET": SubResource("Animation_cfg3h"),
+&"spin": SubResource("Animation_u7lb7")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6nn7s"]

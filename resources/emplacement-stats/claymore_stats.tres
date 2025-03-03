@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EmplacementStats" load_steps=4 format=3 uid="uid://cfx8k1lxbumy2"]
 
 [ext_resource type="PackedScene" uid="uid://bq78d2teut4yk" path="res://scenes/emplacements/claymore_mine.tscn" id="1_twmr4"]
-[ext_resource type="Script" path="res://scripts/emplacements/emplacement_stats.gd" id="1_xdefp"]
+[ext_resource type="Script" uid="uid://bi34at4n06n46" path="res://scripts/emplacements/emplacement_stats.gd" id="1_xdefp"]
 [ext_resource type="PackedScene" uid="uid://cb58bwdr1dq3w" path="res://scenes/emplacements/claymore_ghost.tscn" id="2_ilek0"]
 
 [resource]

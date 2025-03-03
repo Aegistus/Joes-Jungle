@@ -1,15 +1,15 @@
 [gd_scene load_steps=49 format=4 uid="uid://c6ecwjphk3ure"]
 
-[ext_resource type="Script" path="res://scripts/weapons/machine_gun.gd" id="1_abj7n"]
+[ext_resource type="Script" uid="uid://dbn0yn0eaki2e" path="res://scripts/weapons/machine_gun.gd" id="1_abj7n"]
 [ext_resource type="Material" uid="uid://bh6hpwnnast85" path="res://materials/mpx_mat.tres" id="2_5cyhq"]
 [ext_resource type="PackedScene" uid="uid://l0fpwhcilnwo" path="res://scenes/tactical_laser.tscn" id="3_cl058"]
 [ext_resource type="AudioStream" uid="uid://cp3o22eciexhn" path="res://assets/audio/gunshots/mpx_suppressed_shot.wav" id="4_fxorh"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/gunshots/Dry Shot_01.wav" id="5_r5uu6"]
-[ext_resource type="Script" path="res://scripts/shell_ejector.gd" id="6_6kf06"]
+[ext_resource type="Script" uid="uid://d4ip7nqe0d52x" path="res://scripts/shell_ejector.gd" id="6_6kf06"]
 [ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="7_2hrnk"]
 [ext_resource type="AudioStream" uid="uid://ptskec0rcqxr" path="res://assets/audio/reload_sounds/M4_mag_out.wav" id="8_k1wor"]
 [ext_resource type="AudioStream" uid="uid://bpaaehrpp1qw4" path="res://assets/audio/reload_sounds/M4_mag_in.wav" id="9_b5mj3"]
-[ext_resource type="Script" path="res://scripts/weapons/magazine_ammo.gd" id="10_7hq3a"]
+[ext_resource type="Script" uid="uid://b28klctb4e13h" path="res://scripts/weapons/magazine_ammo.gd" id="10_7hq3a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mi6py"]
 resource_name = "Modern Weapon Pack Vol.002"
@@ -587,9 +587,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyq2y"]
 _data = {
-"Main": SubResource("Animation_4we81"),
-"RESET": SubResource("Animation_o53aw"),
-"shoot": SubResource("Animation_lh8sp")
+&"Main": SubResource("Animation_4we81"),
+&"RESET": SubResource("Animation_o53aw"),
+&"shoot": SubResource("Animation_lh8sp")
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hqg5y"]
@@ -734,7 +734,7 @@ collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vyq2y")
+&"": SubResource("AnimationLibrary_vyq2y")
 }
 
 [node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="."]

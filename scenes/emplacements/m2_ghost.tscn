@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=4 uid="uid://iguh0gm6lc58"]
 
-[ext_resource type="Script" path="res://scripts/emplacements/emplacement_ghost.gd" id="1_pi5bc"]
+[ext_resource type="Script" uid="uid://41mmn5wph2xd" path="res://scripts/emplacements/emplacement_ghost.gd" id="1_pi5bc"]
 [ext_resource type="AudioStream" uid="uid://n0eip7e6prbf" path="res://assets/audio/bullet_hits/wood/Wood Heavy 1.wav" id="2_wpqa3"]
 [ext_resource type="AudioStream" uid="uid://dtwn1uk41py6t" path="res://assets/audio/bullet_hits/wood/Wood Heavy 2.wav" id="3_apetr"]
 [ext_resource type="AudioStream" uid="uid://cywtjafxkr6js" path="res://assets/audio/bullet_hits/wood/Wood Heavy 5.wav" id="4_splhe"]
@@ -66,9 +66,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4q34x"]
 _data = {
-"RESET": SubResource("Animation_06our"),
-"default": SubResource("Animation_077gg"),
-"place": SubResource("Animation_43icc")
+&"RESET": SubResource("Animation_06our"),
+&"default": SubResource("Animation_077gg"),
+&"place": SubResource("Animation_43icc")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jglc"]
@@ -93,7 +93,7 @@ point_count = 2
 curve = SubResource("Curve_ctrds")
 
 [sub_resource type="Curve" id="Curve_gsepu"]
-max_value = 10.0
+_limits = [0.0, 10.0, 0.0, 1.0]
 _data = [Vector2(0, 0.026762), 0.0, 23.6164, 0, 0, Vector2(1, 8.37645), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -106,6 +106,7 @@ emission_ring_axis = Vector3(0, 0, 1)
 emission_ring_height = 1.0
 emission_ring_radius = 1.0
 emission_ring_inner_radius = 0.95
+emission_ring_cone_angle = 90.0
 direction = Vector3(0, 0, 1)
 spread = 10.0
 initial_velocity_min = 2.0

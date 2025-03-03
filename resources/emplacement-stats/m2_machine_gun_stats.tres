@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EmplacementStats" load_steps=4 format=3 uid="uid://dub8ds5mm0xik"]
 
 [ext_resource type="PackedScene" uid="uid://k1yrpwih83w7" path="res://scenes/emplacements/m2_emplacement.tscn" id="1_igqbt"]
-[ext_resource type="Script" path="res://scripts/emplacements/emplacement_stats.gd" id="1_ubjkw"]
+[ext_resource type="Script" uid="uid://bi34at4n06n46" path="res://scripts/emplacements/emplacement_stats.gd" id="1_ubjkw"]
 [ext_resource type="PackedScene" uid="uid://iguh0gm6lc58" path="res://scenes/emplacements/m2_ghost.tscn" id="2_uds55"]
 
 [resource]

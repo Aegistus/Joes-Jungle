@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=4 uid="uid://det47gkltg7fa"]
 
-[ext_resource type="Script" path="res://scripts/objectives/shop.gd" id="1_cf4li"]
+[ext_resource type="Script" uid="uid://bbgnasu78742k" path="res://scripts/objectives/shop.gd" id="1_cf4li"]
 [ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_e68ff"]
 [ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="3_odtks"]
 [ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="4_6w52r"]
@@ -346,8 +346,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b4j5p"]
 _data = {
-"RESET": SubResource("Animation_8dpac"),
-"spin": SubResource("Animation_fn5xm")
+&"RESET": SubResource("Animation_8dpac"),
+&"spin": SubResource("Animation_fn5xm")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7bsmp"]

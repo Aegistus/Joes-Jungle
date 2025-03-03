@@ -16,7 +16,7 @@ warnings/check_invalid_track_paths=false
 
 config/name="Joe's Jungle"
 run/main_scene="res://scenes/game_scenes/main_menu.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -29,7 +29,6 @@ gdscript/warnings/unused_parameter=0
 
 [display]
 
-window/size/mode=2
 window/size/always_on_top=true
 window/stretch/mode="canvas_items"
 window/size/mode.release=4
@@ -200,5 +199,4 @@ debug_add_scrap={
 
 [physics]
 
-3d/physics_engine="JoltPhysics3D"
-jolt_3d/collisions/areas_detect_static_bodies=true
+3d/physics_engine="Jolt Physics"
