@@ -5,10 +5,10 @@ extends Node3D
 @export var directional_reference: Node3D
 
 var aim_reticle : Node3D
-var distance_offset = 3
+var distance_offset = 4
 
 const CAM_MOVE_SPEED = 8.0
-const CAM_RESET_SPEED = 30.0
+const CAM_RESET_SPEED = 15.0
 
 func _process(delta):
 	if aim_reticle == null:
@@ -22,7 +22,7 @@ func _process(delta):
 		else:
 			ratio = 1
 		var target_position = aim_reticle.global_position.lerp(player.global_position, ratio)
-		global_position = global_position.move_toward(target_position, delta * CAM_MOVE_SPEED)
+		global_position = global_position.lerp(target_position, delta * CAM_MOVE_SPEED)
 	else:
 		top_level = false
-		position = position.move_toward(Vector3.ZERO, delta * CAM_RESET_SPEED)
+		position = position.lerp(Vector3.ZERO, delta * CAM_RESET_SPEED)

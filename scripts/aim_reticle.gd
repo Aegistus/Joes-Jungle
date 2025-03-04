@@ -21,7 +21,6 @@ func _process(delta):
 		var mouse_delta_3D = Vector3(mouse_delta.y, 0, -mouse_delta.x)
 		mouse_delta_3D *= delta * aim_move_speed
 		mouse_delta_3D *= player.directional_reference.basis
-		print(mouse_delta)
 		global_position += mouse_delta_3D
 		rotation = player_model.rotation
 		visible = true
@@ -30,6 +29,7 @@ func _process(delta):
 			accuracy_indicator_left.position.x = distance
 			accuracy_indicator_right.position.x = -distance
 		mouse_delta = Vector2.ZERO
+		global_position += Vector3(player.velocity.x, 0, player.velocity.z) * delta
 	else:
 		visible = false
 		global_position = player.global_position

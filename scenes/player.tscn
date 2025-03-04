@@ -1087,3 +1087,4 @@ current = true
 
 [node name="AimReticle" parent="." instance=ExtResource("34_md1ol")]
 unique_name_in_owner = true
+top_level = true
