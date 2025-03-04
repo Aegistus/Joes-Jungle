@@ -45,7 +45,7 @@ var current_health
 func _ready():
 	if OS.has_feature("standalone"):
 		invincible = false
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	current_health = max_health
 	hurtbox.on_hurt.connect(take_damage)
 	hurtbox.on_slow.connect(apply_slow)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=66 format=4 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" uid="uid://dnhkunc4st41v" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Texture2D" uid="uid://b1fvgtdrsmiic" path="res://assets/models/characters/Michael_Ch18_1001_Diffuse.png" id="2_55ldf"]
@@ -33,6 +33,7 @@
 [ext_resource type="Script" uid="uid://cdpvg4om2nq4i" path="res://scripts/player states/using_emplacement_state.gd" id="23_si4mn"]
 [ext_resource type="Script" uid="uid://dm4s047v4dlp8" path="res://scripts/player states/build_construct_state.gd" id="24_m1s5f"]
 [ext_resource type="Script" uid="uid://r0cu50bw40wk" path="res://scripts/player states/vault_state.gd" id="26_kjsdq"]
+[ext_resource type="PackedScene" uid="uid://g62ygu32m5ji" path="res://scenes/aim_reticle.tscn" id="34_md1ol"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n57sy"]
 resource_name = "Ch18_Body"
@@ -988,7 +989,7 @@ directional_reference = NodePath("MainCamera/DirectionalReference")
 
 [node name="MainCamera" type="Camera3D" parent="CameraMount" groups=["camera"]]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866026, 0, -0.866025, 0.5, 2.50893, 6.35956, 4.21946)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866026, 0, -0.866025, 0.5, 0, 7, 4)
 
 [node name="DirectionalReference" type="Node3D" parent="CameraMount/MainCamera"]
 unique_name_in_owner = true
@@ -1083,3 +1084,5 @@ collision_layer = 2064
 [node name="AudioListener3D" type="AudioListener3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 1.57123, 0)
 current = true
+
+[node name="AimReticle" parent="." instance=ExtResource("34_md1ol")]
