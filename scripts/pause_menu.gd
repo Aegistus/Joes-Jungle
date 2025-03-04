@@ -10,7 +10,7 @@ func toggle_pause():
 	if get_tree().paused == true:
 		canvas_layer.hide()
 		get_tree().paused = false
-		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	elif get_tree().paused == false:
 		canvas_layer.show()
 		get_tree().paused = true

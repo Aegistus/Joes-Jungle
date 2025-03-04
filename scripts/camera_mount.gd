@@ -7,7 +7,8 @@ extends Node3D
 var aim_reticle : Node3D
 var distance_offset = 3
 
-const CAM_MOVE_SPEED = 20.0
+const CAM_MOVE_SPEED = 8.0
+const CAM_RESET_SPEED = 30.0
 
 func _process(delta):
 	if aim_reticle == null:
@@ -24,4 +25,4 @@ func _process(delta):
 		global_position = global_position.move_toward(target_position, delta * CAM_MOVE_SPEED)
 	else:
 		top_level = false
-		position = Vector3.ZERO
+		position = position.move_toward(Vector3.ZERO, delta * CAM_RESET_SPEED)

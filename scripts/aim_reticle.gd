@@ -7,7 +7,6 @@ extends Node3D
 @onready var accuracy_indicator_left = $AccuracyIndicators/AccuracyIndicatorLeft as Node3D
 @onready var accuracy_indicator_right = $AccuracyIndicators/AccuracyIndicatorRight as Node3D
 
-var last_mouse_pos : Vector2
 var aim_move_speed := 1.0
 var mouse_delta : Vector2
 
@@ -16,14 +15,13 @@ const ACCURACY_DISTANCE_MAX = 3.0
 func _input(event):
 	if event is InputEventMouseMotion:
 		mouse_delta = event.relative
-	else:
-		mouse_delta = Vector2.ZERO
 
-func _physics_process(delta):
+func _process(delta):
 	if aim_state_machine.current_state is AimingState:
 		var mouse_delta_3D = Vector3(mouse_delta.y, 0, -mouse_delta.x)
 		mouse_delta_3D *= delta * aim_move_speed
 		mouse_delta_3D *= player.directional_reference.basis
+		print(mouse_delta)
 		global_position += mouse_delta_3D
 		rotation = player_model.rotation
 		visible = true
@@ -31,6 +29,7 @@ func _physics_process(delta):
 			var distance = ACCURACY_DISTANCE_MAX - ((player.gun.current_accuracy / 100.0) * ACCURACY_DISTANCE_MAX)
 			accuracy_indicator_left.position.x = distance
 			accuracy_indicator_right.position.x = -distance
-		last_mouse_pos = get_viewport().get_mouse_position()
+		mouse_delta = Vector2.ZERO
 	else:
 		visible = false
+		global_position = player.global_position
