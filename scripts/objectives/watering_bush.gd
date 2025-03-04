@@ -11,6 +11,8 @@ extends Interactable
 @onready var watering_sound = $WateringSound
 @onready var scrap_timer = $ScrapTimer
 
+const WAVE_SCRAP_TIME_LIMIT = 120
+
 var current_water: float:
 	set(value):
 		current_water = value
@@ -18,6 +20,8 @@ var current_water: float:
 
 var stored_scrap: int:
 	get:
+		if GameManager.wave_time > WAVE_SCRAP_TIME_LIMIT:
+			return 0
 		var amount : int = ((int)(max_water - current_water) / (water_increase_rate * scrap_timer.wait_time)) * scrap_per_tick
 		amount -= amount % scrap_per_tick
 		return amount
@@ -44,7 +48,8 @@ func _process(delta):
 			GameManager.end_game(GameManager.CauseOfDeath.PLANT)
 
 func interact_start():
-	scrap_timer.start()
+	if GameManager.wave_time < WAVE_SCRAP_TIME_LIMIT:
+		scrap_timer.start()
 
 func interact_during(delta):
 	if current_water < max_water:

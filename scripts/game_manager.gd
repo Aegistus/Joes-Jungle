@@ -19,6 +19,7 @@ const BUCKS_PER_KILLSTREAK_KILL = 10
 var currently_in_wave = false
 var current_wave : int = 0
 var run_time = 0.0
+var wave_time = 0.0
 var current_points = 0
 var current_scrap = 0
 var is_game_running = false
@@ -59,12 +60,14 @@ func _ready():
 	load_save_data()
 	on_wave_start.connect(func(): currently_in_wave = true)
 	on_wave_end.connect(func(): currently_in_wave = false)
-	intermission_timer.timeout.connect(func(): on_intermission_end.emit())
+	intermission_timer.timeout.connect(end_intermission)
 	kill_streak_timer.timeout.connect(cash_out_killstreak)
 
 func _process(delta):
 	if is_game_running:
 		run_time += delta
+	if currently_in_wave:
+		wave_time += delta
 	if Input.is_action_just_pressed("skip_intermission") and !currently_in_wave:
 		skip_intermission()
 
@@ -100,6 +103,10 @@ func start_intermission(duration : float):
 	intermission_timer.one_shot = true
 	intermission_timer.start()
 	on_intermission_start.emit()
+	wave_time = 0.0
+
+func end_intermission():
+	on_intermission_end.emit()
 
 func skip_intermission():
 	if intermission_timer.time_left > 10:
