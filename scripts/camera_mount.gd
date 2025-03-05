@@ -16,6 +16,7 @@ func _process(delta):
 	if %AimStateMachine.current_state == %AimingState:
 		top_level = true
 		var total_distance = player.global_position.distance_to(aim_reticle.global_position)
+		
 		var ratio
 		if total_distance > distance_offset:
 			ratio = distance_offset / total_distance
