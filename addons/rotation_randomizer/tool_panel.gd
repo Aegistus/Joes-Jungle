@@ -43,3 +43,18 @@ func _on_z_rotate_button_pressed():
 			undo_redo.add_do_property(node, "rotation", rotation)
 			undo_redo.add_undo_property(node, "rotation", node.rotation)
 	undo_redo.commit_action(true)
+
+
+func _on_scale_button_pressed():
+	var selection = EditorInterface.get_selection()
+	var min = %MinScaleSpinBox.value
+	var max = %MaxScaleSpinBox.value
+	undo_redo.create_action("Scale Randomizer: Scale")
+	for node in selection.get_selected_nodes():
+		if node is Node3D:
+			var random_scale = randf_range(min, max)
+			var scale = node.scale
+			scale = Vector3(random_scale, random_scale, random_scale)
+			undo_redo.add_do_property(node, "scale", scale)
+			undo_redo.add_undo_property(node, "scale", node.scale)
+	undo_redo.commit_action(true)

@@ -75,6 +75,41 @@ max_value = 360.0
 layout_mode = 2
 text = "Rotate"
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer4"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.601223, 0.601223, 0.601223, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer4"]
+layout_mode = 2
+text = "Min"
+
+[node name="MinScaleSpinBox" type="SpinBox" parent="HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 360.0
+step = 0.01
+value = 1.0
+
+[node name="Label2" type="Label" parent="HBoxContainer4"]
+layout_mode = 2
+text = "Max"
+
+[node name="MaxScaleSpinBox" type="SpinBox" parent="HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 360.0
+step = 0.01
+value = 1.0
+
+[node name="ScaleButton" type="Button" parent="HBoxContainer4"]
+layout_mode = 2
+text = "Scale"
+
 [connection signal="pressed" from="HBoxContainer/XRotateButton" to="." method="_on_x_rotate_button_pressed"]
 [connection signal="pressed" from="HBoxContainer2/YRotateButton" to="." method="_on_y_rotate_button_pressed"]
 [connection signal="pressed" from="HBoxContainer3/ZRotateButton" to="." method="_on_z_rotate_button_pressed"]
+[connection signal="pressed" from="HBoxContainer4/ScaleButton" to="." method="_on_scale_button_pressed"]
