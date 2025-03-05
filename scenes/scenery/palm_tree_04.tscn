@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://ddhplb0t3aute"]
+[gd_scene load_steps=10 format=4 uid="uid://ddhplb0t3aute"]
 
+[ext_resource type="Script" uid="uid://qx4rfovnxk2r" path="res://scripts/fade_when_camera_near.gd" id="2_rpuls"]
 [ext_resource type="Material" uid="uid://cdcmdqtrgcdgx" path="res://materials/polygon_pirates_mat.tres" id="3_bedy7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uwvx3"]
@@ -119,13 +120,16 @@ material_override = ExtResource("3_bedy7")
 mesh = SubResource("ArrayMesh_ol6br")
 skeleton = NodePath("")
 
-[node name="SM_Env_PalmTree_04_001" type="MeshInstance3D" parent="palm_tree_separated_04"]
+[node name="UpperParts" type="Node3D" parent="palm_tree_separated_04"]
+script = ExtResource("2_rpuls")
+
+[node name="SM_Env_PalmTree_04_001" type="MeshInstance3D" parent="palm_tree_separated_04/UpperParts"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, -1, 0, 1, -3.57628e-07, 0, 0, 0)
 material_override = ExtResource("3_bedy7")
 mesh = SubResource("ArrayMesh_xnreo")
 skeleton = NodePath("")
 
-[node name="SM_Env_PalmTree_04_002" type="MeshInstance3D" parent="palm_tree_separated_04"]
+[node name="SM_Env_PalmTree_04_002" type="MeshInstance3D" parent="palm_tree_separated_04/UpperParts"]
 transform = Transform3D(1, 0, 0, 0, -3.57628e-07, -1, 0, 1, -3.57628e-07, 0, 0, 0)
 material_override = ExtResource("3_bedy7")
 mesh = SubResource("ArrayMesh_w5kes")
