@@ -41,7 +41,15 @@ movie_writer/movie_file="C:/Users/joeba/OneDrive/Documents/Game Dev/Godot/Projec
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/rotation_randomizer/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "yellow",
+"res://scenes/": "green",
+"res://scripts/": "red"
+}
 
 [global_group]
 

@@ -2466,6 +2466,165 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.6, 
 [node name="SM_Prop_WashingLine_03" parent="NavigationRegion3D/map/Outer/SideEntrance" instance=ExtResource("39_bggit")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.6, 0, -3.49999)
 
+[node name="HiddenTreesOuter" type="Node3D" parent="NavigationRegion3D/map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1899, 0, -31.7524)
+
+[node name="PalmTree01" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4538, 0, -4.08133)
+
+[node name="PalmTree02" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7761, 0, -0.947903)
+
+[node name="PalmTree03" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8916, 0, 13.3295)
+
+[node name="PalmTree04" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4715, 0, -12.6273)
+
+[node name="PalmTree05" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0713, 1.90735e-06, -26.2633)
+
+[node name="PalmTree06" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7288, 1.90735e-06, -32.8011)
+
+[node name="PalmTree07" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83891, 1.90735e-06, -32.439)
+
+[node name="PalmTree08" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.119, 1.90735e-06, -33.5708)
+
+[node name="PalmTree09" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.11187, 1.90735e-06, -27.8316)
+
+[node name="PalmTree10" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1119, 1.90735e-06, -20.8316)
+
+[node name="PalmTree11" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5257, 1.90735e-06, -13.2624)
+
+[node name="PalmTree12" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3887, 3.8147e-06, -8.61604)
+
+[node name="PalmTree13" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0235, 3.8147e-06, -1.76634)
+
+[node name="PalmTree14" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9491, 2.86102e-06, 6.49018)
+
+[node name="PalmTree15" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8325, 2.86102e-06, 10.7745)
+
+[node name="PalmTree16" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.414, 2.86102e-06, 15.7008)
+
+[node name="PalmTree17" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2711, 4.76837e-06, 20.0542)
+
+[node name="PalmTree18" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5564, 4.76837e-06, 17.1853)
+
+[node name="PalmTree19" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0978, 4.76837e-06, 25.4048)
+
+[node name="PalmTree20" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8187, 4.76837e-06, 29.4865)
+
+[node name="PalmTree21" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.85369, 4.76837e-06, 25.4101)
+
+[node name="PalmTree22" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22632, 4.76837e-06, 29.6162)
+
+[node name="PalmTree23" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2904, 4.76837e-06, 27.2587)
+
+[node name="PalmTree24" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5305, 5.24521e-06, 25.7033)
+
+[node name="PalmTree25" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84278, 5.24521e-06, 34.1291)
+
+[node name="PalmTree26" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2888, 5.72205e-06, 27.3952)
+
+[node name="PalmTree27" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2561, 6.19888e-06, 31.4501)
+
+[node name="PalmTree28" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9961, 6.67572e-06, 28.4154)
+
+[node name="PalmTree29" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3853, 7.15256e-06, 11.9487)
+
+[node name="PalmTree30" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2768, 7.15256e-06, 17.4204)
+
+[node name="PalmTree31" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6555, 7.15256e-06, 20.8481)
+
+[node name="PalmTree32" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.541, 7.15256e-06, 8.89277)
+
+[node name="PalmTree33" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2534, 7.15256e-06, 3.31043)
+
+[node name="PalmTree34" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9781, 7.15256e-06, 3.95174)
+
+[node name="PalmTree35" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0464, 7.15256e-06, 7.19909)
+
+[node name="PalmTree36" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1519, 7.15256e-06, 7.27842)
+
+[node name="PalmTree37" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0186, 7.15256e-06, -8.73279)
+
+[node name="PalmTree38" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7292, 8.10623e-06, -12.9444)
+
+[node name="PalmTree39" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6879, 8.10623e-06, -20.0793)
+
+[node name="PalmTree40" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3178, 8.10623e-06, -13.7989)
+
+[node name="PalmTree41" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9483, 8.10623e-06, -19.2311)
+
+[node name="PalmTree42" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5825, 8.10623e-06, -26.0792)
+
+[node name="PalmTree43" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9093, 8.10623e-06, -28.4204)
+
+[node name="PalmTree44" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60452, 8.10623e-06, -28.7282)
+
+[node name="PalmTree45" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36632, 8.10623e-06, -24.0683)
+
+[node name="PalmTree46" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.18813, 8.58307e-06, -30.758)
+
+[node name="PalmTree47" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.33609, 8.10623e-06, -33.0492)
+
+[node name="PalmTree48" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.84837, 7.62939e-06, -25.3665)
+
+[node name="PalmTree49" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.977, 7.62939e-06, -29.2118)
+
+[node name="PalmTree50" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8442, 7.62939e-06, -26.0832)
+
+[node name="PalmTree51" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1039, 7.62939e-06, -22.2084)
+
+[node name="PalmTree52" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6076, 7.62939e-06, -16.4374)
+
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
 script = ExtResource("17_owi3h")

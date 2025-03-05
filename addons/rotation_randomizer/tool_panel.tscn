@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpkf2uqmsdngg"]
+
+[ext_resource type="Script" uid="uid://5klbu3mavhtn" path="res://addons/rotation_randomizer/tool_panel.gd" id="1_pjsel"]
+
+[node name="ToolPanel" type="HBoxContainer"]
+offset_right = 668.0
+offset_bottom = 46.0
+theme_override_constants/separation = 20
+script = ExtResource("1_pjsel")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Rotation Randomizer"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.601223, 0.601223, 0.601223, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "X"
+
+[node name="XSpinBox" type="SpinBox" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 360.0
+
+[node name="XRotateButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Rotate"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.601223, 0.601223, 0.601223, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "Y"
+
+[node name="YSpinBox" type="SpinBox" parent="HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 360.0
+
+[node name="YRotateButton" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "Rotate"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer3"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(0.601223, 0.601223, 0.601223, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+text = "Z"
+
+[node name="ZSpinBox" type="SpinBox" parent="HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 360.0
+
+[node name="ZRotateButton" type="Button" parent="HBoxContainer3"]
+layout_mode = 2
+text = "Rotate"
+
+[connection signal="pressed" from="HBoxContainer/XRotateButton" to="." method="_on_x_rotate_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/YRotateButton" to="." method="_on_y_rotate_button_pressed"]
+[connection signal="pressed" from="HBoxContainer3/ZRotateButton" to="." method="_on_z_rotate_button_pressed"]
