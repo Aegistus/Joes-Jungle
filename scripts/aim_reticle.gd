@@ -7,7 +7,7 @@ extends Node3D
 @onready var accuracy_indicator_left = $AccuracyIndicators/AccuracyIndicatorLeft as Node3D
 @onready var accuracy_indicator_right = $AccuracyIndicators/AccuracyIndicatorRight as Node3D
 
-var aim_move_speed := 1.0
+var aim_move_speed := .75
 var mouse_delta : Vector2
 
 const ACCURACY_DISTANCE_MAX = 3.0

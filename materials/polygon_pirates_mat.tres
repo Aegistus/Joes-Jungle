@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cdcmdqtrgcdgx"]
+
+[ext_resource type="Texture2D" uid="uid://62ob6g87c662" path="res://assets/textures/PolygonPirates_texture.png" id="1_ix4p1"]
+
+[resource]
+albedo_texture = ExtResource("1_ix4p1")

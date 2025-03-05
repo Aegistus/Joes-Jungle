@@ -15,7 +15,6 @@ const SHOP_MPX = preload("res://scenes/shops/shop_mpx.tscn")
 const SHOP_FLAMETHROWER = preload("res://scenes/shops/shop_flamethrower.tscn")
 const SHOP_SAURUS = preload("res://scenes/shops/shop_revolver.tscn")
 const PLAYER = preload("res://scenes/player.tscn")
-#const AIM_RETICLE = preload("res://scenes/aim_reticle.tscn")
 const PLAYER_UI = preload("res://scenes/ui/player_ui.tscn")
 const PAUSE_MENU = preload("res://scenes/ui/pause_menu.tscn")
 
@@ -56,8 +55,6 @@ func _ready():
 	var player = PLAYER.instantiate()
 	add_child(player)
 	player.global_transform.origin = player_spawn_point.global_position
-	#var aim_ret = AIM_RETICLE.instantiate()
-	#add_child(aim_ret)
 	var ui = PLAYER_UI.instantiate()
 	add_child(ui)
 	var pause_menu = PAUSE_MENU.instantiate()
