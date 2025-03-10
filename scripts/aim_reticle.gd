@@ -19,6 +19,5 @@ func _process(delta):
 				var distance = ACCURACY_DISTANCE_MAX - ((player.gun.current_accuracy / 100.0) * ACCURACY_DISTANCE_MAX)
 				accuracy_indicator_left.position.x = distance
 				accuracy_indicator_right.position.x = -distance
-		
 	else:
 		visible = false

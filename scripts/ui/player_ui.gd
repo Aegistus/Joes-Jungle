@@ -1,7 +1,7 @@
 extends Control
 
 @onready var interactable_tooltip = $CanvasLayer/InteractableTooltip
-@onready var tooltip_label = $CanvasLayer/InteractableTooltip/Label
+@onready var tooltip_label = $CanvasLayer/InteractableTooltip/Control/Label
 @onready var health_bar = $CanvasLayer/DamageBar/HealthBar
 @onready var damage_bar = $CanvasLayer/DamageBar
 
@@ -10,12 +10,15 @@ var player
 func _ready():
 	player = get_tree().get_first_node_in_group("player") as Player
 	player.health_update.connect(update_health)
+	player.on_interactable_change.connect(update_interactable_tooltip)
+	interactable_tooltip.visible = false
 	health_bar.value = 100
 
-func _process(delta):
-	if player.current_interactable != null:
-		interactable_tooltip.visible = true
+func update_interactable_tooltip(interactable):
+	print("TEST")
+	if interactable != null:
 		tooltip_label.text = player.current_interactable.tooltip_text
+		interactable_tooltip.visible = true
 	else:
 		interactable_tooltip.visible = false
 

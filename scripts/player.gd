@@ -4,6 +4,7 @@ extends CharacterBody3D
 signal health_update(health, max_health)
 signal on_equip_weapon(gun : Gun)
 signal on_pickup_weapon(gun : Gun)
+signal on_interactable_change(interactable)
 
 @export var invincible = false
 @export var turn_rate := 5.0
@@ -72,15 +73,18 @@ func _physics_process(delta):
 	# check interactable
 	var interactable = interact_raycast.get_collider()
 	if interactable != null:
-		if interactable.is_in_group("interactable"):
+		if interactable != current_interactable and interactable.get_parent() != current_interactable\
+		and interactable.is_in_group("interactable"):
 			current_interactable = interactable as Interactable
 			if current_interactable == null:
 				current_interactable = interactable.get_parent() as Interactable
 			print(current_interactable.name)
+			on_interactable_change.emit(current_interactable)
 	else:
 		if current_interactable != null:
 			current_interactable.interact_end()
 			current_interactable = null
+			on_interactable_change.emit(current_interactable)
 	if current_interactable != null:
 		if Input.is_action_just_pressed("interact"):
 			current_interactable.interact_start()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=57 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" uid="uid://dhvxghjderhca" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" uid="uid://bhtt1sssktmas" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://d2s154nhvnx2o" path="res://scripts/ui/weapon_stats_panel.gd" id="18_qi647"]
 [ext_resource type="FontFile" uid="uid://b1st00ad0rqs8" path="res://assets/fonts/f25_bank_printer/F25_Bank_Printer.ttf" id="18_t8k2g"]
 [ext_resource type="Script" uid="uid://4wj8ohm88myn" path="res://scripts/ui/build_menu.gd" id="21_wjrj5"]
+[ext_resource type="Script" uid="uid://nq54m5hv5482" path="res://scripts/ui/text_scrambler.gd" id="23_pfv2a"]
 [ext_resource type="Script" uid="uid://dl55cslha72tf" path="res://scripts/ui/intermission_timer.gd" id="23_wf65m"]
 [ext_resource type="AudioStream" uid="uid://wwkdoy6htlok" path="res://assets/audio/timer_ticking.mp3" id="24_luh10"]
 [ext_resource type="Script" uid="uid://bsevhajdgggki" path="res://scripts/ui/wave_announcer_ui.gd" id="24_ra6va"]
@@ -146,12 +147,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0ljnu")
 
-[node name="Label" type="Label" parent="CanvasLayer/InteractableTooltip"]
+[node name="Control" type="Control" parent="CanvasLayer/InteractableTooltip"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("23_pfv2a")
+
+[node name="Label" type="Label" parent="CanvasLayer/InteractableTooltip/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 5.0
+offset_right = 365.0
+offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_r7kat")
@@ -159,7 +168,7 @@ theme_override_font_sizes/font_size = 8
 text = "Hold E to water plant"
 vertical_alignment = 1
 
-[node name="KeyboardKey" type="PanelContainer" parent="CanvasLayer/InteractableTooltip"]
+[node name="KeyboardKey" type="PanelContainer" parent="CanvasLayer/InteractableTooltip/Control"]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 0
 offset_left = -30.0
@@ -168,7 +177,7 @@ offset_right = -5.0
 offset_bottom = 21.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kuq0p")
 
-[node name="KeyboardKey" type="Label" parent="CanvasLayer/InteractableTooltip/KeyboardKey"]
+[node name="KeyboardKey" type="Label" parent="CanvasLayer/InteractableTooltip/Control/KeyboardKey"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("14_sq8fp")
 theme_override_font_sizes/font_size = 12
@@ -544,6 +553,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("23_pfv2a")
 
 [node name="KeyboardKey" type="PanelContainer" parent="CanvasLayer/HolsteredWeaponUI/AmmoPanelUI"]
 custom_minimum_size = Vector2(35, 35)
@@ -584,6 +594,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("23_pfv2a")
 
 [node name="KeyboardKey" type="PanelContainer" parent="CanvasLayer/EnterBuildModeUI/HBox"]
 custom_minimum_size = Vector2(35, 35)
@@ -649,6 +660,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WeaponStatsPanel" type="Panel" parent="CanvasLayer"]
+visible = false
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -665,6 +677,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("23_pfv2a")
 
 [node name="GunNameLabel" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer"]
 unique_name_in_owner = true
@@ -861,15 +874,15 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -206.0
-offset_right = -39.0
-offset_bottom = 23.0
+offset_left = -207.0
+offset_top = 5.0
+offset_right = -40.0
+offset_bottom = 40.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("6_r7kat")
 text = "999
 "
 horizontal_alignment = 2
-vertical_alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/BuildMenu"]
 layout_mode = 1
@@ -938,6 +951,7 @@ offset_right = 1.0
 offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("23_pfv2a")
 
 [node name="KeyboardKey" type="PanelContainer" parent="CanvasLayer/IntermissionTimer/SkipIntermissionButton/HBox"]
 custom_minimum_size = Vector2(35, 35)
