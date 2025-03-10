@@ -1,14 +1,20 @@
 extends Control
 
 var scramble_chance = 1
-var unscrambled_labels : Array[Label]
+var shake_rate = 100
+var shake_level = 1
+var unscrambled_labels : Array[RichTextLabel]
+var regex : RegEx
 
 func _ready():
 	get_parent().visibility_changed.connect(on_show)
 	var all_children = get_all_children(self)
 	for child in all_children:
-		if child is Label:
+		if child is RichTextLabel:
+			(child as RichTextLabel).bbcode_enabled = true
 			unscrambled_labels.append(child)
+	regex = RegEx.new()
+	regex.compile("\\[.*?\\]")
 
 func on_show():
 	var remove_indexes : Array[int]
@@ -21,8 +27,8 @@ func on_show():
 	#for i in remove_indexes:
 		#unscrambled_labels.remove_at(i)
 
-func scramble_label(label : Label):
-	var starting_text = label.text
+func scramble_label(label : RichTextLabel):
+	var starting_text = regex.sub(label.text, "", true)
 	var scrambled_text = ""
 	var substrings = starting_text.split(" ")
 	for i in substrings.size():
@@ -35,11 +41,12 @@ func scramble(text : String) -> String:
 	if text.length() < 4:
 		return text
 	var i = 1
-	while i < text.length() - 1:
+	while i < text.length() - 2:
 		var temp = text[i]
 		text[i] = text[i + 1]
 		text[i + 1] = temp
 		i += 2
+	text = "[shake rate=" + str(shake_rate) + " level=" + str(shake_level) + "]" + text + "[/shake]"
 	return text
 
 func get_all_children(node) -> Array:

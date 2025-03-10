@@ -15,7 +15,6 @@ func _ready():
 	health_bar.value = 100
 
 func update_interactable_tooltip(interactable):
-	print("TEST")
 	if interactable != null:
 		tooltip_label.text = player.current_interactable.tooltip_text
 		interactable_tooltip.visible = true

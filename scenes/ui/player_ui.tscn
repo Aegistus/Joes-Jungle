@@ -153,7 +153,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("23_pfv2a")
 
-[node name="Label" type="Label" parent="CanvasLayer/InteractableTooltip/Control"]
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/InteractableTooltip/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -163,8 +163,8 @@ offset_right = 365.0
 offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_r7kat")
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/normal_font = ExtResource("18_t8k2g")
+theme_override_font_sizes/normal_font_size = 12
 text = "Hold E to water plant"
 vertical_alignment = 1
 
@@ -567,11 +567,11 @@ text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="WeaponName" type="Label" parent="CanvasLayer/HolsteredWeaponUI/AmmoPanelUI"]
+[node name="WeaponName" type="RichTextLabel" parent="CanvasLayer/HolsteredWeaponUI/AmmoPanelUI"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_r7kat")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/normal_font = ExtResource("18_t8k2g")
+theme_override_font_sizes/normal_font_size = 15
 text = " Pistol"
 vertical_alignment = 1
 
@@ -608,11 +608,11 @@ text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/EnterBuildModeUI/HBox"]
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/EnterBuildModeUI/HBox"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_r7kat")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/normal_font = ExtResource("18_t8k2g")
+theme_override_font_sizes/normal_font_size = 15
 text = " Enter Build Mode"
 vertical_alignment = 1
 
@@ -679,11 +679,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("23_pfv2a")
 
-[node name="GunNameLabel" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer"]
+[node name="GunNameLabel" type="RichTextLabel" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("18_t8k2g")
-theme_override_font_sizes/font_size = 10
+theme_override_fonts/normal_font = ExtResource("18_t8k2g")
+theme_override_font_sizes/normal_font_size = 12
 text = "Name"
 horizontal_alignment = 1
 
@@ -691,34 +692,39 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Damage"]
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Damage"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_r7kat")
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/normal_font = ExtResource("18_t8k2g")
+theme_override_font_sizes/normal_font_size = 10
 text = "Damage"
 horizontal_alignment = 2
 
 [node name="DamageLabel" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Damage"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(20, 0)
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("6_r7kat")
 theme_override_font_sizes/font_size = 8
 text = "1-2
 "
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="Accuracy" type="HBoxContainer" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Accuracy"]
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Accuracy"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_r7kat")
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/normal_font = ExtResource("18_t8k2g")
+theme_override_font_sizes/normal_font_size = 10
 text = "Accuracy"
 horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="AccuracyProgressBar" type="ProgressBar" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Accuracy"]
 unique_name_in_owner = true
@@ -740,13 +746,14 @@ text = "100"
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Recoil"]
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Recoil"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_r7kat")
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/normal_font = ExtResource("18_t8k2g")
+theme_override_font_sizes/normal_font_size = 10
 text = "Recoil"
 horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="RecoilProgressBar" type="ProgressBar" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Recoil"]
 unique_name_in_owner = true
@@ -768,13 +775,14 @@ text = "100"
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Ergonomics"]
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Ergonomics"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_r7kat")
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/normal_font = ExtResource("18_t8k2g")
+theme_override_font_sizes/normal_font_size = 10
 text = "Ergonomics"
 horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="ErgonomicsProgressBar" type="ProgressBar" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Ergonomics"]
 unique_name_in_owner = true
@@ -797,13 +805,14 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Penetration"]
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Penetration"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_r7kat")
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/normal_font = ExtResource("18_t8k2g")
+theme_override_font_sizes/normal_font_size = 10
 text = "Penetration"
 horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="PenetrationLabel" type="Label" parent="CanvasLayer/WeaponStatsPanel/VBoxContainer/Penetration"]
 custom_minimum_size = Vector2(20, 0)
