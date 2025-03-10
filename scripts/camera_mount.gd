@@ -4,26 +4,16 @@ extends Node3D
 @export var max_camera_distance: float = 10
 @export var directional_reference: Node3D
 
-var aim_reticle : Node3D
-var distance_offset = 4
-
-const CAM_MOVE_SPEED = 8.0
-const CAM_RESET_SPEED = 15.0
+const CAM_MOVE_SPEED = 5.0
 
 func _process(delta):
-	if aim_reticle == null:
-		aim_reticle = get_tree().get_first_node_in_group("aim_reticle")
-	if %AimStateMachine.current_state == %AimingState:
-		top_level = true
-		var total_distance = player.global_position.distance_to(aim_reticle.global_position)
-		
-		var ratio
-		if total_distance > distance_offset:
-			ratio = distance_offset / total_distance
-		else:
-			ratio = 1
-		var target_position = aim_reticle.global_position.lerp(player.global_position, ratio)
-		global_position = global_position.lerp(target_position, delta * CAM_MOVE_SPEED)
-	else:
-		top_level = false
-		position = position.lerp(Vector3.ZERO, delta * CAM_RESET_SPEED)
+	#var mouse_velocity = Input.get_last_mouse_velocity()
+	#if mouse_velocity.length() > 0:
+		#if position.distance_to(player.position) < max_camera_distance:
+			#var direction = (directional_reference.basis * Vector3(mouse_velocity.x, 0, mouse_velocity.y)).normalized()
+			#direction *= CAM_MOVE_SPEED * delta
+			#position += direction
+	#elif position.distance_to(player.position) > .01:
+		#var velocity = position.direction_to(player.position) * CAM_MOVE_SPEED * delta
+		#position += velocity
+	pass

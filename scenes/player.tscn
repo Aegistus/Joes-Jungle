@@ -989,7 +989,7 @@ directional_reference = NodePath("MainCamera/DirectionalReference")
 
 [node name="MainCamera" type="Camera3D" parent="CameraMount" groups=["camera"]]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866026, 0, -0.866025, 0.5, 0, 7, 4)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866026, 0, -0.866025, 0.5, 0, 7.5, 4)
 
 [node name="DirectionalReference" type="Node3D" parent="CameraMount/MainCamera"]
 unique_name_in_owner = true
