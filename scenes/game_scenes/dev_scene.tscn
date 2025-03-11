@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://d1otweixyixi3"]
+[gd_scene load_steps=39 format=4 uid="uid://d1otweixyixi3"]
 
 [ext_resource type="Script" uid="uid://dvi44v1xmi7ir" path="res://scripts/game_level.gd" id="1_jlul2"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_veg6g"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://rvebx7d8u8xm" path="res://scenes/shops/shop_aa12.tscn" id="25_yolw6"]
 [ext_resource type="PackedScene" uid="uid://det47gkltg7fa" path="res://scenes/shops/shop_ak47.tscn" id="26_htfvm"]
 [ext_resource type="PackedScene" uid="uid://b6mjww5vs5pl6" path="res://scenes/shops/shop_uzi.tscn" id="27_vfxh4"]
+[ext_resource type="PackedScene" uid="uid://b8gi7noqhm3jn" path="res://scenes/weapons/M4.tscn" id="27_x0erh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -913,5 +914,8 @@ item_cost = 0
 [node name="ShopUzi" parent="." instance=ExtResource("27_vfxh4")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.2, -0.1, -6.3)
 item_cost = 0
+
+[node name="M4" parent="." instance=ExtResource("27_x0erh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07892, 9.56655, -2.76188)
 
 [connection signal="timeout" from="ZombieSpawnPoints/IntermissionTimer" to="ZombieSpawnPoints" method="_on_timer_timeout"]
