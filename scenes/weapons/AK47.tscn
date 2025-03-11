@@ -330,7 +330,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("gun model/MuzzleFlash:visible")
+tracks/0/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model/MuzzleFlash:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -347,7 +347,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("gun model/MuzzleFlash:visible")
+tracks/0/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model/MuzzleFlash:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -370,106 +370,109 @@ streams_count = 1
 stream_0/stream = ExtResource("4_1fcr2")
 
 [node name="AK47" type="Node3D" node_paths=PackedStringArray("magazine")]
-transform = Transform3D(-0.0158893, 0.998441, -0.0535047, 0.126364, 0.0550876, 0.990453, 0.991857, 0.00897652, -0.127043, 0.0693423, 0.109169, -0.00295015)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_p7gvh")
 shot_delay = 0.1
 gun_name = "AK-47"
 min_damage = 8
 max_damage = 12
 gun_type = 2
-magazine = NodePath("gun model/Magazine")
+magazine = NodePath("gun model/AR/Magazine")
 magazine_scale = 75.0
 base_accuracy = 75
 base_recoil = 30
 base_ergonomics = 75
 
 [node name="gun model" type="Node3D" parent="."]
-transform = Transform3D(75, -4.47035e-08, 3.66374e-17, 4.47035e-08, 75, -2.51457e-07, 1.13243e-16, 2.51457e-07, 75, 0.0414493, 2.47057e-11, 5.45697e-10)
+transform = Transform3D(-0.20646, 0.976387, -0.0635812, 0.104035, 0.0865186, 0.990803, 0.972908, 0.197946, -0.119441, 0.0668306, 0.138261, 0.043304)
 
-[node name="AR_B_Receiver" type="MeshInstance3D" parent="gun model"]
+[node name="AR" type="Node3D" parent="gun model"]
+transform = Transform3D(75, -4.47035e-08, 3.66374e-17, 4.47035e-08, 75, -2.51457e-07, 1.13243e-16, 2.51457e-07, 75, 0, 0, 0)
+
+[node name="AR_B_Receiver" type="MeshInstance3D" parent="gun model/AR"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0.000515634, 0.00079767)
 material_override = SubResource("StandardMaterial3D_javnw")
 mesh = SubResource("ArrayMesh_wf6re")
 skeleton = NodePath("")
 
-[node name="AR_B_Stock" type="MeshInstance3D" parent="gun model"]
+[node name="AR_B_Stock" type="MeshInstance3D" parent="gun model/AR"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 1.56341e-05, -0.00144617)
 material_override = SubResource("StandardMaterial3D_javnw")
 mesh = SubResource("ArrayMesh_raphp")
 skeleton = NodePath("")
 
-[node name="AR_B_BarrelGuard" type="MeshInstance3D" parent="gun model"]
+[node name="AR_B_BarrelGuard" type="MeshInstance3D" parent="gun model/AR"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0.000515634, 0.00385117)
 material_override = SubResource("StandardMaterial3D_javnw")
 mesh = SubResource("ArrayMesh_uyr5j")
 skeleton = NodePath("")
 
-[node name="AR_B_Trigger" type="MeshInstance3D" parent="gun model"]
+[node name="AR_B_Trigger" type="MeshInstance3D" parent="gun model/AR"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 8.11313e-05, 0.000305116)
 material_override = SubResource("StandardMaterial3D_javnw")
 mesh = SubResource("ArrayMesh_bcxg5")
 skeleton = NodePath("")
 
-[node name="AR_B_Grip" type="MeshInstance3D" parent="gun model"]
+[node name="AR_B_Grip" type="MeshInstance3D" parent="gun model/AR"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, -0.000473632, -0.000398827)
 material_override = SubResource("StandardMaterial3D_javnw")
 mesh = SubResource("ArrayMesh_duyst")
 skeleton = NodePath("")
 
-[node name="AR_B_Barrel" type="MeshInstance3D" parent="gun model"]
+[node name="AR_B_Barrel" type="MeshInstance3D" parent="gun model/AR"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0.0004675, 0.005305)
 material_override = SubResource("StandardMaterial3D_javnw")
 mesh = SubResource("ArrayMesh_d1fwv")
 skeleton = NodePath("")
 
-[node name="AR_B_Bolt" type="MeshInstance3D" parent="gun model"]
+[node name="AR_B_Bolt" type="MeshInstance3D" parent="gun model/AR"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0.000588632, 0.002285)
 material_override = SubResource("StandardMaterial3D_javnw")
 mesh = SubResource("ArrayMesh_qh4xk")
 skeleton = NodePath("")
 
-[node name="AR_B_Rail" type="MeshInstance3D" parent="gun model"]
+[node name="AR_B_Rail" type="MeshInstance3D" parent="gun model/AR"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0.00065, 0.0003875)
 material_override = SubResource("StandardMaterial3D_javnw")
 mesh = SubResource("ArrayMesh_i433i")
 skeleton = NodePath("")
 
-[node name="Magazine" type="RigidBody3D" parent="gun model"]
+[node name="Magazine" type="RigidBody3D" parent="gun model/AR"]
 transform = Transform3D(1, 1.86265e-09, -1.49012e-08, 9.31323e-10, 1, 9.31323e-10, 1.49012e-08, 1.01281e-08, 1, 0, 0, 0)
 collision_layer = 4
 collision_mask = 7
 freeze = true
 
-[node name="AR_B_Mag" type="MeshInstance3D" parent="gun model/Magazine"]
+[node name="AR_B_Mag" type="MeshInstance3D" parent="gun model/AR/Magazine"]
 transform = Transform3D(1, -1.86265e-09, -1.49012e-08, 0, 1, -4.31901e-08, 2.98023e-08, 3.85335e-08, 1, 0, -0.000457786, 0.00167617)
 material_override = SubResource("StandardMaterial3D_javnw")
 mesh = SubResource("ArrayMesh_rrr5m")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="gun model/Magazine"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gun model/AR/Magazine"]
 transform = Transform3D(0.0100007, 3.2247e-08, -2.66591e-08, 5.82077e-10, 0.00903948, 0.00427657, 1.03842e-07, -0.00427643, 0.00903988, 1.87943e-05, -0.000731054, 0.00183951)
 shape = SubResource("BoxShape3D_6j2ni")
 
-[node name="MuzzleFlash" type="Node3D" parent="gun model"]
+[node name="MuzzleFlash" type="Node3D" parent="gun model/AR"]
 unique_name_in_owner = true
 transform = Transform3D(0.0012, -3.63798e-12, -3.46945e-18, -9.09495e-13, -0.0012, -1.01042e-10, 1.45519e-11, 1.19232e-10, -0.0012, -2.97864e-05, 0.000297938, 0.00847466)
 
-[node name="MuzzleFlash" type="Sprite3D" parent="gun model/MuzzleFlash"]
+[node name="MuzzleFlash" type="Sprite3D" parent="gun model/AR/MuzzleFlash"]
 transform = Transform3D(8.9407e-08, 0.029958, 0.499102, 0.0299581, 0.498205, -0.0299042, -0.499102, 0.0299043, -0.00179489, 0.0295942, -0.163949, -0.792864)
 texture = ExtResource("3_qvmpy")
 
-[node name="MuzzleFlash2" type="Sprite3D" parent="gun model/MuzzleFlash"]
+[node name="MuzzleFlash2" type="Sprite3D" parent="gun model/AR/MuzzleFlash"]
 transform = Transform3D(5.96046e-08, -0.499102, 0.0299578, 0.0214346, 0.0299303, 0.498643, -0.49954, 0.00128421, 0.0213961, 0.0406712, -0.084515, -0.674623)
 texture = ExtResource("3_qvmpy")
 
-[node name="MuzzleFlashLight" type="OmniLight3D" parent="gun model/MuzzleFlash"]
+[node name="MuzzleFlashLight" type="OmniLight3D" parent="gun model/AR/MuzzleFlash"]
 light_color = Color(0.922285, 0.920269, 7.70092e-07, 1)
 light_energy = 4.0
 omni_range = 10.0
 
 [node name="RaycastParent" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999781, -0.0209424, 1.86265e-09, -9.31323e-10, 1.38243e-07, 1, -0.0209424, -0.99978, 1.21421e-07, 0.118127, 0.0444788, 0.465398)
+transform = Transform3D(0.998056, 0.0588188, -0.0206145, 0.0562385, -0.992455, -0.108948, -0.0268672, 0.107577, -0.993834, 0.109363, 0.202098, 0.0470356)
 
 [node name="RayCast3D" type="RayCast3D" parent="RaycastParent"]
 target_position = Vector3(0, -100, 0)
