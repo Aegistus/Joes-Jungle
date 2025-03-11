@@ -13,8 +13,11 @@ signal on_barricade_added(barricade : Node3D)
 signal on_barricade_destroyed
 signal on_killstreak_updated(current_killstreak)
 
+@export var insanity_increase_curve : Curve
+
 const SAVE_FILE_PATH = "user://savegame.dat"
 const BUCKS_PER_KILLSTREAK_KILL = 10
+const TIME_UNTIL_MAX_INSANITY := 60.0
 
 var currently_in_wave = false
 var current_wave : int = 0
@@ -24,6 +27,11 @@ var current_points = 0
 var current_scrap = 0
 var is_game_running = false
 var current_killstreak = 0
+## Value between zero and one that represents how insane the player currently is.
+var current_insanity:
+	get:
+		var percent_dist = run_time / TIME_UNTIL_MAX_INSANITY
+		return insanity_increase_curve.sample(percent_dist)
 
 var cause_of_death : CauseOfDeath
 var zombie_death_text : Array[String] = ["Being Too Tasty for Your Own Good",\

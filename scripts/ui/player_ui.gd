@@ -16,6 +16,7 @@ func _ready():
 
 func update_interactable_tooltip(interactable):
 	if interactable != null:
+		interactable_tooltip.visible = false
 		tooltip_label.text = player.current_interactable.tooltip_text
 		interactable_tooltip.visible = true
 	else:

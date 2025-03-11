@@ -1,8 +1,14 @@
 extends Control
 
-var scramble_chance = 1
 var shake_rate = 100
-var shake_level = 1
+var max_scramble_chance = 1
+var scramble_chance:
+	get:
+		return GameManager.current_insanity * max_scramble_chance
+var max_shake_level = 15
+var current_shake_level:
+	get:
+		return GameManager.current_insanity * max_shake_level
 var unscrambled_labels : Array[RichTextLabel]
 var regex : RegEx
 
@@ -46,7 +52,7 @@ func scramble(text : String) -> String:
 		text[i] = text[i + 1]
 		text[i + 1] = temp
 		i += 2
-	text = "[shake rate=" + str(shake_rate) + " level=" + str(shake_level) + "]" + text + "[/shake]"
+	text = "[shake rate=" + str(shake_rate) + " level=" + str(current_shake_level) + "]" + text + "[/shake]"
 	return text
 
 func get_all_children(node) -> Array:

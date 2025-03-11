@@ -594,7 +594,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("23_pfv2a")
 
 [node name="KeyboardKey" type="PanelContainer" parent="CanvasLayer/EnterBuildModeUI/HBox"]
 custom_minimum_size = Vector2(35, 35)
