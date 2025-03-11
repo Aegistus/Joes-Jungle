@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://clad71x6nip3w"]
+[gd_scene load_steps=24 format=3 uid="uid://clad71x6nip3w"]
 
 [ext_resource type="Script" uid="uid://dvi44v1xmi7ir" path="res://scripts/game_level.gd" id="1_kgqy7"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="2_pl2ao"]
@@ -6,11 +6,15 @@
 [ext_resource type="Material" uid="uid://cqmfgyapl3iyx" path="res://materials/brick_mat.tres" id="4_jyib5"]
 [ext_resource type="PackedScene" uid="uid://bqrn1mssks6mm" path="res://scenes/testing/zombie_holder.tscn" id="5_xrum5"]
 [ext_resource type="PackedScene" uid="uid://cqkrsucbenoss" path="res://scenes/enemies/zombie.tscn" id="6_hpolm"]
+[ext_resource type="PackedScene" uid="uid://rvebx7d8u8xm" path="res://scenes/shops/shop_aa12.tscn" id="10_mqw12"]
+[ext_resource type="PackedScene" uid="uid://det47gkltg7fa" path="res://scenes/shops/shop_ak47.tscn" id="11_dn3mj"]
+[ext_resource type="PackedScene" uid="uid://d2t1be5npyy0h" path="res://scenes/shops/shop_flamethrower.tscn" id="13_pm1eq"]
 [ext_resource type="PackedScene" uid="uid://cwp0spuqeu7jj" path="res://scenes/scenery/watering_bush.tscn" id="14_itv31"]
 [ext_resource type="PackedScene" uid="uid://dsxmj3jw6gqcd" path="res://scenes/shops/shop_revolver.tscn" id="14_kycbe"]
 [ext_resource type="PackedScene" uid="uid://c0j4glofdqgpk" path="res://scenes/shops/fruit_punch_bowl.tscn" id="15_vspmv"]
 [ext_resource type="PackedScene" uid="uid://22lknia5oy4" path="res://scenes/shops/shop_saw.tscn" id="16_5epp3"]
 [ext_resource type="PackedScene" uid="uid://c7baeq2p0p2hk" path="res://scenes/shops/shop_m4.tscn" id="17_b5imc"]
+[ext_resource type="PackedScene" uid="uid://b6mjww5vs5pl6" path="res://scenes/shops/shop_uzi.tscn" id="18_2182a"]
 [ext_resource type="PackedScene" uid="uid://ddgpevn3nkya1" path="res://scenes/shops/shop_benelli.tscn" id="18_rw0w1"]
 [ext_resource type="PackedScene" uid="uid://buup8044hp4ox" path="res://scenes/shops/shop_mpx.tscn" id="19_a8gam"]
 [ext_resource type="PackedScene" uid="uid://d4jtl2hk346is" path="res://scenes/shops/ammo_box.tscn" id="20_ou4ey"]
@@ -189,22 +193,6 @@ transform = Transform3D(1, 1.45519e-11, -5.82077e-11, -1.40972e-11, 1, -1.74623e
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.75074, -0.0999999, -7.28617)
 item_cost = 10
 
-[node name="ShopLMG" parent="." instance=ExtResource("16_5epp3")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.7, 0, -1.7)
-item_cost = 0
-
-[node name="ShopRifle" parent="." instance=ExtResource("17_b5imc")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.7, 0, -3.90411)
-item_cost = 0
-
-[node name="ShopShotgun" parent="." instance=ExtResource("18_rw0w1")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.7, 0, -6.36613)
-item_cost = 0
-
-[node name="ShopSMG" parent="." instance=ExtResource("19_a8gam")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.7, 0, -8.41712)
-item_cost = 0
-
 [node name="AmmoBox" parent="." instance=ExtResource("20_ou4ey")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.46286, 0, -1.2695)
 ammo_cost = 0
@@ -257,6 +245,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2, -0.1, -19.1)
 id = 2
 max_water = 10000.0
 
+[node name="ShopAA12" parent="." instance=ExtResource("10_mqw12")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 5, -0.0178627, -1)
+item_cost = 0
+
+[node name="ShopAK47" parent="." instance=ExtResource("11_dn3mj")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.92688, -0.0537827, -2.96523)
+item_cost = 0
+
+[node name="ShopShotgun" parent="." instance=ExtResource("18_rw0w1")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.94961, 0.0530473, -5.30363)
+item_cost = 0
+
+[node name="ShopFlamethrower" parent="." instance=ExtResource("13_pm1eq")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.96707, -0.0670034, -7.36666)
+item_cost = 0
+
+[node name="ShopRifle" parent="." instance=ExtResource("17_b5imc")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.9621, 9.25064e-05, -9.56401)
+item_cost = 0
+
+[node name="ShopSMG" parent="." instance=ExtResource("19_a8gam")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.93984, -0.0506023, -11.9018)
+item_cost = 0
+
 [node name="ShopRevolver" parent="." instance=ExtResource("14_kycbe")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.63386, -0.1, -10.6274)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.91428, -0.0392005, -14.1623)
+item_cost = 0
+
+[node name="ShopLMG" parent="." instance=ExtResource("16_5epp3")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.91618, -0.043112, -16.0279)
+item_cost = 0
+
+[node name="ShopUzi" parent="." instance=ExtResource("18_2182a")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.93475, -0.0541603, -18.0241)
 item_cost = 0
