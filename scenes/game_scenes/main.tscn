@@ -53,7 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://c88hfjhnwtlme" path="res://scenes/scenery/table_02.tscn" id="47_hks2b"]
 [ext_resource type="PackedScene" uid="uid://bvqyai4c6uqv1" path="res://scenes/scenery/table_small_01.tscn" id="48_rxix5"]
 [ext_resource type="PackedScene" uid="uid://dhopuen2h0u8k" path="res://scenes/scenery/flowers_02.tscn" id="52_ecnfp"]
-[ext_resource type="Script" uid="uid://pvr82uxdplva" path="res://scripts/foliage_advancer.gd" id="52_pgrms"]
+[ext_resource type="Script" uid="uid://pvr82uxdplva" path="res://scripts/insanity/foliage_advancer.gd" id="52_pgrms"]
 [ext_resource type="PackedScene" uid="uid://u6csfcbqk2xx" path="res://scenes/scenery/fern_01.tscn" id="53_mnuk6"]
 [ext_resource type="PackedScene" uid="uid://bqnhxd1ps2to8" path="res://scenes/scenery/grass_01.tscn" id="54_s32x4"]
 [ext_resource type="PackedScene" uid="uid://dr3n3rrx7wart" path="res://scenes/scenery/grass_02.tscn" id="55_w1nm1"]
