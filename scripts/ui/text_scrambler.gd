@@ -11,6 +11,7 @@ var current_shake_level:
 		return GameManager.current_insanity * max_shake_level
 var unscrambled_labels : Array[RichTextLabel]
 var regex : RegEx
+var individual_char_scramble_chance = .5
 
 func _ready():
 	get_parent().visibility_changed.connect(on_show)
@@ -48,9 +49,11 @@ func scramble(text : String) -> String:
 		return text
 	var i = 1
 	while i < text.length() - 2:
-		var temp = text[i]
-		text[i] = text[i + 1]
-		text[i + 1] = temp
+		var chance = randf()
+		if chance < individual_char_scramble_chance:
+			var temp = text[i]
+			text[i] = text[i + 1]
+			text[i + 1] = temp
 		i += 2
 	text = "[shake rate=" + str(shake_rate) + " level=" + str(current_shake_level) + "]" + text + "[/shake]"
 	return text
