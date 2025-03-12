@@ -534,7 +534,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("gun model:position")
+tracks/0/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -546,7 +546,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("gun model:rotation")
+tracks/1/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -563,7 +563,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("gun model:position")
+tracks/0/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -575,7 +575,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("gun model:rotation")
+tracks/1/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -598,14 +598,14 @@ streams_count = 1
 stream_0/stream = ExtResource("4_fxorh")
 
 [node name="MPX" type="Node3D" node_paths=PackedStringArray("magazine")]
-transform = Transform3D(-0.00381118, 0.99669, -0.0812056, 0.10236, 0.0811684, 0.99143, 0.994741, -0.00453367, -0.10233, -0.229265, 0.0438833, 0.0206081)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_abj7n")
 shot_delay = 0.07
 gun_name = "MPX Suppressed"
 min_damage = 3
 max_damage = 6
 gun_type = 2
-magazine = NodePath("gun model/Magazine")
+magazine = NodePath("gun model/model/Magazine")
 magazine_scale = 80.0
 base_accuracy = 75
 base_recoil = 10
@@ -614,117 +614,120 @@ reload_anim_speed_modifier = 1.2
 reload_move_speed_modifier = 1.2
 
 [node name="gun model" type="Node3D" parent="."]
-transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0.0239423, 0.259269, 0.0324934)
+transform = Transform3D(-0.0106805, 0.996509, -0.0828093, 0.0815224, 0.0834061, 0.993176, 0.996615, 0.00385676, -0.0821285, 0.0418162, 0.111169, 0.0571742)
 
-[node name="SMG_J_Receiver_Down" type="MeshInstance3D" parent="gun model"]
+[node name="model" type="Node3D" parent="gun model"]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0, 0, 0)
+
+[node name="SMG_J_Receiver_Down" type="MeshInstance3D" parent="gun model/model"]
 transform = Transform3D(1, 4.65661e-10, 1.11759e-08, 0, 1, -1.55589e-07, 1.11759e-08, 1.80531e-07, 1, -5.82077e-11, 0.000288, 0.000413)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_baly5")
 skeleton = NodePath("")
 
-[node name="SMG_J_Receiver_Up" type="MeshInstance3D" parent="gun model"]
+[node name="SMG_J_Receiver_Up" type="MeshInstance3D" parent="gun model/model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, 0, 0.000788, 0.001338)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_pxkq5")
 skeleton = NodePath("")
 
-[node name="SMG_J_Grip" type="MeshInstance3D" parent="gun model"]
+[node name="SMG_J_Grip" type="MeshInstance3D" parent="gun model/model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, -5.82077e-11, -0.000187, -0.000212)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_27lq3")
 skeleton = NodePath("")
 
-[node name="SMG_J_Barrel" type="MeshInstance3D" parent="gun model"]
+[node name="SMG_J_Barrel" type="MeshInstance3D" parent="gun model/model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, 0, 0.000713, 0.003188)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_jyy6l")
 skeleton = NodePath("")
 
-[node name="SMG_J_Trigger" type="MeshInstance3D" parent="gun model"]
+[node name="SMG_J_Trigger" type="MeshInstance3D" parent="gun model/model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, 0, 2.85218e-09, 0.000363)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_22and")
 skeleton = NodePath("")
 
-[node name="SMG_J_Stock" type="MeshInstance3D" parent="gun model"]
+[node name="SMG_J_Stock" type="MeshInstance3D" parent="gun model/model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, 0, 0.000838, -0.001112)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_jm1fl")
 skeleton = NodePath("")
 
-[node name="SMG_J_Stock_Part" type="MeshInstance3D" parent="gun model/SMG_J_Stock"]
+[node name="SMG_J_Stock_Part" type="MeshInstance3D" parent="gun model/model/SMG_J_Stock"]
 transform = Transform3D(1, 0, 0, 0, 1, 1.19209e-07, 0, -1.19209e-07, 1, 0, -1.01896e-10, -0.0018)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_i4xl4")
 skeleton = NodePath("")
 
-[node name="SMG_J_Sight_Back" type="MeshInstance3D" parent="gun model"]
+[node name="SMG_J_Sight_Back" type="MeshInstance3D" parent="gun model/model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, 0, 0.001275, -0.000162)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_i3dnc")
 skeleton = NodePath("")
 
-[node name="SMG_f_Sight_Back_Part" type="MeshInstance3D" parent="gun model/SMG_J_Sight_Back"]
+[node name="SMG_f_Sight_Back_Part" type="MeshInstance3D" parent="gun model/model/SMG_J_Sight_Back"]
 transform = Transform3D(1, 3.52901e-24, 2.66433e-31, -3.52901e-24, 1, 1.19209e-07, 1.54258e-31, -1.19209e-07, 1, 0, 0.0001625, -9.25e-05)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_llfvm")
 skeleton = NodePath("")
 
-[node name="SMG_J_Sight_Front" type="MeshInstance3D" parent="gun model"]
+[node name="SMG_J_Sight_Front" type="MeshInstance3D" parent="gun model/model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, 0, 0.001275, 0.003763)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_33ow2")
 skeleton = NodePath("")
 
-[node name="SMG_J_Sight_Front_Part" type="MeshInstance3D" parent="gun model/SMG_J_Sight_Front"]
+[node name="SMG_J_Sight_Front_Part" type="MeshInstance3D" parent="gun model/model/SMG_J_Sight_Front"]
 transform = Transform3D(1, -7.40542e-24, 2.22045e-16, -1.90644e-23, 1, 1.19209e-07, -2.22045e-16, -1.19209e-07, 1, 0, 0.0001625, -0.0001175)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_nefry")
 skeleton = NodePath("")
 
-[node name="SMG_J_Bolt" type="MeshInstance3D" parent="gun model"]
+[node name="SMG_J_Bolt" type="MeshInstance3D" parent="gun model/model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, -5.82077e-11, 0.001195, -0.000699)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_h0ksh")
 skeleton = NodePath("")
 
-[node name="SMG_J_Muzzle" type="MeshInstance3D" parent="gun model"]
+[node name="SMG_J_Muzzle" type="MeshInstance3D" parent="gun model/model"]
 transform = Transform3D(1, 4.65661e-10, 3.72529e-09, 0, 1, -1.55589e-07, 3.72529e-09, 1.7308e-07, 1, -5.82077e-11, 0.000713, 0.004626)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_1l0xi")
 skeleton = NodePath("")
 
-[node name="Muzzle_Suppressor_H" type="Node3D" parent="gun model"]
+[node name="Muzzle_Suppressor_H" type="Node3D" parent="gun model/model"]
 transform = Transform3D(1, 4.65661e-10, 1.11759e-08, -9.31323e-10, 1, 8.14907e-10, 0, 1.61235e-08, 1, 0, 0.000715984, 0.0046452)
 
-[node name="Muzzle_Suppressor_H" type="MeshInstance3D" parent="gun model/Muzzle_Suppressor_H"]
+[node name="Muzzle_Suppressor_H" type="MeshInstance3D" parent="gun model/model/Muzzle_Suppressor_H"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0, 0)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_0qhxe")
 skeleton = NodePath("")
 
-[node name="Laser_A_Left" parent="gun model" instance=ExtResource("3_cl058")]
+[node name="Laser_A_Left" parent="gun model/model" instance=ExtResource("3_cl058")]
 transform = Transform3D(1, -4.76837e-10, -3.8147e-09, 4.76837e-10, 1, -1.0848e-08, 3.8147e-09, 1.0848e-08, 1, 0.00032815, 0.00075599, 0.00380184)
 
-[node name="Magazine" type="RigidBody3D" parent="gun model"]
+[node name="Magazine" type="RigidBody3D" parent="gun model/model"]
 transform = Transform3D(1, 0, -1.86265e-09, 4.65661e-10, 1, 1.37661e-08, -1.86265e-09, -1.13505e-09, 1, 5.82077e-11, 0, 0.00145194)
 collision_layer = 4
 collision_mask = 7
 freeze = true
 
-[node name="SMG_J_Mag" type="MeshInstance3D" parent="gun model/Magazine"]
+[node name="SMG_J_Mag" type="MeshInstance3D" parent="gun model/model/Magazine"]
 transform = Transform3D(1, 4.65661e-10, 7.45058e-09, 0, 1, -1.48168e-07, 1.11759e-08, 1.80531e-07, 1, -3.68446e-12, -0.000462, -8.30819e-05)
 material_override = ExtResource("2_5cyhq")
 mesh = SubResource("ArrayMesh_c655b")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="gun model/Magazine"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gun model/model/Magazine"]
 transform = Transform3D(0.0999844, 8.44834e-05, 0.00176593, -0.00048944, 0.0973045, 0.0230563, -0.00169885, -0.0230613, 0.0972897, -1.40702e-05, -0.00117328, 0.000232508)
 shape = SubResource("BoxShape3D_p6yd2")
 
 [node name="RaycastParent" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999976, 0.00698126, 3.05161e-10, 0, -4.37114e-08, 1, 0.00698126, -0.999976, -4.37103e-08, 0.0613041, 0.284005, 0.324866)
+transform = Transform3D(-0.0142424, 0.0584775, 0.998188, 0.107621, -0.9924, 0.059674, 0.994091, 0.108275, 0.00784075, 0.0418556, 0.406655, 0.0704929)
 
 [node name="RayCast3D" type="RayCast3D" parent="RaycastParent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000790462, -0.00988328, 0.0351841)

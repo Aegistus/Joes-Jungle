@@ -370,7 +370,6 @@ streams_count = 1
 stream_0/stream = ExtResource("4_1fcr2")
 
 [node name="AK47" type="Node3D" node_paths=PackedStringArray("magazine")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_p7gvh")
 shot_delay = 0.1
 gun_name = "AK-47"

@@ -439,7 +439,6 @@ streams_count = 1
 stream_0/stream = ExtResource("6_r8h1g")
 
 [node name="AA12" type="Node3D" node_paths=PackedStringArray("magazine")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_723u3")
 gun_name = "AA-12"
 min_damage = 4
