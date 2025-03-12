@@ -368,7 +368,6 @@ streams_count = 1
 stream_0/stream = ExtResource("9_vpbks")
 
 [node name="SaurusRevolver" type="Node3D"]
-transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0.110825, 0.0540304)
 script = ExtResource("1_63uvw")
 gun_name = "Saurus Revolver"
 min_damage = 9
@@ -381,7 +380,7 @@ base_ergonomics = 75
 base_penetration = 2
 
 [node name="gun model" type="Node3D" parent="."]
-transform = Transform3D(-8.72612e-05, 1997.74, -95.1195, -226.406, 94.508, 1984.9, 1987.14, 10.7679, 226.15, 1.50345, 0.550427, -3.11682e-08)
+transform = Transform3D(-1.77773, 99.9739, -1.43399, -9.76776, 1.25368, 99.5149, 99.5059, 1.90915, 9.74302, 0.0526932, 0.146489, 0.0471785)
 
 [node name="Pistol_G_BarrelGuard" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0.000542857, 0.00171429)
@@ -448,17 +447,16 @@ light_color = Color(0.922285, 0.920269, 7.70092e-07, 1)
 
 [node name="RaycastParent" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.00568489, 0.0344775, 0.999389, -0.113134, -0.992967, 0.0348995, 0.993564, -0.113264, -0.00174432, 2.38907, 6.28183, 1.54686)
+transform = Transform3D(0.00568489, 0.0344775, 0.999389, -0.113134, -0.992967, 0.0348995, 0.993564, -0.113264, -0.00174432, 0.0999746, 0.419022, 0.0733424)
 
 [node name="RayCast" type="RayCast3D" parent="RaycastParent"]
-transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)
 target_position = Vector3(0, -1000, 0)
 collision_mask = 67
 collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_m1fgx")
+&"": SubResource("AnimationLibrary_m1fgx")
 }
 
 [node name="ShellEjector" type="Node3D" parent="."]

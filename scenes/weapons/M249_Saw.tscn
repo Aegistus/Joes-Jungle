@@ -356,7 +356,7 @@ shape = SubResource("BoxShape3D_0hudy")
 
 [node name="RaycastParent" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999986, 0.00522879, 0.000274029, 0.00523, -0.994983, -0.0999095, -0.000249751, 0.0999097, -0.994996, 0.0824271, 0.311686, 0.0207122)
+transform = Transform3D(0.998153, 0.060355, 0.00694671, 0.0607467, -0.9932, -0.0993197, 0.000905025, 0.0995583, -0.995031, 0.0824271, 0.311686, 0.0207122)
 
 [node name="RayCast3D" type="RayCast3D" parent="RaycastParent"]
 target_position = Vector3(0, -200, 0)
