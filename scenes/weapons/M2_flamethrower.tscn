@@ -152,7 +152,7 @@ stream_2/stream = ExtResource("6_5mfw0")
 stream_3/stream = ExtResource("7_8rt1w")
 
 [node name="M2Flamethrower" type="Node3D"]
-transform = Transform3D(-0.00218776, 0.999924, 0.0121729, -0.108152, 0.011865, -0.994064, -0.994132, -0.00349132, 0.108119, 0.0125365, 0.295159, 0.178612)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_m7ukc")
 light_color = Color(0.900495, 0.485923, 0.150973, 1)
 gun_name = "M2 Flamethrower"
@@ -161,7 +161,7 @@ reload_anim_speed_modifier = 0.7
 reload_move_speed_modifier = 0.5
 
 [node name="gun_model" type="Node3D" parent="."]
-transform = Transform3D(-0.119894, -0.000693307, -0.00499201, -0.00058581, 0.119971, -0.00259239, 0.00500577, -0.00256574, -0.119868, 0.157082, 0.0176355, -0.13817)
+transform = Transform3D(-0.00547185, 0.119692, -0.00663789, 0.0104992, 0.00709781, 0.119329, 0.119414, 0.0048605, -0.0107959, 0.0279816, 0.44846, 0.0292463)
 
 [node name="SM_Wep_FlameThrower_Handle_01" type="MeshInstance3D" parent="gun_model"]
 material_override = SubResource("StandardMaterial3D_ptlcp")
