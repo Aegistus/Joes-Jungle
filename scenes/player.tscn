@@ -12,7 +12,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://ckpcjepwfvaok" path="res://assets/animations/libraries/Michael Misc.res" id="5_cv0v5"]
 [ext_resource type="PackedScene" uid="uid://egau4xfffmk8" path="res://scenes/weapons/build_gun.tscn" id="5_hif0p"]
 [ext_resource type="AnimationLibrary" uid="uid://7frjr3q8mcex" path="res://assets/animations/libraries/Michael Pistol.res" id="6_7v3rf"]
-[ext_resource type="PackedScene" uid="uid://c6ecwjphk3ure" path="res://scenes/weapons/suppressed_mpx.tscn" id="6_bj30b"]
+[ext_resource type="PackedScene" uid="uid://bueq4gel4jfax" path="res://scenes/weapons/uzi.tscn" id="6_bj30b"]
 [ext_resource type="AnimationLibrary" uid="uid://bnlabos6fsi8u" path="res://assets/animations/libraries/Michael Build.res" id="6_ma1ls"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://c4e5wj28gmxw3" path="res://assets/animations/trees/pistol_blend_tree.tres" id="6_o7fui"]
 [ext_resource type="PackedScene" uid="uid://oii8bwkvvqje" path="res://scenes/weapons/flamethrower_tank.tscn" id="6_qhwyx"]
@@ -887,7 +887,8 @@ visible = false
 [node name="Britta6-1" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("4_p3ook")]
 visible = false
 
-[node name="MPX" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("6_bj30b")]
+[node name="Uzi" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("6_bj30b")]
+gun_type = 2
 
 [node name="LeftHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
 transform = Transform3D(-0.747873, -0.66349, 0.0216281, 0.0101638, 0.0211319, 0.999725, -0.663764, 0.747887, -0.00906041, -0.0617188, 1.40535, 0.505493)

@@ -233,7 +233,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("gun model/MuzzleFlash:visible")
+tracks/0/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model/MuzzleFlash:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -245,7 +245,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("gun model:rotation")
+tracks/1/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -257,7 +257,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("gun model/Uzi/Bolt:position")
+tracks/2/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model/Uzi/Bolt:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -274,7 +274,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("gun model/MuzzleFlash:visible")
+tracks/0/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model/MuzzleFlash:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -286,7 +286,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("gun model:rotation")
+tracks/1/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -298,7 +298,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("gun model/Uzi/Bolt:position")
+tracks/2/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model/Uzi/Bolt:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -321,13 +321,13 @@ streams_count = 1
 stream_0/stream = ExtResource("4_f2vbi")
 
 [node name="Uzi" type="Node3D" node_paths=PackedStringArray("magazine")]
-transform = Transform3D(-0.0142298, 0.999444, 0.0301572, 0.119281, 0.0316417, -0.992356, -0.992759, -0.0105238, -0.119665, 0.109773, 0.0701142, 0.0299876)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_airo0")
 shot_delay = 0.063
 gun_name = "Uzi"
 min_damage = 5
 max_damage = 7
-magazine = NodePath("gun model/Uzi/Magazine")
+magazine = NodePath("gun model/model/Uzi/Magazine")
 magazine_scale = 0.06
 base_accuracy = 75
 base_recoil = 20
@@ -336,67 +336,70 @@ reload_anim_speed_modifier = 1.2
 reload_move_speed_modifier = 1.2
 
 [node name="gun model" type="Node3D" parent="."]
-transform = Transform3D(0.06, 5.58794e-11, -4.13081e-19, -5.58794e-11, 0.06, -4.43542e-10, -2.48154e-25, 4.43542e-10, 0.06, 0, 0, 0)
+transform = Transform3D(-4.36158e-08, 0.997813, 0.0660997, -0.0360856, 0.0660566, -0.997163, -0.999349, -0.00238529, 0.0360067, 0.0922785, 0.0884608, 0.0225395)
 
-[node name="Uzi" type="MeshInstance3D" parent="gun model"]
+[node name="model" type="Node3D" parent="gun model"]
+transform = Transform3D(0.07, 6.51926e-11, -4.81928e-19, -6.51926e-11, 0.07, -5.17466e-10, -3.47416e-25, 5.17466e-10, 0.07, 0, 0, 0)
+
+[node name="Uzi" type="MeshInstance3D" parent="gun model/model"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4805, -0.317955)
 mesh = SubResource("ArrayMesh_bfbx0")
 skeleton = NodePath("")
 
-[node name="Trigger" type="MeshInstance3D" parent="gun model/Uzi"]
+[node name="Trigger" type="MeshInstance3D" parent="gun model/model/Uzi"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.120264, -0.290867)
 mesh = SubResource("ArrayMesh_5n6kg")
 skeleton = NodePath("")
 
-[node name="Bolt" type="MeshInstance3D" parent="gun model/Uzi"]
+[node name="Bolt" type="MeshInstance3D" parent="gun model/model/Uzi"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4805, 0.317955)
 mesh = SubResource("ArrayMesh_2pxal")
 skeleton = NodePath("")
 
-[node name="Stock" type="MeshInstance3D" parent="gun model/Uzi"]
+[node name="Stock" type="MeshInstance3D" parent="gun model/model/Uzi"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17701e-07, 0.414126, 2.71442)
 mesh = SubResource("ArrayMesh_okjsj")
 skeleton = NodePath("")
 
-[node name="Stock_01" type="MeshInstance3D" parent="gun model/Uzi/Stock"]
+[node name="Stock_01" type="MeshInstance3D" parent="gun model/model/Uzi/Stock"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0299994, -0.441514, -1.52779)
 mesh = SubResource("ArrayMesh_m6fdl")
 skeleton = NodePath("")
 
-[node name="Magazine" type="RigidBody3D" parent="gun model/Uzi"]
+[node name="Magazine" type="RigidBody3D" parent="gun model/model/Uzi"]
 transform = Transform3D(1, 0, 0, 0, 1, 2.79397e-09, 0, 2.56114e-09, 1, 0, 0, 0)
 collision_layer = 4
 collision_mask = 7
 freeze = true
 
-[node name="Magazin" type="MeshInstance3D" parent="gun model/Uzi/Magazine"]
+[node name="Magazin" type="MeshInstance3D" parent="gun model/model/Uzi/Magazine"]
 transform = Transform3D(1, 0, 0, 0, 1, 2.79397e-09, 0, 2.56114e-09, 1, 0.0499436, 0.164499, 0.345119)
 mesh = SubResource("ArrayMesh_4f1n8")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="gun model/Uzi/Magazine"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gun model/model/Uzi/Magazine"]
 transform = Transform3D(0.999999, 8.3819e-09, 1.63913e-07, -5.58794e-09, 0.999999, 7.88132e-08, -3.72529e-08, 5.93718e-08, 0.999997, 0.0127553, -1.27952, 0.304777)
 shape = SubResource("BoxShape3D_tjei1")
 
-[node name="MuzzleFlash" type="Node3D" parent="gun model"]
+[node name="MuzzleFlash" type="Node3D" parent="gun model/model"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75578e-06, 0.0471097, -4.79617)
 
-[node name="MuzzleFlash" type="Sprite3D" parent="gun model/MuzzleFlash"]
+[node name="MuzzleFlash" type="Sprite3D" parent="gun model/model/MuzzleFlash"]
 transform = Transform3D(8.9407e-08, 0.029958, 0.499102, 0.0299581, 0.498205, -0.0299042, -0.499102, 0.0299043, -0.00179489, 0.0295942, -0.163949, -0.792864)
 texture = ExtResource("3_7u5gu")
 
-[node name="MuzzleFlash2" type="Sprite3D" parent="gun model/MuzzleFlash"]
+[node name="MuzzleFlash2" type="Sprite3D" parent="gun model/model/MuzzleFlash"]
 transform = Transform3D(5.96046e-08, -0.499102, 0.0299578, 0.0214346, 0.0299303, 0.498643, -0.49954, 0.00128421, 0.0213961, 0.0406712, -0.084515, -0.674623)
 texture = ExtResource("3_7u5gu")
 
-[node name="MuzzleFlashLight" type="OmniLight3D" parent="gun model/MuzzleFlash"]
+[node name="MuzzleFlashLight" type="OmniLight3D" parent="gun model/model/MuzzleFlash"]
 light_color = Color(0.922285, 0.920269, 7.70092e-07, 1)
 omni_range = 10.0
 
 [node name="RaycastParent" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(-0.999976, -0.00698135, 9.31323e-10, -9.31323e-10, 5.34346e-08, 1, -0.00698136, 0.999976, -4.54602e-08, -0.0480392, -0.00286815, -0.227852)
+transform = Transform3D(0.998261, 0.0586561, 0.00595807, 0.0589579, -0.99315, -0.10088, -8.42898e-10, 0.101056, -0.994881, 0.0735929, 0.193958, 0.028353)
 
 [node name="RayCast3D" type="RayCast3D" parent="RaycastParent"]
 target_position = Vector3(0, -200, 0)
