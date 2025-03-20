@@ -598,7 +598,6 @@ streams_count = 1
 stream_0/stream = ExtResource("4_fxorh")
 
 [node name="MPX" type="Node3D" node_paths=PackedStringArray("magazine")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_abj7n")
 shot_delay = 0.07
 gun_name = "MPX Suppressed"

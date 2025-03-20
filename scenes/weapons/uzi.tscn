@@ -321,7 +321,6 @@ streams_count = 1
 stream_0/stream = ExtResource("4_f2vbi")
 
 [node name="Uzi" type="Node3D" node_paths=PackedStringArray("magazine")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_airo0")
 shot_delay = 0.063
 gun_name = "Uzi"

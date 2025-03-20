@@ -201,6 +201,7 @@ debug_add_scrap={
 3d_physics/layer_17="material_flesh"
 3d_physics/layer_18="material_wood"
 3d_physics/layer_19="material_stone"
+3d_physics/layer_20="material_grass"
 
 [navigation]
 

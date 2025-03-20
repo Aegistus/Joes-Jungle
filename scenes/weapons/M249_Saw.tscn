@@ -284,7 +284,6 @@ streams_count = 1
 stream_0/stream = ExtResource("4_dw3qo")
 
 [node name="M249" type="Node3D" node_paths=PackedStringArray("magazine")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_gfnge")
 shot_delay = 0.08
 gun_name = "M249 SAW"

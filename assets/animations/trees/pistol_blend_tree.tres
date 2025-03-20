@@ -26,9 +26,10 @@ blend_point_3/node = SubResource("AnimationNodeAnimation_s7t5k")
 blend_point_3/pos = Vector2(-1, 0)
 blend_point_4/node = SubResource("AnimationNodeAnimation_iabis")
 blend_point_4/pos = Vector2(0, -1)
+sync = true
 
 [resource]
-graph_offset = Vector2(-414.924, 8.87939)
+graph_offset = Vector2(-483.801, 63.43)
 nodes/WalkSpeed/node = SubResource("AnimationNodeBlendSpace2D_smib0")
 nodes/WalkSpeed/position = Vector2(-140, 100)
 node_connections = [&"output", 0, &"WalkSpeed"]

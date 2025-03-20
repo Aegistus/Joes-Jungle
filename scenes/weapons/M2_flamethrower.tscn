@@ -152,7 +152,6 @@ stream_2/stream = ExtResource("6_5mfw0")
 stream_3/stream = ExtResource("7_8rt1w")
 
 [node name="M2Flamethrower" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_m7ukc")
 light_color = Color(0.900495, 0.485923, 0.150973, 1)
 gun_name = "M2 Flamethrower"
