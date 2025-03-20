@@ -919,7 +919,6 @@ visible = false
 visible = false
 
 [node name="Uzi" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("6_bj30b")]
-gun_type = 2
 
 [node name="LeftHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]
 transform = Transform3D(-0.344641, -0.337138, -0.876105, -0.9324, 0.0146992, 0.36113, -0.108873, 0.94134, -0.319414, 0.0388925, 1.3296, 0.461456)
