@@ -374,7 +374,7 @@ omni_range = 10.0
 
 [node name="RaycastParent" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.999756, -0.0214653, 0.00522061, -0.0218028, -0.996814, 0.076719, 0.00355718, -0.0768141, -0.997039, 0.0735929, 0.193958, 0.028353)
+transform = Transform3D(0.999512, 0.031044, 0.00346746, 0.0304401, -0.992906, 0.114937, 0.00701098, -0.114775, -0.993367, 0.0735929, 0.193958, 0.028353)
 
 [node name="RayCast3D" type="RayCast3D" parent="RaycastParent"]
 target_position = Vector3(0, -200, 0)
