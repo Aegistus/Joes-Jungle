@@ -397,6 +397,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-6.00648e-10, 8.46664e-19, -1.16318e-10)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gun model/Model/MuzzleFlash:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gun model:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0455181, -1.56406, 0.0819956)]
+}
 
 [sub_resource type="Animation" id="Animation_yatb0"]
 resource_name = "shoot"
@@ -426,6 +450,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-6.00648e-10, 8.46664e-19, -1.16318e-10), Vector3(-0.0625875, 7.28958e-12, -1.16546e-10), Vector3(0, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("gun model/Model/MuzzleFlash:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0198592),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gun model:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0101718, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0455181, -1.56406, 0.0819956), Vector3(-0.0335584, -1.57055, 0.0819567), Vector3(0.0455181, -1.56406, 0.0819956)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cdyj4"]
 _data = {
@@ -453,7 +501,7 @@ reload_anim_speed_modifier = 0.8
 reload_move_speed_modifier = 0.8
 
 [node name="gun model" type="Node3D" parent="."]
-transform = Transform3D(0.00298753, -0.0459003, -0.998941, 0.0818189, 0.995608, -0.0455025, 0.996643, -0.0815963, 0.00672992, 0.0299022, 0.132974, 0.0535035)
+transform = Transform3D(0.00298753, -0.0459003, -0.998941, 0.0818189, 0.995608, -0.0455024, 0.996643, -0.0815963, 0.00672992, 0.0299022, 0.132974, 0.0535035)
 
 [node name="Model" type="Node3D" parent="gun model"]
 transform = Transform3D(1, 0, 0, 0, 0.0189531, 0.99982, 0, -0.99982, 0.0189531, 0, 0, 0)

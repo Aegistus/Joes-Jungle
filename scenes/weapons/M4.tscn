@@ -259,6 +259,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GunModel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.43845, 0.30962, -1.24424)]
+}
 
 [sub_resource type="Animation" id="Animation_i2kwn"]
 resource_name = "shoot"
@@ -276,6 +288,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GunModel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0106561, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.43845, 0.30962, -1.24424), Vector3(1.44352, -0.196362, -1.74614), Vector3(1.43845, 0.30962, -1.24424)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_244ut"]
 _data = {
@@ -290,7 +314,6 @@ streams_count = 1
 stream_0/stream = ExtResource("4_p5q8i")
 
 [node name="M4" type="Node3D" node_paths=PackedStringArray("magazine")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_w4ooq")
 shot_delay = 0.1
 gun_name = "M4"
@@ -303,7 +326,7 @@ base_ergonomics = 75
 
 [node name="GunModel" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.0194578, 0.999002, 0.0402064, -0.124982, 0.0423289, -0.991256, -0.991968, 0.0142627, 0.12568, 0.0115169, 0.235189, 0.0246665)
+transform = Transform3D(0.0194578, 0.999002, 0.0402064, -0.124982, 0.0423289, -0.991256, -0.991968, 0.0142626, 0.125681, 0.0115169, 0.235189, 0.0246665)
 
 [node name="M4_8" type="MeshInstance3D" parent="GunModel"]
 material_override = SubResource("StandardMaterial3D_rdqvt")

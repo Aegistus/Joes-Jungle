@@ -197,38 +197,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model:position")
+tracks/0/path = NodePath("gun model/model/MuzzleFlash:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.187772, 0, 3.55271e-17)]
+"update": 1,
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model:rotation")
+tracks/1/path = NodePath("gun model:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model/MuzzleFlash:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"values": [Vector3(-0.0844564, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_p5adf"]
@@ -237,38 +225,26 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model:position")
+tracks/0/path = NodePath("gun model/model/MuzzleFlash:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.187772, 0, 3.55271e-17), Vector3(0.188, 0, 0.08), Vector3(0.187772, 0, 3.55271e-17)]
+"times": PackedFloat32Array(0, 0.0329936),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model:rotation")
+tracks/1/path = NodePath("gun model:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.2),
+"times": PackedFloat32Array(0, 0.0102767, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.0174533, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../../../../../../../../../../../../../../../../../../../../Node3D/gun model/MuzzleFlash:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"values": [Vector3(-0.0844564, 0, 0), Vector3(-0.0840742, 0.00803597, -0.0954061), Vector3(-0.0844564, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_66r3h"]
