@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=77 format=3 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Script" uid="uid://dvi44v1xmi7ir" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
@@ -62,6 +62,7 @@
 [ext_resource type="PackedScene" uid="uid://b4chn1qogghfb" path="res://scenes/scenery/plants_03.tscn" id="58_drwdv"]
 [ext_resource type="AudioStream" uid="uid://b7wxhb6wsd431" path="res://assets/audio/ambiance/Ambiance_Crickets_01.wav" id="61_8b640"]
 [ext_resource type="Script" uid="uid://cdieqhoyx7o6n" path="res://scripts/ambient_sfx.gd" id="61_sp75u"]
+[ext_resource type="AudioStream" uid="uid://cjarkopb4o35p" path="res://assets/audio/ambiance/Ambience_Horror_Simple_01.wav" id="63_xdv8y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -4623,6 +4624,11 @@ script = ExtResource("61_sp75u")
 position = Vector2(20.446, 0)
 stream = ExtResource("61_8b640")
 volume_db = 10.0
+autoplay = true
+
+[node name="HorrorAmbiance" type="AudioStreamPlayer2D" parent="AmbientSFX"]
+stream = ExtResource("63_xdv8y")
+volume_db = -80.0
 autoplay = true
 
 [node name="Area3D" type="Area3D" parent="AmbientSFX"]
