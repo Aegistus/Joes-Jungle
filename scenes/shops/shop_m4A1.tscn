@@ -1,10 +1,10 @@
 [gd_scene load_steps=27 format=4 uid="uid://c7baeq2p0p2hk"]
 
-[ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="1_1nmi8"]
-[ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="1_4cg74"]
-[ext_resource type="Script" uid="uid://bbgnasu78742k" path="res://scripts/objectives/shop.gd" id="1_grug5"]
-[ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="4_3swtw"]
-[ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="5_6s8e3"]
+[ext_resource type="Script" uid="uid://bbgnasu78742k" path="res://scripts/objectives/shop.gd" id="1_px8id"]
+[ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_3wqis"]
+[ext_resource type="Texture2D" uid="uid://5hjxhkdv5kao" path="res://assets/textures/Textures_Guns.png" id="3_hchuk"]
+[ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="4_ayclk"]
+[ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="5_vw62x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3l32"]
 resource_name = "Mat"
@@ -111,7 +111,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qk6sc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6t5a"]
-albedo_texture = ExtResource("1_4cg74")
+albedo_texture = ExtResource("3_hchuk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_711ge"]
 _surfaces = [{
@@ -265,27 +265,27 @@ height = 13.0
 
 [node name="ShopRifle" type="Node3D"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-script = ExtResource("1_grug5")
-shop_item_scene_path = "res://scenes/weapons/M4.tscn"
+script = ExtResource("1_px8id")
+shop_item_scene_path = "res://scenes/weapons/M4A1.tscn"
 item_cost = 400
-tooltip_text = "Buy M4"
+tooltip_text = "Buy M4A1"
 
 [node name="M4_8" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.80678, -0.434969)
 
 [node name="M4_8" type="MeshInstance3D" parent="M4_8"]
-material_override = ExtResource("1_1nmi8")
+material_override = ExtResource("2_3wqis")
 mesh = SubResource("ArrayMesh_ywpai")
 skeleton = NodePath("")
 
 [node name="Mag" type="MeshInstance3D" parent="M4_8/M4_8"]
-material_override = ExtResource("1_1nmi8")
+material_override = ExtResource("2_3wqis")
 mesh = SubResource("ArrayMesh_3e8gu")
 skeleton = NodePath("")
 
 [node name="Rear_Sight" type="MeshInstance3D" parent="M4_8/M4_8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.989236, 1.13398)
-material_override = ExtResource("1_1nmi8")
+material_override = ExtResource("2_3wqis")
 mesh = SubResource("ArrayMesh_jpp68")
 skeleton = NodePath("")
 
@@ -297,29 +297,29 @@ skeleton = NodePath("")
 
 [node name="Bolt" type="MeshInstance3D" parent="M4_8/M4_8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.790138, 1.5874)
-material_override = ExtResource("1_1nmi8")
+material_override = ExtResource("2_3wqis")
 mesh = SubResource("ArrayMesh_jtg5k")
 skeleton = NodePath("")
 
 [node name="Sight" type="MeshInstance3D" parent="M4_8/M4_8"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0.934279, -2.0097)
-material_override = ExtResource("1_1nmi8")
+material_override = ExtResource("2_3wqis")
 mesh = SubResource("ArrayMesh_jaqk5")
 skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="M4_8"]
 libraries = {
-"": SubResource("AnimationLibrary_vyq2y")
+&"": SubResource("AnimationLibrary_vyq2y")
 }
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(5.47362, 0, 0, 0, 0.273578, 0, 0, 0, 5.47362, 0, 0, 0)
-material_override = ExtResource("1_1nmi8")
+material_override = ExtResource("2_3wqis")
 mesh = SubResource("CylinderMesh_q5ege")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_v6nlf")
+&"": SubResource("AnimationLibrary_v6nlf")
 }
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
@@ -330,10 +330,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85004, 0)
 shape = SubResource("CapsuleShape3D_6nn7s")
 
 [node name="ShopSuccessAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_3swtw")
+stream = ExtResource("4_ayclk")
 
 [node name="ShopFailureAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_6s8e3")
+stream = ExtResource("5_vw62x")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0311234, 10.2577, -0.0420206)

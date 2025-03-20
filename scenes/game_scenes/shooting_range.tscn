@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dsxmj3jw6gqcd" path="res://scenes/shops/shop_revolver.tscn" id="14_kycbe"]
 [ext_resource type="PackedScene" uid="uid://c0j4glofdqgpk" path="res://scenes/shops/fruit_punch_bowl.tscn" id="15_vspmv"]
 [ext_resource type="PackedScene" uid="uid://22lknia5oy4" path="res://scenes/shops/shop_saw.tscn" id="16_5epp3"]
-[ext_resource type="PackedScene" uid="uid://c7baeq2p0p2hk" path="res://scenes/shops/shop_m4.tscn" id="17_b5imc"]
+[ext_resource type="PackedScene" uid="uid://c7baeq2p0p2hk" path="res://scenes/shops/shop_m4A1.tscn" id="17_b5imc"]
 [ext_resource type="PackedScene" uid="uid://b6mjww5vs5pl6" path="res://scenes/shops/shop_uzi.tscn" id="18_2182a"]
 [ext_resource type="PackedScene" uid="uid://ddgpevn3nkya1" path="res://scenes/shops/shop_benelli.tscn" id="18_rw0w1"]
 [ext_resource type="PackedScene" uid="uid://buup8044hp4ox" path="res://scenes/shops/shop_mpx.tscn" id="19_a8gam"]

@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://yttdwroyehgm" path="res://scenes/scenery/palm_tree_02.tscn" id="8_sua0m"]
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="9_6qvas"]
 [ext_resource type="PackedScene" uid="uid://ddhplb0t3aute" path="res://scenes/scenery/palm_tree_04.tscn" id="10_kcw2q"]
-[ext_resource type="PackedScene" uid="uid://c7baeq2p0p2hk" path="res://scenes/shops/shop_m4.tscn" id="20_dypad"]
+[ext_resource type="PackedScene" uid="uid://c7baeq2p0p2hk" path="res://scenes/shops/shop_m4A1.tscn" id="20_dypad"]
 [ext_resource type="Script" uid="uid://drmahdnfs57jy" path="res://scripts/zombie_spawn_point.gd" id="21_0spru"]
 [ext_resource type="PackedScene" uid="uid://d2t1be5npyy0h" path="res://scenes/shops/shop_flamethrower.tscn" id="21_554pv"]
 [ext_resource type="PackedScene" uid="uid://ddgpevn3nkya1" path="res://scenes/shops/shop_benelli.tscn" id="21_lme77"]
@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://rvebx7d8u8xm" path="res://scenes/shops/shop_aa12.tscn" id="25_yolw6"]
 [ext_resource type="PackedScene" uid="uid://det47gkltg7fa" path="res://scenes/shops/shop_ak47.tscn" id="26_htfvm"]
 [ext_resource type="PackedScene" uid="uid://b6mjww5vs5pl6" path="res://scenes/shops/shop_uzi.tscn" id="27_vfxh4"]
-[ext_resource type="PackedScene" uid="uid://b8gi7noqhm3jn" path="res://scenes/weapons/M4.tscn" id="27_x0erh"]
+[ext_resource type="PackedScene" uid="uid://b8gi7noqhm3jn" path="res://scenes/weapons/M4A1.tscn" id="27_x0erh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

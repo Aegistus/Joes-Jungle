@@ -195,7 +195,7 @@ skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Bennelli_M4"]
 libraries = {
-"": SubResource("AnimationLibrary_ddy6t")
+&"": SubResource("AnimationLibrary_ddy6t")
 }
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -205,7 +205,7 @@ mesh = SubResource("CylinderMesh_q5ege")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_v6nlf")
+&"": SubResource("AnimationLibrary_v6nlf")
 }
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]

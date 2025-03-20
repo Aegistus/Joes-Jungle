@@ -316,7 +316,7 @@ stream_0/stream = ExtResource("4_p5q8i")
 [node name="M4" type="Node3D" node_paths=PackedStringArray("magazine")]
 script = ExtResource("1_w4ooq")
 shot_delay = 0.1
-gun_name = "M4"
+gun_name = "M4A1"
 gun_type = 2
 magazine = NodePath("GunModel/M4_8/Magazine")
 magazine_scale = 0.12
