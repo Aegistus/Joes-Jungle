@@ -4225,7 +4225,7 @@ visible = false
 [node name="ZombieSpawnPoints" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
 script = ExtResource("17_owi3h")
-starting_wave_delay = 10
+starting_wave_delay = 30
 enemy_count_increase_per_wave = 3
 intermission_wait_time = 30.0
 intermission_max = 90.0

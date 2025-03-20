@@ -11,6 +11,13 @@ extends PlayerState
 @onready var reloading_state = $"../ReloadingState"
 @onready var equipping_state = $"../EquippingState"
 @onready var round_reload_loop_state = %RoundReloadLoopState
+@onready var footsteps = $"../../Footsteps"
+
+func enter():
+	footsteps.enabled = false
+
+func exit():
+	footsteps.enabled = true
 
 func process_state(delta):
 	if aim_state_machine.current_state is AimingState:
