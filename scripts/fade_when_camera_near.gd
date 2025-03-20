@@ -3,6 +3,7 @@ extends Node3D
 @export var fade_distance := 8.0
 @export var fade_time := .5
 
+var max_transparency = .8
 var camera
 var children
 var hidden = false
@@ -20,7 +21,7 @@ func _process(delta):
 				hidden = true
 				for child in children:
 					var tween = get_tree().create_tween()
-					tween.tween_property(child, "transparency", 1, fade_time)
+					tween.tween_property(child, "transparency", max_transparency, fade_time)
 					#child.visible = false
 		elif hidden == true:
 			hidden = false
