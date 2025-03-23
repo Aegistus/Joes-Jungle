@@ -64,6 +64,7 @@ render_priority = 0
 shader = ExtResource("7_c36ol")
 shader_parameter/wall_texture = ExtResource("8_4qu7h")
 shader_parameter/brightness = 1.0
+shader_parameter/alpha = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_52wjb"]
 resource_name = "lambert1"

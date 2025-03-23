@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bpag0mk446adq"]
+
+[ext_resource type="Texture2D" uid="uid://b68qx1p55ptt6" path="res://assets/textures/Mansion Flesh.png" id="1_ipd7r"]
+
+[resource]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = ExtResource("1_ipd7r")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_triplanar = true
+uv1_world_triplanar = true

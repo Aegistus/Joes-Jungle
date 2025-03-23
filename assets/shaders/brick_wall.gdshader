@@ -2,6 +2,7 @@ shader_type spatial;
 
 uniform sampler2D wall_texture : source_color;
 uniform float brightness : hint_range(0.0f, 1.0f) = 1.0f;
+uniform float alpha : hint_range(0.0f, 1.0f) = 1.0f;
 
 varying vec3 some_color;
 varying vec3 world_pos;
@@ -37,5 +38,6 @@ void fragment() {
 		vec3 color_offset = random(floor(projected_coords.xyz));
 
 		ALBEDO = mix(vec3(0.0f), mix((albedoX * normal_weights.x + albedoY * normal_weights.y + albedoZ * normal_weights.z), color_offset.rgb, 0.05f), brightness);
+		ALPHA = alpha;
 	}
 }
