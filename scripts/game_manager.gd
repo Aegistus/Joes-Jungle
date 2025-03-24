@@ -17,7 +17,7 @@ signal on_killstreak_updated(current_killstreak)
 
 const SAVE_FILE_PATH = "user://savegame.dat"
 const BUCKS_PER_KILLSTREAK_KILL = 10
-const TIME_UNTIL_MAX_INSANITY := 60.0
+const TIME_UNTIL_MAX_INSANITY := 10.0
 
 var currently_in_wave = false
 var current_wave : int = 0
