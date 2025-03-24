@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=97 format=4 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Script" uid="uid://dvi44v1xmi7ir" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
@@ -23,8 +23,11 @@
 [ext_resource type="PackedScene" uid="uid://bpy6f2h7b4c1g" path="res://scenes/scenery/hedge_bush_03.tscn" id="14_t6xn1"]
 [ext_resource type="AudioStream" uid="uid://ck184pd52cx6i" path="res://assets/audio/mansion_breathing.ogg" id="15_2tuxh"]
 [ext_resource type="Material" uid="uid://b0ioinydgbr0y" path="res://materials/flesh_wall.tres" id="15_ip8yw"]
+[ext_resource type="PackedScene" uid="uid://dnd0i7cxm028" path="res://scenes/insanity/wall_writing.tscn" id="17_7xppv"]
 [ext_resource type="Script" uid="uid://drmahdnfs57jy" path="res://scripts/zombie_spawn_point.gd" id="17_owi3h"]
 [ext_resource type="PackedScene" uid="uid://cpffvcbta5ec2" path="res://scenes/scenery/rock_02.tscn" id="17_xsrh6"]
+[ext_resource type="Texture2D" uid="uid://bco71m6ioujft" path="res://assets/textures/wall_writing.png" id="18_ip8yw"]
+[ext_resource type="Script" uid="uid://411sikpq3bfc" path="res://scripts/insanity/wall_writing.gd" id="18_yk2vc"]
 [ext_resource type="PackedScene" uid="uid://cfr2u7qy1n0fv" path="res://scenes/scenery/vine_wall_01.tscn" id="20_e3swa"]
 [ext_resource type="PackedScene" uid="uid://b1uu5s8rj206g" path="res://scenes/scenery/stone_wall_01.tscn" id="21_l7i85"]
 [ext_resource type="PackedScene" uid="uid://cx5b0cxtc4w45" path="res://scenes/scenery/coffee_table_01.tscn" id="21_njevt"]
@@ -101,6 +104,9 @@ size = Vector3(1000, 1, 1000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_88515"]
 size = Vector3(6, 0.8, 3.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_er8h3"]
+size = Vector3(7, 1.5, 0.3)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_30c14"]
 
@@ -2862,6 +2868,217 @@ material_override = ExtResource("3_mkkog")
 use_collision = true
 collision_layer = 131073
 size = Vector3(2, 2.8, 0.5)
+
+[node name="WallWriting" type="Node3D" parent="NavigationRegion3D/map/Mansion"]
+
+[node name="WallWriting" parent="NavigationRegion3D/map/Mansion/WallWriting" instance=ExtResource("17_7xppv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 0.8, -12.1)
+
+[node name="WallWriting2" parent="NavigationRegion3D/map/Mansion/WallWriting" instance=ExtResource("17_7xppv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0.8, -12.1)
+
+[node name="WallWriting5" parent="NavigationRegion3D/map/Mansion/WallWriting" instance=ExtResource("17_7xppv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0.8, -12.1)
+
+[node name="WallWriting3" type="Node3D" parent="NavigationRegion3D/map/Mansion/WallWriting"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16, 0.8, -9.4)
+script = ExtResource("18_yk2vc")
+tooltip_text = "Where lies the strangling fruit that came from the hand"
+
+[node name="Decal" type="Decal" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting3"]
+transform = Transform3D(1, 8.74228e-08, -8.74228e-08, -8.74228e-08, 4.37114e-08, -1, -8.74228e-08, 1, 4.37114e-08, -0.650002, 5.96046e-08, 0)
+size = Vector3(3.9, 0.5, 2)
+texture_albedo = ExtResource("18_ip8yw")
+texture_emission = ExtResource("18_ip8yw")
+emission_energy = 0.92
+modulate = Color(0.223529, 1, 0.196078, 1)
+normal_fade = 0.5
+distance_fade_enabled = true
+cull_mask = 1
+
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting3" groups=["interactable"]]
+collision_layer = 32
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting3/Area3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.285088, -0.10498, 0.0532227)
+shape = SubResource("BoxShape3D_er8h3")
+
+[node name="WallWriting4" type="Node3D" parent="NavigationRegion3D/map/Mansion/WallWriting"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16, 0.8, -4.59999)
+script = ExtResource("18_yk2vc")
+tooltip_text = "Where lies the strangling fruit that came from the hand"
+
+[node name="Decal" type="Decal" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting4"]
+transform = Transform3D(1, 8.74228e-08, -8.74228e-08, -8.74228e-08, 4.37114e-08, -1, -8.74228e-08, 1, 4.37114e-08, 0.700001, -5.96046e-08, 0)
+size = Vector3(3.8, 0.5, 2)
+texture_albedo = ExtResource("18_ip8yw")
+texture_emission = ExtResource("18_ip8yw")
+emission_energy = 0.92
+modulate = Color(0.223529, 1, 0.196078, 1)
+normal_fade = 0.5
+distance_fade_enabled = true
+cull_mask = 1
+
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting4" groups=["interactable"]]
+collision_layer = 32
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting4/Area3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.214912, -0.10498, 0.0532227)
+shape = SubResource("BoxShape3D_er8h3")
+
+[node name="WallWriting6" type="Node3D" parent="NavigationRegion3D/map/Mansion/WallWriting"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 14.9, 0.8, -1.8)
+script = ExtResource("18_yk2vc")
+tooltip_text = "Where lies the strangling fruit that came from the hand"
+
+[node name="Decal" type="Decal" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting6"]
+transform = Transform3D(1, 8.74228e-08, -8.74228e-08, -8.74228e-08, 4.37114e-08, -1, -8.74228e-08, 1, 4.37114e-08, 0.350002, 0, 0.0499992)
+size = Vector3(3.1, 0.6, 2)
+texture_albedo = ExtResource("18_ip8yw")
+texture_emission = ExtResource("18_ip8yw")
+emission_energy = 0.92
+modulate = Color(0.223529, 1, 0.196078, 1)
+normal_fade = 0.5
+distance_fade_enabled = true
+cull_mask = 1
+
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting6" groups=["interactable"]]
+collision_layer = 32
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting6/Area3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.214912, -0.10498, 0.0532227)
+shape = SubResource("BoxShape3D_er8h3")
+
+[node name="WallWriting7" type="Node3D" parent="NavigationRegion3D/map/Mansion/WallWriting"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 9.8, 0.8, -1.8)
+script = ExtResource("18_yk2vc")
+tooltip_text = "Where lies the strangling fruit that came from the hand"
+
+[node name="Decal" type="Decal" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting7"]
+transform = Transform3D(1, 8.74228e-08, -8.74228e-08, -8.74228e-08, 4.37114e-08, -1, -8.74228e-08, 1, 4.37114e-08, 2.25, -1.78814e-07, 0.0999985)
+size = Vector3(6.9, 0.7, 2)
+texture_albedo = ExtResource("18_ip8yw")
+texture_emission = ExtResource("18_ip8yw")
+emission_energy = 0.92
+modulate = Color(0.223529, 1, 0.196078, 1)
+normal_fade = 0.5
+distance_fade_enabled = true
+cull_mask = 1
+
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting7" groups=["interactable"]]
+collision_layer = 32
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting7/Area3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31491, -0.459961, 0.0876999)
+shape = SubResource("BoxShape3D_er8h3")
+
+[node name="WallWriting8" type="Node3D" parent="NavigationRegion3D/map/Mansion/WallWriting"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.9, 0.8, -1.9)
+script = ExtResource("18_yk2vc")
+tooltip_text = "Where lies the strangling fruit that came from the hand"
+
+[node name="Decal" type="Decal" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting8"]
+transform = Transform3D(1, 8.74228e-08, -8.74228e-08, -8.74228e-08, 4.37114e-08, -1, -8.74228e-08, 1, 4.37114e-08, 3.35, -2.38419e-07, 0.0499992)
+size = Vector3(3.1, 0.6, 2)
+texture_albedo = ExtResource("18_ip8yw")
+texture_emission = ExtResource("18_ip8yw")
+emission_energy = 0.92
+modulate = Color(0.223529, 1, 0.196078, 1)
+normal_fade = 0.5
+distance_fade_enabled = true
+cull_mask = 1
+
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting8" groups=["interactable"]]
+collision_layer = 32
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting8/Area3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.61491, -0.10498, 0.0377007)
+shape = SubResource("BoxShape3D_er8h3")
+
+[node name="WallWriting9" type="Node3D" parent="NavigationRegion3D/map/Mansion/WallWriting"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 1.1, 0.8, -2.1)
+script = ExtResource("18_yk2vc")
+tooltip_text = "Where lies the strangling fruit that came from the hand"
+
+[node name="Decal" type="Decal" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting9"]
+transform = Transform3D(1, 8.74228e-08, -8.74228e-08, -8.74228e-08, 4.37114e-08, -1, -8.74228e-08, 1, 4.37114e-08, 1.3, -2.38419e-07, 0)
+size = Vector3(3.4, 0.5, 2)
+texture_albedo = ExtResource("18_ip8yw")
+texture_emission = ExtResource("18_ip8yw")
+emission_energy = 0.92
+modulate = Color(0.223529, 1, 0.196078, 1)
+normal_fade = 0.5
+distance_fade_enabled = true
+cull_mask = 1
+
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting9" groups=["interactable"]]
+collision_layer = 32
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting9/Area3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31491, -0.10498, 0.0377007)
+shape = SubResource("BoxShape3D_er8h3")
+
+[node name="WallWriting10" type="Node3D" parent="NavigationRegion3D/map/Mansion/WallWriting"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 1.1, 0.8, -9.3)
+script = ExtResource("18_yk2vc")
+tooltip_text = "Where lies the strangling fruit that came from the hand"
+
+[node name="Decal" type="Decal" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting10"]
+transform = Transform3D(1, 8.74228e-08, -8.74228e-08, -8.74228e-08, 4.37114e-08, -1, -8.74228e-08, 1, 4.37114e-08, 1.2, -2.38419e-07, 0)
+size = Vector3(3.2, 0.5, 2)
+texture_albedo = ExtResource("18_ip8yw")
+texture_emission = ExtResource("18_ip8yw")
+emission_energy = 0.92
+modulate = Color(0.223529, 1, 0.196078, 1)
+normal_fade = 0.5
+distance_fade_enabled = true
+cull_mask = 1
+
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting10" groups=["interactable"]]
+collision_layer = 32
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting10/Area3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31491, -0.10498, 0.0377007)
+shape = SubResource("BoxShape3D_er8h3")
+
+[node name="WallWriting11" type="Node3D" parent="NavigationRegion3D/map/Mansion/WallWriting"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 1.3, 0.8, -11.9)
+script = ExtResource("18_yk2vc")
+tooltip_text = "Where lies the strangling fruit that came from the hand"
+
+[node name="Decal" type="Decal" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting11"]
+transform = Transform3D(1, 8.74228e-08, -8.74228e-08, -8.74228e-08, 4.37114e-08, -1, -8.74228e-08, 1, 4.37114e-08, 0.150005, -1.19209e-07, 0)
+size = Vector3(1.1, 0.5, 2)
+texture_albedo = ExtResource("18_ip8yw")
+texture_emission = ExtResource("18_ip8yw")
+emission_energy = 0.92
+modulate = Color(0.223529, 1, 0.196078, 1)
+normal_fade = 0.5
+distance_fade_enabled = true
+cull_mask = 1
+
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting11" groups=["interactable"]]
+collision_layer = 32
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting11/Area3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.264915, -0.10498, 0.0377007)
+shape = SubResource("BoxShape3D_er8h3")
 
 [node name="World Boundary" type="StaticBody3D" parent="NavigationRegion3D/map"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 13.8, 0, -4)
