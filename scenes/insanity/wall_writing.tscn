@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bco71m6ioujft" path="res://assets/textures/wall_writing.png" id="1_er8h3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_er8h3"]
-size = Vector3(7, 1.5, 0.3)
+size = Vector3(1.9, 1.5, 0.3)
 
 [node name="WallWriting" type="Node3D"]
 script = ExtResource("1_01nul")

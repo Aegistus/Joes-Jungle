@@ -4,7 +4,7 @@ var shake_rate = 100
 var max_scramble_chance = 1
 var scramble_chance:
 	get:
-		return GameManager.current_insanity * max_scramble_chance
+		return GameManager.current_linear_insanity * max_scramble_chance
 var max_shake_level = 15
 var current_shake_level:
 	get:

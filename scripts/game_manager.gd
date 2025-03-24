@@ -14,10 +14,11 @@ signal on_barricade_destroyed
 signal on_killstreak_updated(current_killstreak)
 
 @export var insanity_increase_curve : Curve
+@export var insanity_increase_curve_linear : Curve
 
-const SAVE_FILE_PATH = "user://savegame.dat"
-const BUCKS_PER_KILLSTREAK_KILL = 10
-const TIME_UNTIL_MAX_INSANITY := 10.0
+@onready var intermission_timer : Timer = $IntermissionTimer
+@onready var kill_streak_timer : Timer = $KillStreakTimer
+@onready var skip_intermission_audio_player = $SkipIntermissionAudioPlayer
 
 var currently_in_wave = false
 var current_wave : int = 0
@@ -33,6 +34,12 @@ var current_insanity:
 		var percent_dist = run_time / TIME_UNTIL_MAX_INSANITY
 		return insanity_increase_curve.sample(percent_dist)
 
+## Alternative for effects that want a linear ramp-up
+var current_linear_insanity:
+	get:
+		var percent_dist = run_time / TIME_UNTIL_MAX_INSANITY
+		return insanity_increase_curve_linear.sample(percent_dist)
+
 var cause_of_death : CauseOfDeath
 var zombie_death_text : Array[String] = ["Being Too Tasty for Your Own Good",\
  "Having a Brain that Brings All the Zombies to the Yard",\
@@ -47,9 +54,9 @@ var plant_death_text : Array[String] = ["Plant Neglect",\
 "Soiling Your Pants (Instead of Your Plants)",\
 "Stopping to Smell the Roses, Instead of Watering Them"]
 
-@onready var intermission_timer : Timer = $IntermissionTimer
-@onready var kill_streak_timer : Timer = $KillStreakTimer
-@onready var skip_intermission_audio_player = $SkipIntermissionAudioPlayer
+const SAVE_FILE_PATH = "user://savegame.dat"
+const BUCKS_PER_KILLSTREAK_KILL = 10
+const TIME_UNTIL_MAX_INSANITY := 60.0
 
 class GameRunEntry:
 	var rank : int

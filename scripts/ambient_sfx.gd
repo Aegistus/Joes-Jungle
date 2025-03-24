@@ -11,7 +11,7 @@ func _ready():
 	default_volume = jungle_sounds.volume_db
 
 func _process(delta):
-	horror_ambiance.volume_db = (1 - GameManager.current_insanity) * -80
+	horror_ambiance.volume_db = (1 - GameManager.current_linear_insanity) * -80
 
 func on_player_enter(area):
 	var tween = get_tree().create_tween()
