@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=4 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=108 format=4 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Script" uid="uid://dvi44v1xmi7ir" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
@@ -35,9 +35,11 @@
 [ext_resource type="PackedScene" uid="uid://r00tnhjsa0sn" path="res://scenes/scenery/stone_wall_03.tscn" id="22_n38su"]
 [ext_resource type="PackedScene" uid="uid://gpemc8wh337i" path="res://scenes/scenery/flower_hanging_02.tscn" id="23_0mp1p"]
 [ext_resource type="PackedScene" uid="uid://ccwmikladigvb" path="res://scenes/scenery/stone_wall_pillar_01.tscn" id="23_jh0gs"]
+[ext_resource type="AudioStream" uid="uid://ccly54bn3impj" path="res://assets/audio/Typewriter Keys.ogg" id="24_aot01"]
 [ext_resource type="PackedScene" uid="uid://dpcc7siuvyhyr" path="res://scenes/scenery/stone_wall_rubble_01.tscn" id="24_vncji"]
 [ext_resource type="PackedScene" uid="uid://bv08t2e7vfcx7" path="res://scenes/scenery/stone_wall_rubble_02.tscn" id="25_07ac2"]
 [ext_resource type="PackedScene" uid="uid://20mjnqpncu7g" path="res://scenes/scenery/stone_wall_rubble_03.tscn" id="26_8gqcl"]
+[ext_resource type="AudioStream" uid="uid://cj0hffgyhr3qu" path="res://assets/audio/grandfather_clock.mp3" id="26_rda73"]
 [ext_resource type="PackedScene" uid="uid://dkjt686bxxe74" path="res://scenes/scenery/stone_wall_rubble_04.tscn" id="27_50f8y"]
 [ext_resource type="PackedScene" uid="uid://dy7nsmch3eake" path="res://scenes/scenery/tree_dead_01.tscn" id="28_oo16f"]
 [ext_resource type="PackedScene" uid="uid://8eq1ywe0gm4j" path="res://scenes/scenery/bookcase.tscn" id="29_5wduh"]
@@ -3239,13 +3241,23 @@ size = Vector3(0.6, 0.1, 0.6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4, -0.5, -53.3)
 
 [node name="SM_Prop_Table_03" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("41_3yadl")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.9, -0.5, -51.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.1, -0.5, -12.4)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="NavigationRegion3D/map/Furniture/SM_Prop_Table_03"]
+stream = ExtResource("24_aot01")
+volume_db = -10.0
+autoplay = true
 
 [node name="SM_Prop_Chair_02" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("42_f2byx")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30, -0.5, -51.3)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -8.8, -0.5, -12.4)
 
 [node name="SM_Prop_GrandfatherClock_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("43_dpquu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7, -0.5, -55.1)
+
+[node name="GrandfatherClock" type="AudioStreamPlayer3D" parent="NavigationRegion3D/map/Furniture/SM_Prop_GrandfatherClock_01"]
+stream = ExtResource("26_rda73")
+volume_db = -20.0
+autoplay = true
 
 [node name="SM_Prop_Piano_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("44_args3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5, -0.5, -15.8)
@@ -3281,7 +3293,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7, -0.5, -9)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7, -0.5, -15.8)
 
 [node name="SM_Prop_Table_Small_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("48_rxix5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2, -0.5, -12.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9, -0.5, -51.4)
 
 [node name="SM_Bld_Cuba_VineWall_01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("20_e3swa")]
 transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, -11.3, -0.5, -27.9)
