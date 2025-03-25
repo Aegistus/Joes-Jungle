@@ -462,6 +462,7 @@ libraries = {
 [node name="ShellEjector" type="Node3D" parent="."]
 transform = Transform3D(-0.376557, -0.891677, -0.251233, -0.0877085, -0.235662, 0.96787, -0.922232, 0.386494, 0.0105321, 2.25694, 0.370309, -1.70888)
 script = ExtResource("4_yfg50")
+enabled = false
 shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
 shell_scale = 1.0
 
