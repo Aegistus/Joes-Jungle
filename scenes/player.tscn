@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=4 uid="uid://bs0wmr63q1ofr"]
+[gd_scene load_steps=67 format=4 uid="uid://bs0wmr63q1ofr"]
 
 [ext_resource type="Script" uid="uid://dnhkunc4st41v" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Texture2D" uid="uid://b1fvgtdrsmiic" path="res://assets/models/characters/Michael_Ch18_1001_Diffuse.png" id="2_55ldf"]
@@ -34,20 +34,7 @@
 [ext_resource type="Script" uid="uid://dm4s047v4dlp8" path="res://scripts/player states/build_construct_state.gd" id="24_m1s5f"]
 [ext_resource type="Script" uid="uid://r0cu50bw40wk" path="res://scripts/player states/vault_state.gd" id="26_kjsdq"]
 [ext_resource type="PackedScene" uid="uid://g62ygu32m5ji" path="res://scenes/aim_reticle.tscn" id="34_md1ol"]
-[ext_resource type="AudioStream" uid="uid://ckp4iqkymnhnj" path="res://assets/audio/footsteps/flesh/Mud footstep 2.wav" id="36_g5jhy"]
-[ext_resource type="Script" uid="uid://qulsx47cjtux" path="res://scripts/footsteps.gd" id="36_jc3p3"]
-[ext_resource type="AudioStream" uid="uid://iaiwfkku2xpt" path="res://assets/audio/footsteps/wood/Wood footstep 4.wav" id="37_2dvfe"]
-[ext_resource type="AudioStream" uid="uid://dy0bn2gn2xlyn" path="res://assets/audio/footsteps/flesh/Mud footstep 3.wav" id="37_holxr"]
-[ext_resource type="AudioStream" uid="uid://cnmtwt8rxfmxx" path="res://assets/audio/footsteps/wood/Wood footstep 5.wav" id="38_giy8y"]
-[ext_resource type="AudioStream" uid="uid://cpfxrkmvwi51v" path="res://assets/audio/footsteps/flesh/Mud footstep 4.wav" id="38_mx1m4"]
-[ext_resource type="AudioStream" uid="uid://3molqbvgmkkp" path="res://assets/audio/footsteps/flesh/Mud footstep 5.wav" id="39_4gjji"]
-[ext_resource type="AudioStream" uid="uid://baylvl0k200yj" path="res://assets/audio/footsteps/wood/Wood footstep 6.wav" id="39_fdfoy"]
-[ext_resource type="AudioStream" uid="uid://cuohjafm8pow5" path="res://assets/audio/footsteps/stone/Stone footstep 4.wav" id="40_hhpqf"]
-[ext_resource type="AudioStream" uid="uid://tqjjdidcl8pb" path="res://assets/audio/footsteps/stone/Stone footstep 5.wav" id="41_g5jhy"]
-[ext_resource type="AudioStream" uid="uid://c2pwaj32xbasu" path="res://assets/audio/footsteps/grass/Grass footstep 7.wav" id="42_g5jhy"]
-[ext_resource type="AudioStream" uid="uid://d3350o3l6hble" path="res://assets/audio/footsteps/grass/Grass footstep 8.wav" id="43_holxr"]
-[ext_resource type="AudioStream" uid="uid://pk6l36k20oa6" path="res://assets/audio/footsteps/grass/Grass footstep 9.wav" id="44_mx1m4"]
-[ext_resource type="AudioStream" uid="uid://bw5detlxfdktg" path="res://assets/audio/footsteps/grass/Grass footstep 10.wav" id="45_4gjji"]
+[ext_resource type="PackedScene" uid="uid://chtx5nnws2m6a" path="res://scenes/footsteps.tscn" id="35_bj30b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n57sy"]
 resource_name = "Ch18_Body"
@@ -405,35 +392,6 @@ streams_count = 3
 stream_0/stream = ExtResource("21_ifr0a")
 stream_1/stream = ExtResource("22_pmkco")
 stream_2/stream = ExtResource("23_b2vfi")
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g5jhy"]
-random_pitch = 1.1
-streams_count = 4
-stream_0/stream = ExtResource("36_g5jhy")
-stream_1/stream = ExtResource("37_holxr")
-stream_2/stream = ExtResource("38_mx1m4")
-stream_3/stream = ExtResource("39_4gjji")
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_holxr"]
-random_pitch = 1.1
-streams_count = 3
-stream_0/stream = ExtResource("37_2dvfe")
-stream_1/stream = ExtResource("38_giy8y")
-stream_2/stream = ExtResource("39_fdfoy")
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mx1m4"]
-random_pitch = 1.1
-streams_count = 2
-stream_0/stream = ExtResource("40_hhpqf")
-stream_1/stream = ExtResource("41_g5jhy")
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_u2ulf"]
-random_pitch = 1.1
-streams_count = 4
-stream_0/stream = ExtResource("42_g5jhy")
-stream_1/stream = ExtResource("43_holxr")
-stream_2/stream = ExtResource("44_mx1m4")
-stream_3/stream = ExtResource("45_4gjji")
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("directional_reference", "animation_player") groups=["player"]]
 collision_layer = 512
@@ -1133,25 +1091,4 @@ current = true
 unique_name_in_owner = true
 top_level = true
 
-[node name="Footsteps" type="Node3D" parent="."]
-script = ExtResource("36_jc3p3")
-
-[node name="FleshFootstepPlayer" type="AudioStreamPlayer3D" parent="Footsteps"]
-stream = SubResource("AudioStreamRandomizer_g5jhy")
-volume_db = -80.0
-
-[node name="WoodFootstepPlayer" type="AudioStreamPlayer3D" parent="Footsteps"]
-stream = SubResource("AudioStreamRandomizer_holxr")
-volume_db = -20.0
-
-[node name="StoneFootstepPlayer" type="AudioStreamPlayer3D" parent="Footsteps"]
-stream = SubResource("AudioStreamRandomizer_mx1m4")
-volume_db = -20.0
-
-[node name="GrassFootstepPlayer" type="AudioStreamPlayer3D" parent="Footsteps"]
-stream = SubResource("AudioStreamRandomizer_u2ulf")
-volume_db = -20.0
-
-[node name="RayCast3D" type="RayCast3D" parent="Footsteps"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.168207, 0)
-collision_mask = 917504
+[node name="Footsteps" parent="." instance=ExtResource("35_bj30b")]

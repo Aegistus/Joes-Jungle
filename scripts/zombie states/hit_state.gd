@@ -8,10 +8,12 @@ extends ZombieState
 @onready var dead_state = $"../DeadState"
 @onready var general_skeleton = %GeneralSkeleton as Skeleton3D
 @onready var bone_simulator = $"../../zombie_model/Armature/GeneralSkeleton/PhysicalBoneSimulator3D" as PhysicalBoneSimulator3D
+@onready var footsteps = $"../../Footsteps"
 
 var animation_done = false
 
 func enter():
+	footsteps.enabled = false
 	animation_done = false
 	if randf() <= dismember_chance && zombie.allow_dismember:
 		zombie.random_dismember()
@@ -26,6 +28,9 @@ func enter():
 			animation_player.animation_finished.connect(func(anim_name): animation_done = true)
 	else:
 		animation_done = true
+
+func exit():
+	footsteps.enabled = true
 
 func check_transitions():
 	if zombie.current_health <= 0:

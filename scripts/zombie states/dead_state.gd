@@ -11,8 +11,10 @@ signal on_zombie_death
 @onready var hitbox = $"../../Hitbox"
 @onready var hit_state = %HitState
 @onready var general_skeleton : Skeleton3D = %GeneralSkeleton
+@onready var footsteps = $"../../Footsteps"
 
 func enter():
+	footsteps.enabled = false
 	hitbox.monitoring = false
 	hitbox.queue_free()
 	collision_shape_3d.disabled = true

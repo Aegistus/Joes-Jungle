@@ -12,10 +12,12 @@ extends ZombieState
 @onready var dead_state = $"../DeadState"
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var slowbox = $"../../Slowbox"
+@onready var footsteps = $"../../Footsteps"
 
 var exit_state = false
 
 func enter():
+	footsteps.enabled = false
 	var attack_index = randi() % attack_anims.size()
 	animation_player.speed_scale = attack_speed_multiplier
 	animation_player.play(attack_anims[attack_index])
@@ -29,6 +31,7 @@ func process_state(delta):
 		
 
 func exit():
+	footsteps.enabled = true
 	animation_player.speed_scale = 1
 	slowbox.monitoring = false
 
