@@ -493,7 +493,6 @@ min_damage = 4
 max_damage = 7
 gun_type = 2
 magazine = NodePath("gun model/Model/Magazine")
-magazine_scale = 100.0
 base_accuracy = 0
 base_recoil = 20
 base_ergonomics = 80

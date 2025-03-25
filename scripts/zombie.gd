@@ -35,6 +35,7 @@ func _ready():
 	current_health = starting_health
 	ragdoll.physical_bones_stop_simulation()
 	if barricade_detector:
+		barricade_detector.area_entered.connect(barricade_detected)
 		barricade_detector.area_exited.connect(barricade_lost)
 	if allow_dismember:
 		physics_bones = ragdoll.get_children().filter(func(i): return i as PhysicalBone3D)

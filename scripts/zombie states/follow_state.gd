@@ -49,12 +49,14 @@ func process_navigation(delta):
 func process_state_physics(delta):
 	zombie.velocity = zombie.speed_modifier * move_speeds[anim_index] * delta * (next_nav_point - zombie.transform.origin).normalized()
 	if zombie.position != next_nav_point:
-		if (next_nav_point + NAV_POINT_Y_OFFSET * Vector3.UP).normalized() != Vector3.UP and (next_nav_point + NAV_POINT_Y_OFFSET * Vector3.UP).normalized() != Vector3.DOWN:
-			var target_transform = zombie.transform.looking_at(next_nav_point + NAV_POINT_Y_OFFSET * Vector3.UP)
+		var adjusted_nav_point = next_nav_point + NAV_POINT_Y_OFFSET * Vector3.UP
+		if adjusted_nav_point != zombie.global_position and adjusted_nav_point.normalized() != Vector3.UP and adjusted_nav_point.normalized() != Vector3.DOWN:
+			var target_transform = zombie.transform.looking_at(adjusted_nav_point)
 			var a = Quaternion(zombie.transform.basis)
 			var b = Quaternion(target_transform.basis)
 			var c = a.slerp(b, delta * SMOOTH_SPEED)
 			zombie.transform.basis = Basis(c)
+			zombie.rotation = Vector3(0, zombie.rotation.y, 0)
 	zombie.move_and_slide()
 
 func check_transitions():
