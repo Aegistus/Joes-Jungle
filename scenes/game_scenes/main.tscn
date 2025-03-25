@@ -601,7 +601,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5, 0, -55.5)
 material_override = ExtResource("3_mkkog")
 material_overlay = ExtResource("5_7xppv")
 use_collision = true
-collision_layer = 131072
+collision_layer = 196608
 collision_mask = 0
 size = Vector3(16, 1, 38)
 
@@ -610,7 +610,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.75, 0, -52.05)
 material_override = ExtResource("3_mkkog")
 material_overlay = ExtResource("5_7xppv")
 use_collision = true
-collision_layer = 131072
+collision_layer = 196608
 collision_mask = 0
 size = Vector3(1.5, 1, 5.1)
 
@@ -619,7 +619,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.25, 0, -32.25)
 material_override = ExtResource("3_mkkog")
 material_overlay = ExtResource("5_7xppv")
 use_collision = true
-collision_layer = 131072
+collision_layer = 196608
 collision_mask = 0
 size = Vector3(6.5, 1, 8.5)
 
@@ -628,7 +628,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.75, 0, -32.25)
 material_override = ExtResource("3_mkkog")
 material_overlay = ExtResource("5_7xppv")
 use_collision = true
-collision_layer = 131072
+collision_layer = 196608
 collision_mask = 0
 size = Vector3(6.5, 1, 8.5)
 
@@ -637,7 +637,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.8, 0, -32.5)
 material_override = ExtResource("3_mkkog")
 material_overlay = ExtResource("5_7xppv")
 use_collision = true
-collision_layer = 131072
+collision_layer = 196608
 collision_mask = 0
 size = Vector3(0.6, 1, 5.8)
 
@@ -646,7 +646,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -51.95)
 material_override = ExtResource("3_mkkog")
 material_overlay = ExtResource("5_7xppv")
 use_collision = true
-collision_layer = 131072
+collision_layer = 196608
 collision_mask = 0
 size = Vector3(1, 1, 4.9)
 
@@ -655,7 +655,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.15, 0, -71.5)
 material_override = ExtResource("3_mkkog")
 material_overlay = ExtResource("5_7xppv")
 use_collision = true
-collision_layer = 131072
+collision_layer = 196608
 collision_mask = 0
 size = Vector3(3.3, 1, 9)
 
@@ -664,7 +664,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.2, 0, -75.2)
 material_override = ExtResource("3_mkkog")
 material_overlay = ExtResource("5_7xppv")
 use_collision = true
-collision_layer = 131072
+collision_layer = 196608
 collision_mask = 0
 size = Vector3(2.6, 1, 1.4)
 
@@ -673,7 +673,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.15, 0, -71.45)
 material_override = ExtResource("3_mkkog")
 material_overlay = ExtResource("5_7xppv")
 use_collision = true
-collision_layer = 131072
+collision_layer = 196608
 collision_mask = 0
 size = Vector3(0.7, 1, 6.1)
 
@@ -682,7 +682,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.95, 0, -71.3)
 material_override = ExtResource("3_mkkog")
 material_overlay = ExtResource("5_7xppv")
 use_collision = true
-collision_layer = 131072
+collision_layer = 196608
 collision_mask = 0
 size = Vector3(3.1, 1, 8.6)
 
@@ -691,7 +691,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.95, 0, -71.45)
 material_override = ExtResource("3_mkkog")
 material_overlay = ExtResource("5_7xppv")
 use_collision = true
-collision_layer = 131072
+collision_layer = 196608
 collision_mask = 0
 size = Vector3(0.9, 1, 6.1)
 
