@@ -13,6 +13,7 @@ extends CharacterBody3D
 @onready var hit_state = $StateMachine/HitState
 @onready var general_skeleton = %GeneralSkeleton
 @onready var blood_particle_scene = preload("res://scenes/particles/blood_particles.tscn")
+@onready var barricade_detector = $BarricadeDetector
 
 const LIMB_EXPLOSION_PARTICLES = preload("res://scenes/particles/limb_explosion_particles.tscn")
 const BLOOD_SPRAY_PARTICLES = preload("res://scenes/particles/blood_spray_particles.tscn")
@@ -33,6 +34,8 @@ var already_dismembered_parts = []
 func _ready():
 	current_health = starting_health
 	ragdoll.physical_bones_stop_simulation()
+	if barricade_detector:
+		barricade_detector.area_exited.connect(barricade_lost)
 	if allow_dismember:
 		physics_bones = ragdoll.get_children().filter(func(i): return i as PhysicalBone3D)
 
@@ -60,6 +63,10 @@ func slow(amount_modifier):
 
 func barricade_detected(area : Area3D):
 	target_barricade = area.get_parent()
+
+func barricade_lost(area : Area3D):
+	if area.get_parent() == target_barricade:
+		target_barricade = null
 
 func random_dismember():
 	if body_part_names.size() == 0:
