@@ -599,12 +599,14 @@ libraries = {
 }
 
 [node name="ShellEjector" type="Node3D" parent="."]
-transform = Transform3D(-0.376557, -0.891677, -0.251233, -0.0877085, -0.235662, 0.96787, -0.922232, 0.386494, 0.0105321, 2.25694, 0.370309, -1.70888)
+transform = Transform3D(0.160781, -0.986984, -0.00363698, 0.108884, 0.0140738, 0.993955, -0.980965, -0.160205, 0.10973, 0.108427, 0.11033, 0.0248871)
 script = ExtResource("4_1mxa2")
 shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
 shell_scale = 1.0
 
 [node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("5_bpsn8")]
+lifetime = 1.0
+one_shot = false
 process_material = SubResource("ParticleProcessMaterial_o6lox")
 
 [node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="."]

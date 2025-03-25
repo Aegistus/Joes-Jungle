@@ -353,12 +353,14 @@ stream = ExtResource("5_g0yt6")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="ShellEjector" type="Node3D" parent="."]
-transform = Transform3D(1, -2.75293e-10, -1.64636e-09, 1.59162e-11, 0.987835, -0.155504, 1.66914e-09, 0.155504, 0.987835, 0.197812, 0.089335, 0.189505)
+transform = Transform3D(-0.0230863, -0.999733, 0.000335262, -0.0947563, 0.00252199, 0.995497, -0.995233, 0.0229506, -0.0947892, 0.108221, 0.209017, -0.0058689)
 script = ExtResource("6_cx3u5")
 shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
 shell_scale = 1.0
 
 [node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("7_ulh05")]
+lifetime = 0.1
+one_shot = false
 
 [node name="RemoveMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_o5ap2")

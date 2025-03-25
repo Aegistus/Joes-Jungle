@@ -190,7 +190,7 @@ base_recoil = 80
 base_ergonomics = 50
 
 [node name="gun model" type="Node3D" parent="."]
-transform = Transform3D(0.00594738, 0.99804, 0.0622945, -0.0863843, 0.0625755, -0.994295, -0.996244, 0.00053218, 0.0865872, 0.108421, 0.269155, 0.0361099)
+transform = Transform3D(0.00594747, 0.99804, 0.0622919, -0.0863807, 0.0625729, -0.994295, -0.996244, 0.000532746, 0.0865836, 0.108421, 0.269155, 0.0361099)
 
 [node name="model" type="MeshInstance3D" parent="gun model"]
 transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0, 0)
@@ -283,12 +283,14 @@ stream = ExtResource("4_uvq5q")
 [node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 
 [node name="ShellEjector" type="Node3D" parent="."]
-transform = Transform3D(1, -1.59266e-11, 1.66914e-09, 1.59374e-11, -0.999818, -0.0190928, 1.66914e-09, 0.0190928, -0.999818, 0.0296187, 0.0026645, 0.00259642)
+transform = Transform3D(0.00280363, -0.99845, -0.0555941, -0.0502882, -0.0556648, 0.997183, -0.998731, -1.27702e-09, -0.0503663, 0.115187, 0.264411, 0.0254054)
 script = ExtResource("5_ynbqx")
 shell_particle_path = "res://scenes/particles/shotgun_shell_casing_particles.tscn"
 shell_scale = 1.0
 
 [node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("6_i2oo6")]
+lifetime = 0.2
+one_shot = false
 
 [node name="RemoveMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 

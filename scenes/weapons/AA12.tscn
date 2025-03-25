@@ -501,7 +501,7 @@ reload_anim_speed_modifier = 0.8
 reload_move_speed_modifier = 0.8
 
 [node name="gun model" type="Node3D" parent="."]
-transform = Transform3D(0.00298753, -0.0459003, -0.998941, 0.0818189, 0.995608, -0.0455024, 0.996643, -0.0815963, 0.00672992, 0.0299022, 0.132974, 0.0535035)
+transform = Transform3D(0.00298694, -0.0459002, -0.998941, 0.0818189, 0.995608, -0.0455024, 0.996643, -0.0815964, 0.00672932, 0.0299022, 0.132974, 0.0535035)
 
 [node name="Model" type="Node3D" parent="gun model"]
 transform = Transform3D(1, 0, 0, 0, 0.0189531, 0.99982, 0, -0.99982, 0.0189531, 0, 0, 0)
@@ -654,7 +654,7 @@ libraries = {
 }
 
 [node name="ShellEjector" type="Node3D" parent="."]
-transform = Transform3D(-1, 8.90577e-08, 0, -8.71734e-08, -0.999818, 0.0190929, 0, 0.0190929, 0.999818, -0.0292266, 0.0878648, 0.0848857)
+transform = Transform3D(3.45617e-09, -1, -4.35746e-08, -0.0790681, -4.37114e-08, 0.99687, -0.996869, -2.22045e-16, -0.0790681, 0.0785015, 0.200266, 0.0538852)
 script = ExtResource("5_pot63")
 shell_particle_path = "res://scenes/particles/shotgun_shell_casing_particles.tscn"
 shell_scale = 1.0

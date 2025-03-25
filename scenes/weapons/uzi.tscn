@@ -311,7 +311,7 @@ reload_anim_speed_modifier = 1.2
 reload_move_speed_modifier = 1.2
 
 [node name="gun model" type="Node3D" parent="."]
-transform = Transform3D(-8.9407e-08, 0.997813, 0.0660994, -0.0360854, 0.0660563, -0.997163, -0.999349, -0.00238529, 0.0360065, 0.0922785, 0.0884608, 0.0225395)
+transform = Transform3D(-4.23193e-06, 0.997813, 0.0661038, -0.0360878, 0.0660606, -0.997163, -0.999349, -0.00238976, 0.0360086, 0.0922785, 0.0884608, 0.0225395)
 
 [node name="model" type="Node3D" parent="gun model"]
 transform = Transform3D(0.0696425, 1.92394e-05, 0.00706541, 0.000467021, 0.0698341, -0.00479351, -0.00704998, 0.00481617, 0.0694773, 0, 0, 0)
@@ -396,13 +396,14 @@ stream = ExtResource("5_oajam")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="ShellEjector" type="Node3D" parent="."]
-transform = Transform3D(1, 2.13163e-14, 1.86353e-21, 2.13163e-14, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0.0120778, 0.0145158, -0.00207291)
+transform = Transform3D(0.0255393, -0.999673, 0.00150747, 0.0121937, 0.00181938, 0.999924, -0.999599, -0.025519, 0.0122362, 0.10311, 0.0921846, 0.0966206)
 script = ExtResource("6_hmi2v")
 shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
 shell_scale = 1.0
 
 [node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("7_blahp")]
-lifetime = 0.1
+lifetime = 1.0
+one_shot = false
 
 [node name="RemoveMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_xeqso")

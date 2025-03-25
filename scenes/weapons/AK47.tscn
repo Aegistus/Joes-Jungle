@@ -431,7 +431,7 @@ base_recoil = 30
 base_ergonomics = 75
 
 [node name="gun model" type="Node3D" parent="."]
-transform = Transform3D(-0.20646, 0.976387, -0.0635812, 0.104035, 0.0865185, 0.990803, 0.972908, 0.197947, -0.119441, 0.0668306, 0.138261, 0.043304)
+transform = Transform3D(-0.206459, 0.976387, -0.0635815, 0.104035, 0.0865187, 0.990803, 0.972908, 0.197945, -0.119441, 0.0668306, 0.138261, 0.043304)
 
 [node name="AR" type="Node3D" parent="gun model"]
 transform = Transform3D(75, -4.47035e-08, 3.66374e-17, 4.47035e-08, 75, -2.51457e-07, 1.13243e-16, 2.51457e-07, 75, 0, 0, 0)
@@ -541,7 +541,7 @@ stream = ExtResource("5_gwo1p")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="ShellEjector" type="Node3D" parent="."]
-transform = Transform3D(-1, 8.74069e-08, -1.66914e-09, -8.74228e-08, -0.999818, 0.0190927, -2.33147e-15, 0.0190927, 0.999818, 0.102064, 0.0503006, 0.140408)
+transform = Transform3D(0.194579, -0.980041, -0.0407421, -0.136245, -0.0681372, 0.988329, -0.971378, -0.186758, -0.146784, 0.0771121, 0.284717, 0.0339163)
 script = ExtResource("6_auipt")
 shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
 shell_scale = 1.0

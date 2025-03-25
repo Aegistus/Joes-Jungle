@@ -326,7 +326,7 @@ base_ergonomics = 75
 
 [node name="GunModel" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.0194578, 0.999002, 0.0402064, -0.124982, 0.0423289, -0.991256, -0.991968, 0.0142626, 0.125681, 0.0115169, 0.235189, 0.0246665)
+transform = Transform3D(0.0194592, 0.999002, 0.0402079, -0.124987, 0.0423307, -0.991255, -0.991967, 0.0142636, 0.125686, 0.0115169, 0.235189, 0.0246665)
 
 [node name="M4_8" type="MeshInstance3D" parent="GunModel"]
 material_override = SubResource("StandardMaterial3D_rdqvt")
@@ -420,8 +420,7 @@ shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
 shell_scale = 1.0
 
 [node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("7_cbm1q")]
-visible = false
-lifetime = 0.01
+lifetime = 0.1
 one_shot = false
 
 [node name="RemoveMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
