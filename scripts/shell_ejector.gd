@@ -10,7 +10,7 @@ func _ready():
 
 func eject():
 	var particle = shell_particle_effect.instantiate() as GPUParticles3D
-	add_child(particle)
+	get_tree().root.add_child(particle)
 	particle.scale = Vector3(shell_scale, shell_scale, shell_scale)
 	particle.global_position = global_position
 	particle.emitting = true
