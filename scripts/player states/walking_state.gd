@@ -29,7 +29,7 @@ func process_state_physics(delta):
 	if direction != Vector3.ZERO:
 		target.velocity.x = direction.x * movement_speed * delta * controlled_player.move_speed_multiplier
 		target.velocity.z = direction.z * movement_speed * delta * controlled_player.move_speed_multiplier
-	target.	move_and_slide()
+	target.move_and_slide()
 	# Set animations
 	var relative_dir = (player_model.basis * Vector3(direction.z, 0, direction.x)).normalized()
 	controlled_player.current_animation_tree.set("parameters/WalkSpeed/blend_position", Vector2(relative_dir.z, -relative_dir.x))
