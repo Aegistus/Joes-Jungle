@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca3ardf8xgdmv"]
+
+[ext_resource type="AudioStream" uid="uid://cueivjhp86s3w" path="res://assets/audio/ambiance/fly-noise.mp3" id="1_q8e2x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abi0l"]
+albedo_color = Color(0.165656, 0.165656, 0.165656, 1)
+
+[sub_resource type="Curve" id="Curve_q8e2x"]
+_limits = [-2.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 2), 0.0, 0.0, 0, 0, Vector2(1, 0.66422), -1.8085, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fh5tr"]
+curve = SubResource("Curve_q8e2x")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cji1u"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+angular_velocity_min = 720.0
+angular_velocity_max = 720.0
+orbit_velocity_min = -0.0939999
+orbit_velocity_max = 0.257
+orbit_velocity_curve = SubResource("CurveTexture_fh5tr")
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = -2.23517e-05
+gravity = Vector3(0, 0, 0)
+scale_min = 0.02
+scale_max = 0.02
+
+[sub_resource type="BoxMesh" id="BoxMesh_d8066"]
+
+[node name="FlyParticleEffect" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_abi0l")
+amount = 24
+process_material = SubResource("ParticleProcessMaterial_cji1u")
+draw_pass_1 = SubResource("BoxMesh_d8066")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_q8e2x")
+volume_db = -20.0
+autoplay = true
+stream_paused = true
+max_distance = 3.0
+bus = &"Sound Effects"

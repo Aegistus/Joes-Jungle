@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=4 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=112 format=4 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Script" uid="uid://dvi44v1xmi7ir" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
@@ -36,11 +36,11 @@
 [ext_resource type="PackedScene" uid="uid://r00tnhjsa0sn" path="res://scenes/scenery/stone_wall_03.tscn" id="22_n38su"]
 [ext_resource type="PackedScene" uid="uid://gpemc8wh337i" path="res://scenes/scenery/flower_hanging_02.tscn" id="23_0mp1p"]
 [ext_resource type="PackedScene" uid="uid://ccwmikladigvb" path="res://scenes/scenery/stone_wall_pillar_01.tscn" id="23_jh0gs"]
-[ext_resource type="AudioStream" uid="uid://ccly54bn3impj" path="res://assets/audio/Typewriter Keys.ogg" id="24_aot01"]
+[ext_resource type="AudioStream" uid="uid://ccly54bn3impj" path="res://assets/audio/ambiance/Typewriter Keys.ogg" id="24_aot01"]
 [ext_resource type="PackedScene" uid="uid://dpcc7siuvyhyr" path="res://scenes/scenery/stone_wall_rubble_01.tscn" id="24_vncji"]
 [ext_resource type="PackedScene" uid="uid://bv08t2e7vfcx7" path="res://scenes/scenery/stone_wall_rubble_02.tscn" id="25_07ac2"]
 [ext_resource type="PackedScene" uid="uid://20mjnqpncu7g" path="res://scenes/scenery/stone_wall_rubble_03.tscn" id="26_8gqcl"]
-[ext_resource type="AudioStream" uid="uid://cj0hffgyhr3qu" path="res://assets/audio/grandfather_clock.mp3" id="26_rda73"]
+[ext_resource type="AudioStream" uid="uid://cj0hffgyhr3qu" path="res://assets/audio/ambiance/grandfather_clock.mp3" id="26_rda73"]
 [ext_resource type="PackedScene" uid="uid://dkjt686bxxe74" path="res://scenes/scenery/stone_wall_rubble_04.tscn" id="27_50f8y"]
 [ext_resource type="PackedScene" uid="uid://dy7nsmch3eake" path="res://scenes/scenery/tree_dead_01.tscn" id="28_oo16f"]
 [ext_resource type="PackedScene" uid="uid://8eq1ywe0gm4j" path="res://scenes/scenery/bookcase.tscn" id="29_5wduh"]
@@ -78,6 +78,7 @@
 [ext_resource type="AudioStream" uid="uid://cjarkopb4o35p" path="res://assets/audio/ambiance/Ambience_Horror_Simple_01.wav" id="63_xdv8y"]
 [ext_resource type="PackedScene" uid="uid://c6rdj2djfmnux" path="res://scenes/scenery/fly_swatter.tscn" id="77_awo7q"]
 [ext_resource type="PackedScene" uid="uid://c4syoug72jkj5" path="res://scenes/scenery/watering_can.tscn" id="78_8f40m"]
+[ext_resource type="PackedScene" uid="uid://ca3ardf8xgdmv" path="res://scenes/particles/fly_particle_effect.tscn" id="79_nygn1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -5973,6 +5974,9 @@ shape = SubResource("BoxShape3D_xdv8y")
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="AmbientSFX/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.95398, 0, -19.8413)
 shape = SubResource("BoxShape3D_xdv8y")
+
+[node name="FlyParticleEffect" parent="." instance=ExtResource("79_nygn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8173, 0.6, -73.5821)
 
 [connection signal="timeout" from="ZombieSpawnPoints/IntermissionTimer" to="ZombieSpawnPoints" method="_on_timer_timeout"]
 [connection signal="area_entered" from="AmbientSFX/Area3D" to="AmbientSFX" method="on_player_enter"]
