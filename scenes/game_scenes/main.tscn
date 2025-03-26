@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=4 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=111 format=4 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Script" uid="uid://dvi44v1xmi7ir" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bco71m6ioujft" path="res://assets/textures/wall_writing.png" id="18_ip8yw"]
 [ext_resource type="Script" uid="uid://411sikpq3bfc" path="res://scripts/insanity/wall_writing.gd" id="18_yk2vc"]
 [ext_resource type="PackedScene" uid="uid://cfr2u7qy1n0fv" path="res://scenes/scenery/vine_wall_01.tscn" id="20_e3swa"]
+[ext_resource type="Material" uid="uid://cxit8kfecebn" path="res://materials/metal_counter.tres" id="21_2r4gj"]
 [ext_resource type="PackedScene" uid="uid://b1uu5s8rj206g" path="res://scenes/scenery/stone_wall_01.tscn" id="21_l7i85"]
 [ext_resource type="PackedScene" uid="uid://cx5b0cxtc4w45" path="res://scenes/scenery/coffee_table_01.tscn" id="21_njevt"]
 [ext_resource type="PackedScene" uid="uid://cvgssvrfjioia" path="res://scenes/scenery/flower_hanging_01.tscn" id="22_ipe01"]
@@ -75,6 +76,8 @@
 [ext_resource type="Texture2D" uid="uid://d3jkutj1yoh61" path="res://assets/models/characters/Joe_Ch33_1002_Diffuse.png" id="62_2tuxh"]
 [ext_resource type="Texture2D" uid="uid://fetdeketf8cx" path="res://assets/models/characters/Joe_Ch33_1002_Normal.png" id="63_qkf5v"]
 [ext_resource type="AudioStream" uid="uid://cjarkopb4o35p" path="res://assets/audio/ambiance/Ambience_Horror_Simple_01.wav" id="63_xdv8y"]
+[ext_resource type="PackedScene" uid="uid://c6rdj2djfmnux" path="res://scenes/scenery/fly_swatter.tscn" id="77_awo7q"]
+[ext_resource type="PackedScene" uid="uid://c4syoug72jkj5" path="res://scenes/scenery/watering_can.tscn" id="78_8f40m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -3166,26 +3169,26 @@ use_collision = true
 size = Vector3(3.05, 2, 0.5)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, -0.125, -53.5)
-material_override = ExtResource("8_ijifm")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -0.125, -53.5)
+material_override = ExtResource("21_2r4gj")
 use_collision = true
 size = Vector3(3, 0.75, 1)
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.525, 0.05, -53.5)
-material_override = ExtResource("8_ijifm")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.225, 0.05, -53.5)
+material_override = ExtResource("21_2r4gj")
 use_collision = true
 size = Vector3(2.05, 1.1, 1)
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8, -0.125, -47)
-material_override = ExtResource("8_ijifm")
+material_override = ExtResource("21_2r4gj")
 use_collision = true
 size = Vector3(3, 0.75, 1)
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -0.125, -47)
-material_override = ExtResource("8_ijifm")
+material_override = ExtResource("21_2r4gj")
 use_collision = true
 size = Vector3(3, 0.75, 1)
 
@@ -3318,6 +3321,15 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.2,
 
 [node name="bookcase4" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("29_5wduh")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17, -0.5, -22)
+
+[node name="Fern01" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("53_mnuk6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7, 0.6, -53.5)
+
+[node name="FlySwatter" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("77_awo7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.798, 0.6, -53.3366)
+
+[node name="watering_can" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("78_8f40m")]
+transform = Transform3D(0.451812, 0, -0.892113, 0, 1, 0, 0.892113, 0, 0.451812, -22.7681, 0.887675, -53.1373)
 
 [node name="Outer" type="Node3D" parent="NavigationRegion3D/map"]
 
