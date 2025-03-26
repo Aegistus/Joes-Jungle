@@ -49,9 +49,13 @@ func hit(damage, position : Vector3 = global_position, hit_direction : Vector3 =
 	blood.emitting = true
 	if current_health <= 0:
 		current_health = 0
+		FloatingTextManager.display_text(str(damage), position, Color.RED)
 		print("I'm dead")
 	elif not stagger_immune:
 		state_machine.transition_to(hit_state)
+		FloatingTextManager.display_text(str(damage), position)
+	else:
+		FloatingTextManager.display_text(str(damage), position)
 
 # quick damage that doesn't cause stagger or blood
 func quick_hit(damage):

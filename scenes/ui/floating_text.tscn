@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://yrdkyfiyfbog"]
+
+[ext_resource type="Script" uid="uid://c1y6v6g8jqtca" path="res://scripts/look_at_camera.gd" id="1_0qskq"]
+
+[node name="FloatingText" type="Node3D"]
+script = ExtResource("1_0qskq")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+text = "TEXT"

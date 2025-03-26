@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://scenes/game_manager.tscn"
+FloatingTextManager="*res://scripts/floating_text_manager.gd"
 
 [debug]
 
