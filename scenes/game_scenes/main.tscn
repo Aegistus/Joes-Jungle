@@ -9,7 +9,6 @@
 [ext_resource type="Material" uid="uid://hffu6an0hw4" path="res://materials/stone_tile_mat.tres" id="6_qkf5v"]
 [ext_resource type="Material" uid="uid://cxqgxa4hvt03p" path="res://materials/water_mat.tres" id="7_2nefa"]
 [ext_resource type="Material" uid="uid://defcp73lvwr6a" path="res://materials/grass_mat.tres" id="7_qkf5v"]
-[ext_resource type="Material" uid="uid://p001di78373p" path="res://materials/grid_2.tres" id="8_ijifm"]
 [ext_resource type="PackedScene" uid="uid://ciu738dd2fsak" path="res://scenes/scenery/palm_tree_01.tscn" id="9_41nok"]
 [ext_resource type="PackedScene" uid="uid://dt6dau15gvne7" path="res://scenes/scenery/pillar_01.tscn" id="9_ph64a"]
 [ext_resource type="PackedScene" uid="uid://yttdwroyehgm" path="res://scenes/scenery/palm_tree_02.tscn" id="10_8b1qe"]
@@ -36,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://cvgssvrfjioia" path="res://scenes/scenery/flower_hanging_01.tscn" id="22_ipe01"]
 [ext_resource type="PackedScene" uid="uid://r00tnhjsa0sn" path="res://scenes/scenery/stone_wall_03.tscn" id="22_n38su"]
 [ext_resource type="PackedScene" uid="uid://gpemc8wh337i" path="res://scenes/scenery/flower_hanging_02.tscn" id="23_0mp1p"]
+[ext_resource type="Material" uid="uid://q0ir0f5x55ix" path="res://materials/wood_mat_02.tres" id="23_2nefa"]
 [ext_resource type="PackedScene" uid="uid://ccwmikladigvb" path="res://scenes/scenery/stone_wall_pillar_01.tscn" id="23_jh0gs"]
 [ext_resource type="AudioStream" uid="uid://ccly54bn3impj" path="res://assets/audio/ambiance/Typewriter Keys.ogg" id="24_aot01"]
 [ext_resource type="PackedScene" uid="uid://dpcc7siuvyhyr" path="res://scenes/scenery/stone_wall_rubble_01.tscn" id="24_vncji"]
@@ -3177,12 +3177,6 @@ shape = SubResource("WorldBoundaryShape3D_30c14")
 
 [node name="Furniture" type="Node3D" parent="NavigationRegion3D/map"]
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.025, 0.5, -55.25)
-material_override = ExtResource("8_ijifm")
-use_collision = true
-size = Vector3(3.05, 2, 0.5)
-
 [node name="CSGBox3D14" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -0.125, -53.5)
 material_override = ExtResource("21_2r4gj")
@@ -3207,18 +3201,6 @@ material_override = ExtResource("21_2r4gj")
 use_collision = true
 size = Vector3(3, 0.75, 1)
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.025, 0.5, -47.75)
-material_override = ExtResource("8_ijifm")
-use_collision = true
-size = Vector3(3.05, 2, 0.5)
-
-[node name="CSGBox3D12" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.775, 0.5, -51.4)
-material_override = ExtResource("8_ijifm")
-use_collision = true
-size = Vector3(3.05, 2, 0.5)
-
 [node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
 transform = Transform3D(-5.68248e-08, 0, -1, 0, 1, 0, 1.3, 0, -4.37114e-08, -30.575, -0.35, -12.5025)
 material_override = SubResource("StandardMaterial3D_qyvdf")
@@ -3227,31 +3209,31 @@ size = Vector3(4.6, 0.3, 1.8)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
 transform = Transform3D(-5.68248e-08, 0, -1, 0, 1, 0, 1.3, 0, -4.37114e-08, -30.125, -0.15, -12.5225)
-material_override = ExtResource("8_ijifm")
+material_override = ExtResource("23_2nefa")
 use_collision = true
 size = Vector3(1, 0.1, 0.9)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
 transform = Transform3D(-5.68248e-08, 0, -1, 0, 1, 0, 1.3, 0, -4.37114e-08, -29.95, 0.5, -12.5)
-material_override = ExtResource("8_ijifm")
+material_override = ExtResource("23_2nefa")
 use_collision = true
 size = Vector3(0.35, 1.2, 0.35)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
 transform = Transform3D(-5.68248e-08, 0, -1, 0, 1, 0, 1.3, 0, -4.37114e-08, -31.3, 1.275, -12.5)
-material_override = ExtResource("8_ijifm")
+material_override = ExtResource("23_2nefa")
 use_collision = true
 size = Vector3(0.35, 2.95, 0.35)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
 transform = Transform3D(-5.68248e-08, 0, -1, 1.3, -4.37114e-08, -4.37114e-08, -5.68248e-08, -1, 1.91069e-15, -31.3, 1.875, -12.5)
-material_override = ExtResource("8_ijifm")
+material_override = ExtResource("23_2nefa")
 use_collision = true
 size = Vector3(0.35, 1.85, 0.25)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="NavigationRegion3D/map/Furniture"]
 transform = Transform3D(-4.92117e-08, -0.5, -0.866025, -2.84124e-08, 0.866025, -0.5, 1.3, 0, -4.37114e-08, -29.975, 1.15, -12.5025)
-material_override = ExtResource("8_ijifm")
+material_override = ExtResource("23_2nefa")
 use_collision = true
 size = Vector3(0.6, 0.1, 0.6)
 
@@ -3327,6 +3309,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27.4,
 
 [node name="bookcase" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("29_5wduh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.2, -0.5, -24.5)
+
+[node name="bookcase5" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("29_5wduh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.5, -0.5, -52.8)
+
+[node name="bookcase6" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("29_5wduh")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -11.3, -0.5, -55.4)
+
+[node name="bookcase7" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("29_5wduh")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -8.6, -0.5, -47.5)
 
 [node name="bookcase2" parent="NavigationRegion3D/map/Furniture" instance=ExtResource("29_5wduh")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -17, -0.5, -24.5)
