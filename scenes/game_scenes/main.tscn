@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=4 uid="uid://br201tqu48j8s"]
+[gd_scene load_steps=114 format=4 uid="uid://br201tqu48j8s"]
 
 [ext_resource type="Script" uid="uid://dvi44v1xmi7ir" path="res://scripts/game_level.gd" id="1_gfbx0"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_okwba"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dpdrosnb70eiy" path="res://assets/textures/Wood Texture.png" id="3_ro61b"]
 [ext_resource type="Material" uid="uid://bpag0mk446adq" path="res://materials/mansion_flesh.tres" id="5_7xppv"]
 [ext_resource type="Material" uid="uid://hffu6an0hw4" path="res://materials/stone_tile_mat.tres" id="6_qkf5v"]
+[ext_resource type="Material" uid="uid://cxqgxa4hvt03p" path="res://materials/water_mat.tres" id="7_2nefa"]
 [ext_resource type="Material" uid="uid://defcp73lvwr6a" path="res://materials/grass_mat.tres" id="7_qkf5v"]
 [ext_resource type="Material" uid="uid://p001di78373p" path="res://materials/grid_2.tres" id="8_ijifm"]
 [ext_resource type="PackedScene" uid="uid://ciu738dd2fsak" path="res://scenes/scenery/palm_tree_01.tscn" id="9_41nok"]
@@ -110,6 +111,8 @@ size = Vector3(1000, 1, 1000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_88515"]
 size = Vector3(6, 0.8, 3.6)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c1ufn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yk2vc"]
 size = Vector3(4.9, 1.5, 0.3)
@@ -989,6 +992,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.4, 0)
 vertices = PackedVector3Array(-2.75682, 0, -1.38593, -2.69893, 0, 1.69234, 2.81554, 0, 1.71678, 2.81636, 0, -1.4628)
 affect_navigation_mesh = true
 
+[node name="Water2" type="MeshInstance3D" parent="NavigationRegion3D/map/floor/OutdoorFloor2"]
+transform = Transform3D(3.2834, 0, 0, 0, 1, 0, 0, 0, 2.02699, -1.11988, 0.275, 0.300003)
+material_override = ExtResource("7_2nefa")
+mesh = SubResource("PlaneMesh_c1ufn")
+skeleton = NodePath("../../OutdoorFloor3/ReflectingPool2")
+
 [node name="OutdoorFloor3" type="CSGBox3D" parent="NavigationRegion3D/map/floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.75, 0, -23.5)
 material_override = ExtResource("6_qkf5v")
@@ -1020,6 +1029,11 @@ shape = SubResource("BoxShape3D_88515")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0999985, -0.475, 0)
 vertices = PackedVector3Array(-2.75682, 0, -1.38593, -2.69893, 0, 1.69234, 2.81554, 0, 1.71678, 2.81636, 0, -1.4628)
 affect_navigation_mesh = true
+
+[node name="Water" type="MeshInstance3D" parent="NavigationRegion3D/map/floor/OutdoorFloor3/ReflectingPool2"]
+transform = Transform3D(3.2834, 0, 0, 0, 1, 0, 0, 0, 2.02699, 0, 0, 0)
+material_override = ExtResource("7_2nefa")
+mesh = SubResource("PlaneMesh_c1ufn")
 
 [node name="Ground" type="CSGBox3D" parent="NavigationRegion3D/map/floor"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -28, 0, -59.95)
