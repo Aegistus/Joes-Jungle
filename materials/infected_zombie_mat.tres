@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dw82mc88hdr0n"]
+
+[ext_resource type="Texture2D" uid="uid://cggy0434na32t" path="res://assets/textures/infected_zombie_texture.png" id="1_blk5t"]
+[ext_resource type="Texture2D" uid="uid://ek03kypobdsy" path="res://assets/textures/infected_zombie_texture_n.png" id="2_wc68v"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_blk5t")
+normal_enabled = true
+normal_texture = ExtResource("2_wc68v")
+uv1_scale = Vector3(5, 5, 5)

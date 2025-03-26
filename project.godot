@@ -47,6 +47,7 @@ enabled=PackedStringArray("res://addons/rotation_randomizer/plugin.cfg", "res://
 
 folder_colors={
 "res://assets/": "yellow",
+"res://materials/": "purple",
 "res://scenes/": "green",
 "res://scripts/": "red"
 }
