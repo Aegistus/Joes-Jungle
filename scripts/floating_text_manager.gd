@@ -11,7 +11,6 @@ func display_text(text: String, position: Vector3, color: Color = Color.WHITE):
 	add_child(floating_text)
 	floating_text.global_position = position
 	label.text = text
-	#label.z_index = 5
 	
 	label.modulate = color
 	label.font_size = FONT_SIZE

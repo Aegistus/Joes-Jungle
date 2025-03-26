@@ -53,7 +53,6 @@ func shoot_end():
 func _process(delta):
 	if is_shooting:
 		ammo.use_ammo(delta * FUEL_USE_RATE)
-		print(ammo.current_ammo)
 
 func set_targets_on_fire():
 	for i in raycast_parent.get_child_count():
@@ -65,7 +64,6 @@ func set_targets_on_fire():
 		if raycast.is_colliding():
 			var collision_point = raycast.get_collision_point()
 			raycast.target_position.y = -raycast.position.distance_to(collision_point) * raycast.global_basis.get_scale().y
-			print(raycast.target_position.y)
 		raycast.set_collision_mask_value(1, false)
 		raycast.set_collision_mask_value(7, true)
 		raycast.force_raycast_update()

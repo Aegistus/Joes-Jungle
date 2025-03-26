@@ -76,4 +76,3 @@ func select_new_emplacement():
 	current_emplacement_ghost.queue_free()
 	spawn_emplacement_ghost()
 	on_change_selected_build.emit(current_index)
-	print(current_index)

@@ -79,7 +79,6 @@ func spawn_zombie(spawn_index : int):
 	var zombie_prototype
 	var sum_of_weight = sum_of_spawn_weights
 	var rnd = randf_range(0, sum_of_weight)
-	print(rnd)
 	for table in zombie_spawn_table:
 		if rnd < table.spawn_weight and GameManager.current_wave >= table.starting_wave:
 			zombie_prototype = table.prototype
