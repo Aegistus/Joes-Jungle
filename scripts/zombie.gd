@@ -17,6 +17,7 @@ extends CharacterBody3D
 
 const LIMB_EXPLOSION_PARTICLES = preload("res://scenes/particles/limb_explosion_particles.tscn")
 const BLOOD_SPRAY_PARTICLES = preload("res://scenes/particles/blood_spray_particles.tscn")
+const HEALTH_SCALE_MODIFIER = 1.0
 
 var physics_bones : Array
 var is_alive:
@@ -32,6 +33,7 @@ var target_barricade : BarricadeEmplacement:
 var already_dismembered_parts = []
 
 func _ready():
+	starting_health += GameManager.current_wave * HEALTH_SCALE_MODIFIER
 	current_health = starting_health
 	ragdoll.physical_bones_stop_simulation()
 	if barricade_detector:

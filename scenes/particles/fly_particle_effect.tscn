@@ -44,6 +44,5 @@ draw_pass_1 = SubResource("BoxMesh_d8066")
 stream = ExtResource("1_q8e2x")
 volume_db = -20.0
 autoplay = true
-stream_paused = true
 max_distance = 3.0
 bus = &"Sound Effects"

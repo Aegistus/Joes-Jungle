@@ -56,7 +56,7 @@ var plant_death_text : Array[String] = ["Plant Neglect",\
 
 const SAVE_FILE_PATH = "user://savegame.dat"
 const BUCKS_PER_KILLSTREAK_KILL = 10
-const TIME_UNTIL_MAX_INSANITY := 60
+const TIME_UNTIL_MAX_INSANITY := 1200
 
 class GameRunEntry:
 	var rank : int

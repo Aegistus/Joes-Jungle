@@ -2,7 +2,7 @@ extends Node3D
 
 @export var spawn_objectives = true
 
-const WATERING_BUSH = preload("res://scenes/scenery/watering_bush.tscn")
+const WATERING_BUSH = preload("res://scenes/watering_bush.tscn")
 const AMMO_BOX = preload("res://scenes/shops/ammo_box.tscn")
 const FRUIT_PUNCH_BOWL = preload("res://scenes/shops/fruit_punch_bowl.tscn")
 const SHOP_SAW = preload("res://scenes/shops/shop_saw.tscn")

@@ -65,4 +65,5 @@ spot_range = 10.0
 spot_angle = 30.0
 
 [node name="ScrapTimer" type="Timer" parent="." index="7"]
-wait_time = 0.5
+wait_time = 10.0
+autostart = true

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://rvebx7d8u8xm" path="res://scenes/shops/shop_aa12.tscn" id="10_mqw12"]
 [ext_resource type="PackedScene" uid="uid://det47gkltg7fa" path="res://scenes/shops/shop_ak47.tscn" id="11_dn3mj"]
 [ext_resource type="PackedScene" uid="uid://d2t1be5npyy0h" path="res://scenes/shops/shop_flamethrower.tscn" id="13_pm1eq"]
-[ext_resource type="PackedScene" uid="uid://cwp0spuqeu7jj" path="res://scenes/scenery/watering_bush.tscn" id="14_itv31"]
+[ext_resource type="PackedScene" uid="uid://cwp0spuqeu7jj" path="res://scenes/watering_bush.tscn" id="14_itv31"]
 [ext_resource type="PackedScene" uid="uid://dsxmj3jw6gqcd" path="res://scenes/shops/shop_revolver.tscn" id="14_kycbe"]
 [ext_resource type="PackedScene" uid="uid://c0j4glofdqgpk" path="res://scenes/shops/fruit_punch_bowl.tscn" id="15_vspmv"]
 [ext_resource type="PackedScene" uid="uid://22lknia5oy4" path="res://scenes/shops/shop_saw.tscn" id="16_5epp3"]

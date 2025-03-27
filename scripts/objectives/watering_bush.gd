@@ -18,13 +18,7 @@ var current_water: float:
 		current_water = value
 		water_bar.set_progress_bar(current_water / max_water * 100.0)
 
-var stored_scrap: int:
-	get:
-		if GameManager.wave_time > WAVE_SCRAP_TIME_LIMIT:
-			return 0
-		var amount : int = ((int)(max_water - current_water) / (water_increase_rate * scrap_timer.wait_time)) * scrap_per_tick
-		amount -= amount % scrap_per_tick
-		return amount
+var stored_scrap : int = 0
 
 func _ready():
 	await get_tree().process_frame
@@ -38,7 +32,7 @@ func _ready():
 		letter = "C"
 	water_bar.name_label.text = letter
 	water_bar.bush = self
-	scrap_timer.timeout.connect(func(): GameManager.add_scrap(scrap_per_tick))
+	scrap_timer.timeout.connect(add_to_stored_scrap)
 
 func _process(delta):
 	if (current_water > 0):
@@ -48,8 +42,8 @@ func _process(delta):
 			GameManager.end_game(GameManager.CauseOfDeath.PLANT)
 
 func interact_start():
-	if GameManager.wave_time < WAVE_SCRAP_TIME_LIMIT:
-		scrap_timer.start()
+	GameManager.add_scrap(stored_scrap)
+	stored_scrap = 0
 
 func interact_during(delta):
 	if current_water < max_water:
@@ -60,4 +54,8 @@ func interact_during(delta):
 			interact_end()
 
 func interact_end():
-	scrap_timer.stop()
+	pass
+
+func add_to_stored_scrap():
+	if GameManager.currently_in_wave and GameManager.wave_time < WAVE_SCRAP_TIME_LIMIT:
+		stored_scrap += scrap_per_tick
