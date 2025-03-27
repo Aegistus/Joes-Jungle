@@ -3586,6 +3586,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.6, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1899, 0, -31.7524)
 script = ExtResource("52_pgrms")
 start_wave = 2
+delay = 3
 
 [node name="PalmTree01" parent="NavigationRegion3D/map/HiddenTreesOuter" instance=ExtResource("9_41nok")]
 transform = Transform3D(1.1223, 0, 0, 0, 1.1223, 0, 0, 0, 1.1223, -17.4538, 0, -4.08133)
@@ -4551,6 +4552,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1899, 0, -31.7524)
 script = ExtResource("52_pgrms")
 start_wave = 5
+delay = 3
 
 [node name="PalmTree01" parent="NavigationRegion3D/map/HiddenTreesInner" instance=ExtResource("9_41nok")]
 transform = Transform3D(-0.691548, 0, 0.480722, 0, 0.842219, 0, -0.480722, 0, -0.691548, -7.0805, -0.185902, 2.90918)
@@ -5563,8 +5565,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
 script = ExtResource("17_owi3h")
 starting_wave_delay = 120
 enemy_count_increase_per_wave = 3
-intermission_wait_time = 30.0
-intermission_max = 90.0
+intermission_wait_time = 120.0
+intermission_increase = 10.0
+intermission_max = 180.0
 
 [node name="IntermissionTimer" type="Timer" parent="ZombieSpawnPoints"]
 one_shot = true
