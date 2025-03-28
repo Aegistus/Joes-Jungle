@@ -221,7 +221,7 @@ skeleton = NodePath("")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_lpllk")
+&"": SubResource("AnimationLibrary_lpllk")
 }
 
 [node name="Dust" type="GPUParticles3D" parent="."]

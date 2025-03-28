@@ -226,7 +226,7 @@ skeleton = NodePath("")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_nncgp")
+&"": SubResource("AnimationLibrary_nncgp")
 }
 
 [node name="Dust" type="GPUParticles3D" parent="."]
@@ -251,5 +251,3 @@ collision_mask = 256
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EmplacementOverlapper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 0.45, -2.04891e-08)
 shape = SubResource("BoxShape3D_5rd2t")
-
-[connection signal="area_exited" from="EmplacementOverlapper" to="." method="remove_overlapping_body"]

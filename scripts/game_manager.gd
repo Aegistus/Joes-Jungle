@@ -149,6 +149,7 @@ func cash_out_killstreak():
 
 func add_points(amount):
 	current_points += amount
+	$GainBucksAudioPlayer.play()
 	on_point_change.emit(current_points, amount)
 
 func spend_points(amount):

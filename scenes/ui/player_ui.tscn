@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://c4p6ldvfdioho"]
+[gd_scene load_steps=59 format=3 uid="uid://c4p6ldvfdioho"]
 
 [ext_resource type="Script" uid="uid://dhvxghjderhca" path="res://scripts/ui/player_ui.gd" id="1_e3uo4"]
 [ext_resource type="Script" uid="uid://bhtt1sssktmas" path="res://scripts/ui/timer.gd" id="2_o32dr"]
@@ -30,7 +30,10 @@
 [ext_resource type="Script" uid="uid://bsevhajdgggki" path="res://scripts/ui/wave_announcer_ui.gd" id="24_ra6va"]
 [ext_resource type="Script" uid="uid://dtcoc75bohe50" path="res://scripts/ui/wave_counter_ui.gd" id="24_w2ypn"]
 [ext_resource type="AudioStream" uid="uid://yko5tw3yfj8h" path="res://assets/audio/church_bell.mp3" id="26_001bm"]
+[ext_resource type="Texture2D" uid="uid://bdgjik6j76sxn" path="res://assets/UI/sandbag_icon.png" id="26_d8wgp"]
+[ext_resource type="Texture2D" uid="uid://bkonc7ivomjgv" path="res://assets/UI/barbed_wire_icon.png" id="27_1rktr"]
 [ext_resource type="AudioStream" uid="uid://drj0o3h7awq1y" path="res://assets/audio/start_wave_sounds/Zombie Effect_01.wav" id="27_rswbq"]
+[ext_resource type="Texture2D" uid="uid://oesmrcl6qg4v" path="res://assets/UI/claymore_icon.png" id="28_8pqdn"]
 [ext_resource type="AudioStream" uid="uid://bi0cqx6j5abcq" path="res://assets/audio/start_wave_sounds/Zombie Effect_02.wav" id="28_uulvo"]
 [ext_resource type="AudioStream" uid="uid://dmjia1ii3q2ev" path="res://assets/audio/start_wave_sounds/Zombie Effect_03.wav" id="29_4axda"]
 [ext_resource type="AudioStream" uid="uid://dwsv0sqtx8ynf" path="res://assets/audio/start_wave_sounds/Zombie Effect_04.wav" id="30_n5ue3"]
@@ -93,13 +96,6 @@ border_width_right = 1
 border_width_bottom = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toqvd"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48bjt"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 1
 border_width_top = 1
@@ -855,20 +851,42 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7a3hb")
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BuildMenu/BuildOptions/BuildOptionsContainer/BuildItemPanel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 39.0
+offset_bottom = 39.0
+texture = ExtResource("26_d8wgp")
+expand_mode = 1
+
 [node name="BuildItemPanel2" type="Panel" parent="CanvasLayer/BuildMenu/BuildOptions/BuildOptionsContainer"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bttvo")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BuildMenu/BuildOptions/BuildOptionsContainer/BuildItemPanel2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 39.0
+offset_bottom = 39.0
+texture = ExtResource("27_1rktr")
+expand_mode = 1
 
 [node name="BuildItemPanel3" type="Panel" parent="CanvasLayer/BuildMenu/BuildOptions/BuildOptionsContainer"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_toqvd")
 
-[node name="BuildItemPanel4" type="Panel" parent="CanvasLayer/BuildMenu/BuildOptions/BuildOptionsContainer"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_48bjt")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BuildMenu/BuildOptions/BuildOptionsContainer/BuildItemPanel3"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 39.0
+offset_bottom = 39.0
+texture = ExtResource("28_8pqdn")
+expand_mode = 1
 
 [node name="BuildItemName" type="Label" parent="CanvasLayer/BuildMenu"]
 layout_mode = 0

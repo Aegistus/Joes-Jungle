@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://53o2o6sef8fm"]
+[gd_scene load_steps=8 format=3 uid="uid://53o2o6sef8fm"]
 
 [ext_resource type="Script" uid="uid://c80da1xe32ipq" path="res://scripts/game_manager.gd" id="1_oc1yj"]
 [ext_resource type="AudioStream" uid="uid://be45qxofjy5nk" path="res://assets/audio/Gong 5.wav" id="2_hwfov"]
 [ext_resource type="AudioStream" uid="uid://buiirrpe487kv" path="res://assets/audio/gain_scrap.ogg" id="3_oo155"]
 [ext_resource type="Script" uid="uid://chu0hmlk2r8ht" path="res://scripts/insanity/zombie_infection_overlay_manager.gd" id="3_udu3i"]
+[ext_resource type="AudioStream" uid="uid://cycqqpu30pkik" path="res://assets/audio/Coins 24.wav" id="4_eaq8r"]
 
 [sub_resource type="Curve" id="Curve_glms7"]
 _data = [Vector2(0, 0), 0.0, -0.00392739, 0, 0, Vector2(0.685921, 0.120919), 0.648005, 0.648005, 0, 0, Vector2(0.906445, 0.609594), 4.15838, 4.15838, 0, 0, Vector2(1, 1), 4.60657, 0.0, 0, 0]
@@ -30,6 +31,10 @@ stream = ExtResource("2_hwfov")
 
 [node name="GainScrapAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_oo155")
+
+[node name="GainBucksAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_eaq8r")
+volume_db = 10.0
 
 [node name="ZombieInfectionOverlayManager" type="Node" parent="."]
 editor_description = "This is for the material growth that occurs on the zombies as insanity increases."
