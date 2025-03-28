@@ -267,7 +267,7 @@ height = 13.0
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_px8id")
 shop_item_scene_path = "res://scenes/weapons/M4A1.tscn"
-item_cost = 400
+item_cost = 750
 tooltip_text = "Buy M4A1"
 
 [node name="M4_8" type="Node3D" parent="."]

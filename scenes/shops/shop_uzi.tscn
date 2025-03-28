@@ -273,7 +273,7 @@ _data = {
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_bqsiy")
 shop_item_scene_path = "res://scenes/weapons/uzi.tscn"
-item_cost = 200
+item_cost = 250
 tooltip_text = "Buy Uzi"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -283,7 +283,7 @@ mesh = SubResource("CylinderMesh_kg0f7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_b4j5p")
+&"": SubResource("AnimationLibrary_b4j5p")
 }
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
@@ -347,5 +347,5 @@ skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Uzi"]
 libraries = {
-"": SubResource("AnimationLibrary_e5muo")
+&"": SubResource("AnimationLibrary_e5muo")
 }

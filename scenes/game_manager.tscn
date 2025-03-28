@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://53o2o6sef8fm"]
+[gd_scene load_steps=7 format=3 uid="uid://53o2o6sef8fm"]
 
 [ext_resource type="Script" uid="uid://c80da1xe32ipq" path="res://scripts/game_manager.gd" id="1_oc1yj"]
 [ext_resource type="AudioStream" uid="uid://be45qxofjy5nk" path="res://assets/audio/Gong 5.wav" id="2_hwfov"]
+[ext_resource type="AudioStream" uid="uid://buiirrpe487kv" path="res://assets/audio/gain_scrap.ogg" id="3_oo155"]
 [ext_resource type="Script" uid="uid://chu0hmlk2r8ht" path="res://scripts/insanity/zombie_infection_overlay_manager.gd" id="3_udu3i"]
 
 [sub_resource type="Curve" id="Curve_glms7"]
@@ -27,5 +28,9 @@ one_shot = true
 [node name="SkipIntermissionAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_hwfov")
 
+[node name="GainScrapAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_oo155")
+
 [node name="ZombieInfectionOverlayManager" type="Node" parent="."]
+editor_description = "This is for the material growth that occurs on the zombies as insanity increases."
 script = ExtResource("3_udu3i")

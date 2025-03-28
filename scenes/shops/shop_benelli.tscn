@@ -171,7 +171,7 @@ height = 13.0
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_ne553")
 shop_item_scene_path = "res://scenes/weapons/benelli_shotgun.tscn"
-item_cost = 300
+item_cost = 500
 tooltip_text = "Buy Benelli Shotgun"
 
 [node name="Bennelli_M4" type="Node3D" parent="."]

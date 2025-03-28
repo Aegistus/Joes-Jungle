@@ -425,7 +425,7 @@ mesh = SubResource("CylinderMesh_kg0f7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_b4j5p")
+&"": SubResource("AnimationLibrary_b4j5p")
 }
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]

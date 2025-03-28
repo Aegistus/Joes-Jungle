@@ -19,6 +19,7 @@ signal on_killstreak_updated(current_killstreak)
 @onready var intermission_timer : Timer = $IntermissionTimer
 @onready var kill_streak_timer : Timer = $KillStreakTimer
 @onready var skip_intermission_audio_player = $SkipIntermissionAudioPlayer
+@onready var gain_scrap_audio_player = $GainScrapAudioPlayer
 
 var currently_in_wave = false
 var current_wave : int = 0
@@ -28,17 +29,17 @@ var current_points = 0
 var current_scrap = 0
 var is_game_running = false
 var current_killstreak = 0
+var insanity_percent = 0.0
+
 ## Value between zero and one that represents how insane the player currently is.
 var current_insanity:
 	get:
-		var percent_dist = run_time / TIME_UNTIL_MAX_INSANITY
-		return insanity_increase_curve.sample(percent_dist)
+		return insanity_increase_curve.sample(insanity_percent)
 
 ## Alternative for effects that want a linear ramp-up
 var current_linear_insanity:
 	get:
-		var percent_dist = run_time / TIME_UNTIL_MAX_INSANITY
-		return insanity_increase_curve_linear.sample(percent_dist)
+		return insanity_increase_curve_linear.sample(insanity_percent)
 
 var cause_of_death : CauseOfDeath
 var zombie_death_text : Array[String] = ["Being Too Tasty for Your Own Good",\
@@ -56,7 +57,9 @@ var plant_death_text : Array[String] = ["Plant Neglect",\
 
 const SAVE_FILE_PATH = "user://savegame.dat"
 const BUCKS_PER_KILLSTREAK_KILL = 10
-const TIME_UNTIL_MAX_INSANITY := 1200
+const WAVES_UNTIL_MAX_INSANITY := 3
+## Amount of time until insanity reaches the max for the current wave 
+const WAVE_INSANITY_DELAY := 20
 
 class GameRunEntry:
 	var rank : int
@@ -85,6 +88,7 @@ func _process(delta):
 		wave_time += delta
 	if Input.is_action_just_pressed("skip_intermission") and !currently_in_wave:
 		skip_intermission()
+	print(insanity_percent)
 
 func start_game():
 	run_time = 0
@@ -121,6 +125,8 @@ func start_intermission(duration : float):
 	wave_time = 0.0
 
 func end_intermission():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "insanity_percent", float(current_wave) / float(WAVES_UNTIL_MAX_INSANITY), WAVE_INSANITY_DELAY)
 	on_intermission_end.emit()
 
 func skip_intermission():
@@ -151,6 +157,8 @@ func spend_points(amount):
 
 func add_scrap(amount):
 	current_scrap += amount
+	if amount > 0:
+		gain_scrap_audio_player.play()
 	on_scrap_change.emit(current_scrap, amount)
 
 func spend_scrap(amount):

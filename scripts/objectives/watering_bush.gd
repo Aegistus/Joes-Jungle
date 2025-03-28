@@ -42,8 +42,9 @@ func _process(delta):
 			GameManager.end_game(GameManager.CauseOfDeath.PLANT)
 
 func interact_start():
-	GameManager.add_scrap(stored_scrap)
-	stored_scrap = 0
+	if stored_scrap > 0:
+		GameManager.add_scrap(stored_scrap)
+		stored_scrap = 0
 
 func interact_during(delta):
 	if current_water < max_water:
@@ -52,6 +53,9 @@ func interact_during(delta):
 			watering_sound.play()
 		if current_water > max_water:
 			interact_end()
+	if stored_scrap > 0:
+		GameManager.add_scrap(stored_scrap)
+		stored_scrap = 0
 
 func interact_end():
 	pass
