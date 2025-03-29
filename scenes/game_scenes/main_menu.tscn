@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://bn6a8dl5ya46g"]
+[gd_scene load_steps=73 format=4 uid="uid://bn6a8dl5ya46g"]
 
 [ext_resource type="Script" uid="uid://cp3pjrkd0gdu0" path="res://scripts/main_menu.gd" id="1_r7pwv"]
 [ext_resource type="Script" uid="uid://b0lkoopffm7aa" path="res://scripts/insanity/mansion_floor.gd" id="2_khu4g"]
@@ -24,6 +24,7 @@
 [ext_resource type="StyleBox" uid="uid://c0nqerilbeu5v" path="res://assets/UI/button_pressed_theme.tres" id="14_wk5mc"]
 [ext_resource type="PackedScene" uid="uid://dr3n3rrx7wart" path="res://scenes/scenery/grass_02.tscn" id="15_ewpek"]
 [ext_resource type="PackedScene" uid="uid://ciu738dd2fsak" path="res://scenes/scenery/palm_tree_01.tscn" id="16_6hmv5"]
+[ext_resource type="Texture2D" uid="uid://c3jw428c0vuu7" path="res://assets/AllSky_Night_MoonBurst Equirect.png" id="16_fqhqx"]
 [ext_resource type="Script" uid="uid://bth186bw5717m" path="res://scripts/ui/flavor_text.gd" id="17_tj3us"]
 [ext_resource type="PackedScene" uid="uid://yttdwroyehgm" path="res://scenes/scenery/palm_tree_02.tscn" id="17_yyiik"]
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="18_nonfs"]
@@ -45,17 +46,16 @@ size = Vector3(6, 0.8, 3.6)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qfr5i"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xxe1a"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_fqhqx"]
+panorama = ExtResource("16_fqhqx")
 
 [sub_resource type="Sky" id="Sky_mqxia"]
-sky_material = SubResource("ProceduralSkyMaterial_xxe1a")
+sky_material = SubResource("PanoramaSkyMaterial_fqhqx")
 
 [sub_resource type="Environment" id="Environment_0imun"]
 background_mode = 2
-background_energy_multiplier = 0.2
 sky = SubResource("Sky_mqxia")
+ambient_light_source = 3
 ambient_light_sky_contribution = 0.4
 ambient_light_energy = 0.34
 tonemap_mode = 2
@@ -64,6 +64,17 @@ glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.123432, 0.138034, 0.16099, 1)
 fog_density = 0.002
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r25u2"]
+panorama = ExtResource("16_fqhqx")
+
+[sub_resource type="Sky" id="Sky_rdg2k"]
+sky_material = SubResource("PanoramaSkyMaterial_r25u2")
+
+[sub_resource type="Environment" id="Environment_gvahc"]
+background_mode = 2
+sky = SubResource("Sky_rdg2k")
+sky_rotation = Vector3(0, -2.27765, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a57kn"]
 albedo_texture = ExtResource("20_iujni")
@@ -494,8 +505,8 @@ stream_0/stream = ExtResource("23_g2qsg")
 script = ExtResource("1_r7pwv")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.855733, 0.516982, -0.0212429, -0.358463, 0.562739, -0.744868, -0.37313, 0.645023, 0.666873, 0, 0, 0)
-light_color = Color(0.0595766, 0.678295, 0.946514, 1)
+transform = Transform3D(-0.844132, 0.179689, -0.505127, 0, 0.942163, 0.335156, 0.536136, 0.282915, -0.795309, -23.8917, 6.07841, -8.41919)
+light_color = Color(0.776471, 1, 1, 1)
 light_energy = 0.1
 shadow_enabled = true
 
@@ -1690,6 +1701,7 @@ environment = SubResource("Environment_0imun")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.163087, 0.148056, 0.975439, 0.7624, 0.608616, -0.219846, -0.626218, 0.779529, -0.0136205, -0.231925, 0.0481484, -4.05054)
+environment = SubResource("Environment_gvahc")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
