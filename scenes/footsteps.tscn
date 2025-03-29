@@ -57,7 +57,7 @@ volume_db = -20.0
 
 [node name="StoneFootstepPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_mx1m4")
-volume_db = -20.0
+volume_db = -30.0
 
 [node name="GrassFootstepPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_u2ulf")
