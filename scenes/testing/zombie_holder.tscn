@@ -27,8 +27,8 @@ collision_mask = 3
 size = Vector3(0.5, 0.4, 1.1)
 
 [node name="wall18" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.000660386, -0.000631304, 1, -0.000145397, 1, 0.000631206, -1, -0.00014497, -0.000660475, -1.32122, 0.80013, 0.0351623)
+transform = Transform3D(-0.000660386, -0.000631304, 1, -0.000145397, 1, 0.000631206, -1, -0.00014497, -0.000660475, -1.32204, 1.83287, -0.218637)
 material_override = ExtResource("1_xqk44")
 use_collision = true
 collision_mask = 3
-size = Vector3(2.55, 2, 0.5)
+size = Vector3(6.22834, 4.06555, 0.5)

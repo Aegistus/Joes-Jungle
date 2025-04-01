@@ -56,10 +56,10 @@ var plant_death_text : Array[String] = ["Plant Neglect",\
 "Stopping to Smell the Roses, Instead of Watering Them"]
 
 const SAVE_FILE_PATH = "user://savegame.dat"
-const BUCKS_PER_KILLSTREAK_KILL = 10
-const WAVES_UNTIL_MAX_INSANITY := 3
+const BUCKS_PER_KILLSTREAK_KILL = 5
+const WAVES_UNTIL_MAX_INSANITY := 15
 ## Amount of time until insanity reaches the max for the current wave 
-const WAVE_INSANITY_DELAY := 20
+const WAVE_INSANITY_DELAY := 60
 
 class GameRunEntry:
 	var rank : int
@@ -88,7 +88,6 @@ func _process(delta):
 		wave_time += delta
 	if Input.is_action_just_pressed("skip_intermission") and !currently_in_wave:
 		skip_intermission()
-	print(insanity_percent)
 
 func start_game():
 	run_time = 0

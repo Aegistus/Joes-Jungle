@@ -15,6 +15,7 @@ warnings/check_invalid_track_paths=false
 [application]
 
 config/name="Joe's Jungle"
+config/version="1.6"
 run/main_scene="res://scenes/game_scenes/main_menu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"

@@ -41,7 +41,7 @@ var wave_completed = true
 var all_spawn_points
 var sum_of_spawn_weights : int
 
-const MAX_ZOMBIES = 50
+const MAX_ZOMBIES = 75
 const ZOMBIE = preload("res://scenes/enemies/zombie.tscn")
 const FAST_ZOMBIE = preload("res://scenes/enemies/fast_zombie.tscn")
 const TANK_ZOMBIE = preload("res://scenes/enemies/tank_zombie.tscn")
@@ -61,6 +61,7 @@ func spawn_next_wave():
 	GameManager.current_wave += 1
 	GameManager.on_wave_start.emit()
 	print("Wave start: " + str(GameManager.current_wave))
+	print("Enemies in wave: " + str(current_enemy_count))
 	all_spawn_points.shuffle()
 	var i = 0
 	while i < current_enemy_count: 
@@ -71,6 +72,7 @@ func spawn_next_wave():
 			i += 1
 		spawn_timer.wait_time = .5
 		spawn_timer.start()
+		print("All Zombies Count: " + str(all_zombies_count))
 		await spawn_timer.timeout
 	current_enemy_count += enemy_count_increase_per_wave
 	intermission_wait_time = clampf(intermission_wait_time + intermission_increase, 0, intermission_max)

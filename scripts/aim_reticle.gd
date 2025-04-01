@@ -7,7 +7,7 @@ extends Node3D
 @onready var accuracy_indicator_left = $AccuracyIndicators/AccuracyIndicatorLeft as Node3D
 @onready var accuracy_indicator_right = $AccuracyIndicators/AccuracyIndicatorRight as Node3D
 
-const ACCURACY_DISTANCE_MAX = 3.0
+const ACCURACY_DISTANCE_MAX = 2.0
 
 func _process(delta):
 	if aim_state_machine.current_state is AimingState:
@@ -17,6 +17,7 @@ func _process(delta):
 			visible = true
 			if player.gun != null:
 				var distance = ACCURACY_DISTANCE_MAX - ((player.gun.current_accuracy / 100.0) * ACCURACY_DISTANCE_MAX)
+				distance = clampf(distance, 0, ACCURACY_DISTANCE_MAX)
 				accuracy_indicator_left.position.x = distance
 				accuracy_indicator_right.position.x = -distance
 	else:
