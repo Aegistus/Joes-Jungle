@@ -15,4 +15,5 @@ func eject():
 		get_tree().root.add_child(particle)
 		particle.scale = Vector3(shell_scale, shell_scale, shell_scale)
 		particle.global_position = global_position
+		particle.global_rotation = global_rotation
 		particle.emitting = true
