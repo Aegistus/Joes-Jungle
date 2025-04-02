@@ -23,7 +23,7 @@ size = Vector2(3, 0.5)
 
 [node name="WateringBush" groups=["plant"] instance=ExtResource("1_jo5n8")]
 script = ExtResource("2_r8aun")
-max_water = 240.0
+max_water = 200.0
 tooltip_text = "Hold to Water Plant"
 
 [node name="SM_Env_PalmBush_03" parent="." index="0"]

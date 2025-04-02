@@ -7,6 +7,7 @@ var set_monitorable = false
 const DECAL_START_FADE = 300
 const DECAL_END_FADE = .3
 const PERCENT_INSANITY_FULLY_VISIBLE = .25
+const PERCENT_WHEN_READABLE = .75
 
 func _ready():
 	var all_children = get_all_children(self)
@@ -25,7 +26,7 @@ func _process(delta):
 	for decal in children_decals:
 		decal.upper_fade = lerpf(DECAL_START_FADE, DECAL_END_FADE, GameManager.current_linear_insanity / PERCENT_INSANITY_FULLY_VISIBLE)
 		decal.lower_fade = lerpf(DECAL_START_FADE, DECAL_END_FADE, GameManager.current_linear_insanity / PERCENT_INSANITY_FULLY_VISIBLE)
-	if !set_monitorable and GameManager.current_linear_insanity > PERCENT_INSANITY_FULLY_VISIBLE:
+	if !set_monitorable and GameManager.current_linear_insanity / PERCENT_INSANITY_FULLY_VISIBLE > PERCENT_WHEN_READABLE:
 		set_monitorable = true
 		for area in children_collisions:
 			area.disabled = false
