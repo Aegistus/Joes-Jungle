@@ -1,0 +1,184 @@
+[gd_scene load_steps=18 format=3 uid="uid://opd32n6a2gy4"]
+
+[ext_resource type="Script" uid="uid://25me453sk1l5" path="res://scripts/weapons/gun.gd" id="1_4qtd5"]
+[ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_klblr"]
+[ext_resource type="Script" uid="uid://cd1fixe3lfjmn" path="res://scripts/bullet_trail_spawner.gd" id="4_naodj"]
+[ext_resource type="Script" uid="uid://d4ip7nqe0d52x" path="res://scripts/shell_ejector.gd" id="5_2triw"]
+[ext_resource type="PackedScene" uid="uid://d0o4lmfe1m7dh" path="res://scenes/particles/shell_casing_particles.tscn" id="6_qq8t1"]
+[ext_resource type="AudioStream" uid="uid://qn21imdsbvoc" path="res://assets/audio/gunshots/baretta_shot.wav" id="7_pq15s"]
+[ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/gunshots/Dry Shot_01.wav" id="8_yhq4p"]
+[ext_resource type="AudioStream" uid="uid://bimsx8ggdoj7t" path="res://assets/audio/reload_sounds/pistol_mag_out.wav" id="9_s5wgo"]
+[ext_resource type="AudioStream" uid="uid://2qgiy3wloc8a" path="res://assets/audio/reload_sounds/pistol_mag_in.wav" id="10_ei01v"]
+[ext_resource type="Script" uid="uid://b28klctb4e13h" path="res://scripts/weapons/magazine_ammo.gd" id="11_g6fbc"]
+[ext_resource type="Script" uid="uid://cbhf1xt0jhv0x" path="res://scripts/screen_shake_causer.gd" id="12_ytxlq"]
+
+[sub_resource type="Animation" id="Animation_30618"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun model/MuzzleFlash:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dtyrj"]
+resource_name = "shoot"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.368264), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun model/MuzzleFlash:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.03),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m1fgx"]
+_data = {
+&"RESET": SubResource("Animation_30618"),
+&"shoot": SubResource("Animation_dtyrj")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o6lox"]
+spread = 10.0
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+scale_min = 10.0
+scale_max = 10.0
+collision_mode = 1
+collision_friction = 0.8
+collision_bounce = 0.1
+collision_use_scale = true
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8vgvq"]
+random_pitch = 1.05
+random_volume_offset_db = 0.48
+streams_count = 1
+stream_0/stream = ExtResource("7_pq15s")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_51fyy"]
+radius = 0.927672
+
+[node name="Gun" type="Node3D" node_paths=PackedStringArray("magazine")]
+script = ExtResource("1_4qtd5")
+gun_name = "Britta 6-1"
+magazine = NodePath("")
+magazine_scale = 0.04
+base_accuracy = 80
+base_recoil = 20
+base_ergonomics = 80
+reload_anim_speed_modifier = 1.2
+reload_move_speed_modifier = 1.2
+
+[node name="gun model" type="Node3D" parent="."]
+
+[node name="MuzzleFlash" type="Node3D" parent="gun model"]
+unique_name_in_owner = true
+transform = Transform3D(0.04, 6.25732e-11, 2.98023e-10, -6.25732e-11, 0.04, -4.65661e-12, -2.98023e-10, 4.65661e-12, 0.04, 0, 0, 0)
+
+[node name="MuzzleFlash" type="Sprite3D" parent="gun model/MuzzleFlash"]
+transform = Transform3D(-1, -2.32831e-09, 8.9407e-08, -6.69388e-10, 1, -4.65661e-10, -8.9407e-08, 2.32831e-10, -1, -1.58658, -0.159879, -0.175092)
+texture = ExtResource("3_klblr")
+
+[node name="MuzzleFlash2" type="Sprite3D" parent="gun model/MuzzleFlash"]
+transform = Transform3D(-1, -8.9407e-08, -8.73115e-10, -6.69388e-10, 3.0268e-08, 1, -8.9407e-08, 1, -2.95695e-08, -1.58658, -0.159879, -0.175092)
+texture = ExtResource("3_klblr")
+
+[node name="MuzzleFlashLight" type="OmniLight3D" parent="gun model/MuzzleFlash"]
+light_color = Color(0.922285, 0.920269, 7.70092e-07, 1)
+
+[node name="BulletTrailSpawner" type="Node3D" parent="gun model"]
+transform = Transform3D(-4.37114e-08, -4.83356e-09, -1, -2.75671e-09, 1, -4.83356e-09, 1, 2.75671e-09, -4.37114e-08, 0, 0, 0)
+script = ExtResource("4_naodj")
+
+[node name="RaycastParent" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.999391, 0.0348995, 8.68779e-08, 0.0346819, -0.993163, 0.111469, 0.00389029, -0.111401, -0.993768, 0.139226, 0.345951, 0.0853375)
+
+[node name="RayCast" type="RayCast3D" parent="RaycastParent"]
+target_position = Vector3(0, -1000, 0)
+collision_mask = 67
+collide_with_areas = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m1fgx")
+}
+
+[node name="ShellEjector" type="Node3D" parent="."]
+transform = Transform3D(0.160781, -0.986984, -0.00363698, 0.108884, 0.0140738, 0.993955, -0.980965, -0.160205, 0.10973, 0.108427, 0.11033, 0.0248871)
+script = ExtResource("5_2triw")
+shell_particle_path = "res://scenes/particles/shell_casing_particles.tscn"
+shell_scale = 1.0
+
+[node name="ShellCasingParticles" parent="ShellEjector" instance=ExtResource("6_qq8t1")]
+lifetime = 1.0
+one_shot = false
+process_material = SubResource("ParticleProcessMaterial_o6lox")
+
+[node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_8vgvq")
+bus = &"Sound Effects"
+
+[node name="DryShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_yhq4p")
+
+[node name="RemoveMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_s5wgo")
+
+[node name="InsertMagAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_ei01v")
+
+[node name="Ammo" type="Node" parent="."]
+script = ExtResource("11_g6fbc")
+max_magazine_count = 6
+magazine_round_capacity = 10
+
+[node name="ScreenShakeCauser" type="Area3D" parent="."]
+collision_layer = 8192
+collision_mask = 8192
+script = ExtResource("12_ytxlq")
+shake_amount = 0.15
+metadata/_custom_type_script = "uid://cbhf1xt0jhv0x"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScreenShakeCauser"]
+shape = SubResource("SphereShape3D_51fyy")
+
+[connection signal="on_hit" from="." to="gun model/BulletTrailSpawner" method="spawn_bullet_trail"]
+[connection signal="on_shoot" from="." to="ShellEjector" method="eject"]
+[connection signal="on_shoot" from="." to="ScreenShakeCauser" method="cause_shake"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

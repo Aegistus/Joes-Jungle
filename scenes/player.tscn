@@ -5,9 +5,9 @@
 [ext_resource type="Script" uid="uid://b8ujt0ngha7rb" path="res://scripts/state_machine.gd" id="3_5cvyg"]
 [ext_resource type="AnimationLibrary" uid="uid://wubbon5nyek1" path="res://assets/animations/libraries/Pistol Anim Pack.res" id="3_q8g1f"]
 [ext_resource type="Texture2D" uid="uid://bbnqvko5wjhyb" path="res://assets/models/characters/Michael_Ch18_1001_Normal.png" id="3_x7y07"]
-[ext_resource type="PackedScene" uid="uid://bpdhjy3tvivvm" path="res://scenes/weapons/Britta6-1.tscn" id="4_p3ook"]
 [ext_resource type="Script" uid="uid://b4w6b28utdi21" path="res://scripts/player states/idle_state.gd" id="4_s0a0d"]
 [ext_resource type="AnimationLibrary" uid="uid://bhfy6y3yys725" path="res://assets/animations/libraries/Rifle Anims.res" id="5_a1aim"]
+[ext_resource type="PackedScene" uid="uid://cjs7fpa6jj4ao" path="res://scenes/weapons/britta_69_2.tscn" id="5_bj30b"]
 [ext_resource type="AnimationLibrary" uid="uid://ckpcjepwfvaok" path="res://assets/animations/libraries/Michael Misc.res" id="5_cv0v5"]
 [ext_resource type="PackedScene" uid="uid://egau4xfffmk8" path="res://scenes/weapons/build_gun.tscn" id="5_hif0p"]
 [ext_resource type="AnimationLibrary" uid="uid://7frjr3q8mcex" path="res://assets/animations/libraries/Michael Pistol.res" id="6_7v3rf"]
@@ -882,7 +882,7 @@ transform = Transform3D(0.999421, -0.0326995, 0.00938384, 0.0326636, 0.999458, 0
 [node name="BuildGun" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("5_hif0p")]
 visible = false
 
-[node name="Britta6-1" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("4_p3ook")]
+[node name="Britta69" parent="PlayerModel/Model/Armature/GeneralSkeleton/RightHandBone/GunHolder" instance=ExtResource("5_bj30b")]
 visible = false
 
 [node name="LeftHandBone" type="BoneAttachment3D" parent="PlayerModel/Model/Armature/GeneralSkeleton"]

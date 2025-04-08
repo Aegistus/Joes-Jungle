@@ -14,7 +14,8 @@ func _ready():
 	%DespawnTimer.timeout.connect(func(): queue_free())
 
 func _process(delta):
-	look_at(target_position)
+	if global_position.distance_squared_to(target_position) > .001:
+		look_at(target_position)
 	var travel_distance = target_position - self.global_position
 	var displacement = travel_distance.normalized() * speed * delta
 	if (travel_distance).length_squared() <= pow(tracer_length, 2):
