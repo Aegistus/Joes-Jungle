@@ -45,7 +45,7 @@ func shoot_end():
 	flame_check_timer.stop()
 	flamethrower_loop_audio_player.stop()
 	if light != null:
-		light.reparent(get_tree().root)
+		light.reparent(get_tree().current_scene)
 		var tween = get_tree().create_tween()
 		tween.tween_property(light, "light_energy", 0, dim_light_time)
 		tween.tween_callback(light.queue_free).set_delay(dim_light_time)

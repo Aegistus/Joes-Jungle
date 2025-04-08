@@ -41,7 +41,7 @@ func enter():
 func process_state_physics(delta):
 	# Get the input direction and handle the movement/deceleration.]
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	var direction = (%DirectionalReference.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (%ShakeableCamera.directional_reference.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	target.velocity.x = direction.x * movement_speed * delta * controlled_player.move_speed_multiplier
 	target.velocity.z = direction.z * movement_speed * delta * controlled_player.move_speed_multiplier
 	target.move_and_slide()

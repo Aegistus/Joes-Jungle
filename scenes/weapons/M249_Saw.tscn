@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=4 uid="uid://85xnmfq8ecf8"]
+[gd_scene load_steps=31 format=4 uid="uid://85xnmfq8ecf8"]
 
 [ext_resource type="Script" uid="uid://dbn0yn0eaki2e" path="res://scripts/weapons/machine_gun.gd" id="1_gfnge"]
 [ext_resource type="Texture2D" uid="uid://vsw6o5ywt0l5" path="res://assets/models/weapons/M249_0.png" id="2_5pcpy"]
 [ext_resource type="Texture2D" uid="uid://dknjg6pc8133e" path="res://assets/videoblocks-muzzle-flash-v-1-side_hopfzrejl_thumbnail-1080_01-3443294248.png" id="3_q1m5b"]
+[ext_resource type="Script" uid="uid://cd1fixe3lfjmn" path="res://scripts/bullet_trail_spawner.gd" id="4_du7pr"]
 [ext_resource type="AudioStream" uid="uid://dekvy1ass6cmj" path="res://assets/audio/gunshots/m249_saw_shot.wav" id="4_dw3qo"]
 [ext_resource type="AudioStream" uid="uid://dbjk4oteguiys" path="res://assets/audio/gunshots/Dry Shot_01.wav" id="5_g0yt6"]
 [ext_resource type="Script" uid="uid://d4ip7nqe0d52x" path="res://scripts/shell_ejector.gd" id="6_cx3u5"]
@@ -333,6 +334,11 @@ skeleton = NodePath("")
 transform = Transform3D(1, -2.42112e-08, 0, -2.62897e-10, 1, -9.21869e-09, 7.45058e-09, -4.53317e-09, 1, -0.134528, -0.43407, 0.345533)
 shape = SubResource("BoxShape3D_0hudy")
 
+[node name="BulletTrailSpawner" type="Node3D" parent="gun model/model"]
+transform = Transform3D(0.306336, 7.13627, 2.8871e-07, 7.13168, -0.306138, 0.256508, 0.256272, -0.0110006, -7.13826, -0.204776, 0.551331, -3.95195)
+script = ExtResource("4_du7pr")
+metadata/_custom_type_script = "uid://cd1fixe3lfjmn"
+
 [node name="RaycastParent" type="Node3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(0.998153, 0.060355, 0.00694671, 0.0607467, -0.9932, -0.0993197, 0.000905025, 0.0995583, -0.995031, 0.0824271, 0.311686, 0.0207122)
@@ -386,5 +392,6 @@ metadata/_custom_type_script = "uid://cbhf1xt0jhv0x"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ScreenShakeCauser"]
 shape = SubResource("SphereShape3D_du7pr")
 
+[connection signal="on_hit" from="." to="gun model/model/BulletTrailSpawner" method="spawn_bullet_trail"]
 [connection signal="on_shoot" from="." to="ShellEjector" method="eject"]
 [connection signal="on_shoot" from="." to="ScreenShakeCauser" method="cause_shake"]

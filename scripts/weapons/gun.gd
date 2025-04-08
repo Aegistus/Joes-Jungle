@@ -4,6 +4,7 @@ extends Node3D
 enum GunType { PISTOL, REVOLVER, RIFLE, SHOTGUN, BUILDGUN }
 
 signal on_shoot
+signal on_hit(hit_position : Vector3)
 
 @export var gun_name : String
 @export var min_damage = 6
@@ -89,10 +90,11 @@ func shoot_with_raycast(raycast : RayCast3D):
 	raycast.rotate_object_local(axis, radians_change)
 	# shoot with penetration
 	var already_hit : Array[CollisionObject3D] = []
+	var collision_point = raycast.target_position
 	for i in base_penetration:
 		raycast.force_raycast_update()
 		var collided = raycast.get_collider() as CollisionObject3D
-		var collision_point = raycast.get_collision_point()
+		collision_point = raycast.get_collision_point()
 		var collision_normal = raycast.get_collision_normal()
 		if collided == null:
 			collided = raycast.get_collider() as CSGShape3D
@@ -111,6 +113,7 @@ func shoot_with_raycast(raycast : RayCast3D):
 				raycast.add_exception(collided)
 	for i in already_hit.size():
 		raycast.remove_exception(already_hit[i])
+	on_hit.emit(collision_point)
 	# apply recoil
 	current_accuracy -= base_recoil * RECOIL_ACCURACY_CHANGE
 	current_accuracy = clampf(current_accuracy, MIN_ACCURACY, base_accuracy)
@@ -128,7 +131,7 @@ func remove_magazine() -> Node3D:
 	remove_mag_audio_player.play()
 	if magazine:
 		var copy = magazine.duplicate()
-		get_tree().root.add_child(copy)
+		get_tree().current_scene.add_child(copy)
 		copy.global_scale(Vector3(magazine_scale, magazine_scale, magazine_scale))
 		magazine.visible = false
 		return copy

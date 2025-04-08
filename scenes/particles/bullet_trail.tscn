@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjkryfndu172f"]
+
+[ext_resource type="Material" uid="uid://6udnidtb0dde" path="res://materials/bullet_trail_mat.tres" id="1_086qf"]
+[ext_resource type="Script" uid="uid://d3n46nw52v5l" path="res://scripts/bullet_trail.gd" id="1_rlhfg"]
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_rlhfg"]
+size = 0.05
+sections = 2
+section_length = 0.75
+section_segments = 1
+
+[node name="BulletTrail" type="Node3D"]
+script = ExtResource("1_rlhfg")
+tracer_length = 1.5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, -1, 0, 1, 1.31134e-07, 2.98023e-08, 4.37114e-08, 2.23517e-08)
+mesh = SubResource("RibbonTrailMesh_rlhfg")
+surface_material_override/0 = ExtResource("1_086qf")
+
+[node name="DespawnTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true

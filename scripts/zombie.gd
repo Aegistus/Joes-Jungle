@@ -97,7 +97,7 @@ func random_dismember():
 				bones_to_remove.append(child_bone)
 	# add body explosion particle effects
 	var explosion_particles = LIMB_EXPLOSION_PARTICLES.instantiate()
-	get_tree().root.add_child(explosion_particles)
+	get_tree().current_scene.add_child(explosion_particles)
 	explosion_particles.global_position = parent_bone.global_position
 	# add blood spray particle effects
 	var blood_spray = BLOOD_SPRAY_PARTICLES.instantiate()

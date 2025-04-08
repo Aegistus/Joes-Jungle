@@ -12,7 +12,7 @@ func _ready():
 func eject():
 	if enabled:
 		var particle = shell_particle_effect.instantiate() as GPUParticles3D
-		get_tree().root.add_child(particle)
+		get_tree().current_scene.add_child(particle)
 		particle.scale = Vector3(shell_scale, shell_scale, shell_scale)
 		particle.global_position = global_position
 		particle.global_rotation = global_rotation

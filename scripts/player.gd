@@ -210,7 +210,7 @@ func drop_magazine():
 		if magazine != null:
 			var global_pos = magazine.global_position
 			left_hand_bone.remove_child(magazine)
-			get_tree().root.add_child(magazine)
+			get_tree().current_scene.add_child(magazine)
 			magazine.global_position = global_pos
 			magazine.freeze = false
 			magazine.apply_impulse(player_model.transform * Vector3.LEFT)

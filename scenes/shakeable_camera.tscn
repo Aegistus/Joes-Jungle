@@ -9,7 +9,6 @@ fractal_octaves = 4
 radius = 2.35222
 
 [node name="ShakeableCamera" type="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 8192
 collision_mask = 8192
 script = ExtResource("1_7xn7g")

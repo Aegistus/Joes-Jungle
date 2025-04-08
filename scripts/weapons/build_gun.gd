@@ -21,7 +21,7 @@ func _ready():
 func shoot():
 	if current_emplacement_ghost.valid_placement and GameManager.current_scrap >= current_emplacement.cost:
 		var emplacement = current_emplacement.emplacement_scene.instantiate() as Emplacement
-		get_tree().root.add_child(emplacement)
+		get_tree().current_scene.add_child(emplacement)
 		emplacement.global_position = reticle.global_position
 		emplacement.global_rotation = current_emplacement_ghost.global_rotation
 		emplacement.place()
