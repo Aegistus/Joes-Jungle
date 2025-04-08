@@ -9,7 +9,6 @@ signal on_interactable_change(interactable)
 @export var invincible = false
 @export var turn_rate := 5.0
 @export var max_health = 100
-@export var directional_reference: Node3D
 @export var animation_player: AnimationPlayer
 
 @onready var interact_raycast = $PlayerModel/InteractRaycast

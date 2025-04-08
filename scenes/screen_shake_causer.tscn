@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2y0fog3de3j6"]
+
+[ext_resource type="Script" uid="uid://cbhf1xt0jhv0x" path="res://scripts/screen_shake_causer.gd" id="1_jlqo7"]
+
+[node name="ScreenShakeCauser" type="Area3D"]
+collision_layer = 8192
+collision_mask = 8192
+script = ExtResource("1_jlqo7")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cygyst8q5sg8q"]
+
+[ext_resource type="Script" uid="uid://doih5m12o3rj3" path="res://scripts/shakeable_camera.gd" id="1_7xn7g"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7xn7g"]
+fractal_octaves = 4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6xy6h"]
+radius = 2.35222
+
+[node name="ShakeableCamera" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 8192
+collision_mask = 8192
+script = ExtResource("1_7xn7g")
+noise = SubResource("FastNoiseLite_7xn7g")
+
+[node name="CameraMount" type="Node3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+
+[node name="Camera" type="Camera3D" parent="CameraMount" groups=["camera"]]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 7.5, 4)
+current = true
+
+[node name="DirectionalReference" type="Node3D" parent="CameraMount/Camera"]
+unique_name_in_owner = true
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.53553, 5, 3.53553)
+top_level = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_6xy6h")

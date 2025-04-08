@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dnhkunc4st41v" path="res://scripts/player.gd" id="1_51t2t"]
 [ext_resource type="Texture2D" uid="uid://b1fvgtdrsmiic" path="res://assets/models/characters/Michael_Ch18_1001_Diffuse.png" id="2_55ldf"]
-[ext_resource type="Script" uid="uid://djeqx3pudx75n" path="res://scripts/camera_mount.gd" id="2_mupqo"]
 [ext_resource type="Script" uid="uid://b8ujt0ngha7rb" path="res://scripts/state_machine.gd" id="3_5cvyg"]
 [ext_resource type="AnimationLibrary" uid="uid://wubbon5nyek1" path="res://assets/animations/libraries/Pistol Anim Pack.res" id="3_q8g1f"]
 [ext_resource type="Texture2D" uid="uid://bbnqvko5wjhyb" path="res://assets/models/characters/Michael_Ch18_1001_Normal.png" id="3_x7y07"]
@@ -25,6 +24,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://jtio603851qi" path="res://assets/animations/libraries/Turret Twerk.res" id="13_lsu4k"]
 [ext_resource type="PackedScene" uid="uid://cs4bpkimumjf4" path="res://scenes/hurtbox.tscn" id="13_m6j14"]
 [ext_resource type="AnimationLibrary" uid="uid://b6hofelkiwchg" path="res://assets/animations/libraries/Vault.res" id="14_1hjql"]
+[ext_resource type="PackedScene" uid="uid://cygyst8q5sg8q" path="res://scenes/shakeable_camera.tscn" id="16_bj30b"]
 [ext_resource type="AudioStream" uid="uid://cs0ymulhw0pkm" path="res://assets/audio/Gun Pickup_02.wav" id="17_c8ao6"]
 [ext_resource type="AudioStream" uid="uid://ctwo3bkilu81s" path="res://assets/audio/player_hit/Punch Impact (Flesh) 1.wav" id="21_ifr0a"]
 [ext_resource type="Script" uid="uid://lxxkb8bb0tph" path="res://scripts/player states/round_reload_loop_state.gd" id="21_neiou"]
@@ -393,12 +393,11 @@ stream_0/stream = ExtResource("21_ifr0a")
 stream_1/stream = ExtResource("22_pmkco")
 stream_2/stream = ExtResource("23_b2vfi")
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("directional_reference", "animation_player") groups=["player"]]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("animation_player") groups=["player"]]
 collision_layer = 512
 collision_mask = 195
 script = ExtResource("1_51t2t")
 turn_rate = 10.0
-directional_reference = NodePath("CameraMount/MainCamera/DirectionalReference")
 animation_player = NodePath("PlayerModel/Model/AnimationPlayer")
 
 [node name="PlayerModel" type="Node3D" parent="."]
@@ -982,20 +981,8 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_eakgp")
 
-[node name="CameraMount" type="Node3D" parent="." node_paths=PackedStringArray("player", "directional_reference")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
-script = ExtResource("2_mupqo")
-player = NodePath("..")
-directional_reference = NodePath("MainCamera/DirectionalReference")
-
-[node name="MainCamera" type="Camera3D" parent="CameraMount" groups=["camera"]]
+[node name="ShakeableCamera" parent="." instance=ExtResource("16_bj30b")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866026, 0, -0.866025, 0.5, 0, 7.5, 4)
-
-[node name="DirectionalReference" type="Node3D" parent="CameraMount/MainCamera"]
-unique_name_in_owner = true
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.53553, 5, 3.53553)
-top_level = true
 
 [node name="MovementStateMachine" type="Node" parent="." node_paths=PackedStringArray("default_state", "target")]
 unique_name_in_owner = true
@@ -1011,23 +998,21 @@ aim_state_machine = NodePath("../../AimStateMachine")
 walking_state = NodePath("../WalkingState")
 jogging_state = NodePath("../JoggingState")
 
-[node name="WalkingState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_player", "directional_reference", "aim_state_machine", "rest_state", "idle_state", "jogging_state")]
+[node name="WalkingState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_player", "aim_state_machine", "rest_state", "idle_state", "jogging_state")]
 unique_name_in_owner = true
 script = ExtResource("7_vgdlh")
 movement_speed = 200.0
 animation_player = NodePath("../../PlayerModel/Model/AnimationPlayer")
-directional_reference = NodePath("../../CameraMount/MainCamera/DirectionalReference")
 aim_state_machine = NodePath("../../AimStateMachine")
 rest_state = NodePath("../../AimStateMachine/RelaxedState")
 idle_state = NodePath("../IdleState")
 jogging_state = NodePath("../JoggingState")
 
-[node name="JoggingState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_player", "directional_reference", "aim_state_machine", "idle_state", "walking_state")]
+[node name="JoggingState" type="Node" parent="MovementStateMachine" node_paths=PackedStringArray("animation_player", "aim_state_machine", "idle_state", "walking_state")]
 unique_name_in_owner = true
 script = ExtResource("8_h5fvr")
 run_speed = 245.0
 animation_player = NodePath("../../PlayerModel/Model/AnimationPlayer")
-directional_reference = NodePath("../../CameraMount/MainCamera/DirectionalReference")
 aim_state_machine = NodePath("../../AimStateMachine")
 idle_state = NodePath("../IdleState")
 walking_state = NodePath("../WalkingState")
@@ -1062,10 +1047,9 @@ script = ExtResource("3_5cvyg")
 default_state = NodePath("RelaxedState")
 target = NodePath("..")
 
-[node name="AimingState" type="Node" parent="AimStateMachine" node_paths=PackedStringArray("camera", "relaxed_state")]
+[node name="AimingState" type="Node" parent="AimStateMachine" node_paths=PackedStringArray("relaxed_state")]
 unique_name_in_owner = true
 script = ExtResource("8_iqcv1")
-camera = NodePath("../../CameraMount/MainCamera")
 relaxed_state = NodePath("../RelaxedState")
 
 [node name="RelaxedState" type="Node" parent="AimStateMachine" node_paths=PackedStringArray("aiming_state")]

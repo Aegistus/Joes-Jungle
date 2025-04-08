@@ -201,6 +201,7 @@ debug_add_scrap={
 3d_physics/layer_11="ragdoll_only"
 3d_physics/layer_12="explosion_hurtbox"
 3d_physics/layer_13="vaultable"
+3d_physics/layer_14="screen_shake"
 3d_physics/layer_17="material_flesh"
 3d_physics/layer_18="material_wood"
 3d_physics/layer_19="material_stone"

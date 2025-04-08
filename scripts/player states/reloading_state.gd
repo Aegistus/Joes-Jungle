@@ -6,7 +6,6 @@ extends PlayerState
 @onready var idle_state = $"../IdleState"
 @onready var animation_player = $"../../PlayerModel/Model/AnimationPlayer"
 @onready var reload_anim_tree = $"../../PlayerModel/Model/ReloadAnimTree"
-@onready var directional_reference = %DirectionalReference
 @onready var aim_state_machine = $"../../AimStateMachine"
 @onready var relaxed_state = $"../../AimStateMachine/RelaxedState"
 @onready var aiming_state = $"../../AimStateMachine/AimingState"
@@ -44,7 +43,7 @@ func process_state(delta):
 func process_state_physics(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	var direction = (directional_reference.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (%ShakeableCamera.directional_reference.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	target.velocity.x = direction.x * movement_speed * delta * controlled_player.move_speed_multiplier
 	target.velocity.z = direction.z * movement_speed * delta * controlled_player.move_speed_multiplier
 	target.velocity *= controlled_player.gun.reload_move_speed_modifier

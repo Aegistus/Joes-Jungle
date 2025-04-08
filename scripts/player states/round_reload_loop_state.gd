@@ -5,7 +5,6 @@ extends PlayerState
 
 @onready var animation_player = $"../../PlayerModel/Model/AnimationPlayer" as AnimationPlayer
 @onready var idle_state = %IdleState
-@onready var directional_reference = %DirectionalReference
 @onready var round_reload_anim_tree = $"../../PlayerModel/Model/RoundReloadAnimTree" as AnimationTree
 
 var finished = false
@@ -30,7 +29,7 @@ func process_state_physics(delta):
 		cancel = true
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	var direction = (directional_reference.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (%ShakeableCamera.directional_reference.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	target.velocity.x = direction.x * walk_speed * delta * controlled_player.move_speed_multiplier
 	target.velocity.z = direction.z * walk_speed * delta * controlled_player.move_speed_multiplier
 	target.move_and_slide()
