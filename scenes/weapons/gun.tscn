@@ -150,7 +150,7 @@ lifetime = 1.0
 one_shot = false
 process_material = SubResource("ParticleProcessMaterial_o6lox")
 
-[node name="GunAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+[node name="ShotAudioPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_8vgvq")
 bus = &"Sound Effects"
 

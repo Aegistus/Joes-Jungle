@@ -19,7 +19,7 @@ signal on_hit(hit_position : Vector3)
 @export var reload_anim_speed_modifier := 1.0
 @export var reload_move_speed_modifier := 1.0
 
-@onready var gun_audio_player = $GunAudioPlayer
+@onready var gun_audio_player = $ShotAudioPlayer
 @onready var dry_shot_audio_player = $DryShotAudioPlayer
 @onready var animation_player = $AnimationPlayer as AnimationPlayer
 @onready var remove_mag_audio_player = $RemoveMagAudioPlayer
