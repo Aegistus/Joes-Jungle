@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://bpdhjy3tvivvm"]
+[gd_scene load_steps=43 format=4 uid="uid://bpdhjy3tvivvm"]
 
 [ext_resource type="Script" uid="uid://25me453sk1l5" path="res://scripts/weapons/gun.gd" id="1_oldi7"]
 [ext_resource type="Texture2D" uid="uid://c4mkkqmwt568m" path="res://assets/textures/Pistol Black Diffuse.png" id="2_hr7ht"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bimsx8ggdoj7t" path="res://assets/audio/reload_sounds/pistol_mag_out.wav" id="8_hrd3g"]
 [ext_resource type="AudioStream" uid="uid://2qgiy3wloc8a" path="res://assets/audio/reload_sounds/pistol_mag_in.wav" id="9_hxbh0"]
 [ext_resource type="Script" uid="uid://b28klctb4e13h" path="res://scripts/weapons/magazine_ammo.gd" id="10_dnofe"]
+[ext_resource type="Script" uid="uid://cbhf1xt0jhv0x" path="res://scripts/screen_shake_causer.gd" id="11_h0s05"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a57kn"]
 albedo_texture = ExtResource("2_hr7ht")
@@ -508,6 +509,9 @@ random_volume_offset_db = 0.48
 streams_count = 1
 stream_0/stream = ExtResource("6_dp5y1")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_51fyy"]
+radius = 0.927672
+
 [node name="Britta6-1" type="Node3D" node_paths=PackedStringArray("magazine")]
 script = ExtResource("1_oldi7")
 gun_name = "Britta 6-1"
@@ -627,5 +631,16 @@ script = ExtResource("10_dnofe")
 max_magazine_count = 6
 magazine_round_capacity = 10
 
+[node name="ScreenShakeCauser" type="Area3D" parent="."]
+collision_layer = 8192
+collision_mask = 8192
+script = ExtResource("11_h0s05")
+shake_amount = 0.15
+metadata/_custom_type_script = "uid://cbhf1xt0jhv0x"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScreenShakeCauser"]
+shape = SubResource("SphereShape3D_51fyy")
+
 [connection signal="on_shoot" from="." to="ShellEjector" method="eject"]
+[connection signal="on_shoot" from="." to="ScreenShakeCauser" method="cause_shake"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

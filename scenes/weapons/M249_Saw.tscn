@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://85xnmfq8ecf8"]
+[gd_scene load_steps=30 format=4 uid="uid://85xnmfq8ecf8"]
 
 [ext_resource type="Script" uid="uid://dbn0yn0eaki2e" path="res://scripts/weapons/machine_gun.gd" id="1_gfnge"]
 [ext_resource type="Texture2D" uid="uid://vsw6o5ywt0l5" path="res://assets/models/weapons/M249_0.png" id="2_5pcpy"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://khvutnhujlf0" path="res://assets/audio/reload_sounds/M249_mag_out.wav" id="8_o5ap2"]
 [ext_resource type="AudioStream" uid="uid://bjym08erj6sy3" path="res://assets/audio/reload_sounds/M249_mag_in.wav" id="9_ptuhx"]
 [ext_resource type="Script" uid="uid://b28klctb4e13h" path="res://scripts/weapons/magazine_ammo.gd" id="10_b2ynf"]
+[ext_resource type="Script" uid="uid://cbhf1xt0jhv0x" path="res://scripts/screen_shake_causer.gd" id="11_ydtdd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42npd"]
 resource_name = "Mat"
@@ -259,6 +260,9 @@ random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("4_dw3qo")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_du7pr"]
+radius = 1.16494
+
 [node name="M249" type="Node3D" node_paths=PackedStringArray("magazine")]
 script = ExtResource("1_gfnge")
 shot_delay = 0.08
@@ -373,4 +377,14 @@ script = ExtResource("10_b2ynf")
 max_magazine_count = 3
 magazine_round_capacity = 100
 
+[node name="ScreenShakeCauser" type="Area3D" parent="."]
+collision_layer = 8192
+collision_mask = 8192
+script = ExtResource("11_ydtdd")
+metadata/_custom_type_script = "uid://cbhf1xt0jhv0x"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScreenShakeCauser"]
+shape = SubResource("SphereShape3D_du7pr")
+
 [connection signal="on_shoot" from="." to="ShellEjector" method="eject"]
+[connection signal="on_shoot" from="." to="ScreenShakeCauser" method="cause_shake"]
