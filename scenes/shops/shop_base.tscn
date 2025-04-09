@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://bejqj5t2fsjwh"]
+
+[ext_resource type="Script" uid="uid://bbgnasu78742k" path="res://scripts/objectives/shop.gd" id="1_xkatw"]
+[ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_4k25s"]
+[ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="4_6ib5s"]
+[ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="5_ke3h5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kg0f7"]
+
+[sub_resource type="Animation" id="Animation_8dpac"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fn5xm"]
+resource_name = "spin"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0), Vector3(0, 3.14159, 0), Vector3(0, 4.71239, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b4j5p"]
+_data = {
+&"RESET": SubResource("Animation_8dpac"),
+&"spin": SubResource("Animation_fn5xm")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7bsmp"]
+radius = 2.9
+height = 13.0
+
+[node name="ShopBase" type="Node3D"]
+script = ExtResource("1_xkatw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 0.055, 0, 0, 0, 1.2, 0, 0, 0)
+material_override = ExtResource("2_4k25s")
+mesh = SubResource("CylinderMesh_kg0f7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_b4j5p")
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85004, 0)
+shape = SubResource("CapsuleShape3D_7bsmp")
+
+[node name="ShopSuccessAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_6ib5s")
+
+[node name="ShopFailureAudioPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_ke3h5")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0311234, 12.7494, -0.0420203)
+light_energy = 6.0
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 30.0
