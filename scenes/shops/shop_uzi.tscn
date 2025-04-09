@@ -1,59 +1,13 @@
-[gd_scene load_steps=26 format=4 uid="uid://b6mjww5vs5pl6"]
+[gd_scene load_steps=19 format=4 uid="uid://dqnxqccltsake"]
 
-[ext_resource type="Script" uid="uid://bbgnasu78742k" path="res://scripts/objectives/shop.gd" id="1_bqsiy"]
-[ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_1d72o"]
-[ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="3_c10s8"]
-[ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="4_mmewc"]
-[ext_resource type="Texture2D" uid="uid://cinbaoe4cjagu" path="res://assets/models/weapons/Uzi_0.png" id="5_sof1k"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_kg0f7"]
-
-[sub_resource type="Animation" id="Animation_8dpac"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_fn5xm"]
-resource_name = "spin"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0), Vector3(0, 3.14159, 0), Vector3(0, 4.71239, 0), Vector3(0, 6.28319, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b4j5p"]
-_data = {
-&"RESET": SubResource("Animation_8dpac"),
-&"spin": SubResource("Animation_fn5xm")
-}
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7bsmp"]
-radius = 2.9
-height = 13.0
+[ext_resource type="PackedScene" uid="uid://bejqj5t2fsjwh" path="res://scenes/shops/shop_base.tscn" id="1_fa4vp"]
+[ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_s31ys"]
+[ext_resource type="Texture2D" uid="uid://cinbaoe4cjagu" path="res://assets/models/weapons/Uzi_0.png" id="3_67n4r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hjknl"]
 resource_name = "Mat"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("5_sof1k")
+albedo_texture = ExtResource("3_67n4r")
 emission_enabled = true
 uv1_offset = Vector3(0, -1, 0)
 
@@ -72,7 +26,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_bfbx0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_r536v"]
 resource_name = "Uzi"
 _surfaces = [{
 "aabb": AABB(-0.348, -1.50121, -4.19765, 0.696, 2.8728, 7.14789),
@@ -106,7 +60,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_5n6kg"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_v8fs2"]
 resource_name = "Trigger"
 _surfaces = [{
 "aabb": AABB(-0.0248731, -0.504179, -0.21892, 0.0497461, 0.74823, 0.363431),
@@ -140,7 +94,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2pxal"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8tbja"]
 resource_name = "Bolt"
 _surfaces = [{
 "aabb": AABB(-0.192283, -0.10379, -1.78787, 0.384565, 0.885305, 2.19074),
@@ -174,7 +128,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4f1n8"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_51kme"]
 resource_name = "Magazin"
 _surfaces = [{
 "aabb": AABB(-0.183517, -2.89896, -0.303022, 0.267147, 3.09894, 0.523522),
@@ -208,7 +162,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_okjsj"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ltbgf"]
 resource_name = "Stock"
 _surfaces = [{
 "aabb": AABB(-0.284869, -0.430366, -1.7407, 0.569738, 0.577468, 1.96029),
@@ -242,7 +196,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_m6fdl"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_5ciwc"]
 resource_name = "Stock_01"
 _surfaces = [{
 "aabb": AABB(-0.17038, -1.61585, -0.105001, 0.400761, 1.70794, 1.89727),
@@ -269,83 +223,51 @@ _data = {
 &"Main": SubResource("Animation_k84j5")
 }
 
-[node name="ShopUzi" type="Node3D"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-script = ExtResource("1_bqsiy")
+[node name="ShopUzi" instance=ExtResource("1_fa4vp")]
 shop_item_scene_path = "res://scenes/weapons/uzi.tscn"
 item_cost = 250
 tooltip_text = "Buy Uzi"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.47362, 0, 0, 0, 0.273578, 0, 0, 0, 5.47362, 0, 0, 0)
-material_override = ExtResource("2_1d72o")
-mesh = SubResource("CylinderMesh_kg0f7")
+[node name="Uzi" type="Node3D" parent="." index="6"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.69832, 0.05984)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_b4j5p")
-}
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
-collision_layer = 32
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["interactable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85004, 0)
-shape = SubResource("CapsuleShape3D_7bsmp")
-
-[node name="ShopSuccessAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_c10s8")
-
-[node name="ShopFailureAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_mmewc")
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0.0311234, 12.7494, -0.0420203)
-light_energy = 6.0
-shadow_enabled = true
-spot_range = 10.0
-spot_angle = 30.0
-
-[node name="Uzi" type="Node3D" parent="."]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 3.39832, 0.45984)
-
-[node name="Uzi" type="MeshInstance3D" parent="Uzi"]
+[node name="Uzi" type="MeshInstance3D" parent="Uzi" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4805, -0.317955)
-material_override = ExtResource("2_1d72o")
-mesh = SubResource("ArrayMesh_bfbx0")
+material_override = ExtResource("2_s31ys")
+mesh = SubResource("ArrayMesh_r536v")
 skeleton = NodePath("")
 
-[node name="Trigger" type="MeshInstance3D" parent="Uzi/Uzi"]
+[node name="Trigger" type="MeshInstance3D" parent="Uzi/Uzi" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.120264, -0.290867)
-material_override = ExtResource("2_1d72o")
-mesh = SubResource("ArrayMesh_5n6kg")
+material_override = ExtResource("2_s31ys")
+mesh = SubResource("ArrayMesh_v8fs2")
 skeleton = NodePath("")
 
-[node name="Bolt" type="MeshInstance3D" parent="Uzi/Uzi"]
+[node name="Bolt" type="MeshInstance3D" parent="Uzi/Uzi" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4805, 0.317955)
-material_override = ExtResource("2_1d72o")
-mesh = SubResource("ArrayMesh_2pxal")
+material_override = ExtResource("2_s31ys")
+mesh = SubResource("ArrayMesh_8tbja")
 skeleton = NodePath("")
 
-[node name="Magazin" type="MeshInstance3D" parent="Uzi/Uzi"]
+[node name="Magazin" type="MeshInstance3D" parent="Uzi/Uzi" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0499436, 0.164499, 0.345119)
-material_override = ExtResource("2_1d72o")
-mesh = SubResource("ArrayMesh_4f1n8")
+material_override = ExtResource("2_s31ys")
+mesh = SubResource("ArrayMesh_51kme")
 skeleton = NodePath("")
 
-[node name="Stock" type="MeshInstance3D" parent="Uzi/Uzi"]
+[node name="Stock" type="MeshInstance3D" parent="Uzi/Uzi" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352961, 2.81944)
-material_override = ExtResource("2_1d72o")
-mesh = SubResource("ArrayMesh_okjsj")
+material_override = ExtResource("2_s31ys")
+mesh = SubResource("ArrayMesh_ltbgf")
 skeleton = NodePath("")
 
-[node name="Stock_01" type="MeshInstance3D" parent="Uzi/Uzi/Stock"]
+[node name="Stock_01" type="MeshInstance3D" parent="Uzi/Uzi/Stock" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, -0.27393, -1.48295)
-material_override = ExtResource("2_1d72o")
-mesh = SubResource("ArrayMesh_m6fdl")
+material_override = ExtResource("2_s31ys")
+mesh = SubResource("ArrayMesh_5ciwc")
 skeleton = NodePath("")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Uzi"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Uzi" index="1"]
 libraries = {
 &"": SubResource("AnimationLibrary_e5muo")
 }

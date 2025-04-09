@@ -1,53 +1,7 @@
-[gd_scene load_steps=20 format=4 uid="uid://d2t1be5npyy0h"]
+[gd_scene load_steps=13 format=4 uid="uid://k1go0et6vujb"]
 
-[ext_resource type="Script" uid="uid://bbgnasu78742k" path="res://scripts/objectives/shop.gd" id="1_8yjlm"]
-[ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_b16i4"]
-[ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="3_xfyt4"]
-[ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="4_we5km"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_q5ege"]
-
-[sub_resource type="Animation" id="Animation_cfg3h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_u7lb7"]
-resource_name = "spin"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0), Vector3(0, 3.14159, 0), Vector3(0, 4.71239, 0), Vector3(0, 6.28319, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_v6nlf"]
-_data = {
-&"RESET": SubResource("Animation_cfg3h"),
-&"spin": SubResource("Animation_u7lb7")
-}
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6nn7s"]
-radius = 2.9
-height = 13.0
+[ext_resource type="PackedScene" uid="uid://bejqj5t2fsjwh" path="res://scenes/shops/shop_base.tscn" id="1_yt3yn"]
+[ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_15xio"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qocu1"]
 resource_name = "lambert1"
@@ -70,7 +24,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_s87r4"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_xdwq3"]
 resource_name = "SM_Wep_FlameThrower_Handle_01"
 _surfaces = [{
 "aabb": AABB(-0.245673, -0.744774, -3.48721, 0.491344, 1.36911, 5.58938),
@@ -103,7 +57,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_jea34"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_3myk1"]
 resource_name = "SM_Wep_FlameThrower_Trigger_02"
 _surfaces = [{
 "aabb": AABB(-0.0345076, -0.259069, -0.183885, 0.0690152, 0.280796, 0.36777),
@@ -135,7 +89,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_d3jch"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_vjeag"]
 resource_name = "SM_Wep_FlameThrower_Trigger_01"
 _surfaces = [{
 "aabb": AABB(-0.0564722, -0.672775, -0.122582, 0.112944, 0.714352, 0.280996),
@@ -174,7 +128,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_u018c"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8xprq"]
 resource_name = "SM_Wep_FlameThrower_Tanks_01"
 _surfaces = [{
 "aabb": AABB(-2.20168, -2.82155, -2.49418, 4.07698, 5.32349, 2.49418),
@@ -193,67 +147,35 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ngs68")
 
-[node name="ShopFlamethrower" type="Node3D"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-script = ExtResource("1_8yjlm")
+[node name="ShopFlamethrower" instance=ExtResource("1_yt3yn")]
 shop_item_scene_path = "res://scenes/weapons/M2_flamethrower.tscn"
 item_cost = 3000
 tooltip_text = "Buy M2 Flamethrower"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.47362, 0, 0, 0, 0.273578, 0, 0, 0, 5.47362, 0, 0, 0)
-material_override = ExtResource("2_b16i4")
-mesh = SubResource("CylinderMesh_q5ege")
+[node name="SM_Wep_FlameThrower_Handle_01" type="Node3D" parent="." index="6"]
+transform = Transform3D(0.2, 0, 0, 0, 0.173205, -0.1, 0, 0.1, 0.173205, 0.0902353, 0.4, 0.1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_v6nlf")
-}
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
-collision_layer = 32
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["interactable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85004, 0)
-shape = SubResource("CapsuleShape3D_6nn7s")
-
-[node name="ShopSuccessAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_xfyt4")
-
-[node name="ShopFailureAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_we5km")
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0311234, 9.86099, -0.0420206)
-light_energy = 6.0
-shadow_enabled = true
-spot_range = 10.0
-spot_angle = 30.0
-
-[node name="SM_Wep_FlameThrower_Handle_01" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 1, 2, 1)
-
-[node name="SM_Wep_FlameThrower_Handle_01" type="MeshInstance3D" parent="SM_Wep_FlameThrower_Handle_01"]
-material_override = ExtResource("2_b16i4")
-mesh = SubResource("ArrayMesh_s87r4")
+[node name="SM_Wep_FlameThrower_Handle_01" type="MeshInstance3D" parent="SM_Wep_FlameThrower_Handle_01" index="0"]
+material_override = ExtResource("2_15xio")
+mesh = SubResource("ArrayMesh_xdwq3")
 skeleton = NodePath("")
 
-[node name="SM_Wep_FlameThrower_Trigger_02" type="MeshInstance3D" parent="SM_Wep_FlameThrower_Handle_01/SM_Wep_FlameThrower_Handle_01"]
+[node name="SM_Wep_FlameThrower_Trigger_02" type="MeshInstance3D" parent="SM_Wep_FlameThrower_Handle_01/SM_Wep_FlameThrower_Handle_01" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33285e-15, 0.192756, 0.400174)
-material_override = ExtResource("2_b16i4")
-mesh = SubResource("ArrayMesh_jea34")
+material_override = ExtResource("2_15xio")
+mesh = SubResource("ArrayMesh_3myk1")
 skeleton = NodePath("")
 
-[node name="SM_Wep_FlameThrower_Trigger_01" type="MeshInstance3D" parent="SM_Wep_FlameThrower_Handle_01/SM_Wep_FlameThrower_Handle_01"]
+[node name="SM_Wep_FlameThrower_Trigger_01" type="MeshInstance3D" parent="SM_Wep_FlameThrower_Handle_01/SM_Wep_FlameThrower_Handle_01" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.64107e-15, 0.160349, -2.60096)
-material_override = ExtResource("2_b16i4")
-mesh = SubResource("ArrayMesh_d3jch")
+material_override = ExtResource("2_15xio")
+mesh = SubResource("ArrayMesh_vjeag")
 skeleton = NodePath("")
 
-[node name="SM_Wep_FlameThrower_Tanks_01" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.75, 3, 0)
+[node name="SM_Wep_FlameThrower_Tanks_01" type="Node3D" parent="." index="7"]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0.05, 0.6, 0)
 
-[node name="SM_Wep_FlameThrower_Tanks_01" type="MeshInstance3D" parent="SM_Wep_FlameThrower_Tanks_01"]
-material_override = ExtResource("2_b16i4")
-mesh = SubResource("ArrayMesh_u018c")
+[node name="SM_Wep_FlameThrower_Tanks_01" type="MeshInstance3D" parent="SM_Wep_FlameThrower_Tanks_01" index="0"]
+material_override = ExtResource("2_15xio")
+mesh = SubResource("ArrayMesh_8xprq")
 skeleton = NodePath("")

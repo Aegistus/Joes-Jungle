@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqwb2vhurjxwa"]
-
-[ext_resource type="PackedScene" uid="uid://bejqj5t2fsjwh" path="res://scenes/shops/shop_base.tscn" id="1_j5m3m"]
-
-[node name="ShopMPX" instance=ExtResource("1_j5m3m")]
-shop_item_scene_path = "res://scenes/weapons/MPX.tscn"
-item_cost = 250
-tooltip_text = "Buy MPX"

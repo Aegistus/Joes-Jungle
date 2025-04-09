@@ -11,7 +11,7 @@ const ACCURACY_DISTANCE_MAX = 2.0
 
 func _process(delta):
 	if aim_state_machine.current_state is AimingState:
-		if aim_state_machine.current_state.intersection != null:
+		if aim_state_machine.current_state.intersection != null and not aim_state_machine.current_state.intersection.is_empty():
 			position = aim_state_machine.current_state.intersection.position
 			rotation = player_model.rotation
 			visible = true

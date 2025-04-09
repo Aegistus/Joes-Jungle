@@ -90,7 +90,8 @@ func shoot_with_raycast(raycast : RayCast3D):
 	raycast.rotate_object_local(axis, radians_change)
 	# shoot with penetration
 	var already_hit : Array[CollisionObject3D] = []
-	var collision_point = raycast.target_position
+	var raycast_direction = raycast.to_global(Vector3.ZERO).direction_to(raycast.to_global(raycast.target_position))
+	var collision_point = raycast.global_position + (raycast_direction * 100)
 	for i in base_penetration:
 		raycast.force_raycast_update()
 		var collided = raycast.get_collider() as CollisionObject3D

@@ -603,14 +603,11 @@ base_accuracy = 75
 base_recoil = 10
 base_ergonomics = 90
 
-[node name="gun model" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
 [node name="MuzzleFlash" parent="gun model" index="0"]
 transform = Transform3D(0.00331238, 0.0398603, -0.00042735, -0.039727, 0.00333627, 0.00326092, 0.00328517, 0.000154399, 0.0398646, 0.0660889, 0.541294, 0.028057)
 
 [node name="BulletTrailSpawner" parent="gun model" index="1"]
-transform = Transform3D(-4.37114e-08, -4.83356e-09, -1, -2.75671e-09, 1, -4.83356e-09, 1, 2.75671e-09, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-0.0106838, 0.996508, -0.0828096, 0.0815229, 0.0834067, 0.993175, 0.996614, 0.00386003, -0.0821293, 0.0118643, 1.13976, -0.0324453)
 
 [node name="model" type="Node3D" parent="gun model" index="2"]
 transform = Transform3D(-0.8547, 79.7206, -6.62476, 6.52183, 6.67253, 79.454, 79.7291, 0.308793, -6.57034, 0.0418162, 0.111169, 0.0571742)

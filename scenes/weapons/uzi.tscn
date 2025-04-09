@@ -226,26 +226,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath("gun model/MuzzleFlash:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
+"update": 1,
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("gun model/MuzzleFlash:visible")
+tracks/1/path = NodePath("gun model:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_tqfj8"]
@@ -255,26 +255,14 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("gun model/model/MuzzleFlash:visible")
+tracks/0/path = NodePath("gun model:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.01),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("gun model:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0102767, 0.06),
+"times": PackedFloat32Array(0, 0.00483931, 0.06),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(1.49545, 1.07201, -0.499985), Vector3(1.49689, -1.06142, -2.63577), Vector3(1.49545, 1.07201, -0.499985)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.117112), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y1l0n"]
@@ -300,10 +288,10 @@ base_accuracy = 75
 base_ergonomics = 90
 
 [node name="MuzzleFlash" parent="gun model" index="0"]
-transform = Transform3D(0.000257479, 0.0398217, 0.00376391, -0.039999, 0.000246151, 0.000131987, 0.000108236, -0.00376466, 0.0398223, 0.133187, 0.435644, -0.032977)
+transform = Transform3D(0.000257479, 0.0398217, 0.00376391, -0.039999, 0.000246151, 0.000131987, 0.000108236, -0.00376466, 0.0398223, 0.11618, 0.435714, 0.0333866)
 
 [node name="BulletTrailSpawner" parent="gun model" index="1"]
-transform = Transform3D(-4.37114e-08, -4.83356e-09, -1, -2.75671e-09, 1, -4.83356e-09, 1, 2.75671e-09, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-0.0940978, 0.995542, 0.00643699, -0.00329962, 0.00615378, -0.999976, -0.995557, -0.0941167, 0.00270586, 0.112401, 0.409216, 0.0311733)
 
 [node name="model" type="Node3D" parent="gun model" index="2"]
 transform = Transform3D(-0.00658684, 0.0696879, 0.000450504, -0.00023093, 0.000430683, -0.0699982, -0.069689, -0.00658816, 0.000189375, 0.115345, 0.088632, 0.0309332)

@@ -46,8 +46,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7bsmp"]
-radius = 2.9
-height = 13.0
+radius = 0.8
+height = 3.8
 
 [node name="ShopBase" type="Node3D"]
 script = ExtResource("1_xkatw")
@@ -66,7 +66,7 @@ libraries = {
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["interactable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85004, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25004, 0)
 shape = SubResource("CapsuleShape3D_7bsmp")
 
 [node name="ShopSuccessAudioPlayer" type="AudioStreamPlayer3D" parent="."]
@@ -76,8 +76,8 @@ stream = ExtResource("4_6ib5s")
 stream = ExtResource("5_ke3h5")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0311234, 12.7494, -0.0420203)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.031, 2, -0.042)
 light_energy = 6.0
 shadow_enabled = true
 spot_range = 10.0
-spot_angle = 30.0
+spot_angle = 22.4109

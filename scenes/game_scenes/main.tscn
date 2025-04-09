@@ -3528,7 +3528,7 @@ script = ExtResource("18_yk2vc")
 tooltip_text = "Where lies the strangling fruit that came"
 
 [node name="Decal" type="Decal" parent="NavigationRegion3D/map/Mansion/WallWriting/WallWriting"]
-transform = Transform3D(1, 8.74228e-08, -8.74228e-08, -8.74228e-08, 4.37114e-08, -1, -8.74228e-08, 1, 4.37114e-08, 9.69527e-09, 4.84763e-09, 0.110901)
+transform = Transform3D(1, 8.74228e-08, -8.74228e-08, -8.74228e-08, 4.37114e-08, -1, -8.74228e-08, 1, 4.37114e-08, 0, 0, 0.110901)
 size = Vector3(5.2, 0.721802, 2)
 texture_albedo = ExtResource("18_ip8yw")
 texture_emission = ExtResource("18_ip8yw")

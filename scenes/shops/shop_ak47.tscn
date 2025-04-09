@@ -1,9 +1,7 @@
-[gd_scene load_steps=29 format=4 uid="uid://det47gkltg7fa"]
+[gd_scene load_steps=22 format=4 uid="uid://d22yfl3vtm6fs"]
 
-[ext_resource type="Script" uid="uid://bbgnasu78742k" path="res://scripts/objectives/shop.gd" id="1_cf4li"]
-[ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_e68ff"]
-[ext_resource type="AudioStream" uid="uid://bphlp38uplm1y" path="res://assets/audio/Cash register 3.wav" id="3_odtks"]
-[ext_resource type="AudioStream" uid="uid://prgsq0by3dwp" path="res://assets/audio/Error 6.wav" id="4_6w52r"]
+[ext_resource type="PackedScene" uid="uid://bejqj5t2fsjwh" path="res://scenes/shops/shop_base.tscn" id="1_4yq8e"]
+[ext_resource type="Material" uid="uid://di84j6hplj2nb" path="res://materials/shop_mat.tres" id="2_8pbuj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mbvq"]
 resource_name = "Modern Weapon Pack Vol.01"
@@ -24,7 +22,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_wf6re"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_pauct"]
 resource_name = "立方体_125"
 _surfaces = [{
 "aabb": AABB(-0.00035, -0.0010645, -0.00178727, 0.00063, 0.00168009, 0.00420308),
@@ -56,7 +54,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_rrr5m"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_atkfm"]
 resource_name = "立方体_141"
 _surfaces = [{
 "aabb": AABB(-0.000200001, -0.00174221, -0.00058372, 0.000400001, 0.00270887, 0.00183255),
@@ -89,7 +87,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_raphp"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_15dkg"]
 resource_name = "立方体_143"
 _surfaces = [{
 "aabb": AABB(-0.000278063, -0.000852002, -0.00270383, 0.000556126, 0.00136924, 0.0032125),
@@ -123,7 +121,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_uyr5j"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_iyawt"]
 resource_name = "立方体_144"
 _surfaces = [{
 "aabb": AABB(-0.000275, -0.000497257, -0.00126367, 0.00055, 0.00102026, 0.00218843),
@@ -157,7 +155,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_bcxg5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_5qwmc"]
 resource_name = "立方体_145"
 _surfaces = [{
 "aabb": AABB(-0.0001, -0.000418433, -0.000135112, 0.0002, 0.000462302, 0.000207496),
@@ -191,7 +189,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_duyst"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_5w3po"]
 resource_name = "立方体_146"
 _surfaces = [{
 "aabb": AABB(-0.000225, -0.00101469, -0.000577817, 0.00045, 0.00149367, 0.000977817),
@@ -224,7 +222,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_d1fwv"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_gavhc"]
 resource_name = "Cylinder_230"
 _surfaces = [{
 "aabb": AABB(-0.000205, -0.0003125, -0.002475, 0.00041, 0.00106377, 0.0051375),
@@ -257,7 +255,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_qh4xk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_260ec"]
 resource_name = "立方体_148"
 _surfaces = [{
 "aabb": AABB(-0.000575, -5.00019e-05, -0.00105883, 0.000437501, 0.000300002, 0.0011125),
@@ -291,7 +289,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_i433i"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_j4htx"]
 resource_name = "Cube_574"
 _surfaces = [{
 "aabb": AABB(-0.0002, -0.0004, -0.0008, 0.00062, 0.0009125, 0.002125),
@@ -310,140 +308,64 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xloi4")
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_kg0f7"]
-
-[sub_resource type="Animation" id="Animation_8dpac"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_fn5xm"]
-resource_name = "spin"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0), Vector3(0, 3.14159, 0), Vector3(0, 4.71239, 0), Vector3(0, 6.28319, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b4j5p"]
-_data = {
-&"RESET": SubResource("Animation_8dpac"),
-&"spin": SubResource("Animation_fn5xm")
-}
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7bsmp"]
-radius = 2.9
-height = 13.0
-
-[node name="ShopAK47" type="Node3D"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-script = ExtResource("1_cf4li")
+[node name="ShopAK47" instance=ExtResource("1_4yq8e")]
 shop_item_scene_path = "res://scenes/weapons/AK47.tscn"
 item_cost = 750
 tooltip_text = "Buy AK-47"
 
-[node name="AK47" type="Node3D" parent="."]
-transform = Transform3D(750, 0, 0, 0, 750, 0, 0, 0, 750, 0, 2.4617, -1.28995)
+[node name="AK47" type="Node3D" parent="." index="6"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0.3617, -0.18995)
 
-[node name="AR_B_Receiver" type="MeshInstance3D" parent="AK47"]
+[node name="AR_B_Receiver" type="MeshInstance3D" parent="AK47" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0.000515634, 0.00079767)
-material_override = ExtResource("2_e68ff")
-mesh = SubResource("ArrayMesh_wf6re")
+material_override = ExtResource("2_8pbuj")
+mesh = SubResource("ArrayMesh_pauct")
 skeleton = NodePath("")
 
-[node name="AR_B_Mag" type="MeshInstance3D" parent="AK47"]
+[node name="AR_B_Mag" type="MeshInstance3D" parent="AK47" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, -0.000457786, 0.00167617)
-material_override = ExtResource("2_e68ff")
-mesh = SubResource("ArrayMesh_rrr5m")
+material_override = ExtResource("2_8pbuj")
+mesh = SubResource("ArrayMesh_atkfm")
 skeleton = NodePath("")
 
-[node name="AR_B_Stock" type="MeshInstance3D" parent="AK47"]
+[node name="AR_B_Stock" type="MeshInstance3D" parent="AK47" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 1.56341e-05, -0.00144617)
-material_override = ExtResource("2_e68ff")
-mesh = SubResource("ArrayMesh_raphp")
+material_override = ExtResource("2_8pbuj")
+mesh = SubResource("ArrayMesh_15dkg")
 skeleton = NodePath("")
 
-[node name="AR_B_BarrelGuard" type="MeshInstance3D" parent="AK47"]
+[node name="AR_B_BarrelGuard" type="MeshInstance3D" parent="AK47" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0.000515634, 0.00385117)
-material_override = ExtResource("2_e68ff")
-mesh = SubResource("ArrayMesh_uyr5j")
+material_override = ExtResource("2_8pbuj")
+mesh = SubResource("ArrayMesh_iyawt")
 skeleton = NodePath("")
 
-[node name="AR_B_Trigger" type="MeshInstance3D" parent="AK47"]
+[node name="AR_B_Trigger" type="MeshInstance3D" parent="AK47" index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 8.11313e-05, 0.000305116)
-material_override = ExtResource("2_e68ff")
-mesh = SubResource("ArrayMesh_bcxg5")
+material_override = ExtResource("2_8pbuj")
+mesh = SubResource("ArrayMesh_5qwmc")
 skeleton = NodePath("")
 
-[node name="AR_B_Grip" type="MeshInstance3D" parent="AK47"]
+[node name="AR_B_Grip" type="MeshInstance3D" parent="AK47" index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, -0.000473632, -0.000398827)
-material_override = ExtResource("2_e68ff")
-mesh = SubResource("ArrayMesh_duyst")
+material_override = ExtResource("2_8pbuj")
+mesh = SubResource("ArrayMesh_5w3po")
 skeleton = NodePath("")
 
-[node name="AR_B_Barrel" type="MeshInstance3D" parent="AK47"]
+[node name="AR_B_Barrel" type="MeshInstance3D" parent="AK47" index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0.0004675, 0.005305)
-material_override = ExtResource("2_e68ff")
-mesh = SubResource("ArrayMesh_d1fwv")
+material_override = ExtResource("2_8pbuj")
+mesh = SubResource("ArrayMesh_gavhc")
 skeleton = NodePath("")
 
-[node name="AR_B_Bolt" type="MeshInstance3D" parent="AK47"]
+[node name="AR_B_Bolt" type="MeshInstance3D" parent="AK47" index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0.000588632, 0.002285)
-material_override = ExtResource("2_e68ff")
-mesh = SubResource("ArrayMesh_qh4xk")
+material_override = ExtResource("2_8pbuj")
+mesh = SubResource("ArrayMesh_260ec")
 skeleton = NodePath("")
 
-[node name="AR_B_Rail" type="MeshInstance3D" parent="AK47"]
+[node name="AR_B_Rail" type="MeshInstance3D" parent="AK47" index="8"]
 transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, 0, 0.00065, 0.0003875)
-material_override = ExtResource("2_e68ff")
-mesh = SubResource("ArrayMesh_i433i")
+material_override = ExtResource("2_8pbuj")
+mesh = SubResource("ArrayMesh_j4htx")
 skeleton = NodePath("")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.47362, 0, 0, 0, 0.273578, 0, 0, 0, 5.47362, 0, 0, 0)
-material_override = ExtResource("2_e68ff")
-mesh = SubResource("CylinderMesh_kg0f7")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_b4j5p")
-}
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
-collision_layer = 32
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["interactable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.85004, 0)
-shape = SubResource("CapsuleShape3D_7bsmp")
-
-[node name="ShopSuccessAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_odtks")
-
-[node name="ShopFailureAudioPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_6w52r")
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0.0311234, 12.7494, -0.0420203)
-light_energy = 6.0
-shadow_enabled = true
-spot_range = 10.0
-spot_angle = 30.0

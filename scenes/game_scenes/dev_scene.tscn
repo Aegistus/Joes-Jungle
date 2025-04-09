@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://d1otweixyixi3"]
+[gd_scene load_steps=30 format=4 uid="uid://d1otweixyixi3"]
 
 [ext_resource type="Script" uid="uid://dvi44v1xmi7ir" path="res://scripts/game_level.gd" id="1_jlul2"]
 [ext_resource type="PackedScene" uid="uid://53o2o6sef8fm" path="res://scenes/game_manager.tscn" id="1_veg6g"]
@@ -13,19 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://yttdwroyehgm" path="res://scenes/scenery/palm_tree_02.tscn" id="8_sua0m"]
 [ext_resource type="PackedScene" uid="uid://btknjokefyjqr" path="res://scenes/scenery/palm_tree_03.tscn" id="9_6qvas"]
 [ext_resource type="PackedScene" uid="uid://ddhplb0t3aute" path="res://scenes/scenery/palm_tree_04.tscn" id="10_kcw2q"]
-[ext_resource type="PackedScene" uid="uid://c7baeq2p0p2hk" path="res://scenes/shops/shop_m4A1.tscn" id="20_dypad"]
 [ext_resource type="Script" uid="uid://drmahdnfs57jy" path="res://scripts/zombie_spawn_point.gd" id="21_0spru"]
-[ext_resource type="PackedScene" uid="uid://d2t1be5npyy0h" path="res://scenes/shops/shop_flamethrower.tscn" id="21_554pv"]
-[ext_resource type="PackedScene" uid="uid://ddgpevn3nkya1" path="res://scenes/shops/shop_benelli.tscn" id="21_lme77"]
-[ext_resource type="PackedScene" uid="uid://22lknia5oy4" path="res://scenes/shops/shop_saw.tscn" id="22_45akl"]
-[ext_resource type="PackedScene" uid="uid://dsxmj3jw6gqcd" path="res://scenes/shops/shop_revolver.tscn" id="22_ec5ts"]
-[ext_resource type="PackedScene" uid="uid://buup8044hp4ox" path="res://scenes/shops/shop_mpx.tscn" id="22_qt2uy"]
 [ext_resource type="PackedScene" uid="uid://d4jtl2hk346is" path="res://scenes/shops/ammo_box.tscn" id="23_kq4uc"]
 [ext_resource type="PackedScene" uid="uid://bq78d2teut4yk" path="res://scenes/emplacements/claymore_mine.tscn" id="23_y2py0"]
 [ext_resource type="PackedScene" uid="uid://c0j4glofdqgpk" path="res://scenes/shops/fruit_punch_bowl.tscn" id="25_1ethd"]
-[ext_resource type="PackedScene" uid="uid://rvebx7d8u8xm" path="res://scenes/shops/shop_aa12.tscn" id="25_yolw6"]
-[ext_resource type="PackedScene" uid="uid://det47gkltg7fa" path="res://scenes/shops/shop_ak47.tscn" id="26_htfvm"]
-[ext_resource type="PackedScene" uid="uid://b6mjww5vs5pl6" path="res://scenes/shops/shop_uzi.tscn" id="27_vfxh4"]
 [ext_resource type="PackedScene" uid="uid://dlxbdxq2sbifd" path="res://scenes/scenery/sunshade_01.tscn" id="28_e5eyf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_27m1f"]
@@ -796,21 +787,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.676, -0.5, -41.367)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.05074, -0.0999999, -5.58617)
 item_cost = 10
 
-[node name="ShopLMG" parent="." instance=ExtResource("22_45akl")]
-item_cost = 0
-
-[node name="ShopRifle" parent="." instance=ExtResource("20_dypad")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -2.20411)
-item_cost = 0
-
-[node name="ShopShotgun" parent="." instance=ExtResource("21_lme77")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -4.66613)
-item_cost = 0
-
-[node name="ShopSMG" parent="." instance=ExtResource("22_qt2uy")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -6.71712)
-item_cost = 0
-
 [node name="AmmoBox" parent="." instance=ExtResource("23_kq4uc")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.51286, 0, -1.0695)
 ammo_cost = 0
@@ -888,28 +864,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9545, -0.0170354, -25.987
 [node name="PlayerSpawnPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6951, 9.53674e-07, -13.3517)
 
-[node name="ShopFlamethrower" parent="." instance=ExtResource("21_554pv")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.6, -0.1, -6.5)
-item_cost = 0
-
-[node name="ShopRevolver" parent="." instance=ExtResource("22_ec5ts")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.53446, -0.100001, -4.49313)
-item_cost = 0
-
 [node name="ClaymoreMine" parent="." instance=ExtResource("23_y2py0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.1, -5.2)
-
-[node name="ShopAA12" parent="." instance=ExtResource("25_yolw6")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.6, -0.1, -2.1)
-item_cost = 0
-
-[node name="ShopAK47" parent="." instance=ExtResource("26_htfvm")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.7, -0.1, -0.1)
-item_cost = 0
-
-[node name="ShopUzi" parent="." instance=ExtResource("27_vfxh4")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.2, -0.1, -6.3)
-item_cost = 0
 
 [node name="SM_Bld_Cuba_Sunshade_01" parent="." instance=ExtResource("28_e5eyf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.82433, -0.0999992, -11.2552)
