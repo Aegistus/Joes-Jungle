@@ -93,10 +93,9 @@ stream_0/stream = ExtResource("7_pq15s")
 [sub_resource type="SphereShape3D" id="SphereShape3D_51fyy"]
 radius = 0.927672
 
-[node name="Gun" type="Node3D" node_paths=PackedStringArray("magazine")]
+[node name="Gun" type="Node3D"]
 script = ExtResource("1_4qtd5")
 gun_name = "Britta 6-1"
-magazine = NodePath("")
 magazine_scale = 0.04
 base_accuracy = 80
 base_recoil = 20
@@ -130,7 +129,7 @@ unique_name_in_owner = true
 transform = Transform3D(0.999391, 0.0348995, 8.68779e-08, 0.0346819, -0.993163, 0.111469, 0.00389029, -0.111401, -0.993768, 0.139226, 0.345951, 0.0853375)
 
 [node name="RayCast" type="RayCast3D" parent="RaycastParent"]
-target_position = Vector3(0, -1000, 0)
+target_position = Vector3(0, -100, 0)
 collision_mask = 67
 collide_with_areas = true
 

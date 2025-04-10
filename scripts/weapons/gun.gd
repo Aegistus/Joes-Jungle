@@ -90,28 +90,28 @@ func shoot_with_raycast(raycast : RayCast3D):
 	raycast.rotate_object_local(axis, radians_change)
 	# shoot with penetration
 	var already_hit : Array[CollisionObject3D] = []
-	var raycast_direction = raycast.to_global(Vector3.ZERO).direction_to(raycast.to_global(raycast.target_position))
-	var collision_point = raycast.global_position + (raycast_direction * 100)
+	var collision_point = raycast.to_global(raycast.target_position)
 	for i in base_penetration:
 		raycast.force_raycast_update()
-		var collided = raycast.get_collider() as CollisionObject3D
-		collision_point = raycast.get_collision_point()
-		var collision_normal = raycast.get_collision_normal()
-		if collided == null:
-			collided = raycast.get_collider() as CSGShape3D
+		if raycast.is_colliding():
+			var collided = raycast.get_collider() as CollisionObject3D
+			collision_point = raycast.get_collision_point()
+			var collision_normal = raycast.get_collision_normal()
+			if collided == null:
+				collided = raycast.get_collider() as CSGShape3D
+				if collided != null:
+					generate_impact_effects(collided, collision_point, collision_normal)
+				break
 			if collided != null:
 				generate_impact_effects(collided, collision_point, collision_normal)
-			break
-		if collided != null:
-			generate_impact_effects(collided, collision_point, collision_normal)
-			if collided.is_in_group("enemy"):
-				var rotation = (collision_point - global_position).normalized().inverse()
-				rotation.y += 180
-				var damage = randi_range(min_damage, max_damage)
-				damage -= i * PENETRATION_DAMAGE_REDUCTION * damage
-				collided.hit(damage, collision_point, rotation)
-				already_hit.append(collided)
-				raycast.add_exception(collided)
+				if collided.is_in_group("enemy"):
+					var rotation = (collision_point - global_position).normalized().inverse()
+					rotation.y += 180
+					var damage = randi_range(min_damage, max_damage)
+					damage -= i * PENETRATION_DAMAGE_REDUCTION * damage
+					collided.hit(damage, collision_point, rotation)
+					already_hit.append(collided)
+					raycast.add_exception(collided)
 	for i in already_hit.size():
 		raycast.remove_exception(already_hit[i])
 	on_hit.emit(collision_point)
